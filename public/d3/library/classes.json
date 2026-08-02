@@ -1,0 +1,79 @@
+[
+  {
+    "id": "barbarian",
+    "slug": "barbarian",
+    "name": "野蛮人",
+    "portrait": "barbarian_male",
+    "portraitSource": "https://assets.diablo3.blizzard.com/d3/icons/portraits/42/barbarian_male.png",
+    "portraitImage": "/d3/library/classes/barbarian-portrait.png",
+    "crestSource": "https://eu.diablo3.blizzard.com/static/images/hero/barbarian/crest.png",
+    "crestImage": "/d3/library/classes/barbarian-crest.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/class/barbarian/"
+  },
+  {
+    "id": "crusader",
+    "slug": "crusader",
+    "name": "圣教军",
+    "portrait": "x1_crusader_male",
+    "portraitSource": "https://assets.diablo3.blizzard.com/d3/icons/portraits/42/x1_crusader_male.png",
+    "portraitImage": "/d3/library/classes/crusader-portrait.png",
+    "crestSource": "https://eu.diablo3.blizzard.com/static/images/hero/crusader/crest.png",
+    "crestImage": "/d3/library/classes/crusader-crest.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/class/crusader/"
+  },
+  {
+    "id": "demon-hunter",
+    "slug": "demon-hunter",
+    "name": "猎魔人",
+    "portrait": "demonhunter_female",
+    "portraitSource": "https://assets.diablo3.blizzard.com/d3/icons/portraits/42/demonhunter_female.png",
+    "portraitImage": "/d3/library/classes/demon-hunter-portrait.png",
+    "crestSource": "https://eu.diablo3.blizzard.com/static/images/hero/demon-hunter/crest.png",
+    "crestImage": "/d3/library/classes/demon-hunter-crest.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/class/demon-hunter/"
+  },
+  {
+    "id": "monk",
+    "slug": "monk",
+    "name": "武僧",
+    "portrait": "monk_male",
+    "portraitSource": "https://assets.diablo3.blizzard.com/d3/icons/portraits/42/monk_male.png",
+    "portraitImage": "/d3/library/classes/monk-portrait.png",
+    "crestSource": "https://eu.diablo3.blizzard.com/static/images/hero/monk/crest.png",
+    "crestImage": "/d3/library/classes/monk-crest.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/class/monk/"
+  },
+  {
+    "id": "necromancer",
+    "slug": "necromancer",
+    "name": "死灵法师",
+    "portrait": "p6_necro_male",
+    "portraitSource": "https://assets.diablo3.blizzard.com/d3/icons/portraits/42/p6_necro_male.png",
+    "portraitImage": "/d3/library/classes/necromancer-portrait.png",
+    "crestSource": "https://eu.diablo3.blizzard.com/static/images/hero/necromancer/crest.png",
+    "crestImage": "/d3/library/classes/necromancer-crest.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/class/necromancer/"
+  },
+  {
+    "id": "witch-doctor",
+    "slug": "witch-doctor",
+    "name": "巫医",
+    "portrait": "witchdoctor_male",
+    "portraitSource": "https://assets.diablo3.blizzard.com/d3/icons/portraits/42/witchdoctor_male.png",
+    "portraitImage": "/d3/library/classes/witch-doctor-portrait.png",
+    "crestSource": "https://eu.diablo3.blizzard.com/static/images/hero/witch-doctor/crest.png",
+    "crestImage": "/d3/library/classes/witch-doctor-crest.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/class/witch-doctor/"
+  },
+  {
+    "id": "wizard",
+    "slug": "wizard",
+    "name": "魔法师",
+    "portrait": "wizard_female",
+    "portraitSource": "https://assets.diablo3.blizzard.com/d3/icons/portraits/42/wizard_female.png",
+    "portraitImage": "/d3/library/classes/wizard-portrait.png",
+    "crestSource": "https://eu.diablo3.blizzard.com/static/images/hero/wizard/crest.png",
+    "crestImage": "/d3/library/classes/wizard-crest.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/class/wizard/"
+  }
+]

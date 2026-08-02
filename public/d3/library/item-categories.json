@@ -1,0 +1,1657 @@
+[
+  {
+    "id": "helm",
+    "name": "頭盔",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/helm/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 79
+  },
+  {
+    "id": "spirit-stone",
+    "name": "練氣石",
+    "group": "armor",
+    "classes": [
+      "monk"
+    ],
+    "followers": [],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/spirit-stone/",
+    "classNames": [
+      "武僧"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 27
+  },
+  {
+    "id": "voodoo-mask",
+    "name": "巫毒面具",
+    "group": "armor",
+    "classes": [
+      "witch-doctor"
+    ],
+    "followers": [],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/voodoo-mask/",
+    "classNames": [
+      "巫医"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 24
+  },
+  {
+    "id": "wizard-hat",
+    "name": "秘術帽",
+    "group": "armor",
+    "classes": [
+      "wizard"
+    ],
+    "followers": [],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/wizard-hat/",
+    "classNames": [
+      "魔法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 22
+  },
+  {
+    "id": "pauldrons",
+    "name": "肩鎧",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/pauldrons/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 70
+  },
+  {
+    "id": "chest-armor",
+    "name": "胸甲",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/chest-armor/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 74
+  },
+  {
+    "id": "cloak",
+    "name": "斗蓬",
+    "group": "armor",
+    "classes": [
+      "demon-hunter"
+    ],
+    "followers": [],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/cloak/",
+    "classNames": [
+      "猎魔人"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 23
+  },
+  {
+    "id": "bracers",
+    "name": "護腕",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bracers/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 62
+  },
+  {
+    "id": "gloves",
+    "name": "手套",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gloves/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 73
+  },
+  {
+    "id": "belt",
+    "name": "腰帶",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/belt/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 76
+  },
+  {
+    "id": "mighty-belt",
+    "name": "重型腰帶",
+    "group": "armor",
+    "classes": [
+      "barbarian"
+    ],
+    "followers": [],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mighty-belt/",
+    "classNames": [
+      "野蛮人"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 22
+  },
+  {
+    "id": "pants",
+    "name": "褲子",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/pants/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 75
+  },
+  {
+    "id": "boots",
+    "name": "鞋",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/boots/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 79
+  },
+  {
+    "id": "amulet",
+    "name": "護身符",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "jeweler",
+      "mystic"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/amulet/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师"
+    ],
+    "count": 52
+  },
+  {
+    "id": "ring",
+    "name": "戒指",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "scoundrel",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/ring/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "盗贼",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师"
+    ],
+    "count": 73
+  },
+  {
+    "id": "shield",
+    "name": "盾牌",
+    "group": "armor",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar"
+    ],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/shield/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士"
+    ],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 45
+  },
+  {
+    "id": "crusader-shield",
+    "name": "聖教軍護盾",
+    "group": "armor",
+    "classes": [
+      "crusader"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/crusader-shield/",
+    "classNames": [
+      "圣教军"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师"
+    ],
+    "count": 35
+  },
+  {
+    "id": "mojo",
+    "name": "咒物",
+    "group": "armor",
+    "classes": [
+      "witch-doctor"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mojo/",
+    "classNames": [
+      "巫医"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师"
+    ],
+    "count": 29
+  },
+  {
+    "id": "orb",
+    "name": "法珠",
+    "group": "armor",
+    "classes": [
+      "wizard"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/orb/",
+    "classNames": [
+      "魔法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师"
+    ],
+    "count": 30
+  },
+  {
+    "id": "quiver",
+    "name": "箭筒",
+    "group": "armor",
+    "classes": [
+      "demon-hunter"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/quiver/",
+    "classNames": [
+      "猎魔人"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师"
+    ],
+    "count": 29
+  },
+  {
+    "id": "phylactery",
+    "name": "魂棺",
+    "group": "armor",
+    "classes": [
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/phylactery/",
+    "classNames": [
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师"
+    ],
+    "count": 20
+  },
+  {
+    "id": "enchantress-focus",
+    "name": "巫女法器",
+    "group": "armor",
+    "classes": [],
+    "followers": [
+      "enchantress"
+    ],
+    "artisans": [],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/enchantress-focus/",
+    "classNames": [],
+    "followerNames": [
+      "魔女"
+    ],
+    "artisanNames": [],
+    "count": 16
+  },
+  {
+    "id": "scoundrel-token",
+    "name": "盜賊徽記",
+    "group": "armor",
+    "classes": [],
+    "followers": [
+      "scoundrel"
+    ],
+    "artisans": [],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/scoundrel-token/",
+    "classNames": [],
+    "followerNames": [
+      "盗贼"
+    ],
+    "artisanNames": [],
+    "count": 16
+  },
+  {
+    "id": "templar-relic",
+    "name": "騎士聖物",
+    "group": "armor",
+    "classes": [],
+    "followers": [
+      "templar"
+    ],
+    "artisans": [],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/templar-relic/",
+    "classNames": [],
+    "followerNames": [
+      "圣殿骑士"
+    ],
+    "artisanNames": [],
+    "count": 16
+  },
+  {
+    "id": "axe-1h",
+    "name": "斧",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/axe-1h/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 37
+  },
+  {
+    "id": "dagger",
+    "name": "匕首",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/dagger/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 36
+  },
+  {
+    "id": "mace-1h",
+    "name": "釘鎚",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mace-1h/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 41
+  },
+  {
+    "id": "spear",
+    "name": "矛",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/spear/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 26
+  },
+  {
+    "id": "sword-1h",
+    "name": "劍",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "templar",
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/sword-1h/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "圣殿骑士",
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 67
+  },
+  {
+    "id": "ceremonial-knife",
+    "name": "祭祀刀",
+    "group": "weapons",
+    "classes": [
+      "witch-doctor"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/ceremonial-knife/",
+    "classNames": [
+      "巫医"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 35
+  },
+  {
+    "id": "fist-weapon",
+    "name": "拳套武器",
+    "group": "weapons",
+    "classes": [
+      "monk"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/fist-weapon/",
+    "classNames": [
+      "武僧"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 39
+  },
+  {
+    "id": "flail-1h",
+    "name": "連枷",
+    "group": "weapons",
+    "classes": [
+      "crusader"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/flail-1h/",
+    "classNames": [
+      "圣教军"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 27
+  },
+  {
+    "id": "mighty-weapon-1h",
+    "name": "重型武器",
+    "group": "weapons",
+    "classes": [
+      "barbarian"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mighty-weapon-1h/",
+    "classNames": [
+      "野蛮人"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 29
+  },
+  {
+    "id": "scythe-1h",
+    "name": "鐮刀",
+    "group": "weapons",
+    "classes": [
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/scythe-1h/",
+    "classNames": [
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 21
+  },
+  {
+    "id": "axe-2h",
+    "name": "斧",
+    "group": "weapons",
+    "classes": [
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/axe-2h/",
+    "classNames": [
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 27
+  },
+  {
+    "id": "mace-2h",
+    "name": "釘鎚",
+    "group": "weapons",
+    "classes": [
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mace-2h/",
+    "classNames": [
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 30
+  },
+  {
+    "id": "polearm",
+    "name": "長柄武器",
+    "group": "weapons",
+    "classes": [
+      "barbarian",
+      "witch-doctor",
+      "monk",
+      "crusader"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/polearm/",
+    "classNames": [
+      "野蛮人",
+      "巫医",
+      "武僧",
+      "圣教军"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 32
+  },
+  {
+    "id": "staff",
+    "name": "法杖",
+    "group": "weapons",
+    "classes": [
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "necromancer"
+    ],
+    "followers": [
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/staff/",
+    "classNames": [
+      "魔法师",
+      "巫医",
+      "武僧",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 42
+  },
+  {
+    "id": "sword-2h",
+    "name": "劍",
+    "group": "weapons",
+    "classes": [
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [
+      "enchantress"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/sword-2h/",
+    "classNames": [
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [
+      "魔女"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 37
+  },
+  {
+    "id": "daibo",
+    "name": "武杖",
+    "group": "weapons",
+    "classes": [
+      "monk"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/daibo/",
+    "classNames": [
+      "武僧"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 28
+  },
+  {
+    "id": "flail-2h",
+    "name": "連枷",
+    "group": "weapons",
+    "classes": [
+      "crusader"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/flail-2h/",
+    "classNames": [
+      "圣教军"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 25
+  },
+  {
+    "id": "mighty-weapon-2h",
+    "name": "重型武器",
+    "group": "weapons",
+    "classes": [
+      "barbarian"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mighty-weapon-2h/",
+    "classNames": [
+      "野蛮人"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 23
+  },
+  {
+    "id": "scythe-2h",
+    "name": "鐮刀",
+    "group": "weapons",
+    "classes": [
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/scythe-2h/",
+    "classNames": [
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 20
+  },
+  {
+    "id": "bow",
+    "name": "弓",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter",
+      "wizard",
+      "witch-doctor"
+    ],
+    "followers": [
+      "scoundrel"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bow/",
+    "classNames": [
+      "猎魔人",
+      "魔法师",
+      "巫医"
+    ],
+    "followerNames": [
+      "盗贼"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 33
+  },
+  {
+    "id": "crossbow",
+    "name": "弩",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter",
+      "wizard",
+      "witch-doctor"
+    ],
+    "followers": [
+      "scoundrel"
+    ],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/crossbow/",
+    "classNames": [
+      "猎魔人",
+      "魔法师",
+      "巫医"
+    ],
+    "followerNames": [
+      "盗贼"
+    ],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 34
+  },
+  {
+    "id": "hand-crossbow",
+    "name": "弩槍",
+    "group": "weapons",
+    "classes": [
+      "demon-hunter"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/hand-crossbow/",
+    "classNames": [
+      "猎魔人"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 43
+  },
+  {
+    "id": "wand",
+    "name": "魔杖",
+    "group": "weapons",
+    "classes": [
+      "wizard"
+    ],
+    "followers": [],
+    "artisans": [
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/wand/",
+    "classNames": [
+      "魔法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 39
+  },
+  {
+    "id": "potion",
+    "name": "藥水",
+    "group": "other",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/potion/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [],
+    "count": 12
+  },
+  {
+    "id": "crafting-material",
+    "name": "製作材料",
+    "group": "other",
+    "classes": [],
+    "followers": [],
+    "artisans": [
+      "jeweler",
+      "mystic",
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/crafting-material/",
+    "classNames": [],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠",
+      "秘术师",
+      "铁匠"
+    ],
+    "count": 16
+  },
+  {
+    "id": "blacksmith-plan",
+    "name": "鐵匠設計圖",
+    "group": "other",
+    "classes": [],
+    "followers": [],
+    "artisans": [
+      "blacksmith"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/blacksmith-plan/",
+    "classNames": [],
+    "followerNames": [],
+    "artisanNames": [
+      "铁匠"
+    ],
+    "count": 192
+  },
+  {
+    "id": "jeweler-design",
+    "name": "珠寶匠設計圖",
+    "group": "other",
+    "classes": [],
+    "followers": [],
+    "artisans": [
+      "jeweler"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/jeweler-design/",
+    "classNames": [],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠"
+    ],
+    "count": 43
+  },
+  {
+    "id": "page-of-training",
+    "name": "鍛鍊之書書頁",
+    "group": "other",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/page-of-training/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [],
+    "count": 1
+  },
+  {
+    "id": "dye",
+    "name": "染料",
+    "group": "other",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/dye/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [],
+    "count": 22
+  },
+  {
+    "id": "gem",
+    "name": "寶石",
+    "group": "other",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [
+      "jeweler"
+    ],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gem/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [
+      "珠宝匠"
+    ],
+    "count": 222
+  },
+  {
+    "id": "misc",
+    "name": "其他",
+    "group": "other",
+    "classes": [
+      "demon-hunter",
+      "barbarian",
+      "wizard",
+      "witch-doctor",
+      "monk",
+      "crusader",
+      "necromancer"
+    ],
+    "followers": [],
+    "artisans": [],
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/misc/",
+    "classNames": [
+      "猎魔人",
+      "野蛮人",
+      "魔法师",
+      "巫医",
+      "武僧",
+      "圣教军",
+      "死灵法师"
+    ],
+    "followerNames": [],
+    "artisanNames": [],
+    "count": 7
+  }
+]

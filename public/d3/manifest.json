@@ -1,0 +1,109 @@
+{
+  "assets": [
+    {
+      "contentType": "image/jpeg",
+      "id": "75c669279873e04f",
+      "kind": "image",
+      "name": "body-bg-1440px.jpg",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/75c669279873e04f.jpg",
+      "url": "https://eu.diablo3.blizzard.com/static/images/layout/site-bg/body-bg-1440px.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "c79f5d3426c74392",
+      "kind": "image",
+      "name": "content-bg.jpg",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/c79f5d3426c74392.jpg",
+      "url": "https://eu.diablo3.blizzard.com/static/images/layout/content-bg.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "2b7312aa3ade46bc",
+      "kind": "image",
+      "name": "profile-hero-small.jpg",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/2b7312aa3ade46bc.jpg",
+      "url": "https://eu.diablo3.blizzard.com/static/images/layout/bgs/profile-hero-small.jpg"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "bd1729a17ed4d4c3",
+      "kind": "image",
+      "name": "necro-female.jpg",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/bd1729a17ed4d4c3.jpg",
+      "url": "https://eu.diablo3.blizzard.com/static/images/profile/hero/paperdoll/necro-female.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "e7453a6898c77fe4",
+      "kind": "image",
+      "name": "green.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/e7453a6898c77fe4.png",
+      "url": "https://eu.diablo3.blizzard.com/static/images/item/icon-bgs/green.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "63cbad14f4922922",
+      "kind": "image",
+      "name": "orange.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/63cbad14f4922922.png",
+      "url": "https://eu.diablo3.blizzard.com/static/images/item/icon-bgs/orange.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "5afacfd068c6212f",
+      "kind": "image",
+      "name": "skill-42.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/5afacfd068c6212f.png",
+      "url": "https://eu.diablo3.blizzard.com/static/images/icons/frames/skill-42.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "e768b069554610bb",
+      "kind": "image",
+      "name": "gear-bonus-divider.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/e768b069554610bb.png",
+      "url": "https://eu.diablo3.blizzard.com/static/images/profile/hero/gear-bonus-divider.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "be544fc2b64ff7f8",
+      "kind": "image",
+      "name": "inventory-lines.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/be544fc2b64ff7f8.png",
+      "url": "https://eu.diablo3.blizzard.com/static/images/profile/hero/inventory-lines.png"
+    },
+    {
+      "contentType": "image/jpeg",
+      "id": "f6398f67c47a46bd",
+      "kind": "image",
+      "name": "lower-bg.jpg",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/f6398f67c47a46bd.jpg",
+      "url": "https://eu.diablo3.blizzard.com/static/images/profile/hero/lower-bg.jpg"
+    },
+    {
+      "contentType": "image/png",
+      "id": "411e8b39b4b14af2",
+      "kind": "image",
+      "name": "p6_necro_skelebomb.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/411e8b39b4b14af2.png",
+      "url": "https://assets.diablo3.blizzard.com/d3/icons/skills/42/p6_necro_skelebomb.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "cc41edb699544472",
+      "kind": "image",
+      "name": "p6_necro_siphonblood.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/cc41edb699544472.png",
+      "url": "https://assets.diablo3.blizzard.com/d3/icons/skills/42/p6_necro_siphonblood.png"
+    },
+    {
+      "contentType": "image/png",
+      "id": "e045fda0ff368505",
+      "kind": "image",
+      "name": "p6_necro_bloodrush.png",
+      "path": "/var/folders/rj/0vjrvblj4kq7w340ffmq0_z40000gn/T/browser-use/assets/0d41204a-9885-4eef-bb34-dfca0be91d05/e045fda0ff368505.png",
+      "url": "https://assets.diablo3.blizzard.com/d3/icons/skills/42/p6_necro_bloodrush.png"
+    }
+  ],
+  "failures": []
+}

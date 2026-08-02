@@ -1,0 +1,1595 @@
+[
+  {
+    "id": "taeguk-Unique_Gem_015_x1_PTR",
+    "name": "太極",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_015_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/taeguk-unique_gem_015_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/taeguk-Unique_Gem_015_x1_PTR"
+  },
+  {
+    "id": "taeguk-Unique_Gem_015_x1",
+    "name": "太極",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_015_x1_demonhunter_male.png",
+    "image": "/d3/library/items/taeguk-unique_gem_015_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/taeguk-Unique_Gem_015_x1"
+  },
+  {
+    "id": "bane-of-the-trapped-Unique_Gem_002_x1_PTR",
+    "name": "囚者之禍",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_002_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/bane-of-the-trapped-unique_gem_002_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bane-of-the-trapped-Unique_Gem_002_x1_PTR"
+  },
+  {
+    "id": "bane-of-the-trapped-Unique_Gem_002_x1",
+    "name": "囚者之禍",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_002_x1_demonhunter_male.png",
+    "image": "/d3/library/items/bane-of-the-trapped-unique_gem_002_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bane-of-the-trapped-Unique_Gem_002_x1"
+  },
+  {
+    "id": "boon-of-the-hoarder-Unique_Gem_014_x1_PTR",
+    "name": "囤寶魔的恩惠",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_014_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/boon-of-the-hoarder-unique_gem_014_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/boon-of-the-hoarder-Unique_Gem_014_x1_PTR"
+  },
+  {
+    "id": "boon-of-the-hoarder-Unique_Gem_014_x1",
+    "name": "囤寶魔的恩惠",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_014_x1_demonhunter_male.png",
+    "image": "/d3/library/items/boon-of-the-hoarder-unique_gem_014_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/boon-of-the-hoarder-Unique_Gem_014_x1"
+  },
+  {
+    "id": "gogok-of-swiftness-Unique_Gem_008_x1",
+    "name": "迅捷勾玉",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_008_x1_demonhunter_male.png",
+    "image": "/d3/library/items/gogok-of-swiftness-unique_gem_008_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gogok-of-swiftness-Unique_Gem_008_x1"
+  },
+  {
+    "id": "gogok-of-swiftness-Unique_Gem_008_x1_PTR",
+    "name": "迅捷勾玉",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_008_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/gogok-of-swiftness-unique_gem_008_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gogok-of-swiftness-Unique_Gem_008_x1_PTR"
+  },
+  {
+    "id": "moratorium-Unique_Gem_011_x1",
+    "name": "阻禦之石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_011_x1_demonhunter_male.png",
+    "image": "/d3/library/items/moratorium-unique_gem_011_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/moratorium-Unique_Gem_011_x1"
+  },
+  {
+    "id": "moratorium-Unique_Gem_011_x1_PTR",
+    "name": "阻禦之石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_011_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/moratorium-unique_gem_011_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/moratorium-Unique_Gem_011_x1_PTR"
+  },
+  {
+    "id": "gem-of-efficacious-toxin-Unique_Gem_005_x1",
+    "name": "毒效寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_005_x1_demonhunter_male.png",
+    "image": "/d3/library/items/gem-of-efficacious-toxin-unique_gem_005_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gem-of-efficacious-toxin-Unique_Gem_005_x1"
+  },
+  {
+    "id": "gem-of-efficacious-toxin-Unique_Gem_005_x1_PTR",
+    "name": "毒效寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_005_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/gem-of-efficacious-toxin-unique_gem_005_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gem-of-efficacious-toxin-Unique_Gem_005_x1_PTR"
+  },
+  {
+    "id": "invigorating-gemstone-Unique_Gem_009_x1_PTR",
+    "name": "活力寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_009_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/invigorating-gemstone-unique_gem_009_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/invigorating-gemstone-Unique_Gem_009_x1_PTR"
+  },
+  {
+    "id": "invigorating-gemstone-Unique_Gem_009_x1",
+    "name": "活力寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_009_x1_demonhunter_male.png",
+    "image": "/d3/library/items/invigorating-gemstone-unique_gem_009_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/invigorating-gemstone-Unique_Gem_009_x1"
+  },
+  {
+    "id": "red-soul-shard-Unique_Gem_022_x1",
+    "name": "紅靈魂石裂片",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_022_x1_demonhunter_male.png",
+    "image": "/d3/library/items/red-soul-shard-unique_gem_022_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/red-soul-shard-Unique_Gem_022_x1"
+  },
+  {
+    "id": "red-soul-shard-Unique_Gem_022_x1_PTR",
+    "name": "紅靈魂石裂片",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_022_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/red-soul-shard-unique_gem_022_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/red-soul-shard-Unique_Gem_022_x1_PTR"
+  },
+  {
+    "id": "pain-enhancer-Unique_Gem_006_x1",
+    "name": "倍苦增痛",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_006_x1_demonhunter_male.png",
+    "image": "/d3/library/items/pain-enhancer-unique_gem_006_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/pain-enhancer-Unique_Gem_006_x1"
+  },
+  {
+    "id": "pain-enhancer-Unique_Gem_006_x1_PTR",
+    "name": "倍苦增痛",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_006_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/pain-enhancer-unique_gem_006_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/pain-enhancer-Unique_Gem_006_x1_PTR"
+  },
+  {
+    "id": "wreath-of-lightning-Unique_Gem_004_x1",
+    "name": "閃電華冠",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_004_x1_demonhunter_male.png",
+    "image": "/d3/library/items/wreath-of-lightning-unique_gem_004_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/wreath-of-lightning-Unique_Gem_004_x1"
+  },
+  {
+    "id": "wreath-of-lightning-Unique_Gem_004_x1_PTR",
+    "name": "閃電華冠",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_004_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/wreath-of-lightning-unique_gem_004_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/wreath-of-lightning-Unique_Gem_004_x1_PTR"
+  },
+  {
+    "id": "iceblink-Unique_Gem_021_x1",
+    "name": "閃耀冰晶",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_021_x1_demonhunter_male.png",
+    "image": "/d3/library/items/iceblink-unique_gem_021_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/iceblink-Unique_Gem_021_x1"
+  },
+  {
+    "id": "iceblink-Unique_Gem_021_x1_PTR",
+    "name": "閃耀冰晶",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_021_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/iceblink-unique_gem_021_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/iceblink-Unique_Gem_021_x1_PTR"
+  },
+  {
+    "id": "enforcer-Unique_Gem_010_x1_PTR",
+    "name": "扈衛之石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_010_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/enforcer-unique_gem_010_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/enforcer-Unique_Gem_010_x1_PTR"
+  },
+  {
+    "id": "enforcer-Unique_Gem_010_x1",
+    "name": "扈衛之石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_010_x1_demonhunter_male.png",
+    "image": "/d3/library/items/enforcer-unique_gem_010_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/enforcer-Unique_Gem_010_x1"
+  },
+  {
+    "id": "bane-of-the-powerful-Unique_Gem_001_x1_PTR",
+    "name": "猛者之厄",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_001_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/bane-of-the-powerful-unique_gem_001_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bane-of-the-powerful-Unique_Gem_001_x1_PTR"
+  },
+  {
+    "id": "bane-of-the-powerful-Unique_Gem_001_x1",
+    "name": "猛者之厄",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_001_x1_demonhunter_male.png",
+    "image": "/d3/library/items/bane-of-the-powerful-unique_gem_001_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bane-of-the-powerful-Unique_Gem_001_x1"
+  },
+  {
+    "id": "boyarskys-chip-Unique_Gem_020_x1_PTR",
+    "name": "博雅斯基的碎裂寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_020_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/boyarskys-chip-unique_gem_020_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/boyarskys-chip-Unique_Gem_020_x1_PTR"
+  },
+  {
+    "id": "boyarskys-chip-Unique_Gem_020_x1",
+    "name": "博雅斯基的碎裂寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_020_x1_demonhunter_male.png",
+    "image": "/d3/library/items/boyarskys-chip-unique_gem_020_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/boyarskys-chip-Unique_Gem_020_x1"
+  },
+  {
+    "id": "topaz-x1_Topaz_01",
+    "name": "無瑕紅寶石",
+    "category": "gem",
+    "quality": "gem",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/x1_topaz_01_demonhunter_male.png",
+    "image": "/d3/library/items/topaz-x1_topaz_01.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/topaz-x1_Topaz_01"
+  },
+  {
+    "id": "diamond-x1_Diamond_01",
+    "name": "無瑕紫寶石",
+    "category": "gem",
+    "quality": "gem",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/x1_diamond_01_demonhunter_male.png",
+    "image": "/d3/library/items/diamond-x1_diamond_01.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/diamond-x1_Diamond_01"
+  },
+  {
+    "id": "ruby-x1_Ruby_01",
+    "name": "無瑕綠寶石",
+    "category": "gem",
+    "quality": "gem",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/x1_ruby_01_demonhunter_male.png",
+    "image": "/d3/library/items/ruby-x1_ruby_01.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/ruby-x1_Ruby_01"
+  },
+  {
+    "id": "emerald-x1_Emerald_01",
+    "name": "無瑕鑽石",
+    "category": "gem",
+    "quality": "gem",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/x1_emerald_01_demonhunter_male.png",
+    "image": "/d3/library/items/emerald-x1_emerald_01.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/emerald-x1_Emerald_01"
+  },
+  {
+    "id": "amethyst-x1_Amethyst_01",
+    "name": "紫寶石",
+    "category": "gem",
+    "quality": "gem",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/x1_amethyst_01_demonhunter_male.png",
+    "image": "/d3/library/items/amethyst-x1_amethyst_01.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/amethyst-x1_Amethyst_01"
+  },
+  {
+    "id": "gem-of-ease-Unique_Gem_003_x1",
+    "name": "舒逸寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_003_x1_demonhunter_male.png",
+    "image": "/d3/library/items/gem-of-ease-unique_gem_003_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gem-of-ease-Unique_Gem_003_x1"
+  },
+  {
+    "id": "gem-of-ease-Unique_Gem_003_x1_PTR",
+    "name": "舒逸寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_003_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/gem-of-ease-unique_gem_003_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/gem-of-ease-Unique_Gem_003_x1_PTR"
+  },
+  {
+    "id": "esoteric-alteration-Unique_Gem_016_x1_PTR",
+    "name": "奧幻之石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_016_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/esoteric-alteration-unique_gem_016_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/esoteric-alteration-Unique_Gem_016_x1_PTR"
+  },
+  {
+    "id": "esoteric-alteration-Unique_Gem_016_x1",
+    "name": "奧幻之石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_016_x1_demonhunter_male.png",
+    "image": "/d3/library/items/esoteric-alteration-unique_gem_016_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/esoteric-alteration-Unique_Gem_016_x1"
+  },
+  {
+    "id": "mutilation-guard-Unique_Gem_019_x1_PTR",
+    "name": "毀傷之禦",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_019_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/mutilation-guard-unique_gem_019_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mutilation-guard-Unique_Gem_019_x1_PTR"
+  },
+  {
+    "id": "mutilation-guard-Unique_Gem_019_x1",
+    "name": "毀傷之禦",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_019_x1_demonhunter_male.png",
+    "image": "/d3/library/items/mutilation-guard-unique_gem_019_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mutilation-guard-Unique_Gem_019_x1"
+  },
+  {
+    "id": "zeis-stone-of-vengeance-Unique_Gem_012_x1_PTR",
+    "name": "賊神的復仇寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_012_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/zeis-stone-of-vengeance-unique_gem_012_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/zeis-stone-of-vengeance-Unique_Gem_012_x1_PTR"
+  },
+  {
+    "id": "zeis-stone-of-vengeance-Unique_Gem_012_x1",
+    "name": "賊神的復仇寶石",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_012_x1_demonhunter_male.png",
+    "image": "/d3/library/items/zeis-stone-of-vengeance-unique_gem_012_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/zeis-stone-of-vengeance-Unique_Gem_012_x1"
+  },
+  {
+    "id": "legacy-of-dreams-Unique_Gem_023_x1_PTR",
+    "name": "夢想遺禮",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_023_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/legacy-of-dreams-unique_gem_023_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/legacy-of-dreams-Unique_Gem_023_x1_PTR"
+  },
+  {
+    "id": "legacy-of-dreams-Unique_Gem_023_x1",
+    "name": "夢想遺禮",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_023_x1_demonhunter_male.png",
+    "image": "/d3/library/items/legacy-of-dreams-unique_gem_023_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/legacy-of-dreams-Unique_Gem_023_x1"
+  },
+  {
+    "id": "molten-wildebeests-gizzard-Unique_Gem_017_x1_PTR",
+    "name": "熔火野獸的砂囊",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_017_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/molten-wildebeests-gizzard-unique_gem_017_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/molten-wildebeests-gizzard-Unique_Gem_017_x1_PTR"
+  },
+  {
+    "id": "molten-wildebeests-gizzard-Unique_Gem_017_x1",
+    "name": "熔火野獸的砂囊",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_017_x1_demonhunter_male.png",
+    "image": "/d3/library/items/molten-wildebeests-gizzard-unique_gem_017_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/molten-wildebeests-gizzard-Unique_Gem_017_x1"
+  },
+  {
+    "id": "mirinae-teardrop-of-the-starweaver-Unique_Gem_007_x1_PTR",
+    "name": "銀河，織星者之淚",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_007_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/mirinae-teardrop-of-the-starweaver-unique_gem_007_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mirinae-teardrop-of-the-starweaver-Unique_Gem_007_x1_PTR"
+  },
+  {
+    "id": "mirinae-teardrop-of-the-starweaver-Unique_Gem_007_x1",
+    "name": "銀河，織星者之淚",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_007_x1_demonhunter_male.png",
+    "image": "/d3/library/items/mirinae-teardrop-of-the-starweaver-unique_gem_007_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/mirinae-teardrop-of-the-starweaver-Unique_Gem_007_x1"
+  },
+  {
+    "id": "bane-of-the-stricken-Unique_Gem_018_x1",
+    "name": "殤擊之殃",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_018_x1_demonhunter_male.png",
+    "image": "/d3/library/items/bane-of-the-stricken-unique_gem_018_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bane-of-the-stricken-Unique_Gem_018_x1"
+  },
+  {
+    "id": "bane-of-the-stricken-Unique_Gem_018_x1_PTR",
+    "name": "殤擊之殃",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_018_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/bane-of-the-stricken-unique_gem_018_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/bane-of-the-stricken-Unique_Gem_018_x1_PTR"
+  },
+  {
+    "id": "simplicitys-strength-Unique_Gem_013_x1",
+    "name": "樸實之力",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_013_x1_demonhunter_male.png",
+    "image": "/d3/library/items/simplicitys-strength-unique_gem_013_x1.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/simplicitys-strength-Unique_Gem_013_x1"
+  },
+  {
+    "id": "simplicitys-strength-Unique_Gem_013_x1_PTR",
+    "name": "樸實之力",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/unique_gem_013_x1_ptr_demonhunter_male.png",
+    "image": "/d3/library/items/simplicitys-strength-unique_gem_013_x1_ptr.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/simplicitys-strength-Unique_Gem_013_x1_PTR"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_128",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_128_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_128.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_128"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_108",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_108_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_108.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_108"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_62",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_62_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_62.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_62"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_124",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_124_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_124.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_124"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_82",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_82_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_82.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_82"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_104",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_104_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_104.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_104"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_116",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_116_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_116.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_116"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_76",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_76_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_76.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_76"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_40",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_40_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_40.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_40"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_94",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_94_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_94.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_94"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_86",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_86_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_86.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_86"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_38",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_38_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_38.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_38"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_143",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_143_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_143.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_143"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_112",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_112_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_112.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_112"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_69",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_69_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_69.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_69"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_98",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_98_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_98.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_98"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_49",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_49_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_49.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_49"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_68",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_68_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_68.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_68"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_48",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_48_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_48.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_48"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_84",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_84_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_84.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_84"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_83",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_83_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_83.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_83"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_93",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_93_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_93.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_93"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_107",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_107_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_107.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_107"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_30",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_30_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_30.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_30"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_139",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_139_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_139.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_139"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_101",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_101_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_101.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_101"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_29",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_29_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_29.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_29"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_58",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_58_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_58.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_58"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_91",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_91_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_91.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_91"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_47",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_47_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_47.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_47"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_131",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_131_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_131.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_131"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_78",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_78_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_78.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_78"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_71",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_71_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_71.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_71"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_42",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_42_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_42.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_42"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_99",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_99_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_99.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_99"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_96",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_96_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_96.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_96"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_25",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_25_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_25.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_25"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_115",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_115_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_115.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_115"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_60",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_60_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_60.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_60"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_126",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_126_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_126.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_126"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_39",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_39_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_39.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_39"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_43",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_43_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_43.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_43"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_54",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_54_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_54.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_54"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_114",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_114_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_114.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_114"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_51",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_51_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_51.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_51"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_95",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_95_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_95.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_95"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_135",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_135_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_135.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_135"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_123",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_123_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_123.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_123"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_120",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_120_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_120.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_120"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_103",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_103_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_103.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_103"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_53",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_53_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_53.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_53"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_73",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_73_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_73.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_73"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_32",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_32_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_32.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_32"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_28",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_28_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_28.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_28"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_81",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_81_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_81.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_81"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_119",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_119_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_119.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_119"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_56",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_56_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_56.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_56"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_147",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_147_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_147.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_147"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_129",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_129_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_129.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_129"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_111",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_111_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_111.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_111"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_136",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_136_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_136.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_136"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_27",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_27_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_27.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_27"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_90",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_90_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_90.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_90"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_67",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_67_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_67.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_67"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_66",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_66_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_66.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_66"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_149",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_149_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_149.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_149"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_110",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_110_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_110.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_110"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_133",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_133_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_133.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_133"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_113",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_113_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_113.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_113"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_100",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_100_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_100.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_100"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_41",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_41_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_41.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_41"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_127",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_127_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_127.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_127"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_92",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_92_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_92.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_92"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_44",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_44_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_44.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_44"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_87",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_87_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_87.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_87"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_65",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_65_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_65.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_65"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_70",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_70_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_70.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_70"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_89",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_89_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_89.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_89"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_142",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_142_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_142.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_142"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_33",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_33_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_33.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_33"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_55",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_55_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_55.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_55"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_122",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_122_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_122.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_122"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_134",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_134_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_134.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_134"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_63",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_63_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_63.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_63"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_141",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_141_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_141.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_141"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_61",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_61_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_61.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_61"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_121",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_121_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_121.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_121"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_31",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_31_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_31.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_31"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_106",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_106_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_106.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_106"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_88",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_88_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_88.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_88"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_137",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_137_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_137.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_137"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_117",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_117_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_117.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_117"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_97",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_97_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_97.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_97"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_75",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_75_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_75.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_75"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_130",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_130_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_130.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_130"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_145",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_145_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_145.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_145"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_105",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_105_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_105.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_105"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_102",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_102_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_102.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_102"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_35",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_35_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_35.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_35"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_148",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_148_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_148.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_148"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_150",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_150_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_150.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_150"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_85",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_85_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_85.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_85"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_125",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_125_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_125.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_125"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_26",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_26_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_26.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_26"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_146",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_146_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_146.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_146"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_144",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_144_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_144.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_144"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_50",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_50_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_50.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_50"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_46",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_46_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_46.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_46"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_34",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_34_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_34.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_34"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_118",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_118_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_118.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_118"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_72",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_72_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_72.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_72"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_64",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_64_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_64.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_64"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_52",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_52_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_52.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_52"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_37",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_37_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_37.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_37"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_36",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_36_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_36.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_36"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_45",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_45_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_45.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_45"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_59",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_59_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_59.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_59"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_138",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_138_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_138.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_138"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_77",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_77_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_77.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_77"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_80",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_80_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_80.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_80"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_109",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_109_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_109.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_109"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_74",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_74_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_74.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_74"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_140",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_140_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_140.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_140"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_57",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_57_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_57.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_57"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_79",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_79_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_79.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_79"
+  },
+  {
+    "id": "whisper-of-atonement-P73_Unique_Gem_132",
+    "name": "贖罪之語",
+    "category": "gem",
+    "quality": "legendary",
+    "imageSource": "https://assets.diablo3.blizzard.com/d3/icons/items/large/p73_unique_gem_132_demonhunter_male.png",
+    "image": "/d3/library/items/whisper-of-atonement-p73_unique_gem_132.png",
+    "source": "https://eu.diablo3.blizzard.com/zh-tw/item/whisper-of-atonement-P73_Unique_Gem_132"
+  }
+]
