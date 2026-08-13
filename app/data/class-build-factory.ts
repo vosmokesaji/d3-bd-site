@@ -1,8 +1,10 @@
-import type { BuildGuide, GuideAbility, GuideGear, GuideLink, GuidePower } from "./build-guides";
+import { completeBuildGuide, type BuildGuide, type BuildLoadout, type GuideAbility, type GuideGear, type GuideLink, type GuidePower } from "./build-guides";
+import { CURRENT_SEASON } from "./season-config";
+import { itemAsset, skillAsset } from "./assets";
 
 export type ClassKey = "crusader" | "demon-hunter" | "monk" | "witch-doctor" | "wizard";
 
-export type GemKey = "trapped" | "stricken" | "zei" | "lod" | "taeguk" | "simplicity" | "enforcer" | "gogok" | "powerful";
+export type GemKey = "trapped" | "stricken" | "zei" | "lod" | "taeguk" | "simplicity" | "enforcer" | "gogok" | "powerful" | "wreath" | "hoarder";
 
 export type GearSeed = {
   id: string;
@@ -43,6 +45,25 @@ export type LinkSeed = {
   steps: Array<[id: string, label: string, detail: string]>;
 };
 
+export type LoadoutSeed = {
+  id: string;
+  label: string;
+  title: string;
+  summary: string;
+  bestFor: string;
+  tradeoff: string;
+  set?: string;
+  core?: string;
+  gear?: GearSeed[];
+  skills?: AbilitySeed[];
+  passives?: AbilitySeed[];
+  powers?: PowerSeed[];
+  links?: LinkSeed[];
+  rotation?: BuildGuide["rotation"];
+  powerSets?: BuildGuide["powerSets"];
+  consoleNote?: string;
+};
+
 export type ClassGuideSeed = {
   classKey: ClassKey;
   id: string;
@@ -66,24 +87,31 @@ export type ClassGuideSeed = {
   lowNote: string;
   highNote: string;
   source: string;
+  purpose?: BuildGuide["purpose"];
+  supportedContent?: string[];
+  defaultMode?: BuildGuide["defaultMode"];
+  modeLabels?: BuildGuide["modeLabels"];
+  consoleNote?: string;
+  powerSets?: BuildGuide["powerSets"];
+  defaultLoadoutId?: string;
+  loadouts?: LoadoutSeed[];
 };
-
-const ITEM_ROOT = "/d3/library/items/";
-const SKILL_ROOT = "/d3/library/skills/";
 
 export const GEMS: Record<GemKey, { name: string; image: string }> = {
-  trapped: { name: "困者之灾", image: `${ITEM_ROOT}bane-of-the-trapped-unique_gem_002_x1.png` },
-  stricken: { name: "受罚者之灾", image: `${ITEM_ROOT}bane-of-the-stricken-unique_gem_018_x1.png` },
-  zei: { name: "贼神的复仇之石", image: `${ITEM_ROOT}zeis-stone-of-vengeance-unique_gem_012_x1.png` },
-  lod: { name: "梦之遗礼", image: `${ITEM_ROOT}legacy-of-dreams-unique_gem_023_x1.png` },
-  taeguk: { name: "太极石", image: `${ITEM_ROOT}taeguk-unique_gem_015_x1.png` },
-  simplicity: { name: "至简之力", image: `${ITEM_ROOT}simplicitys-strength-unique_gem_013_x1.png` },
-  enforcer: { name: "侍从宝石", image: `${ITEM_ROOT}enforcer-unique_gem_010_x1.png` },
-  gogok: { name: "迅捷勾玉", image: `${ITEM_ROOT}gogok-of-swiftness-unique_gem_008_x1.png` },
-  powerful: { name: "强者之灾", image: `${ITEM_ROOT}bane-of-the-powerful-unique_gem_001_x1.png` },
+  trapped: { name: "困者之灾", image: itemAsset("bane-of-the-trapped-unique_gem_002_x1.png") },
+  stricken: { name: "受罚者之灾", image: itemAsset("bane-of-the-stricken-unique_gem_018_x1.png") },
+  zei: { name: "贼神的复仇之石", image: itemAsset("zeis-stone-of-vengeance-unique_gem_012_x1.png") },
+  lod: { name: "梦之遗礼", image: itemAsset("legacy-of-dreams-unique_gem_023_x1.png") },
+  taeguk: { name: "太极石", image: itemAsset("taeguk-unique_gem_015_x1.png") },
+  simplicity: { name: "至简之力", image: itemAsset("simplicitys-strength-unique_gem_013_x1.png") },
+  enforcer: { name: "侍从宝石", image: itemAsset("enforcer-unique_gem_010_x1.png") },
+  gogok: { name: "迅捷勾玉", image: itemAsset("gogok-of-swiftness-unique_gem_008_x1.png") },
+  powerful: { name: "强者之灾", image: itemAsset("bane-of-the-powerful-unique_gem_001_x1.png") },
+  wreath: { name: "闪电华冠", image: itemAsset("wreath-of-lightning-unique_gem_004_x1.png") },
+  hoarder: { name: "囤宝者的恩惠", image: itemAsset("boon-of-the-hoarder-unique_gem_014_x1.png") },
 };
 
-export const itemFile = (file: string) => file.startsWith("/") ? file : `${ITEM_ROOT}${file}`;
+export const itemFile = itemAsset;
 
 export function setGear(id: string, slot: string, name: string, file: string, effect: string, skill?: string): GearSeed {
   return { id, slot, name, file, effect, quality: "set", skill };
@@ -162,7 +190,7 @@ function makeAbility(seed: AbilitySeed, classKey: ClassKey, passive = false): Gu
     id: seed.id,
     name: seed.name,
     rune: seed.rune,
-    image: `${SKILL_ROOT}${classKey}-${passive ? "passive" : "active"}-${seed.id}.png`,
+    image: skillAsset(classKey, passive ? "passive" : "active", seed.id),
     logic: seed.logic,
   };
 }
@@ -179,8 +207,24 @@ function makePower(seed: PowerSeed): GuidePower {
   };
 }
 
-export function createClassGuide(seed: ClassGuideSeed): BuildGuide {
+function makeLoadout(seed: LoadoutSeed, guide: ClassGuideSeed): BuildLoadout {
   return {
+    ...seed,
+    gear: seed.gear?.map((gear) => makeGear(gear, guide)),
+    skills: seed.skills?.map((skill) => makeAbility(skill, guide.classKey)),
+    passives: seed.passives?.map((skill) => makeAbility(skill, guide.classKey, true)),
+    powers: seed.powers?.map(makePower),
+    links: seed.links?.map((link) => ({
+      title: link.title,
+      category: link.category,
+      conclusion: link.conclusion,
+      steps: link.steps.map(([id, label, detail]) => ({ id, label, detail })),
+    })),
+  };
+}
+
+export function createClassGuide(seed: ClassGuideSeed): BuildGuide {
+  return completeBuildGuide({
     id: seed.id,
     name: seed.name,
     set: seed.set,
@@ -194,8 +238,8 @@ export function createClassGuide(seed: ClassGuideSeed): BuildGuide {
     passives: seed.passives.map((skill) => makeAbility(skill, seed.classKey, true)),
     powers: seed.powers.map(makePower),
     variants: {
-      push: { title: "大秘境冲层", note: seed.pushNote, changes: ["保留完整减伤与元素爆发窗", "首领阶段使用受罚者之灾"] },
-      speed: { title: "T16 / 速刷", note: seed.speedNote, changes: ["以位移和击杀触发替代过量坚韧", "受罚者可换强者之灾或囤宝者"] },
+      push: { title: seed.modeLabels?.push ?? "大秘境冲层", note: seed.pushNote, changes: ["保留完整减伤与元素爆发窗", "首领阶段使用受罚者之灾"] },
+      speed: { title: seed.modeLabels?.speed ?? "T16 / 速刷", note: seed.speedNote, changes: ["以位移和击杀触发替代过量坚韧", "受罚者可换强者之灾或囤宝者"] },
       low: { title: "低巅峰 < 2000", note: seed.lowNote, changes: ["优先体能、抗性和稳定减伤", "普通传奇高特效优于错误词缀远古"] },
       high: { title: "高巅峰 2000+", note: seed.highNote, changes: ["武器、手套和肩部补范围伤", "卡德山只强化正确词缀底子"] },
     },
@@ -207,7 +251,15 @@ export function createClassGuide(seed: ClassGuideSeed): BuildGuide {
     })),
     rotation: seed.rotation,
     source: seed.source,
-  };
+    purpose: seed.purpose,
+    supportedContent: seed.supportedContent,
+    defaultMode: seed.defaultMode,
+    modeLabels: seed.modeLabels,
+    consoleNote: seed.consoleNote,
+    powerSets: seed.powerSets,
+    defaultLoadoutId: seed.defaultLoadoutId,
+    loadouts: seed.loadouts?.map((loadout) => makeLoadout(loadout, seed)),
+  }, CURRENT_SEASON.seasonId);
 }
 
 export const passive = (id: string, name: string, logic: string): AbilitySeed => ({ id, name, logic });

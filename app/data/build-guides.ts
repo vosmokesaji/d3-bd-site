@@ -1,5 +1,26 @@
 export type BuildMode = "push" | "speed";
 export type BuildParagon = "low" | "high";
+export type BuildPurpose = "greater-rift" | "nephalem-rift" | "echoing-nightmare" | "cosmetic-farm";
+export type BuildVariantKey = `${BuildMode}-${BuildParagon}`;
+
+export type BuildVariantProfile = {
+  key: BuildVariantKey;
+  mode: BuildMode;
+  paragon: BuildParagon;
+  title: string;
+  differenceReason: string;
+  gearOverrides: {
+    affixPolicy: "survival" | "endgame";
+    movementBoots: boolean;
+    legendaryGem: "unchanged" | "boon-of-the-hoarder" | "bane-of-the-powerful";
+  };
+  powerOverrides: {
+    replaceLastWith: "none" | "unity" | "goldwrap" | "ingeom";
+  };
+  skillOverrides: string[];
+  statPriorities: string[];
+  rotationOverrides: string[];
+};
 
 export type GuideGear = {
   id: string;
@@ -39,6 +60,25 @@ export type GuideLink = {
   conclusion: string;
 };
 
+export type BuildLoadout = {
+  id: string;
+  label: string;
+  title: string;
+  summary: string;
+  bestFor: string;
+  tradeoff: string;
+  set?: string;
+  core?: string;
+  gear?: GuideGear[];
+  skills?: GuideAbility[];
+  passives?: GuideAbility[];
+  powers?: GuidePower[];
+  links?: GuideLink[];
+  rotation?: { title: string; action: string; reason: string }[];
+  powerSets?: Partial<Record<BuildMode, string[]>>;
+  consoleNote?: string;
+};
+
 export type BuildGuide = {
   id: string;
   name: string;
@@ -53,7 +93,56 @@ export type BuildGuide = {
   passives: GuideAbility[];
   powers: GuidePower[];
   variants: Record<BuildMode | BuildParagon, { title: string; note: string; changes: string[] }>;
+  variantProfiles?: Record<BuildVariantKey, BuildVariantProfile>;
+  variantCompleteness?: "complete" | "documented-shared";
   links: GuideLink[];
   rotation: { title: string; action: string; reason: string }[];
   source: string;
+  seasonId?: string;
+  purpose?: BuildPurpose;
+  supportedContent?: string[];
+  defaultMode?: BuildMode;
+  modeLabels?: Partial<Record<BuildMode, string>>;
+  consoleNote?: string;
+  powerSets?: Partial<Record<BuildMode, string[]>>;
+  defaultLoadoutId?: string;
+  loadouts?: BuildLoadout[];
 };
+
+type VariantNotes = BuildGuide["variants"];
+
+export function createVariantProfiles(variants: VariantNotes): Record<BuildVariantKey, BuildVariantProfile> {
+  const make = (mode: BuildMode, paragon: BuildParagon): BuildVariantProfile => ({
+    key: `${mode}-${paragon}`,
+    mode,
+    paragon,
+    title: `${variants[mode].title} · ${variants[paragon].title}`,
+    differenceReason: `${variants[mode].note}；${variants[paragon].note}`,
+    gearOverrides: {
+      affixPolicy: paragon === "low" ? "survival" : "endgame",
+      movementBoots: mode === "speed",
+      legendaryGem: mode === "speed" ? (paragon === "low" ? "boon-of-the-hoarder" : "bane-of-the-powerful") : "unchanged",
+    },
+    powerOverrides: {
+      replaceLastWith: mode === "push" && paragon === "high" ? "none" : mode === "push" ? "unity" : paragon === "low" ? "goldwrap" : "ingeom",
+    },
+    skillOverrides: [],
+    statPriorities: variants[paragon].changes,
+    rotationOverrides: variants[mode].changes,
+  });
+  return {
+    "push-low": make("push", "low"),
+    "push-high": make("push", "high"),
+    "speed-low": make("speed", "low"),
+    "speed-high": make("speed", "high"),
+  };
+}
+
+export function completeBuildGuide<T extends Omit<BuildGuide, "variantProfiles" | "variantCompleteness" | "seasonId">>(guide: T, seasonId: string): T & BuildGuide {
+  return {
+    ...guide,
+    variantProfiles: createVariantProfiles(guide.variants),
+    variantCompleteness: "complete",
+    seasonId,
+  };
+}

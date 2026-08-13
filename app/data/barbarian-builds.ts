@@ -1,7 +1,9 @@
-import type { BuildGuide, GuideAbility, GuideGear, GuideLink, GuidePower } from "./build-guides";
+import { completeBuildGuide, type BuildGuide, type GuideAbility, type GuideGear, type GuideLink, type GuidePower } from "./build-guides";
+import { CURRENT_SEASON } from "./season-config";
+import { D3_ITEM_ROOT, D3_SKILL_ROOT } from "./assets";
 
-const I = "/d3/library/items/";
-const S = "/d3/library/skills/";
+const I = `${D3_ITEM_ROOT}/`;
+const S = `${D3_SKILL_ROOT}/`;
 
 const image = (file: string) => file.startsWith("/") ? file : `${I}${file}`;
 const skillImage = (slug: string) => `${S}barbarian-active-${slug}.png`;
@@ -302,11 +304,11 @@ const IK_CHARGE_GUIDE: BuildGuide = {
 };
 
 export const BARBARIAN_BUILDS: Record<string, BuildGuide> = {
-  [WASTES_GUIDE.id]: WASTES_GUIDE,
-  [RAEKOR_GUIDE.id]: RAEKOR_GUIDE,
-  [IK_HOTA_GUIDE.id]: IK_HOTA_GUIDE,
-  [LOD_HOTA_GUIDE.id]: LOD_HOTA_GUIDE,
-  [EARTH_GUIDE.id]: EARTH_GUIDE,
-  [FRENZY_GUIDE.id]: FRENZY_GUIDE,
-  [IK_CHARGE_GUIDE.id]: IK_CHARGE_GUIDE,
+  [WASTES_GUIDE.id]: completeBuildGuide(WASTES_GUIDE, CURRENT_SEASON.seasonId),
+  [RAEKOR_GUIDE.id]: completeBuildGuide(RAEKOR_GUIDE, CURRENT_SEASON.seasonId),
+  [IK_HOTA_GUIDE.id]: completeBuildGuide(IK_HOTA_GUIDE, CURRENT_SEASON.seasonId),
+  [LOD_HOTA_GUIDE.id]: completeBuildGuide(LOD_HOTA_GUIDE, CURRENT_SEASON.seasonId),
+  [EARTH_GUIDE.id]: completeBuildGuide(EARTH_GUIDE, CURRENT_SEASON.seasonId),
+  [FRENZY_GUIDE.id]: completeBuildGuide(FRENZY_GUIDE, CURRENT_SEASON.seasonId),
+  [IK_CHARGE_GUIDE.id]: completeBuildGuide(IK_CHARGE_GUIDE, CURRENT_SEASON.seasonId),
 };

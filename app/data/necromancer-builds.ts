@@ -1,9 +1,11 @@
-import type { BuildGuide, GuideAbility, GuideGear } from "./build-guides";
+import { completeBuildGuide, type BuildGuide, type GuideAbility, type GuideGear, type GuidePower } from "./build-guides";
+import { CURRENT_SEASON } from "./season-config";
+import { D3_ITEM_ROOT, D3_SKILL_ROOT } from "./assets";
 
 export type NecromancerGuide = BuildGuide;
 
-const A = "/d3/library/items/";
-const S = "/d3/library/skills/";
+const A = `${D3_ITEM_ROOT}/`;
+const S = `${D3_SKILL_ROOT}/`;
 
 const IMG = {
   leoric: `${A}leorics-crown-unique_helm_002_p1.png`,
@@ -438,3 +440,7 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
     source: "https://www.icy-veins.com/d3/necromancer-corpse-explosion-build-with-lod",
   },
 };
+
+Object.entries(NECROMANCER_BUILDS).forEach(([id, guide]) => {
+  NECROMANCER_BUILDS[id] = completeBuildGuide(guide, CURRENT_SEASON.seasonId);
+});

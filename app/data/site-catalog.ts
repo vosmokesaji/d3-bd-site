@@ -1,3 +1,5 @@
+import { classCrestAsset, classPortraitAsset } from "./assets";
+
 export type ClassId = "barbarian" | "crusader" | "demon-hunter" | "monk" | "necromancer" | "witch-doctor" | "wizard";
 
 export type BuildEntry = {
@@ -11,16 +13,18 @@ export type BuildEntry = {
   difficulty: "低" | "中" | "高";
   summary: string;
   complete?: boolean;
+  purpose?: "大秘境" | "小秘境" | "蓝门" | "悬赏" | "外观收集";
+  content?: string[];
 };
 
 export const CLASS_CATALOG: { id: ClassId; name: string; resource: string; portrait: string; crest: string }[] = [
-  { id: "barbarian", name: "野蛮人", resource: "怒气", portrait: "/d3/library/classes/barbarian-portrait.png", crest: "/d3/library/classes/barbarian-crest.png" },
-  { id: "crusader", name: "圣教军", resource: "圣怒", portrait: "/d3/library/classes/crusader-portrait.png", crest: "/d3/library/classes/crusader-crest.png" },
-  { id: "demon-hunter", name: "猎魔人", resource: "憎恨 / 戒律", portrait: "/d3/library/classes/demon-hunter-portrait.png", crest: "/d3/library/classes/demon-hunter-crest.png" },
-  { id: "monk", name: "武僧", resource: "精气", portrait: "/d3/library/classes/monk-portrait.png", crest: "/d3/library/classes/monk-crest.png" },
-  { id: "necromancer", name: "死灵法师", resource: "魂能", portrait: "/d3/library/classes/necromancer-portrait.png", crest: "/d3/library/classes/necromancer-crest.png" },
-  { id: "witch-doctor", name: "巫医", resource: "法力", portrait: "/d3/library/classes/witch-doctor-portrait.png", crest: "/d3/library/classes/witch-doctor-crest.png" },
-  { id: "wizard", name: "魔法师", resource: "秘能", portrait: "/d3/library/classes/wizard-portrait.png", crest: "/d3/library/classes/wizard-crest.png" },
+  { id: "barbarian", name: "野蛮人", resource: "怒气", portrait: classPortraitAsset("barbarian"), crest: classCrestAsset("barbarian") },
+  { id: "crusader", name: "圣教军", resource: "圣怒", portrait: classPortraitAsset("crusader"), crest: classCrestAsset("crusader") },
+  { id: "demon-hunter", name: "猎魔人", resource: "憎恨 / 戒律", portrait: classPortraitAsset("demon-hunter"), crest: classCrestAsset("demon-hunter") },
+  { id: "monk", name: "武僧", resource: "精气", portrait: classPortraitAsset("monk"), crest: classCrestAsset("monk") },
+  { id: "necromancer", name: "死灵法师", resource: "魂能", portrait: classPortraitAsset("necromancer"), crest: classCrestAsset("necromancer") },
+  { id: "witch-doctor", name: "巫医", resource: "法力", portrait: classPortraitAsset("witch-doctor"), crest: classCrestAsset("witch-doctor") },
+  { id: "wizard", name: "魔法师", resource: "秘能", portrait: classPortraitAsset("wizard"), crest: classCrestAsset("wizard") },
 ];
 
 export const BUILD_CATALOG: BuildEntry[] = [
@@ -33,6 +37,7 @@ export const BUILD_CATALOG: BuildEntry[] = [
   { id: "ik-charge", classId: "barbarian", name: "不朽冲锋", set: "不朽之王 / 蕾蔻", core: "狂暴冲锋", image: "/d3/library/skills/barbarian-active-furious-charge.png", role: "速刷", difficulty: "中", summary: "用冲锋刷新自身并穿图，适合低层快速清场。", complete: true },
 
   { id: "valor-fist", classId: "crusader", name: "勇气天拳", set: "勇气壁垒", core: "天堂之拳", image: "/d3/library/skills/crusader-active-fist-of-the-heavens.png", role: "速刷", difficulty: "低", summary: "骑马期间自动落下天堂之拳，移动清场效率突出。" },
+  { id: "pony-fist-farm", classId: "crusader", name: "跑马天拳 · 全能速刷", set: "勇气壁垒 / 诺瓦德", core: "战马冲锋 / 天堂之拳", image: "/d3/library/skills/crusader-active-steed-charge.png", role: "速刷", difficulty: "低", purpose: "小秘境", content: ["T16小秘境", "蓝门", "大秘境≤110", "悬赏"], summary: "专门为赶路、清屏和拾取优化：T16 小秘境、蓝门与 110 层以下大秘境共用一套操作逻辑。" },
   { id: "valor-fury", classId: "crusader", name: "勇气天堂之怒", set: "勇气壁垒", core: "天堂之怒", image: "/d3/library/skills/crusader-active-heavens-fury.png", role: "冲层", difficulty: "高", summary: "天堂之拳负责叠层，天堂之怒在元素窗口集中爆发。" },
   { id: "akkhan-condemn", classId: "crusader", name: "阿克汉天谴", set: "阿克汉战甲", core: "天谴", image: "/d3/library/skills/crusader-active-condemn.png", role: "通用", difficulty: "中", summary: "阿卡拉特勇士常驻，围绕天谴的延迟爆炸贴身清场。" },
   { id: "akkhan-phalanx", classId: "crusader", name: "阿克汉圣军", set: "阿克汉战甲", core: "圣军之阵", image: "/d3/library/skills/crusader-active-phalanx.png", role: "冲层", difficulty: "中", summary: "由圣军弓手承担输出，角色负责维持变身与增益。" },
@@ -55,6 +60,7 @@ export const BUILD_CATALOG: BuildEntry[] = [
   { id: "lod-wol", classId: "monk", name: "梦遗敲钟", set: "梦之遗礼", core: "金钟破", image: "/d3/library/skills/monk-active-wave-of-light.png", role: "冲层", difficulty: "高", summary: "由幻身在远处施放金钟破，散件质量决定最终上限。" },
   { id: "uliana-palm", classId: "monk", name: "乌莲娜爆裂掌", set: "乌莲娜的谋略", core: "爆裂掌", image: "/d3/library/skills/monk-active-exploding-palm.png", role: "通用", difficulty: "中", summary: "七相拳传播并引爆爆裂掌，依赖聚怪形成连锁。" },
   { id: "raiment-dash", classId: "monk", name: "千飓疾风击", set: "千飓战甲", core: "疾风击", image: "/d3/library/skills/monk-active-dashing-strike.png", role: "速刷", difficulty: "高", summary: "精气生成与疾风击交替，位移本身就是主要伤害。" },
+  { id: "god-monk", classId: "monk", name: "上帝僧 · 无限疾风", set: "千飓战甲 / 功能散件", core: "疾风击", image: "/d3/library/skills/monk-active-dashing-strike.png", role: "速刷", difficulty: "中", purpose: "小秘境", content: ["T16小秘境", "低层蓝门", "彩虹地精", "宇宙之翼"], summary: "以千飓倍率保住低层清怪能力，同时集中堆叠精气回复、减耗与冷却，用近乎无限的疾风击穿图。" },
 
   { id: "tragoul-nova", classId: "necromancer", name: "塔格奥死亡新星", set: "塔格奥的化身", core: "死亡新星", image: "/d3/library/skills/necromancer-active-death-nova.png", role: "通用", difficulty: "低", summary: "鲜血虹吸经铁玫瑰免费触发死亡新星，当前完整交互原型。", complete: true },
   { id: "lod-nova", classId: "necromancer", name: "梦遗死亡新星", set: "梦之遗礼", core: "死亡新星", image: "/d3/library/skills/necromancer-active-death-nova.png", role: "冲层", difficulty: "中", summary: "保留新星发动机，改用高质量远古散件获得梦遗乘区。", complete: true },

@@ -36,6 +36,37 @@ const raiment: GearSeed[] = [
   setGear("raiment-boots", "脚部", "八魔长靴", "eightdemon-boots-unique_boots_set_08_x1.png", "千飓战甲部件；疾风击技能伤优先。", "疾风击"),
 ];
 
+const innaRaimentGodGear: GearSeed[] = [
+  setGear("god-inna-head", "头部", "尹娜的光华", "innas-radiance-unique_spiritstone_009_x1.png", "尹娜套部件；混搭以五件实穿配合皇家华戒激活六件。", "幻身诀"),
+  setGear("god-raiment-shoulders", "肩部", "逆旅罪人肩甲", "mantle-of-the-upsidedown-sinners-unique_shoulder_set_08_x1.png", "千飓套第一件；与另外两件实穿配合华戒激活四件疾风回充。", "疾风击"),
+  setGear("god-inna-chest", "胸部", "尹娜的寰宇胸襟", "innas-vast-expanse-unique_chest_015_x1.png", "尹娜套部件；提供三孔与六件套幻身伤害基座。", "幻身诀"),
+  setGear("god-raiment-gloves", "手部", "雷霆之拳", "fists-of-thunder-unique_gloves_set_08_x1.png", "千飓套第二件；承担双暴与冷却词缀。", "疾风击"),
+  legendary("god-lesser-gods", "腕部", "小神之腕", "bindings-of-the-lesser-gods-p71_unique_bracer_108.png", "飓风破命中后，幻身对目标获得巨大增伤；负责T16和蓝门的清怪。", { element: "冰霜", skill: "幻身诀" }),
+  setGear("god-inna-belt", "腰部", "尹娜的恩泽", "innas-favor-unique_belt_007_x1.png", "尹娜套部件；计入五件实穿。", "幻身诀"),
+  setGear("god-inna-pants", "腿部", "尹娜的节制", "innas-temperance-unique_pants_008_x1.png", "尹娜套部件；两孔镶嵌敏捷宝石。", "幻身诀"),
+  setGear("god-raiment-boots", "脚部", "八魔长靴", "eightdemon-boots-unique_boots_set_08_x1.png", "千飓套第三件；皇家华戒将三件实穿提升为四件效果。", "疾风击"),
+  legendary("god-hybrid-squirt", "颈部", "斯奎特的项链", "squirts-necklace-p66_unique_amulet_010.png", "未受伤时叠加伤害；疾风击跑图时不要为维持层数刻意停手。", { gem: "wreath" }),
+  jewelry("zodiac", "gogok"),
+  legendary("god-hybrid-rechel", "手指", "瑞秋的行窃之戒", "rechels-ring-of-larceny-unique_ring_104_x1.png", "恐惧敌人后提高移速；由致盲闪的畏惧符文触发。", { gem: "powerful" }),
+  setGear("god-inna-reach", "主手", "尹娜的审判", "innas-reach-unique_combatstaff_2h_001_x1.png", "尹娜套第五件，也是双手武器；用于凑齐尹娜六件并提高幻身伤害，因此不能同时穿戴寅剑。", "幻身诀"),
+];
+
+const innaRaimentGodSkills = [
+  skill("dashing-strike", "疾风击", "迅银击", "千飓四件使疾风击消耗精气并返还充能；三次充能更适合连续跨屏。"),
+  skill("cyclone-strike", "飓风破", "聚力爆破", "把怪物拉紧并触发小神之腕的幻身增伤。"),
+  skill("mystic-ally", "幻身诀", "水幻身", "尹娜六件召出全部符文；主动水幻身负责清屏，风幻身被动同时帮助回精。"),
+  skill("epiphany", "灵光悟", "明心禅", "持续回精，让消耗75精气的疾风击不易断档。"),
+  skill("blinding-flash", "致盲闪", "畏惧之光", "制造恐惧触发瑞秋戒，并通过瑟夫之法立即回精。"),
+  skill("mantra-of-conviction", "定罪真言", "震慑咒", "尹娜四件已常驻全部真言基础效果；技能栏用于提供额外移速。"),
+];
+
+const innaRaimentGodPowers = [
+  power("god-hybrid-ingeom-power", "武器", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "尹娜双手杖必须穿戴，所以寅剑放入魔方；精英击杀后连续刷新灵光悟、致盲闪和幻身主动。", "黄装升级：70级单手剑。"),
+  power("god-hybrid-seph", "防具", "瑟夫之法", "the-laws-of-seph-unique_spiritstone_101_x1.png", "使用致盲闪时立即恢复大量精气。", "与畏惧之光一键同时完成回精和瑞秋加速。", "黄装升级：70级武僧灵石。"),
+  power("god-hybrid-royal", "首饰", "皇家华戒", "ring-of-royal-grandeur-unique_ring_107_x1.png", "套装奖励所需件数减少1。", "三件千飓激活四件效果，五件尹娜激活六件效果；本方案不可替换。", "只来自第一幕/第四幕悬赏宝箱。"),
+  power("god-hybrid-crudest", "第4槽", "粗糙至极靴", "the-crudest-boots-p71_unique_boots_010.png", "幻身诀召唤两个幻身，并强化幻身被动。", "把尹娜的幻身数量、伤害和风幻身回精一起翻倍。", "血岩碎片赌博靴子，低等级武僧更容易定向获取。"),
+];
+
 const commonPassives = [
   passive("beacon-of-ytar", "伊塔之辉", "缩短所有技能冷却，帮助灵光悟与防御技能轮转。"),
   passive("harmony", "天人合一", "单抗的一部分转化为全抗，词缀应尽量统一单抗。"),
@@ -102,6 +133,59 @@ const seeds: ClassGuideSeed[] = [
     powers: [power("flying-dragon", "武器", "翔龙", "flying-dragon-unique_combatstaff_2h_009_x1.png", "攻击时有机会使攻速翻倍。", "更快生成精气并启动神龙。"), power("depth-diggers", "防具", "深渊挖掘裤", "depth-diggers-unique_pants_006_p1.png", "提高生成技能伤害。", "断筋诀不仅回精，也是循环中的伤害部分。"), power("unity", "首饰", "团结", "unity-unique_ring_010_x1.png", "与不死随从分摊伤害。", "疾风击高频贴怪需要稳定减伤。"), power("crystal-fist", "第4槽", "水晶拳", "crystal-fist-p41_unique_fist_008.png", "疾风击后获得减伤。", "第39赛季第四槽让每次位移自动建立防线。")],
     links: [{ title: "生成与疾风交替", category: "resource", conclusion: "连续疾风会迅速耗空；每轮必须穿插生成攻击。", steps: [["crippling-wave", "断筋诀", "生成精气"], ["raiment-head", "千飓两件", "生成后放大疾风"], ["dashing-strike", "疾风击", "消耗精气输出"], ["spirit-guards", "灵魂守卫", "生成后减伤"]] }, { title: "神龙满精气窗", category: "damage", conclusion: "接近满精气时准备连续疾风，把神龙短暂增伤完整消耗。", steps: [["crippling-wave", "持续生成", "推向满精气"], ["shenlong-fist", "神龙双拳", "满精气启动"], ["dashing-strike", "连续疾风", "消耗爆发"]] }, { title: "位移防线", category: "defense", conclusion: "每次疾风击都会由水晶拳刷新减伤，但团结随从必须带不死饰品。", steps: [["dashing-strike", "疾风击", "穿过目标"], ["crystal-fist", "水晶拳", "位移后减伤"], ["unity", "团结", "随从分摊伤害"]] }],
     rotation: [{ title: "断筋生成", action: "对高密度完成数次断筋诀。", reason: "回精并刷新灵魂守卫。" }, { title: "飓风排线", action: "把怪物拉到同一直线。", reason: "疾风击需要穿过多个目标。" }, { title: "等待满精", action: "接近满精气时准备爆发。", reason: "神龙增伤即将启动。" }, { title: "往返疾风", action: "沿怪群长轴连续疾风击。", reason: "消耗神龙窗口并刷新水晶拳。" }, { title: "耗空重建", action: "精气下降后重新断筋诀。", reason: "避免资源见底后卡在怪群中。" }], pushNote: "聚怪排成直线，在神龙满精气窗沿长轴往返疾风。", speedNote: "疾风击连续穿图，生成攻击只补资源。", lowNote: "神龙双拳和水晶拳先成型，低巅峰保留更多坚韧。", highNote: "攻速断点、冰霜元素和资源上限决定操作上限。", source: "https://www.icy-veins.com/d3/monk-raiment-shenlong-generator-build-with-crippling-wave",
+  },
+  {
+    classKey: "monk", id: "god-monk", name: "上帝僧 · 无限疾风", set: "千飓战甲 / 功能散件", core: "精气永动 → 疾风击跨屏搜索", summary: "上帝僧追求的不是冲层，而是把整张地图变成一条连续位移路线。千飓四件让疾风击消耗精气并返还充能，装备、技能和威能全部服务于回精、减耗、冷却和跑图。", difficulty: "中等 · 高频位移", follower: "魔女", followerReason: "冷却与攻速能改善灵光悟和回精循环；小秘境可让随从携带贪婪之戒与复仇者护腕。", element: "火焰", coreSkill: "疾风击",
+    gear: [
+      legendary("god-prides-fall", "头部", "骄矜必败", "prides-fall-unique_helm_103_x1.png", "5秒未受伤后，所有资源消耗降低30%；在空旷路线中显著延长连续疾风。", { method: ["只来自第三幕/第四幕悬赏宝箱", "优先保冷却和镶孔", "不要用黄装升级盲刷"] }),
+      raiment[1], raiment[2], raiment[3],
+      legendary("god-warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "破坏场景物件后获得短暂移速；疾风击沿路自动撞碎物件。", { element: "火焰" }),
+      legendary("god-kyoshiro", "腰部", "京四郎之魂", "kyoshiros-soul-p4_unique_belt_05.png", "劲风煞未命中敌人时自动叠层，免去停车维护内力风暴。"),
+      raiment[4], raiment[5],
+      legendary("god-rondal", "颈部", "罗达尔的坠盒", "rondals-locket-unique_amulet_009_x1.png", "提供额外拾取距离，减少为了材料和血球回头。", { gem: "wreath" }),
+      jewelry("zodiac", "gogok"),
+      legendary("god-rechel", "手指", "瑞秋的行窃之戒", "rechels-ring-of-larceny-unique_ring_104_x1.png", "致盲闪制造恐惧后获得大幅移速，负责疾风间隙的地面赶路。", { gem: "powerful" }),
+      legendary("god-ingeom", "主手", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却，使灵光悟和致盲闪迅速刷新。", { base: "单手剑" }),
+      offFist("god-fleshrake", "翔龙飞爪", "fleshrake-p41_unique_fist_007.png", "连续疾风击会叠加疾风击伤害，给T16和低层蓝门保留足够清怪能力。"),
+    ],
+    skills: [
+      skill("dashing-strike", "疾风击", "光辉如炬", "核心位移和清怪技能；千飓四件使它消耗75精气但命中后返还充能。"),
+      skill("epiphany", "灵光悟", "明心禅", "把灵光悟的精气回复提高到极限，是连续疾风的主发动机。"),
+      skill("blinding-flash", "致盲闪", "充能之光", "配合瑟夫之法回满大量精气，并用控制触发瑞秋戒。"),
+      skill("mystic-ally", "幻身诀", "风幻身", "被动提供精气回复，主动瞬间补充100点精气。"),
+      skill("mantra-of-healing", "治疗真言", "循环呼吸", "被动持续回复精气；无需为了输出频繁主动施放。"),
+      skill("sweeping-wind", "劲风煞", "内力风暴", "三层时持续回复精气，京四郎腰带在赶路时自动维持层数。"),
+    ],
+    passives: [passive("beacon-of-ytar", "伊塔之辉", "缩短所有冷却，提高灵光悟、致盲闪和幻身主动覆盖率。"), passive("exalted-soul", "超绝", "提高最大精气并增加每秒回复，扩大连续疾风的资源池。"), passive("chant-of-resonance", "共鸣颂歌", "学习真言时持续回精并降低真言主动消耗。"), passive("fleet-footed", "迅步", "直接提高移动速度，路线搜索不依赖战斗触发。")],
+    powers: [
+      power("god-burst", "武器", "怒涌", "burst-of-wrath-unique_axe_2h_103_x1.png", "击杀敌人或破坏物体时有机会恢复20%最大精气。", "疾风击沿路杀怪和撞碎物件，地图本身会不断给资源。", "只来自第三幕/第四幕悬赏宝箱。"),
+      power("god-seph", "防具", "瑟夫之法", "the-laws-of-seph-unique_spiritstone_101_x1.png", "使用致盲闪时立即恢复大量精气。", "精气见底前按致盲闪，直接开启下一串疾风。", "黄装升级：70级武僧“灵石”。"),
+      power("god-royal", "首饰", "皇家华戒", "ring-of-royal-grandeur-unique_ring_107_x1.png", "套装奖励所需件数减少1。", "只穿五件千飓也能激活六件伤害，为骄矜必败释放头部位置。", "只来自第一幕/第四幕悬赏宝箱。"),
+      power("god-messerschmidt", "第4槽", "梅塞施密特的劫掠者", "messerschmidts-reaver-p66_unique_axe_2h_011.png", "击杀敌人缩短一个技能的剩余冷却。", "沿路击杀继续刷新灵光悟、致盲闪和风幻身主动。"),
+    ],
+    links: [
+      { title: "精气永动链", category: "resource", conclusion: "精气不是等自然回复：场景破坏、致盲闪、风幻身和被动回复轮流接管。", steps: [["dashing-strike", "疾风击", "消耗精气穿图"], ["god-burst", "怒涌", "杀怪破物回精"], ["blinding-flash", "致盲闪", "主动回精"], ["god-seph", "瑟夫之法", "大量恢复精气"], ["mystic-ally", "风幻身", "紧急补满资源"]] },
+      { title: "千飓与华戒", category: "damage", conclusion: "五件千飓通过华戒激活六件倍率，才有能力处理T16和低层蓝门；纯外观路线可降低难度。", steps: [["god-royal", "皇家华戒", "套装需求-1"], ["raiment-shoulders", "千飓五件", "激活六件效果"], ["dashing-strike", "疾风击", "位移同时清怪"], ["god-fleshrake", "翔龙飞爪", "连续疾风叠伤"]] },
+      { title: "场景就是加速器", category: "movement", conclusion: "不绕开罐子和木架；撞碎它们既触发沃兹克，也有机会触发怒涌。", steps: [["dashing-strike", "跨屏冲刺", "撞碎路径物件"], ["god-warzechian", "沃兹克", "破坏物提高移速"], ["god-burst", "怒涌", "破坏物有机会回精"], ["fleet-footed", "迅步", "稳定基础移速"]] },
+      { title: "击杀刷新链", category: "resource", conclusion: "精英和白怪都不是负担：击杀会同时刷新寅剑、梅斧与黄道的冷却循环。", steps: [["god-ingeom", "寅剑", "精英击杀缩冷却"], ["god-messerschmidt", "梅斧", "任意击杀缩冷却"], ["zodiac", "黄道戒", "消耗技能命中缩冷却"], ["epiphany", "灵光悟", "高回复覆盖"]] },
+    ],
+    rotation: [{ title: "开局叠风", action: "开启劲风煞并达到三层，再开灵光悟。", reason: "内力风暴和京四郎腰带共同提供稳定回精。" }, { title: "疾风探图", action: "沿地图长轴连续疾风击，优先走能覆盖更多分叉的路线。", reason: "上帝僧的收益来自每小时检查更多地图，而不是清空每只怪。" }, { title: "精气半空就补", action: "依次使用致盲闪、风幻身主动，不要等完全见底。", reason: "NS手柄资源清空后容易卡在错误目标旁。" }, { title: "精英顺手击杀", action: "T16与蓝门模式停半秒处理精英。", reason: "寅剑和梅斧会换来更长的灵光悟与致盲闪覆盖。" }, { title: "外观路线及时重开", action: "检查完高价值区域后直接退出重开，不追零散怪和普通宝箱。", reason: "彩虹地精与宠物路线只计算单位时间内检查的地图数量。" }],
+    pushNote: "T16小秘境和低层蓝门使用千飓六件倍率、翔龙飞爪与强者宝石保留清怪能力；若伤害不够就降层，不要牺牲回精硬撑。", speedNote: "彩虹地精、宠物与外观路线以极限位移为先；难度可以降到普通，地精刷新率不会因难度降低。", lowNote: "先拿千飓五件、皇家华戒、瑟夫之法和寅剑；回精循环成立比远古品质重要。", highNote: "高巅峰优先冷却、减耗、最大精气和拾取距离；伤害溢出后不必继续堆范围伤。", source: "https://www.diablofans.com/builds/82070-ultimate-rainbow-goblin-farming-monk", purpose: "nephalem-rift", supportedContent: ["T16小秘境", "低层蓝门", "彩虹地精", "宠物与外观路线"], defaultMode: "push", modeLabels: { push: "T16小秘境 / 低层蓝门", speed: "地精 / 外观路线" }, consoleNote: "不要按住疾风击不放：用摇杆指向屏幕边缘后短促连按，避免自动锁定把角色拉回怪群。精气到一半就按致盲闪或风幻身。", powerSets: { push: ["god-burst", "god-seph", "god-royal", "god-messerschmidt"], speed: ["god-burst", "god-seph", "god-royal", "god-messerschmidt"] }, defaultLoadoutId: "raiment-6", loadouts: [
+      {
+        id: "raiment-6", label: "千飓 6", title: "千飓五件＋华戒", summary: "疾风击自己承担清怪与跑图，装备和威能集中服务回精、减耗与击杀刷新。", bestFor: "低层蓝门、外观路线；想保留“疾风击就是输出”手感。", tradeoff: "单次清屏范围较小，T16高密度地图通常不如幻身混搭省心。",
+      },
+      {
+        id: "inna-5-raiment-3", label: "千飓 3＋伊娜 5", title: "千飓四件＋尹娜六件", summary: "皇家华戒让三件千飓获得疾风击回充，同时让五件尹娜召出完整幻身；疾风负责赶路，水幻身负责清屏。", bestFor: "T16小秘境、悬赏、钥匙与幻境；优先追求效率和大范围清怪。", tradeoff: "更依赖皇家华戒、粗糙靴和小神之腕，疾风击本身不再是主要伤害来源。", set: "千飓战甲 3件 / 尹娜的真言 5件", core: "无限疾风赶路 → 水幻身清屏", gear: innaRaimentGodGear, skills: innaRaimentGodSkills, powers: innaRaimentGodPowers,
+        passives: [passive("beacon-of-ytar", "伊塔之辉", "缩短灵光悟、致盲闪和幻身主动冷却。"), passive("exalted-soul", "超绝", "提高最大精气与每秒回复，扩大疾风击资源池。"), passive("chant-of-resonance", "共鸣颂歌", "真言在技能栏时继续提供回精和减耗。"), passive("fleet-footed", "迅步", "直接提高非战斗路线移动速度。")],
+        links: [
+          { title: "双套装同时生效", category: "damage", conclusion: "三件千飓负责无限疾风，五件尹娜负责幻身清屏；皇家华戒是整套构筑的连接器。", steps: [["god-hybrid-royal", "皇家华戒", "两套需求各减一件"], ["god-raiment-shoulders", "千飓三件", "激活四件疾风回充"], ["god-inna-head", "尹娜五件", "激活六件幻身"], ["dashing-strike", "疾风击", "连续跨屏赶路"], ["mystic-ally", "水幻身", "主动清屏"]] },
+          { title: "一键回精加速", category: "resource", conclusion: "精气下降时按致盲闪，同时恢复资源并触发瑞秋移速。", steps: [["blinding-flash", "畏惧之光", "恐惧周围敌人"], ["god-hybrid-seph", "瑟夫之法", "立即恢复精气"], ["god-hybrid-rechel", "瑞秋戒", "恐惧触发移速"], ["dashing-strike", "疾风击", "继续跨屏"]] },
+          { title: "幻身清屏链", category: "damage", conclusion: "接近精英时飓风破标记，再主动水幻身；不要停下来用疾风击磨血。", steps: [["cyclone-strike", "飓风破", "聚怪并标记"], ["god-lesser-gods", "小神之腕", "放大幻身伤害"], ["god-hybrid-crudest", "粗糙至极靴", "幻身数量翻倍"], ["mystic-ally", "水幻身", "大范围清屏"]] },
+        ],
+        rotation: [{ title: "疾风探图", action: "沿地图长轴连续使用疾风击。", reason: "千飓四件返还充能，移动不需要依赖命中。" }, { title: "半精补能", action: "精气降至一半时使用致盲闪。", reason: "瑟夫回精和瑞秋移速由同一次按键触发。" }, { title: "标记精英", action: "接近精英或高密度时使用飓风破。", reason: "小神之腕只放大被飓风破命中的目标。" }, { title: "幻身清屏", action: "标记后立即主动水幻身。", reason: "尹娜六件与粗糙靴使幻身成为主要伤害。" }, { title: "击杀后连冲", action: "寅剑生效后快速检查下一片区域。", reason: "短冷却窗口应转化为更多地图覆盖。" }],
+        powerSets: { push: ["god-hybrid-ingeom-power", "god-hybrid-seph", "god-hybrid-royal", "god-hybrid-crudest"], speed: ["god-hybrid-ingeom-power", "god-hybrid-seph", "god-hybrid-royal", "god-hybrid-crudest"] }, consoleNote: "NS上把疾风击和幻身诀分开放在两个肩键：赶路短促连按疾风，看到精英先飓风破再按幻身；避免两个技能连续误触。",
+      },
+    ],
   },
 ];
 

@@ -112,6 +112,43 @@ const seeds: ClassGuideSeed[] = [
     links: [{ title: "荆棘转轰击", category: "damage", conclusion: "轰击伤害来自荆棘，不追武器白字与双暴。", steps: [["heart-iron", "钢铁之心", "体能转荆棘"], ["iron-skin", "反伤之肤", "临时提高荆棘"], ["bombardment", "尖刺桶", "按荆棘结算"], ["mortal-drama", "人世无常", "落点翻倍"]] }, { title: "挑衅双倍", category: "damage", conclusion: "每次物理爆发前必须先让目标处于挑衅状态。", steps: [["provoke", "挑衅", "标记敌人"], ["votoyias", "沃·托亚之刺", "双倍荆棘"], ["coe", "全能物理", "元素窗口"]] }, { title: "冷却间隔生存", category: "defense", conclusion: "战马拉怪、天鹰和岩石护手让角色安全等到下一轮。", steps: [["steed-charge", "战马", "拉怪转场"], ["aquila", "天鹰", "高资源减伤"], ["stone-gauntlets", "岩石护手", "受击叠护甲"], ["akarats-champion", "变身", "抵消减速"]] }],
     rotation: [{ title: "检查梦遗", action: "确认没有激活任何两件套。", reason: "套装奖励会关闭梦遗效果。" }, { title: "骑马拉怪", action: "把精英和杂兵聚到开阔区域。", reason: "轰击需要集中落点。" }, { title: "挑衅标记", action: "物理周期前挑衅精英。", reason: "沃·托亚让其承受双倍荆棘。" }, { title: "开启反伤", action: "开启钢铁之肤与变身。", reason: "提高荆棘并抵消岩石护手。" }, { title: "物理轰击", action: "释放尖刺桶火炮轰击。", reason: "梦遗、人世无常和全能在此叠加。" }], pushNote: "拉高密度后把挑衅、反伤之肤与轰击压进物理周期。", speedNote: "依靠自动轰击和战马清场，减少等待。", lowNote: "梦遗等级和每件远古散件数量比太古品质更重要。", highNote: "体能、荆棘、物理元素和冷却是最终属性轴。", source: "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set",
   },
+  {
+    classKey: "crusader", id: "pony-fist-farm", name: "跑马天拳 · 全能速刷", set: "勇气壁垒 / 诺瓦德的热忱", core: "战马不停 → 天堂之拳全屏落雷", summary: "这不是冲榜配装，而是专门处理 T16 小秘境、悬赏、蓝门与 110 层以下大秘境的打工构筑：骑马负责穿图，下马后的诺瓦德增伤窗负责秒掉精英。", difficulty: "低操作 · 一键赶路", follower: "魔女", followerReason: "魔女的冷却、攻速和远程控制能缩短战马空档；小秘境让随从佩戴贪婪之戒扩展拾取范围。", element: "神圣", coreSkill: "天堂之拳",
+    gear: [
+      ...valor,
+      legendary("pony-warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "打碎可破坏物后获得短暂移速；天堂之拳的大范围落雷会沿路自动触发。", { element: "神圣" }),
+      legendary("pony-vigilante", "腰部", "民兵腰带", "vigilante-belt-p76_unique_belt_002.png", "提供额外冷却缩减，压低战马、变身和律法的空档。"),
+      jewelry("squirt", "zei"),
+      legendary("pony-soj", "手指", "乔丹之石", "stone-of-jordan-p69_unique_ring_019.png", "提供稳定元素伤与精英伤，不必等待全能法戒周期。", { gem: "powerful" }),
+      legendary("pony-rechel", "手指", "瑞秋的行窃之戒", "rechels-ring-of-larceny-unique_ring_104_x1.png", "恐惧敌人后获得大幅移速；由挑衅的惊慌失措符文触发。", { gem: "stricken" }),
+      legendary("norvald-flail", "主手", "冲锋连枷", "flail-of-the-charge-p4_unique_flail_2h_set_01_x1.png", "与战马之盾组成诺瓦德套：延长战马，并在结束后提供独立增伤窗。", { quality: "set", base: "双手连枷" }),
+      legendary("norvald-shield", "副手", "战马之盾", "shield-of-the-steed-p4_unique_shield_set_01_x1.png", "诺瓦德套副手；让战马冲锋从纯位移变成下一轮落雷的准备动作。", { quality: "set", base: "圣教军盾", warning: "黄装升级必须用70级“圣教军盾”；普通盾牌不会产出战马之盾。" }),
+    ],
+    skills: [
+      skill("fist-of-the-heavens", "天堂之拳", "天雷风暴", "主要清场技能；低层只需少量落点即可让闪电覆盖整屏。"),
+      skill("steed-charge", "战马冲锋", "马不停蹄", "长距离赶路并触发诺瓦德套；精英前主动下马吃增伤窗。"),
+      skill("laws-of-hope", "希望律法", "天使之翼", "短距离补速并无视碰撞，填补战马之间的空档。"),
+      skill("iron-skin", "钢铁之肤", "疾行之肤", "提供主动减伤与额外移速，蓝门高波次时再开启。"),
+      skill("provoke", "挑衅", "惊慌失措", "回复圣怒并恐惧敌人，从而触发瑞秋戒的移速。"),
+      skill("akarats-champion", "阿卡拉特勇士", "先知化身", "提高伤害、回怒与护甲；冷却足够后尽量常驻。"),
+    ],
+    passives: [passive("heavenly-strength", "天堂之力", "允许双手连枷与盾牌同时装备，诺瓦德套成立的前提。"), passive("lord-commander", "统御者", "缩短战马冷却，让主要赶路按钮更连续。"), passive("long-arm-of-the-law", "律法无边", "延长希望律法主动效果，短距离移动更顺畅。"), passive("indestructible", "坚不可摧", "蓝门后段或主机误入地板时提供一次保命。")],
+    powers: [
+      power("pony-darklight", "武器", "黑暗之光", "darklight-p67_unique_flail_1h_106.png", "天堂之拳额外施放两次并获得技能增伤。", "一发落雷被复制成多发，是移动清屏的主要伤害发动机。", "黄装升级：70级单手连枷。"),
+      power("pony-vigilante-power", "防具", "民兵腰带", "vigilante-belt-p76_unique_belt_002.png", "提供额外冷却缩减。", "缩短战马、变身、律法和钢铁之肤的共同空档。"),
+      power("pony-goldwrap", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲。", "T16小秘境用囤宝者制造金币，形成近乎无限的护甲；蓝门和大秘境不要使用。"),
+      power("pony-zodiac", "首饰", "黄道黑曜石之戒", "obsidian-ring-of-the-zodiac-unique_ring_023_p2.png", "消耗资源的攻击命中时缩短一个冷却技能。", "连续天拳把战马和变身重新推回可用状态。"),
+      power("pony-ingeom", "第4槽", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "精英死亡后立刻进入下一段近乎无空档的骑马窗口。"),
+    ],
+    links: [
+      { title: "骑马即输出准备", category: "movement", conclusion: "赶路不是损失输出：每次下马都带着诺瓦德增伤进入下一屏。", steps: [["steed-charge", "战马冲锋", "高速穿图"], ["norvald-flail", "冲锋连枷", "延长战马"], ["norvald-shield", "战马之盾", "结束后建立增伤"], ["fist-of-the-heavens", "天堂之拳", "落雷清屏"]] },
+      { title: "恐惧加速链", category: "movement", conclusion: "战马空档用挑衅恐惧怪物，瑞秋戒接管下一段移动。", steps: [["provoke", "惊慌失措", "恐惧身边敌人"], ["pony-rechel", "瑞秋戒", "恐惧后提高移速"], ["laws-of-hope", "天使之翼", "穿怪补速"]] },
+      { title: "精英刷新冷却", category: "resource", conclusion: "看到精英要主动击杀；寅剑与黄道会把整套技能重新点亮。", steps: [["fist-of-the-heavens", "天拳高频命中", "触发黄道"], ["pony-zodiac", "黄道戒", "逐次缩短冷却"], ["pony-ingeom", "寅剑", "击杀精英重置"], ["steed-charge", "下一次战马", "立即转场"]] },
+      { title: "小秘境金币防线", category: "defense", conclusion: "T16 模式用囤宝者和金织带获得移速与近乎无限护甲；蓝门不掉金币，要切回蓝门配置。", steps: [["pony-rechel", "速刷宝石位", "切换囤宝者"], ["pony-goldwrap", "金织带威能", "拾金叠护甲"], ["pony-warzechian", "沃兹克", "破坏物补移速"]] },
+    ],
+    rotation: [{ title: "开局预热", action: "开启阿卡拉特勇士与希望律法。", reason: "先建立回怒、护甲和短距离移速。" }, { title: "骑马找精英", action: "战马沿主路穿图，不为落单白怪停留。", reason: "效率来自把移动时间压到最低。" }, { title: "主动下马落雷", action: "接近精英时结束战马，连续放数次天堂之拳。", reason: "诺瓦德增伤、黑暗之光复制和勇气套同时生效。" }, { title: "制造下一段加速", action: "挑衅恐惧残怪，触发瑞秋戒后继续前进。", reason: "填补战马和寅剑之间的短空档。" }, { title: "按内容切配置", action: "T16 使用囤宝者/金织带；蓝门与大秘境切回伤害宝石和稳定减伤。", reason: "大秘境和蓝门没有可靠金币链，不能照搬小秘境防线。" }],
+    pushNote: "蓝门和110层以下大秘境保留稳定伤害与减伤，不依赖金币，也不必等待元素周期。", speedNote: "T16小秘境与悬赏使用囤宝者、金织带、沃兹克和瑞秋戒，把赶路、护甲与拾取串起来。", lowNote: "六件勇气、黑暗之光、正义腰带特效与诺瓦德两件优先；先能稳定骑马清屏，再追远古。", highNote: "伤害溢出后继续把词缀换成冷却、范围伤、拾取距离和移动相关属性。", source: "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build", purpose: "nephalem-rift", supportedContent: ["T16小秘境", "悬赏", "蓝门", "大秘境≤110"], defaultMode: "speed", modeLabels: { push: "蓝门 / 大秘境≤110", speed: "T16小秘境 / 悬赏" }, consoleNote: "把战马放在最顺手的肩键；接近精英时主动松开，下马落雷后再骑。蓝门里不要使用依赖金币的金织带防线。", powerSets: { push: ["pony-darklight", "pony-vigilante-power", "pony-zodiac", "pony-ingeom"], speed: ["pony-darklight", "pony-goldwrap", "pony-zodiac", "pony-ingeom"] },
+  },
 ];
 
 export const CRUSADER_BUILDS: Record<string, BuildGuide> = Object.fromEntries(seeds.map((seed) => {
