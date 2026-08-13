@@ -30,17 +30,18 @@ test("server-renders the complete seven-class build atlas", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>圣休亚瑞秘典/);
-  assert.match(html, /七大职业共 49 套单人主流 BD 已完整接入/);
+  assert.match(html, /小秘境、蓝门与外观收集专用趣味 BD/);
   for (const className of ["野蛮人", "圣教军", "猎魔人", "武僧", "死灵法师", "巫医", "魔法师"]) {
     assert.match(html, new RegExp(className));
   }
   assert.doesNotMatch(html, /待制作|即将接入/);
 });
 
-test("all 49 catalog entries resolve through data-driven class guide modules", async () => {
-  const [catalog, page] = await Promise.all([
+test("all catalog entries resolve through data-driven class guide modules", async () => {
+  const [catalog, page, guideTypes] = await Promise.all([
     readFile(new URL("../app/data/site-catalog.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/build-guides.ts", import.meta.url), "utf8"),
   ]);
   const buildBlock = catalog.slice(
     catalog.indexOf("export const BUILD_CATALOG"),
@@ -48,8 +49,8 @@ test("all 49 catalog entries resolve through data-driven class guide modules", a
   );
   const ids = [...buildBlock.matchAll(/id: "([^"]+)"/g)].map((match) => match[1]);
 
-  assert.equal(ids.length, 49);
-  assert.equal(new Set(ids).size, 49);
+  assert.equal(ids.length, 51);
+  assert.equal(new Set(ids).size, 51);
   for (const moduleName of [
     "BARBARIAN_BUILDS",
     "CRUSADER_BUILDS",
@@ -61,6 +62,34 @@ test("all 49 catalog entries resolve through data-driven class guide modules", a
   ]) {
     assert.match(page, new RegExp(`${moduleName}\\[buildId\\]`));
   }
+  assert.match(guideTypes, /variantProfiles/);
+  assert.match(guideTypes, /"push-low"/);
+  assert.match(guideTypes, /"speed-high"/);
+  assert.match(guideTypes, /variantCompleteness/);
+});
+
+test("renders dedicated farming builds with purpose-specific guidance", async () => {
+  const [pony, godMonk] = await Promise.all([
+    render("/builds/pony-fist-farm").then((response) => response.text()),
+    render("/builds/god-monk").then((response) => response.text()),
+  ]);
+  assert.match(pony, /跑马天拳 · 全能速刷/);
+  assert.match(pony, /T16小秘境/);
+  assert.match(pony, /大秘境≤110/);
+  assert.match(pony, /蓝门 \/ 大秘境≤110/);
+  assert.match(godMonk, /上帝僧 · 无限疾风/);
+  assert.match(godMonk, /彩虹地精/);
+  assert.match(godMonk, /外观路线/);
+  assert.match(godMonk, /精气回复/);
+  assert.match(godMonk, /千飓 3＋伊娜 5/);
+  assert.match(godMonk, /两套都能无限疾风，区别在于谁负责杀怪/);
+  assert.match(godMonk, /皇家华戒让三件千飓获得疾风击回充/);
+  const monkData = await readFile(new URL("../app/data/monk-builds.ts", import.meta.url), "utf8");
+  assert.match(monkData, /god-inna-head/);
+  assert.match(monkData, /尹娜的光华/);
+  assert.match(monkData, /god-raiment-shoulders/);
+  assert.match(monkData, /powerSets: \{ push: \["god-hybrid-ingeom-power"/);
+  assert.doesNotMatch(monkData, /god-hybrid-ingeom", "主手"/);
 });
 
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
@@ -109,9 +138,10 @@ test("keeps the paperdoll on Blizzard's exact pixel slot geometry", async () => 
 });
 
 test("keeps lower paperdoll slots anchored and mirrors Blizzard icon treatments", async () => {
-  const [css, page] = await Promise.all([
+  const [css, page, abilities] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/build/BuildAbilitiesPanel.tsx", import.meta.url), "utf8"),
   ]);
 
   for (const slot of ["ring1", "ring2", "pants", "weapon", "offhand", "boots"]) {
@@ -122,20 +152,27 @@ test("keeps lower paperdoll slots anchored and mirrors Blizzard icon treatments"
   assert.match(css, /background:\s*url\("\/d3\/passive-skills\.png"\) 0 -41px no-repeat;/);
   assert.match(css, /\.cube-grid button img\s*\{[^}]*margin:\s*4px auto;/s);
   assert.match(css, /\.synergy-panel \.node-icon img\s*\{[^}]*object-position:\s*center center;/s);
-  assert.match(page, /function runeKeyFor\(/);
-  assert.doesNotMatch(page, /className="rune-icon rune-a"/);
+  assert.match(abilities, /function runeKeyFor\(/);
+  assert.doesNotMatch(abilities, /className="rune-icon rune-a"/);
   assert.match(page, /套装联动/);
   assert.match(page, /皇家华戒/);
 });
 
 test("ships the complete local Blizzard item mirror and local-only detail UI", async () => {
-  const [itemsText, categoriesText, page, css] = await Promise.all([
+  const [itemsText, indexText, pantsText, fatesVowText, categoriesText, page, css, libraryComponents] = await Promise.all([
     readFile(new URL("../public/d3/library/items.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/d3/library/items/index.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/d3/library/items/by-category/pants.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/d3/library/items/detail/fates-vow-P61_Necro_Unique_Helm_22.json", import.meta.url), "utf8"),
     readFile(new URL("../public/d3/library/item-categories.json", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../components/library/BlizzardItem.tsx", import.meta.url), "utf8"),
   ]);
   const items = JSON.parse(itemsText);
+  const index = JSON.parse(indexText);
+  const pants = JSON.parse(pantsText);
+  const fatesVow = JSON.parse(fatesVowText);
   const categories = JSON.parse(categoriesText);
 
   assert.equal(categories.length, 55);
@@ -143,14 +180,19 @@ test("ships the complete local Blizzard item mirror and local-only detail UI", a
   for (const category of ["pants", "potion", "crafting-material", "dye", "gem"]) {
     assert.ok(items.some((item) => item.category === category), `${category} should be mirrored`);
   }
-  const fatesVow = items.find((item) => item.id === "fates-vow-P61_Necro_Unique_Helm_22");
-  assert.ok(fatesVow?.legendaryPower);
-  assert.ok(fatesVow?.effects?.length);
-  assert.equal(items.every((item) => item.schemaVersion === 2), true);
+  assert.equal(index.length, 2353);
+  assert.equal(pants.every((item) => item.category === "pants"), true);
+  assert.ok(fatesVow.legendaryPower);
+  assert.ok(fatesVow.properties);
+  assert.equal(items.every((item) => item.schemaVersion === 3), true);
+  assert.equal(items.every((item) => !("effects" in item) && !("setBonuses" in item)), true);
   assert.match(page, />物品<\/a>/);
   assert.match(page, /物品详情与原特效均来自本地官方镜像/);
-  assert.match(page, /function OfficialPropertySections/);
-  assert.match(page, /function OfficialSetBlock/);
+  assert.match(libraryComponents, /function OfficialPropertySections/);
+  assert.match(libraryComponents, /function OfficialSetBlock/);
+  assert.doesNotMatch(page, /fetch\("\/d3\/library\/items\.json"\)/);
+  assert.match(page, /items\/by-category/);
+  assert.match(page, /items\/detail/);
   assert.match(css, /url\("\/d3\/item-icon-bgs\/green\.png"\)/);
   assert.match(css, /\.item-icon-default \.item-list-icon-inner \{ width: 64px; height: 128px; \}/);
   assert.match(css, /\.item-icon-square \.item-list-icon-inner \{ width: 64px; height: 64px; \}/);
@@ -159,8 +201,7 @@ test("ships the complete local Blizzard item mirror and local-only detail UI", a
 });
 
 test("structures Blizzard properties, choices, set pieces, and bonus tiers", async () => {
-  const items = JSON.parse(await readFile(new URL("../public/d3/library/items.json", import.meta.url), "utf8"));
-  const blackthorne = items.find((item) => item.id === "blackthornes-jousting-mail-Unique_Pants_013_x1");
+  const blackthorne = JSON.parse(await readFile(new URL("../public/d3/library/items/detail/blackthornes-jousting-mail-Unique_Pants_013_x1.json", import.meta.url), "utf8"));
 
   assert.equal(blackthorne.requiredLevel, 60);
   assert.equal(blackthorne.armorWeapon, "397 - 471\n防具");
@@ -176,9 +217,48 @@ test("structures Blizzard properties, choices, set pieces, and bonus tiers", asy
   assert.deepEqual(blackthorne.set.bonuses.map((tier) => tier.pieces), [2, 3, 4]);
   assert.deepEqual(blackthorne.set.bonuses.map((tier) => tier.lines.length), [2, 2, 1]);
 
-  const allChoices = items.flatMap((item) => Object.values(item.properties ?? {}).flat()).filter((entry) => entry.kind === "choice");
+  const detailNames = [
+    "blackthornes-jousting-mail-Unique_Pants_013_x1",
+    "fates-vow-P61_Necro_Unique_Helm_22",
+  ];
+  const details = await Promise.all(detailNames.map(async (id) => JSON.parse(await readFile(new URL(`../public/d3/library/items/detail/${id}.json`, import.meta.url), "utf8"))));
+  const allChoices = details.flatMap((item) => Object.values(item.properties ?? {}).flat()).filter((entry) => entry.kind === "choice");
   assert.equal(allChoices.every((entry) => entry.count === entry.options.length), true);
-  const itemSets = items.filter((item) => item.set?.items?.length);
-  assert.equal(itemSets.length, 319);
-  assert.equal(itemSets.every((item) => item.set.items.filter((piece) => piece.current).length === 1), true);
+  assert.equal(blackthorne.set.items.filter((piece) => piece.current).length, 1);
+});
+
+test("moves shared build UI into components and removes the retired guide stylesheet", async () => {
+  const [page, css, gearSlot, gearDetail, abilities, cube] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../components/build/PaperdollGearSlot.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/build/GearDetailPanel.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/build/BuildAbilitiesPanel.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/build/KanaiCubePanel.tsx", import.meta.url), "utf8"),
+  ]);
+  assert.doesNotMatch(page, /function PaperdollGearSlot|function GearDetailPanel|function BuildAbilitiesPanel|function KanaiCubePanel/);
+  assert.match(gearSlot, /item-slot/);
+  assert.match(gearDetail, /build-gear-effect/);
+  assert.match(abilities, /skill-grid/);
+  assert.match(cube, /cube-grid/);
+  assert.doesNotMatch(css, /\.guide-/);
+});
+
+test("centralizes season metadata, asset roots, and versions client settings", async () => {
+  const [page, season, assets, factory, settings] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/season-config.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/assets.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/class-build-factory.ts", import.meta.url), "utf8"),
+    readFile(new URL("../components/settings/SiteSettings.tsx", import.meta.url), "utf8"),
+  ]);
+  assert.match(season, /number:\s*39/);
+  assert.match(season, /seasonId:\s*"s39-ns-2\.7\.8"/);
+  assert.doesNotMatch(page, /第39赛季|PATCH 2\.7\.8/);
+  assert.match(assets, /D3_ITEM_ROOT/);
+  assert.match(assets, /skillAsset/);
+  assert.match(factory, /itemAsset/);
+  assert.match(factory, /skillAsset/);
+  assert.match(settings, /SETTINGS_VERSION = 2/);
+  assert.match(settings, /syncAcrossTabs/);
 });

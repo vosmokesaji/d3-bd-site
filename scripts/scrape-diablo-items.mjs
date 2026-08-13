@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { basename, join } from "node:path";
 import { pathToFileURL } from "node:url";
+import { writeItemLibraryOutputs } from "./build-item-library.mjs";
 
 const ROOT = "https://eu.diablo3.blizzard.com";
 const LOCALE = "/zh-tw/item/";
@@ -300,6 +301,18 @@ export function parseItemSet(html, currentSource = "") {
   return { name, items, bonuses };
 }
 
+export function parseItemFixture(html, currentSource = "") {
+  const requiredLevelText = cleanText(firstMatch(html, /<span class="detail-level-number">([\s\S]*?)<\/span>/));
+  return {
+    requiredLevel: requiredLevelText ? Number(requiredLevelText) : null,
+    imageSource: decodeEntities(firstMatch(html, /background-image:\s*url\((https:\/\/assets\.diablo3\.blizzard\.com\/[^)]+)\)/)),
+    type: cleanText(firstMatch(html, /<ul class="item-type">([\s\S]*?)<\/ul>/)),
+    craftedBy: cleanText(firstMatch(html, /製作者：\s*<span class="value">([\s\S]*?)<\/span>/)),
+    properties: parseItemProperties(html),
+    set: parseItemSet(html, currentSource),
+  };
+}
+
 function flattenProperties(properties) {
   return unique(Object.values(properties).flatMap((entries) => entries.flatMap((entry) => (
     entry.kind === "choice" ? [entry.label, ...entry.options.map((option) => option.text)] : [entry.text]
@@ -537,8 +550,9 @@ const enrichedCategories = allCategories.map((category) => ({
   count: categoryCounts.get(category.id) ?? 0,
 }));
 
+const { records: structuredRecords } = await writeItemLibraryOutputs(records);
 await Promise.all([
-  writeFile(new URL("items.json", OUTPUT_DIR), `${JSON.stringify(records, null, 2)}\n`),
+  writeFile(new URL("items.json", OUTPUT_DIR), `${JSON.stringify(structuredRecords, null, 2)}\n`),
   writeFile(new URL("item-categories.json", OUTPUT_DIR), `${JSON.stringify(enrichedCategories, null, 2)}\n`),
 ]);
 process.stdout.write(`done: ${records.length} items across ${enrichedCategories.length} categories\n`);
