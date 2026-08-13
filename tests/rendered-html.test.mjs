@@ -92,6 +92,22 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
   assert.doesNotMatch(monkData, /god-hybrid-ingeom", "主手"/);
 });
 
+test("keeps shared-configuration builds from receiving unreviewed variant swaps", async () => {
+  const [valor, godMonk, guideTypes, page] = await Promise.all([
+    render("/builds/valor-fist").then((response) => response.text()),
+    render("/builds/god-monk").then((response) => response.text()),
+    readFile(new URL("../app/data/build-guides.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(guideTypes, /hasExplicitRuntimeVariants/);
+  assert.match(guideTypes, /documented-shared/);
+  assert.match(page, /resolveBuildVariantProfile/);
+  assert.match(valor, /配置差异待实装/);
+  assert.doesNotMatch(valor, /variant-goldwrap|variant-ingeom/);
+  assert.doesNotMatch(godMonk, /配置差异待实装/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);

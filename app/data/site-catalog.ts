@@ -36,7 +36,7 @@ export const BUILD_CATALOG: BuildEntry[] = [
   { id: "h90-frenzy", classId: "barbarian", name: "九十蛮狂乱", set: "九十蛮", core: "狂乱", image: "/d3/library/skills/barbarian-active-frenzy.png", role: "冲层", difficulty: "中", summary: "高攻速单体近战，围绕狂乱层数和战吼恐惧建立乘区。", complete: true },
   { id: "ik-charge", classId: "barbarian", name: "不朽冲锋", set: "不朽之王 / 蕾蔻", core: "狂暴冲锋", image: "/d3/library/skills/barbarian-active-furious-charge.png", role: "速刷", difficulty: "中", summary: "用冲锋刷新自身并穿图，适合低层快速清场。", complete: true },
 
-  { id: "valor-fist", classId: "crusader", name: "勇气天拳", set: "勇气壁垒", core: "天堂之拳", image: "/d3/library/skills/crusader-active-fist-of-the-heavens.png", role: "速刷", difficulty: "低", summary: "骑马期间自动落下天堂之拳，移动清场效率突出。" },
+  { id: "valor-fist", classId: "crusader", name: "勇气天拳", set: "勇气壁垒", core: "天堂之拳", image: "/d3/library/skills/crusader-active-fist-of-the-heavens.png", role: "速刷", difficulty: "低", purpose: "小秘境", content: ["T16小秘境", "悬赏", "低层大秘境"], summary: "骑马期间自动落下天堂之拳，移动清场效率突出。" },
   { id: "pony-fist-farm", classId: "crusader", name: "跑马天拳 · 全能速刷", set: "勇气壁垒 / 诺瓦德", core: "战马冲锋 / 天堂之拳", image: "/d3/library/skills/crusader-active-steed-charge.png", role: "速刷", difficulty: "低", purpose: "小秘境", content: ["T16小秘境", "蓝门", "大秘境≤110", "悬赏"], summary: "专门为赶路、清屏和拾取优化：T16 小秘境、蓝门与 110 层以下大秘境共用一套操作逻辑。" },
   { id: "valor-fury", classId: "crusader", name: "勇气天堂之怒", set: "勇气壁垒", core: "天堂之怒", image: "/d3/library/skills/crusader-active-heavens-fury.png", role: "冲层", difficulty: "高", summary: "天堂之拳负责叠层，天堂之怒在元素窗口集中爆发。" },
   { id: "akkhan-condemn", classId: "crusader", name: "阿克汉天谴", set: "阿克汉战甲", core: "天谴", image: "/d3/library/skills/crusader-active-condemn.png", role: "通用", difficulty: "中", summary: "阿卡拉特勇士常驻，围绕天谴的延迟爆炸贴身清场。" },
@@ -48,7 +48,7 @@ export const BUILD_CATALOG: BuildEntry[] = [
 
   { id: "god-hungering", classId: "demon-hunter", name: "恐惧冰吞", set: "恐惧之地机轮甲", core: "追踪箭", image: "/d3/library/skills/demon-hunter-active-hungering-arrow.png", role: "通用", difficulty: "低", summary: "扫射自动释放追踪箭，兼具高速移动与穿透清场。" },
   { id: "marauder-sentry", classId: "demon-hunter", name: "掠夺集束塔", set: "掠夺者的化身", core: "箭塔 / 集束箭", image: "/d3/library/skills/demon-hunter-active-sentry.png", role: "冲层", difficulty: "高", summary: "先布置箭塔建立覆盖，再由箭塔同步释放高消耗技能。" },
-  { id: "ue-multishot", classId: "demon-hunter", name: "不洁多重射击", set: "邪秽之精", core: "多重射击", image: "/d3/library/skills/demon-hunter-active-multishot.png", role: "速刷", difficulty: "低", summary: "保持戒律上限并远距离扇形清屏，最直观的速刷玩法之一。" },
+  { id: "ue-multishot", classId: "demon-hunter", name: "不洁多重射击", set: "邪秽之精", core: "多重射击", image: "/d3/library/skills/demon-hunter-active-multishot.png", role: "速刷", difficulty: "低", purpose: "小秘境", content: ["T16小秘境", "悬赏", "低层大秘境"], summary: "保持戒律上限并远距离扇形清屏，最直观的速刷玩法之一。" },
   { id: "natalya-trap", classId: "demon-hunter", name: "娜塔亚尖刺陷阱", set: "娜塔亚的复仇", core: "尖刺陷阱", image: "/d3/library/skills/demon-hunter-active-spike-trap.png", role: "冲层", difficulty: "高", summary: "布置陷阱后用憎恨生成技能引爆，操作节奏要求较高。" },
   { id: "shadow-impale", classId: "demon-hunter", name: "暗影三刀", set: "暗影装束", core: "暗影飞刀", image: "/d3/library/skills/demon-hunter-active-impale.png", role: "通用", difficulty: "中", summary: "高机动点杀精英，命中少量目标时获得巨大倍率。" },
   { id: "lod-rapid-fire", classId: "demon-hunter", name: "梦遗连射", set: "梦之遗礼", core: "连射", image: "/d3/library/skills/demon-hunter-active-rapid-fire.png", role: "冲层", difficulty: "高", summary: "站桩引导叠层，用散件乘区换取高额持续伤害。" },
@@ -56,10 +56,10 @@ export const BUILD_CATALOG: BuildEntry[] = [
   { id: "inna-ally", classId: "monk", name: "尹娜幻身", set: "尹娜的真言", core: "幻身诀", image: "/d3/library/skills/monk-active-mystic-ally.png", role: "通用", difficulty: "低", summary: "用攻击叠幻身数量，主动释放幻身完成爆发。" },
   { id: "poj-tempest", classId: "monk", name: "正义风雷冲", set: "正义之师", core: "风雷冲", image: "/d3/library/skills/monk-active-tempest-rush.png", role: "通用", difficulty: "低", summary: "维持劲风煞并持续引导风雷冲，移动与输出合一。" },
   { id: "sunwuko-tempest", classId: "monk", name: "猴王风雷冲", set: "孙悟空的戏法", core: "风雷冲", image: "/d3/library/skills/monk-active-tempest-rush.png", role: "冲层", difficulty: "高", summary: "围绕引导层数与元素窗口手动释放冰爆。" },
-  { id: "sunwuko-wol", classId: "monk", name: "猴王敲钟", set: "孙悟空的戏法", core: "金钟破", image: "/d3/library/skills/monk-active-wave-of-light.png", role: "速刷", difficulty: "中", summary: "用远程金钟破覆盖大范围，维持劲风煞换取套装倍率。" },
+  { id: "sunwuko-wol", classId: "monk", name: "猴王敲钟", set: "孙悟空的戏法", core: "金钟破", image: "/d3/library/skills/monk-active-wave-of-light.png", role: "速刷", difficulty: "中", purpose: "小秘境", content: ["T16小秘境", "低层大秘境"], summary: "用远程金钟破覆盖大范围，维持劲风煞换取套装倍率。" },
   { id: "lod-wol", classId: "monk", name: "梦遗敲钟", set: "梦之遗礼", core: "金钟破", image: "/d3/library/skills/monk-active-wave-of-light.png", role: "冲层", difficulty: "高", summary: "由幻身在远处施放金钟破，散件质量决定最终上限。" },
   { id: "uliana-palm", classId: "monk", name: "乌莲娜爆裂掌", set: "乌莲娜的谋略", core: "爆裂掌", image: "/d3/library/skills/monk-active-exploding-palm.png", role: "通用", difficulty: "中", summary: "七相拳传播并引爆爆裂掌，依赖聚怪形成连锁。" },
-  { id: "raiment-dash", classId: "monk", name: "千飓疾风击", set: "千飓战甲", core: "疾风击", image: "/d3/library/skills/monk-active-dashing-strike.png", role: "速刷", difficulty: "高", summary: "精气生成与疾风击交替，位移本身就是主要伤害。" },
+  { id: "raiment-dash", classId: "monk", name: "千飓疾风击", set: "千飓战甲", core: "疾风击", image: "/d3/library/skills/monk-active-dashing-strike.png", role: "速刷", difficulty: "高", purpose: "小秘境", content: ["T16小秘境", "低层大秘境"], summary: "精气生成与疾风击交替，位移本身就是主要伤害。" },
   { id: "god-monk", classId: "monk", name: "上帝僧 · 无限疾风", set: "千飓战甲 / 功能散件", core: "疾风击", image: "/d3/library/skills/monk-active-dashing-strike.png", role: "速刷", difficulty: "中", purpose: "小秘境", content: ["T16小秘境", "低层蓝门", "彩虹地精", "宇宙之翼"], summary: "以千飓倍率保住低层清怪能力，同时集中堆叠精气回复、减耗与冷却，用近乎无限的疾风击穿图。" },
 
   { id: "tragoul-nova", classId: "necromancer", name: "塔格奥死亡新星", set: "塔格奥的化身", core: "死亡新星", image: "/d3/library/skills/necromancer-active-death-nova.png", role: "通用", difficulty: "低", summary: "鲜血虹吸经铁玫瑰免费触发死亡新星，当前完整交互原型。", complete: true },
@@ -72,7 +72,7 @@ export const BUILD_CATALOG: BuildEntry[] = [
 
   { id: "mundunugu-barrage", classId: "witch-doctor", name: "蒙嘟噜魂弹", set: "蒙嘟噜的法衣", core: "魂灵弹幕", image: "/d3/library/skills/witch-doctor-active-spirit-barrage.png", role: "冲层", difficulty: "高", summary: "累积魂灵弹幕后统一结算，法力回复直接参与伤害倍率。" },
   { id: "arachyr-spiders", classId: "witch-doctor", name: "亚拉基尔蜘蛛", set: "亚拉基尔的灵魂", core: "尸蛛", image: "/d3/library/skills/witch-doctor-active-corpse-spiders.png", role: "冲层", difficulty: "中", summary: "用蜘蛛女王的蛛网覆盖目标，尸蛛在控制区持续输出。" },
-  { id: "arachyr-chicken", classId: "witch-doctor", name: "魔牙愤怒鸡", set: "亚拉基尔 / 魔牙", core: "妖术", image: "/d3/library/skills/witch-doctor-active-hex.png", role: "速刷", difficulty: "低", summary: "愤怒鸡形态高速穿图，以爆炸和自动技能快速清场。" },
+  { id: "arachyr-chicken", classId: "witch-doctor", name: "魔牙愤怒鸡", set: "亚拉基尔 / 魔牙", core: "妖术", image: "/d3/library/skills/witch-doctor-active-hex.png", role: "速刷", difficulty: "低", purpose: "小秘境", content: ["T16小秘境", "悬赏"], summary: "愤怒鸡形态高速穿图，以爆炸和自动技能快速清场。" },
   { id: "zuni-darts", classId: "witch-doctor", name: "祖尼玛毒镖", set: "祖尼玛萨之魂", core: "毒液吹箭", image: "/d3/library/skills/witch-doctor-active-poison-dart.png", role: "冲层", difficulty: "中", summary: "鬼娃同步发射毒镖，角色攻击速度放大宠物弹幕。" },
   { id: "jade-harvest", classId: "witch-doctor", name: "玉魂收割", set: "玉魂师的战甲", core: "魂灵收割", image: "/d3/library/skills/witch-doctor-active-soul-harvest.png", role: "通用", difficulty: "高", summary: "先铺蚀魂与虫群，再用魂灵收割提前结算持续伤害。" },
   { id: "helltooth-garg", classId: "witch-doctor", name: "魔牙巨尸", set: "魔牙战装", core: "巨尸", image: "/d3/library/skills/witch-doctor-active-gargantuan.png", role: "通用", difficulty: "中", summary: "死亡之壁建立套装增伤，巨尸负责近战持续输出。" },

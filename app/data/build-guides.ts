@@ -120,11 +120,11 @@ export function createVariantProfiles(variants: VariantNotes): Record<BuildVaria
     differenceReason: `${variants[mode].note}；${variants[paragon].note}`,
     gearOverrides: {
       affixPolicy: paragon === "low" ? "survival" : "endgame",
-      movementBoots: mode === "speed",
-      legendaryGem: mode === "speed" ? (paragon === "low" ? "boon-of-the-hoarder" : "bane-of-the-powerful") : "unchanged",
+      movementBoots: false,
+      legendaryGem: "unchanged",
     },
     powerOverrides: {
-      replaceLastWith: mode === "push" && paragon === "high" ? "none" : mode === "push" ? "unity" : paragon === "low" ? "goldwrap" : "ingeom",
+      replaceLastWith: "none",
     },
     skillOverrides: [],
     statPriorities: variants[paragon].changes,
@@ -139,10 +139,23 @@ export function createVariantProfiles(variants: VariantNotes): Record<BuildVaria
 }
 
 export function completeBuildGuide<T extends Omit<BuildGuide, "variantProfiles" | "variantCompleteness" | "seasonId">>(guide: T, seasonId: string): T & BuildGuide {
+  const candidate = guide as T & Partial<BuildGuide>;
+  const hasExplicitRuntimeVariants = Boolean(
+    candidate.powerSets
+      || candidate.loadouts?.some((loadout) => (
+        loadout.gear
+        || loadout.skills
+        || loadout.passives
+        || loadout.powers
+        || loadout.links
+        || loadout.rotation
+        || loadout.powerSets
+      )),
+  );
   return {
     ...guide,
     variantProfiles: createVariantProfiles(guide.variants),
-    variantCompleteness: "complete",
+    variantCompleteness: hasExplicitRuntimeVariants ? "complete" : "documented-shared",
     seasonId,
   };
 }

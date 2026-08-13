@@ -1275,12 +1275,17 @@ function normalizeGuideAffixes(item: Gear, classId: ClassId, mode: Mode, paragon
   return base;
 }
 
+function resolveBuildVariantProfile(guide: UnifiedBuildGuide, mode: Mode, paragon: Paragon) {
+  const profile = guide.variantProfiles?.[`${mode}-${paragon}`];
+  return guide.variantCompleteness === "complete" ? profile : undefined;
+}
+
 function resolveDefaultVariantGear(guide: UnifiedBuildGuide, classId: ClassId, mode: Mode, paragon: Paragon, profile?: BuildVariantProfile): Gear[] {
   const gear = guide.gear.map((item) => ({
     ...item,
     affixes: normalizeGuideAffixes(item as Gear, classId, mode, paragon),
   })) as Gear[];
-  if (!(profile?.gearOverrides.movementBoots ?? mode === "speed")) return gear;
+  if (!profile?.gearOverrides.movementBoots) return gear;
   const gemOverride = profile?.gearOverrides.legendaryGem;
   const speedGem = gemOverride === "boon-of-the-hoarder" || (!profile && paragon === "low") ? HOARDER_GEM : POWERFUL_GEM;
 
@@ -1303,7 +1308,7 @@ function resolveDefaultVariantPowers(guide: UnifiedBuildGuide, mode: Mode, parag
   }));
   if (selectedPowerIds) return powers;
   const replacementKey = profile?.powerOverrides.replaceLastWith;
-  if (replacementKey === "none" || (!profile && mode === "push" && paragon === "high")) return powers;
+  if (replacementKey === "none" || !replacementKey) return powers;
   const key = replacementKey === "unity" ? "push-low" : replacementKey === "goldwrap" ? "speed-low" : replacementKey === "ingeom" ? "speed-high" : `${mode}-${paragon}` as keyof typeof DEFAULT_VARIANT_POWERS;
   const replacement = DEFAULT_VARIANT_POWERS[key];
   if (!replacement) return powers;
@@ -1431,8 +1436,8 @@ function guideRows(guide: UnifiedBuildGuide, mode: Mode): FlowRow[] {
 type SetFamily = { id: string; name: string; gear: Gear[]; royalEligible: boolean };
 
 const SET_FAMILY_PATTERNS: { pattern: RegExp; name: string; royalEligible: boolean }[] = [
-  { pattern: /raiment|god-raiment/i, name: "千飓战甲", royalEligible: true },
-  { pattern: /inna|god-inna/i, name: "尹娜的真言", royalEligible: true },
+  { pattern: /\braiment-|god-raiment/i, name: "千飓战甲", royalEligible: true },
+  { pattern: /\binna-|god-inna/i, name: "尹娜的真言", royalEligible: true },
   { pattern: /aughild/i, name: "奥吉德的权威", royalEligible: true },
   { pattern: /crimson|captain/i, name: "克里森船长的饰衣", royalEligible: true },
   { pattern: /guardian/i, name: "守护者的危难", royalEligible: true },
@@ -1565,7 +1570,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     powerSets: activeLoadout?.powerSets ?? guide.powerSets,
     consoleNote: activeLoadout?.consoleNote ?? guide.consoleNote,
   }) as UnifiedBuildGuide, [guide, activeLoadout]);
-  const activeVariant = guide.variantProfiles?.[`${mode}-${paragon}`];
+  const activeVariant = resolveBuildVariantProfile(activeGuide, mode, paragon);
   const gear = useMemo(
     () => activeGuide.resolveGear?.(mode, paragon) ?? resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant),
     [activeGuide, classId, mode, paragon, activeVariant],
@@ -1657,6 +1662,11 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         <div className="variant-group"><span>巅峰</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>低巅峰 &lt; 2000</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>高巅峰 2000+</button></div>
         <div className="variant-note"><strong>{activeLoadout ? `${activeLoadout.title} · ` : ""}{activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`}</strong><span>{activeLoadout?.summary ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`}</span></div>
       </section>
+
+      {activeGuide.variantCompleteness === "documented-shared" && <section className="variant-audit-note" aria-label="BD 数据完整度">
+        <strong>配置差异待实装</strong>
+        <span>当前 BD 已保留用途与巅峰说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。</span>
+      </section>}
 
       {guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
         <header><span>配装选择</span><strong>两套都能无限疾风，区别在于谁负责杀怪</strong></header>
