@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import {
   BUILD_CATALOG,
@@ -11,104 +11,41 @@ import {
   type ClassId,
 } from "./data/site-catalog";
 import { NECROMANCER_BUILDS, type NecromancerGuide } from "./data/necromancer-builds";
+import type { BuildVariantProfile } from "./data/build-guides";
 import { BARBARIAN_BUILDS } from "./data/barbarian-builds";
 import { CRUSADER_BUILDS } from "./data/crusader-builds";
 import { DEMON_HUNTER_BUILDS } from "./data/demon-hunter-builds";
 import { MONK_BUILDS } from "./data/monk-builds";
 import { WITCH_DOCTOR_BUILDS } from "./data/witch-doctor-builds";
 import { WIZARD_BUILDS } from "./data/wizard-builds";
+import { classPortraitAsset, paperdollAsset } from "./data/assets";
+import {
+  CUBE_SEASON_LABEL,
+  CURRENT_SEASON,
+  SEASON_LABEL,
+  SEASON_PLATFORM_LABEL,
+} from "./data/season-config";
+import { BuildAbilitiesPanel } from "../components/build/BuildAbilitiesPanel";
+import { GearDetailPanel } from "../components/build/GearDetailPanel";
+import { KanaiCubePanel } from "../components/build/KanaiCubePanel";
+import { PaperdollGearSlot } from "../components/build/PaperdollGearSlot";
+import type { GearSocket } from "../components/build/types";
+import {
+  BlizzardItemIcon,
+  OfficialPropertySections,
+  OfficialSetBlock,
+  officialItemIconShape,
+} from "../components/library/BlizzardItem";
+import type {
+  OfficialItemIndexRecord,
+  OfficialItemRecord,
+} from "../components/library/types";
+import { SiteSettingsProvider, useSiteSettings } from "../components/settings/SiteSettings";
 
 type Mode = "push" | "speed";
 type Paragon = "low" | "high";
 type GearQuality = "set" | "legendary";
 type NodeKind = "skill" | "rune" | "passive" | "gear" | "power" | "set" | "effect" | "damage" | "defense" | "movement";
-type HeroGender = "female" | "male";
-
-const DEFAULT_HERO_GENDERS: Record<ClassId, HeroGender> = {
-  barbarian: "female",
-  crusader: "female",
-  "demon-hunter": "female",
-  monk: "female",
-  necromancer: "female",
-  "witch-doctor": "female",
-  wizard: "female",
-};
-
-type SiteSettingsValue = {
-  genders: Record<ClassId, HeroGender>;
-  openSettings: () => void;
-  setClassGender: (classId: ClassId, gender: HeroGender) => void;
-  setAllGenders: (gender: HeroGender) => void;
-};
-
-const SiteSettingsContext = createContext<SiteSettingsValue | null>(null);
-
-function useSiteSettings() {
-  const value = useContext(SiteSettingsContext);
-  if (!value) throw new Error("useSiteSettings must be used inside SiteSettingsProvider");
-  return value;
-}
-
-function SiteSettingsProvider({ children }: { children: ReactNode }) {
-  const [genders, setGenders] = useState<Record<ClassId, HeroGender>>(DEFAULT_HERO_GENDERS);
-  const [settingsOpen, setSettingsOpen] = useState(false);
-
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem("sanctuary-site-settings-v1");
-      if (!saved) return;
-      const parsed = JSON.parse(saved) as { genders?: Partial<Record<ClassId, HeroGender>> };
-      setGenders({ ...DEFAULT_HERO_GENDERS, ...(parsed.genders ?? {}) });
-    } catch {
-      setGenders(DEFAULT_HERO_GENDERS);
-    }
-  }, []);
-
-  const saveGenders = (next: Record<ClassId, HeroGender>) => {
-    setGenders(next);
-    window.localStorage.setItem("sanctuary-site-settings-v1", JSON.stringify({ genders: next }));
-  };
-
-  const value: SiteSettingsValue = {
-    genders,
-    openSettings: () => setSettingsOpen(true),
-    setClassGender: (classId, gender) => saveGenders({ ...genders, [classId]: gender }),
-    setAllGenders: (gender) => saveGenders(Object.fromEntries(CLASS_CATALOG.map((hero) => [hero.id, gender])) as Record<ClassId, HeroGender>),
-  };
-
-  return (
-    <SiteSettingsContext.Provider value={value}>
-      {children}
-      {settingsOpen && (
-        <div className="site-settings-backdrop" role="presentation" onMouseDown={(event) => { if (event.currentTarget === event.target) setSettingsOpen(false); }}>
-          <section className="site-settings-dialog" role="dialog" aria-modal="true" aria-labelledby="site-settings-title">
-            <header>
-              <div><span>SITE SETTINGS</span><h2 id="site-settings-title">网站设置</h2></div>
-              <button onClick={() => setSettingsOpen(false)} aria-label="关闭网站设置">×</button>
-            </header>
-            <div className="settings-all-genders">
-              <span><strong>一键切换全部职业</strong><small>之后仍可单独覆盖某个职业</small></span>
-              <div><button onClick={() => value.setAllGenders("female")}>全部女性</button><button onClick={() => value.setAllGenders("male")}>全部男性</button></div>
-            </div>
-            <div className="settings-class-genders">
-              {CLASS_CATALOG.map((hero) => (
-                <article key={hero.id}>
-                  <img src={hero.portrait} alt="" />
-                  <span><strong>{hero.name}</strong><small>BD 装备盘背景</small></span>
-                  <div role="group" aria-label={`${hero.name}性别`}>
-                    <button className={genders[hero.id] === "female" ? "active" : ""} onClick={() => value.setClassGender(hero.id, "female")}>女性</button>
-                    <button className={genders[hero.id] === "male" ? "active" : ""} onClick={() => value.setClassGender(hero.id, "male")}>男性</button>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <footer><small>默认全部为女性；设置仅保存在当前设备。</small><button onClick={() => setSettingsOpen(false)}>完成</button></footer>
-          </section>
-        </div>
-      )}
-    </SiteSettingsContext.Provider>
-  );
-}
 
 type Gear = {
   id: string;
@@ -678,7 +615,7 @@ const BASE_ROWS: FlowRow[] = [
     title: "赛季乘区",
     nodes: [
       { id: "bone-armor", label: "骨甲", detail: "必须保持生效", kind: "skill", image: "/d3/bone-armor.png" },
-      { id: "scythe-cycle", label: "轮回镰刀", detail: "第39赛季第四魔方槽", kind: "power", image: "/d3/scythe-cycle.png" },
+      { id: "scythe-cycle", label: "轮回镰刀", detail: `${SEASON_LABEL}${CURRENT_SEASON.cubeLabel}`, kind: "power", image: "/d3/scythe-cycle.png" },
       { id: "secondary-bonus", label: "次要技能+400%", detail: "新星是次要技能", kind: "damage" },
       { id: "duration-cost", label: "消耗骨甲时长", detail: "每次触发减少4秒", kind: "effect" },
       { id: "refresh-armor", label: "及时刷新", detail: "断骨甲就断乘区", kind: "defense" },
@@ -811,50 +748,6 @@ function getFollowerSlotClass(items: { slot: string }[], index: number) {
   return "token";
 }
 
-function ItemIcon({
-  gear,
-  position,
-  selected,
-  related,
-  dimmed,
-  sockets: socketOverride,
-  onSelect,
-  onPreview,
-}: {
-  gear: Gear;
-  position?: string;
-  selected?: boolean;
-  related?: boolean;
-  dimmed?: boolean;
-  sockets?: { image: string; label: string }[];
-  onSelect: (id: string) => void;
-  onPreview: (id: string) => void;
-}) {
-  const sockets = socketOverride ?? SOCKETS[gear.id] ?? [];
-  return (
-    <button
-      className={`item-slot ${gear.quality} ${position ? `slot-${position}` : ""} ${selected ? "selected" : ""} ${related ? "related" : ""} ${dimmed ? "dimmed" : ""}`}
-      onClick={() => onSelect(gear.id)}
-      onMouseEnter={() => onPreview(gear.id)}
-      onFocus={() => onPreview(gear.id)}
-      aria-label={`${gear.slot}：${gear.name}`}
-    >
-      <span className="item-glow" />
-      <span className="item-image"><img src={gear.image} alt="" /></span>
-      {sockets.length > 0 && (
-        <span className="socket-stack" aria-label={sockets.map((socket) => socket.label).join("、")}>
-          {sockets.map((socket, index) => (
-            <span className="socket" key={`${socket.label}-${index}`}>
-              <img src={socket.image} alt="" />
-            </span>
-          ))}
-        </span>
-      )}
-      <span className="slot-label">{gear.slot}</span>
-    </button>
-  );
-}
-
 function FlowNodeButton({
   node,
   dimmed,
@@ -883,63 +776,6 @@ function FlowNodeButton({
   );
 }
 
-type OfficialProperty = {
-  kind: "property";
-  icon: "bullet" | "utility" | "none";
-  text: string;
-};
-
-type OfficialPropertyChoice = {
-  kind: "choice";
-  count: number | null;
-  label: string;
-  options: OfficialProperty[];
-};
-
-type OfficialPropertyNode = OfficialProperty | OfficialPropertyChoice;
-
-type OfficialItemSet = {
-  name: string | null;
-  items: { id: string; name: string; source: string; current: boolean }[];
-  bonuses: { pieces: number; lines: OfficialProperty[] }[];
-};
-
-type OfficialRecord = {
-  id: string;
-  name: string;
-  image: string;
-  source: string;
-  imageSource?: string;
-  classId?: string;
-  className?: string;
-  kind?: "active" | "passive";
-  category?: string;
-  categoryName?: string;
-  group?: "armor" | "weapons" | "other";
-  quality?: "common" | "crafted" | "legendary" | "set";
-  crafted?: boolean;
-  requiredLevel?: number | null;
-  type?: string;
-  slot?: string;
-  classes?: string[];
-  followers?: string[];
-  artisans?: string[];
-  craftedBy?: string;
-  armorWeapon?: string;
-  properties?: {
-    primary: OfficialPropertyNode[];
-    secondary: OfficialPropertyNode[];
-    other: OfficialPropertyNode[];
-  };
-  effects?: string[];
-  legendaryPower?: string;
-  set?: OfficialItemSet;
-  setBonuses?: string[];
-  extras?: string[];
-  flavor?: string;
-  runes?: { key: string; name: string }[];
-};
-
 type ItemCategoryRecord = {
   id: string;
   name: string;
@@ -967,7 +803,7 @@ function SiteHeader({ active }: { active?: "story" | "season" | "builds" | "libr
         <a className={active === "builds" ? "active" : ""} href="/builds">赛季全职业BD</a>
         <a className={active === "library" ? "active" : ""} href="/library">物品</a>
       </nav>
-      <div className="season-pill"><i /> 第39赛季 · NS</div>
+      <div className="season-pill"><i /> {SEASON_PLATFORM_LABEL}</div>
       <button className="settings-trigger" onClick={openSettings} aria-label="打开网站设置"><span>⚙</span> 网站设置</button>
     </header>
   );
@@ -981,7 +817,7 @@ function RoutePage({ active, title, eyebrow, children }: { active: "story" | "se
         <span>{eyebrow}</span><h1>{title}</h1>
       </section>
       <div className="route-content">{children}</div>
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典</strong><small>NS · 第39赛季 · 单人攻略</small></p></div><p>页面资料用于私人攻略整理。</p></footer>
+      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · {CURRENT_SEASON.modeLabel}</small></p></div><p>页面资料用于私人攻略整理。</p></footer>
     </main>
   );
 }
@@ -1002,7 +838,7 @@ function BuildAtlas() {
     <section className="archive-section build-atlas" id="builds">
       <div className="archive-heading">
         <div><span>全职业 · 单人</span><h2>职业与主流 BD</h2></div>
-        <p>七大职业共 49 套单人主流 BD 已完整接入；每套都使用同一套可交互装备盘、技能、威能、联动图、手法与随从系统。</p>
+        <p>七大职业的主流大秘境构筑之外，现已增加小秘境、蓝门与外观收集专用趣味 BD；全部复用同一套交互装备盘和联动系统。</p>
       </div>
       <div className="class-rail" role="tablist" aria-label="选择职业">
         {CLASS_CATALOG.map((hero) => (
@@ -1039,6 +875,7 @@ function BuildAtlas() {
                 <small>{build.set}</small>
                 <strong>{build.name}</strong>
                 <em>{build.core}</em>
+                {build.content && <small>{build.content.join(" · ")}</small>}
               </span>
               <b className={build.complete ? "complete" : "indexed"}>{build.complete ? "完整" : "已入库"}</b>
             </button>
@@ -1054,6 +891,7 @@ function BuildAtlas() {
             <div><dt>操作</dt><dd>{selected.difficulty}</dd></div>
           </dl>
           <p>{selected.summary}</p>
+          {selected.content && <p><strong>适用：</strong>{selected.content.join(" · ")}</p>}
           <a href={`/builds/${selected.id}`}>{selected.complete ? "打开完整装备与联动图" : "进入 BD 资料页"}</a>
           {!selected.complete && <small>装备库与技能库已接入；完整词缀和联动图正在按原型标准逐套校对。</small>}
         </aside>
@@ -1167,14 +1005,36 @@ function OfficialLibrary() {
   );
 }
 
-function useLibraryRecords(_category?: string) {
-  const [records, setRecords] = useState<OfficialRecord[]>([]);
+function useLibraryRecords(category: string) {
+  const [records, setRecords] = useState<OfficialItemRecord[]>([]);
   useEffect(() => {
     let active = true;
-    fetch("/d3/library/items.json").then((response) => response.json()).then((data) => { if (active) setRecords(data); }).catch(() => undefined);
+    fetch(`/d3/library/items/by-category/${encodeURIComponent(category)}.json`).then((response) => response.json()).then((data) => { if (active) setRecords(data); }).catch(() => undefined);
+    return () => { active = false; };
+  }, [category]);
+  return records;
+}
+
+function useItemIndex() {
+  const [records, setRecords] = useState<OfficialItemIndexRecord[]>([]);
+  useEffect(() => {
+    let active = true;
+    fetch("/d3/library/items/asset-index.json").then((response) => response.json()).then((data) => { if (active) setRecords(data); }).catch(() => undefined);
     return () => { active = false; };
   }, []);
   return records;
+}
+
+function useLibraryRecord(id: string) {
+  const [record, setRecord] = useState<OfficialItemRecord | null>(null);
+  useEffect(() => {
+    let active = true;
+    setRecord(null);
+    if (!id) return () => { active = false; };
+    fetch(`/d3/library/items/detail/${encodeURIComponent(id)}.json`).then((response) => response.json()).then((data) => { if (active) setRecord(data); }).catch(() => undefined);
+    return () => { active = false; };
+  }, [id]);
+  return record;
 }
 
 function useItemCategories() {
@@ -1191,7 +1051,7 @@ function itemAssetKey(path = "") {
   return path.split("/").pop()?.replace(/\.[^.]+$/, "").toLowerCase() ?? "";
 }
 
-function officialItemEffect(record?: OfficialRecord) {
+function officialItemEffect(record?: OfficialItemRecord | null) {
   if (!record) return "";
   if (record.legendaryPower) return record.legendaryPower;
   if (record.set?.bonuses.length) {
@@ -1200,118 +1060,12 @@ function officialItemEffect(record?: OfficialRecord) {
       ...tier.lines.map((line) => line.text),
     ]).join("\n");
   }
-  if (record.setBonuses?.length) return record.setBonuses.join("\n");
   if (record.properties) {
     return Object.values(record.properties).flatMap((entries) => entries.flatMap((entry) => (
       entry.kind === "choice" ? [entry.label, ...entry.options.map((option) => option.text)] : [entry.text]
     ))).join("\n");
   }
-  return record.effects?.join("\n") ?? "";
-}
-
-type ItemIconShape = "default" | "square" | "big";
-
-const SQUARE_ITEM_CATEGORIES = new Set([
-  "amulet",
-  "belt",
-  "mighty-belt",
-  "ring",
-  "enchantress-focus",
-  "scoundrel-token",
-  "templar-relic",
-  "potion",
-  "crafting-material",
-  "blacksmith-plan",
-  "jeweler-design",
-  "page-of-training",
-  "dye",
-  "gem",
-  "misc",
-]);
-
-const BIG_ITEM_CATEGORIES = new Set(["chest-armor", "cloak"]);
-
-function officialItemIconShape(category?: string): ItemIconShape {
-  if (category && BIG_ITEM_CATEGORIES.has(category)) return "big";
-  if (category && SQUARE_ITEM_CATEGORIES.has(category)) return "square";
-  return "default";
-}
-
-function BlizzardItemIcon({ record }: { record: OfficialRecord }) {
-  const shape = officialItemIconShape(record.category);
-  const quality = record.quality ?? (record.crafted ? "crafted" : "common");
-  return (
-    <span className={`item-list-icon item-icon-${shape} quality-${quality}`} aria-hidden="true">
-      <span className="item-list-icon-gradient">
-        <span className="item-list-icon-inner"><img src={record.image} alt="" /></span>
-      </span>
-    </span>
-  );
-}
-
-function OfficialPropertyList({ entries, legendaryPower }: { entries: OfficialPropertyNode[]; legendaryPower?: string }) {
-  return (
-    <ul className="official-property-list">
-      {entries.map((entry, index) => {
-        if (entry.kind === "choice") {
-          return (
-            <li className="official-property-choice" key={`${entry.label}-${index}`}>
-              <span className="official-property-choice-label"><i />{entry.label}</span>
-              <ul>
-                {entry.options.map((option, optionIndex) => (
-                  <li className={`property-icon-${option.icon}`} key={`${option.text}-${optionIndex}`}><i />{option.text}</li>
-                ))}
-              </ul>
-            </li>
-          );
-        }
-        const legendary = Boolean(legendaryPower && entry.text === legendaryPower);
-        return <li className={`property-icon-${entry.icon} ${legendary ? "property-legendary" : ""}`} key={`${entry.text}-${index}`}><i />{entry.text}</li>;
-      })}
-    </ul>
-  );
-}
-
-function OfficialPropertySections({ record }: { record: OfficialRecord }) {
-  const sections = [
-    { id: "primary", label: "主要", entries: record.properties?.primary ?? [] },
-    { id: "secondary", label: "次要", entries: record.properties?.secondary ?? [] },
-    { id: "other", label: "其他", entries: record.properties?.other ?? [] },
-  ].filter((section) => section.entries.length > 0);
-  if (sections.length === 0) return null;
-  return (
-    <section className="item-detail-properties" aria-label="物品属性">
-      {sections.map((section) => (
-        <div className={`item-property-section section-${section.id}`} key={section.id}>
-          <h3>{section.label}</h3>
-          <OfficialPropertyList entries={section.entries} legendaryPower={record.legendaryPower} />
-        </div>
-      ))}
-    </section>
-  );
-}
-
-function OfficialSetBlock({ itemSet, records }: { itemSet: OfficialItemSet; records: OfficialRecord[] }) {
-  return (
-    <section className="item-detail-set" aria-label="套装组成与效果">
-      {itemSet.name && <h3>{itemSet.name}</h3>}
-      <ul className="item-set-pieces">
-        {itemSet.items.map((piece) => {
-          const localRecord = records.find((record) => record.id === piece.id);
-          const copy = <span className={piece.current ? "current" : ""}>{piece.name}</span>;
-          return <li key={piece.id}>{localRecord ? <a href={`/library/${localRecord.category}/${encodeURIComponent(localRecord.id)}`}>{copy}</a> : copy}</li>;
-        })}
-      </ul>
-      <div className="item-set-bonuses">
-        {itemSet.bonuses.map((tier) => (
-          <div key={tier.pieces}>
-            <h4>({tier.pieces})件：</h4>
-            <OfficialPropertyList entries={tier.lines} />
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+  return "";
 }
 
 const OFFICIAL_ITEM_IDS_BY_GUIDE_ID: Record<string, string> = {
@@ -1337,7 +1091,7 @@ const OFFICIAL_ITEM_IDS_BY_GUIDE_ID: Record<string, string> = {
   warzechian: "warzechian-armguards-Unique_Bracer_101_x1",
 };
 
-function findOfficialItem(records: OfficialRecord[], gear?: Gear) {
+function findOfficialItem(records: OfficialItemRecord[], gear?: Gear) {
   if (!gear) return undefined;
   const assetKey = itemAssetKey(gear.image);
   return records.find((record) => itemAssetKey(record.image) === assetKey)
@@ -1384,8 +1138,8 @@ function LibraryCategory({ category }: { category: string }) {
 }
 
 function LibraryRecordDetail({ category, id }: { category: string; id: string }) {
-  const records = useLibraryRecords(category);
-  const record = records.find((entry) => entry.id === id);
+  const index = useItemIndex();
+  const record = useLibraryRecord(id);
   if (!record) return <section className="archive-section library-detail-page"><p className="library-empty">正在载入资料详情…</p></section>;
   return (
     <section className="archive-section library-detail-page">
@@ -1404,134 +1158,12 @@ function LibraryRecordDetail({ category, id }: { category: string; id: string })
           </dl>
           <OfficialPropertySections record={record} />
           {!record.properties && record.legendaryPower && <section className="item-detail-effect"><p>{record.legendaryPower}</p></section>}
-          {!record.properties && record.effects && record.effects.length > 0 && <section className="item-detail-lines"><h3>物品属性</h3><ul>{record.effects.map((effect, index) => <li key={`${effect}-${index}`}>{effect}</li>)}</ul></section>}
-          {record.set ? <OfficialSetBlock itemSet={record.set} records={records} /> : record.setBonuses && record.setBonuses.length > 0 && <section className="item-detail-set"><h3>套装特效</h3><ul>{record.setBonuses.map((effect, index) => <li key={`${effect}-${index}`}>{effect}</li>)}</ul></section>}
+          {record.set && <OfficialSetBlock itemSet={record.set} records={index as OfficialItemRecord[]} />}
           {record.extras && record.extras.length > 0 && <section className="item-detail-extras">{record.extras.map((line, index) => <span key={`${line}-${index}`}>{line}</span>)}</section>}
           {record.flavor && <blockquote>{record.flavor}</blockquote>}
         </article>
       </div>
     </section>
-  );
-}
-
-const GUIDE_FOLLOWERS = [
-  { id: "enchantress", name: "魔女", image: "/d3/follower-enchantress-model.png", role: "冷却 / 攻速", skills: "先知协调 · 集中心智", note: "适合大冷却、宠物攻速和稳定循环。" },
-  { id: "scoundrel", name: "盗贼", image: "/d3/follower-scoundrel-model.png", role: "暴击 / 爆发", skills: "解剖 · 多重射击", note: "适合围绕元素周期集中爆发的打法。" },
-  { id: "templar", name: "圣殿骑士", image: "/d3/follower-templar-model.png", role: "治疗 / 保命", skills: "治疗 · 守护者", note: "低巅峰或装备未成型时容错最高。" },
-];
-
-function DetailedNecromancerBuild({ guide }: { guide: NecromancerGuide }) {
-  const [mode, setMode] = useState<Mode>("push");
-  const [paragon, setParagon] = useState<Paragon>("low");
-  const [selectedGearId, setSelectedGearId] = useState(guide.gear[0]?.id ?? "");
-  const [selectedLink, setSelectedLink] = useState(0);
-  const selectedGear = guide.gear.find((item) => item.id === selectedGearId) ?? guide.gear[0];
-  const activeLink = guide.links[selectedLink] ?? guide.links[0];
-  const linkedIds = new Set(activeLink?.steps.map((step) => step.id) ?? []);
-  const purpose = guide.variants[mode];
-  const level = guide.variants[paragon];
-
-  const inspectLinkNode = (id: string) => {
-    if (guide.gear.some((item) => item.id === id)) setSelectedGearId(id);
-    document.getElementById(`guide-${id}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
-
-  return (
-    <RoutePage active="builds" eyebrow="NECROMANCER · SEASON 39 · SOLO" title={guide.name}>
-      <div className="guide-detail-page">
-        <section className="guide-hero archive-section">
-          <img src="/d3/library/classes/necromancer-crest.png" alt="" />
-          <div><span>{guide.set}</span><h2>{guide.name}</h2><strong>{guide.core}</strong><p>{guide.summary}</p></div>
-          <dl><div><dt>定位</dt><dd>{guide.difficulty}</dd></div><div><dt>基准</dt><dd>2.7.8 · 第39赛季</dd></div><div><dt>平台</dt><dd>NS 单人</dd></div></dl>
-        </section>
-
-        <section className="guide-variant-bar archive-section" aria-label="配置差异">
-          <div className="guide-switch"><span>用途</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>大秘境冲层</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>T16 / 速刷</button></div>
-          <div className="guide-switch"><span>巅峰</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>低巅峰</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>高巅峰</button></div>
-          <article><span>{purpose.title}</span><strong>{purpose.note}</strong><ul>{purpose.changes.map((change) => <li key={change}>{change}</li>)}</ul></article>
-          <article><span>{level.title}</span><strong>{level.note}</strong><ul>{level.changes.map((change) => <li key={change}>{change}</li>)}</ul></article>
-        </section>
-
-        <section className="guide-loadout archive-section">
-          <div className="archive-heading"><div><span>01 · LOADOUT</span><h2>全身装备与定向获取</h2></div><p>悬停或点击装备查看原理、词缀优先级、准确底材和避坑说明；联动图选中后，相关装备会同步高亮。</p></div>
-          <div className="guide-loadout-layout">
-            <div className="guide-gear-grid">
-              {guide.gear.map((item) => (
-                <button
-                  id={`guide-${item.id}`}
-                  key={item.id}
-                  className={`${item.quality} ${selectedGear.id === item.id ? "selected" : ""} ${linkedIds.has(item.id) ? "related" : ""}`}
-                  onMouseEnter={() => setSelectedGearId(item.id)}
-                  onFocus={() => setSelectedGearId(item.id)}
-                  onClick={() => setSelectedGearId(item.id)}
-                >
-                  <span>{item.slot}</span><img src={item.image} alt="" /><strong>{item.name}</strong>
-                  {item.gem && <i><img src={item.gem.image} alt="" /><small>{item.gem.name}</small></i>}
-                </button>
-              ))}
-            </div>
-            <article className="guide-gear-inspector d3-tooltip-item">
-              <span className="tooltip-frame tooltip-frame-top" aria-hidden="true" />
-              <span className="tooltip-frame tooltip-frame-right" aria-hidden="true" />
-              <span className="tooltip-frame tooltip-frame-bottom" aria-hidden="true" />
-              <span className="tooltip-frame tooltip-frame-left" aria-hidden="true" />
-              <span className="tooltip-frame tooltip-frame-top-left" aria-hidden="true" />
-              <span className="tooltip-frame tooltip-frame-top-right" aria-hidden="true" />
-              <span className="tooltip-frame tooltip-frame-bottom-left" aria-hidden="true" />
-              <span className="tooltip-frame tooltip-frame-bottom-right" aria-hidden="true" />
-              <header><span>{selectedGear.slot}</span><h3>{selectedGear.name}</h3></header>
-              <div className="guide-inspector-intro"><img src={selectedGear.image} alt="" /><p>{selectedGear.effect}</p></div>
-              {selectedGear.gem && <div className="guide-socket"><img src={selectedGear.gem.image} alt="" /><span><small>镶嵌</small><strong>{selectedGear.gem.name}</strong></span></div>}
-              <div className="guide-inspector-columns">
-                <section><h4>词缀优先级</h4><ol>{selectedGear.affixes.map((affix, index) => <li key={affix}><b>{index + 1}</b>{affix}</li>)}</ol></section>
-                <section><h4>怎么获得</h4><ul>{selectedGear.acquisition.map((method) => <li key={method}>{method}</li>)}</ul></section>
-              </div>
-              {selectedGear.warning && <aside><strong>避坑</strong><p>{selectedGear.warning}</p></aside>}
-            </article>
-          </div>
-        </section>
-
-        <div className="guide-mechanics-row">
-          <section className="archive-section guide-abilities">
-            <div className="archive-heading"><div><span>02 · SKILLS</span><h2>技能、符文与被动</h2></div></div>
-            <div className="guide-ability-group">
-              {guide.skills.map((ability) => <article id={`guide-${ability.id}`} key={ability.id} className={linkedIds.has(ability.id) ? "related" : ""}><img src={ability.image} alt="" /><span><strong>{ability.name}</strong><small>{ability.rune}</small><p>{ability.logic}</p></span></article>)}
-            </div>
-            <div className="guide-passive-group">
-              {guide.passives.map((ability) => <article id={`guide-${ability.id}`} key={ability.id} className={linkedIds.has(ability.id) ? "related" : ""}><img src={ability.image} alt="" /><span><strong>{ability.name}</strong><p>{ability.logic}</p></span></article>)}
-            </div>
-          </section>
-
-          <section className="archive-section guide-powers">
-            <div className="archive-heading"><div><span>03 · KANAI</span><h2>卡奈魔方 · 四威能</h2></div></div>
-            <div>
-              {guide.powers.map((power) => <article id={`guide-${power.id}`} key={`${power.slot}-${power.id}`} className={linkedIds.has(power.id) ? "related" : ""}><b>{power.slot}</b><img src={power.image} alt="" /><span><strong>{power.name}</strong><small>{power.effect}</small><p>{power.logic}</p><em>{power.acquisition}</em></span></article>)}
-            </div>
-          </section>
-        </div>
-
-        <section className="archive-section guide-synergy">
-          <div className="archive-heading"><div><span>04 · CAUSE & EFFECT</span><h2>核心 BD 联动</h2></div><p>选择一条链路，装备、技能、被动和威能模块会同步高亮；点击节点可定位对应元素。</p></div>
-          <div className="guide-link-tabs">{guide.links.map((link, index) => <button key={link.title} className={selectedLink === index ? "active" : ""} onClick={() => setSelectedLink(index)}>{link.title}</button>)}</div>
-          {activeLink && <div className={`guide-link-flow link-${activeLink.category}`}>
-            {activeLink.steps.map((step, index) => <div key={`${step.id}-${index}`}><button onClick={() => inspectLinkNode(step.id)}><b>{String(index + 1).padStart(2, "0")}</b><strong>{step.label}</strong><small>{step.detail}</small></button>{index < activeLink.steps.length - 1 && <span>→</span>}</div>)}
-            <p>{activeLink.conclusion}</p>
-          </div>}
-        </section>
-
-        <section className="archive-section guide-follower">
-          <div className="archive-heading"><div><span>05 · FOLLOWERS</span><h2>单人随从</h2></div><p>三名随从保留同一紧凑装备逻辑：时光流韵、神目指环、复仇者护腕与“不死”专属物；高亮项为本 BD 首选。</p></div>
-          <div>{GUIDE_FOLLOWERS.map((follower) => <article key={follower.id} className={guide.follower === follower.name ? "recommended" : ""}><img src={follower.image} alt="" /><span><small>{follower.role}</small><h3>{follower.name}</h3><strong>{follower.skills}</strong><p>{guide.follower === follower.name ? guide.followerReason : follower.note}</p><em>{guide.follower === follower.name ? "本 BD 首选" : "可替换"}</em></span></article>)}</div>
-        </section>
-
-        <section className="archive-section guide-rotation">
-          <div className="archive-heading"><div><span>06 · COMBAT LOOP</span><h2>实战手法与原因</h2></div><p>每一步的原因都来自上面的装备、技能或威能联动，不使用脱离 BD 的泛化口诀。</p></div>
-          <div>{guide.rotation.map((step, index) => <article key={step.title}><b>{String(index + 1).padStart(2, "0")}</b><span><h3>{step.title}</h3><p>{step.action}</p><small><i />为什么：{step.reason}</small></span></article>)}</div>
-        </section>
-
-        <div className="guide-source"><a href="/builds">← 返回全职业 BD</a><a href={guide.source} target="_blank" rel="noreferrer">第39赛季校对参考 ↗</a></div>
-      </div>
-    </RoutePage>
   );
 }
 
@@ -1643,13 +1275,14 @@ function normalizeGuideAffixes(item: Gear, classId: ClassId, mode: Mode, paragon
   return base;
 }
 
-function resolveDefaultVariantGear(guide: UnifiedBuildGuide, classId: ClassId, mode: Mode, paragon: Paragon): Gear[] {
+function resolveDefaultVariantGear(guide: UnifiedBuildGuide, classId: ClassId, mode: Mode, paragon: Paragon, profile?: BuildVariantProfile): Gear[] {
   const gear = guide.gear.map((item) => ({
     ...item,
     affixes: normalizeGuideAffixes(item as Gear, classId, mode, paragon),
   })) as Gear[];
-  if (mode !== "speed") return gear;
-  const speedGem = paragon === "low" ? HOARDER_GEM : POWERFUL_GEM;
+  if (!(profile?.gearOverrides.movementBoots ?? mode === "speed")) return gear;
+  const gemOverride = profile?.gearOverrides.legendaryGem;
+  const speedGem = gemOverride === "boon-of-the-hoarder" || (!profile && paragon === "low") ? HOARDER_GEM : POWERFUL_GEM;
 
   const stricken = gear.find((item) => item.gem?.name === "受罚者之灾");
   if (stricken) return gear.map((item) => item.id === stricken.id ? { ...item, gem: speedGem } : item);
@@ -1658,8 +1291,9 @@ function resolveDefaultVariantGear(guide: UnifiedBuildGuide, classId: ClassId, m
   return fallback ? gear.map((item) => item.id === fallback.id ? { ...item, gem: speedGem } : item) : gear;
 }
 
-function resolveDefaultVariantPowers(guide: UnifiedBuildGuide, mode: Mode, paragon: Paragon): CubePower[] {
-  const powers = guide.powers.map((power) => ({
+function resolveDefaultVariantPowers(guide: UnifiedBuildGuide, mode: Mode, paragon: Paragon, profile?: BuildVariantProfile): CubePower[] {
+  const selectedPowerIds = guide.powerSets?.[mode];
+  const powers = guide.powers.filter((power) => !selectedPowerIds || selectedPowerIds.includes(power.id)).map((power) => ({
     id: power.id,
     slot: power.slot,
     name: power.name,
@@ -1667,9 +1301,10 @@ function resolveDefaultVariantPowers(guide: UnifiedBuildGuide, mode: Mode, parag
     original: power.effect,
     summary: power.logic,
   }));
-  if (mode === "push" && paragon === "high") return powers;
-
-  const key = `${mode}-${paragon}` as keyof typeof DEFAULT_VARIANT_POWERS;
+  if (selectedPowerIds) return powers;
+  const replacementKey = profile?.powerOverrides.replaceLastWith;
+  if (replacementKey === "none" || (!profile && mode === "push" && paragon === "high")) return powers;
+  const key = replacementKey === "unity" ? "push-low" : replacementKey === "goldwrap" ? "speed-low" : replacementKey === "ingeom" ? "speed-high" : `${mode}-${paragon}` as keyof typeof DEFAULT_VARIANT_POWERS;
   const replacement = DEFAULT_VARIANT_POWERS[key];
   if (!replacement) return powers;
   return [...powers.slice(0, Math.max(0, powers.length - 1)), replacement];
@@ -1796,6 +1431,8 @@ function guideRows(guide: UnifiedBuildGuide, mode: Mode): FlowRow[] {
 type SetFamily = { id: string; name: string; gear: Gear[]; royalEligible: boolean };
 
 const SET_FAMILY_PATTERNS: { pattern: RegExp; name: string; royalEligible: boolean }[] = [
+  { pattern: /raiment|god-raiment/i, name: "千飓战甲", royalEligible: true },
+  { pattern: /inna|god-inna/i, name: "尹娜的真言", royalEligible: true },
   { pattern: /aughild/i, name: "奥吉德的权威", royalEligible: true },
   { pattern: /crimson|captain/i, name: "克里森船长的饰衣", royalEligible: true },
   { pattern: /guardian/i, name: "守护者的危难", royalEligible: true },
@@ -1848,13 +1485,6 @@ function buildAutomaticSetRows(families: SetFamily[], powers: CubePower[]): Flow
     });
   }
   return rows;
-}
-
-function runeKeyFor(skillId: string, rune?: string) {
-  if (!rune || rune.includes("全符文")) return "none";
-  const keys = ["a", "b", "c", "d", "e"] as const;
-  const score = Array.from(`${skillId}:${rune}`).reduce((sum, character) => sum + (character.codePointAt(0) ?? 0), 0);
-  return keys[score % keys.length];
 }
 
 const TRAGOUL_PUSH_ROTATION: NecromancerGuide["rotation"] = [
@@ -1914,27 +1544,43 @@ const TRAGOUL_GUIDE: UnifiedBuildGuide = {
 
 function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const { genders } = useSiteSettings();
-  const officialItems = useLibraryRecords();
+  const itemIndex = useItemIndex();
   const catalogEntry = BUILD_CATALOG.find((entry) => entry.id === guide.id);
   const classId = catalogEntry?.classId ?? "necromancer";
   const hero = CLASS_CATALOG.find((entry) => entry.id === classId) ?? CLASS_CATALOG[4];
-  const [mode, setMode] = useState<Mode>("push");
+  const [mode, setMode] = useState<Mode>(guide.defaultMode ?? "push");
   const [paragon, setParagon] = useState<Paragon>("low");
+  const [loadoutId, setLoadoutId] = useState(guide.defaultLoadoutId ?? guide.loadouts?.[0]?.id ?? "");
+  const activeLoadout = guide.loadouts?.find((loadout) => loadout.id === loadoutId) ?? guide.loadouts?.[0];
+  const activeGuide = useMemo(() => ({
+    ...guide,
+    set: activeLoadout?.set ?? guide.set,
+    core: activeLoadout?.core ?? guide.core,
+    gear: activeLoadout?.gear ?? guide.gear,
+    skills: activeLoadout?.skills ?? guide.skills,
+    passives: activeLoadout?.passives ?? guide.passives,
+    powers: activeLoadout?.powers ?? guide.powers,
+    links: activeLoadout?.links ?? guide.links,
+    rotation: activeLoadout?.rotation ?? guide.rotation,
+    powerSets: activeLoadout?.powerSets ?? guide.powerSets,
+    consoleNote: activeLoadout?.consoleNote ?? guide.consoleNote,
+  }) as UnifiedBuildGuide, [guide, activeLoadout]);
+  const activeVariant = guide.variantProfiles?.[`${mode}-${paragon}`];
   const gear = useMemo(
-    () => guide.resolveGear?.(mode, paragon) ?? resolveDefaultVariantGear(guide, classId, mode, paragon),
-    [guide, classId, mode, paragon],
+    () => activeGuide.resolveGear?.(mode, paragon) ?? resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant),
+    [activeGuide, classId, mode, paragon, activeVariant],
   );
   const positions = useMemo(() => arrangeGuideGear(gear as Gear[]), [gear]);
   const powers = useMemo(
-    () => guide.resolvePowers?.(mode, paragon) ?? resolveDefaultVariantPowers(guide, mode, paragon),
-    [guide, mode, paragon],
+    () => activeGuide.resolvePowers?.(mode, paragon) ?? resolveDefaultVariantPowers(activeGuide, mode, paragon, activeVariant),
+    [activeGuide, mode, paragon, activeVariant],
   );
-  const setFamilies = useMemo(() => buildSetFamilies(guide, gear as Gear[]), [guide, gear]);
+  const setFamilies = useMemo(() => buildSetFamilies(activeGuide, gear as Gear[]), [activeGuide, gear]);
   const rows = useMemo(
-    () => [...guideRows(guide, mode), ...buildAutomaticSetRows(setFamilies, powers)],
-    [guide, mode, setFamilies, powers],
+    () => [...guideRows(activeGuide, mode), ...buildAutomaticSetRows(setFamilies, powers)],
+    [activeGuide, mode, setFamilies, powers],
   );
-  const rotation = guide.resolveRotation?.(mode) ?? guide.rotation;
+  const rotation = activeGuide.resolveRotation?.(mode) ?? activeGuide.rotation;
   const [selectedGearId, setSelectedGearId] = useState(positions[0]?.gear.id ?? "");
   const [selectedPowerId, setSelectedPowerId] = useState(powers[0]?.id ?? "");
   const [activeNode, setActiveNode] = useState<FlowNode | null>(null);
@@ -1942,8 +1588,9 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const [flowFilter, setFlowFilter] = useState<FlowFilter>("all");
   const selectedGear = (gear.find((item) => item.id === selectedGearId) ?? positions[0]?.gear ?? gear[0]) as Gear;
   const selectedPower = powers.find((power) => power.id === selectedPowerId) ?? powers[0];
-  const selectedOfficialItem = useMemo(() => findOfficialItem(officialItems, selectedGear), [officialItems, selectedGear]);
-  const originalItemEffect = officialItemEffect(selectedOfficialItem) || guide.originalEffects?.[selectedGear?.id] || selectedGear?.effect;
+  const selectedOfficialId = useMemo(() => findOfficialItem(itemIndex as OfficialItemRecord[], selectedGear)?.id ?? "", [itemIndex, selectedGear]);
+  const selectedOfficialItem = useLibraryRecord(selectedOfficialId);
+  const originalItemEffect = officialItemEffect(selectedOfficialItem) || activeGuide.originalEffects?.[selectedGear?.id] || selectedGear?.effect;
   const selectedSockets = selectedGear ? guideSockets(selectedGear, classId) : [];
   const statRows = useMemo(() => equipmentStatRows(positions, classId, paragon), [positions, classId, paragon]);
   const activeStat = statRows.find((stat) => stat.key === selectedStat);
@@ -1967,7 +1614,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     return ids;
   }, [activeNode, rows, powers, setFamilies]);
   const visibleRows = flowFilter === "all" ? rows : rows.filter((row) => row.category === flowFilter);
-  const paperdollImage = `/d3/paperdolls/${classId}-${genders[classId]}.jpg`;
+  const paperdollImage = paperdollAsset(classId, genders[classId]);
 
   useEffect(() => {
     if (!gear.some((item) => item.id === selectedGearId)) setSelectedGearId(positions[0]?.gear.id ?? gear[0]?.id ?? "");
@@ -1998,24 +1645,30 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
       <section className="hero" id="top">
         <div className="breadcrumbs">{hero.name} <span>›</span> 单人BD <span>›</span> {guide.core}</div>
         <div className="hero-content">
-          <div><div className="eyebrow"><span>NS 专用校对</span><b>PATCH 2.7.8</b></div><h1>{guide.name}</h1><p>{guide.summary}</p></div>
-          <div className="build-rating" aria-label="BD定位"><span><b>{catalogEntry?.role === "冲层" ? "S" : "A"}</b> 单人强度</span><span><b>{catalogEntry?.difficulty ?? "中"}</b> 操作门槛</span><span><b>强</b> NS适配</span></div>
+          <div><div className="eyebrow"><span>{CURRENT_SEASON.platformLabel} 专用校对</span><b>PATCH {CURRENT_SEASON.patch}</b></div><h1>{guide.name}</h1><p>{guide.summary}</p></div>
+          <div className="build-rating" aria-label="BD定位"><span><b>{catalogEntry?.role === "冲层" ? "S" : "A"}</b> {catalogEntry?.purpose ?? "单人强度"}</span><span><b>{catalogEntry?.difficulty ?? "中"}</b> 操作门槛</span><span><b>强</b> NS适配</span></div>
         </div>
       </section>
 
       <section className="variant-bar" aria-label="配置切换">
-        <div className="variant-group"><span>用途</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>大秘境冲层</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>T16 / 速刷</button></div>
+        {guide.loadouts && guide.loadouts.length > 1 && <><div className="variant-group"><span>套装方案</span>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}>{loadout.label}</button>)}</div><div className="variant-divider" /></>}
+        <div className="variant-group"><span>用途</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{guide.modeLabels?.push ?? "大秘境冲层"}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{guide.modeLabels?.speed ?? "T16 / 速刷"}</button></div>
         <div className="variant-divider" />
         <div className="variant-group"><span>巅峰</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>低巅峰 &lt; 2000</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>高巅峰 2000+</button></div>
-        <div className="variant-note"><strong>{guide.variants[mode].title} · {guide.variants[paragon].title}</strong><span>{guide.variants[mode].note}；{guide.variants[paragon].note}</span></div>
+        <div className="variant-note"><strong>{activeLoadout ? `${activeLoadout.title} · ` : ""}{activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`}</strong><span>{activeLoadout?.summary ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`}</span></div>
       </section>
+
+      {guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
+        <header><span>配装选择</span><strong>两套都能无限疾风，区别在于谁负责杀怪</strong></header>
+        <div>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}><span>{loadout.label}</span><h3>{loadout.title}</h3><p>{loadout.summary}</p><dl><div><dt>推荐</dt><dd>{loadout.bestFor}</dd></div><div><dt>取舍</dt><dd>{loadout.tradeoff}</dd></div></dl></button>)}</div>
+      </section>}
 
       <section className="workbench">
         <article className="panel loadout-panel">
           <div className="panel-heading"><div><span className="section-index">01</span><h2>装备盘</h2></div><small>悬停查看 · 点击锁定</small></div>
           <div className="paperdoll" style={{ "--paperdoll-image": `url("${paperdollImage}")` } as CSSProperties}>
             <div className="paperdoll-lines" aria-hidden="true" />
-            <div className="paperdoll-profile"><span>70级 · {hero.name} · 第39赛季</span><strong>{guide.name}</strong><small>{mode === "push" ? "单人大秘境冲层" : "T16 / 大秘境速刷"} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small></div>
+            <div className="paperdoll-profile"><span>70级 · {hero.name} · {SEASON_LABEL}</span><strong>{guide.name}</strong><small>{activeLoadout ? `${activeLoadout.label} · ` : ""}{mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷")} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small></div>
             <div className="paperdoll-stats">
               <h3>装备加成 <small>点击反查词缀</small></h3>
               {statRows.map((stat) => (
@@ -2060,7 +1713,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
               {positions.map(({ position, gear: item }) => {
                 const statRelated = Boolean(activeStat?.targets.has(item.id));
                 return (
-                  <ItemIcon
+                  <PaperdollGearSlot
                     key={position}
                     gear={item}
                     position={position}
@@ -2075,19 +1728,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
               })}
             </div>
           </div>
-          <div className={`gear-detail-shell quality-${selectedGear.quality}`}>
-            <span className="tooltip-frame tooltip-frame-top" /><span className="tooltip-frame tooltip-frame-right" /><span className="tooltip-frame tooltip-frame-bottom" /><span className="tooltip-frame tooltip-frame-left" /><span className="tooltip-frame tooltip-frame-top-left" /><span className="tooltip-frame tooltip-frame-top-right" /><span className="tooltip-frame tooltip-frame-bottom-left" /><span className="tooltip-frame tooltip-frame-bottom-right" />
-            <div className={`gear-detail blizzard-tooltip quality-${selectedGear.quality}`}>
-              <div className="tooltip-nameplate"><h3>{selectedGear.name}</h3></div>
-              <div className="gear-detail-title"><div className={`detail-item-icon ${selectedGear.quality}`}><img src={selectedGear.image} alt="" />{selectedSockets.length > 0 && <span className="detail-sockets">{selectedSockets.map((socket, index) => <img key={`${socket.label}-${index}`} src={socket.image} alt="" title={socket.label} />)}</span>}</div><div><strong>{selectedGear.quality === "set" ? "套装物品" : "传奇物品"}</strong><small>{selectedGear.slot}</small><b>远古 / 太古均可用</b></div></div>
-              <section className="original-effect"><p>{originalItemEffect}</p></section>
-              <div className="tooltip-divider" />
-              <section className="guide-effect"><h4>这件装备在 BD 里做什么</h4><p>{selectedGear.effect}</p></section>
-              {selectedSockets.length > 0 && <section className="socket-advice"><h4>镶嵌</h4>{selectedSockets.map((socket, index) => <span key={`${socket.label}-${index}`}><img src={socket.image} alt="" />{socket.label}</span>)}</section>}
-              <div className="detail-columns"><div><h4>词缀优先级</h4><ol className="affix-list">{selectedGear.affixes.map((affix, index) => <li key={affix}><b>{index + 1}</b>{affix}</li>)}</ol></div><div><h4>怎么获得</h4><ul className="acquisition-list">{selectedGear.acquisition.map((line) => <li key={line}>{line}</li>)}</ul></div></div>
-              {selectedGear.warning && <div className="warning"><b>避坑</b>{selectedGear.warning}</div>}
-            </div>
-          </div>
+          <GearDetailPanel gear={selectedGear} sockets={selectedSockets} originalEffect={originalItemEffect} />
         </article>
 
         <article className="panel synergy-panel" id="synergy">
@@ -2099,34 +1740,42 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         </article>
 
         <aside className="panel combat-panel" id="rotation">
-          <div className="panel-heading"><div><span className="section-index">06</span><h2>实战手法</h2></div><small>Nintendo Switch</small></div>
+          <div className="panel-heading"><div><span className="section-index">06</span><h2>实战手法</h2></div><small>{CURRENT_SEASON.guideBaseline}</small></div>
           <div className="combat-summary"><div><span>输出</span><i><b style={{ width: mode === "push" ? "92%" : "80%" }} /></i><em>{mode === "push" ? "92" : "80"}</em></div><div><span>坚韧</span><i><b style={{ width: paragon === "low" ? "90%" : "82%" }} /></i><em>{paragon === "low" ? "90" : "82"}</em></div><div><span>机动</span><i><b style={{ width: mode === "speed" ? "95%" : "64%" }} /></i><em>{mode === "speed" ? "95" : "64"}</em></div></div>
           <ol className="rotation-list">{rotation.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{step.title}</h3><p>{step.action}</p><small><b>为什么：</b>{step.reason}</small></div></li>)}</ol>
-          <div className="ns-note"><div className="switch-icon"><span>−</span><b>NS</b><span>+</span></div><div><strong>主机操作提醒</strong><p>锁定目标偏离怪群中心时，松开技能、调整摇杆方向后重新施放，比持续硬拉视角更稳定。</p></div></div>
+          <div className="ns-note"><div className="switch-icon"><span>−</span><b>NS</b><span>+</span></div><div><strong>主机操作提醒</strong><p>{activeGuide.consoleNote ?? "锁定目标偏离怪群中心时，松开技能、调整摇杆方向后重新施放，比持续硬拉视角更稳定。"}</p></div></div>
         </aside>
       </section>
 
       <section className="lower-grid">
-        <article className="panel skills-panel" id="skills">
-          <div className="panel-heading"><div><span className="section-index">02</span><h2>技能与符文</h2></div><small>技能、符文、被动均可点击联动</small></div>
-          <div className="skill-grid">{guide.skills.map((skill) => { const related = Boolean(activeNode && relatedIds.has(skill.id)); const runeKey = runeKeyFor(skill.id, skill.rune); return <div className={`skill-card ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} key={skill.id}><button className={`skill-main ${activeNode?.id === skill.id ? "active" : ""}`} onClick={() => handleNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic, kind: "skill", image: skill.image })}><span className="skill-icon"><img src={skill.image} alt="" /></span><span><strong>{skill.name}</strong><small>{skill.logic}</small></span></button>{skill.rune && <button className="rune-choice" onClick={() => handleNodeSelect({ id: `${skill.id}-rune`, label: skill.rune ?? "符文", detail: skill.logic, kind: "rune", image: skill.image })}><i className={`rune-icon rune-${runeKey}`} /><span><strong>{skill.rune}</strong><small>{skill.logic}</small></span></button>}</div>; })}</div>
-          <div className="passives"><span className="passive-title">被动技能</span>{guide.passives.map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => handleNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic, kind: "passive", image: passive.image })}><span><img src={passive.image} alt="" /></span><strong>{passive.name}</strong><small>{passive.logic}</small></button>)}</div>
-        </article>
+        <BuildAbilitiesPanel
+          skills={activeGuide.skills.map((skill) => ({ id: skill.id, name: skill.name, image: skill.image, logic: skill.logic, rune: skill.rune }))}
+          passives={activeGuide.passives.map((passive) => ({ id: passive.id, name: passive.name, image: passive.image, logic: passive.logic }))}
+          activeNode={activeNode}
+          relatedIds={relatedIds}
+          onNodeSelect={handleNodeSelect}
+        />
 
-        <article className="panel cube-panel" id="cube">
-          <div className="panel-heading"><div><span className="section-index">03</span><h2>卡奈魔方</h2></div><small>第39赛季 · 第四槽开放</small></div>
-          <div className="cube-grid">{powers.map((power) => <button key={`${power.slot}-${power.id}`} className={`${selectedPower.id === power.id ? "selected" : ""} ${activeNode && relatedIds.has(power.id) ? "related" : ""} ${activeNode && !relatedIds.has(power.id) ? "dimmed" : ""}`} onClick={() => { setSelectedPowerId(power.id); handleNodeSelect({ id: power.id, label: power.name, detail: power.summary, kind: "power", image: power.image }); }}><span>{power.slot}</span><img src={power.image} alt="" /><strong>{power.name}</strong></button>)}</div>
-          <div className="cube-detail"><div><img src={selectedPower.image} alt="" /><span><small>当前威能</small><strong>{selectedPower.name}</strong></span></div><h4>游戏原特效</h4><p>{selectedPower.original}</p><div className="tooltip-divider" /><h4>一句话看懂</h4><p>{selectedPower.summary}</p></div>
-        </article>
+        <KanaiCubePanel
+          powers={powers}
+          selectedPower={selectedPower}
+          activeNode={activeNode}
+          relatedIds={relatedIds}
+          seasonLabel={CUBE_SEASON_LABEL}
+          onPowerSelect={(power) => {
+            setSelectedPowerId(power.id);
+            handleNodeSelect({ id: power.id, label: power.name, detail: power.summary, kind: "power", image: power.image });
+          }}
+        />
 
         <article className="panel follower-panel" id="followers">
           <div className="panel-heading"><div><span className="section-index">05</span><h2>随从配装</h2></div><small>三名随从并列对比 · 首选项高亮</small></div>
-          <div className="follower-showcase">{(Object.keys(FOLLOWERS) as FollowerKey[]).map((key) => { const current = FOLLOWERS[key]; const recommended = guide.follower === current.name; return <section className={`follower-card follower-${key} ${recommended ? "recommended" : ""}`} key={key}><header><span><strong>{current.name}</strong><small>{recommended ? `首选 · ${current.role.replace("首选 · ", "")}` : current.role.replace("首选 · ", "备选 · ")}</small></span><img src={`/d3/library/classes/${key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader"}-portrait.png`} alt="" /></header><div className="follower-paperdoll"><div className="follower-card-model" /><div className="follower-silhouette" />{current.items.map((item, index) => <button key={`${key}-${item.slot}-${item.name}`} className={`follower-item follower-slot-${getFollowerSlotClass(current.items, index)}`} title={`${item.name}：${item.reason}`}><span className="follower-item-icon"><img src={item.image} alt="" /></span><small>{item.slot}</small><span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span></button>)}</div><div className="follower-skill-strip">{FOLLOWER_SKILLS[key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{skill.name}</strong></span>)}</div><p>{recommended ? guide.followerReason : current.note}</p></section>; })}</div>
+          <div className="follower-showcase">{(Object.keys(FOLLOWERS) as FollowerKey[]).map((key) => { const current = FOLLOWERS[key]; const recommended = guide.follower === current.name; const portraitClass = key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader"; return <section className={`follower-card follower-${key} ${recommended ? "recommended" : ""}`} key={key}><header><span><strong>{current.name}</strong><small>{recommended ? `首选 · ${current.role.replace("首选 · ", "")}` : current.role.replace("首选 · ", "备选 · ")}</small></span><img src={classPortraitAsset(portraitClass)} alt="" /></header><div className="follower-paperdoll"><div className="follower-card-model" /><div className="follower-silhouette" />{current.items.map((item, index) => <button key={`${key}-${item.slot}-${item.name}`} className={`follower-item follower-slot-${getFollowerSlotClass(current.items, index)}`} title={`${item.name}：${item.reason}`}><span className="follower-item-icon"><img src={item.image} alt="" /></span><small>{item.slot}</small><span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span></button>)}</div><div className="follower-skill-strip">{FOLLOWER_SKILLS[key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{skill.name}</strong></span>)}</div><p>{recommended ? guide.followerReason : current.note}</p></section>; })}</div>
           <div className="follower-rule"><b>通用原则</b><span>主属性洗成智力 / 敏捷 / 力量以匹配随从；优先冷却、攻速与坚韧。携带“不死”专属饰品后，再用团结分摊伤害。</span></div>
         </article>
       </section>
 
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>NS · 第39赛季 · 仅单人玩法</small></p></div><p><a href="/builds">返回全职业 BD</a> · <a href={guide.source} target="_blank" rel="noreferrer">查看校对来源</a></p></footer>
+      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p></div><p><a href="/builds">返回全职业 BD</a> · <a href={guide.source} target="_blank" rel="noreferrer">查看校对来源</a></p></footer>
     </main>
   );
 }
@@ -2136,7 +1785,7 @@ function PendingBuildDetail({ buildId }: { buildId: string }) {
   if (!build) return <RoutePage active="builds" eyebrow="BUILD NOT FOUND" title="未找到该 BD"><section className="archive-section"><p className="library-empty">该 BD 不在当前赛季目录中。</p></section></RoutePage>;
   const hero = CLASS_CATALOG.find((entry) => entry.id === build.classId)!;
   return (
-    <RoutePage active="builds" eyebrow={`${hero.name} · 第39赛季`} title={build.name}>
+    <RoutePage active="builds" eyebrow={`${hero.name} · ${SEASON_LABEL}`} title={build.name}>
       <section className="archive-section pending-build-detail">
         <img src={hero.crest} alt="" /><article><span>{build.set}</span><h2>{build.name}</h2><p>{build.summary}</p><dl><div><dt>核心技能</dt><dd>{build.core}</dd></div><div><dt>主要用途</dt><dd>{build.role}</dd></div><div><dt>操作门槛</dt><dd>{build.difficulty}</dd></div></dl><div className="pending-notice"><strong>完整攻略校对中</strong><p>该页路由与资料库关联已建立；装备盘、低/高巅峰、速刷/冲层、词缀、定向获取、联动图与输出手法会按照塔格奥新星的标准逐项补齐。</p></div><a href="/builds">返回全职业 BD 列表</a></article>
       </section>
@@ -2225,7 +1874,7 @@ function HomeContent() {
             ["第4槽", "scythe-cycle"],
           ];
   const cube: CubePower[] = cubeIds.map(([slot, id]) => ({ ...CUBE_POWERS[id], slot }));
-  const selectedPower = CUBE_POWERS[selectedPowerId] ?? CUBE_POWERS["bloodtide-blade"];
+  const selectedPower = cube.find((power) => power.id === selectedPowerId) ?? cube[0];
   const selectedSockets = SOCKETS[selectedGear.id] ?? [];
 
   if (pathname === "/" || pathname === "/builds") {
@@ -2271,7 +1920,7 @@ function HomeContent() {
         <div className="breadcrumbs">死灵法师 <span>›</span> 单人BD <span>›</span> 死亡新星</div>
         <div className="hero-content">
           <div>
-            <div className="eyebrow"><span>NS 专用校对</span><b>PATCH 2.7.8</b></div>
+            <div className="eyebrow"><span>{CURRENT_SEASON.platformLabel} 专用校对</span><b>PATCH {CURRENT_SEASON.patch}</b></div>
             <h1>塔格奥 <em>·</em> 死亡新星</h1>
             <p>让每一滴鲜血都成为一次爆炸。装备、技能与威能不再是清单，而是一张可以追溯的因果图。</p>
           </div>
@@ -2322,7 +1971,7 @@ function HomeContent() {
           <div className="paperdoll">
             <div className="paperdoll-lines" aria-hidden="true" />
             <div className="paperdoll-profile" aria-label="当前配装概览">
-              <span>70级 · 死灵法师 · 第39赛季</span>
+              <span>70级 · 死灵法师 · {SEASON_LABEL}</span>
               <strong>塔格奥 · 死亡新星</strong>
               <small>{mode === "push" ? "单人大秘境冲层" : "T16 / 大秘境速刷"} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small>
             </div>
@@ -2363,13 +2012,14 @@ function HomeContent() {
                     : key;
                 const gear = GEAR[resolvedId];
                 return (
-                  <ItemIcon
+                  <PaperdollGearSlot
                     key={position}
                     gear={gear}
                     position={position}
                     selected={selectedGearId === gear.id}
                     related={Boolean(activeNode && relatedIds.has(gear.id))}
                     dimmed={Boolean(activeNode && !relatedIds.has(gear.id))}
+                    sockets={SOCKETS[gear.id] ?? []}
                     onSelect={handleGearSelect}
                     onPreview={setSelectedGearId}
                   />
@@ -2378,66 +2028,12 @@ function HomeContent() {
             </div>
           </div>
 
-          <div className={`gear-detail-shell quality-${selectedGear.quality}`}>
-            <span className="tooltip-frame tooltip-frame-top" aria-hidden="true" />
-            <span className="tooltip-frame tooltip-frame-right" aria-hidden="true" />
-            <span className="tooltip-frame tooltip-frame-bottom" aria-hidden="true" />
-            <span className="tooltip-frame tooltip-frame-left" aria-hidden="true" />
-            <span className="tooltip-frame tooltip-frame-top-left" aria-hidden="true" />
-            <span className="tooltip-frame tooltip-frame-top-right" aria-hidden="true" />
-            <span className="tooltip-frame tooltip-frame-bottom-left" aria-hidden="true" />
-            <span className="tooltip-frame tooltip-frame-bottom-right" aria-hidden="true" />
-            <div className={`gear-detail blizzard-tooltip quality-${selectedGear.quality}`}>
-              <div className="tooltip-nameplate"><h3>{selectedGear.name}</h3></div>
-              <div className="gear-detail-title">
-                <div className={`detail-item-icon ${selectedGear.quality}`}>
-                  <img src={selectedGear.image} alt="" />
-                  {selectedSockets.length > 0 && (
-                    <span className="detail-sockets">
-                      {selectedSockets.map((socket, index) => <img key={`${socket.label}-${index}`} src={socket.image} alt="" title={socket.label} />)}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <strong>{selectedGear.quality === "set" ? "套装物品" : "传奇物品"}</strong>
-                  <small>{selectedGear.slot}</small>
-                  <b>远古 / 太古均可用</b>
-                </div>
-              </div>
-              <section className="original-effect">
-                <p>{ORIGINAL_EFFECTS[selectedGear.id] ?? selectedGear.effect}</p>
-              </section>
-              <div className="tooltip-divider" />
-              <section className="guide-effect">
-                <h4>这件装备在 BD 里做什么</h4>
-                <p>{selectedGear.effect}</p>
-              </section>
-              {selectedSockets.length > 0 && (
-                <section className="socket-advice">
-                  <h4>镶嵌</h4>
-                  {selectedSockets.map((socket, index) => (
-                    <span key={`${socket.label}-${index}`}><img src={socket.image} alt="" />{socket.label}</span>
-                  ))}
-                  {selectedGear.id === "tragoul-chest" && <small>坚韧不足时可把黄宝石换成红宝石补护甲。</small>}
-                </section>
-              )}
-              <div className="detail-columns">
-                <div>
-                  <h4>词缀优先级</h4>
-                  <ol className="affix-list">
-                    {selectedGear.affixes.map((affix, index) => <li key={affix}><b>{index + 1}</b>{affix}</li>)}
-                  </ol>
-                </div>
-                <div>
-                  <h4>怎么获得</h4>
-                  <ul className="acquisition-list">
-                    {selectedGear.acquisition.map((line) => <li key={line}>{line}</li>)}
-                  </ul>
-                </div>
-              </div>
-              {selectedGear.warning && <div className="warning"><b>避坑</b>{selectedGear.warning}</div>}
-            </div>
-          </div>
+          <GearDetailPanel
+            gear={selectedGear}
+            sockets={selectedSockets}
+            originalEffect={ORIGINAL_EFFECTS[selectedGear.id] ?? selectedGear.effect}
+            socketNote={selectedGear.id === "tragoul-chest" ? "坚韧不足时可把黄宝石换成红宝石补护甲。" : undefined}
+          />
         </article>
 
         <article className="panel synergy-panel" id="synergy">
@@ -2515,7 +2111,7 @@ function HomeContent() {
               <span className="section-index">06</span>
               <h2>实战手法</h2>
             </div>
-            <small>Nintendo Switch</small>
+            <small>{CURRENT_SEASON.guideBaseline}</small>
           </div>
 
           <div className="combat-summary">
@@ -2548,87 +2144,25 @@ function HomeContent() {
       </section>
 
       <section className="lower-grid">
-        <article className="panel skills-panel" id="skills">
-          <div className="panel-heading">
-            <div>
-              <span className="section-index">02</span>
-              <h2>技能与符文</h2>
-            </div>
-            <small>技能、符文、被动均可点击联动</small>
-          </div>
-          <div className="skill-grid">
-            {SKILLS.map((skill) => {
-              const skillRelated = Boolean(activeNode && relatedIds.has(skill.id));
-              const runeRelated = Boolean(activeNode && relatedIds.has(skill.runeId));
-              return (
-                <div className={`skill-card ${skillRelated || runeRelated ? "related" : ""} ${activeNode && !skillRelated && !runeRelated ? "dimmed" : ""}`} key={skill.id}>
-                  <button
-                    className={`skill-main ${activeNode?.id === skill.id ? "active" : ""}`}
-                    onClick={() => handleNodeSelect({ id: skill.id, label: skill.name, detail: skill.effect, kind: "skill", image: skill.image })}
-                  >
-                    <span className="skill-icon"><img src={skill.image} alt="" /></span>
-                    <span><strong>{skill.name}</strong><small>{skill.effect}</small></span>
-                  </button>
-                  <button
-                    className={`rune-choice ${activeNode?.id === skill.runeId ? "active" : ""}`}
-                    onClick={() => handleNodeSelect({ id: skill.runeId, label: skill.rune, detail: skill.runeEffect, kind: "rune", image: skill.image })}
-                  >
-                    <i className={`rune-icon rune-${skill.runeKey}`} />
-                    <span><strong>{skill.rune}</strong><small>{skill.runeEffect}</small></span>
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-          <div className="passives">
-            <span className="passive-title">被动技能</span>
-            {PASSIVES.map((passive) => (
-              <button
-                key={passive.id}
-                className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`}
-                onClick={() => handleNodeSelect({ id: passive.id, label: passive.name, detail: passive.effect, kind: "passive", image: passive.image })}
-              >
-                <span><img src={passive.image} alt="" /></span>
-                <strong>{passive.name}</strong>
-                <small>{passive.effect}</small>
-              </button>
-            ))}
-          </div>
-        </article>
+        <BuildAbilitiesPanel
+          skills={SKILLS.map((skill) => ({ id: skill.id, name: skill.name, image: skill.image, logic: skill.effect, rune: skill.rune, runeId: skill.runeId, runeLogic: skill.runeEffect, runeKey: skill.runeKey }))}
+          passives={PASSIVES.map((passive) => ({ id: passive.id, name: passive.name, image: passive.image, logic: passive.effect }))}
+          activeNode={activeNode}
+          relatedIds={relatedIds}
+          onNodeSelect={handleNodeSelect}
+        />
 
-        <article className="panel cube-panel" id="cube">
-          <div className="panel-heading">
-            <div>
-              <span className="section-index">03</span>
-              <h2>卡奈魔方</h2>
-            </div>
-            <small>第39赛季 · 第四槽开放</small>
-          </div>
-          <div className="cube-grid">
-            {cube.map((power) => (
-              <button
-                key={power.slot}
-                className={`${selectedPower.id === power.id ? "selected" : ""} ${activeNode && relatedIds.has(power.id) ? "related" : ""} ${activeNode && !relatedIds.has(power.id) ? "dimmed" : ""}`}
-                onClick={() => {
-                  setSelectedPowerId(power.id);
-                  handleNodeSelect({ id: power.id, label: power.name, detail: power.summary, kind: "power", image: power.image });
-                }}
-              >
-                <span>{power.slot}</span>
-                <img src={power.image} alt="" />
-                <strong>{power.name}</strong>
-              </button>
-            ))}
-          </div>
-          <div className="cube-detail">
-            <div><img src={selectedPower.image} alt="" /><span><small>当前威能</small><strong>{selectedPower.name}</strong></span></div>
-            <h4>游戏原特效</h4>
-            <p>{selectedPower.original}</p>
-            <div className="tooltip-divider" />
-            <h4>一句话看懂</h4>
-            <p>{selectedPower.summary}</p>
-          </div>
-        </article>
+        <KanaiCubePanel
+          powers={cube}
+          selectedPower={selectedPower}
+          activeNode={activeNode}
+          relatedIds={relatedIds}
+          seasonLabel={CUBE_SEASON_LABEL}
+          onPowerSelect={(power) => {
+            setSelectedPowerId(power.id);
+            handleNodeSelect({ id: power.id, label: power.name, detail: power.summary, kind: "power", image: power.image });
+          }}
+        />
 
         <article className="panel follower-panel" id="followers">
           <div className="panel-heading">
@@ -2645,7 +2179,7 @@ function HomeContent() {
                 <section className={`follower-card follower-${key}`} key={key}>
                   <header>
                     <span><strong>{current.name}</strong><small>{current.role}</small></span>
-                    <img src={`/d3/library/classes/${key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader"}-portrait.png`} alt="" />
+                    <img src={classPortraitAsset(key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader")} alt="" />
                   </header>
                   <div className="follower-paperdoll">
                     <div className="follower-card-model" aria-hidden="true" />
@@ -2698,7 +2232,7 @@ function HomeContent() {
       <footer>
         <div>
           <span className="footer-mark">N</span>
-          <p><strong>圣休亚瑞秘典 · 私人原型</strong><small>NS · 第39赛季 · 仅单人玩法</small></p>
+          <p><strong>圣休亚瑞秘典 · 私人原型</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p>
         </div>
         <p>游戏名称、图像与素材归 Blizzard Entertainment 所有。本页用于个人攻略整理。</p>
       </footer>
