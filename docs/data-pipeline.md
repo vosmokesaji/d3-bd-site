@@ -11,9 +11,14 @@
 | 文件 | 用途 |
 | --- | --- |
 | `scripts/scrape-diablo-items.mjs` | 全量/增量抓取、解析、下载图标和生成 JSON |
+| `scripts/build-item-library.mjs` | 从完整记录生成 Schema V3、分类分片、详情分片和索引 |
 | `scripts/inspect-diablo-item.mjs` | 离线检查单个缓存详情页的结构化结果 |
 | `.cache/d3-items/` | 官网目录和详情 HTML 缓存，不作为运行时资源 |
-| `public/d3/library/items.json` | 2353 条物品记录 |
+| `public/d3/library/items.json` | 2353 条结构化源记录，不由页面运行时加载 |
+| `public/d3/library/items/index.json` | 列表字段索引 |
+| `public/d3/library/items/asset-index.json` | BD 装备图片到官方 ID 的轻量索引 |
+| `public/d3/library/items/by-category/` | 55 个分类运行时分片 |
+| `public/d3/library/items/detail/` | 2353 个单物品详情分片 |
 | `public/d3/library/item-categories.json` | 55 个目录分类 |
 | `public/d3/library/items/` | 本地图标 |
 | `public/d3/item-icon-bgs/` | 普通、传奇、套装品质背景纹理 |
@@ -34,7 +39,8 @@ flowchart TD
   F --> J
   I --> J
   J --> K["下载缺失图标"]
-  K --> L["写入 items.json 和分类 JSON"]
+  K --> L["写入 Schema V3 源数据"]
+  L --> M["生成索引、分类分片和详情分片"]
 ```
 
 套装必须补抓详情页，因为目录列表只提供部分套装效果，不提供套装名称和完整部件清单。普通与传奇物品优先直接使用分类页内容，避免为 2353 件物品逐一请求详情。
@@ -55,7 +61,7 @@ flowchart TD
 - `parseItemProperties()` 拆分主要、次要、其他。
 - `parseChoiceGroup()` 保留嵌套候选项。
 - `parseItemSet()` 拆分套装名称、部件、当前物品和档位。
-- `flattenProperties()` / `flattenSetBonuses()` 只生成兼容旧代码的投影。
+- `writeItemLibraryOutputs()` 删除旧投影，只保留结构化字段并生成运行时分片。
 
 ## 5. 常用命令
 
@@ -107,6 +113,14 @@ node scripts/inspect-diablo-item.mjs \
 
 输出仅包含 `properties` 和 `set`，适合验证解析器而不改写全量 JSON。
 
+### 5.6 仅重建本地分片
+
+```bash
+npm run build:item-library
+```
+
+该命令不访问网络，用现有 `items.json` 重建 Schema V3、索引、分类分片和详情分片。
+
 ## 6. 推荐更新流程
 
 1. 选取一件包含嵌套词缀和套装效果的复杂样本。
@@ -130,7 +144,7 @@ node scripts/inspect-diablo-item.mjs \
 更新后至少确认：
 
 - 记录总数为 2353，分类总数为 55；如果官网确实变化，应同步修改测试预期并记录原因。
-- 所有记录 `schemaVersion === 2`。
+- 所有记录 `schemaVersion === 3`，且不存在 `effects`、`setBonuses`。
 - 所有 ID 唯一，所有 `image` 指向的本地文件存在。
 - 每个 choice 的 `count === options.length`。
 - 主要/次要标题没有混入普通属性文本。
@@ -139,7 +153,7 @@ node scripts/inspect-diablo-item.mjs \
 - 传奇特效在 UI 中只显示一次。
 - 设计图没有被误判为套装装备清单。
 
-当前自动测试已覆盖总数、黑荆棘结构、choice 数量和套装 current 唯一性。
+当前自动测试已覆盖总数、黑荆棘结构、choice 数量、分片引用，以及五类固定 HTML 夹具。
 
 ## 8. 缓存与网络故障
 
@@ -149,9 +163,8 @@ node scripts/inspect-diablo-item.mjs \
 - 官网 DOM 改版可能导致分类变成空数组；遇到总数大幅下降时不要覆盖已知正确数据，应先用单分类和单件检查定位选择器变化。
 - `.cache` 只用于开发，页面不能引用其中的文件。
 
-## 9. 语言与兼容字段
+## 9. 语言与结构化字段
 
 官网来源为繁体中文 `zh-TW`，攻略 UI 为简体中文。官方物品名称和特效默认保留来源文本，避免自行翻译引入数值或语义偏差。
 
-当前仍生成 `effects` 和 `setBonuses` 扁平数组，供旧的 BD 原特效逻辑兼容。物品详情 UI 已使用 `properties` 和 `set`；移除兼容字段前必须先搜索并迁移所有消费者。
-
+页面、BD 原特效选择器和测试统一读取 `properties`、`legendaryPower` 与 `set`。Schema V3 不再生成 `effects`、`setBonuses` 两套扁平真相。

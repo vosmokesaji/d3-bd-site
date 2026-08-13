@@ -41,6 +41,7 @@ npm test
 | `npm test` | 构建并运行全部回归测试 |
 | `npm run lint` | ESLint 静态检查 |
 | `npm run scrape:items` | 全量更新官方物品资料和图标 |
+| `npm run build:item-library` | 不联网重建物品索引、分类与详情分片 |
 | `npm run db:generate` | 数据库启用后生成 Drizzle 迁移 |
 
 ## 3. 目录职责
@@ -53,8 +54,14 @@ app/
 ├── data/                    # BD、职业、剧情和开荒数据
 └── <route>/page.tsx         # App Router 路由入口
 
+components/
+├── build/                   # 纸娃娃装备框、装备详情、技能与魔方
+├── library/                 # 暴雪物品图标、属性与套装结构
+└── settings/                # 版本化网站设置 Context
+
 scripts/
 ├── scrape-diablo-items.mjs  # 官方物品采集
+├── build-item-library.mjs   # 运行时物品分片生成
 └── inspect-diablo-item.mjs  # 单件解析检查
 
 public/d3/                   # 所有游戏静态资料和视觉素材
@@ -107,7 +114,7 @@ docs/                        # 中文项目文档
 
 不能只修改标题。冲层/速刷、低/高巅峰存在真实变化时，应明确提供不同装备、威能、词缀、宝石或手法：
 
-- 简单构筑可使用默认 variant 解析。
+- 所有构筑必须有四份 `variantProfiles`；工厂会通过 `completeBuildGuide()` 生成并标记完整度。
 - 复杂构筑提供 `resolveGear`、`resolvePowers`、`resolveRows`、`resolveRotation`。
 
 完成后手动确认四种组合：
@@ -243,4 +250,3 @@ npm run dev -- --port 3001
 - 物品 UI 使用结构化字段。
 - `npm test` 全部通过。
 - `.openai/hosting.json` 与实际 D1/R2 使用情况一致。
-

@@ -52,6 +52,9 @@ type BuildGuide = {
   passives: GuideAbility[];
   powers: GuidePower[];
   variants: Record<"push" | "speed" | "low" | "high", Variant>;
+  variantProfiles: Record<"push-low" | "push-high" | "speed-low" | "speed-high", BuildVariantProfile>;
+  variantCompleteness: "complete" | "documented-shared";
+  seasonId: string;
   links: GuideLink[];
   rotation: RotationStep[];
   source: string;
@@ -126,29 +129,29 @@ type GuideLink = {
 
 ### 3.5 配置差异
 
-标准 `variants` 保存四种说明：
+标准 `variants` 保存四种基础说明，`variantProfiles` 则保存四种实际组合：
 
 - `push`：大秘境冲层。
 - `speed`：T16 或低层速刷。
 - `low`：低巅峰配置。
 - `high`：高巅峰配置。
 
-如果某套 BD 有真实的装备、威能或手法差异，可在 `UnifiedBuildGuide` 中提供：
+每个 profile 显式包含 `gearOverrides`、`powerOverrides`、`skillOverrides`、`statPriorities`、`rotationOverrides` 和 `differenceReason`。复杂构筑还可提供：
 
 - `resolveGear(mode, paragon)`
 - `resolvePowers(mode, paragon)`
 - `resolveRows(mode)`
 - `resolveRotation(mode)`
 
-没有定制函数时，页面使用统一默认差异解析逻辑。
+没有定制函数时，页面仍从 profile 读取宝石、词缀、威能和移动差异；不会出现只变标题的空切换。
 
-## 4. 物品记录 Schema V2
+## 4. 物品记录 Schema V3
 
-`public/d3/library/items.json` 的每条记录包含 `schemaVersion: 2`。核心结构如下：
+`public/d3/library/items/detail/<id>.json` 的每条记录包含 `schemaVersion: 3`。核心结构如下：
 
 ```ts
 type OfficialItem = {
-  schemaVersion: 2;
+  schemaVersion: 3;
   id: string;
   name: string;
   category: string;
@@ -171,10 +174,6 @@ type OfficialItem = {
   imageSource: string;
   image: string;
   source: string;
-
-  // 兼容旧消费者，后续可删除
-  effects: string[];
-  setBonuses: string[];
 };
 ```
 
@@ -259,4 +258,3 @@ type ItemSet = {
 - 纸娃娃：`/d3/paperdolls/<classId>-<female|male>.jpg`。
 
 修改 ID 会影响路由、联动、高亮和官方物品匹配，应视为数据迁移，而不是普通文案修改。
-

@@ -21,7 +21,7 @@ flowchart LR
   subgraph Build[采集与构建]
     S["Node 抓取脚本"]
     Cache[".cache/d3-items HTML 缓存"]
-    JSON["结构化 JSON"]
+    JSON["Schema V3 分片 JSON"]
     Assets["本地图标与纹理"]
     V["vinext + Vite 构建"]
   end
@@ -31,7 +31,7 @@ flowchart LR
     Page["统一页面调度器"]
     BuildUI["统一 BD 详情渲染器"]
     ItemUI["物品目录/列表/详情"]
-    Settings["localStorage 网站设置"]
+    Settings["版本化本地网站设置"]
   end
 
   B --> V
@@ -105,6 +105,8 @@ app/
 - `skills` / `passives`：技能、符文、被动与构筑逻辑。
 - `powers`：卡奈魔方槽位、原特效、简述和获取方式。
 - `variants`：冲层、速刷、低巅峰、高巅峰四类配置说明。
+- `variantProfiles`：四种用途×巅峰组合的显式装备、宝石、威能、词缀和手法差异。
+- `seasonId`：构筑对应的赛季/平台/补丁资料版本。
 - `links`：BD 因果链节点。
 - `rotation`：操作步骤、动作和“为什么这样操作”。
 
@@ -112,7 +114,7 @@ app/
 
 ### 5.2 渲染层
 
-`UnifiedBuildDetail` 是 49 套构筑共用的详情渲染器，负责：
+`UnifiedBuildDetail` 是 51 套构筑共用的详情渲染器，负责：
 
 - 冲层/速刷和低/高巅峰组合状态。
 - 根据组合解析装备与卡奈魔方差异。
@@ -124,18 +126,20 @@ app/
 - 三名随从的装备与技能对比。
 - 根据构筑数据展示实战手法及原因。
 
-塔格奥死亡新星保留了更完整的定制解析函数，例如 `resolveGear`、`resolvePowers`、`resolveRows` 和 `resolveRotation`。其他构筑没有自定义解析函数时使用统一默认解析逻辑。
+塔格奥死亡新星保留定制解析函数，例如 `resolveGear`、`resolvePowers`、`resolveRows` 和 `resolveRotation`。其余构筑由 `completeBuildGuide()` 生成四份显式 `variantProfiles`；页面读取当前 profile，而不是只切换说明文字。
 
 ### 5.3 物品资料复用
 
-BD 详情加载 `public/d3/library/items.json`，通过装备 ID、图片文件名或映射表寻找官方物品记录。装备详情中的原始特效优先来自结构化物品库；攻略层只保存该装备在当前 BD 中的用途、词缀和获取建议。
+BD 详情先读取轻量 `items/asset-index.json` 匹配官方 ID，再只请求当前选中装备的 `items/detail/<id>.json`。装备详情中的原始特效优先来自结构化物品库；攻略层只保存该装备在当前 BD 中的用途、词缀和获取建议。
 
 ## 6. 物品系统架构
 
-物品页面在客户端加载两个静态文件：
+物品页面按用途加载分片：
 
 - `public/d3/library/item-categories.json`
-- `public/d3/library/items.json`
+- `public/d3/library/items/by-category/<category>.json`
+- `public/d3/library/items/detail/<id>.json`
+- `public/d3/library/items/asset-index.json`
 
 列表和详情共用 `BlizzardItemIcon`，按分类选择 64×64、64×128 或 82×164 的容器，并按普通、传奇、套装品质选择本地背景纹理和边框颜色。
 
@@ -145,7 +149,7 @@ BD 详情加载 `public/d3/library/items.json`，通过装备 ID、图片文件�
 - `OfficialPropertyList`：普通词缀、插槽、随机词缀和嵌套可选组。
 - `OfficialSetBlock`：套装名称、部件列表和分档效果。
 
-为兼容 BD 原始特效查找，物品记录暂时同时保留结构化字段与旧的扁平 `effects`、`setBonuses` 字段；新物品 UI 只读取结构化字段。
+物品记录为 Schema V3，页面和 BD 详情只读取 `properties`、`legendaryPower` 和 `set`。旧的扁平 `effects`、`setBonuses` 已从生成数据和消费者中删除。
 
 ## 7. 状态管理
 
@@ -154,7 +158,7 @@ BD 详情加载 `public/d3/library/items.json`，通过装备 ID、图片文件�
 - 页面筛选、当前装备、当前联动节点、用途和巅峰均为组件内 `useState`。
 - 派生装备、威能、套装家族和高亮 ID 使用 `useMemo`。
 - `SiteSettingsContext` 管理七职业纸娃娃性别。
-- 性别设置保存在 `localStorage` 的 `sanctuary-site-settings-v1` 中。
+- 设置通过 `sanctuary-site-settings` 的版本 2 schema 保存，自动迁移 v1，并监听 `storage` 事件同步同浏览器标签页。
 
 这些状态不包含账号或关键业务数据，因此适合保留在浏览器端。
 
@@ -165,6 +169,10 @@ public/d3/
 ├── library/
 │   ├── classes/          # 职业头像与徽记
 │   ├── items/            # 2353 条物品对应的本地图标
+│   │   ├── index.json     # 列表字段索引
+│   │   ├── asset-index.json # BD 图片到官方 ID 的轻量索引
+│   │   ├── by-category/   # 55 个分类分片
+│   │   └── detail/        # 单物品结构化详情
 │   ├── skills/           # 主动和被动技能图标
 │   ├── items.json
 │   ├── item-categories.json
@@ -207,21 +215,19 @@ public/d3/
 
 `npm test` 会先运行完整构建，再对 `dist/server/index.js` 发送请求。当前回归测试覆盖：
 
-- 七职业 49 套 BD 目录完整性。
+- 七职业 51 套 BD 目录完整性。
 - 非原型 BD 进入统一详情渲染器。
 - 传奇宝石、职业主属性宝石和词缀反查。
 - 纸娃娃精确像素几何、装备槽位置和暴雪图标样式。
-- 2353 条物品、55 个分类和本地详情 UI。
+- 2353 条物品、55 个分类、运行时分片和本地详情 UI。
+- 五类固定 HTML 夹具对主要/次要、choice、套装、制作与追随者字段的解析契约。
+- 共享装备、技能、魔方组件位置和 `.guide-*` 旧 CSS 清理。
 - 黑荆棘裤子的主要/次要属性、3/7 选项组、5 件套装清单和 2/3/4 件效果。
 
 ## 11. 已知技术债与改进顺序
 
 更完整的债务台账和执行步骤见[技术债与还债计划](./technical-debt.md)。
 
-1. **拆分单体页面文件**：`app/page.tsx` 和 `app/globals.css` 过大，应按业务域拆分。
+1. **继续拆分单体页面文件**：纸娃娃、装备详情、技能、魔方、物品组件与设置已迁到 `components/`；路由组合和部分业务逻辑仍在 `app/page.tsx`。
 2. **让 App Router 直接解析参数**：动态路由应从 `params` 读取参数，减少手工 pathname 分派。
-3. **避免全量加载物品 JSON**：当前 BD 和物品页面会加载完整 2353 条记录，可按分类拆包或生成 ID 索引。
-4. **建立赛季配置中心**：把赛季号、补丁号、平台基准和第四魔方槽规则从页面文字中抽离。
-5. **收敛兼容字段**：确认所有消费者切换到结构化物品字段后，删除扁平 `effects`、`setBonuses`。
-6. **抓取器契约测试**：把关键官网 HTML 固化为脱敏测试夹具，避免官网 DOM 变化后静默丢字段。
-7. **统一构筑差异模型**：把所有低/高巅峰、冲层/速刷的具体装备变化显式写入数据，而不是依赖默认替换规则。
+3. **跨设备设置同步**：本地 schema、迁移和同浏览器标签同步已完成；跨设备仍需要账号身份与 D1，待出现账号需求时实现。
