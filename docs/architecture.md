@@ -126,7 +126,7 @@ app/
 - 三名随从的装备与技能对比。
 - 根据构筑数据展示实战手法及原因。
 
-塔格奥死亡新星保留定制解析函数，例如 `resolveGear`、`resolvePowers`、`resolveRows` 和 `resolveRotation`。其余构筑由 `completeBuildGuide()` 生成四份显式 `variantProfiles`；页面读取当前 profile，而不是只切换说明文字。
+塔格奥死亡新星保留定制解析函数，例如 `resolveGear`、`resolvePowers`、`resolveRows` 和 `resolveRotation`。其余构筑由 `completeBuildGuide()` 生成四份过渡期 `variantProfiles`；未经逐套校对的构筑标记为 `documented-shared`，页面保持共享配置并显示提示，不再自动伪造装备差异。目标场景模型和逐套迁移顺序见 [BD 内容与界面重构路线](./bd-content-and-ui-roadmap.md)。
 
 ### 5.3 物品资料复用
 

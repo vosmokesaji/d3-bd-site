@@ -129,21 +129,21 @@ type GuideLink = {
 
 ### 3.5 配置差异
 
-标准 `variants` 保存四种基础说明，`variantProfiles` 则保存四种实际组合：
+当前 `variants` 保存四种基础说明，`variantProfiles` 是兼容现有页面的过渡结构：
 
 - `push`：大秘境冲层。
 - `speed`：T16 或低层速刷。
 - `low`：低巅峰配置。
 - `high`：高巅峰配置。
 
-每个 profile 显式包含 `gearOverrides`、`powerOverrides`、`skillOverrides`、`statPriorities`、`rotationOverrides` 和 `differenceReason`。复杂构筑还可提供：
+每个 profile 包含 `gearOverrides`、`powerOverrides`、`skillOverrides`、`statPriorities`、`rotationOverrides` 和 `differenceReason`。只有经过人工校对并提供实际解析数据时，这些字段才能代表真实配置。复杂构筑还可提供：
 
 - `resolveGear(mode, paragon)`
 - `resolvePowers(mode, paragon)`
 - `resolveRows(mode)`
 - `resolveRotation(mode)`
 
-没有定制函数时，页面仍从 profile 读取宝石、词缀、威能和移动差异；不会出现只变标题的空切换。
+没有定制数据时，`variantCompleteness` 为 `documented-shared`，页面继续使用同一套装备并提示差异待实装。后续将按 [BD 内容与界面重构路线](./bd-content-and-ui-roadmap.md) 迁移到真实玩法场景、完整配置、巅峰指导和可替换项模型。
 
 ## 4. 物品记录 Schema V3
 

@@ -112,10 +112,12 @@ docs/                        # 中文项目文档
 
 ### 4.4 配置差异要求
 
-不能只修改标题。冲层/速刷、低/高巅峰存在真实变化时，应明确提供不同装备、威能、词缀、宝石或手法：
+不能只修改标题。当前 `variantProfiles` 是过渡结构；在新场景模型落地前，冲层/速刷、低/高巅峰存在真实变化时，应明确提供不同装备、威能、词缀、宝石或手法：
 
-- 所有构筑必须有四份 `variantProfiles`；工厂会通过 `completeBuildGuide()` 生成并标记完整度。
+- 工厂通过 `completeBuildGuide()` 生成四份兼容 profile，但默认必须标记为 `documented-shared`。
+- 只有存在经过校对的实际配置差异时才能标记 `complete`；一个 `powerSets` 或 `loadouts` 字段本身不等于全部场景完成。
 - 复杂构筑提供 `resolveGear`、`resolvePowers`、`resolveRows`、`resolveRotation`。
+- 新增或重做 BD 时遵循 [BD 内容与界面重构路线](./bd-content-and-ui-roadmap.md)，补齐场景、巅峰和替换策略。
 
 完成后手动确认四种组合：
 
