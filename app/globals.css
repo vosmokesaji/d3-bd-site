@@ -17,6 +17,16 @@
   --blue: #4b88a8;
   --purple: #8b6aa8;
   --teal: #4f9a8e;
+  --text-caption-size: 12px;
+  --text-caption-line: 1.5;
+  --text-meta-size: 13px;
+  --text-meta-line: 1.55;
+  --text-small-size: 14px;
+  --text-small-line: 1.65;
+  --text-body-size: 16px;
+  --text-body-line: 1.75;
+  --text-heading-sm-size: 18px;
+  --text-heading-sm-line: 1.4;
 }
 
 * {
@@ -55,6 +65,128 @@ a:focus-visible {
 
 main {
   min-height: 100vh;
+}
+
+.diablo-item-frame {
+  --frame-width: 64px;
+  --frame-height: 128px;
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: var(--frame-width);
+  height: var(--frame-height);
+  vertical-align: middle;
+}
+
+.diablo-item-frame.frame-size-sm { --frame-width: 42px; --frame-height: 84px; }
+.diablo-item-frame.frame-size-md { --frame-width: 64px; --frame-height: 128px; }
+.diablo-item-frame.frame-size-lg { --frame-width: 96px; --frame-height: 192px; }
+.diablo-item-frame.frame-shape-square { --frame-height: var(--frame-width); }
+.diablo-item-frame.frame-shape-big.frame-size-md { --frame-width: 82px; --frame-height: 164px; }
+.diablo-item-frame.frame-shape-big.frame-size-lg { --frame-width: 112px; --frame-height: 224px; }
+.diablo-item-frame.frame-size-fill,
+.diablo-item-frame.frame-shape-fill { width: 100%; height: 100%; }
+
+.diablo-item-frame-surface {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #513f2e;
+  border-radius: 4px;
+  background: #2a2017 url("/d3/item-icon-bgs/brown.png") 50% 100% / cover no-repeat;
+  box-shadow: 0 0 5px #000;
+}
+
+.diablo-item-frame.quality-set .diablo-item-frame-surface {
+  border-color: #748e3d;
+  background-color: #262f14;
+  background-image: url("/d3/item-icon-bgs/green.png");
+}
+
+.diablo-item-frame.quality-legendary .diablo-item-frame-surface {
+  border-color: #b07b38;
+  background-color: #332314;
+  background-image: url("/d3/item-icon-bgs/orange.png");
+}
+
+.diablo-item-frame.quality-common .diablo-item-frame-surface,
+.diablo-item-frame.quality-crafted .diablo-item-frame-surface {
+  border-color: #513f2e;
+  background-color: #2a2017;
+  background-image: url("/d3/item-icon-bgs/brown.png");
+}
+
+.diablo-item-frame-image {
+  position: absolute;
+  inset: 1px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.diablo-item-frame-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: none;
+  filter: drop-shadow(0 4px 4px #000);
+  transform: translate(-50%, -50%);
+}
+
+.diablo-item-frame.frame-fit-contain .diablo-item-frame-image img {
+  width: 92%;
+  height: 92%;
+  max-width: 92%;
+  max-height: 92%;
+  object-fit: contain;
+}
+
+.diablo-item-frame-sheen {
+  position: absolute;
+  inset: 1px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.44), transparent 48%);
+  pointer-events: none;
+}
+
+button:hover > .diablo-item-frame .diablo-item-frame-sheen,
+a:hover .diablo-item-frame .diablo-item-frame-sheen,
+.item-slot.selected > .diablo-item-frame .diablo-item-frame-sheen,
+.item-slot.related > .diablo-item-frame .diablo-item-frame-sheen {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.diablo-item-frame-sockets {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.diablo-item-frame-sockets > span {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex: 0 0 32px;
+  background: url("/d3/skill-overlays.png") 0 -71px no-repeat;
+}
+
+.diablo-item-frame-sockets img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 6px auto 0;
+  object-fit: contain;
 }
 
 .site-header {
@@ -2832,7 +2964,7 @@ footer {
 .paperdoll-profile strong {
   margin-top: 15px;
   color: #f0dfc0;
-  font: 500 clamp(28px, 3vw, 48px)/1 "Palatino Linotype", "Noto Serif SC", SimSun, serif;
+  font: 500 42px/1 "Palatino Linotype", "Noto Serif SC", SimSun, serif;
   letter-spacing: 0.18em;
 }
 
@@ -2860,7 +2992,7 @@ footer {
   padding-bottom: 7px;
   border-bottom: 1px solid rgba(91, 53, 30, 0.42);
   color: #f1e4cb;
-  font: 500 clamp(14px, 1.35vw, 20px)/1.2 "Noto Serif SC", SimSun, serif;
+  font: 500 var(--text-heading-sm-size)/var(--text-heading-sm-line) "Noto Serif SC", SimSun, serif;
 }
 
 .paperdoll-stats h3 small {
@@ -2879,7 +3011,7 @@ footer {
   align-items: center;
   gap: 7px;
   color: #a99d89;
-  font-size: clamp(8px, 0.75vw, 11px);
+  font-size: var(--text-caption-size);
 }
 
 .paperdoll-stats button {
@@ -4560,6 +4692,131 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
 .library-detail-card > article { overflow: auto; }
 .library-detail-card.quality-set h2 { color: #8fd443; }
 .library-detail-card.quality-legendary h2 { color: #e99a32; }
+
+/* Shared item-frame consumers and readable text baseline. */
+.item-slot {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.item-slot > .diablo-item-frame { position: absolute; inset: 0; }
+.item-slot:hover .diablo-item-frame-surface,
+.item-slot.selected .diablo-item-frame-surface,
+.item-slot.related .diablo-item-frame-surface {
+  border-color: #e3b45d;
+  box-shadow: 0 0 0 1px rgba(101, 54, 18, 0.9), 0 0 18px rgba(221, 135, 45, 0.32);
+}
+
+.item-slot.dimmed > .diablo-item-frame,
+.item-slot.dimmed > .slot-label { opacity: .38; }
+
+.item-list-table .library-record-grid > a > .diablo-item-frame { margin-left: 30px; }
+.library-detail-card {
+  min-height: 0;
+  grid-template-columns: 220px minmax(520px, 1fr);
+}
+.library-detail-art {
+  align-content: start;
+  padding: 42px 24px;
+  background: #090a09;
+}
+.library-detail-art .diablo-item-frame-image img {
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: none;
+  filter: drop-shadow(0 6px 8px #000);
+}
+
+.gear-detail-title > .diablo-item-frame { margin-right: 14px; }
+.follower-item > .diablo-item-frame { position: absolute; inset: 0; }
+.follower-item:hover .diablo-item-frame-surface { border-color: #d2a451; box-shadow: 0 0 14px rgba(196, 126, 43, .42); }
+
+.panel-heading small,
+.variant-group > span,
+.review-sources > span,
+.review-sources a,
+.review-sources small,
+.paragon-priority-grid h4,
+.choice-policy-card h4,
+.slot-label,
+.paperdoll-profile small,
+.paperdoll-stats h3 small,
+.paperdoll-label strong,
+.paperdoll-label span,
+.follower-item > small,
+.follower-skill-strip strong,
+.library-detail-card > article > span,
+.item-list-table > header {
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line);
+}
+
+.scenario-diff-card dt,
+.scenario-diff-card dd,
+.paragon-priority-grid li strong,
+.paragon-priority-grid li span,
+.paragon-checkpoints b,
+.paragon-checkpoints small,
+.post-paragon p,
+.choice-policy > strong,
+.choice-policy dt,
+.choice-policy dt b,
+.item-list-table .library-record-grid strong,
+.item-list-table .library-record-grid small,
+.item-list-table .library-record-grid > a > b,
+.library-detail-card dl div,
+.gear-detail-title small,
+.gear-detail-title b,
+.follower-card > header small,
+.follower-item-copy strong {
+  font-size: var(--text-meta-size);
+  line-height: var(--text-meta-line);
+}
+
+.review-baseline,
+.review-change-note,
+.paragon-priority-grid li small,
+.post-paragon p span,
+.choice-policy > p,
+.choice-policy dd span,
+.gear-detail p,
+.gear-detail li,
+.gear-detail .socket-advice span,
+.follower-card > p,
+.follower-item-copy em,
+.follower-rule,
+.item-list-table .library-record-grid em,
+.item-detail-effect p,
+.item-detail-set li,
+.item-detail-extras,
+.library-detail-card blockquote,
+.official-property-list li {
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-line);
+}
+
+.build-review-grid h3,
+.gear-detail h4,
+.item-detail-properties h3,
+.item-detail-set h3 {
+  font-size: var(--text-heading-sm-size);
+  line-height: var(--text-heading-sm-line);
+}
+
+.paperdoll-stats .paperdoll-stat-hint {
+  font-size: var(--text-caption-size);
+  line-height: var(--text-caption-line);
+}
+
+.item-list-table .library-record-grid > a {
+  min-height: 144px;
+}
+.item-list-table .library-record-grid > a.item-icon-shape-square { min-height: 82px; }
+.item-list-table .library-record-grid > a.item-icon-shape-big { min-height: 180px; }
+.item-list-table .library-record-grid em { white-space: normal; }
 
 .item-detail-effect,
 .item-detail-lines,

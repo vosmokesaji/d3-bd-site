@@ -1,4 +1,5 @@
 import type { OfficialItemRecord, OfficialItemSet, OfficialPropertyNode } from "./types";
+import { DiabloItemFrame, type DiabloItemFrameSize } from "../items/DiabloItemFrame";
 
 export type ItemIconShape = "default" | "square" | "big";
 
@@ -15,16 +16,10 @@ export function officialItemIconShape(category?: string): ItemIconShape {
   return "default";
 }
 
-export function BlizzardItemIcon({ record }: { record: OfficialItemRecord }) {
+export function BlizzardItemIcon({ record, size = "md" }: { record: OfficialItemRecord; size?: DiabloItemFrameSize }) {
   const shape = officialItemIconShape(record.category);
   const quality = record.quality ?? (record.crafted ? "crafted" : "common");
-  return (
-    <span className={`item-list-icon item-icon-${shape} quality-${quality}`} aria-hidden="true">
-      <span className="item-list-icon-gradient">
-        <span className="item-list-icon-inner"><img src={record.image} alt="" /></span>
-      </span>
-    </span>
-  );
+  return <DiabloItemFrame image={record.image} quality={quality} shape={shape} size={size} />;
 }
 
 export function OfficialPropertyList({ entries, legendaryPower }: { entries: OfficialPropertyNode[]; legendaryPower?: string }) {

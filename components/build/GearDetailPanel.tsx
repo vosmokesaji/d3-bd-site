@@ -1,9 +1,5 @@
 import type { BuildGear, GearSocket } from "./types";
-
-function DetailSocketList({ sockets }: { sockets: GearSocket[] }) {
-  if (sockets.length === 0) return null;
-  return <span className="detail-sockets">{sockets.map((socket, index) => <img key={`${socket.label}-${index}`} src={socket.image} alt="" title={socket.label} />)}</span>;
-}
+import { DiabloItemFrame, itemFrameShapeForSlot } from "../items/DiabloItemFrame";
 
 export function GearDetailPanel({
   gear,
@@ -29,10 +25,7 @@ export function GearDetailPanel({
       <div className={`gear-detail blizzard-tooltip quality-${gear.quality}`}>
         <div className="tooltip-nameplate"><h3>{gear.name}</h3></div>
         <div className="gear-detail-title">
-          <div className={`detail-item-icon ${gear.quality}`}>
-            <img src={gear.image} alt="" />
-            <DetailSocketList sockets={sockets} />
-          </div>
+          <DiabloItemFrame image={gear.image} quality={gear.quality} shape={itemFrameShapeForSlot(gear.slot)} size="lg" sockets={sockets} label={gear.name} />
           <div>
             <strong>{gear.quality === "set" ? "套装物品" : "传奇物品"}</strong>
             <small>{gear.slot}</small>

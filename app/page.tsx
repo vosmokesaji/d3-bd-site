@@ -39,6 +39,7 @@ import { GearDetailPanel } from "../components/build/GearDetailPanel";
 import { KanaiCubePanel } from "../components/build/KanaiCubePanel";
 import { PaperdollGearSlot } from "../components/build/PaperdollGearSlot";
 import type { GearSocket } from "../components/build/types";
+import { DiabloItemFrame } from "../components/items/DiabloItemFrame";
 import {
   BlizzardItemIcon,
   OfficialPropertySections,
@@ -757,6 +758,10 @@ function getFollowerSlotClass(items: { slot: string }[], index: number) {
   return "token";
 }
 
+function followerItemQuality(name: string) {
+  return name.startsWith("凯恩") || name.startsWith("贤者") ? "set" as const : "legendary" as const;
+}
+
 function FlowNodeButton({
   node,
   dimmed,
@@ -1154,7 +1159,7 @@ function LibraryRecordDetail({ category, id }: { category: string; id: string })
     <section className="archive-section library-detail-page">
       <a className="detail-back" href={`/library/${category}`}>← 返回列表</a>
       <div className={`library-detail-card quality-${record.quality}`}>
-        <div className="library-detail-art"><BlizzardItemIcon record={record} /></div>
+        <div className="library-detail-art"><BlizzardItemIcon record={record} size="lg" /></div>
         <article>
           <span>{record.categoryName ?? record.type ?? record.category}</span><h2>{record.name}</h2>
           <dl>
@@ -2004,7 +2009,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
 
         <article className="panel follower-panel" id="followers">
           <div className="panel-heading"><div><span className="section-index">05</span><h2>随从配装</h2></div><small>三名随从并列对比 · 首选项高亮</small></div>
-          <div className="follower-showcase">{(Object.keys(FOLLOWERS) as FollowerKey[]).map((key) => { const current = FOLLOWERS[key]; const recommended = guide.follower === current.name; const portraitClass = key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader"; return <section className={`follower-card follower-${key} ${recommended ? "recommended" : ""}`} key={key}><header><span><strong>{current.name}</strong><small>{recommended ? `首选 · ${current.role.replace("首选 · ", "")}` : current.role.replace("首选 · ", "备选 · ")}</small></span><img src={classPortraitAsset(portraitClass)} alt="" /></header><div className="follower-paperdoll"><div className="follower-card-model" /><div className="follower-silhouette" />{current.items.map((item, index) => <button key={`${key}-${item.slot}-${item.name}`} className={`follower-item follower-slot-${getFollowerSlotClass(current.items, index)}`} title={`${item.name}：${item.reason}`}><span className="follower-item-icon"><img src={item.image} alt="" /></span><small>{item.slot}</small><span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span></button>)}</div><div className="follower-skill-strip">{FOLLOWER_SKILLS[key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{skill.name}</strong></span>)}</div><p>{recommended ? guide.followerReason : current.note}</p></section>; })}</div>
+          <div className="follower-showcase">{(Object.keys(FOLLOWERS) as FollowerKey[]).map((key) => { const current = FOLLOWERS[key]; const recommended = guide.follower === current.name; const portraitClass = key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader"; return <section className={`follower-card follower-${key} ${recommended ? "recommended" : ""}`} key={key}><header><span><strong>{current.name}</strong><small>{recommended ? `首选 · ${current.role.replace("首选 · ", "")}` : current.role.replace("首选 · ", "备选 · ")}</small></span><img src={classPortraitAsset(portraitClass)} alt="" /></header><div className="follower-paperdoll"><div className="follower-card-model" /><div className="follower-silhouette" />{current.items.map((item, index) => <button key={`${key}-${item.slot}-${item.name}`} className={`follower-item follower-slot-${getFollowerSlotClass(current.items, index)}`} title={`${item.name}：${item.reason}`}><DiabloItemFrame image={item.image} quality={followerItemQuality(item.name)} shape="fill" size="fill" fit="contain" /><small>{item.slot}</small><span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span></button>)}</div><div className="follower-skill-strip">{FOLLOWER_SKILLS[key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{skill.name}</strong></span>)}</div><p>{recommended ? guide.followerReason : current.note}</p></section>; })}</div>
           <div className="follower-rule"><b>通用原则</b><span>主属性洗成智力 / 敏捷 / 力量以匹配随从；优先冷却、攻速与坚韧。携带“不死”专属饰品后，再用团结分摊伤害。</span></div>
         </article>
       </section>
@@ -2424,7 +2429,7 @@ function HomeContent() {
                         className={`follower-item follower-slot-${getFollowerSlotClass(current.items, index)}`}
                         title={`${item.name}：${item.reason}`}
                       >
-                        <span className="follower-item-icon"><img src={item.image} alt="" /></span>
+                        <DiabloItemFrame image={item.image} quality={followerItemQuality(item.name)} shape="fill" size="fill" fit="contain" />
                         <small>{item.slot}</small>
                         <span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span>
                       </button>

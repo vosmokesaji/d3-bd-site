@@ -1,19 +1,7 @@
 "use client";
 
 import type { BuildGear, GearSocket } from "./types";
-
-function GearSocketStack({ sockets }: { sockets: GearSocket[] }) {
-  if (sockets.length === 0) return null;
-  return (
-    <span className="socket-stack" aria-label={sockets.map((socket) => socket.label).join("、")}>
-      {sockets.map((socket, index) => (
-        <span className="socket" key={`${socket.label}-${index}`}>
-          <img src={socket.image} alt="" />
-        </span>
-      ))}
-    </span>
-  );
-}
+import { DiabloItemFrame } from "../items/DiabloItemFrame";
 
 export function PaperdollGearSlot({
   gear,
@@ -42,9 +30,7 @@ export function PaperdollGearSlot({
       onFocus={() => onPreview(gear.id)}
       aria-label={`${gear.slot}：${gear.name}`}
     >
-      <span className="item-glow" />
-      <span className="item-image"><img src={gear.image} alt="" /></span>
-      <GearSocketStack sockets={sockets} />
+      <DiabloItemFrame image={gear.image} quality={gear.quality} shape="fill" size="fill" sockets={sockets} fit="native" />
       <span className="slot-label">{gear.slot}</span>
     </button>
   );

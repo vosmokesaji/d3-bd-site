@@ -237,9 +237,10 @@ test("ships the complete local Blizzard item mirror and local-only detail UI", a
   assert.doesNotMatch(page, /fetch\("\/d3\/library\/items\.json"\)/);
   assert.match(page, /items\/by-category/);
   assert.match(page, /items\/detail/);
+  assert.match(css, /\.diablo-item-frame\.quality-set \.diablo-item-frame-surface/);
   assert.match(css, /url\("\/d3\/item-icon-bgs\/green\.png"\)/);
-  assert.match(css, /\.item-icon-default \.item-list-icon-inner \{ width: 64px; height: 128px; \}/);
-  assert.match(css, /\.item-icon-square \.item-list-icon-inner \{ width: 64px; height: 64px; \}/);
+  assert.match(css, /frame-size-md \{ --frame-width: 64px; --frame-height: 128px; \}/);
+  assert.match(css, /frame-shape-square \{ --frame-height: var\(--frame-width\); \}/);
   assert.doesNotMatch(page, /className="official-source"/);
   assert.doesNotMatch(page, /<section className="original-effect"><h4>游戏原特效/);
 });
@@ -272,20 +273,51 @@ test("structures Blizzard properties, choices, set pieces, and bonus tiers", asy
 });
 
 test("moves shared build UI into components and removes the retired guide stylesheet", async () => {
-  const [page, css, gearSlot, gearDetail, abilities, cube] = await Promise.all([
+  const [page, css, gearSlot, gearDetail, abilities, cube, itemFrame, libraryComponents] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../components/build/PaperdollGearSlot.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/build/GearDetailPanel.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/build/BuildAbilitiesPanel.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/build/KanaiCubePanel.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/items/DiabloItemFrame.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/library/BlizzardItem.tsx", import.meta.url), "utf8"),
   ]);
   assert.doesNotMatch(page, /function PaperdollGearSlot|function GearDetailPanel|function BuildAbilitiesPanel|function KanaiCubePanel/);
   assert.match(gearSlot, /item-slot/);
+  assert.match(gearSlot, /<DiabloItemFrame/);
   assert.match(gearDetail, /build-gear-effect/);
+  assert.match(gearDetail, /<DiabloItemFrame/);
   assert.match(abilities, /skill-grid/);
   assert.match(cube, /cube-grid/);
+  assert.match(itemFrame, /export function DiabloItemFrame/);
+  assert.match(itemFrame, /itemFrameShapeForSlot/);
+  assert.match(libraryComponents, /<DiabloItemFrame/);
+  assert.match(page, /<DiabloItemFrame image=\{item\.image\}/);
+  assert.doesNotMatch(page, /follower-item-icon/);
+  assert.doesNotMatch(gearDetail, /detail-item-icon/);
+  assert.doesNotMatch(libraryComponents, /item-list-icon/);
   assert.doesNotMatch(css, /\.guide-/);
+});
+
+test("uses shared readable typography tokens across build, follower, and item descriptions", async () => {
+  const [css, tragoul] = await Promise.all([
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    render("/builds/tragoul-nova").then((response) => response.text()),
+  ]);
+
+  for (const token of [
+    "--text-caption-size: 12px",
+    "--text-meta-size: 13px",
+    "--text-small-size: 14px",
+    "--text-body-size: 16px",
+    "--text-heading-sm-size: 18px",
+  ]) assert.match(css, new RegExp(token));
+  assert.match(css, /\.choice-policy > p,[^]*font-size: var\(--text-small-size\)/);
+  assert.match(css, /\.follower-card > p,[^]*font-size: var\(--text-small-size\)/);
+  assert.match(css, /\.item-detail-effect p,[^]*font-size: var\(--text-small-size\)/);
+  assert.doesNotMatch(css, /clamp\(/);
+  assert.match(tragoul, /diablo-item-frame/);
 });
 
 test("centralizes season metadata, asset roots, and versions client settings", async () => {
