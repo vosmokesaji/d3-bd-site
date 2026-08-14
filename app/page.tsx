@@ -11,7 +11,16 @@ import {
   type ClassId,
 } from "./data/site-catalog";
 import { NECROMANCER_BUILDS, type NecromancerGuide } from "./data/necromancer-builds";
-import type { BuildVariantProfile } from "./data/build-guides";
+import {
+  diffBuildConfigurations,
+  resolveBuildConfiguration,
+  validateReviewedBuildGuide,
+  type BuildChoicePolicy,
+  type BuildConfiguration,
+  type BuildScenario,
+  type BuildVariantProfile,
+  type ParagonGuide,
+} from "./data/build-guides";
 import { BARBARIAN_BUILDS } from "./data/barbarian-builds";
 import { CRUSADER_BUILDS } from "./data/crusader-builds";
 import { DEMON_HUNTER_BUILDS } from "./data/demon-hunter-builds";
@@ -1508,6 +1517,138 @@ const TRAGOUL_SPEED_ROTATION: NecromancerGuide["rotation"] = [
   { title: "吃金币链", action: "拾取金币维持金织带护甲，打碎物件触发沃兹克移速。", reason: "这条链只适用于T16；大秘境不掉金币。" },
 ];
 
+const TRAGOUL_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/necromancer-death-nova-build-with-trag-oul",
+  skills: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-nephalem-rift-speed-farming-build",
+};
+
+const TRAGOUL_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "tragoul-helm", shoulders: "mantle-channeling", chest: "tragoul-chest", gloves: "tragoul-gloves",
+    bracers: "guardian-bracers", belt: "guardian-belt", pants: "tragoul-pants", boots: "tragoul-boots",
+    amulet: "haunted-visions", ring1: "krysbin", ring2: "coe", weapon: "funerary-pick", offhand: "iron-rose",
+  },
+  skills: SKILLS.map((skill) => ({ id: skill.id, rune: skill.rune })),
+  passives: PASSIVES.map((passive) => passive.id),
+  powers: { weapon: "bloodtide-blade", armor: "dayntee", jewelry: "royal-grandeur", season: "scythe-cycle" },
+  legendaryGems: { control: "bane-of-the-trapped", damage: "zei", boss: "bane-of-the-stricken" },
+  normalGems: { head: ["flawless-royal-amethyst"], armor: Array(5).fill("flawless-royal-topaz"), weapon: ["flawless-royal-emerald"] },
+  follower: {
+    id: "enchantress",
+    items: FOLLOWERS.enchantress.items.map((item) => item.name),
+    skills: FOLLOWER_SKILLS.enchantress.map((skill) => skill.name),
+  },
+  statPriorities: {
+    global: ["死亡新星技能伤", "物理元素伤", "暴击几率/暴击伤害", "范围伤害", "攻击速度达到1.67档位"],
+    survival: ["生命值80万–90万", "护甲", "全元素抗性", "每秒生命恢复"],
+  },
+  rotation: TRAGOUL_PUSH_ROTATION,
+};
+
+const TRAGOUL_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "守护者翻倍装备智力与体能，先补足低巅峰最缺的伤害和坚韧。", sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "主属性由巅峰承担后，切换奥吉德与导能披肩萃取，提高精英战和范围伤害上限。",
+    patch: {
+      gear: { shoulders: "aughild-shoulders", bracers: "aughild-bracers", belt: "dayntee" },
+      powers: { armor: "mantle-channeling" },
+      statPriorities: { survival: ["生命值80万–90万", "护甲", "全元素抗性"], endgame: ["范围伤害≥120%", "攻击速度达到1.67档位", "移除装备上的多余智力"] },
+    },
+    sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+  },
+  {
+    id: "speed-low", label: "低巅峰T16小秘境", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "保留守护者过渡，用布里格斯聚怪、斯图亚特提速和囤宝者金币链缩短单图时间。",
+    patch: {
+      gear: { ring2: "briggs" }, powers: { armor: "steuarts-greaves" },
+      legendaryGems: { boss: "boon-of-the-hoarder" }, rotation: TRAGOUL_SPEED_ROTATION,
+    },
+    sourceRefs: [TRAGOUL_SOURCES.speed, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+  },
+  {
+    id: "speed-high", label: "高巅峰T16小秘境", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "脱离守护者后穿回塔格奥肩，换金织带与沃兹克，并用贪婪之戒扩大金币拾取链。",
+    patch: {
+      gear: { shoulders: "tragoul-shoulders", bracers: "warzechian", belt: "goldwrap", ring2: "briggs" },
+      powers: { armor: "steuarts-greaves", jewelry: "avarice-band" },
+      legendaryGems: { boss: "boon-of-the-hoarder" }, rotation: TRAGOUL_SPEED_ROTATION,
+      statPriorities: { survival: ["金币链启动前避免硬站", "护甲由金织带接管"], speed: ["移动速度25%上限", "拾取范围", "攻击速度达到1.67档位"] },
+    },
+    sourceRefs: [TRAGOUL_SOURCES.speed, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+  },
+];
+
+const TRAGOUL_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先补到上限，不把超过上限的点浪费在这里。" },
+      { stat: "智力", target: "其余点数", reason: "同时提高伤害和全抗，是低巅峰最稳定的收益。" },
+      { stat: "体能", target: "按需补到80万–90万生命", reason: "冲层站不住时先达到生命池检查点。" },
+      { stat: "最大精魂", target: "0点", reason: "铁玫瑰免费触发新星，这套不依赖精魂上限。" },
+    ],
+    offense: [
+      { stat: "攻击速度", target: "优先点满", reason: "提高鲜血虹吸与铁玫瑰触发频率。" },
+      { stat: "暴击伤害", target: "随后点满", reason: "与装备暴击几率共同放大新星。" },
+      { stat: "暴击几率", target: "第三点满", reason: "保持暴击乘区稳定。" },
+      { stat: "冷却缩减", target: "最后点满", reason: "主要服务骨甲与位移，优先级低于前三项。" },
+    ],
+    defense: [
+      { stat: "护甲", target: "优先点满", reason: "智力职业天然全抗高，更缺护甲。" },
+      { stat: "生命%", target: "随后点满", reason: "放大塔格奥生命池。" },
+      { stat: "全元素抗性", target: "第三点满", reason: "补齐元素坚韧。" },
+      { stat: "每秒生命恢复", target: "最后点满", reason: "作为持续引导时的恢复补充。" },
+    ],
+    utility: [
+      { stat: "范围伤害", target: "优先点满", reason: "分身新星可以触发，是高密度怪群的重要乘区。" },
+      { stat: "击中恢复生命", target: "随后点满", reason: "提高持续引导时的恢复稳定性。" },
+      { stat: "能量消耗降低", target: "第三点满", reason: "收益有限，但仍高于拾取范围。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "主要服务T16速刷。" },
+    ],
+  },
+  post800: [
+    { priority: "先补体能", when: "生命低于80万或推进层数时频繁猝死", reason: "把生命池补到80万–90万后再观察。" },
+    { priority: "其余全部智力", when: "生命与减伤已经稳定", reason: "智力继续同时提高伤害与全抗。" },
+    { priority: "换奥吉德", when: "约2000巅峰且不再依赖守护者坚韧", reason: "高巅峰让装备主属性翻倍的边际收益下降。" },
+  ],
+  checkpoints: [
+    { label: "生命池", target: "80万–90万", action: "不足时先从巅峰智力挪到体能。" },
+    { label: "攻击速度", target: "角色面板1.67", action: "未达档位时优先保留手套和首饰攻速。" },
+    { label: "范围伤害", target: "冲层≥120%", action: "高巅峰从肩、手、戒指、武器和副手补足。" },
+  ],
+};
+
+const TRAGOUL_CHOICES: BuildChoicePolicy[] = [
+  { key: "core-engine", targetType: "gear", targetId: "haunted-visions,funerary-pick,iron-rose", label: "鬼灵面容 + 葬镰 + 铁玫瑰", status: "locked", reason: "永久双分、虹吸增伤与免费新星共同组成发动机，缺任意一件都不是完整形态。" },
+  { key: "tragoul-six", targetType: "gear", targetId: "tragoul-six", label: "塔格奥六件效果", status: "locked", reason: "鲜血新星必须获得六件套的生命消耗技能倍率。" },
+  { key: "core-skills", targetType: "skill", targetId: "siphon-blood,death-nova,simulacrum", label: "虹吸、新星与双分", status: "locked", reason: "三者分别负责触发、伤害与复制，不能替换。" },
+  { key: "season-power", targetType: "power", targetId: "scythe-cycle", label: "轮回镰刀", status: "locked", reason: "赛季第四槽的核心次要技能乘区，必须保持骨甲生效。" },
+  { key: "shoulder-package", targetType: "gear", targetId: "shoulders", label: "肩腕腰套装包", status: "conditional", reason: "巅峰水平决定守护者主属性是否仍比奥吉德精英乘区更值。", alternatives: [
+    { id: "guardian-package", label: "导能披肩 + 守护者腕腰", when: "低巅峰或生命/坚韧未达标", gain: "翻倍装备智力和体能", cost: "放弃奥吉德精英增伤减伤", scenarios: ["push-low", "speed-low"] },
+    { id: "aughild-package", label: "奥吉德肩腕 + 戴恩提", when: "约2000巅峰后进行大秘境冲层", gain: "精英增伤与精英减伤", cost: "失去守护者主属性翻倍", scenarios: ["push-high"] },
+    { id: "gold-package", label: "塔格奥肩 + 沃兹克 + 金织带", when: "高巅峰单人T16且地图会掉金币", gain: "持续移速和金币护甲", cost: "离开小秘境后防御链失效", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-high"] },
+  ] },
+  { key: "second-ring", targetType: "gear", targetId: "ring2", label: "第二枚戒指", status: "conditional", reason: "冲层需要元素爆发窗，小秘境更需要自动聚怪。", alternatives: [
+    { id: "coe", label: "全能法戒", when: "大秘境冲层", gain: "物理周期爆发", cost: "需要等待元素窗口", scenarios: ["push-low", "push-high"] },
+    { id: "briggs", label: "布里格斯之怒", when: "T16小秘境速刷", gain: "诅咒时自动聚怪", cost: "失去元素周期乘区", scenarios: ["speed-low", "speed-high"] },
+  ] },
+  { key: "speed-gem", targetType: "legendary-gem", targetId: "boss", label: "第三颗传奇宝石", status: "conditional", reason: "首领战与金币速刷需要完全不同的收益。", alternatives: [
+    { id: "bane-of-the-stricken", label: "受罚者之灾", when: "大秘境冲层", gain: "持续叠加首领伤害", cost: "清图阶段收益较慢", scenarios: ["push-low", "push-high"] },
+    { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "T16小秘境", gain: "金币、移速与金织带护甲", cost: "大秘境完全不掉金币", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-low", "speed-high"] },
+  ] },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "成型首选魔女的攻速与冷却；开荒站不住时可暂用圣殿骑士治疗，但会损失输出循环收益。" },
+];
+
+function tragoulConfiguration(mode: Mode, paragon: Paragon) {
+  const scenario = TRAGOUL_SCENARIOS.find((candidate) => candidate.id === `${mode}-${paragon}`);
+  return resolveBuildConfiguration(TRAGOUL_CONFIGURATION_BASE, scenario?.patch);
+}
+
 const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   id: "tragoul-nova",
   name: "塔格奥 · 死亡新星",
@@ -1529,23 +1670,100 @@ const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   },
   links: [],
   rotation: TRAGOUL_PUSH_ROTATION,
-  source: "https://eu.diablo3.blizzard.com/zh-tw/profile/SchmorrAgain-2552/hero/179633712",
+  source: TRAGOUL_SOURCES.overview,
+  configurationBase: TRAGOUL_CONFIGURATION_BASE,
+  defaultScenarioId: "push-low",
+  scenarios: TRAGOUL_SCENARIOS,
+  paragonGuide: TRAGOUL_PARAGON,
+  choicePolicies: TRAGOUL_CHOICES,
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
   originalEffects: ORIGINAL_EFFECTS,
   resolveGear: (mode, paragon) => {
-    const variants = getPositionGear(mode, paragon);
-    return SLOT_ORDER.map(([, key]) => GEAR[key === "shoulder" || key === "bracers" || key === "belt" || key === "ring2" ? variants[key] : key]);
+    const configuration = tragoulConfiguration(mode, paragon);
+    return SLOT_ORDER.map(([position]) => GEAR[configuration.gear[position]]);
   },
   resolvePowers: (mode, paragon) => {
-    const ids: [string, string][] = paragon === "low"
-      ? [["武器", "bloodtide-blade"], ["防具", mode === "push" ? "dayntee" : "steuarts-greaves"], ["首饰", "royal-grandeur"], ["第4槽", "scythe-cycle"]]
-      : mode === "push"
-        ? [["武器", "bloodtide-blade"], ["防具", "mantle-channeling"], ["首饰", "royal-grandeur"], ["第4槽", "scythe-cycle"]]
-        : [["武器", "bloodtide-blade"], ["防具", "steuarts-greaves"], ["首饰", "avarice-band"], ["第4槽", "scythe-cycle"]];
-    return ids.map(([slot, id]) => ({ ...CUBE_POWERS[id], slot }));
+    const configuration = tragoulConfiguration(mode, paragon);
+    const labels: Record<string, string> = { weapon: "武器", armor: "防具", jewelry: "首饰", season: "第4槽" };
+    return Object.entries(configuration.powers).map(([slot, id]) => ({ ...CUBE_POWERS[id], slot: labels[slot] ?? slot }));
   },
   resolveRows: (mode) => [...BASE_ROWS, ...(mode === "push" ? [PUSH_ROW] : SPEED_ROWS)],
   resolveRotation: (mode) => mode === "push" ? TRAGOUL_PUSH_ROTATION : TRAGOUL_SPEED_ROTATION,
 };
+
+const TRAGOUL_VALIDATION_ERRORS = validateReviewedBuildGuide(TRAGOUL_GUIDE);
+if (TRAGOUL_VALIDATION_ERRORS.length > 0) throw new Error(`塔格奥配置校验失败：${TRAGOUL_VALIDATION_ERRORS.join("；")}`);
+
+const CONFIGURATION_CATEGORY_LABELS: Record<string, string> = {
+  gear: "装备", skills: "技能", passives: "被动", powers: "萃取", legendaryGems: "传奇宝石",
+  normalGems: "普通宝石", follower: "随从", statPriorities: "属性目标", rotation: "实战循环",
+};
+
+function buildConfigurationValue(guide: UnifiedBuildGuide, value?: string) {
+  if (!value) return "无";
+  const item = guide.gear.find((candidate) => candidate.id === value);
+  const power = guide.powers.find((candidate) => candidate.id === value);
+  const skill = guide.skills.find((candidate) => value.startsWith(`${candidate.id}:`));
+  const passive = guide.passives.find((candidate) => candidate.id === value);
+  const known: Record<string, string> = {
+    "bane-of-the-trapped": "困者之灾", zei: "贼神的复仇之石", "bane-of-the-stricken": "受罚者之灾",
+    "boon-of-the-hoarder": "囤宝者的恩惠", enchantress: "魔女",
+  };
+  return item?.name ?? power?.name ?? skill?.name ?? passive?.name ?? known[value] ?? value;
+}
+
+function BuildReviewPanel({
+  guide,
+  scenario,
+  configuration,
+}: {
+  guide: UnifiedBuildGuide;
+  scenario: BuildScenario;
+  configuration: BuildConfiguration;
+}) {
+  const diffs = diffBuildConfigurations(guide.configurationBase!, configuration);
+  const visibleDiffs = diffs.filter((diff) => ["gear", "powers", "legendaryGems"].includes(diff.category));
+  const groupedParagon = guide.paragonGuide?.pre800;
+  const policies = guide.choicePolicies ?? [];
+  const policyGroups = [
+    { status: "locked", label: "必须固定" },
+    { status: "conditional", label: "条件替换" },
+    { status: "flexible", label: "可自由调整" },
+  ] as const;
+  return (
+    <section className="build-review-panel" aria-label="BD 场景评审结果">
+      <header>
+        <div><span>SCENARIO REVIEW</span><h2>{scenario.label}</h2></div>
+        <p>{scenario.reason}</p>
+        <b>已逐项校对</b>
+      </header>
+      <div className="build-review-grid">
+        <article className="scenario-diff-card">
+          <h3>配置差异</h3>
+          {visibleDiffs.length === 0 ? <p className="review-baseline">这是四套配置的低巅峰冲层基线，其余场景都以它做显式差异。</p> : (
+            <dl>{visibleDiffs.map((diff) => <div key={`${diff.category}-${diff.key}`}><dt>{CONFIGURATION_CATEGORY_LABELS[diff.category]} · {diff.key}</dt><dd><del>{buildConfigurationValue(guide, diff.before)}</del><span>→</span><strong>{buildConfigurationValue(guide, diff.after)}</strong></dd></div>)}</dl>
+          )}
+          {diffs.some((diff) => diff.category === "statPriorities") && <p className="review-change-note">属性目标也随场景更新，详见装备盘和下方检查点。</p>}
+          {diffs.some((diff) => diff.category === "rotation") && <p className="review-change-note">实战循环已切换为小秘境短按虹吸与金币链。</p>}
+          <div className="review-sources"><span>校对来源</span>{scenario.sourceRefs.map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>来源 {index + 1}</a>)}<small>{scenario.reviewedAt}</small></div>
+        </article>
+
+        <article className="paragon-guide-card">
+          <h3>巅峰加点</h3>
+          <div className="paragon-priority-grid">{groupedParagon && Object.entries(groupedParagon).map(([group, entries]) => <section key={group}><h4>{{ core: "核心", offense: "进攻", defense: "防御", utility: "通用" }[group as keyof typeof groupedParagon]}</h4><ol>{entries.map((entry) => <li key={entry.stat}><strong>{entry.stat}</strong><span>{entry.target}</span><small>{entry.reason}</small></li>)}</ol></section>)}</div>
+          <div className="paragon-checkpoints">{guide.paragonGuide?.checkpoints.map((checkpoint) => <span key={checkpoint.label}><b>{checkpoint.label}</b><strong>{checkpoint.target}</strong><small>{checkpoint.action}</small></span>)}</div>
+          {guide.paragonGuide && <div className="post-paragon"><b>800点以后</b>{guide.paragonGuide.post800.map((entry) => <p key={entry.priority}><strong>{entry.priority}</strong><span>{entry.when}：{entry.reason}</span></p>)}</div>}
+        </article>
+
+        <article className="choice-policy-card">
+          <h3>固定与替换</h3>
+          {policyGroups.map((group) => <section key={group.status}><h4>{group.label}</h4>{policies.filter((policy) => policy.status === group.status).map((policy) => <div className="choice-policy" key={policy.key}><strong>{policy.label}</strong><p>{policy.reason}</p>{policy.alternatives?.map((alternative) => <dl className={alternative.scenarios?.includes(scenario.id) ? "active" : ""} key={alternative.id}><dt>{alternative.label}{alternative.scenarios?.includes(scenario.id) && <b>当前</b>}</dt><dd><span>何时：{alternative.when}</span><span>收益：{alternative.gain}</span><span>代价：{alternative.cost}</span></dd></dl>)}</div>)}</section>)}
+        </article>
+      </div>
+    </section>
+  );
+}
 
 function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const { genders } = useSiteSettings();
@@ -1571,6 +1789,10 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     consoleNote: activeLoadout?.consoleNote ?? guide.consoleNote,
   }) as UnifiedBuildGuide, [guide, activeLoadout]);
   const activeVariant = resolveBuildVariantProfile(activeGuide, mode, paragon);
+  const activeScenario = activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`);
+  const activeConfiguration = activeGuide.configurationBase && activeScenario
+    ? resolveBuildConfiguration(activeGuide.configurationBase, activeScenario.patch)
+    : undefined;
   const gear = useMemo(
     () => activeGuide.resolveGear?.(mode, paragon) ?? resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant),
     [activeGuide, classId, mode, paragon, activeVariant],
@@ -1667,6 +1889,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         <strong>配置差异待实装</strong>
         <span>当前 BD 已保留用途与巅峰说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。</span>
       </section>}
+
+      {activeScenario && activeConfiguration && <BuildReviewPanel guide={activeGuide} scenario={activeScenario} configuration={activeConfiguration} />}
 
       {guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
         <header><span>配装选择</span><strong>两套都能无限疾风，区别在于谁负责杀怪</strong></header>

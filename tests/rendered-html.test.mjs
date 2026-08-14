@@ -108,6 +108,34 @@ test("keeps shared-configuration builds from receiving unreviewed variant swaps"
   assert.doesNotMatch(godMonk, /配置差异待实装/);
 });
 
+test("validates reviewed scenarios and renders Trag'Oul guidance from complete data", async () => {
+  const [html, guideTypes, page] = await Promise.all([
+    render("/builds/tragoul-nova").then((response) => response.text()),
+    readFile(new URL("../app/data/build-guides.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  for (const contract of ["BuildConfiguration", "BuildScenario", "BuildChoicePolicy", "ParagonGuide", "BuildReviewStatus"]) {
+    assert.match(guideTypes, new RegExp(`export type ${contract}`));
+  }
+  for (const helper of ["resolveBuildConfiguration", "diffBuildConfigurations", "validateReviewedBuildGuide"]) {
+    assert.match(guideTypes, new RegExp(`export function ${helper}`));
+  }
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(page, new RegExp(`id: "${scenario}"`));
+  }
+  assert.match(page, /reviewStatus: "fully-reviewed"/);
+  assert.match(page, /TRAGOUL_VALIDATION_ERRORS/);
+  assert.match(html, /SCENARIO REVIEW/);
+  assert.match(html, /配置差异/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /必须固定/);
+  assert.match(html, /条件替换/);
+  assert.match(html, /80万–90万/);
+  assert.match(html, /攻击速度[^]*1\.67/);
+  assert.match(html, /范围伤害[^]*120%/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);
