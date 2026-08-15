@@ -3220,6 +3220,19 @@ footer {
   overflow: visible;
 }
 
+.loadout-panel .slot-head .diablo-item-frame-surface,
+.loadout-panel .slot-shoulders .diablo-item-frame-surface,
+.loadout-panel .slot-boots .diablo-item-frame-surface,
+.loadout-panel .slot-bracers .diablo-item-frame-surface,
+.loadout-panel .slot-gloves .diablo-item-frame-surface,
+.loadout-panel .slot-head .diablo-item-frame-image,
+.loadout-panel .slot-shoulders .diablo-item-frame-image,
+.loadout-panel .slot-boots .diablo-item-frame-image,
+.loadout-panel .slot-bracers .diablo-item-frame-image,
+.loadout-panel .slot-gloves .diablo-item-frame-image {
+  overflow: visible;
+}
+
 .loadout-panel .item-slot:hover,
 .loadout-panel .item-slot.selected {
   z-index: 20;
@@ -3524,6 +3537,14 @@ footer {
   border-radius: 50%;
   background: #080808;
   box-shadow: 0 0 0 1px #a97d3d, 0 2px 6px #000;
+}
+
+.gear-detail-title > .diablo-item-frame .diablo-item-frame-sockets {
+  top: auto;
+  right: -8px;
+  bottom: -8px;
+  left: auto;
+  transform: none;
 }
 
 .original-effect,

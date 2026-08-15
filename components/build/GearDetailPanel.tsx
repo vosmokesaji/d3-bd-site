@@ -25,7 +25,7 @@ export function GearDetailPanel({
       <div className={`gear-detail blizzard-tooltip quality-${gear.quality}`}>
         <div className="tooltip-nameplate"><h3>{gear.name}</h3></div>
         <div className="gear-detail-title">
-          <DiabloItemFrame image={gear.image} quality={gear.quality} shape={itemFrameShapeForSlot(gear.slot)} size="lg" sockets={sockets} label={gear.name} />
+          <DiabloItemFrame image={gear.image} quality={gear.quality} shape={itemFrameShapeForSlot(gear.slot)} size="lg" fit="contain" sockets={sockets} label={gear.name} />
           <div>
             <strong>{gear.quality === "set" ? "套装物品" : "传奇物品"}</strong>
             <small>{gear.slot}</small>
