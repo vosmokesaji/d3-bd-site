@@ -273,7 +273,7 @@ test("structures Blizzard properties, choices, set pieces, and bonus tiers", asy
 });
 
 test("moves shared build UI into components and removes the retired guide stylesheet", async () => {
-  const [page, css, gearSlot, gearDetail, abilities, cube, itemFrame, libraryComponents] = await Promise.all([
+  const [page, css, gearSlot, gearDetail, abilities, cube, itemFrame, followerPaperdoll, libraryComponents] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../components/build/PaperdollGearSlot.tsx", import.meta.url), "utf8"),
@@ -281,6 +281,7 @@ test("moves shared build UI into components and removes the retired guide styles
     readFile(new URL("../components/build/BuildAbilitiesPanel.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/build/KanaiCubePanel.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/items/DiabloItemFrame.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/followers/FollowerPaperdoll.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/library/BlizzardItem.tsx", import.meta.url), "utf8"),
   ]);
   assert.doesNotMatch(page, /function PaperdollGearSlot|function GearDetailPanel|function BuildAbilitiesPanel|function KanaiCubePanel/);
@@ -293,11 +294,37 @@ test("moves shared build UI into components and removes the retired guide styles
   assert.match(itemFrame, /export function DiabloItemFrame/);
   assert.match(itemFrame, /itemFrameShapeForSlot/);
   assert.match(libraryComponents, /<DiabloItemFrame/);
-  assert.match(page, /<DiabloItemFrame image=\{item\.image\}/);
+  assert.match(followerPaperdoll, /<DiabloItemFrame image=\{item\.image\}/);
+  assert.equal((page.match(/<FollowerShowcase/g) ?? []).length, 2);
   assert.doesNotMatch(page, /follower-item-icon/);
   assert.doesNotMatch(gearDetail, /detail-item-icon/);
   assert.doesNotMatch(libraryComponents, /item-list-icon/);
   assert.doesNotMatch(css, /\.guide-/);
+});
+
+test("renders complete follower paperdolls with explicit empty slots on a mobile-safe layout", async () => {
+  const [html, page, data, paperdoll, css] = await Promise.all([
+    render("/builds/tragoul-nova").then((response) => response.text()),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/followers.ts", import.meta.url), "utf8"),
+    readFile(new URL("../components/followers/FollowerPaperdoll.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.doesNotMatch(page, /getFollowerSlotClass|followerItemQuality/);
+  assert.match(data, /export const FOLLOWER_SLOT_ORDER/);
+  for (const position of ["head", "shoulders", "chest", "gloves", "bracers", "belt", "pants", "boots", "amulet", "ring1", "ring2", "weapon", "offhand", "token"]) {
+    assert.match(data, new RegExp(`"${position}"`));
+  }
+  assert.match(paperdoll, /FOLLOWER_SLOT_ORDER\.map/);
+  assert.match(paperdoll, /follower-item-empty/);
+  assert.equal((html.match(/class="follower-paperdoll"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="follower-item /g) ?? []).length, 42);
+  assert.equal((html.match(/follower-item-empty/g) ?? []).length, 2);
+  assert.equal((html.match(/follower-skill-strip/g) ?? []).length, 3);
+  assert.match(css, /@media \(max-width: 700px\)[\s\S]*?body\s*\{[^}]*min-width:\s*0;/);
+  assert.match(css, /@media \(max-width: 1100px\)[\s\S]*?\.follower-showcase\s*\{[^}]*grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(css, /@media \(max-width: 700px\)[\s\S]*?\.follower-showcase\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1fr\)/);
 });
 
 test("preserves paperdoll overflow and enlarges detail artwork without shifting sockets", async () => {

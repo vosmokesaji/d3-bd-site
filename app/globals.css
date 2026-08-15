@@ -4995,3 +4995,243 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
   .item-directory-groups { grid-template-columns: 1fr; }
   .library-detail-card { grid-template-columns: 300px 1fr; }
 }
+
+/* Stage 3: shared follower paperdoll, explicit empty slots, and narrow-screen flow. */
+.follower-item-empty {
+  pointer-events: none;
+}
+
+.follower-empty-slot {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(108, 87, 61, 0.42);
+  border-radius: 4px;
+  background: rgba(8, 8, 7, 0.42);
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.58);
+}
+
+.follower-empty-slot::before {
+  position: absolute;
+  inset: 12%;
+  content: "";
+  border: 1px solid rgba(93, 77, 57, 0.22);
+  background: rgba(32, 29, 24, 0.2);
+}
+
+.follower-card.recommended > header {
+  box-shadow: inset 3px 0 #b77a37;
+}
+
+@media (max-width: 1100px) {
+  body {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  main,
+  .bd-detail-page {
+    width: 100%;
+    display: block;
+  }
+
+  .workbench,
+  .lower-grid {
+    display: block;
+  }
+
+  .panel,
+  .build-review-panel {
+    margin-bottom: 10px;
+  }
+
+  .loadout-panel {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .loadout-panel .paperdoll {
+    max-width: none;
+  }
+
+  .gear-detail-shell {
+    min-height: 620px;
+    contain: none;
+  }
+
+  .follower-showcase {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 auto;
+    padding: 14px;
+  }
+
+  .follower-card .follower-item-copy {
+    width: 170px;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  main,
+  .bd-detail-page {
+    width: 100%;
+    display: block;
+    padding: 0 8px 8px;
+  }
+
+  .workbench,
+  .lower-grid {
+    display: block;
+  }
+
+  .site-header {
+    position: relative;
+    width: calc(100% + 16px);
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-left: -8px;
+    padding: 9px 12px 0;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 40px;
+  }
+
+  .brand strong {
+    font-size: 15px;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .site-header nav {
+    order: 3;
+    width: 100%;
+    height: 42px;
+    gap: 22px;
+    overflow-x: auto;
+  }
+
+  .season-pill {
+    flex: 0 0 auto;
+  }
+
+  .hero,
+  .variant-bar {
+    width: calc(100% + 16px);
+    margin-left: -8px;
+  }
+
+  .variant-bar {
+    position: static;
+  }
+
+  .hero {
+    min-height: 220px;
+    padding: 30px 20px;
+  }
+
+  .hero-content {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .build-rating {
+    width: 100%;
+    margin: 0;
+  }
+
+  .build-rating span {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
+  .panel,
+  .build-review-panel {
+    margin-bottom: 10px;
+  }
+
+  .loadout-panel {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .loadout-panel > .panel-heading {
+    position: sticky;
+    left: 0;
+    width: 100%;
+  }
+
+  .loadout-panel .paperdoll {
+    max-width: none;
+    margin: 10px;
+  }
+
+  .gear-detail-shell {
+    width: calc(100vw - 36px);
+    min-height: 620px;
+    margin: 30px 18px 36px;
+    contain: none;
+  }
+
+  .follower-showcase {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .follower-card > header {
+    height: 70px;
+  }
+
+  .follower-card .follower-paperdoll {
+    min-height: 570px;
+  }
+
+  .follower-card-model {
+    width: 62%;
+  }
+
+  .follower-card .follower-item-copy {
+    width: 150px;
+  }
+
+  .follower-skill-strip {
+    margin: 0 8px;
+  }
+
+  .follower-rule {
+    margin: 0 8px 10px;
+  }
+
+  .combat-panel .rotation-list {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .combat-panel .rotation-list li {
+    min-height: 0;
+  }
+}

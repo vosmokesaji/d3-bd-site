@@ -27,7 +27,8 @@ import { DEMON_HUNTER_BUILDS } from "./data/demon-hunter-builds";
 import { MONK_BUILDS } from "./data/monk-builds";
 import { WITCH_DOCTOR_BUILDS } from "./data/witch-doctor-builds";
 import { WIZARD_BUILDS } from "./data/wizard-builds";
-import { classPortraitAsset, paperdollAsset } from "./data/assets";
+import { paperdollAsset } from "./data/assets";
+import { FOLLOWERS, FOLLOWER_SKILLS } from "./data/followers";
 import {
   CUBE_SEASON_LABEL,
   CURRENT_SEASON,
@@ -39,7 +40,7 @@ import { GearDetailPanel } from "../components/build/GearDetailPanel";
 import { KanaiCubePanel } from "../components/build/KanaiCubePanel";
 import { PaperdollGearSlot } from "../components/build/PaperdollGearSlot";
 import type { GearSocket } from "../components/build/types";
-import { DiabloItemFrame } from "../components/items/DiabloItemFrame";
+import { FollowerShowcase } from "../components/followers/FollowerShowcase";
 import {
   BlizzardItemIcon,
   OfficialPropertySections,
@@ -96,8 +97,6 @@ type CubePower = {
   original: string;
   summary: string;
 };
-
-type FollowerKey = "enchantress" | "scoundrel" | "templar";
 
 type FlowNode = {
   id: string;
@@ -483,96 +482,6 @@ const CUBE_POWERS: Record<string, Omit<CubePower, "slot">> = {
   },
 };
 
-const FOLLOWERS: Record<FollowerKey, {
-  name: string;
-  role: string;
-  note: string;
-  items: { name: string; image: string; slot: string; reason: string }[];
-}> = {
-  enchantress: {
-    name: "魔女",
-    role: "首选 · 冷却与攻速",
-    note: "预知和谐缩短技能冷却，集中心智提高攻速；对这套持续虹吸触发新星最直接。",
-    items: [
-      { name: "破碎王冠", image: "/d3/broken-crown.png", slot: "头部", reason: "额外掉落插入头盔的宝石" },
-      { name: "归乡护肩", image: "/d3/homing-pads.png", slot: "肩部", reason: "传送回城时获得保护" },
-      { name: "金皮", image: "/d3/goldskin.png", slot: "胸部", reason: "T16额外掉金，触发金织带" },
-      { name: "礼赞手套", image: "/d3/gloves-worship.png", slot: "手部", reason: "神殿效果持续10分钟" },
-      { name: "复仇者护腕", image: "/d3/nemesis-bracers.png", slot: "腕部", reason: "点塔额外生成精英" },
-      { name: "谢尔曼缠腰", image: "/d3/cord-sherma.png", slot: "腰部", reason: "范围致盲/减速" },
-      { name: "凯恩法裤", image: "/d3/cains-habit.png", slot: "腿部", reason: "配合套装多掉大秘钥匙" },
-      { name: "贤者之旅", image: "/d3/sages-passage.png", slot: "脚部", reason: "配合套装多掉死亡之息" },
-      { name: "时光流韵", image: "/d3/flavor-time.png", slot: "颈部", reason: "塔效果持续时间翻倍" },
-      { name: "神目指环", image: "/d3/oculus-ring.png", slot: "戒指", reason: "击杀后生成地面增伤圈" },
-      { name: "团结", image: "/d3/unity.png", slot: "戒指", reason: "角色也戴团结时分摊伤害" },
-      { name: "盲信之沙", image: "/d3/sultan-blinding-sand.png", slot: "武器", reason: "高几率致盲，补充控制" },
-      { name: "烟熏香炉", image: "/d3/smoking-thurible.png", slot: "魔女法器", reason: "随从不会死亡" },
-    ],
-  },
-  scoundrel: {
-    name: "盗贼",
-    role: "备选 · 暴击增益",
-    note: "适合需要额外暴击窗口的玩法；这套死亡新星通常仍优先魔女的冷却与攻速。",
-    items: [
-      { name: "破碎王冠", image: "/d3/broken-crown.png", slot: "头部", reason: "额外宝石" },
-      { name: "归乡护肩", image: "/d3/homing-pads.png", slot: "肩部", reason: "回城保护" },
-      { name: "金皮", image: "/d3/goldskin.png", slot: "胸部", reason: "额外掉金" },
-      { name: "礼赞手套", image: "/d3/gloves-worship.png", slot: "手部", reason: "延长神殿" },
-      { name: "复仇者护腕", image: "/d3/nemesis-bracers.png", slot: "腕部", reason: "点塔出精英" },
-      { name: "谢尔曼缠腰", image: "/d3/cord-sherma.png", slot: "腰部", reason: "范围控制" },
-      { name: "凯恩法裤", image: "/d3/cains-habit.png", slot: "腿部", reason: "额外大秘钥匙" },
-      { name: "贤者之旅", image: "/d3/sages-passage.png", slot: "脚部", reason: "额外死亡之息" },
-      { name: "时光流韵", image: "/d3/flavor-time.png", slot: "颈部", reason: "延长塔效果" },
-      { name: "神目指环", image: "/d3/oculus-ring.png", slot: "戒指", reason: "地面增伤圈" },
-      { name: "团结", image: "/d3/unity.png", slot: "戒指", reason: "配合不死饰品分摊伤害" },
-      { name: "布里萨·多·凯南", image: "/d3/buriza.png", slot: "武器", reason: "穿透并控制远处敌人" },
-      { name: "骷髅钥匙", image: "/d3/skeleton-key.png", slot: "盗贼徽记", reason: "随从不会死亡" },
-    ],
-  },
-  templar: {
-    name: "圣殿骑士",
-    role: "备选 · 治疗与保命",
-    note: "更适合开荒期坚韧不足时使用；成型后魔女对输出循环帮助更大。",
-    items: [
-      { name: "破碎王冠", image: "/d3/broken-crown.png", slot: "头部", reason: "额外宝石" },
-      { name: "归乡护肩", image: "/d3/homing-pads.png", slot: "肩部", reason: "回城保护" },
-      { name: "金皮", image: "/d3/goldskin.png", slot: "胸部", reason: "额外掉金" },
-      { name: "礼赞手套", image: "/d3/gloves-worship.png", slot: "手部", reason: "延长神殿" },
-      { name: "复仇者护腕", image: "/d3/nemesis-bracers.png", slot: "腕部", reason: "点塔出精英" },
-      { name: "谢尔曼缠腰", image: "/d3/cord-sherma.png", slot: "腰部", reason: "范围控制" },
-      { name: "凯恩法裤", image: "/d3/cains-habit.png", slot: "腿部", reason: "额外大秘钥匙" },
-      { name: "贤者之旅", image: "/d3/sages-passage.png", slot: "脚部", reason: "额外死亡之息" },
-      { name: "时光流韵", image: "/d3/flavor-time.png", slot: "颈部", reason: "延长塔效果" },
-      { name: "神目指环", image: "/d3/oculus-ring.png", slot: "戒指", reason: "地面增伤圈" },
-      { name: "团结", image: "/d3/unity.png", slot: "戒指", reason: "配合不死饰品分摊伤害" },
-      { name: "雷霆之怒", image: "/d3/thunderfury.png", slot: "武器", reason: "连锁减速，稳定控场" },
-      { name: "折射成冰", image: "/d3/freeze-deflection.png", slot: "盾牌", reason: "格挡时冻结攻击者" },
-      { name: "附魔之恩", image: "/d3/enchanting-favor.png", slot: "圣殿骑士圣物", reason: "随从不会死亡" },
-    ],
-  },
-};
-
-const FOLLOWER_SKILLS: Record<FollowerKey, { name: string; image: string }[]> = {
-  enchantress: [
-    { name: "时空脉冲", image: "/d3/follower-skill-enchantress-temporal.png" },
-    { name: "先知协调", image: "/d3/follower-skill-enchantress-harmony.png" },
-    { name: "强固护盾", image: "/d3/follower-skill-enchantress-erosion.png" },
-    { name: "命运失误", image: "/d3/follower-skill-enchantress-fate.png" },
-  ],
-  scoundrel: [
-    { name: "致残射击", image: "/d3/follower-skill-scoundrel-crippling.png" },
-    { name: "解剖", image: "/d3/follower-skill-scoundrel-anatomy.png" },
-    { name: "多重射击", image: "/d3/follower-skill-scoundrel-multishot.png" },
-    { name: "消失", image: "/d3/follower-skill-scoundrel-vanish.png" },
-  ],
-  templar: [
-    { name: "治疗", image: "/d3/follower-skill-templar-heal.png" },
-    { name: "忠诚", image: "/d3/follower-skill-templar-loyalty.png" },
-    { name: "冲锋", image: "/d3/follower-skill-templar-charge.png" },
-    { name: "守护者", image: "/d3/follower-skill-templar-guardian.png" },
-  ],
-};
-
 const SET_NODE: FlowNode = {
   id: "tragoul-6",
   label: "塔格奥 6件",
@@ -733,33 +642,6 @@ function getPositionGear(mode: Mode, paragon: Paragon) {
     belt: paragon === "low" ? "guardian-belt" : mode === "push" ? "dayntee" : "goldwrap",
     ring2: mode === "push" ? "coe" : "briggs",
   };
-}
-
-function getFollowerSlotClass(items: { slot: string }[], index: number) {
-  const slot = items[index].slot;
-  const exact: Record<string, string> = {
-    头部: "head",
-    肩部: "shoulders",
-    胸部: "chest",
-    手部: "gloves",
-    腕部: "bracers",
-    腰部: "belt",
-    腿部: "pants",
-    脚部: "boots",
-    颈部: "amulet",
-    武器: "weapon",
-    盾牌: "offhand",
-  };
-  if (exact[slot]) return exact[slot];
-  if (slot === "戒指") {
-    const ringNumber = items.slice(0, index + 1).filter((item) => item.slot === "戒指").length;
-    return ringNumber === 1 ? "ring1" : "ring2";
-  }
-  return "token";
-}
-
-function followerItemQuality(name: string) {
-  return name.startsWith("凯恩") || name.startsWith("贤者") ? "set" as const : "legendary" as const;
 }
 
 function FlowNodeButton({
@@ -2009,8 +1891,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
 
         <article className="panel follower-panel" id="followers">
           <div className="panel-heading"><div><span className="section-index">05</span><h2>随从配装</h2></div><small>三名随从并列对比 · 首选项高亮</small></div>
-          <div className="follower-showcase">{(Object.keys(FOLLOWERS) as FollowerKey[]).map((key) => { const current = FOLLOWERS[key]; const recommended = guide.follower === current.name; const portraitClass = key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader"; return <section className={`follower-card follower-${key} ${recommended ? "recommended" : ""}`} key={key}><header><span><strong>{current.name}</strong><small>{recommended ? `首选 · ${current.role.replace("首选 · ", "")}` : current.role.replace("首选 · ", "备选 · ")}</small></span><img src={classPortraitAsset(portraitClass)} alt="" /></header><div className="follower-paperdoll"><div className="follower-card-model" /><div className="follower-silhouette" />{current.items.map((item, index) => <button key={`${key}-${item.slot}-${item.name}`} className={`follower-item follower-slot-${getFollowerSlotClass(current.items, index)}`} title={`${item.name}：${item.reason}`}><DiabloItemFrame image={item.image} quality={followerItemQuality(item.name)} shape="fill" size="fill" fit="contain" /><small>{item.slot}</small><span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span></button>)}</div><div className="follower-skill-strip">{FOLLOWER_SKILLS[key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{skill.name}</strong></span>)}</div><p>{recommended ? guide.followerReason : current.note}</p></section>; })}</div>
-          <div className="follower-rule"><b>通用原则</b><span>主属性洗成智力 / 敏捷 / 力量以匹配随从；优先冷却、攻速与坚韧。携带“不死”专属饰品后，再用团结分摊伤害。</span></div>
+          <FollowerShowcase recommendedFollower={guide.follower} recommendation={guide.followerReason} />
         </article>
       </section>
 
@@ -2411,39 +2292,7 @@ function HomeContent() {
             </div>
             <small>三名随从并列对比 · 悬停装备查看用途</small>
           </div>
-          <div className="follower-showcase">
-            {(Object.keys(FOLLOWERS) as FollowerKey[]).map((key) => {
-              const current = FOLLOWERS[key];
-              return (
-                <section className={`follower-card follower-${key}`} key={key}>
-                  <header>
-                    <span><strong>{current.name}</strong><small>{current.role}</small></span>
-                    <img src={classPortraitAsset(key === "enchantress" ? "wizard" : key === "scoundrel" ? "demon-hunter" : "crusader")} alt="" />
-                  </header>
-                  <div className="follower-paperdoll">
-                    <div className="follower-card-model" aria-hidden="true" />
-                    <div className="follower-silhouette" />
-                    {current.items.map((item, index) => (
-                      <button
-                        key={`${key}-${item.slot}-${item.name}`}
-                        className={`follower-item follower-slot-${getFollowerSlotClass(current.items, index)}`}
-                        title={`${item.name}：${item.reason}`}
-                      >
-                        <DiabloItemFrame image={item.image} quality={followerItemQuality(item.name)} shape="fill" size="fill" fit="contain" />
-                        <small>{item.slot}</small>
-                        <span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span>
-                      </button>
-                    ))}
-                  </div>
-                  <div className="follower-skill-strip">
-                    {FOLLOWER_SKILLS[key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{skill.name}</strong></span>)}
-                  </div>
-                  <p>{current.note}</p>
-                </section>
-              );
-            })}
-          </div>
-          <div className="follower-rule"><b>通用原则</b><span>主属性洗成智力 / 敏捷 / 力量以匹配随从；优先冷却、攻速与坚韧。携带“不死”专属饰品后，再用团结分摊伤害。</span></div>
+          <FollowerShowcase recommendedFollower={guide.follower} recommendation={guide.followerReason} />
         </article>
 
         <article className="panel gem-panel">
