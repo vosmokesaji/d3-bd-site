@@ -301,9 +301,10 @@ test("moves shared build UI into components and removes the retired guide styles
 });
 
 test("preserves paperdoll overflow and enlarges detail artwork without shifting sockets", async () => {
-  const [css, gearDetail] = await Promise.all([
+  const [css, gearDetail, itemFrame] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../components/build/GearDetailPanel.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/items/DiabloItemFrame.tsx", import.meta.url), "utf8"),
   ]);
 
   assert.match(
@@ -314,6 +315,11 @@ test("preserves paperdoll overflow and enlarges detail artwork without shifting 
   assert.match(
     css,
     /\.gear-detail-title > \.diablo-item-frame \.diablo-item-frame-sockets\s*\{[^}]*right:\s*-8px;[^}]*bottom:\s*-8px;[^}]*transform:\s*none;/s,
+  );
+  assert.match(itemFrame, /data-socket-count=\{sockets\.length\}/);
+  assert.match(
+    css,
+    /data-socket-count="2"[^}]*data-socket-count="3"[^}]*\{[^}]*top:\s*50%;[^}]*bottom:\s*auto;[^}]*transform:\s*translateY\(-50%\)/s,
   );
 });
 

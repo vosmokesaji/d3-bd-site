@@ -3547,6 +3547,13 @@ footer {
   transform: none;
 }
 
+.gear-detail-title > .diablo-item-frame[data-socket-count="2"] .diablo-item-frame-sockets,
+.gear-detail-title > .diablo-item-frame[data-socket-count="3"] .diablo-item-frame-sockets {
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
 .original-effect,
 .build-gear-effect,
 .socket-advice {

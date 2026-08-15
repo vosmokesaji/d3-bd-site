@@ -35,6 +35,7 @@ export function DiabloItemFrame({
   return (
     <span
       className={`diablo-item-frame frame-shape-${shape} frame-size-${size} quality-${quality} frame-fit-${fit} ${className}`.trim()}
+      data-socket-count={sockets.length}
       aria-label={label}
       aria-hidden={label ? undefined : true}
     >
