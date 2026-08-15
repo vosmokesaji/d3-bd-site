@@ -1117,6 +1117,22 @@ const HOARDER_GEM = {
   image: "/d3/library/items/boon-of-the-hoarder-unique_gem_014_x1.png",
 };
 
+const CONFIGURATION_LEGENDARY_GEMS: Record<string, { name: string; image: string }> = {
+  "bane-of-the-trapped": { name: "困者之灾", image: "/d3/library/items/bane-of-the-trapped-unique_gem_002_x1.png" },
+  "bane-of-the-stricken": { name: "受罚者之灾", image: "/d3/library/items/bane-of-the-stricken-unique_gem_018_x1.png" },
+  taeguk: { name: "太极石", image: "/d3/library/items/taeguk-unique_gem_015_x1.png" },
+  "boon-of-the-hoarder": HOARDER_GEM,
+  "wreath-of-lightning": { name: "闪电华冠", image: "/d3/library/items/wreath-of-lightning-unique_gem_004_x1.png" },
+  zei: { name: "贼神的复仇之石", image: "/d3/library/items/zeis-stone-of-vengeance-unique_gem_012_x1.png" },
+};
+
+const CONFIGURATION_NORMAL_GEMS: Record<string, { image: string; label: string }> = {
+  "flawless-royal-ruby": { image: "/d3/flawless-royal-ruby.png", label: "无瑕皇家红宝石：力量" },
+  "flawless-royal-diamond": { image: "/d3/library/items/gem-190.png", label: "无瑕皇家白宝石：冷却/全抗" },
+  "flawless-royal-emerald": { image: "/d3/flawless-royal-emerald.png", label: "无瑕皇家绿宝石：暴击伤害" },
+  "flawless-royal-topaz": { image: "/d3/flawless-royal-topaz.png", label: "无瑕皇家黄宝石：智力" },
+};
+
 const DEFAULT_VARIANT_POWERS: Record<"push-low" | "speed-low" | "speed-high", CubePower> = {
   "push-low": {
     id: "variant-unity",
@@ -1211,9 +1227,16 @@ function resolveDefaultVariantPowers(guide: UnifiedBuildGuide, mode: Mode, parag
   return [...powers.slice(0, Math.max(0, powers.length - 1)), replacement];
 }
 
-function guideSockets(gear: Gear, classId: ClassId) {
+function guideSockets(gear: Gear, classId: ClassId, normalGems?: BuildConfiguration["normalGems"]) {
   if (gear.gem) return [{ image: gear.gem.image, label: gear.gem.name }];
   if (SOCKETS[gear.id]) return SOCKETS[gear.id];
+  const configuredIds = gear.slot === "头部" ? normalGems?.head?.slice(0, 1)
+    : gear.slot === "胸部" ? normalGems?.armor?.slice(0, 3)
+      : gear.slot === "腿部" ? normalGems?.armor?.slice(0, 2)
+        : gear.slot === "主手" || gear.slot === "副手" ? normalGems?.weapon?.slice(0, 1)
+          : undefined;
+  const configured = configuredIds?.flatMap((id) => CONFIGURATION_NORMAL_GEMS[id] ? [CONFIGURATION_NORMAL_GEMS[id]] : []);
+  if (configured?.length) return configured;
   if (gear.slot === "头部") return [{ image: "/d3/flawless-royal-amethyst.png", label: "无瑕皇家紫宝石：生命%" }];
   if (gear.slot === "胸部") return Array.from({ length: 3 }, () => CLASS_ARMOR_GEM[classId]);
   if (gear.slot === "腿部") return Array.from({ length: 2 }, () => CLASS_ARMOR_GEM[classId]);
@@ -1595,7 +1618,7 @@ function buildConfigurationValue(guide: UnifiedBuildGuide, value?: string) {
   const passive = guide.passives.find((candidate) => candidate.id === value);
   const known: Record<string, string> = {
     "bane-of-the-trapped": "困者之灾", zei: "贼神的复仇之石", "bane-of-the-stricken": "受罚者之灾",
-    "boon-of-the-hoarder": "囤宝者的恩惠", enchantress: "魔女",
+    taeguk: "太极石", "boon-of-the-hoarder": "囤宝者的恩惠", "wreath-of-lightning": "闪电华冠", enchantress: "魔女",
   };
   return item?.name ?? power?.name ?? skill?.name ?? passive?.name ?? known[value] ?? value;
 }
@@ -1610,7 +1633,7 @@ function BuildReviewPanel({
   configuration: BuildConfiguration;
 }) {
   const diffs = diffBuildConfigurations(guide.configurationBase!, configuration);
-  const visibleDiffs = diffs.filter((diff) => ["gear", "powers", "legendaryGems"].includes(diff.category));
+  const visibleDiffs = diffs.filter((diff) => ["gear", "skills", "passives", "powers", "legendaryGems"].includes(diff.category));
   const groupedParagon = guide.paragonGuide?.pre800;
   const policies = guide.choicePolicies ?? [];
   const policyGroups = [
@@ -1677,24 +1700,55 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   }) as UnifiedBuildGuide, [guide, activeLoadout]);
   const activeVariant = resolveBuildVariantProfile(activeGuide, mode, paragon);
   const activeScenario = activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`);
-  const activeConfiguration = activeGuide.configurationBase && activeScenario
+  const activeConfiguration = useMemo(() => activeGuide.configurationBase && activeScenario
     ? resolveBuildConfiguration(activeGuide.configurationBase, activeScenario.patch)
-    : undefined;
+    : undefined, [activeGuide.configurationBase, activeScenario]);
   const gear = useMemo(
-    () => activeGuide.resolveGear?.(mode, paragon) ?? resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant),
-    [activeGuide, classId, mode, paragon, activeVariant],
+    () => {
+      if (activeGuide.resolveGear) return activeGuide.resolveGear(mode, paragon);
+      if (!activeConfiguration) return resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant);
+      const gemIds = Object.values(activeConfiguration.legendaryGems);
+      let jewelryIndex = 0;
+      return Object.values(activeConfiguration.gear).flatMap((id) => {
+        const item = activeGuide.gear.find((candidate) => candidate.id === id);
+        if (!item) return [];
+        const gemId = item.slot === "颈部" || item.slot === "手指" ? gemIds[jewelryIndex++] : undefined;
+        return [{
+          ...item,
+          gem: gemId ? CONFIGURATION_LEGENDARY_GEMS[gemId] ?? item.gem : item.gem,
+          affixes: normalizeGuideAffixes(item as Gear, classId, mode, paragon),
+        } as Gear];
+      });
+    },
+    [activeGuide, activeConfiguration, classId, mode, paragon, activeVariant],
   );
   const positions = useMemo(() => arrangeGuideGear(gear as Gear[]), [gear]);
   const powers = useMemo(
-    () => activeGuide.resolvePowers?.(mode, paragon) ?? resolveDefaultVariantPowers(activeGuide, mode, paragon, activeVariant),
-    [activeGuide, mode, paragon, activeVariant],
+    () => {
+      if (activeGuide.resolvePowers) return activeGuide.resolvePowers(mode, paragon);
+      if (!activeConfiguration) return resolveDefaultVariantPowers(activeGuide, mode, paragon, activeVariant);
+      const labels: Record<string, string> = { weapon: "武器", armor: "防具", jewelry: "首饰", season: "第4槽" };
+      return Object.entries(activeConfiguration.powers).flatMap(([slot, id]) => {
+        const selected = activeGuide.powers.find((candidate) => candidate.id === id);
+        return selected ? [{ id: selected.id, slot: labels[slot] ?? selected.slot, name: selected.name, image: selected.image, original: selected.effect, summary: selected.logic }] : [];
+      });
+    },
+    [activeGuide, activeConfiguration, mode, paragon, activeVariant],
   );
   const setFamilies = useMemo(() => buildSetFamilies(activeGuide, gear as Gear[]), [activeGuide, gear]);
   const rows = useMemo(
     () => [...guideRows(activeGuide, mode), ...buildAutomaticSetRows(setFamilies, powers)],
     [activeGuide, mode, setFamilies, powers],
   );
-  const rotation = activeGuide.resolveRotation?.(mode) ?? activeGuide.rotation;
+  const rotation = activeGuide.resolveRotation?.(mode) ?? activeConfiguration?.rotation ?? activeGuide.rotation;
+  const scenarioSkills = useMemo(() => activeConfiguration?.skills.flatMap((configured) => {
+    const skill = activeGuide.skills.find((candidate) => candidate.id === configured.id);
+    return skill ? [{ ...skill, rune: configured.rune ?? skill.rune }] : [];
+  }) ?? activeGuide.skills, [activeConfiguration, activeGuide.skills]);
+  const scenarioPassives = useMemo(() => activeConfiguration?.passives.flatMap((id) => {
+    const passive = activeGuide.passives.find((candidate) => candidate.id === id);
+    return passive ? [passive] : [];
+  }) ?? activeGuide.passives, [activeConfiguration, activeGuide.passives]);
   const [selectedGearId, setSelectedGearId] = useState(positions[0]?.gear.id ?? "");
   const [selectedPowerId, setSelectedPowerId] = useState(powers[0]?.id ?? "");
   const [activeNode, setActiveNode] = useState<FlowNode | null>(null);
@@ -1705,7 +1759,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const selectedOfficialId = useMemo(() => findOfficialItem(itemIndex as OfficialItemRecord[], selectedGear)?.id ?? "", [itemIndex, selectedGear]);
   const selectedOfficialItem = useLibraryRecord(selectedOfficialId);
   const originalItemEffect = officialItemEffect(selectedOfficialItem) || activeGuide.originalEffects?.[selectedGear?.id] || selectedGear?.effect;
-  const selectedSockets = selectedGear ? guideSockets(selectedGear, classId) : [];
+  const selectedSockets = selectedGear ? guideSockets(selectedGear, classId, activeConfiguration?.normalGems) : [];
   const statRows = useMemo(() => equipmentStatRows(positions, classId, paragon), [positions, classId, paragon]);
   const activeStat = statRows.find((stat) => stat.key === selectedStat);
   const relatedIds = useMemo(() => {
@@ -1841,7 +1895,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
                     selected={!activeStat && selectedGearId === item.id}
                     related={activeStat ? statRelated : Boolean(activeNode && relatedIds.has(item.id))}
                     dimmed={activeStat ? !statRelated : Boolean(activeNode && !relatedIds.has(item.id))}
-                    sockets={guideSockets(item, classId)}
+                    sockets={guideSockets(item, classId, activeConfiguration?.normalGems)}
                     onSelect={focusGear}
                     onPreview={setSelectedGearId}
                   />
@@ -1870,8 +1924,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
 
       <section className="lower-grid">
         <BuildAbilitiesPanel
-          skills={activeGuide.skills.map((skill) => ({ id: skill.id, name: skill.name, image: skill.image, logic: skill.logic, rune: skill.rune }))}
-          passives={activeGuide.passives.map((passive) => ({ id: passive.id, name: passive.name, image: passive.image, logic: passive.logic }))}
+          skills={scenarioSkills.map((skill) => ({ id: skill.id, name: skill.name, image: skill.image, logic: skill.logic, rune: skill.rune }))}
+          passives={scenarioPassives.map((passive) => ({ id: passive.id, name: passive.name, image: passive.image, logic: passive.logic }))}
           activeNode={activeNode}
           relatedIds={relatedIds}
           onNodeSelect={handleNodeSelect}

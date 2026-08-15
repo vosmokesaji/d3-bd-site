@@ -136,6 +136,31 @@ test("validates reviewed scenarios and renders Trag'Oul guidance from complete d
   assert.match(html, /范围伤害[^]*120%/);
 });
 
+test("renders the reviewed Wastes Rend scenarios as real runtime loadouts", async () => {
+  const [html, barbarianData, page] = await Promise.all([
+    render("/builds/wastes-rend").then((response) => response.text()),
+    readFile(new URL("../app/data/barbarian-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(barbarianData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["slanderer-wastes", "stone-gauntlets", "bulkathos-vow", "ambos-pride-worn", "hexing-pants", "wreath-of-lightning"]) {
+    assert.match(barbarianData, new RegExp(runtimeChoice));
+  }
+  assert.match(barbarianData, /validateReviewedBuildGuide\(WASTES_REVIEWED_GUIDE\)/);
+  assert.match(page, /Object\.values\(activeConfiguration\.gear\)/);
+  assert.match(page, /activeConfiguration\?\.skills/);
+  assert.match(page, /activeConfiguration\?\.passives/);
+  assert.match(page, /activeConfiguration\?\.rotation/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);

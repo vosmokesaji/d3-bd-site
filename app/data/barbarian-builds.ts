@@ -1,4 +1,4 @@
-import { completeBuildGuide, type BuildGuide, type GuideAbility, type GuideGear, type GuideLink, type GuidePower } from "./build-guides";
+import { completeBuildGuide, validateReviewedBuildGuide, type BuildConfiguration, type BuildGuide, type BuildScenario, type GuideAbility, type GuideGear, type GuideLink, type GuidePower, type ParagonGuide } from "./build-guides";
 import { CURRENT_SEASON } from "./season-config";
 import { D3_ITEM_ROOT, D3_SKILL_ROOT } from "./assets";
 
@@ -17,6 +17,8 @@ const GEM = {
   taeguk: { name: "太极石", image: image("taeguk-unique_gem_015_x1.png") },
   simplicity: { name: "至简之力", image: image("simplicitys-strength-unique_gem_013_x1.png") },
   gogok: { name: "迅捷勾玉", image: image("gogok-of-swiftness-unique_gem_008_x1.png") },
+  hoarder: { name: "囤宝者的恩惠", image: image("boon-of-the-hoarder-unique_gem_014_x1.png") },
+  wreath: { name: "闪电华冠", image: image("wreath-of-lightning-unique_gem_004_x1.png") },
 };
 
 function setPiece(id: string, slot: string, name: string, file: string, setName: string, firstAffix: string): GuideGear {
@@ -132,23 +134,38 @@ const WASTES_GUIDE: BuildGuide = {
     flavor(GEM.trapped), focus(GEM.taeguk), restraint(GEM.stricken),
     legendary("bulkathos-vow", "主手", "布尔凯索的庄严誓词", "bulkathoss-solemn-vow-unique_mighty_1h_010_x1.png", "与战士之血组成双刀套，提供怒气与旋风移速，适合速刷和低巅峰。", ["高白字", "伤害%", "范围伤害", "力量", "拉玛兰迪打孔"], ["黄装升级：70级单手重型武器", "世界掉落", "必须和另一把布尔凯索武器配套" ]),
     legendary("bulkathos-blood", "副手", "布尔凯索的战士之血", "bulkathoss-warrior-blood-unique_mighty_1h_011_x1.png", "双刀套另一件；维持旋风时不再为怒气停手。", ["高白字", "伤害%", "范围伤害", "力量", "拉玛兰迪打孔"], ["黄装升级：70级单手重型武器", "世界掉落", "冲层高巅峰可换对剑" ]),
+    legendary("warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "打碎可破坏物时获得短时移动速度，适合小秘境连续赶路。", ["物理技能伤害", "暴击几率", "力量", "体能"], ["血岩碎片赌博护腕", "黄装升级70级护腕", "只在可破坏物密集的速刷地图使用"]),
+    legendary("avarice-band", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取半径，连接囤宝者、生命球和金币链。", ["镶孔", "暴击几率", "暴击伤害", "冷却缩减"], ["第三幕悬赏宝箱", "第四幕悬赏宝箱也可能掉落", "不建议用血岩赌博"], undefined, GEM.hoarder),
+    band(GEM.taeguk),
+    legendary("slanderer-wastes", "主手", "诽谤者", "the-slanderer-unique_sword_1h_set_02_x1.png", "与小流氓组成伊斯特凡对剑；消耗怒气时叠加攻速、伤害与护甲。", ["高白字", "伤害%", "冷却缩减", "范围伤害", "拉玛兰迪打孔"], ["黄装升级70级单手剑", "必须与小流氓成套", "冲层优先于布尔凯索双刀"]),
+    legendary("little-rogue-wastes", "副手", "小流氓", "little-rogue-unique_sword_1h_set_03_x1.png", "伊斯特凡对剑的另一件，连续旋风可维持五层攻防增益。", ["高白字", "伤害%", "冷却缩减", "范围伤害", "拉玛兰迪打孔"], ["黄装升级70级单手剑", "必须与诽谤者成套", "只穿一把没有套装效果"]),
+    legendary("ambos-pride-worn", "主手", "安博之骄", "ambos-pride-p67_unique_mighty_1h_012.png", "旋风自动施放痛割并在1秒内结算；穿戴后释放魔方武器槽。", ["高白字", "伤害%", "冷却缩减", "范围伤害", "拉玛兰迪打孔"], ["黄装升级70级单手重型武器", "高配速刷才建议穿戴", "需搭配回荡狂怒"]),
+    legendary("echoing-fury-worn", "副手", "回荡狂怒", "echoing-fury-p66_unique_mace_1h_001.png", "击杀叠加狂乱，提供攻速与移动速度，低密度或首领战会掉层。", ["高白字", "伤害%", "冷却缩减", "范围伤害", "拉玛兰迪打孔"], ["黄装升级70级单手锤", "世界掉落", "只用于碾压难度速刷"]),
+    legendary("hexing-pants", "腿部", "杨先生的妖法裤", "hexing-pants-of-mr-yan-unique_pants_101_x1.png", "移动时提高伤害与资源生成；旋风全程移动可稳定享受。", ["2个镶孔", "力量", "体能", "全抗"], ["血岩碎片赌博裤子", "黄装升级70级裤子", "必须同时萃取皇家华戒维持荒原六件"]),
   ],
   skills: [
-    ability("whirlwind", "旋风斩", "集血斩", "维持移动、荒原减伤与安博自动痛割；它是发动机而非主要伤害。"),
+    ability("ancient-spear", "上古之矛", "怒抛", "把远处怪物拉入密度中心，为冲层痛割制造稳定覆盖区。"),
+    ability("whirlwind", "旋风斩", "风剪", "维持移动、回怒、荒原减伤与安博自动痛割；它是发动机而非主要伤害。"),
     ability("rend", "痛割", "血流成河", "物理持续伤害由安博自动施放并瞬间结算，悲恸允许叠两层。"),
-    ability("battle-rage", "战斗怒火", "血溅十方", "暴击制造范围溅射，帮助痛割清理高密度怪群。"),
+    ability("battle-rage", "战斗怒火", "丰收之剑", "冲层提供生命球治疗；速刷改用凶残提高移动速度。"),
     ability("ground-stomp", "大地践踏", "陷地猛击", "聚怪并触发力量指环；冲层时把敌人拉入痛割覆盖区。"),
     ability("ignore-pain", "无视苦痛", "铁骨钢筋", "危险阶段主动补减伤，填补力量指环或狂战的空窗。"),
+    ability("furious-charge", "狂暴冲锋", "无情突袭", "跨越怪群并触发力量指环，是T16的赶路与减伤按钮。"),
+    ability("sprint", "疾奔", "马拉松", "把过剩怒气换成持续移速，连接稀疏怪群。"),
     ability("wrath-of-the-berserker", "狂战之怒", "癫狂", "通过黄道戒与旋风高频命中保持常驻；莫提克同时给予所有符文。"),
   ],
-  passives: [COMMON_PASSIVES.rampage, COMMON_PASSIVES.ruthless, COMMON_PASSIVES.boon, COMMON_PASSIVES.nerves],
+  passives: [COMMON_PASSIVES.berserker, COMMON_PASSIVES.rampage, COMMON_PASSIVES.ruthless, COMMON_PASSIVES.boon, COMMON_PASSIVES.nerves, passive("brawler", "斗士", "周围有三名敌人时提高伤害，适合高层密度战。"), passive("pound-of-flesh", "血肉代价", "拾取生命球后提高移动速度，配合贪婪之戒扩大速刷覆盖。")],
   powers: [
     power("ambos-pride", "武器", "安博之骄", "ambos-pride-p67_unique_mighty_1h_012.png", "旋风斩自动施放痛割，并让痛割总伤害在1秒内结算。", "把移动技能变成痛割触发器，是整套BD的发动机。", "黄装升级：70级单手重型武器，用野蛮人角色。"),
     power("mantle-channeling", "防具", "导能披肩", "mantle-of-channeling-p4_unique_shoulder_103.png", "引导旋风斩时同时增伤并减伤。", "只要保持旋风，引导乘区与坚韧就不会断。", "血岩赌博护肩或黄装升级70级护肩。"),
     power("band-of-might", "首饰", "力量指环", "band-of-might-p61_unique_ring_05.png", "施放大地践踏后获得巨额减伤。", "让意志壁垒双戒留在身上，同时保留荒原贴身旋转所需的核心减伤。", "1级野蛮人赌博戒指最容易；优先萃取高特效。"),
     power("zodiac", "第4槽", "黄道黑曜石之戒", "obsidian-ring-of-the-zodiac-unique_ring_023_p2.png", "消耗资源的攻击命中时缩短一个冷却技能。", "第39赛季第四槽用旋风高频命中刷新狂战之怒和无视苦痛。", "黄装升级70级戒指；特效无浮动，优先萃取。"),
+    power("stone-gauntlets", "防具", "岩石护手", "stone-gauntlets-p66_unique_gloves_007.png", "受击叠加护甲，但会降低移速和攻速。", "高层用狂战之怒的控制免疫抵消负面效果，换取最高防御。", "血岩赌博手套或黄装升级70级手套。"),
+    power("goldwrap", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲。", "只在会掉金币的T16与囤宝者、贪婪之戒联动。", "血岩赌博腰带或黄装升级70级腰带。"),
+    power("royal-grandeur", "首饰", "皇家华戒", "ring-of-royal-grandeur-unique_ring_107_x1.png", "套装奖励所需件数减少1件。", "穿杨先生妖法裤时，用五件荒原维持六件效果。", "仅第一幕与第四幕悬赏宝箱。"),
+    power("messerschmidt", "第4槽", "梅斧", "messerschmidts-reaver-p66_unique_axe_2h_011.png", "击杀敌人缩短技能冷却。", "T16连续击杀时快速重置狂战之怒，避免等待黄道单体命中。", "黄装升级70级双手斧后萃取。"),
   ],
-  variants: variants("对剑可替代布尔凯索双刀换取更高站桩输出。", "布尔凯索双刀维持怒气与移速，清图最顺。", "先用双刀和钢铁神经保证连续转动。", "武器范围伤、物理元素和痛割技能伤决定上限。"),
+  variants: variants("伊斯特凡对剑、聚怪双技能与受罚者构成冲层基线。", "冲锋、疾奔、沃兹克和金币链取代过量单体与坚韧。", "保留钢铁神经、力量体能与红宝石，先保证不断档。", "冲层转岩石护手与白宝石；速刷转安博、回荡狂怒和妖法裤。"),
   links: [
     { title: "旋风转化为痛割", category: "damage", steps: [{ id: "whirlwind", label: "旋风斩", detail: "持续引导并穿过怪群" }, { id: "ambos-pride", label: "安博之骄", detail: "自动施放并瞬间结算痛割" }, { id: "rend", label: "痛割", detail: "主要伤害来源" }, { id: "lamentation", label: "悲恸", detail: "叠两层并追加乘区" }], conclusion: "旋风只是发动机；词缀和元素伤应优先服务痛割。" },
     { title: "常驻狂战", category: "defense", steps: [{ id: "whirlwind", label: "旋风高频命中", detail: "持续触发黄道戒" }, { id: "zodiac", label: "黄道黑曜石", detail: "缩短冷却" }, { id: "wrath-of-the-berserker", label: "狂战之怒", detail: "保持变身" }, { id: "morticks", label: "莫提克护腕", detail: "获得全部符文攻防" }], conclusion: "不断旋风就是不断刷新攻速、减伤、吸血和控制免疫。" },
@@ -163,6 +180,166 @@ const WASTES_GUIDE: BuildGuide = {
   ],
   source: "https://www.icy-veins.com/d3/rend-wastes-barbarian-bis-gear-gems-paragon-points",
 };
+
+const WASTES_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/barbarian-rend-build-with-wrath-of-the-wastes",
+  skills: "https://www.icy-veins.com/d3/rend-wastes-barbarian-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/rend-wastes-barbarian-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/rend-wastes-barbarian-speed-farming-build",
+};
+
+const WASTES_PUSH_ROTATION = [
+  { title: "启动增益", action: "开启战斗怒火和狂战之怒，再开始旋风。", reason: "先接通莫提克全符文、荒原减伤和太极石层数。" },
+  { title: "双向聚怪", action: "用上古之矛把远处怪物拉回，再用大地践踏压紧怪群。", reason: "密度同时提高痛割覆盖、斗士与范围伤收益。" },
+  { title: "刷新双戒", action: "至少每8秒践踏一次，随后持续旋风穿过怪群。", reason: "践踏和旋风分别触发克己、守心，并刷新力量指环。" },
+  { title: "保持引导", action: "围绕精英小范围往返，不要无目标空转或长时间停手。", reason: "安博结算、黄道冷却和太极石层数都依赖连续命中。" },
+  { title: "首领收尾", action: "保持旋风贴住首领，让受罚者之灾持续叠层。", reason: "冲层配置把第三颗宝石留给长时间单体战。" },
+];
+
+const WASTES_SPEED_ROTATION = [
+  { title: "开局变身", action: "开启战斗怒火与狂战之怒，立即进入旋风。", reason: "先建立攻速、控制免疫与太极石层数。" },
+  { title: "冲锋接敌", action: "用狂暴冲锋跨到下一组怪并触发力量指环。", reason: "无情突袭命中足够目标即可重置，兼顾赶路和减伤。" },
+  { title: "疾奔穿图", action: "保持疾奔，旋风经过怪群后立刻继续前进。", reason: "T16不等待元素周期，单位时间覆盖更多地图更重要。" },
+  { title: "维持金币链", action: "拾取金币扩大贪婪之戒范围，并持续刷新金织带护甲。", reason: "囤宝者、贪婪之戒和金织带共同提供移速、拾取与生存。" },
+  { title: "打碎场景物", action: "旋风贴近可破坏物移动，利用沃兹克护腕继续加速。", reason: "这项收益只适合普通小秘境，不应带入大秘境。" },
+];
+
+const WASTES_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "wastes-head", shoulders: "wastes-shoulders", chest: "wastes-chest", gloves: "wastes-gloves",
+    bracers: "morticks", belt: "lamentation", pants: "wastes-pants", boots: "wastes-boots",
+    amulet: "flavor-time", ring1: "focus", ring2: "restraint", weapon: "slanderer-wastes", offhand: "little-rogue-wastes",
+  },
+  skills: [
+    { id: "ancient-spear", rune: "怒抛" }, { id: "whirlwind", rune: "风剪" }, { id: "rend", rune: "血流成河" },
+    { id: "ground-stomp", rune: "陷地猛击" }, { id: "battle-rage", rune: "丰收之剑" }, { id: "wrath-of-the-berserker", rune: "癫狂" },
+  ],
+  passives: ["berserker-rage", "nerves-of-steel", "ruthless", "boon-of-bulkathos"],
+  powers: { weapon: "ambos-pride", armor: "mantle-channeling", jewelry: "band-of-might", season: "zodiac" },
+  legendaryGems: { control: "bane-of-the-trapped", channeling: "taeguk", boss: "bane-of-the-stricken" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"),
+    weapon: ["flawless-royal-emerald", "flawless-royal-emerald"],
+  },
+  follower: { id: "enchantress", items: [], skills: [] },
+  statPriorities: {
+    global: ["物理元素伤", "痛割技能伤", "冷却缩减", "双暴", "范围伤害"],
+    survival: ["先保证狂战之怒稳定覆盖", "力量与体能", "全元素抗性"],
+  },
+  rotation: WASTES_PUSH_ROTATION,
+};
+
+const WASTES_SPEED_SKILLS = [
+  { id: "furious-charge", rune: "无情突袭" }, { id: "whirlwind", rune: "风剪" }, { id: "rend", rune: "血流成河" },
+  { id: "sprint", rune: "马拉松" }, { id: "battle-rage", rune: "凶残" }, { id: "wrath-of-the-berserker", rune: "癫狂" },
+];
+
+const WASTES_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "伊斯特凡对剑、导能披肩和完整聚怪技能构成稳定冲层基线；低巅峰优先保留力量、体能与红宝石。",
+    sourceRefs: [WASTES_SOURCES.overview, WASTES_SOURCES.skills, WASTES_SOURCES.gear], reviewedAt: "2026-08-15",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "巅峰承担主属性后，以岩石护手和白宝石提高高层承伤上限，并把保命被动让给密度增伤。",
+    patch: {
+      powers: { armor: "stone-gauntlets" },
+      passives: ["berserker-rage", "brawler", "ruthless", "boon-of-bulkathos"],
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { survival: ["狂战之怒必须无缝覆盖岩石护手负面效果", "全元素抗性", "生命%"], endgame: ["范围伤害≥120%", "冷却缩减满足变身常驻", "武器力量逐步洗范围伤"] },
+    },
+    sourceRefs: [WASTES_SOURCES.overview, WASTES_SOURCES.gear], reviewedAt: "2026-08-15",
+  },
+  {
+    id: "speed-low", label: "低巅峰T16小秘境", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "布尔凯索双刀降低怒气门槛，冲锋、疾奔、沃兹克与金币链把过剩伤害换成移动效率。",
+    patch: {
+      gear: { bracers: "warzechian", ring1: "avarice-band", ring2: "band-of-might", weapon: "bulkathos-vow", offhand: "bulkathos-blood" },
+      skills: WASTES_SPEED_SKILLS,
+      passives: ["berserker-rage", "rampage", "pound-of-flesh", "boon-of-bulkathos"],
+      powers: { armor: "goldwrap", jewelry: "zodiac", season: "messerschmidt" },
+      legendaryGems: { control: "bane-of-the-trapped", channeling: "taeguk", boss: "boon-of-the-hoarder" },
+      statPriorities: { global: ["25%移速上限", "物理元素伤", "痛割技能伤", "冷却缩减"], survival: ["金币链覆盖", "力量", "体能"] },
+      rotation: WASTES_SPEED_ROTATION,
+    },
+    sourceRefs: [WASTES_SOURCES.speed, WASTES_SOURCES.gear], reviewedAt: "2026-08-15",
+  },
+  {
+    id: "speed-high", label: "高巅峰T16极速配置", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "穿戴安博与回荡狂怒释放魔方武器槽，再用杨先生妖法裤、皇家华戒和梅斧压缩赶路与变身等待。",
+    patch: {
+      gear: { bracers: "warzechian", pants: "hexing-pants", ring1: "avarice-band", ring2: "band-of-might", weapon: "ambos-pride-worn", offhand: "echoing-fury-worn" },
+      skills: WASTES_SPEED_SKILLS,
+      passives: ["berserker-rage", "rampage", "pound-of-flesh", "boon-of-bulkathos"],
+      powers: { weapon: "messerschmidt", armor: "goldwrap", jewelry: "royal-grandeur", season: "zodiac" },
+      legendaryGems: { control: "wreath-of-lightning", channeling: "taeguk", boss: "boon-of-the-hoarder" },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "物理元素伤", "范围伤害"], survival: ["金币链覆盖"], endgame: ["回荡狂怒击杀层持续", "安博与回荡狂怒均有正确白字", "不为坚韧牺牲移速链"] },
+      rotation: WASTES_SPEED_ROTATION,
+    },
+    sourceRefs: [WASTES_SOURCES.speed, WASTES_SOURCES.gear], reviewedAt: "2026-08-15",
+  },
+];
+
+const WASTES_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "超过25%的巅峰移速无效，先扣除鞋子现有词缀。" },
+      { stat: "力量", target: "其余点数", reason: "同时提高伤害和护甲，是默认投入。" },
+      { stat: "体能", target: "生存不足时临时投入", reason: "低巅峰被秒时先换容错，稳定后再归还力量。" },
+      { stat: "怒气上限", target: "0点", reason: "旋风消耗低，风剪、双刀与技能循环已能维持资源。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "先稳定狂战之怒与功能技能。" },
+      { stat: "暴击几率", target: "第二点满", reason: "提升痛割与战斗怒火收益。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率共同成长。" },
+      { stat: "攻击速度", target: "最后点满", reason: "收益低于前三项且不直接改变自动痛割结算。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量职业自带护甲，更缺全抗。" },
+      { stat: "生命%", target: "第二点满", reason: "扩大减伤后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "补充已有力量护甲。" },
+      { stat: "生命恢复", target: "最后点满", reason: "只作持续恢复补充。" },
+    ],
+    utility: [
+      { stat: "击中回复生命", target: "优先点满", reason: "旋风高频命中能稳定转化为治疗。" },
+      { stat: "能量消耗降低", target: "第二点满", reason: "伊斯特凡对剑阶段降低断怒风险。" },
+      { stat: "范围伤害", target: "第三点满", reason: "800点内先保证循环；之后装备与巅峰再共同堆高。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "主要服务T16金币链。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认与速刷", reason: "持续提供伤害和护甲。" },
+    { priority: "体能", when: "高层被单次技能击杀", reason: "只补到能稳定承受当前层数，再继续力量。" },
+  ],
+  checkpoints: [
+    { label: "刚到70级", target: "25%移速+冷却优先", action: "先让旋风不断怒、狂战少断档。" },
+    { label: "巅峰800", target: "四页关键项目点满", action: "红宝石和力量词缀承担伤害，保留体能。" },
+    { label: "巅峰2000+", target: "范围伤120%并按承伤换白宝石", action: "力量由巅峰承担后，装备转向范围伤、冷却与坚韧。" },
+  ],
+};
+
+const WASTES_REVIEWED_GUIDE: BuildGuide = {
+  ...completeBuildGuide(WASTES_GUIDE, CURRENT_SEASON.seasonId),
+  configurationBase: WASTES_CONFIGURATION_BASE,
+  defaultScenarioId: "push-low",
+  scenarios: WASTES_SCENARIOS,
+  paragonGuide: WASTES_PARAGON,
+  choicePolicies: [
+    { key: "rend-core", targetType: "gear", targetId: "lamentation", label: "荒原六件、悲恸与安博效果", status: "locked", reason: "三者共同提供痛割倍率、双层痛割和自动施放/快速结算，缺一就不是完整荒原痛割。" },
+    { key: "push-weapons", targetType: "gear", targetId: "slanderer-wastes", label: "冲层武器组", status: "conditional", reason: "伊斯特凡对剑是冲层基准；低层或怒气管理尚未成型时可暂用布尔凯索。", alternatives: [{ id: "bulkathos-vow", label: "布尔凯索双刀", when: "低层升级宝石、刚成型或频繁断怒", gain: "自动回怒和移动速度，操作更稳定", cost: "失去对剑的攻速、伤害和护甲层数", incompatibleWith: ["little-rogue-wastes"], scenarios: ["speed-low"] }] },
+    { key: "speed-weapons", targetType: "gear", targetId: "bulkathos-vow", label: "速刷武器组", status: "conditional", reason: "低配选布尔凯索，高配在伤害溢出后换安博+回荡狂怒。", alternatives: [{ id: "ambos-pride-worn", label: "安博之骄+回荡狂怒", when: "T16可稳定秒怪且两把武器词缀正确", gain: "释放魔方武器槽并获得击杀移速", cost: "成型更难，断击杀层时收益下降", incompatibleWith: ["bulkathos-vow", "bulkathos-blood"], scenarios: ["speed-high"] }] },
+    { key: "armor-cube", targetType: "power", targetId: "mantle-channeling", label: "防具萃取", status: "conditional", reason: "导能披肩是攻防平衡基准；极限冲层和T16使用不同生存机制。", alternatives: [{ id: "stone-gauntlets", label: "岩石护手", when: "高层冲榜且狂战之怒能无缝覆盖", gain: "更高护甲上限", cost: "狂战一断就会承受攻速和移速惩罚", scenarios: ["push-high"] }, { id: "goldwrap", label: "金织带", when: "只打会掉金币的T16小秘境", gain: "金币链期间近乎不缺护甲", cost: "大秘境完全不生效", scenarios: ["speed-low", "speed-high"] }] },
+    { key: "speed-pants", targetType: "gear", targetId: "wastes-pants", label: "速刷裤子", status: "conditional", reason: "荒原腿甲最稳；伤害溢出后可用妖法裤提高移动中的伤害与资源。", alternatives: [{ id: "hexing-pants", label: "杨先生的妖法裤", when: "高配T16并愿意占用皇家华戒萃取", gain: "旋风移动时提高伤害与资源生成", cost: "失去一件荒原，必须绑定皇家华戒", incompatibleWith: ["band-of-might:cube"], scenarios: ["speed-high"] }] },
+    { key: "third-gem", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "第三颗传奇宝石", status: "conditional", reason: "内容目标决定单体叠层、金币移速或纯赶路。", alternatives: [{ id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "T16小秘境", gain: "金币与移动速度，并启动金织带", cost: "大秘境不掉金币，无法工作", scenarios: ["speed-low", "speed-high"] }, { id: "wreath-of-lightning", label: "闪电华冠", when: "高配T16伤害已明显溢出", gain: "25级效果提供额外移动速度", cost: "失去困者独立伤害乘区", scenarios: ["speed-high"] }] },
+    { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女偏冷却与速刷；冲层需要暴击窗口可换盗贼，低巅峰缺治疗可换圣殿骑士。" },
+  ],
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const WASTES_VALIDATION_ERRORS = validateReviewedBuildGuide(WASTES_REVIEWED_GUIDE);
+if (WASTES_VALIDATION_ERRORS.length > 0) throw new Error(`荒原旋风痛割配置校验失败：${WASTES_VALIDATION_ERRORS.join("；")}`);
 
 const RAEKOR_GUIDE: BuildGuide = {
   id: "raekor-boulder", name: "蕾蔻巨石", set: "蕾蔻的传世铠", core: "武器投掷攒怒 → 巨石怒掷清空怒气",
@@ -304,7 +481,7 @@ const IK_CHARGE_GUIDE: BuildGuide = {
 };
 
 export const BARBARIAN_BUILDS: Record<string, BuildGuide> = {
-  [WASTES_GUIDE.id]: completeBuildGuide(WASTES_GUIDE, CURRENT_SEASON.seasonId),
+  [WASTES_REVIEWED_GUIDE.id]: WASTES_REVIEWED_GUIDE,
   [RAEKOR_GUIDE.id]: completeBuildGuide(RAEKOR_GUIDE, CURRENT_SEASON.seasonId),
   [IK_HOTA_GUIDE.id]: completeBuildGuide(IK_HOTA_GUIDE, CURRENT_SEASON.seasonId),
   [LOD_HOTA_GUIDE.id]: completeBuildGuide(LOD_HOTA_GUIDE, CURRENT_SEASON.seasonId),
