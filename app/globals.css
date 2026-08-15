@@ -3547,6 +3547,20 @@ footer {
   transform: none;
 }
 
+.gear-detail-title > .diablo-item-frame .diablo-item-frame-sockets > span {
+  width: 32px;
+  height: 32px;
+  flex-basis: 32px;
+}
+
+.gear-detail-title > .diablo-item-frame .diablo-item-frame-sockets img {
+  width: 20px;
+  height: 20px;
+  margin: 6px auto 0;
+  object-fit: contain;
+  filter: none;
+}
+
 .gear-detail-title > .diablo-item-frame[data-socket-count="2"] .diablo-item-frame-sockets,
 .gear-detail-title > .diablo-item-frame[data-socket-count="3"] .diablo-item-frame-sockets {
   top: 50%;

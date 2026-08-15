@@ -348,6 +348,10 @@ test("preserves paperdoll overflow and enlarges detail artwork without shifting 
     css,
     /data-socket-count="2"[^}]*data-socket-count="3"[^}]*\{[^}]*top:\s*50%;[^}]*bottom:\s*auto;[^}]*transform:\s*translateY\(-50%\)/s,
   );
+  assert.match(
+    css,
+    /\.gear-detail-title > \.diablo-item-frame \.diablo-item-frame-sockets img\s*\{[^}]*width:\s*20px;[^}]*height:\s*20px;[^}]*margin:\s*6px auto 0;[^}]*filter:\s*none;/s,
+  );
 });
 
 test("uses shared readable typography tokens across build, follower, and item descriptions", async () => {
