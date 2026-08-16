@@ -35,12 +35,14 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 5 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`god-hungering`、`god-monk` |
+| 已完整校对 | 11 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 46 | 见路线图第 9 节清单 |
-| 仍需完成 | 46 | 46 套草稿 |
+| 尚未逐套校对 | 40 | 见路线图第 9 节清单 |
+| 仍需完成 | 40 | 40 套草稿 |
 
 当前工作游标：路线图清单第 6 项 `mundunugu-barrage`。
+
+死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
 建议后续顺序：
 
@@ -53,7 +55,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为 `npm test` 25 项全部通过。
+- 最近一次完整验证为 `npm test` 31 项全部通过。
 
 已知部分实装的真实含义：
 
@@ -62,7 +64,10 @@ npm test
 最近相关提交：
 
 ```text
-feat(bd): 完成上帝僧多场景校对（提交哈希以 git log 为准）
+feat(bd): 完成拉斯玛亡者大军与狂欢节骨矛多场景校对
+feat(bd): 完成瘟疫尸枪与梦遗尸爆多场景校对
+feat(bd): 完成死灵法师新星系多场景校对（梦遗/伊纳瑞斯）
+feat(bd): 完成上帝僧多场景校对
 feat(bd): 完成恐惧冰吞多场景校对
 feat(bd): 完成跑马天拳多场景校对
 80b78c6 docs(bd): 编写逐套校对 AI 交接手册
@@ -310,7 +315,24 @@ npm run dev -- --port 3003
 
 验证：`validateReviewedBuildGuide(GOD_MONK_REVIEWED_GUIDE)` 通过；`npm test` 25 项全部通过；路由 `/builds/god-monk` 渲染已逐项校对、巅峰、策略，无“配置差异待实装”；页面 68 张图片资源全部有效。原 `loadouts` 相关测试断言已改为场景内容。
 
-## 6.3 下一套：蒙嘟噜魂弹
+## 6.3 已完成：死灵法师全套
+
+死灵法师 7 套 BD 已全部按第39赛季、2.7.8资料完成校对（含此前已完成的 `tragoul-nova`），于 2026-08-17 分三个批次提交：
+
+- **新星系**（`bb2d0c8`）：`lod-nova` 梦遗死亡新星、`inarius-nova` 伊纳瑞斯死亡新星。
+- **瘟疫/尸爆系**（`fb68d3e`）：`pestilence-lance` 瘟疫尸枪、`lod-corpse-explosion` 梦遗尸爆。
+- **拉斯玛/狂欢节系**（`bae2d9b`）：`rathma-aotd` 拉斯玛亡者大军、`masquerade-spear` 狂欢节骨矛。
+
+各套四场景均通过 `diffBuildConfigurations` 程序化验证，冲层与 T16 速刷展示真实配置差异。关键研究结论：
+
+- 新星系冲层第4槽用轮回镰刀、速刷换寅剑；宝石冲层困者/梦遗或受罚者、速刷换强者/囤宝者，普通宝石头紫宝石、护甲黄宝石。
+- 瘟疫尸枪冲层第4槽用梅塞施密特、速刷穿寅剑+失落时光；梦遗尸爆冲层第4槽用莱莲娜影魂钩配充沛魂能被动、速刷金织带+贪婪金币链。
+- 拉斯玛冲层第4槽用塔格奥蚀牙、速刷换寅剑/斯图亚特；**研究纠正轮回镰刀不适用于拉斯玛**（只增伤次要技能），已将第4槽从轮回镰刀改为蚀牙。
+- 狂欢节骨矛冲层第4槽用莱莲娜影魂钩、速刷改齿状骨刺（物理）符文并洗物理元素词缀。
+
+`npm test` 从 25 项增至 31 项；六条死灵法师路由视觉检查无错误、图片资源全部有效。
+
+## 6.4 下一套：蒙嘟噜魂弹
 
 目标 ID：`mundunugu-barrage`
 
@@ -435,6 +457,12 @@ git log -1 --stat
 | 3 | `pony-fist-farm` | 已校对 | `feat(bd): 完成跑马天拳多场景校对` | 四场景、巅峰、策略、校验与金币链建模 | 仅回归维护 |
 | 4 | `god-hungering` | 已校对 | `feat(bd): 完成恐惧冰吞多场景校对` | 四场景、巅峰、策略、校验与杨弓/盾枪武器建模 | 仅回归维护 |
 | 5 | `god-monk` | 已校对 | `feat(bd): 完成上帝僧多场景校对` | 两套配装迁入四场景、loadouts 移除 | 仅回归维护 |
+| 34 | `lod-nova` | 已校对 | `feat(bd): 完成死灵法师新星系多场景校对` | 梦遗散件、轮回镰刀/寅剑第4槽 | 仅回归维护 |
+| 35 | `inarius-nova` | 已校对 | `feat(bd): 完成死灵法师新星系多场景校对` | 伊纳瑞斯骨甲旋风、轮回镰刀/寅剑 | 仅回归维护 |
+| 36 | `rathma-aotd` | 已校对 | `feat(bd): 完成拉斯玛亡者大军与狂欢节骨矛多场景校对` | 蚀牙第4槽、仆从冷却引擎、金币链 | 仅回归维护 |
+| 37 | `masquerade-spear` | 已校对 | `feat(bd): 完成拉斯玛亡者大军与狂欢节骨矛多场景校对` | 影魂钩、齿状骨刺速刷符文 | 仅回归维护 |
+| 38 | `pestilence-lance` | 已校对 | `feat(bd): 完成瘟疫尸枪与梦遗尸爆多场景校对` | 梅塞施密特、寅剑+失落时光速刷 | 仅回归维护 |
+| 39 | `lod-corpse-explosion` | 已校对 | `feat(bd): 完成瘟疫尸枪与梦遗尸爆多场景校对` | 影魂钩+充盈之魂、金织带金币链 | 仅回归维护 |
 
 其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
 
