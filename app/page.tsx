@@ -1122,6 +1122,7 @@ const CONFIGURATION_LEGENDARY_GEMS: Record<string, { name: string; image: string
   "bane-of-the-stricken": { name: "受罚者之灾", image: "/d3/library/items/bane-of-the-stricken-unique_gem_018_x1.png" },
   "bane-of-the-powerful": POWERFUL_GEM,
   taeguk: { name: "太极石", image: "/d3/library/items/taeguk-unique_gem_015_x1.png" },
+  lod: { name: "梦之遗礼", image: "/d3/library/items/legacy-of-dreams-unique_gem_023_x1.png" },
   "boon-of-the-hoarder": HOARDER_GEM,
   simplicity: { name: "至简之力", image: "/d3/library/items/simplicitys-strength-unique_gem_013_x1.png" },
   gogok: { name: "迅捷勾玉", image: "/d3/library/items/gogok-of-swiftness-unique_gem_008_x1.png" },
@@ -1134,6 +1135,7 @@ const CONFIGURATION_NORMAL_GEMS: Record<string, { image: string; label: string }
   "flawless-royal-diamond": { image: "/d3/library/items/gem-190.png", label: "无瑕皇家白宝石：冷却/全抗" },
   "flawless-royal-emerald": { image: "/d3/flawless-royal-emerald.png", label: "无瑕皇家绿宝石：暴击伤害" },
   "flawless-royal-topaz": { image: "/d3/flawless-royal-topaz.png", label: "无瑕皇家黄宝石：智力" },
+  "flawless-royal-amethyst": { image: "/d3/flawless-royal-amethyst.png", label: "无瑕皇家紫宝石：生命%" },
 };
 
 const DEFAULT_VARIANT_POWERS: Record<"push-low" | "speed-low" | "speed-high", CubePower> = {

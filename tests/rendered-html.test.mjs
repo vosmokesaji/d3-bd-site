@@ -233,6 +233,48 @@ test("renders the reviewed god-monk scenarios as real infinite-dash loadouts", a
   assert.doesNotMatch(monkData, /powerSets: \{/);
 });
 
+test("renders the reviewed lod-nova scenarios as real three-nova loadouts", async () => {
+  const [html, necData, page] = await Promise.all([
+    render("/builds/lod-nova").then((response) => response.text()),
+    readFile(new URL("../app/data/necromancer-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(necData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["ingeom", "nemesis-bracers", "steuarts-greaves", "avarice-band", "goldwrap", "bane-of-the-powerful", "boon-of-the-hoarder"]) {
+    assert.match(necData, new RegExp(runtimeChoice));
+  }
+  assert.match(necData, /validateReviewedBuildGuide/);
+  assert.match(page, /lod: \{ name: "梦之遗礼"/);
+});
+
+test("renders the reviewed inarius-nova scenarios as real bone-storm nova loadouts", async () => {
+  const [html, necData] = await Promise.all([
+    render("/builds/inarius-nova").then((response) => response.text()),
+    readFile(new URL("../app/data/necromancer-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(necData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["INARIUS_NOVA_CONFIGURATION_BASE", "ingeom", "nemesis-bracers", "steuarts-greaves", "bane-of-the-powerful", "boon-of-the-hoarder"]) {
+    assert.match(necData, new RegExp(runtimeChoice));
+  }
+  assert.match(necData, /validateReviewedBuildGuide/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);
