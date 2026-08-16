@@ -186,6 +186,29 @@ test("renders the reviewed pony-fist-farm scenarios as real speed-farm loadouts"
   assert.match(page, /"bane-of-the-powerful": POWERFUL_GEM/);
 });
 
+test("renders the reviewed god-hungering scenarios as real high-mobility loadouts", async () => {
+  const [html, dhData, page] = await Promise.all([
+    render("/builds/god-hungering").then((response) => response.text()),
+    readFile(new URL("../app/data/demon-hunter-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(dhData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["yang", "ninth-cirri-worn", "vallas-worn", "dawn-cube", "coe-power", "ingeom", "vallas", "simplicity", "boon-of-the-hoarder", "暗影游移"]) {
+    assert.match(dhData, new RegExp(runtimeChoice));
+  }
+  assert.match(dhData, /validateReviewedBuildGuide\(GOD_REVIEWED_GUIDE\)/);
+  assert.doesNotMatch(dhData, /powerSets: \{ push:/);
+  assert.match(page, /simplicity: \{ name: "至简之力"/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);
@@ -202,7 +225,7 @@ test("restores legendary gems and renders class-specific armor gems and stat loo
   const [tragoul, crusader, demonHunter, wizard] = await Promise.all([
     render("/builds/tragoul-nova").then((response) => response.text()),
     render("/builds/valor-fist").then((response) => response.text()),
-    render("/builds/god-hungering").then((response) => response.text()),
+    render("/builds/ue-multishot").then((response) => response.text()),
     render("/builds/tal-meteor").then((response) => response.text()),
   ]);
 

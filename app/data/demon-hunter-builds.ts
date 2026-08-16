@@ -1,5 +1,5 @@
 import { createClassGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
-import type { BuildGuide } from "./build-guides";
+import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type ParagonGuide } from "./build-guides";
 
 const god: GearSeed[] = [
   setGear("god-head", "头部", "反乌托邦护目镜", "dystopian-goggles-p69_unique_helm_set_06.png", "恐惧之地机轮甲部件；主要技能叠动能，扫射自动释放。", "追踪箭"),
@@ -55,15 +55,16 @@ const commonPassives = [
 const weapon = (id: string, name: string, file: string, effect: string, base: string) => legendary(id, "主手", name, file, effect, { base });
 const offhand = (id: string, name: string, file: string, effect: string, base = "箭袋") => legendary(id, "副手", name, file, effect, { base });
 
-const seeds: ClassGuideSeed[] = [
-  {
+const godSeed: ClassGuideSeed = {
     classKey: "demon-hunter", id: "god-hungering", name: "恐惧冰吞", set: "恐惧之地机轮甲", core: "追踪箭叠动能 → 扫射自动发射", summary: "主动追踪箭叠到20层动能，随后扫射高速移动并自动释放追踪箭完成穿透清场。", difficulty: "低操作 · 高机动", follower: "盗贼", followerReason: "暴击增益和远程控场适合边移动边清怪。", element: "冰霜", coreSkill: "追踪箭",
-    gear: [...god, legendary("wraps-clarity", "腕部", "明澈裹腕", "wraps-of-clarity-p61_unique_bracer_103.png", "憎恨生成技能命中后获得减伤。", { element: "冰霜" }), legendary("hunter-wrath", "腰部", "猎手之怒", "hunters-wrath-p69_unique_belt_005.png", "提高主要技能攻速与伤害，是追踪箭核心乘区。", { skill: "追踪箭" }), jewelry("squirt", "trapped"), jewelry("focus", "taeguk"), jewelry("restraint", "stricken"), weapon("fortress", "堡垒弩机", "fortress-ballista-p4_unique_handxbow_02.png", "攻击叠加护盾，帮助保护斯奎特。", "单手弩"), weapon("dawn", "黎明", "dawn-p4_unique_handxbow_001.png", "大幅缩短复仇冷却，使其能够常驻。", "单手弩")],
+    gear: [...god, legendary("wraps-clarity", "腕部", "明澈裹腕", "wraps-of-clarity-p61_unique_bracer_103.png", "憎恨生成技能命中后获得减伤。", { element: "冰霜" }), legendary("hunter-wrath", "腰部", "猎手之怒", "hunters-wrath-p69_unique_belt_005.png", "提高主要技能攻速与伤害，是追踪箭核心乘区。", { skill: "追踪箭" }), jewelry("squirt", "simplicity"), jewelry("focus", "taeguk"), jewelry("restraint", "stricken"), weapon("fortress", "堡垒弩机", "fortress-ballista-p4_unique_handxbow_02.png", "攻击叠加护盾，帮助保护斯奎特层数。", "单手弩"), offhand("dawn", "黎明", "dawn-p4_unique_handxbow_001.png", "大幅缩短复仇冷却，使其能够常驻。", "单手弩"), weapon("yang", "杨的反曲弓", "yangs-recurve-p61_unique_bow_104_x1.png", "大幅降低资源消耗，速刷减耗让烟雾弹位移不断憎恨。", "弓"), offhand("ninth-cirri-worn", "希瑞的第九箭袋", "the-ninth-cirri-satchel-p69_unique_quiver_101.png", "追踪箭必定穿透并提高伤害，穿戴时搭配杨弓或重炮。"), weapon("vallas-worn", "维拉的遗赠", "vallas-bequest-p43_unique_handxbow_005.png", "扫射投射物穿透敌人，冲层进度阶段补档并提高追踪箭触发频率。", "单手弩")],
     skills: [skill("hungering-arrow", "追踪箭", "吞噬箭", "主要伤害；穿透次数会继续提高下一次命中。"), skill("strafe", "扫射", "寒冰足迹", "移动并触发恐惧四件自动释放追踪箭。"), skill("vengeance", "复仇", "黑暗之心", "常驻增伤、回能和减伤。"), skill("preparation", "蓄势待发", "惩罚", "纪律转憎恨，填补长距离扫射消耗。"), skill("smoke-screen", "烟雾弹", "烟幕弥漫", "无敌穿过危险地板。"), skill("companion", "战宠", "野猪战宠", "提供全抗并主动嘲讽。")], passives: commonPassives,
-    powers: [power("ninth-cirri", "武器", "希瑞的第九箭袋", "the-ninth-cirri-satchel-p69_unique_quiver_101.png", "追踪箭必定穿透并提高伤害。", "吞噬箭穿透成长由概率变成稳定循环。"), power("depth-diggers", "防具", "深渊挖掘裤", "depth-diggers-unique_pants_006_p1.png", "提高产生资源的主要技能伤害。", "追踪箭属于生成技能，获得独立乘区。"), power("elusive", "首饰", "残影之戒", "elusive-ring-p4_unique_ring_02.png", "使用烟雾弹或翻滚后获得减伤。", "与明澈裹腕组成移动中的双层防线。"), power("vallas", "第4槽", "维拉的遗赠", "vallas-bequest-p43_unique_handxbow_005.png", "扫射投射物穿透敌人。", "第39赛季第四槽改善自动射击触发频率。")],
+    powers: [power("ninth-cirri", "武器", "希瑞的第九箭袋", "the-ninth-cirri-satchel-p69_unique_quiver_101.png", "追踪箭必定穿透并提高伤害。", "吞噬箭穿透成长由概率变成稳定循环。"), power("depth-diggers", "防具", "深渊挖掘裤", "depth-diggers-unique_pants_006_p1.png", "提高产生资源的主要技能伤害。", "追踪箭属于生成技能，获得独立乘区。"), power("dawn-cube", "武器", "黎明", "dawn-p4_unique_handxbow_001.png", "大幅缩短复仇冷却。", "速刷穿戴杨弓或重炮时，萃取黎明实现复仇常驻。"), power("coe-power", "首饰", "全能法戒", "convention-of-elements-p2_unique_ring_04.png", "对应元素周期提供独立爆发乘区。", "冲层在冰霜周期集中补追踪箭。"), power("elusive", "首饰", "残影之戒", "elusive-ring-p4_unique_ring_02.png", "使用烟雾弹或翻滚后获得减伤。", "与明澈裹腕组成移动中的双层防线。"), power("ingeom", "第4槽", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "速刷击杀精英后进入下一段近乎无空档的扫射窗口。"), power("vallas", "第4槽", "维拉的遗赠", "vallas-bequest-p43_unique_handxbow_005.png", "扫射投射物穿透敌人。", "第39赛季第四槽改善自动射击触发频率，冲层补档、速刷清屏。")],
     links: [{ title: "扫射自动吞噬箭", category: "damage", conclusion: "扫射是载体，词缀与宝石都应服务追踪箭。", steps: [["hungering-arrow", "追踪箭", "手动叠动能"], ["god-head", "恐惧四件", "扫射自动释放"], ["strafe", "扫射", "移动触发"], ["ninth-cirri", "第九箭袋", "稳定穿透增伤"]] }, { title: "主要技能乘区", category: "damage", conclusion: "腰带、裤子和吞噬箭穿透共同构成主要输出。", steps: [["hunter-wrath", "猎手之怒", "攻速与技能伤"], ["depth-diggers", "深渊挖掘裤", "生成技能乘区"], ["hungering-arrow", "吞噬箭", "穿透后成长"]] }, { title: "移动防御链", category: "defense", conclusion: "每隔数秒手动追踪箭和烟雾弹，才能同时维持动能与两层减伤。", steps: [["hungering-arrow", "手动追踪箭", "触发明澈"], ["wraps-clarity", "明澈裹腕", "生成技能减伤"], ["smoke-screen", "烟雾弹", "触发残影"], ["elusive", "残影之戒", "主动减伤"]] }],
-    rotation: [{ title: "叠满动能", action: "进图手动释放追踪箭直到20层。", reason: "层数决定扫射移动速度与自动射击强度。" }, { title: "开启复仇", action: "保持复仇黑暗之心常驻。", reason: "黎明压缩冷却并提供减伤。" }, { title: "持续扫射", action: "围绕怪群弧形扫射。", reason: "恐惧套自动发射追踪箭。" }, { title: "定期补箭", action: "动能下降前手动射一次追踪箭。", reason: "续层并刷新明澈裹腕。" }, { title: "烟雾穿险", action: "经过地板伤害时使用烟雾弹。", reason: "无敌并刷新残影减伤。" }], pushNote: "围绕高密度弧形移动，手动追踪箭维持20层。", speedNote: "高动能扫射穿图，精英处短暂停留。", lowNote: "第九箭袋、猎手之怒和深渊挖掘裤优先级最高。", highNote: "冰霜元素、范围伤与复仇冷却断点决定上限。", source: "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god",
-  },
+    rotation: [{ title: "叠满动能", action: "进图手动释放追踪箭直到20层。", reason: "层数决定扫射移动速度与自动射击强度。" }, { title: "开启复仇", action: "保持复仇黑暗之心常驻。", reason: "黎明压缩冷却并提供减伤。" }, { title: "持续扫射", action: "围绕怪群弧形扫射。", reason: "恐惧套自动发射追踪箭。" }, { title: "定期补箭", action: "动能下降前手动射一次追踪箭。", reason: "续层并刷新明澈裹腕。" }, { title: "烟雾穿险", action: "经过地板伤害时使用烟雾弹。", reason: "无敌并刷新残影减伤。" }], pushNote: "冲层用盾枪或维拉与黎明双持，冰霜周期集中补追踪箭维持20层。", speedNote: "杨弓减耗配合烟雾弹位移，囤宝者金币移速与寅剑压缩转场。", lowNote: "第九箭袋、猎手之怒和深渊挖掘裤优先级最高。", highNote: "冰霜元素、范围伤与复仇冷却断点决定上限。", source: "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god",
+  };
+
+const seeds: ClassGuideSeed[] = [
   {
     classKey: "demon-hunter", id: "marauder-sentry", name: "掠夺集束塔", set: "掠夺者的化身", core: "布置箭塔 → 集束箭同步齐射", summary: "先放满箭塔建立套装倍率，再由角色与所有箭塔同步释放集束箭覆盖高密度怪群。", difficulty: "高操作 · 阵地部署", follower: "魔女", followerReason: "控场与冷却缩减帮助在箭塔覆盖区稳定输出。", element: "冰霜", coreSkill: "集束箭",
     gear: [...marauder, legendary("wraps-clarity", "腕部", "明澈裹腕", "wraps-of-clarity-p61_unique_bracer_103.png", "生成技能命中后获得减伤。", { element: "冰霜" }), legendary("zoey", "腰部", "佐伊的秘密", "zoeys-secret-p4_unique_belt_04.png", "每种激活战宠提供独立减伤。"), jewelry("traveler", "trapped"), jewelry("compass", "enforcer"), jewelry("coe", "stricken"), weapon("manticore", "蝎尾狮", "manticore-p61_unique_xbow_001.png", "降低集束箭消耗并提高伤害。", "双手弩"), offhand("bombardier", "炮手弹药包", "bombardiers-rucksack-p72_unique_quiver_102.png", "允许额外部署两座箭塔并提高箭塔伤害。")],
@@ -106,7 +107,172 @@ const seeds: ClassGuideSeed[] = [
   },
 ];
 
-export const DEMON_HUNTER_BUILDS: Record<string, BuildGuide> = Object.fromEntries(seeds.map((seed) => {
-  const guide = createClassGuide(seed);
-  return [guide.id, guide];
-}));
+const GOD_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god",
+  gear: "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god#bis-gear-gems-paragon-points",
+  maxroll: "https://maxroll.gg/d3/guides/god-ha-demon-hunter-guide",
+  cnSpeed: "https://bbs.nga.cn/read.php?tid=44264360",
+  cnGr: "https://www.9game.cn/news/5268802.html",
+};
+
+const GOD_PUSH_ROTATION = [
+  { title: "叠满动能", action: "进图手动释放追踪箭直到20层。", reason: "层数决定扫射移速与自动射击强度。" },
+  { title: "开启复仇", action: "保持复仇黑暗之心常驻。", reason: "黎明压缩冷却，提供增伤与减伤。" },
+  { title: "弧形扫射", action: "围绕高密度怪群移动扫射。", reason: "恐惧套自动发射追踪箭穿透清场。" },
+  { title: "冰霜补箭", action: "冰霜周期内集中手动追踪箭。", reason: "全能法戒元素窗与吞噬箭穿透叠加。" },
+  { title: "烟雾保层", action: "危险阶段用烟雾弹穿险并刷新残影。", reason: "保护斯奎特层数并接通残影减伤。" },
+];
+
+const GOD_SPEED_SKILLS = [
+  { id: "hungering-arrow", rune: "吞噬箭" }, { id: "strafe", rune: "暗影游移" }, { id: "vengeance", rune: "黑暗之心" },
+  { id: "preparation", rune: "惩罚" }, { id: "smoke-screen", rune: "烟幕弥漫" }, { id: "companion", rune: "野猪战宠" },
+];
+
+const GOD_SPEED_ROTATION = [
+  { title: "叠满动能", action: "进图快速叠满20层追踪箭。", reason: "动能同时提供增伤与大量移速。" },
+  { title: "烟雾位移", action: "扫射配合烟雾弹飘忽穿图。", reason: "杨弓减耗让戒律支撑无限位移。" },
+  { title: "自动清屏", action: "扫射自动发射追踪箭，不为零散怪停留。", reason: "第九箭袋穿透与吞噬箭成长覆盖全屏。" },
+  { title: "击杀转场", action: "精英死亡后利用寅剑冷却立即转场。", reason: "击杀重置冷却，下一段扫射无空档。" },
+  { title: "拾取金币", action: "沿路拾取金币保持囤宝者移速。", reason: "金币链为T16、蓝门与悬赏提供持续移速。" },
+];
+
+const GOD_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "god-head", shoulders: "god-shoulders", chest: "god-chest", gloves: "god-gloves",
+    bracers: "wraps-clarity", belt: "hunter-wrath", pants: "god-pants", boots: "god-boots",
+    amulet: "squirts", ring1: "focus", ring2: "restraint", weapon: "fortress", offhand: "dawn",
+  },
+  skills: [
+    { id: "hungering-arrow", rune: "吞噬箭" }, { id: "strafe", rune: "冰寒足迹" }, { id: "vengeance", rune: "黑暗之心" },
+    { id: "preparation", rune: "惩罚" }, { id: "smoke-screen", rune: "烟幕弥漫" }, { id: "companion", rune: "野猪战宠" },
+  ],
+  passives: ["cull-the-weak", "ambush", "awareness", "archery"],
+  powers: { weapon: "ninth-cirri", armor: "depth-diggers", jewelry: "coe-power", season: "elusive" },
+  legendaryGems: { control: "simplicity", channeling: "taeguk", boss: "bane-of-the-stricken" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-diamond"),
+    weapon: ["flawless-royal-emerald"],
+  },
+  follower: { id: "scoundrel", items: ["团结", "不死圣物"], skills: ["暴击增益", "攻速"] },
+  statPriorities: {
+    global: ["追踪箭技能伤", "冰霜元素伤", "双暴", "冷却缩减（复仇无缝）"],
+    survival: ["钻石全抗", "斯奎特层数保护", "敏捷"],
+  },
+  rotation: GOD_PUSH_ROTATION,
+};
+
+const GOD_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰用盾枪（堡垒弩机）与黎明双持保护斯奎特层数，魔方第九箭袋、深渊挖掘裤、全能法戒与残影；受罚者针对首领叠伤。",
+    sourceRefs: [GOD_SOURCES.overview, GOD_SOURCES.gear, GOD_SOURCES.cnGr], reviewedAt: "2026-08-16",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰由巅峰承担主属性后，把盾枪换成维拉的遗赠，扫射穿透补档并提高追踪箭触发；词缀转向范围伤与攻速档位。",
+    patch: {
+      gear: { weapon: "vallas-worn" },
+      statPriorities: { global: ["追踪箭技能伤", "冰霜元素伤", "范围伤≥100%", "攻速档位"], survival: ["钻石全抗", "斯奎特层数保护"], endgame: ["武器与手套补范围伤", "攻速避开8/6档"] },
+    },
+    sourceRefs: [GOD_SOURCES.overview, GOD_SOURCES.gear, GOD_SOURCES.cnGr], reviewedAt: "2026-08-16",
+  },
+  {
+    id: "speed-low", label: "低巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "T16小秘境、蓝门（敌意幻象）与悬赏都掉金币且怪物密度高，恐惧冰吞扫射自动清屏；杨弓减耗让烟雾弹无限位移，囤宝者+贪婪提供金币移速，寅剑击杀精英后冷却重置。蓝门与T16共用配置，原因是掉金币、密度相近、无独立坚韧需求。",
+    patch: {
+      gear: { weapon: "yang", offhand: "ninth-cirri-worn" },
+      powers: { weapon: "dawn-cube", jewelry: "elusive", season: "ingeom" },
+      skills: GOD_SPEED_SKILLS,
+      legendaryGems: { boss: "boon-of-the-hoarder" },
+      follower: { items: ["贪婪之戒", "不死圣物"], skills: ["暴击增益", "攻速"] },
+      statPriorities: { global: ["25%移速上限", "追踪箭技能伤", "冰霜元素伤", "戒律管理（杨弓减耗）"], survival: ["金币链覆盖", "钻石全抗", "敏捷"] },
+      rotation: GOD_SPEED_ROTATION,
+    },
+    sourceRefs: [GOD_SOURCES.cnSpeed, GOD_SOURCES.maxroll], reviewedAt: "2026-08-16",
+  },
+  {
+    id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰伤害溢出后，第4槽从寅剑换成维拉的遗赠，用扫射穿透加快清屏；词缀转向范围伤与移速。",
+    patch: {
+      gear: { weapon: "yang", offhand: "ninth-cirri-worn" },
+      powers: { weapon: "dawn-cube", jewelry: "elusive", season: "vallas" },
+      skills: GOD_SPEED_SKILLS,
+      legendaryGems: { boss: "boon-of-the-hoarder" },
+      follower: { items: ["贪婪之戒", "不死圣物"], skills: ["暴击增益", "攻速"] },
+      statPriorities: { global: ["25%移速上限", "追踪箭技能伤", "范围伤害", "冰霜元素伤"], survival: ["金币链覆盖", "钻石全抗"], endgame: ["词缀洗敏捷换范围伤", "伤害溢出后转扫射穿透"] },
+      rotation: GOD_SPEED_ROTATION,
+    },
+    sourceRefs: [GOD_SOURCES.cnSpeed, GOD_SOURCES.maxroll], reviewedAt: "2026-08-16",
+  },
+];
+
+const GOD_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "二件套动能已给大量移速，仍补满25%上限。" },
+      { stat: "敏捷", target: "其余点数", reason: "同时提高伤害和护甲，是默认投入。" },
+      { stat: "体能", target: "生存不足时临时投入", reason: "恐惧冰吞坚韧较低，被秒时先换容错。" },
+      { stat: "憎恨上限", target: "适量投入", reason: "提高扫射与追踪箭的资源池，冲层与速刷都有价值。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "先实现复仇无缝常驻，黎明配合更省词缀。" },
+      { stat: "暴击几率", target: "第二点满", reason: "提升吞噬箭与飞弹/冰寒触发收益。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率共同成长。" },
+      { stat: "攻击速度", target: "谨慎投入", reason: "攻速影响扫射档位，按武器类型调整，不要盲目点满。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "恐惧冰吞靠百分比回血，更依赖全抗扩有效生命。" },
+      { stat: "生命%", target: "第二点满", reason: "配合护甲钻石扩大容错。" },
+      { stat: "护甲", target: "第三点满", reason: "补充敏捷护甲。" },
+      { stat: "生命恢复", target: "最后点满", reason: "至简之力已提供主要治疗。" },
+    ],
+    utility: [
+      { stat: "能量消耗降低", target: "优先点满", reason: "降低扫射和烟雾弹的消耗压力。" },
+      { stat: "范围伤害", target: "第二点满", reason: "吞噬箭穿透与范围伤在密集怪群收益高。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "扫射高频命中提供额外治疗。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "主要服务T16、蓝门与悬赏金币链。" },
+    ],
+  },
+  post800: [
+    { priority: "敏捷", when: "默认与冲层", reason: "持续提供伤害和护甲。" },
+    { priority: "体能", when: "大秘境被单次技能击杀", reason: "只补到能稳定承受当前层数，再继续敏捷。" },
+  ],
+  checkpoints: [
+    { label: "刚到70级", target: "25%移速+冷却优先", action: "先让复仇无缝、动能层数不断。" },
+    { label: "巅峰800", target: "四页关键项目点满", action: "钻石全抗和敏捷词缀承担生存与伤害。" },
+    { label: "巅峰2000+", target: "范围伤、攻速档位与戒律", action: "敏捷由巅峰承担后，装备转向范围伤与扫射档位。" },
+  ],
+};
+
+const GOD_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "god-core", targetType: "gear", targetId: "ninth-cirri", label: "恐惧六件、第九箭袋与吞噬箭", status: "locked", reason: "恐惧六件提供100倍独立增伤，扫射自动发射最后一次主要技能；第九箭袋让追踪箭必定穿透，吞噬箭穿透成长是主要输出来源。" },
+  { key: "weapon-combo", targetType: "gear", targetId: "fortress", label: "武器组合", status: "conditional", reason: "冲层用盾枪保斯奎特或维拉补档，速刷用杨弓减耗实现无限位移；魔方武器在第九箭袋与黎明之间互换。", alternatives: [{ id: "vallas-worn", label: "维拉的遗赠", when: "高巅峰冲层，扫射需要穿透补档", gain: "扫射投射物穿透并提高追踪箭触发", cost: "失去盾枪的护盾保护", scenarios: ["push-high"] }, { id: "yang", label: "杨的反曲弓", when: "T16、蓝门与悬赏速刷", gain: "50%减耗支撑烟雾弹无限位移", cost: "白字低于双手弩，冲层不推荐", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "strafe-rune", targetType: "skill", targetId: "strafe", label: "扫射符文", status: "conditional", reason: "冲层用冰寒足迹提供减速与冰霜触发，速刷用暗影游移把扫射移速提高到普通穿戴速度。", alternatives: [{ id: "strafe-drift", label: "暗影游移", when: "T16、蓝门与悬赏速刷", gain: "扫射移速100%，赶路更快", cost: "失去冰寒足迹的减速", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "season-slot", targetType: "power", targetId: "elusive", label: "第39赛季第四槽", status: "conditional", reason: "冲层用残影之戒提供烟雾弹后减伤；速刷用寅剑击杀精英重置冷却，伤害溢出后可换维拉扫射穿透。", alternatives: [{ id: "ingeom", label: "寅剑", when: "T16、蓝门与悬赏速刷，精英密集", gain: "击杀精英后大幅缩短冷却", cost: "首领战或精英稀疏时收益下降", scenarios: ["speed-low"] }, { id: "vallas", label: "维拉的遗赠", when: "高巅峰速刷伤害已溢出", gain: "扫射穿透清屏更快", cost: "失去寅剑的冷却重置", scenarios: ["speed-high"] }] },
+  { key: "jewelry-cube", targetType: "power", targetId: "coe-power", label: "首饰萃取", status: "conditional", reason: "冲层用全能法戒在冰霜周期集中爆发；速刷用残影之戒提供稳定减伤，保护斯奎特。", alternatives: [{ id: "elusive", label: "残影之戒", when: "速刷且坚韧不足", gain: "烟雾弹或翻滚后稳定减伤", cost: "失去元素爆发窗", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "third-gem", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "第三颗传奇宝石", status: "conditional", reason: "至简之力与太极石是恐惧冰吞的核心双宝石；第三颗由内容决定，冲层用受罚者叠首领，速刷用囤宝者提供金币移速。", alternatives: [{ id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "T16、蓝门与悬赏", gain: "金币与移动速度，配合贪婪之戒", cost: "大秘境不掉金币，无法工作", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-low", "speed-high"] }] },
+  { key: "follower", targetType: "follower", targetId: "scoundrel", label: "随从选择", status: "flexible", reason: "盗贼固定提供暴击增益与远程控场；速刷随从戴贪婪之戒扩大拾取，冲层戴团结与不死圣物提容错。" },
+];
+
+const GOD_REVIEWED_GUIDE: BuildGuide = {
+  ...createClassGuide(godSeed),
+  configurationBase: GOD_CONFIGURATION_BASE,
+  defaultMode: "push",
+  defaultScenarioId: "push-low",
+  scenarios: GOD_SCENARIOS,
+  paragonGuide: GOD_PARAGON,
+  choicePolicies: GOD_CHOICE_POLICIES,
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const GOD_VALIDATION_ERRORS = validateReviewedBuildGuide(GOD_REVIEWED_GUIDE);
+if (GOD_VALIDATION_ERRORS.length > 0) throw new Error(`恐惧冰吞配置校验失败：${GOD_VALIDATION_ERRORS.join("；")}`);
+
+export const DEMON_HUNTER_BUILDS: Record<string, BuildGuide> = {
+  ...Object.fromEntries(seeds.map((seed) => {
+    const guide = createClassGuide(seed);
+    return [guide.id, guide];
+  })),
+  [GOD_REVIEWED_GUIDE.id]: GOD_REVIEWED_GUIDE,
+};

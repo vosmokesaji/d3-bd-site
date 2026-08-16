@@ -1123,6 +1123,7 @@ const CONFIGURATION_LEGENDARY_GEMS: Record<string, { name: string; image: string
   "bane-of-the-powerful": POWERFUL_GEM,
   taeguk: { name: "太极石", image: "/d3/library/items/taeguk-unique_gem_015_x1.png" },
   "boon-of-the-hoarder": HOARDER_GEM,
+  simplicity: { name: "至简之力", image: "/d3/library/items/simplicitys-strength-unique_gem_013_x1.png" },
   gogok: { name: "迅捷勾玉", image: "/d3/library/items/gogok-of-swiftness-unique_gem_008_x1.png" },
   "wreath-of-lightning": { name: "闪电华冠", image: "/d3/library/items/wreath-of-lightning-unique_gem_004_x1.png" },
   zei: { name: "贼神的复仇之石", image: "/d3/library/items/zeis-stone-of-vengeance-unique_gem_012_x1.png" },
