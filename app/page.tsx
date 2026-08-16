@@ -1120,8 +1120,10 @@ const HOARDER_GEM = {
 const CONFIGURATION_LEGENDARY_GEMS: Record<string, { name: string; image: string }> = {
   "bane-of-the-trapped": { name: "困者之灾", image: "/d3/library/items/bane-of-the-trapped-unique_gem_002_x1.png" },
   "bane-of-the-stricken": { name: "受罚者之灾", image: "/d3/library/items/bane-of-the-stricken-unique_gem_018_x1.png" },
+  "bane-of-the-powerful": POWERFUL_GEM,
   taeguk: { name: "太极石", image: "/d3/library/items/taeguk-unique_gem_015_x1.png" },
   "boon-of-the-hoarder": HOARDER_GEM,
+  gogok: { name: "迅捷勾玉", image: "/d3/library/items/gogok-of-swiftness-unique_gem_008_x1.png" },
   "wreath-of-lightning": { name: "闪电华冠", image: "/d3/library/items/wreath-of-lightning-unique_gem_004_x1.png" },
   zei: { name: "贼神的复仇之石", image: "/d3/library/items/zeis-stone-of-vengeance-unique_gem_012_x1.png" },
 };

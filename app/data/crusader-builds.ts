@@ -1,5 +1,5 @@
 import { createClassGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
-import type { BuildGuide } from "./build-guides";
+import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type ParagonGuide } from "./build-guides";
 
 const valor: GearSeed[] = [
   setGear("valor-head", "头部", "勇气冠冕", "crown-of-valor-p67_unique_helm_set_01.png", "勇气壁垒部件；天堂之拳叠层，同时强化天堂之怒。", "天堂之拳"),
@@ -112,17 +112,23 @@ const seeds: ClassGuideSeed[] = [
     links: [{ title: "荆棘转轰击", category: "damage", conclusion: "轰击伤害来自荆棘，不追武器白字与双暴。", steps: [["heart-iron", "钢铁之心", "体能转荆棘"], ["iron-skin", "反伤之肤", "临时提高荆棘"], ["bombardment", "尖刺桶", "按荆棘结算"], ["mortal-drama", "人世无常", "落点翻倍"]] }, { title: "挑衅双倍", category: "damage", conclusion: "每次物理爆发前必须先让目标处于挑衅状态。", steps: [["provoke", "挑衅", "标记敌人"], ["votoyias", "沃·托亚之刺", "双倍荆棘"], ["coe", "全能物理", "元素窗口"]] }, { title: "冷却间隔生存", category: "defense", conclusion: "战马拉怪、天鹰和岩石护手让角色安全等到下一轮。", steps: [["steed-charge", "战马", "拉怪转场"], ["aquila", "天鹰", "高资源减伤"], ["stone-gauntlets", "岩石护手", "受击叠护甲"], ["akarats-champion", "变身", "抵消减速"]] }],
     rotation: [{ title: "检查梦遗", action: "确认没有激活任何两件套。", reason: "套装奖励会关闭梦遗效果。" }, { title: "骑马拉怪", action: "把精英和杂兵聚到开阔区域。", reason: "轰击需要集中落点。" }, { title: "挑衅标记", action: "物理周期前挑衅精英。", reason: "沃·托亚让其承受双倍荆棘。" }, { title: "开启反伤", action: "开启钢铁之肤与变身。", reason: "提高荆棘并抵消岩石护手。" }, { title: "物理轰击", action: "释放尖刺桶火炮轰击。", reason: "梦遗、人世无常和全能在此叠加。" }], pushNote: "拉高密度后把挑衅、反伤之肤与轰击压进物理周期。", speedNote: "依靠自动轰击和战马清场，减少等待。", lowNote: "梦遗等级和每件远古散件数量比太古品质更重要。", highNote: "体能、荆棘、物理元素和冷却是最终属性轴。", source: "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set",
   },
-  {
+];
+
+const ponySeed: ClassGuideSeed = {
     classKey: "crusader", id: "pony-fist-farm", name: "跑马天拳 · 全能速刷", set: "勇气壁垒 / 诺瓦德的热忱", core: "战马不停 → 天堂之拳全屏落雷", summary: "这不是冲榜配装，而是专门处理 T16 小秘境、悬赏、蓝门与 110 层以下大秘境的打工构筑：骑马负责穿图，下马后的诺瓦德增伤窗负责秒掉精英。", difficulty: "低操作 · 一键赶路", follower: "魔女", followerReason: "魔女的冷却、攻速和远程控制能缩短战马空档；小秘境让随从佩戴贪婪之戒扩展拾取范围。", element: "神圣", coreSkill: "天堂之拳",
     gear: [
       ...valor,
       legendary("pony-warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "打碎可破坏物后获得短暂移速；天堂之拳的大范围落雷会沿路自动触发。", { element: "神圣" }),
-      legendary("pony-vigilante", "腰部", "民兵腰带", "vigilante-belt-p76_unique_belt_002.png", "提供额外冷却缩减，压低战马、变身和律法的空档。"),
+      legendary("pony-vigilante", "腰部", "警戒腰带", "vigilante-belt-p76_unique_belt_002.png", "提供额外冷却缩减，压低战马、变身和律法的空档。"),
       jewelry("squirt", "zei"),
       legendary("pony-soj", "手指", "乔丹之石", "stone-of-jordan-p69_unique_ring_019.png", "提供稳定元素伤与精英伤，不必等待全能法戒周期。", { gem: "powerful" }),
       legendary("pony-rechel", "手指", "瑞秋的行窃之戒", "rechels-ring-of-larceny-unique_ring_104_x1.png", "恐惧敌人后获得大幅移速；由挑衅的惊慌失措符文触发。", { gem: "stricken" }),
       legendary("norvald-flail", "主手", "冲锋连枷", "flail-of-the-charge-p4_unique_flail_2h_set_01_x1.png", "与战马之盾组成诺瓦德套：延长战马，并在结束后提供独立增伤窗。", { quality: "set", base: "双手连枷" }),
       legendary("norvald-shield", "副手", "战马之盾", "shield-of-the-steed-p4_unique_shield_set_01_x1.png", "诺瓦德套副手；让战马冲锋从纯位移变成下一轮落雷的准备动作。", { quality: "set", base: "圣教军盾", warning: "黄装升级必须用70级“圣教军盾”；普通盾牌不会产出战马之盾。" }),
+      legendary("pony-goldwrap-gear", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲；速刷内容由囤宝者制造金币，形成近乎无限的护甲。", { warning: "金织带护甲只对掉金币的 T16、蓝门与悬赏生效，大秘境不要使用。" }),
+      legendary("pony-coe", "手指", "全能法戒", "convention-of-elements-p2_unique_ring_04.png", "对应元素周期提供独立爆发乘区；大秘境精英战把落雷压进神圣周期。", { gem: "powerful" }),
+      legendary("pony-avarice", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取范围，连接囤宝者、金织带与随从的金币链。", { gem: "hoarder" }),
+      legendary("pony-khasset", "腰部", "正义灯塔腰带", "khassetts-cord-of-righteousness-p42_crusader_foh_belt.png", "降低天堂之拳消耗并大幅提高技能伤害；追求天拳上限时替换警戒或金织带。", { skill: "天堂之拳" }),
     ],
     skills: [
       skill("fist-of-the-heavens", "天堂之拳", "天雷风暴", "主要清场技能；低层只需少量落点即可让闪电覆盖整屏。"),
@@ -136,22 +142,184 @@ const seeds: ClassGuideSeed[] = [
     powers: [
       power("pony-darklight", "武器", "黑暗之光", "darklight-p67_unique_flail_1h_106.png", "天堂之拳额外施放两次并获得技能增伤。", "一发落雷被复制成多发，是移动清屏的主要伤害发动机。", "黄装升级：70级单手连枷。"),
       power("pony-vigilante-power", "防具", "民兵腰带", "vigilante-belt-p76_unique_belt_002.png", "提供额外冷却缩减。", "缩短战马、变身、律法和钢铁之肤的共同空档。"),
-      power("pony-goldwrap", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲。", "T16小秘境用囤宝者制造金币，形成近乎无限的护甲；蓝门和大秘境不要使用。"),
+      power("pony-aquila", "防具", "天鹰胸甲", "aquila-cuirass-p4_unique_chest_012.png", "圣怒处于高位时获得减伤。", "大秘境不掉金币，用天鹰提供稳定减伤；天拳与律法减耗帮助维持高位圣怒。"),
       power("pony-zodiac", "首饰", "黄道黑曜石之戒", "obsidian-ring-of-the-zodiac-unique_ring_023_p2.png", "消耗资源的攻击命中时缩短一个冷却技能。", "连续天拳把战马和变身重新推回可用状态。"),
-      power("pony-ingeom", "第4槽", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "精英死亡后立刻进入下一段近乎无空档的骑马窗口。"),
+      power("pony-ingeom", "第4槽", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "精英死亡后立刻进入下一段近乎无空档的骑马窗口；只在会连续刷精英的速刷内容使用。"),
+      power("pony-furnace", "第4槽", "焚炉", "the-furnace-unique_mace_2h_103_x1.png", "提高对精英的伤害。", "大秘境速刷用焚炉快速处理精英与首领，不依赖寅剑的击杀窗口。"),
+      power("pony-unity", "第4槽", "团结", "unity-unique_ring_010_x1.png", "与佩戴团结的随从分摊伤害。", "高巅峰尝试接近110层时换团结提容错；随从必须佩戴团结与不死饰品，否则反噬。"),
     ],
     links: [
       { title: "骑马即输出准备", category: "movement", conclusion: "赶路不是损失输出：每次下马都带着诺瓦德增伤进入下一屏。", steps: [["steed-charge", "战马冲锋", "高速穿图"], ["norvald-flail", "冲锋连枷", "延长战马"], ["norvald-shield", "战马之盾", "结束后建立增伤"], ["fist-of-the-heavens", "天堂之拳", "落雷清屏"]] },
       { title: "恐惧加速链", category: "movement", conclusion: "战马空档用挑衅恐惧怪物，瑞秋戒接管下一段移动。", steps: [["provoke", "惊慌失措", "恐惧身边敌人"], ["pony-rechel", "瑞秋戒", "恐惧后提高移速"], ["laws-of-hope", "天使之翼", "穿怪补速"]] },
       { title: "精英刷新冷却", category: "resource", conclusion: "看到精英要主动击杀；寅剑与黄道会把整套技能重新点亮。", steps: [["fist-of-the-heavens", "天拳高频命中", "触发黄道"], ["pony-zodiac", "黄道戒", "逐次缩短冷却"], ["pony-ingeom", "寅剑", "击杀精英重置"], ["steed-charge", "下一次战马", "立即转场"]] },
-      { title: "小秘境金币防线", category: "defense", conclusion: "T16 模式用囤宝者和金织带获得移速与近乎无限护甲；蓝门不掉金币，要切回蓝门配置。", steps: [["pony-rechel", "速刷宝石位", "切换囤宝者"], ["pony-goldwrap", "金织带威能", "拾金叠护甲"], ["pony-warzechian", "沃兹克", "破坏物补移速"]] },
+      { title: "速刷金币防线", category: "defense", conclusion: "T16、蓝门与悬赏都掉金币，囤宝者、金织带与贪婪之戒共同提供移速和近乎无限护甲；只有大秘境不掉金币，才切回天鹰与精英增伤。", steps: [["pony-avarice", "贪婪之戒", "扩大拾取范围"], ["pony-goldwrap-gear", "金织带", "拾金叠护甲"], ["pony-warzechian", "沃兹克", "破坏物补移速"]] },
     ],
-    rotation: [{ title: "开局预热", action: "开启阿卡拉特勇士与希望律法。", reason: "先建立回怒、护甲和短距离移速。" }, { title: "骑马找精英", action: "战马沿主路穿图，不为落单白怪停留。", reason: "效率来自把移动时间压到最低。" }, { title: "主动下马落雷", action: "接近精英时结束战马，连续放数次天堂之拳。", reason: "诺瓦德增伤、黑暗之光复制和勇气套同时生效。" }, { title: "制造下一段加速", action: "挑衅恐惧残怪，触发瑞秋戒后继续前进。", reason: "填补战马和寅剑之间的短空档。" }, { title: "按内容切配置", action: "T16 使用囤宝者/金织带；蓝门与大秘境切回伤害宝石和稳定减伤。", reason: "大秘境和蓝门没有可靠金币链，不能照搬小秘境防线。" }],
-    pushNote: "蓝门和110层以下大秘境保留稳定伤害与减伤，不依赖金币，也不必等待元素周期。", speedNote: "T16小秘境与悬赏使用囤宝者、金织带、沃兹克和瑞秋戒，把赶路、护甲与拾取串起来。", lowNote: "六件勇气、黑暗之光、正义腰带特效与诺瓦德两件优先；先能稳定骑马清屏，再追远古。", highNote: "伤害溢出后继续把词缀换成冷却、范围伤、拾取距离和移动相关属性。", source: "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build", purpose: "nephalem-rift", supportedContent: ["T16小秘境", "悬赏", "蓝门", "大秘境≤110"], defaultMode: "speed", modeLabels: { push: "蓝门 / 大秘境≤110", speed: "T16小秘境 / 悬赏" }, consoleNote: "把战马放在最顺手的肩键；接近精英时主动松开，下马落雷后再骑。蓝门里不要使用依赖金币的金织带防线。", powerSets: { push: ["pony-darklight", "pony-vigilante-power", "pony-zodiac", "pony-ingeom"], speed: ["pony-darklight", "pony-goldwrap", "pony-zodiac", "pony-ingeom"] },
+    rotation: [{ title: "开局预热", action: "开启阿卡拉特勇士与希望律法。", reason: "先建立回怒、护甲和短距离移速。" }, { title: "骑马找精英", action: "战马沿主路穿图，不为落单白怪停留。", reason: "效率来自把移动时间压到最低。" }, { title: "主动下马落雷", action: "接近精英时结束战马，连续放数次天堂之拳。", reason: "诺瓦德增伤、黑暗之光复制和勇气套同时生效。" }, { title: "制造下一段加速", action: "挑衅恐惧残怪，触发瑞秋戒后继续前进。", reason: "填补战马和寅剑之间的短空档。" }, { title: "按内容切配置", action: "T16、蓝门与悬赏保持金币链；大秘境切回天鹰减伤、乔丹与全能法戒和焚炉。", reason: "蓝门掉金币且密度与T16相近，金币链照常生效；只有大秘境不掉金币，需要换回稳定减伤和精英增伤。" }],
+    pushNote: "大秘境不掉金币，用天鹰减伤、乔丹与全能法戒的精英增伤和焚炉替换金币链；110层以下以快速处理精英为准。", speedNote: "T16小秘境、蓝门与悬赏使用金织带、囤宝者和贪婪之戒组成金币链，配瑞秋戒与寅剑把赶路和冷却压到最低。", lowNote: "六件勇气、黑暗之光、诺瓦德两件与警戒/金织带特效优先；先能稳定骑马清屏，再追远古和正确词缀。", highNote: "伤害溢出后把宝石与词缀转向移速、冷却和拾取范围；高巅峰尝试接近110层时可换团结提容错。", source: "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build", purpose: "nephalem-rift", supportedContent: ["T16小秘境", "悬赏", "蓝门", "大秘境≤110"], defaultMode: "speed", modeLabels: { push: "大秘境≤110速刷", speed: "T16 / 蓝门 / 悬赏" }, consoleNote: "把战马放在最顺手的肩键；接近精英时主动松开，下马落雷后再骑。蓝门掉金币且密度与T16相近，金币链照常生效；高波次记得保留钢铁之肤和变身再深入。",
+  };
+
+const PONY_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build",
+  speed: "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build",
+  gear: "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon",
+  cnAuto: "https://ol.3dmgame.com/gl/317434.html",
+  cnAll: "https://m.3dmgame.com/ol/gl/301903.html",
+};
+
+const PONY_SPEED_ROTATION = [
+  { title: "开局预热", action: "开启阿卡拉特勇士与希望律法。", reason: "先建立回怒、护甲和短距离移速。" },
+  { title: "骑马找精英", action: "战马沿主路穿图，不为落单白怪停留。", reason: "效率来自把移动时间压到最低。" },
+  { title: "主动下马落雷", action: "接近精英时结束战马，连续放数次天堂之拳。", reason: "诺瓦德增伤、黑暗之光复制和勇气套同时生效。" },
+  { title: "恐惧衔接", action: "挑衅恐惧残怪，触发瑞秋戒移速后继续前进。", reason: "填补战马和寅剑之间的短空档。" },
+  { title: "拾取金币", action: "击杀后沿路拾取金币，保持贪婪与金织带护甲。", reason: "金币链同时提供移速、拾取范围和几乎无限的护甲。" },
+];
+
+const PONY_PUSH_ROTATION = [
+  { title: "开局变身", action: "开启阿卡拉特勇士，再进入战斗。", reason: "先知化身的增伤、回怒与护甲先接通。" },
+  { title: "骑马赶精英", action: "战马穿过怪群直达精英，少交技能在杂兵上。", reason: "110层以下速刷以精英处理为效率核心。" },
+  { title: "下马落雷", action: "精英附近结束战马，把天堂之拳压进神圣周期。", reason: "全能法戒的神圣窗口与诺瓦德增伤叠加。" },
+  { title: "保留资源", action: "圣怒下降时用挑衅补充，维持天鹰减伤。", reason: "大秘境没有金币护甲，稳定减伤依赖资源管理。" },
+  { title: "处理首领", action: "首领阶段保持距离连续落雷，躲开地板。", reason: "保护斯奎特层数，并用焚炉或团结的精英乘区收尾。" },
+];
+
+const PONY_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "valor-head", shoulders: "valor-shoulders", chest: "valor-chest", gloves: "valor-gloves",
+    bracers: "pony-warzechian", belt: "pony-goldwrap-gear", pants: "valor-pants", boots: "valor-boots",
+    amulet: "squirts", ring1: "pony-rechel", ring2: "pony-avarice", weapon: "norvald-flail", offhand: "norvald-shield",
+  },
+  skills: [
+    { id: "fist-of-the-heavens", rune: "天雷风暴" }, { id: "steed-charge", rune: "马不停蹄" }, { id: "laws-of-hope", rune: "天使之翼" },
+    { id: "iron-skin", rune: "疾行之肤" }, { id: "provoke", rune: "惊慌失措" }, { id: "akarats-champion", rune: "先知化身" },
+  ],
+  passives: ["heavenly-strength", "lord-commander", "long-arm-of-the-law", "indestructible"],
+  powers: { weapon: "pony-darklight", armor: "pony-vigilante-power", jewelry: "pony-zodiac", season: "pony-ingeom" },
+  legendaryGems: { control: "zei", channeling: "boon-of-the-hoarder", boss: "gogok" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"),
+    weapon: ["flawless-royal-emerald"],
+  },
+  follower: { id: "enchantress", items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
+  statPriorities: {
+    global: ["25%移速上限", "天堂之拳技能伤", "神圣元素伤", "冷却缩减"],
+    survival: ["金币链覆盖", "力量", "体能"],
+  },
+  rotation: PONY_SPEED_ROTATION,
+};
+
+const PONY_SCENARIOS: BuildScenario[] = [
+  {
+    id: "speed-low", label: "低巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "T16小秘境、蓝门（敌意幻象）与悬赏都掉金币且密度相近，金织带+囤宝者+贪婪之戒的金币链有效，与 Icy Veins 速刷版一致共用一套配置；低巅峰保留红宝石与体能词缀。",
+    sourceRefs: [PONY_SOURCES.speed, PONY_SOURCES.cnAuto, PONY_SOURCES.cnAll], reviewedAt: "2026-08-16",
+  },
+  {
+    id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰伤害溢出后，把迅捷勾玉换成闪电华冠补移速，护甲宝石换钻石压缩冷却，词缀转向移速、拾取与范围伤。",
+    patch: {
+      legendaryGems: { boss: "wreath-of-lightning" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "天堂之拳技能伤", "范围伤害"], endgame: ["移速链完整", "词缀优先移速与拾取范围", "不为坚韧牺牲赶路"] },
+    },
+    sourceRefs: [PONY_SOURCES.speed, PONY_SOURCES.gear], reviewedAt: "2026-08-16",
+  },
+  {
+    id: "push-low", label: "低巅峰大秘境≤110速刷", content: "greater-rift-speed", paragonBand: "low", applicability: "supported",
+    reason: "大秘境不掉金币，金币链失效；改穿警戒腰带压缩冷却、萃取天鹰胸甲提供稳定减伤，戒指换乔丹与全能法戒，宝石用困者/贼神/强者，第4槽用焚炉快速处理精英。",
+    patch: {
+      gear: { belt: "pony-vigilante", ring1: "pony-soj", ring2: "pony-coe" },
+      powers: { armor: "pony-aquila", season: "pony-furnace" },
+      legendaryGems: { control: "bane-of-the-trapped", channeling: "zei", boss: "bane-of-the-powerful" },
+      follower: { items: ["不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["天堂之拳技能伤", "神圣元素伤", "精英伤", "冷却缩减"], survival: ["天鹰减伤覆盖", "力量", "体能"] },
+      rotation: PONY_PUSH_ROTATION,
+    },
+    sourceRefs: [PONY_SOURCES.gear, PONY_SOURCES.overview], reviewedAt: "2026-08-16",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境≤110速刷", content: "greater-rift-speed", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰由巅峰承担主属性后，护甲宝石换钻石压缩冷却，第4槽换团结配合随从分摊伤害，应对接近110层的生存需求。",
+    patch: {
+      gear: { belt: "pony-vigilante", ring1: "pony-soj", ring2: "pony-coe" },
+      powers: { armor: "pony-aquila", season: "pony-unity" },
+      legendaryGems: { control: "bane-of-the-trapped", channeling: "zei", boss: "bane-of-the-powerful" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      follower: { items: ["团结", "不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["天堂之拳技能伤", "神圣元素伤", "冷却缩减", "范围伤害"], survival: ["团结分摊覆盖", "全元素抗性"], endgame: ["词缀洗力量换范围伤", "冷却达标后继续压缩"] },
+      rotation: PONY_PUSH_ROTATION,
+    },
+    sourceRefs: [PONY_SOURCES.gear, PONY_SOURCES.overview], reviewedAt: "2026-08-16",
   },
 ];
 
-export const CRUSADER_BUILDS: Record<string, BuildGuide> = Object.fromEntries(seeds.map((seed) => {
-  const guide = createClassGuide(seed);
-  return [guide.id, guide];
-}));
+const PONY_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "超过25%的巅峰移速无效，先扣除鞋子现有词缀。" },
+      { stat: "力量", target: "其余点数", reason: "同时提高伤害和护甲，是默认投入。" },
+      { stat: "体能", target: "生存不足时临时投入", reason: "低巅峰被秒时先换容错，稳定后再归还力量。" },
+      { stat: "圣怒上限", target: "0点", reason: "天拳消耗低，挑衅与减耗已能维持资源。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "先稳定战马、变身与律法的空档。" },
+      { stat: "暴击几率", target: "第二点满", reason: "提升落雷与强者/困者宝石收益。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率共同成长。" },
+      { stat: "攻击速度", target: "最后点满", reason: "收益低于前三项且不直接改变自动落雷。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量职业自带护甲，更缺全抗。" },
+      { stat: "生命%", target: "第二点满", reason: "扩大减伤后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "补充已有力量护甲。" },
+      { stat: "生命恢复", target: "最后点满", reason: "只作持续恢复补充。" },
+    ],
+    utility: [
+      { stat: "能量消耗降低", target: "优先点满", reason: "天鹰减伤与连续天拳都依赖高位圣怒。" },
+      { stat: "范围伤害", target: "第二点满", reason: "落雷清屏受益于范围伤。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "连续命中时提供稳定治疗。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "主要服务T16、蓝门与悬赏的金币链。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认与速刷", reason: "持续提供伤害和护甲。" },
+    { priority: "体能", when: "大秘境被单次技能击杀", reason: "只补到能稳定承受当前层数，再继续力量。" },
+  ],
+  checkpoints: [
+    { label: "刚到70级", target: "25%移速+冷却优先", action: "先让战马少空档、变身少断档。" },
+    { label: "巅峰800", target: "四页关键项目点满", action: "红宝石和力量词缀承担伤害，保留体能。" },
+    { label: "巅峰2000+", target: "范围伤、冷却与词缀", action: "力量由巅峰承担后，装备转向范围伤、冷却与移速拾取。" },
+  ],
+};
+
+const PONY_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "valor-norvald-core", targetType: "gear", targetId: "norvald-flail", label: "勇气壁垒六件、诺瓦德两件与黑暗之光", status: "locked", reason: "六件勇气提供天堂之拳20,000%增伤，诺瓦德让战马结束提供独立增伤窗，黑暗之光把一发落雷复制成多发；三者缺一就不是完整跑马天拳。" },
+  { key: "gold-chain", targetType: "gear", targetId: "pony-avarice", label: "金币链（金织带 + 囤宝者 + 贪婪之戒）", status: "conditional", reason: "T16、蓝门与悬赏都掉金币，金币链提供移速、拾取与近乎无限的护甲；大秘境不掉金币，必须换回天鹰减伤与精英增伤。", alternatives: [{ id: "pony-aquila", label: "天鹰胸甲减伤", when: "大秘境速刷", gain: "稳定减伤，不依赖金币", cost: "失去金币护甲与移速", scenarios: ["push-low", "push-high"] }] },
+  { key: "belt-slot", targetType: "gear", targetId: "pony-goldwrap-gear", label: "腰带槽", status: "conditional", reason: "速刷内容用金织带建立金币护甲；大秘境不掉金币改穿警戒腰带压缩冷却；追求天拳上限可换正义灯塔腰带。", alternatives: [{ id: "pony-vigilante", label: "警戒腰带", when: "大秘境速刷，需要稳定冷却压缩战马与变身空档", gain: "不依赖金币的常驻CDR", cost: "失去金币护甲，由天鹰补减伤", scenarios: ["push-low", "push-high"] }, { id: "pony-khasset", label: "正义灯塔腰带", when: "追求天拳单发上限、放弃移速或金币链", gain: "天堂之拳减耗与大幅增伤", cost: "失去警戒CDR或金织带护甲", incompatibleWith: ["pony-goldwrap-gear"] }] },
+  { key: "rings", targetType: "gear", targetId: "pony-rechel", label: "戒指组合", status: "conditional", reason: "速刷用瑞秋戒触发恐惧移速、贪婪之戒扩展金币拾取；大秘境改穿乔丹之石与全能法戒，把稳定精英伤和元素爆发还给角色。", alternatives: [{ id: "pony-soj", label: "乔丹之石", when: "大秘境速刷，需要稳定精英伤", gain: "稳定神圣元素与精英增伤", cost: "失去恐惧移速", scenarios: ["push-low", "push-high"] }, { id: "pony-coe", label: "全能法戒", when: "大秘境速刷且愿意等待神圣周期", gain: "元素爆发窗", cost: "需要等待元素，不等则收益下降", scenarios: ["push-low", "push-high"] }] },
+  { key: "season-slot", targetType: "power", targetId: "pony-ingeom", label: "第39赛季第四槽", status: "conditional", reason: "速刷内容精英密集，寅剑击杀精英后重置冷却实现连续骑马；大秘境用焚炉稳定精英增伤，高巅峰尝试接近110层可换团结提容错。", alternatives: [{ id: "pony-furnace", label: "焚炉", when: "大秘境速刷快速处理精英与首领", gain: "稳定精英增伤", cost: "失去寅剑的击杀冷却重置", scenarios: ["push-low"] }, { id: "pony-unity", label: "团结", when: "高巅峰尝试接近110层，且随从佩戴团结与不死饰品", gain: "与随从分摊伤害", cost: "失去精英增伤或击杀冷却", scenarios: ["push-high"] }] },
+  { key: "armor-cube", targetType: "power", targetId: "pony-vigilante-power", label: "防具萃取", status: "conditional", reason: "速刷萃取警戒腰带补CDR；大秘境萃取天鹰胸甲补稳定减伤。", alternatives: [{ id: "pony-aquila", label: "天鹰胸甲", when: "大秘境速刷", gain: "高位圣怒时稳定减伤", cost: "失去警戒腰带的CDR", scenarios: ["push-low", "push-high"] }] },
+  { key: "third-gem", targetType: "legendary-gem", targetId: "gogok", label: "速刷传奇宝石", status: "conditional", reason: "内容决定金币移速、攻速冷却或伤害补强；大秘境还困者与强者，速刷还囤宝者。", alternatives: [{ id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "T16、蓝门与悬赏", gain: "金币与移动速度，并启动金织带", cost: "大秘境不掉金币，无法工作", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-low", "speed-high"] }, { id: "wreath-of-lightning", label: "闪电华冠", when: "高巅峰速刷伤害已溢出", gain: "25级效果提供额外移动速度", cost: "失去迅捷勾玉的攻速冷却", scenarios: ["speed-high"] }, { id: "bane-of-the-powerful", label: "强者之灾", when: "大秘境速刷", gain: "击杀精英后稳定增伤", cost: "大秘境首领战收益下降", scenarios: ["push-low", "push-high"] }] },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女固定提供冷却与远程控场；速刷随从戴贪婪之戒扩大拾取，大秘境戴不死圣物保命，高巅峰换团结与角色分摊。" },
+];
+
+const PONY_REVIEWED_GUIDE: BuildGuide = {
+  ...createClassGuide(ponySeed),
+  configurationBase: PONY_CONFIGURATION_BASE,
+  defaultMode: "speed",
+  defaultScenarioId: "speed-low",
+  scenarios: PONY_SCENARIOS,
+  paragonGuide: PONY_PARAGON,
+  choicePolicies: PONY_CHOICE_POLICIES,
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const PONY_VALIDATION_ERRORS = validateReviewedBuildGuide(PONY_REVIEWED_GUIDE);
+if (PONY_VALIDATION_ERRORS.length > 0) throw new Error(`跑马天拳配置校验失败：${PONY_VALIDATION_ERRORS.join("；")}`);
+
+export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
+  ...Object.fromEntries(seeds.map((seed) => {
+    const guide = createClassGuide(seed);
+    return [guide.id, guide];
+  })),
+  [PONY_REVIEWED_GUIDE.id]: PONY_REVIEWED_GUIDE,
+};

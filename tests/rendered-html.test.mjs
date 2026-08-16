@@ -76,7 +76,8 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
   assert.match(pony, /跑马天拳 · 全能速刷/);
   assert.match(pony, /T16小秘境/);
   assert.match(pony, /大秘境≤110/);
-  assert.match(pony, /蓝门 \/ 大秘境≤110/);
+  assert.match(pony, /T16 \/ 蓝门 \/ 悬赏/);
+  assert.match(pony, /蓝门（敌意幻象）/);
   assert.match(godMonk, /上帝僧 · 无限疾风/);
   assert.match(godMonk, /彩虹地精/);
   assert.match(godMonk, /外观路线/);
@@ -159,6 +160,30 @@ test("renders the reviewed Wastes Rend scenarios as real runtime loadouts", asyn
   assert.match(page, /activeConfiguration\?\.skills/);
   assert.match(page, /activeConfiguration\?\.passives/);
   assert.match(page, /activeConfiguration\?\.rotation/);
+});
+
+test("renders the reviewed pony-fist-farm scenarios as real speed-farm loadouts", async () => {
+  const [html, crusaderData, page] = await Promise.all([
+    render("/builds/pony-fist-farm").then((response) => response.text()),
+    readFile(new URL("../app/data/crusader-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰 T16 \/ 蓝门 \/ 悬赏/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["speed-low", "speed-high", "push-low", "push-high"]) {
+    assert.match(crusaderData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["pony-goldwrap-gear", "pony-avarice", "pony-rechel", "pony-aquila", "pony-furnace", "pony-unity", "pony-coe", "pony-vigilante", "wreath-of-lightning", "bane-of-the-powerful"]) {
+    assert.match(crusaderData, new RegExp(runtimeChoice));
+  }
+  assert.match(crusaderData, /validateReviewedBuildGuide\(PONY_REVIEWED_GUIDE\)/);
+  assert.doesNotMatch(crusaderData, /powerSets: \{ push: \["pony-darklight"/);
+  assert.match(page, /gogok: \{ name: "迅捷勾玉"/);
+  assert.match(page, /"bane-of-the-powerful": POWERFUL_GEM/);
 });
 
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
