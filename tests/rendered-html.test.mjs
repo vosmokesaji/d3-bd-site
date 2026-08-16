@@ -82,15 +82,15 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
   assert.match(godMonk, /彩虹地精/);
   assert.match(godMonk, /外观路线/);
   assert.match(godMonk, /精气回复/);
-  assert.match(godMonk, /千飓 3＋伊娜 5/);
-  assert.match(godMonk, /两套都能无限疾风，区别在于谁负责杀怪/);
-  assert.match(godMonk, /皇家华戒让三件千飓获得疾风击回充/);
+  assert.match(godMonk, /低巅峰 T16 \/ 蓝门/);
+  assert.match(godMonk, /水幻身/);
   const monkData = await readFile(new URL("../app/data/monk-builds.ts", import.meta.url), "utf8");
   assert.match(monkData, /god-inna-head/);
   assert.match(monkData, /尹娜的光华/);
   assert.match(monkData, /god-raiment-shoulders/);
-  assert.match(monkData, /powerSets: \{ push: \["god-hybrid-ingeom-power"/);
-  assert.doesNotMatch(monkData, /god-hybrid-ingeom", "主手"/);
+  assert.match(monkData, /validateReviewedBuildGuide\(GOD_MONK_REVIEWED_GUIDE\)/);
+  assert.doesNotMatch(monkData, /powerSets: \{/);
+  assert.doesNotMatch(monkData, /loadouts: \[/);
 });
 
 test("keeps shared-configuration builds from receiving unreviewed variant swaps", async () => {
@@ -207,6 +207,30 @@ test("renders the reviewed god-hungering scenarios as real high-mobility loadout
   assert.match(dhData, /validateReviewedBuildGuide\(GOD_REVIEWED_GUIDE\)/);
   assert.doesNotMatch(dhData, /powerSets: \{ push:/);
   assert.match(page, /simplicity: \{ name: "至简之力"/);
+});
+
+test("renders the reviewed god-monk scenarios as real infinite-dash loadouts", async () => {
+  const [html, monkData, page] = await Promise.all([
+    render("/builds/god-monk").then((response) => response.text()),
+    readFile(new URL("../app/data/monk-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰 T16 \/ 蓝门/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  assert.doesNotMatch(html, /两套都能无限疾风/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(monkData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["god-inna-reach", "god-hybrid-crudest", "god-prides-fall", "god-fleshrake", "god-burst", "god-messerschmidt", "水幻身", "光辉如炬"]) {
+    assert.match(monkData, new RegExp(runtimeChoice));
+  }
+  assert.match(monkData, /validateReviewedBuildGuide\(GOD_MONK_REVIEWED_GUIDE\)/);
+  assert.doesNotMatch(monkData, /loadouts: \[/);
+  assert.doesNotMatch(monkData, /powerSets: \{/);
 });
 
 test("a non-prototype build uses the unified interactive detail renderer", async () => {

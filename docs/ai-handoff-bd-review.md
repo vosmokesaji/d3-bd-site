@@ -35,17 +35,16 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 4 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`god-hungering` |
-| 部分实装 | 1 | `god-monk` |
+| 已完整校对 | 5 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`god-hungering`、`god-monk` |
+| 部分实装 | 0 | 无 |
 | 尚未逐套校对 | 46 | 见路线图第 9 节清单 |
-| 仍需完成 | 47 | 1 套部分实装 + 46 套草稿 |
+| 仍需完成 | 46 | 46 套草稿 |
 
-当前工作游标：路线图清单第 5 项 `god-monk`。
+当前工作游标：路线图清单第 6 项 `mundunugu-barrage`。
 
 建议后续顺序：
 
-1. `god-monk`：把已有两套配装与真实用途、巅峰场景连接起来。
-2. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节顺序逐套推进。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节顺序逐套推进（下一套 `mundunugu-barrage`）。
 
 已完成的基础设施：
 
@@ -54,16 +53,17 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为 `npm test` 24 项全部通过。
+- 最近一次完整验证为 `npm test` 25 项全部通过。
 
 已知部分实装的真实含义：
 
-- `god-monk` 已有两套显式 `loadouts`，但配装选择没有与用途和巅峰场景建立统一关系，同一配装下的模式仍可能共用相同魔方配置。
+- 已无部分实装项；`god-monk` 的两套配装已迁入四场景（T16/蓝门用尹娜混搭水幻身清屏、地精/外观用千飓六件纯位移），`loadouts` 与 `powerSets` 已移除，mode 切换即配装切换。
 
 最近相关提交：
 
 ```text
-feat(bd): 完成恐惧冰吞多场景校对（提交哈希以 git log 为准）
+feat(bd): 完成上帝僧多场景校对（提交哈希以 git log 为准）
+feat(bd): 完成恐惧冰吞多场景校对
 feat(bd): 完成跑马天拳多场景校对
 80b78c6 docs(bd): 编写逐套校对 AI 交接手册
 37a6c42 feat(bd): 完成荒原旋风痛割多场景校对
@@ -290,38 +290,57 @@ npm run dev -- --port 3003
 
 验证：`validateReviewedBuildGuide(GOD_REVIEWED_GUIDE)` 通过；`npm test` 24 项全部通过；路由 `/builds/god-hungering` 渲染已逐项校对、巅峰、策略，无“配置差异待实装”；页面 65 张图片资源全部有效。注意此前的 `restores legendary gems` 测试改为用 `ue-multishot` 验证猎魔人默认绿宝石，因为恐惧冰吞护甲宝石由场景配置驱动为钻石。
 
-## 6.2 下一套：上帝僧
+## 6.2 已完成：上帝僧
 
-目标 ID：`god-monk`
+目标 ID：`god-monk`（2026-08-16 完成）
+
+研究结论：
+
+- 上帝僧有两套本质不同的配装：千飓六件纯位移（地精/外观/钥匙路线）与千飓三件＋尹娜五件（T16/蓝门水幻身清屏）。皇家华戒是两套共同连接器。
+- 将两套配装迁入四场景：`push`（T16/蓝门）用尹娜混搭，`speed`（地精/外观）用千飓六件。移除了 `loadouts` 与 `powerSets`，mode 切换即整套配装切换，解决了“同一配装下模式共用相同魔方配置”的问题。
+- 蓝门与 T16 都靠幻身清屏且都掉金币，故并入 `push` 场景，不扩展 `BuildContent`。
+- 武器萃取差异：T16 穿尹娜审判时萃取寅剑，外观穿寅剑时萃取怒涌靠破物回精；第 4 槽 T16 用粗糙至极靴（幻身翻倍）、外观用梅斧（击杀缩冷却）。
+
+四场景 diff（程序化计算，`diffBuildConfigurations`）：
+
+- `push-low`（基准）：低巅峰 T16/蓝门，尹娜五件＋千飓三件、水幻身清屏、寅剑萃取、粗糙靴。
+- `push-high`：词缀变化（冷却、减耗、最大精气、拾取距离）。
+- `speed-low`：装备、技能、威能、随从、词缀、循环六类变化（千飓六件、骄矜必败、怒涌、梅斧、翔龙飞爪）。
+- `speed-high`：在 speed-low 基础上继续优化词缀。
+
+验证：`validateReviewedBuildGuide(GOD_MONK_REVIEWED_GUIDE)` 通过；`npm test` 25 项全部通过；路由 `/builds/god-monk` 渲染已逐项校对、巅峰、策略，无“配置差异待实装”；页面 68 张图片资源全部有效。原 `loadouts` 相关测试断言已改为场景内容。
+
+## 6.3 下一套：蒙嘟噜魂弹
+
+目标 ID：`mundunugu-barrage`
 
 主要文件：
 
-- `app/data/monk-builds.ts`
+- `app/data/witch-doctor-builds.ts`
 - `app/data/site-catalog.ts`
 - `tests/rendered-html.test.mjs`
 - 本文件与 `docs/bd-content-and-ui-roadmap.md`
 
 当前已有内容：
 
-- 两套显式 `loadouts`（彩虹地精/外观路线与输出配装），已有 god-inna-head、god-raiment-shoulders 等混装数据。
-- 页面已有配装方案选择控件与“两套都能无限疾风”的比较文案。
+- 蒙嘟噜古法套装、剃头师（魂弹延迟结算）等基础装备与文案。
+- 魂灵弹幕、灵魂行走、惧灵、蚀魂、噬魂、僵尸犬等技能。
 
 必须补齐：
 
-- 把两套配装与真实用途、巅峰场景建立统一关系，不能同一配装下的模式共用相同魔方配置。
-- 外观/彩虹地精路线与冲层/速刷的真实配置差异。
+- 延迟结算机制与冲层/速刷的真实配置差异。
 - 每个适用场景的完整装备、技能、被动、威能、宝石、普通宝石、词缀和循环。
 - 低/高巅峰的生存、伤害、冷却和移动差异。
-- 千飓、尹娜混装的皇家华戒结构是否在每个场景都成立。
+- 剃头师、蒙嘟噜之魂（符）与宠物头/吉德宾的相互作用。
 - 第 39 赛季第四魔方槽的适用边界。
-- 随从在两种路线中的装备区别。
+- 随从在冲层与速刷中的装备区别。
 
 预期结果：
 
 - 目标 guide 通过 `validateReviewedBuildGuide`。
 - 路由切换展示真实配置差异。
 - `reviewStatus` 为 `fully-reviewed`。
-- 剩余 47 套更新为 46 套；下一工作游标更新为路线图第 6 项 `mundunugu-barrage`。
+- 剩余 46 套更新为 45 套；下一工作游标更新为路线图第 7 项 `tal-meteor`。
 
 ## 7. 做完后如何记录
 
@@ -415,7 +434,7 @@ git log -1 --stat
 | 2 | `wastes-rend` | 已校对 | `37a6c42` | 四场景与通用详情页全类别切换 | 仅回归维护 |
 | 3 | `pony-fist-farm` | 已校对 | `feat(bd): 完成跑马天拳多场景校对` | 四场景、巅峰、策略、校验与金币链建模 | 仅回归维护 |
 | 4 | `god-hungering` | 已校对 | `feat(bd): 完成恐惧冰吞多场景校对` | 四场景、巅峰、策略、校验与杨弓/盾枪武器建模 | 仅回归维护 |
-| 5 | `god-monk` | 部分 | 尚无完成提交 | 两套显式 `loadouts` | 下一校对目标，见第 6.2 节 |
+| 5 | `god-monk` | 已校对 | `feat(bd): 完成上帝僧多场景校对` | 两套配装迁入四场景、loadouts 移除 | 仅回归维护 |
 
 其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
 
