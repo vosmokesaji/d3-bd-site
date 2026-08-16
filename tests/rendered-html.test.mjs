@@ -315,6 +315,47 @@ test("renders the reviewed lod-corpse-explosion scenarios as real poison-chain l
   assert.match(necData, /validateReviewedBuildGuide/);
 });
 
+test("renders the reviewed rathma-aotd scenarios as real pet-engine loadouts", async () => {
+  const [html, necData] = await Promise.all([
+    render("/builds/rathma-aotd").then((response) => response.text()),
+    readFile(new URL("../app/data/necromancer-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(necData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["RATHMA_CONFIGURATION_BASE", "corroded-fang", "ingeom", "steuarts-greaves", "avarice-band", "goldwrap", "nemesis-bracers", "boon-of-the-hoarder"]) {
+    assert.match(necData, new RegExp(runtimeChoice));
+  }
+  assert.doesNotMatch(necData, /轮回镰刀.*亡者大军/);
+  assert.match(necData, /validateReviewedBuildGuide/);
+});
+
+test("renders the reviewed masquerade-spear scenarios as real three-line spear loadouts", async () => {
+  const [html, necData] = await Promise.all([
+    render("/builds/masquerade-spear").then((response) => response.text()),
+    readFile(new URL("../app/data/necromancer-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(necData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["MASQUERADE_CONFIGURATION_BASE", "齿状骨刺", "reilena", "ingeom", "rechel", "avarice-band", "steuarts-greaves", "nemesis-bracers", "boon-of-the-hoarder"]) {
+    assert.match(necData, new RegExp(runtimeChoice));
+  }
+  assert.match(necData, /validateReviewedBuildGuide/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);

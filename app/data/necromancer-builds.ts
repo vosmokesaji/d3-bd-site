@@ -131,6 +131,10 @@ const rathmaGear: GuideGear[] = [
   commonNovaGear.krysbin(gems.gogok), commonNovaGear.coe(gems.zei),
   legendary("jesseth-scythe", "主手", "杰瑟斯骨镰", IMG.jessethScythe, "统御骷髅锁定目标后，杰瑟斯两件套提高全局伤害。", ["高白字", "攻击速度", "冷却缩减", "智力", "拉玛兰迪打孔"], ["黄装升级：70级单手镰刀", "和骨盾成套才生效", "攻速用于达到骷髅攻击断点" ]),
   legendary("jesseth-shield", "副手", "杰瑟斯骨盾", IMG.jessethShield, "与骨镰组成两件套；骷髅死亡时会自动重新召唤。", ["暴击几率", "冷却缩减", "资源减耗", "智力"], ["黄装升级：70级盾牌，用死灵角色", "世界掉落", "不是死灵法器，升级铁玫瑰的底材不适用"], "底材是盾牌，不是死灵法器。"),
+  legendary("nemesis-bracers", "腕部", "复仇者护腕", `${A}nemesis-bracers-Unique_Bracer_106_x1.png`, "点击祭坛会召唤一名精英，速刷时提高精英密度。", ["物理技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "只在速刷时替换希雷娜羁绊"]),
+  legendary("steuarts-greaves", "脚部", "斯图亚特的胫甲", `${A}steuarts-greaves-P6_Necro_Unique_Boots_21.png`, "鲜血穿行后提高移速，速刷时缩短跑图时间。", ["智力", "体能", "护甲", "全抗"], ["血岩碎片赌博靴子", "黄装升级：70级靴子", "与拉斯玛骨靴互换"]),
+  legendary("avarice-band", "手指", "贪婪之戒", `${A}avarice-band-Unique_Ring_108_x1.png`, "拾取金币后扩大拾取范围，连接金币链。", ["镶孔", "暴击几率", "暴击伤害", "范围伤害"], ["第三幕/第四幕悬赏宝箱", "世界掉落", "速刷时替换全能法戒"]),
+  legendary("goldwrap", "腰部", "金织带", `${A}goldwrap-Unique_Belt_010_x1.png`, "拾取金币后按金币数量提高护甲，T16金币链提供近乎无限护甲。", ["智力", "体能", "生命%", "护甲"], ["血岩赌博腰带", "黄装升级：70级普通腰带", "速刷时替换克里森腰带"]),
 ];
 
 const masqueradeGear: GuideGear[] = [
@@ -145,6 +149,10 @@ const masqueradeGear: GuideGear[] = [
   commonNovaGear.haunted(gems.trapped), commonNovaGear.coe(gems.stricken), commonNovaGear.krysbin(gems.zei),
   legendary("cycle", "主手", "轮回镰刀", IMG.cycle, "骨甲生效时大幅提高次要技能骨矛伤害，但每次施放会消耗骨甲持续时间。", ["高白字", "伤害%", "攻击速度", "智力", "拉玛兰迪打孔"], ["黄装升级：70级单手镰刀", "死灵角色世界掉落", "必须养成频繁刷新骨甲的习惯" ]),
   legendary("lost-time", "副手", "流逝时光", IMG.lostTime, "冰冷技能命中后提高移速；主要价值仍是高伤害范围、暴击和骨矛技能伤。", ["高伤害范围", "暴击几率", "范围伤害", "骨矛伤害", "智力"], ["黄装升级：必须是70级死灵法器", "血岩碎片赌博副手", "不要用盾牌底材"], "底材是死灵法器。"),
+  legendary("nemesis-bracers", "腕部", "复仇者护腕", `${A}nemesis-bracers-Unique_Bracer_106_x1.png`, "点击祭坛会召唤一名精英，速刷时提高精英密度。", ["物理技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "速刷时替换杰尔明多护腕"]),
+  legendary("avarice-band", "手指", "贪婪之戒", `${A}avarice-band-Unique_Ring_108_x1.png`, "拾取金币后扩大拾取范围，连接金币链。", ["镶孔", "暴击几率", "暴击伤害", "范围伤害"], ["第三幕/第四幕悬赏宝箱", "世界掉落", "速刷时替换全能法戒"]),
+  legendary("rechel", "手指", "瑞秋的行窃之戒", `${A}rechels-ring-of-larceny-unique_ring_104_x1.png`, "恐惧敌人后获得大幅移速，速刷时由血步或控制触发。", ["镶孔", "暴击几率", "暴击伤害", "攻速"], ["世界掉落", "黄装升级：70级戒指", "单人速刷替换全能法戒"]),
+  legendary("steuarts-greaves", "脚部", "斯图亚特的胫甲", `${A}steuarts-greaves-P6_Necro_Unique_Boots_21.png`, "鲜血穿行后提高移速，速刷时缩短跑图时间。", ["骨矛伤害", "智力", "体能", "护甲"], ["血岩碎片赌博靴子", "黄装升级：70级靴子", "与奢靡之靴互换"]),
 ];
 
 const pestilenceGear: GuideGear[] = [
@@ -701,6 +709,254 @@ const LOD_CORPSE_CHOICES: BuildChoicePolicy[] = [
   { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女固定提供冷却与攻速；速刷随从戴贪婪之戒扩大拾取，冲层戴团结与不死圣物。" },
 ];
 
+const RATHMA_AOTD_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
+  gear: "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-bis-gear-gems-paragon-points",
+  maxroll: "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide",
+  cn: "https://d3.17173.com/content/2026-07-29/20260729000116654.shtml",
+};
+
+const RATHMA_PUSH_ROTATION = [
+  { title: "复生满编", action: "进入秘境后尽快复生足够仆从。", reason: "拉斯玛六件按永久仆从数量放大亡者大军。" },
+  { title: "统御锁定", action: "每遇到新精英先命令骷髅攻击。", reason: "启动杰瑟斯和希雷娜羁绊。" },
+  { title: "虹吸标记", action: "短暂虹吸核心目标。", reason: "葬镰让目标承受额外伤害。" },
+  { title: "骨甲强控", action: "元素窗前骨甲眩晕怪群。", reason: "克里斯宾进入强控档，并维持蚀牙诅咒。" },
+  { title: "释放大军", action: "在物理周期与神目圈重叠时放亡者大军。", reason: "所有装备、套装、控制和元素乘区在这一击汇合。" },
+];
+
+const RATHMA_SPEED_ROTATION = [
+  { title: "复生仆从", action: "尽快召满亡者复生与骷髅。", reason: "仆从数量与冷却引擎在速刷仍成立。" },
+  { title: "统御精英", action: "遇到精英先命令骷髅锁定。", reason: "杰瑟斯与希雷娜增伤在速刷仍有效。" },
+  { title: "大军清屏", action: "精英出现即放亡者大军。", reason: "不等待完整元素周期，击杀即转场。" },
+  { title: "拾取金币", action: "沿路拾取金币保持金织带与贪婪。", reason: "T16金币链提供护甲与拾取范围。" },
+  { title: "击杀转场", action: "利用寅剑或梅斧冷却立即转场。", reason: "击杀刷新冷却，下一段跑图无空档。" },
+];
+
+const RATHMA_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "rathma-head", shoulders: "rathma-shoulders", chest: "rathma-chest", gloves: "rathma-gloves",
+    bracers: "clena", belt: "crimson-belt", pants: "crimson-pants", boots: "rathma-boots",
+    amulet: "squirts", ring1: "krysbin", ring2: "coe", weapon: "jesseth-scythe", offhand: "jesseth-shield",
+  },
+  skills: [
+    { id: "siphon-blood", rune: "力量转移" }, { id: "command-skeletons", rune: "狂乱" }, { id: "bone-armor", rune: "白骨脱臼" },
+    { id: "army-of-the-dead", rune: "死亡之谷" }, { id: "blood-rush", rune: "强韧" }, { id: "revive", rune: "私人军队" },
+  ],
+  passives: ["rigor-mortis", "final-service", "rathmas-shield", "grisly-tribute"],
+  powers: { weapon: "funerary-pick", armor: "fates-vow", jewelry: "royal-grandeur", season: "corroded-fang" },
+  legendaryGems: { control: "bane-of-the-trapped", channeling: "gogok", boss: "zei" },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-topaz"), weapon: ["flawless-royal-emerald"] },
+  follower: { id: "enchantress", items: ["不死圣物", "团结"], skills: ["冷却增强", "充能"] },
+  statPriorities: { global: ["冷却缩减（亡者大军循环）", "物理元素伤", "范围伤害", "骷髅攻速断点"], survival: ["生命%", "护甲", "全元素抗性"] },
+  rotation: RATHMA_PUSH_ROTATION,
+};
+
+const RATHMA_SCENARIOS: BuildScenario[] = [
+  { id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "冲层第4槽用塔格奥蚀牙靠诅咒增伤，宝石用困者/勾玉/贼神；低巅峰可先穿满六件拉斯玛或配守护者过渡。",
+    sourceRefs: [RATHMA_AOTD_SOURCES.overview, RATHMA_AOTD_SOURCES.maxroll], reviewedAt: "2026-08-17" },
+  { id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰由巅峰承担主属性后，词缀转向冷却达标、范围伤与骷髅攻速断点，5拉斯玛＋2克里森经华戒完整激活。",
+    patch: { statPriorities: { global: ["冷却缩减达标（亡者大军无缝）", "范围伤害≥120%", "物理元素伤", "骷髅攻速断点"], survival: ["生命%", "护甲", "全元素抗性"], endgame: ["词缀洗体能换范围伤与CDR", "卡德山全打智力"] } },
+    sourceRefs: [RATHMA_AOTD_SOURCES.overview, RATHMA_AOTD_SOURCES.gear], reviewedAt: "2026-08-17" },
+  { id: "speed-low", label: "低巅峰 T16 速刷", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "T16速刷把腰带换金织带、护腕换复仇者、戒指换贪婪组成金币链；第4槽换寅剑或梅斧压缩亡者大军空窗，宝石用困者/勾玉/囤宝者。",
+    patch: {
+      gear: { belt: "goldwrap", bracers: "nemesis-bracers", ring2: "avarice-band" },
+      powers: { season: "ingeom" },
+      legendaryGems: { boss: "boon-of-the-hoarder" },
+      follower: { id: "enchantress", items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "物理元素伤", "范围伤害"], survival: ["金币链覆盖", "生命%"] },
+      rotation: RATHMA_SPEED_ROTATION,
+    },
+    sourceRefs: [RATHMA_AOTD_SOURCES.maxroll], reviewedAt: "2026-08-17" },
+  { id: "speed-high", label: "高巅峰 T16 极速", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰T16伤害溢出后，第4槽换斯图亚特胫甲补移速，词缀转向移速与拾取范围。",
+    patch: {
+      gear: { belt: "goldwrap", bracers: "nemesis-bracers", ring2: "avarice-band" },
+      powers: { season: "steuarts-greaves" },
+      legendaryGems: { boss: "boon-of-the-hoarder" },
+      follower: { id: "enchantress", items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["25%移速上限", "拾取范围", "冷却缩减", "物理元素伤"], survival: ["金币链覆盖", "护甲由金织带接管"], endgame: ["词缀优先移速与拾取"] },
+      rotation: RATHMA_SPEED_ROTATION,
+    },
+    sourceRefs: [RATHMA_AOTD_SOURCES.maxroll], reviewedAt: "2026-08-17" },
+];
+
+const RATHMA_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先补到上限。" },
+      { stat: "智力", target: "其余点数", reason: "同时提高伤害和全抗。" },
+      { stat: "体能", target: "按需补到生命检查点", reason: "冲层被秒时先补容错。" },
+      { stat: "精魄上限", target: "适量投入", reason: "喂养葬镰与虹吸循环。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "亡者大军循环是第一属性。" },
+      { stat: "攻击速度", target: "随后点满", reason: "骷髅攻速断点决定冷却引擎效率。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率共同放大亡者大军。" },
+      { stat: "暴击几率", target: "最后点满", reason: "优先级低于冷却与攻速。" },
+    ],
+    defense: [
+      { stat: "护甲", target: "优先点满", reason: "智力职业更缺护甲。" },
+      { stat: "生命%", target: "随后点满", reason: "放大有效生命。" },
+      { stat: "全元素抗性", target: "第三点满", reason: "补齐元素坚韧。" },
+      { stat: "每秒生命恢复", target: "最后点满", reason: "仆从吸血已提供主要恢复。" },
+    ],
+    utility: [
+      { stat: "范围伤害", target: "优先点满", reason: "亡者大军覆盖怪群受益于范围伤。" },
+      { stat: "击中恢复生命", target: "随后点满", reason: "仆从命中提供稳定恢复。" },
+      { stat: "能量消耗降低", target: "第三点满", reason: "配合克里森资源减耗。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "服务T16速刷。" },
+    ],
+  },
+  post800: [
+    { priority: "先补体能", when: "生命低于目标或频繁猝死", reason: "把生命池补到能稳定承受当前层数。" },
+    { priority: "其余全部智力", when: "生命与减伤稳定", reason: "智力继续提高伤害与全抗。" },
+  ],
+  checkpoints: [
+    { label: "冷却缩减", target: "亡者大军无缝", action: "未达标时优先保留装备冷却词缀。" },
+    { label: "生命池", target: "约80万–100万", action: "不足时从巅峰智力挪到体能。" },
+    { label: "范围伤害", target: "冲层≥120%", action: "高巅峰从肩手戒指补足。" },
+  ],
+};
+
+const RATHMA_CHOICES: BuildChoicePolicy[] = [
+  { key: "rathma-crimson", targetType: "gear", targetId: "rathma-head", label: "拉斯玛六件＋克里森两件", status: "locked", reason: "华戒让拉斯玛五件激活六件倍率、克里森两件把冷却转成伤害；仆从是亡者大军冷却引擎。" },
+  { key: "pet-engine", targetType: "skill", targetId: "command-skeletons", label: "仆从冷却引擎", status: "locked", reason: "骷髅与亡者复生通过拉斯玛两件减冷却，打得越快亡者大军回得越快。" },
+  { key: "season-power", targetType: "power", targetId: "corroded-fang", label: "第39赛季第四槽", status: "conditional", reason: "冲层用塔格奥蚀牙靠诅咒增伤；速刷用寅剑或梅斧压缩空窗，高巅峰可换斯图亚特补移速。", alternatives: [{ id: "ingeom", label: "寅剑", when: "T16速刷", gain: "击杀精英后缩短冷却", cost: "失去蚀牙诅咒增伤", scenarios: ["speed-low"] }, { id: "steuarts-greaves", label: "斯图亚特的胫甲", when: "高巅峰T16速刷", gain: "鲜血穿行后移速", cost: "失去蚀牙诅咒增伤", scenarios: ["speed-high"] }] },
+  { key: "second-ring", targetType: "gear", targetId: "coe", label: "第二枚戒指", status: "conditional", reason: "冲层需要元素爆发窗，速刷需要金币拾取。", alternatives: [{ id: "avarice-band", label: "贪婪之戒", when: "T16速刷金币链", gain: "拾取范围扩大", cost: "失去全能法戒元素窗口", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "belt-slot", targetType: "gear", targetId: "crimson-belt", label: "腰带槽", status: "conditional", reason: "冲层用克里森腰带组成5+2；速刷换金织带组成金币链。", alternatives: [{ id: "goldwrap", label: "金织带", when: "T16速刷", gain: "金币护甲近乎无限", cost: "失去克里森冷却转伤害", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女固定提供冷却与攻速；速刷随从戴贪婪之戒扩大拾取，冲层戴团结与不死圣物。" },
+];
+
+const MASQUERADE_SPEAR_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/necromancer-bone-spear-build-with-masquerade",
+  gear: "https://www.icy-veins.com/d3/masquerade-bone-spear-necromancer-bis-gear-gems-paragon-points",
+  maxroll: "https://maxroll.gg/d3/guides/masquerade-bone-spear-necromancer-guide",
+};
+
+const MASQUERADE_PUSH_ROTATION = [
+  { title: "永久双分", action: "进图开启血魂双分。", reason: "鬼灵面容让分身永久，套装使其获得全符文。" },
+  { title: "镰刀补魂", action: "贴近安全目标用诅咒镰刀回魂能。", reason: "马托利斯使骨矛消耗翻倍，必须主动补资源。" },
+  { title: "调整直线", action: "鲜血穿行到怪群侧后方，让目标排成直线。", reason: "枯萎骨髓按穿透目标数增伤。" },
+  { title: "骨甲强控", action: "毒素周期前白骨脱臼。", reason: "同时续轮回镰刀并触发克里斯宾三倍档。" },
+  { title: "毒素窗连矛", action: "向精英身后的整条怪群连续骨矛。", reason: "三线骨矛、穿透、元素、骨髓守护和莱莲娜同时结算。" },
+];
+
+const MASQUERADE_SPEED_ROTATION = [
+  { title: "永久双分", action: "进图开启血魂双分。", reason: "分身永久复制骨矛，跑图不需要反复重放。" },
+  { title: "镰刀补魂", action: "贴近怪群用诅咒镰刀回魂能。", reason: "马托利斯使骨矛消耗翻倍。" },
+  { title: "扇形骨刺", action: "遇到怪群正面连放齿状骨刺。", reason: "速刷用物理扇形符文清屏，不追求穿透直线。" },
+  { title: "拾取金币", action: "沿路拾取金币保持移速与拾取。", reason: "T16金币链提供贪婪范围与囤宝移速。" },
+  { title: "击杀转场", action: "击杀精英后利用寅剑冷却立即转场。", reason: "击杀重置冷却，下一段跑图无空档。" },
+];
+
+const MASQUERADE_SPEED_SKILLS = [
+  { id: "bone-spear", rune: "齿状骨刺" }, { id: "grim-scythe", rune: "诅咒镰刀" }, { id: "simulacrum", rune: "蓄能精魄" },
+  { id: "bone-armor", rune: "白骨脱臼" }, { id: "frailty", rune: "脆弱光环" }, { id: "blood-rush", rune: "强韧" },
+];
+
+const MASQUERADE_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "masquerade-head", shoulders: "masquerade-shoulders", chest: "masquerade-chest", gloves: "masquerade-gloves",
+    bracers: "gelmindor", belt: "crimson-belt", pants: "crimson-pants", boots: "masquerade-boots",
+    amulet: "haunted-visions", ring1: "krysbin", ring2: "coe", weapon: "cycle", offhand: "lost-time",
+  },
+  skills: [
+    { id: "bone-spear", rune: "枯萎骨髓" }, { id: "grim-scythe", rune: "诅咒镰刀" }, { id: "simulacrum", rune: "蓄能精魄" },
+    { id: "bone-armor", rune: "白骨脱臼" }, { id: "frailty", rune: "脆弱光环" }, { id: "blood-rush", rune: "强韧" },
+  ],
+  passives: ["spreading-malediction", "final-service", "stand-alone", "overwhelming-essence"],
+  powers: { weapon: "maltorius", armor: "dayntee", jewelry: "royal-grandeur", season: "reilena" },
+  legendaryGems: { control: "bane-of-the-trapped", channeling: "zei", boss: "bane-of-the-stricken" },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-topaz"), weapon: ["flawless-royal-emerald"] },
+  follower: { id: "scoundrel", items: ["不死圣物", "团结"], skills: ["暴击增益", "攻速"] },
+  statPriorities: { global: ["骨矛技能伤", "毒素元素伤", "范围伤害", "攻速档位", "最大魂能"], survival: ["生命%", "护甲", "全元素抗性"] },
+  rotation: MASQUERADE_PUSH_ROTATION,
+};
+
+const MASQUERADE_SCENARIOS: BuildScenario[] = [
+  { id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "冲层第4槽用莱莲娜影魂钩配充沛魂能被动，骨矛用枯萎骨髓打毒素穿透直线；低巅峰保留体能与生命词缀。",
+    sourceRefs: [MASQUERADE_SPEAR_SOURCES.overview, MASQUERADE_SPEAR_SOURCES.gear], reviewedAt: "2026-08-17" },
+  { id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰由巅峰承担主属性后，词缀转向范围伤、攻速与最大魂能，护腕可换奥吉德搜寻或守护者过渡。",
+    patch: { statPriorities: { global: ["骨矛技能伤", "毒素元素伤", "范围伤害≥125%", "攻速档位"], survival: ["生命%", "护甲", "全元素抗性"], endgame: ["词缀洗智力换范围伤与攻速", "最大魂能副词缀尽量保留"] } },
+    sourceRefs: [MASQUERADE_SPEAR_SOURCES.overview, MASQUERADE_SPEAR_SOURCES.gear], reviewedAt: "2026-08-17" },
+  { id: "speed-low", label: "低巅峰 T16 速刷", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "T16速刷把骨矛符文换成齿状骨刺（物理）并洗物理元素词缀，护腕换复仇者、戒指换贪婪、鞋换斯图亚特；宝石用困者/贼神/囤宝者。",
+    patch: {
+      gear: { bracers: "nemesis-bracers", ring2: "avarice-band", boots: "steuarts-greaves" },
+      skills: MASQUERADE_SPEED_SKILLS,
+      powers: { armor: "steuarts-greaves", season: "ingeom" },
+      legendaryGems: { boss: "boon-of-the-hoarder" },
+      follower: { id: "scoundrel", items: ["贪婪之戒", "不死圣物"], skills: ["暴击增益", "攻速"] },
+      statPriorities: { global: ["25%移速上限", "骨矛技能伤", "物理元素伤", "范围伤害"], survival: ["金币链覆盖", "生命%"] },
+      rotation: MASQUERADE_SPEED_ROTATION,
+    },
+    sourceRefs: [MASQUERADE_SPEAR_SOURCES.maxroll], reviewedAt: "2026-08-17" },
+  { id: "speed-high", label: "高巅峰 T16 极速", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰T16伤害溢出后，戒指可换瑞秋的行窃之戒用恐惧移速，词缀转向移速与拾取范围。",
+    patch: {
+      gear: { bracers: "nemesis-bracers", ring2: "rechel", boots: "steuarts-greaves" },
+      skills: MASQUERADE_SPEED_SKILLS,
+      powers: { armor: "steuarts-greaves", season: "ingeom" },
+      legendaryGems: { boss: "boon-of-the-hoarder" },
+      follower: { id: "scoundrel", items: ["贪婪之戒", "不死圣物"], skills: ["暴击增益", "攻速"] },
+      statPriorities: { global: ["25%移速上限", "拾取范围", "骨矛技能伤", "物理元素伤"], survival: ["金币链覆盖", "生命%"], endgame: ["词缀优先移速与拾取"] },
+      rotation: MASQUERADE_SPEED_ROTATION,
+    },
+    sourceRefs: [MASQUERADE_SPEAR_SOURCES.maxroll], reviewedAt: "2026-08-17" },
+];
+
+const MASQUERADE_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先补到上限。" },
+      { stat: "智力", target: "其余点数", reason: "同时提高伤害和全抗。" },
+      { stat: "体能", target: "按需补到生命检查点", reason: "冲层站不住时先补容错。" },
+      { stat: "精魄上限", target: "适量投入", reason: "喂养莱莲娜影魂钩与马托利斯消耗。" },
+    ],
+    offense: [
+      { stat: "暴击几率", target: "优先点满", reason: "骨矛高消耗需要稳定暴击乘区。" },
+      { stat: "暴击伤害", target: "随后点满", reason: "与暴击几率共同放大骨矛。" },
+      { stat: "攻击速度", target: "第三点满", reason: "骨矛攻速档位。" },
+      { stat: "冷却缩减", target: "最后点满", reason: "骨矛主要靠双分与骨甲，CDR需求低。" },
+    ],
+    defense: [
+      { stat: "护甲", target: "优先点满", reason: "智力职业更缺护甲。" },
+      { stat: "生命%", target: "随后点满", reason: "放大有效生命。" },
+      { stat: "全元素抗性", target: "第三点满", reason: "补齐元素坚韧。" },
+      { stat: "每秒生命恢复", target: "最后点满", reason: "站桩输出的恢复补充。" },
+    ],
+    utility: [
+      { stat: "范围伤害", target: "优先点满", reason: "骨矛穿透怪群受益于范围伤。" },
+      { stat: "能量消耗降低", target: "随后点满", reason: "降低马托利斯翻倍后的骨矛消耗。" },
+      { stat: "击中恢复生命", target: "第三点满", reason: "命中提供稳定恢复。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "服务T16速刷。" },
+    ],
+  },
+  post800: [
+    { priority: "先补体能", when: "生命低于目标或频繁猝死", reason: "把生命池补到能稳定承受当前层数。" },
+    { priority: "其余全部智力", when: "生命与减伤稳定", reason: "智力继续提高伤害与全抗。" },
+  ],
+  checkpoints: [
+    { label: "生命池", target: "约50万–75万", action: "不足时从巅峰智力挪到体能。" },
+    { label: "范围伤害", target: "冲层≥125%", action: "高巅峰从肩手戒指补足。" },
+    { label: "攻速档位", target: "骨矛档位", action: "达标后冲更高档位。" },
+  ],
+};
+
+const MASQUERADE_CHOICES: BuildChoicePolicy[] = [
+  { key: "masquerade-six", targetType: "gear", targetId: "masquerade-head", label: "狂欢节六件套", status: "locked", reason: "华戒让狂欢节五件激活六件倍率，永久双分复制骨矛是核心输出。" },
+  { key: "spear-engine", targetType: "gear", targetId: "cycle", label: "马托利斯 + 轮回镰刀 + 杰尔明多", status: "locked", reason: "马托利斯提供骨矛最大专属乘区，轮回镰刀需要骨甲持续生效，杰尔明多放大分身骨矛。" },
+  { key: "season-power", targetType: "power", targetId: "reilena", label: "第39赛季第四槽", status: "locked", reason: "莱莲娜影魂钩把最大魂能转成乘区，必须配充沛魂能被动；速刷可换寅剑。", alternatives: [{ id: "ingeom", label: "寅剑", when: "T16速刷", gain: "击杀精英后缩短冷却", cost: "失去影魂钩精魄乘区", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "spear-rune", targetType: "skill", targetId: "bone-spear", label: "骨矛符文", status: "conditional", reason: "冲层用枯萎骨髓（毒）打穿透直线；速刷用齿状骨刺（物理）扇形清屏，需同步洗物理元素词缀。", alternatives: [{ id: "spear-teeth", label: "齿状骨刺", when: "T16速刷", gain: "物理扇形清屏", cost: "失去枯萎骨髓的穿透增伤", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "second-ring", targetType: "gear", targetId: "coe", label: "第二枚戒指", status: "conditional", reason: "冲层需要元素爆发窗，速刷需要金币拾取或恐惧移速。", alternatives: [{ id: "avarice-band", label: "贪婪之戒", when: "T16速刷金币链", gain: "拾取范围扩大", cost: "失去全能法戒元素窗口", scenarios: ["speed-low"] }, { id: "rechel", label: "瑞秋的行窃之戒", when: "高巅峰T16速刷", gain: "恐惧后大幅移速", cost: "失去全能法戒元素窗口", scenarios: ["speed-high"] }] },
+  { key: "follower", targetType: "follower", targetId: "scoundrel", label: "随从选择", status: "flexible", reason: "盗贼提供暴击窗口配合毒素周期；速刷随从戴贪婪之戒扩大拾取，冲层戴团结与不死圣物。" },
+];
+
 export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
   "lod-nova": {
     id: "lod-nova", name: "梦遗死亡新星", set: "梦之遗礼 · 远古散件", core: "鲜血虹吸 → 铁玫瑰 → 三重鲜血新星",
@@ -789,7 +1045,12 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
       { id: "funerary-pick", slot: "武器", name: "葬镰", image: IMG.funerary, effect: "鲜血虹吸让目标承受更高伤害。", logic: "用虹吸标记精英后再下亡者大军。", acquisition: "黄装升级：70级单手镰刀" },
       { id: "fates-vow", slot: "防具", name: "命运誓约", image: `${A}fates-vow-p61_necro_unique_helm_22.png`, effect: "赋予亡者大军最高伤害符文并提高其伤害。", logic: "不占技能符文位也能获得非传统战争效果。", acquisition: "血岩赌头盔；黄装升级70级头盔" },
       { id: "royal-grandeur", slot: "首饰", name: "皇家华戒", image: IMG.royal, effect: "套装所需件数减少1。", logic: "让拉斯玛5件与克里森2件同时激活完整奖励。", acquisition: "第一幕悬赏宝箱限定" },
-      { id: "scythe-cycle", slot: "第4槽", name: "轮回镰刀", image: IMG.cycle, effect: "骨甲生效时放大技能伤害。", logic: "第39赛季额外乘区；频繁骨甲维持。", acquisition: "黄装升级：70级单手镰刀" },
+      { id: "corroded-fang", slot: "第4槽", name: "塔格奥的蚀牙", image: IMG.corroded, effect: "受诅咒目标承受额外伤害。", logic: "第39赛季第4槽冲层主选，靠衰老或随从保持诅咒。", acquisition: "黄装升级：70级单手镰刀" },
+      { id: "ingeom", slot: "第4槽", name: "寅剑", image: `${A}ingeom-Unique_Sword_1H_113_x1.png`, effect: "击杀精英后大幅缩短技能冷却。", logic: "组队高CDR速刷缩短亡者大军空窗。", acquisition: "黄装升级：70级单手剑" },
+      { id: "messerschmidt", slot: "第4槽", name: "梅塞施密特的劫掠者", image: `${A}messerschmidts-reaver-p66_unique_axe_2h_011.png`, effect: "击杀敌人缩短一个技能的剩余冷却。", logic: "T16速刷击杀刷新亡者大军。", acquisition: "黄装升级：70级双手斧" },
+      { id: "steuarts-greaves", slot: "防具", name: "斯图亚特的胫甲", image: `${A}steuarts-greaves-P6_Necro_Unique_Boots_21.png`, effect: "鲜血穿行后提高移动速度。", logic: "T16速刷用移速替代冲层威能。", acquisition: "黄装升级：70级靴子" },
+      { id: "avarice-band", slot: "首饰", name: "贪婪之戒", image: `${A}avarice-band-Unique_Ring_108_x1.png`, effect: "拾取金币后扩大拾取范围。", logic: "配合囤宝者扩大金币链覆盖。", acquisition: "第三幕/第四幕悬赏宝箱" },
+      { id: "goldwrap", slot: "防具", name: "金织带", image: `${A}goldwrap-Unique_Belt_010_x1.png`, effect: "拾取金币后按金币数量提高护甲。", logic: "T16金币链提供近乎无限护甲。", acquisition: "血岩赌博腰带" },
     ],
     variants: {
       ...defaultVariants("亡者大军"),
@@ -810,6 +1071,13 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
       { title: "释放大军", action: "在物理周期与神目圈重叠时放亡者大军。", reason: "所有装备、套装、控制和元素乘区在这一击汇合。" },
     ],
     source: "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
+    configurationBase: RATHMA_CONFIGURATION_BASE,
+    defaultScenarioId: "push-low",
+    scenarios: RATHMA_SCENARIOS,
+    paragonGuide: RATHMA_PARAGON,
+    choicePolicies: RATHMA_CHOICES,
+    reviewStatus: "fully-reviewed",
+    variantCompleteness: "complete",
   },
 
   "masquerade-spear": {
@@ -836,6 +1104,9 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
       { id: "dayntee", slot: "防具", name: "戴恩提的束腰", image: IMG.dayntee, effect: "有受诅咒敌人时最高50%减伤。", logic: "死亡镰刀与脆弱光环持续触发。", acquisition: "血岩赌腰带；升级70级腰带" },
       { id: "royal-grandeur", slot: "首饰", name: "皇家华戒", image: IMG.royal, effect: "套装需求减少1。", logic: "同时激活狂欢节六件与克里森三件。", acquisition: "第一幕悬赏宝箱限定" },
       { id: "reilena", slot: "第4槽", name: "莱莲娜的影魂钩", image: IMG.reilena, effect: "每点最大魂能提高伤害。", logic: "套装全符文双分、充沛魂能、巅峰与武器副词缀全部转成乘区。", acquisition: "黄装升级：70级双手镰刀" },
+      { id: "ingeom", slot: "第4槽", name: "寅剑", image: `${A}ingeom-Unique_Sword_1H_113_x1.png`, effect: "击杀精英后大幅缩短技能冷却。", logic: "速刷击杀精英后血步连飞。", acquisition: "黄装升级：70级单手剑" },
+      { id: "steuarts-greaves", slot: "防具", name: "斯图亚特的胫甲", image: `${A}steuarts-greaves-P6_Necro_Unique_Boots_21.png`, effect: "鲜血穿行后提高移动速度。", logic: "速刷用移速替代冲层减伤威能。", acquisition: "黄装升级：70级靴子" },
+      { id: "avarice-band", slot: "首饰", name: "贪婪之戒", image: `${A}avarice-band-Unique_Ring_108_x1.png`, effect: "拾取金币后扩大拾取范围。", logic: "配合囤宝者扩大金币链覆盖。", acquisition: "第三幕/第四幕悬赏宝箱" },
     ],
     variants: {
       ...defaultVariants("骨矛"),
@@ -857,6 +1128,13 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
       { title: "毒素窗连矛", action: "向精英身后的整条怪群连续骨矛。", reason: "三线骨矛、穿透、元素、骨髓守护和莱莲娜同时结算。" },
     ],
     source: "https://www.icy-veins.com/d3/necromancer-bone-spear-build-with-masquerade",
+    configurationBase: MASQUERADE_CONFIGURATION_BASE,
+    defaultScenarioId: "push-low",
+    scenarios: MASQUERADE_SCENARIOS,
+    paragonGuide: MASQUERADE_PARAGON,
+    choicePolicies: MASQUERADE_CHOICES,
+    reviewStatus: "fully-reviewed",
+    variantCompleteness: "complete",
   },
 
   "pestilence-lance": {
