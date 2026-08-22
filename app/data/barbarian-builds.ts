@@ -576,6 +576,190 @@ const IK_HOTA_GUIDE: BuildGuide = {
   source: "https://www.icy-veins.com/d3/barbarian-hota-build-with-immortal-king",
 };
 
+const IK_HOTA_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/barbarian-hota-build-with-immortal-king",
+  skills: "https://www.icy-veins.com/d3/hota-ik-barbarian-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/hota-ik-barbarian-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/hota-ik-barbarian-speed-farming-build",
+};
+
+const IK_HOTA_EXTRA_GEAR: GuideGear[] = [
+  squirt(GEM.trapped),
+  band(GEM.trapped),
+  legendary("goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲，T16金币链中替代不朽腰带。", ["特效接近上限", "力量", "体能", "生命%"], ["血岩赌博腰带", "黄装升级70级腰带", "大秘境不掉金币，完全不生效"], "替换不朽腰带时必须同时使用皇家华戒维持不朽六件。"),
+  legendary("avarice-band", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取半径，连接囤宝者和金织带。", ["镶孔", "暴击几率", "暴击伤害", "冷却缩减"], ["第三幕悬赏宝箱", "第四幕悬赏宝箱也可能掉落", "不能通过黄装升级稳定获取"], undefined, GEM.hoarder),
+  legendary("nemesis-bracers", "腕部", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "开启圣坛和水晶塔时召唤额外精英，速刷中提高进度与寅剑覆盖。", ["火焰技能伤害", "暴击几率", "力量", "体能"], ["血岩赌博护腕", "黄装升级70级护腕", "只在速刷或队伍需要额外精英时使用"]),
+  legendary("remorseless-worn", "主手", "悔恨", "remorseless-p72_unique_mighty_1h_102.png", "狂战与先祖同时存在时大幅提高先祖之锤伤害，速刷穿戴后释放第4槽给寅剑。", ["高白字", "伤害%", "冷却缩减", "力量", "拉玛兰迪打孔"], ["黄装升级70级单手重型武器", "野蛮人角色专属池", "高配速刷再考虑穿戴"]),
+  legendary("echoing-fury-ik", "副手", "怒火回荡", "echoing-fury-p66_unique_mace_1h_001.png", "击杀叠加攻速与移动速度，高巅峰小秘境能加快锤击和赶路。", ["高白字", "伤害%", "冷却缩减", "力量", "拉玛兰迪打孔"], ["黄装升级70级单手锤", "世界掉落", "首领阶段无法稳定保持击杀层"]),
+];
+
+const IK_HOTA_EXTRA_POWERS: GuidePower[] = [
+  power("royal-grandeur", "首饰", "皇家华戒", "ring-of-royal-grandeur-unique_ring_107_x1.png", "套装奖励需求减少1件。", "速刷穿金织带或斯奎特组合时，用它维持不朽六件。", "第一幕/第四幕悬赏宝箱。"),
+  power("ingeom", "第4槽", "寅剑", "in-geom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "高巅峰速刷把冲锋、狂战和先祖召唤空窗压到最低。", "黄装升级70级单手剑。"),
+  power("first-men", "防具", "先民护腕", "bracers-of-the-first-men-p61_unique_bracer_105.png", "提高先祖之锤攻速和伤害。", "穿复仇者护腕时必须把先民护腕放入防具萃取，否则锤击发动机掉档。", "血岩赌博护腕后萃取。"),
+];
+
+const IK_HOTA_PUSH_ROTATION = [
+  { title: "双常驻启动", action: "进图先召唤先祖并开启狂战之怒。", reason: "不朽六件与悔恨都要求先祖和狂战同时存在。" },
+  { title: "冲锋入场", action: "用狂暴冲锋撞进精英或密集怪群，立即刷新力量指环。", reason: "贴身锤击前必须建立主减伤，也顺手叠伊斯特凡对剑。" },
+  { title: "补增伤", action: "保持战斗怒火，火焰窗口前对目标使用威吓呐喊。", reason: "血溅十方、恫吓、全能火焰和先民护腕共同决定爆发质量。" },
+  { title: "满怒连锤", action: "火焰周期内站定连续施放先祖之锤，避免无目标空锤。", reason: "审判之锤返怒、狂战盛怒和技能暴击都依赖高怒气。" },
+  { title: "移动续防", action: "换点或躲地板时用冲锋而不是步行。", reason: "冲锋同时刷新力量指环、对剑层数和位置。" },
+];
+
+const IK_HOTA_SPEED_ROTATION = [
+  { title: "开局变身", action: "召唤先祖、开启狂战和战斗怒火，直接冲向第一组精英。", reason: "速刷以击杀链和冷却窗口为主，不等待完整元素周期。" },
+  { title: "冲锋穿图", action: "用狂暴冲锋连接精英、圣坛和大密度。", reason: "力量指环、寅剑窗口和地图效率都来自连续击杀。" },
+  { title: "金币链启动", action: "第一批金币掉落后保持拾取，利用贪婪之戒扩大范围。", reason: "囤宝者、贪婪之戒和金织带让坚韧与移速同时在线。" },
+  { title: "疾奔补路程", action: "空图、拐角或精英之间用疾奔衔接。", reason: "伤害溢出后，减少非战斗时间比多一层元素爆发更重要。" },
+  { title: "直接清精英", action: "靠近精英后连续先祖锤，不为首领保存受罚者叠层。", reason: "T16和蓝门里精英死亡本身会刷新冷却并推进地图。" },
+];
+
+const IK_HOTA_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "ik-head", shoulders: "fury-ancients", chest: "ik-chest", gloves: "ik-gloves",
+    bracers: "first-men", belt: "ik-belt", pants: "ik-pants", boots: "ik-boots",
+    amulet: "travelers-pledge", ring1: "compass-rose", ring2: "coe", weapon: "slanderer", offhand: "little-rogue",
+  },
+  skills: [
+    { id: "furious-charge", rune: "无情突袭" }, { id: "hammer-of-the-ancients", rune: "蓄力重击" }, { id: "battle-rage", rune: "血溅十方" },
+    { id: "threatening-shout", rune: "恫吓" }, { id: "wrath-of-the-berserker", rune: "癫狂" }, { id: "call-of-the-ancients", rune: "戮力同心" },
+  ],
+  passives: ["berserker-rage", "rampage", "ruthless", "nerves-of-steel"],
+  powers: { weapon: "gavel", armor: "morticks", jewelry: "band-of-might", season: "remorseless" },
+  legendaryGems: { control: "bane-of-the-trapped", boss: "bane-of-the-stricken", speed: "gogok-of-swiftness" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"),
+    weapon: ["flawless-royal-emerald", "flawless-royal-emerald"],
+  },
+  follower: { id: "enchantress", items: [], skills: [] },
+  statPriorities: {
+    global: ["火焰元素伤", "先祖之锤伤害", "冷却缩减", "双暴", "范围伤害"],
+    survival: ["力量与体能", "全元素抗性", "力量指环覆盖"],
+    resource: ["怒气上限", "能量消耗降低", "击中回复生命"],
+  },
+  rotation: IK_HOTA_PUSH_ROTATION,
+};
+
+const IK_HOTA_SPEED_SKILLS = [
+  { id: "furious-charge", rune: "无情突袭" }, { id: "hammer-of-the-ancients", rune: "蓄力重击" }, { id: "battle-rage", rune: "凶残" },
+  { id: "sprint", rune: "马拉松" }, { id: "wrath-of-the-berserker", rune: "癫狂" }, { id: "call-of-the-ancients", rune: "戮力同心" },
+];
+
+const IK_HOTA_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "保留不朽六件、伊斯特凡对剑、旅者全能、审判之锤、莫提克和悔恨，低巅峰用红宝石与钢铁神经保证贴身连锤容错。",
+    sourceRefs: [IK_HOTA_SOURCES.overview, IK_HOTA_SOURCES.skills, IK_HOTA_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰把装备主属性让给范围伤、冷却和火焰词缀，防具宝石切白宝石；坚韧足够时用斗士替代钢铁神经。",
+    patch: {
+      passives: ["berserker-rage", "rampage", "ruthless", "brawler"],
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["火焰元素伤", "先祖之锤伤害", "范围伤害≥120%", "冷却缩减", "双暴"], survival: ["全元素抗性", "生命%", "力量指环不断档"], resource: ["怒气上限保留", "审判之锤返怒", "武器主属性逐步洗范围伤"] },
+    },
+    sourceRefs: [IK_HOTA_SOURCES.gear, IK_HOTA_SOURCES.overview], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-low", label: "低巅峰T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰速刷不放弃审判之锤、先民护腕和悔恨，只用金织带、贪婪之戒、斯奎特、凶残战斗怒火和疾奔替代冲层首饰节奏。",
+    patch: {
+      gear: { belt: "goldwrap", amulet: "squirts", ring1: "band-of-might", ring2: "avarice-band" },
+      skills: IK_HOTA_SPEED_SKILLS,
+      passives: ["berserker-rage", "rampage", "ruthless", "boon-of-bulkathos"],
+      powers: { weapon: "gavel", armor: "morticks", jewelry: "royal-grandeur", season: "remorseless" },
+      legendaryGems: { control: "bane-of-the-trapped", boss: "bane-of-the-powerful", speed: "gogok-of-swiftness" },
+      statPriorities: { global: ["25%移速上限", "火焰元素伤", "先祖之锤伤害", "冷却缩减"], survival: ["金币链启动前保留红宝石", "力量", "体能"], resource: ["怒气上限", "审判之锤返怒", "疾奔不要拖断锤击节奏"] },
+      rotation: IK_HOTA_SPEED_ROTATION,
+    },
+    sourceRefs: [IK_HOTA_SOURCES.speed, IK_HOTA_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-high", label: "高巅峰T16极速配置", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰伤害溢出后穿悔恨+怒火回荡释放第4槽给寅剑，穿复仇者并把先民护腕放防具萃取，金币链承担生存。",
+    patch: {
+      gear: { bracers: "nemesis-bracers", belt: "goldwrap", amulet: "squirts", ring1: "band-of-might", ring2: "avarice-band", weapon: "remorseless-worn", offhand: "echoing-fury-ik" },
+      skills: IK_HOTA_SPEED_SKILLS,
+      passives: ["berserker-rage", "rampage", "ruthless", "boon-of-bulkathos"],
+      powers: { weapon: "gavel", armor: "first-men", jewelry: "royal-grandeur", season: "ingeom" },
+      legendaryGems: { control: "bane-of-the-trapped", boss: "boon-of-the-hoarder", speed: "gogok-of-swiftness" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "火焰元素伤", "范围伤害"], survival: ["金币链覆盖", "高巅峰白宝石", "斯奎特层数保护"], resource: ["怒气上限", "寅剑窗口内连续冲锋", "怒火回荡击杀层不断"] },
+      rotation: IK_HOTA_SPEED_ROTATION,
+    },
+    sourceRefs: [IK_HOTA_SOURCES.speed, IK_HOTA_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+];
+
+const IK_HOTA_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "冲层靠冲锋位移，速刷仍需要满面板移速。" },
+      { stat: "怒气上限", target: "优先点满", reason: "先祖之锤暴击、狂战盛怒和稳定返怒都受高怒气支撑。" },
+      { stat: "力量", target: "剩余点数", reason: "默认同时提供伤害和护甲。" },
+      { stat: "体能", target: "贴身被秒时临时投入", reason: "补到冲锋后能站住一轮火焰窗口，再把新增点数回到力量。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "不朽虽然能刷长冷却，但开局和断档恢复仍依赖冷却。" },
+      { stat: "暴击几率", target: "第二点满", reason: "先祖之锤自带暴击收益，暴击率越稳输出波动越小。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击率共同放大单发锤击。" },
+      { stat: "攻击速度", target: "最后点满", reason: "攻速可提手感，但优先级低于冷却和双暴。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量职业最缺全抗。" },
+      { stat: "生命%", target: "第二点满", reason: "扩大力量指环、莫提克和先祖分伤后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "力量已提供大量护甲，排在全抗和生命之后。" },
+      { stat: "生命恢复", target: "最后点满", reason: "爆发BD主要靠减伤和击回，不靠恢复慢慢回血。" },
+    ],
+    utility: [
+      { stat: "范围伤害", target: "优先点满", reason: "先祖锤在高密度精英战中非常吃范围伤。" },
+      { stat: "能量消耗降低", target: "第二点满", reason: "降低断怒风险，配合审判之锤维持高怒气。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "贴身高频锤击能提供补充恢复。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "只在金币链速刷时有价值。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认冲层和低巅峰速刷", reason: "持续提高伤害和护甲。" },
+    { priority: "体能", when: "力量指环已刷新仍被精英词缀秒杀", reason: "补到能完整打完火焰窗口后停止。" },
+    { priority: "力量补回主属性", when: "高巅峰装备洗出范围伤、冷却或火焰词缀", reason: "装备把主属性让给关键词缀后，用巅峰继续补力量。" },
+  ],
+  checkpoints: [
+    { label: "刚到70级", target: "不朽六件+审判之锤", action: "先保证常驻先祖和狂战，再补先民护腕、悔恨和力量指环。" },
+    { label: "巅峰800", target: "怒气上限、冷却、全抗、范围伤点满", action: "冲层继续红宝石，坚韧不够时临时投入体能。" },
+    { label: "巅峰2000+", target: "白宝石、范围伤和高白字武器", action: "力量由巅峰补，武器、肩、手优先保留范围伤/冷却/双暴。" },
+  ],
+};
+
+const IK_HOTA_REVIEWED_GUIDE: BuildGuide = {
+  ...completeBuildGuide({
+    ...IK_HOTA_GUIDE,
+    gear: [...IK_HOTA_GUIDE.gear, ...IK_HOTA_EXTRA_GEAR],
+    skills: [...IK_HOTA_GUIDE.skills, ability("sprint", "疾奔", "马拉松", "速刷用来衔接精英和空图路段。")],
+    passives: [...IK_HOTA_GUIDE.passives, COMMON_PASSIVES.boon, passive("brawler", "斗士", "周围有三名敌人时提高伤害，适合高巅峰密度冲层。")],
+    powers: [...IK_HOTA_GUIDE.powers, ...IK_HOTA_EXTRA_POWERS],
+  }, CURRENT_SEASON.seasonId),
+  configurationBase: IK_HOTA_CONFIGURATION_BASE,
+  defaultScenarioId: "push-low",
+  scenarios: IK_HOTA_SCENARIOS,
+  paragonGuide: IK_HOTA_PARAGON,
+  choicePolicies: [
+    { key: "ik-hota-engine", targetType: "gear", targetId: "ik-head", label: "不朽六件、审判之锤、先民护腕与悔恨", status: "locked", reason: "不朽维持双常驻，审判之锤返怒和技能乘区，先民护腕给攻速/技能伤，悔恨检测先祖与狂战；任意缺失都会使先祖锤掉档。" },
+    { key: "push-jewelry", targetType: "gear", targetId: "travelers-pledge", label: "冲层首饰", status: "conditional", reason: "冲层用无尽之途和全能法戒；速刷在伤害足够后换斯奎特、贪婪之戒和皇家华戒。", alternatives: [{ id: "squirts", label: "斯奎特的项链", when: "T16能稳定秒怪且有金币链/护盾保护", gain: "更高常驻伤害", cost: "失去无尽之途移动减伤和站定增伤", scenarios: ["speed-low", "speed-high"] }, { id: "avarice-band", label: "贪婪之戒", when: "普通小秘境、悬赏或蓝门有金币掉落", gain: "扩大拾取半径并稳定金织带", cost: "大秘境不生效，且牺牲全能周期", scenarios: ["speed-low", "speed-high"] }] },
+    { key: "belt-slot", targetType: "gear", targetId: "ik-belt", label: "腰带槽", status: "conditional", reason: "冲层不朽腰带固定六件；速刷可穿金织带，但必须同时使用皇家华戒。", alternatives: [{ id: "goldwrap", label: "金织带", when: "T16/蓝门/悬赏且需要金币链生存", gain: "拾取金币后获得极高护甲", cost: "大秘境无效，并强制绑定皇家华戒", scenarios: ["speed-low", "speed-high"] }] },
+    { key: "weapon-package", targetType: "gear", targetId: "slanderer", label: "武器组", status: "conditional", reason: "冲层和低巅峰用伊斯特凡对剑提供攻防层；高巅峰速刷可穿悔恨和怒火回荡，把第4槽给寅剑。", alternatives: [{ id: "remorseless-worn", label: "悔恨+怒火回荡", when: "T16伤害溢出且能用击杀层维持速度", gain: "释放第4槽给寅剑并获得击杀攻速/移速", cost: "失去伊斯特凡攻防层，低巅峰不稳", incompatibleWith: ["slanderer", "little-rogue"], scenarios: ["speed-high"] }] },
+    { key: "bracer-slot", targetType: "gear", targetId: "first-men", label: "护腕槽", status: "conditional", reason: "先民护腕通常不可丢；只有高巅峰速刷穿复仇者时，必须把先民护腕放到防具萃取。", alternatives: [{ id: "nemesis-bracers", label: "复仇者护腕", when: "T16/蓝门依赖圣坛额外精英推进度", gain: "更多精英、更多寅剑窗口", cost: "防具萃取被先民护腕占用，失去莫提克全符文", scenarios: ["speed-high"] }] },
+    { key: "third-gem", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "第三颗传奇宝石", status: "conditional", reason: "冲层需要受罚者处理首领；速刷改为强者或囤宝者。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低巅峰T16仍需要精英增伤", gain: "击杀精英后稳定增伤减伤", cost: "长首领战弱于受罚者", scenarios: ["speed-low"] }, { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "高巅峰金币链速刷", gain: "金币、移速和金织带护甲", cost: "大秘境完全不生效", scenarios: ["speed-high"] }] },
+    { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女冷却最通用；冲层若需要暴击爆发可换盗贼，低巅峰缺治疗时可换圣殿骑士。" },
+  ],
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const IK_HOTA_VALIDATION_ERRORS = validateReviewedBuildGuide(IK_HOTA_REVIEWED_GUIDE);
+if (IK_HOTA_VALIDATION_ERRORS.length > 0) throw new Error(`不朽先祖锤配置校验失败：${IK_HOTA_VALIDATION_ERRORS.join("；")}`);
+
 const LOD_HOTA_GUIDE: BuildGuide = {
   id: "lod-hota", name: "梦遗先祖锤", set: "梦之遗礼", core: "远古散件乘区 → 满怒先祖之锤",
   summary: "舍弃套装，用梦之遗礼把每件远古散件转成独立增伤与减伤，换取先祖之锤的最高上限。",
@@ -670,7 +854,7 @@ const IK_CHARGE_GUIDE: BuildGuide = {
 export const BARBARIAN_BUILDS: Record<string, BuildGuide> = {
   [WASTES_REVIEWED_GUIDE.id]: WASTES_REVIEWED_GUIDE,
   [RAEKOR_REVIEWED_GUIDE.id]: RAEKOR_REVIEWED_GUIDE,
-  [IK_HOTA_GUIDE.id]: completeBuildGuide(IK_HOTA_GUIDE, CURRENT_SEASON.seasonId),
+  [IK_HOTA_REVIEWED_GUIDE.id]: IK_HOTA_REVIEWED_GUIDE,
   [LOD_HOTA_GUIDE.id]: completeBuildGuide(LOD_HOTA_GUIDE, CURRENT_SEASON.seasonId),
   [EARTH_GUIDE.id]: completeBuildGuide(EARTH_GUIDE, CURRENT_SEASON.seasonId),
   [FRENZY_GUIDE.id]: completeBuildGuide(FRENZY_GUIDE, CURRENT_SEASON.seasonId),
