@@ -511,6 +511,225 @@ const VALOR_FIST_REVIEWED_GUIDE: BuildGuide = {
 const VALOR_FIST_VALIDATION_ERRORS = validateReviewedBuildGuide(VALOR_FIST_REVIEWED_GUIDE);
 if (VALOR_FIST_VALIDATION_ERRORS.length > 0) throw new Error(`勇气天拳配置校验失败：${VALOR_FIST_VALIDATION_ERRORS.join("；")}`);
 
+const VALOR_FURY_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/crusader-aegis-of-valor-heavens-fury-build",
+  skills: "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-speed-farming-build",
+  season: "https://www.icy-veins.com/forums/topic/87828-diablo-3-season-39-preview/",
+};
+
+const VALOR_FURY_ROTATION = [
+  { title: "变身起手", action: "进图先开启阿卡拉特勇士，之后靠黄道和高冷却尽量常驻。", reason: "先知化身提供护甲、回怒和容错，断档会同时丢掉输出节奏与防线。" },
+  { title: "天拳充能", action: "对高密度怪群施放天堂之拳，保持勇气六件层数和黄道刷新。", reason: "天堂之拳不是主伤害，但它维持套装、资源和冷却循环。" },
+  { title: "控场定位", action: "神圣周期前用盾牌猛击致盲精英，并用战马调整到射线能持续命中的角度。", reason: "愤怒护腕只放大被目盲、定身或昏迷的目标，天堂之怒需要持续压住同一敌人。" },
+  { title: "神圣射线", action: "神圣周期内连续施放天堂之怒，不要频繁换目标。", reason: "妖邪必败给三道射线，愤怒之盾对同一目标叠层，二者都惩罚断射线。" },
+  { title: "重建窗口", action: "元素窗结束后回到天拳充能和走位，等下一轮神圣周期再爆发。", reason: "低倍率阶段保资源和冷却，比硬打空圣怒更稳定。" },
+];
+
+const VALOR_FURY_SPEED_ROTATION = [
+  { title: "预热变身", action: "开启阿卡拉特勇士和希望律法，战马进第一组精英。", reason: "速刷把律法从攻速减耗改成移速穿怪，目标是缩短找怪时间。" },
+  { title: "单屏天拳", action: "每屏点一两发天堂之拳维持勇气层数和回怒。", reason: "T16和低层大秘境不需要完整站桩循环，天拳足够补套装和清杂兵。" },
+  { title: "下马射线", action: "精英前结束战马，用盾牌猛击致盲后短时间天堂之怒秒掉大目标。", reason: "诺瓦德增伤窗、愤怒护腕和愤怒之盾仍是处理精英的核心。" },
+  { title: "拾金续防", action: "沿路拾取金币，保持贪婪之戒、金织带和囤宝者链路。", reason: "掉金币内容里金币链同时解决拾取范围、移速和坚韧。" },
+  { title: "继续赶路", action: "精英死亡后立即战马转场，不为残血小怪等待神圣周期。", reason: "速刷收益来自连续移动和精英击杀，而不是完整元素窗。" },
+];
+
+const VALOR_FURY_SEED = seeds.find((seed) => seed.id === "valor-fury")!;
+const VALOR_FURY_BASE_GUIDE = createClassGuide({
+  ...VALOR_FURY_SEED,
+  gear: [
+    ...VALOR_FURY_SEED.gear,
+    valor[4],
+    legendary("fury-norvald-flail", "主手", "冲锋连枷", "flail-of-the-charge-p4_unique_flail_2h_set_01_x1.png", "与战马之盾组成诺瓦德两件，战马结束后提供天堂之怒爆发窗。", { quality: "set", base: "双手连枷" }),
+    legendary("fury-steed-shield", "副手", "战马之盾", "shield-of-the-steed-p4_unique_shield_set_01_x1.png", "诺瓦德副手；第39赛季让愤怒之盾放第四魔方槽，因此这里穿戴战马盾。", { quality: "set", base: "圣教军盾", warning: "黄装升级必须用70级“圣教军盾”；普通盾牌不会产出战马之盾。" }),
+    legendary("fury-gloves-worship", "手部", "礼赞手套", "gloves-of-worship-unique_gloves_103_x1.png", "延长祭坛效果；速刷用皇家华戒维持勇气六件后腾出的功能手套。"),
+    legendary("fury-squirt", "颈部", "斯奎特的项链", "squirts-necklace-p66_unique_amulet_010.png", "伤害溢出速刷时用金币链和走位保护层数。", { gem: "trapped" }),
+    legendary("fury-soj", "手指", "乔丹之石", "stone-of-jordan-p69_unique_ring_019.png", "提供稳定神圣元素伤和精英伤，速刷不等待全能周期。", { gem: "powerful" }),
+    legendary("fury-avarice", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾金扩大拾取范围，连接囤宝者与金织带。", { gem: "hoarder" }),
+    legendary("fury-goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后获得巨量护甲；T16、蓝门和悬赏生效，大秘境冲层不用。", { warning: "大秘境不掉金币，金织带防线会失效。" }),
+  ],
+  skills: [
+    ...VALOR_FURY_SEED.skills,
+    skill("shield-glare", "盾牌猛击", "神圣裁决", "致盲精英并放大其承受伤害，是愤怒护腕的可靠触发器。"),
+    skill("steed-charge", "战马冲锋", "恢复", "调整站位、穿越危险地板，并触发诺瓦德爆发窗。"),
+    skill("laws-of-hope", "希望律法", "天使之翼", "速刷提供移速和穿怪，替换冲层勇气律法。"),
+  ],
+  passives: [
+    ...VALOR_FURY_SEED.passives,
+    passive("heavenly-strength", "天堂之力", "允许双手连枷与盾牌同时装备，是第39赛季诺瓦德版本的必要被动。"),
+    passive("long-arm-of-the-law", "律法无边", "延长律法主动效果；冲层延长减耗，速刷延长希望律法移速。"),
+    passive("lord-commander", "统御者", "缩短战马冲锋冷却，提高诺瓦德窗口和转场频率。"),
+  ],
+  powers: [
+    ...VALOR_FURY_SEED.powers,
+    power("fury-fate-power", "武器", "妖邪必败", "fate-of-the-fell-p61_unique_flail_2h_103_x1.png", "天堂之怒额外生成两道射线并提高伤害。", "穿戴诺瓦德两件后，妖邪必败必须放入魔方来保留三射线核心。", "黄装升级：70级双手连枷。"),
+    power("fury-shield-power", "第4槽", "愤怒之盾", "shield-of-fury-p61_unique_shield_106_x1.png", "天堂之怒持续命中同一敌人时叠加伤害。", "第39赛季第四槽让诺瓦德两件与愤怒之盾同时成立。", "黄装升级：70级圣教军盾。"),
+    power("fury-warzechian-power", "防具", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "破坏物后获得移速。", "天堂之怒和天堂之拳的范围伤会沿路稳定触发速刷移速。"),
+    power("fury-nemesis-power", "防具", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "点击祭坛和水晶塔额外召唤精英。", "组队或随从不带复仇者时才自己萃取；单人优先让随从散发。"),
+  ],
+  links: [
+    { title: "第39赛季诺瓦德链", category: "movement", conclusion: "第四魔方槽放愤怒之盾后，身上必须穿诺瓦德两件才有战马爆发窗。", steps: [["fury-norvald-flail", "冲锋连枷", "穿戴主手"], ["fury-steed-shield", "战马之盾", "穿戴副手"], ["steed-charge", "战马结束", "建立增伤"], ["heavens-fury", "天堂之怒", "在窗口内爆发"]] },
+    { title: "圣光霰弹链", category: "damage", conclusion: "天堂之怒的主伤害来自三射线、控制乘区和同目标叠层。", steps: [["fate-fell", "妖邪必败", "三道射线"], ["shield-glare", "盾牌猛击", "致盲与易伤"], ["fury-bracer", "愤怒护腕", "放大受控目标"], ["fury-shield-power", "愤怒之盾", "同目标叠伤"]] },
+    { title: "天拳维持链", category: "resource", conclusion: "天堂之拳负责套装层数、回怒和黄道冷却，不是这套的伤害终点。", steps: [["fist-of-the-heavens", "天堂之拳", "维持勇气层数"], ["zodiac", "黄道戒", "刷新冷却"], ["aquila", "天鹰胸甲", "高圣怒减伤"], ["akarats-champion", "阿卡拉特勇士", "常驻攻防"]] },
+    { title: "速刷金币链", category: "defense", conclusion: "T16、蓝门与悬赏掉金币，囤宝者、贪婪之戒与金织带才同时成立。", steps: [["fury-avarice", "贪婪之戒", "扩大拾取"], ["fury-goldwrap", "金织带", "拾金叠护甲"], ["boon-of-the-hoarder", "囤宝者", "制造金币"], ["fury-warzechian-power", "沃兹克", "破坏物加速"]] },
+  ],
+  rotation: VALOR_FURY_ROTATION,
+});
+
+const VALOR_FURY_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "valor-head", shoulders: "valor-shoulders", chest: "valor-chest", gloves: "valor-gloves",
+    bracers: "fury-bracer", belt: "crimson-belt", pants: "crimson-pants", boots: "valor-boots",
+    amulet: "travelers-pledge", ring1: "compass-rose", ring2: "coe", weapon: "fury-norvald-flail", offhand: "fury-steed-shield",
+  },
+  skills: [
+    { id: "heavens-fury", rune: "天堂火光" }, { id: "fist-of-the-heavens", rune: "裂隙" },
+    { id: "laws-of-valor", rune: "势不可挡" }, { id: "shield-glare", rune: "神圣裁决" },
+    { id: "steed-charge", rune: "恢复" }, { id: "akarats-champion", rune: "先知化身" },
+  ],
+  passives: ["heavenly-strength", "holy-cause", "long-arm-of-the-law", "finery"],
+  powers: { weapon: "fury-fate-power", armor: "aquila", jewelry: "royal-grandeur", season: "fury-shield-power" },
+  legendaryGems: { control: "bane-of-the-trapped", cooldown: "gogok", boss: "bane-of-the-stricken" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"),
+    weapon: ["flawless-royal-emerald"],
+  },
+  follower: { id: "enchantress", items: ["不死圣物", "复仇者护腕"], skills: ["冷却增强", "充能"] },
+  statPriorities: {
+    global: ["天堂之怒技能伤", "神圣元素伤", "冷却缩减", "范围伤害"],
+    survival: ["天鹰减伤覆盖", "阿卡拉特勇士常驻", "力量", "体能"],
+    endgame: ["愤怒之盾高特效", "妖邪必败高特效", "盾牌暴击/冷却/天堂之怒"],
+  },
+  rotation: VALOR_FURY_ROTATION,
+};
+
+const VALOR_FURY_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰冲层以诺瓦德穿戴、勇气五件+船长两件+皇家华戒、妖邪必败萃取和第四槽愤怒之盾为核心；红宝石补力量与护甲，受罚者处理首领。",
+    unchangedReason: "基础配置就是低巅峰冲层入口。",
+    sourceRefs: [VALOR_FURY_SOURCES.overview, VALOR_FURY_SOURCES.skills, VALOR_FURY_SOURCES.gear, VALOR_FURY_SOURCES.season], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰由巅峰承担主属性后，护甲宝石换钻石补抗性；词缀优先范围伤和高特效，操作上更严格围绕神圣周期与同目标叠层。",
+    patch: {
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["天堂之怒技能伤", "神圣元素伤", "范围伤害", "冷却缩减"], survival: ["全元素抗性", "神圣周期前保钢铁/变身空档"], endgame: ["装备力量可洗范围伤", "愤怒之盾接近满特效", "精英伤与减耗阈值"] },
+    },
+    sourceRefs: [VALOR_FURY_SOURCES.overview, VALOR_FURY_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-low", label: "低巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "掉金币内容伤害和坚韧门槛低，改用礼赞手套、金织带、斯奎特、乔丹、贪婪之戒和金币宝石；防具萃取沃兹克护腕，保留诺瓦德与愤怒之盾处理精英。",
+    patch: {
+      gear: { gloves: "fury-gloves-worship", belt: "fury-goldwrap", pants: "valor-pants", amulet: "fury-squirt", ring1: "fury-soj", ring2: "fury-avarice" },
+      skills: [
+        { id: "heavens-fury", rune: "天堂火光" }, { id: "fist-of-the-heavens", rune: "裂隙" },
+        { id: "laws-of-hope", rune: "天使之翼" }, { id: "shield-glare", rune: "神圣裁决" },
+        { id: "steed-charge", rune: "持久" }, { id: "akarats-champion", rune: "先知化身" },
+      ],
+      passives: ["heavenly-strength", "lord-commander", "long-arm-of-the-law", "finery"],
+      powers: { armor: "fury-warzechian-power" },
+      legendaryGems: { control: "bane-of-the-trapped", cooldown: "boon-of-the-hoarder", boss: "bane-of-the-powerful" },
+      follower: { items: ["贪婪之戒", "复仇者护腕", "不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["25%移速上限", "拾取范围", "天堂之怒技能伤", "冷却缩减"], survival: ["金币链覆盖", "力量", "体能"], endgame: ["祭坛时间延长", "不等待完整神圣周期"] },
+      rotation: VALOR_FURY_SPEED_ROTATION,
+    },
+    sourceRefs: [VALOR_FURY_SOURCES.speed, VALOR_FURY_SOURCES.season], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰速刷伤害溢出后继续使用金币链和礼赞手套，第三宝石可换闪电华冠补移速；护甲钻石提高全抗，词缀转向移动、拾取和范围伤。",
+    patch: {
+      gear: { gloves: "fury-gloves-worship", belt: "fury-goldwrap", pants: "valor-pants", amulet: "fury-squirt", ring1: "fury-soj", ring2: "fury-avarice" },
+      skills: [
+        { id: "heavens-fury", rune: "天堂火光" }, { id: "fist-of-the-heavens", rune: "裂隙" },
+        { id: "laws-of-hope", rune: "天使之翼" }, { id: "shield-glare", rune: "神圣裁决" },
+        { id: "steed-charge", rune: "持久" }, { id: "akarats-champion", rune: "先知化身" },
+      ],
+      passives: ["heavenly-strength", "lord-commander", "long-arm-of-the-law", "finery"],
+      powers: { armor: "fury-warzechian-power" },
+      legendaryGems: { control: "bane-of-the-trapped", cooldown: "boon-of-the-hoarder", boss: "wreath-of-lightning" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      follower: { items: ["贪婪之戒", "复仇者护腕", "不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["25%移速上限", "拾取范围", "冷却缩减", "范围伤害"], survival: ["金币链覆盖", "全元素抗性"], endgame: ["伤害溢出后不追受罚者层数", "优先连续战马转场"] },
+      rotation: VALOR_FURY_SPEED_ROTATION,
+    },
+    sourceRefs: [VALOR_FURY_SOURCES.speed, VALOR_FURY_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+];
+
+const VALOR_FURY_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先扣除鞋子词缀，战马空档和站位调整都吃移速。" },
+      { stat: "力量", target: "其余点数", reason: "同时提高天堂之怒伤害和护甲。" },
+      { stat: "体能", target: "被秒或破盾时临时投入", reason: "低巅峰先保证能活到下一轮神圣周期。" },
+      { stat: "圣怒上限", target: "0点", reason: "天拳回怒、船长减耗和律法比上限更关键。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "变身、战马、盾牌猛击和律法都依赖冷却覆盖。" },
+      { stat: "暴击几率", target: "第二点满", reason: "天堂之怒和盾牌暴击词缀共同放大输出。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率成对成长。" },
+      { stat: "攻击速度", target: "最后点满", reason: "收益低于冷却与双暴，且资源压力更明显。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量职业护甲高，先补抗性短板。" },
+      { stat: "生命%", target: "第二点满", reason: "扩大天鹰和先知化身后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "补充已有力量护甲。" },
+      { stat: "生命恢复", target: "最后点满", reason: "只作小额续航。" },
+    ],
+    utility: [
+      { stat: "能量消耗降低", target: "优先点满", reason: "连续天堂之怒和天鹰减伤都需要圣怒维持高位。" },
+      { stat: "范围伤害", target: "第二点满", reason: "高密度冲层和精英周围溅射都有收益。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "射线和天拳命中频率高，提供稳定恢复。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "只在金币链速刷中是关键效率属性。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认", reason: "持续提供伤害与护甲。" },
+    { priority: "体能", when: "冲层无法稳定吃下一次精英技能", reason: "只补到能守住爆发窗，再继续力量。" },
+  ],
+  checkpoints: [
+    { label: "刚成型", target: "诺瓦德两件、妖邪必败、愤怒之盾和愤怒护腕", action: "先确认第四槽愤怒之盾与穿戴诺瓦德同时成立。" },
+    { label: "巅峰800", target: "冷却、减耗和受罚者", action: "变身不断档后开始围绕神圣周期和同目标叠层。" },
+    { label: "巅峰2000+", target: "范围伤、钻石和高特效", action: "装备力量逐步让给范围伤，速刷转向拾取和移速。" },
+  ],
+};
+
+const VALOR_FURY_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "valor-fury-core", targetType: "gear", targetId: "fury-norvald-flail", label: "勇气五件、船长两件、诺瓦德两件", status: "locked", reason: "第39赛季第四槽能放愤怒之盾，因此主手/副手穿诺瓦德两件，配皇家华戒维持勇气六件和船长三件；若改穿妖邪必败或愤怒之盾，会丢掉诺瓦德爆发窗。" },
+  { key: "season-shield", targetType: "power", targetId: "fury-shield-power", label: "第四魔方槽愤怒之盾", status: "locked", reason: "愤怒之盾必须和妖邪必败、愤怒护腕同时存在，才能让天堂之怒对同一目标持续叠层；第39赛季第四槽正好解决穿戴诺瓦德后的盾牌冲突。" },
+  { key: "control-skill", targetType: "skill", targetId: "shield-glare", label: "盾牌猛击", status: "locked", reason: "愤怒护腕只对目盲、定身或昏迷目标增伤；盾牌猛击神圣裁决既触发护腕也提供易伤，不能被纯防御技能随意替换。" },
+  { key: "passive-weapon-rule", targetType: "passive", targetId: "heavenly-strength", label: "天堂之力", status: "locked", reason: "穿双手连枷和圣教军盾必须携带天堂之力；速刷页旧式热忱只适用于单手武器版本，不适用于本赛季诺瓦德版本。" },
+  { key: "armor-cube", targetType: "power", targetId: "aquila", label: "防具萃取", status: "conditional", reason: "冲层用天鹰胸甲补稳定减伤；T16、蓝门和悬赏改沃兹克护腕提高移动速度；组队或随从不能散发复仇者时才用复仇者护腕。", alternatives: [{ id: "fury-warzechian-power", label: "沃兹克护腕", when: "掉金币速刷，需要破坏物移速", gain: "沿路自动加速", cost: "失去天鹰减伤", scenarios: ["speed-low", "speed-high"] }, { id: "fury-nemesis-power", label: "复仇者护腕", when: "组队或随从不带复仇者", gain: "更多精英和祭坛价值", cost: "失去天鹰或沃兹克", incompatibleWith: ["fury-warzechian-power"] }] },
+  { key: "speed-jewelry", targetType: "gear", targetId: "travelers-pledge", label: "首饰组合", status: "conditional", reason: "冲层用无尽之途和全能法戒打站桩神圣周期；速刷换斯奎特、乔丹和贪婪之戒，追求稳定精英伤、拾取范围和移动效率。", alternatives: [{ id: "fury-squirt", label: "斯奎特的项链", when: "速刷伤害和金币护甲足以保层", gain: "更高常驻增伤", cost: "受击会掉层", scenarios: ["speed-low", "speed-high"] }, { id: "fury-soj", label: "乔丹之石", when: "速刷不等待全能周期", gain: "稳定元素伤和精英伤", cost: "失去全能爆发", scenarios: ["speed-low", "speed-high"] }, { id: "fury-avarice", label: "贪婪之戒", when: "掉金币内容", gain: "扩大拾取并续金织带", cost: "大秘境冲层无金币支持", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "speed-belt", targetType: "gear", targetId: "crimson-belt", label: "腰带槽", status: "conditional", reason: "冲层保船长腰带让冷却和减耗转攻防；掉金币速刷换金织带，配囤宝者和贪婪之戒把坚韧问题交给金币链。", alternatives: [{ id: "fury-goldwrap", label: "金织带", when: "T16、蓝门与悬赏", gain: "拾金后近乎无限护甲", cost: "失去船长三件攻防转换，大秘境无金币失效", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-low", "speed-high"] }] },
+  { key: "third-gem", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "传奇宝石", status: "conditional", reason: "冲层用受罚者处理首领；速刷改强者提高精英后续，伤害溢出后再用闪电华冠补移速，并用囤宝者启动金币链。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低层速刷仍需要稳定精英增伤", gain: "击杀精英后稳定增伤减伤", cost: "首领叠层弱于受罚者", scenarios: ["speed-low"] }, { id: "wreath-of-lightning", label: "闪电华冠", when: "高巅峰速刷伤害溢出", gain: "额外移动速度", cost: "失去强者增伤", scenarios: ["speed-high"] }, { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "掉金币内容", gain: "金币、移速和金织带护甲", cost: "大秘境不掉金币", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-low", "speed-high"] }] },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从", status: "flexible", reason: "魔女冷却、攻速和远程控制最契合天堂之怒；单人速刷让随从带复仇者护腕和贪婪之戒，冲层保不死圣物。" },
+];
+
+const VALOR_FURY_REVIEWED_GUIDE: BuildGuide = {
+  ...VALOR_FURY_BASE_GUIDE,
+  configurationBase: VALOR_FURY_CONFIGURATION_BASE,
+  defaultMode: "push",
+  defaultScenarioId: "push-low",
+  scenarios: VALOR_FURY_SCENARIOS,
+  paragonGuide: VALOR_FURY_PARAGON,
+  choicePolicies: VALOR_FURY_CHOICE_POLICIES,
+  pushNote: "穿戴诺瓦德两件、萃取妖邪必败和愤怒之盾；神圣周期前用盾牌猛击触发愤怒护腕，再用天堂之怒持续压同一目标。",
+  speedNote: "T16、蓝门和悬赏换礼赞手套、金织带、斯奎特、乔丹、贪婪之戒、囤宝者和沃兹克；仍保留诺瓦德+愤怒之盾处理精英。",
+  lowNote: "先确认勇气五件、船长两件、皇家华戒、诺瓦德两件、妖邪必败和愤怒之盾都同时成立。",
+  highNote: "高巅峰冲层追范围伤、冷却、神圣元素和高特效盾牌；速刷把词缀转向拾取、移速和连续战马。",
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const VALOR_FURY_VALIDATION_ERRORS = validateReviewedBuildGuide(VALOR_FURY_REVIEWED_GUIDE);
+if (VALOR_FURY_VALIDATION_ERRORS.length > 0) throw new Error(`勇气天堂之怒配置校验失败：${VALOR_FURY_VALIDATION_ERRORS.join("；")}`);
+
 const PONY_REVIEWED_GUIDE: BuildGuide = {
   ...createClassGuide(ponySeed),
   configurationBase: PONY_CONFIGURATION_BASE,
@@ -531,6 +750,7 @@ export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
     const guide = createClassGuide(seed);
     return [guide.id, guide];
   })),
+  [VALOR_FURY_REVIEWED_GUIDE.id]: VALOR_FURY_REVIEWED_GUIDE,
   [VALOR_FIST_REVIEWED_GUIDE.id]: VALOR_FIST_REVIEWED_GUIDE,
   [PONY_REVIEWED_GUIDE.id]: PONY_REVIEWED_GUIDE,
 };

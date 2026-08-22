@@ -94,8 +94,8 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
 });
 
 test("keeps shared-configuration builds from receiving unreviewed variant swaps", async () => {
-  const [valorFury, godMonk, guideTypes, page] = await Promise.all([
-    render("/builds/valor-fury").then((response) => response.text()),
+  const [akkhanCondemn, godMonk, guideTypes, page] = await Promise.all([
+    render("/builds/akkhan-condemn").then((response) => response.text()),
     render("/builds/god-monk").then((response) => response.text()),
     readFile(new URL("../app/data/build-guides.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -104,8 +104,8 @@ test("keeps shared-configuration builds from receiving unreviewed variant swaps"
   assert.match(guideTypes, /hasExplicitRuntimeVariants/);
   assert.match(guideTypes, /documented-shared/);
   assert.match(page, /resolveBuildVariantProfile/);
-  assert.match(valorFury, /配置差异待实装/);
-  assert.doesNotMatch(valorFury, /variant-goldwrap|variant-ingeom/);
+  assert.match(akkhanCondemn, /配置差异待实装/);
+  assert.doesNotMatch(akkhanCondemn, /variant-goldwrap|variant-ingeom/);
   assert.doesNotMatch(godMonk, /配置差异待实装/);
 });
 
@@ -204,6 +204,23 @@ test("renders the reviewed valor-fist scenarios as real Aegis of Valor loadouts"
     assert.match(crusaderData, new RegExp(runtimeChoice));
   }
   assert.match(crusaderData, /validateReviewedBuildGuide\(VALOR_FIST_REVIEWED_GUIDE\)/);
+});
+
+test("renders the reviewed valor-fury scenarios as real Heaven's Fury loadouts", async () => {
+  const [html, crusaderData] = await Promise.all([
+    render("/builds/valor-fury").then((response) => response.text()),
+    readFile(new URL("../app/data/crusader-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /勇气天堂之怒/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const runtimeChoice of ["VALOR_FURY_CONFIGURATION_BASE", "VALOR_FURY_SOURCES", "fury-norvald-flail", "fury-fate-power", "fury-shield-power", "fury-gloves-worship", "fury-goldwrap", "fury-avarice", "fury-warzechian-power", "boon-of-the-hoarder", "wreath-of-lightning"]) {
+    assert.match(crusaderData, new RegExp(runtimeChoice));
+  }
+  assert.match(crusaderData, /validateReviewedBuildGuide\(VALOR_FURY_REVIEWED_GUIDE\)/);
 });
 
 test("renders the reviewed god-hungering scenarios as real high-mobility loadouts", async () => {

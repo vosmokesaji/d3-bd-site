@@ -35,12 +35,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 23 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
+| 已完整校对 | 24 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 28 | 见路线图第 9 节清单 |
-| 仍需完成 | 28 | 28 套草稿 |
+| 尚未逐套校对 | 27 | 见路线图第 9 节清单 |
+| 仍需完成 | 27 | 27 套草稿 |
 
-当前工作游标：路线图清单第 15 项 `valor-fury`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
+当前工作游标：路线图清单第 16 项 `akkhan-condemn`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -50,11 +50,11 @@ npm test
 
 野蛮人 `raekor-boulder`、`ik-hota`、`lod-hota` 已完成。
 
-圣教军 `pony-fist-farm`、`valor-fist` 已完成。
+圣教军 `pony-fist-farm`、`valor-fist`、`valor-fury` 已完成。
 
 建议后续顺序：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `valor-fury`）；之后依次处理 `akkhan-condemn`、`akkhan-phalanx`、`invoker-thorns`、`roland-sweep`、`seeker-hammer`、`lod-bombardment`。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `akkhan-condemn`）；之后依次处理 `akkhan-phalanx`、`invoker-thorns`、`roland-sweep`、`seeker-hammer`、`lod-bombardment`。
 
 已完成的基础设施：
 
@@ -63,7 +63,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为 `npm test` 37 项全部通过。
+- 最近一次完整验证为 `npm test` 38 项全部通过。
 
 已知部分实装的真实含义：
 
