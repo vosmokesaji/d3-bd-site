@@ -440,6 +440,26 @@ test("renders the reviewed ik-hota scenarios as real immortal hammer loadouts", 
   assert.match(barbarianData, /validateReviewedBuildGuide\(IK_HOTA_REVIEWED_GUIDE\)/);
 });
 
+test("renders the reviewed lod-hota scenarios as real dream hammer loadouts", async () => {
+  const [html, barbarianData] = await Promise.all([
+    render("/builds/lod-hota").then((response) => response.text()),
+    readFile(new URL("../app/data/barbarian-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /梦遗先祖锤/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(barbarianData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["LOD_HOTA_CONFIGURATION_BASE", "LOD_HOTA_SOURCES", "nemesis-bracers", "goldwrap", "avarice-band", "squirts", "ingeom", "legacy-of-dreams", "boon-of-the-hoarder"]) {
+    assert.match(barbarianData, new RegExp(runtimeChoice));
+  }
+  assert.match(barbarianData, /validateReviewedBuildGuide\(LOD_HOTA_REVIEWED_GUIDE\)/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);

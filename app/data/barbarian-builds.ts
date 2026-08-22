@@ -788,6 +788,184 @@ const LOD_HOTA_GUIDE: BuildGuide = {
   source: "https://www.icy-veins.com/d3/barbarian-hammer-of-the-ancients-gr-build-with-legacy-of-dreams",
 };
 
+const LOD_HOTA_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/barbarian-hammer-of-the-ancients-gr-build-with-legacy-of-dreams",
+  skills: "https://www.icy-veins.com/d3/lod-hota-barbarian-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/lod-hota-barbarian-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/lod-hota-barbarian-speed-farming-build",
+};
+
+const LOD_HOTA_EXTRA_GEAR: GuideGear[] = [
+  squirt(GEM.trapped),
+  legendary("goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后提高护甲，梦遗速刷可用远古版本接通金币链。", ["特效接近上限", "力量", "体能", "生命%"], ["血岩赌博腰带", "黄装升级70级腰带", "必须远古才能吃满梦遗"], "大秘境不掉金币，冲层不要使用。"),
+  legendary("avarice-band", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取半径，让囤宝者和金织带自动续链。", ["镶孔", "暴击几率", "暴击伤害", "冷却缩减"], ["第三幕悬赏宝箱", "第四幕悬赏宝箱也可能掉落", "远古版本才是梦遗最终速刷件"], undefined, GEM.hoarder),
+  legendary("nemesis-bracers", "腕部", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "开启圣坛和水晶塔时召唤额外精英，速刷用来补进度和寅剑窗口。", ["火焰技能伤害", "暴击几率", "力量", "体能"], ["血岩赌博护腕", "黄装升级70级护腕", "需要远古才适合梦遗长期使用"]),
+];
+
+const LOD_HOTA_EXTRA_POWERS: GuidePower[] = [
+  power("ingeom", "第4槽", "寅剑", "in-geom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "梦遗速刷不适合硬等无视苦痛和狂战，寅剑用精英击杀压缩空窗。", "黄装升级70级单手剑。"),
+  power("goldwrap", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后提高护甲。", "不穿金织带时可萃取金币链；仅T16/悬赏/蓝门生效。", "血岩赌博腰带后萃取。"),
+];
+
+const LOD_HOTA_PUSH_ROTATION = [
+  { title: "检查梦遗", action: "确认没有激活任何两件套，梦遗宝石已升级且远古件数足够。", reason: "梦遗的攻防来自远古散件，套装奖励会直接关闭核心乘区。" },
+  { title: "启动双常驻", action: "开启先祖召唤与狂战之怒，进入精英前补无视苦痛。", reason: "悔恨、莫提克和卡修斯共同支撑贴身输出。" },
+  { title: "冲锋贴近", action: "用狂暴冲锋接近精英并刷新力量指环。", reason: "梦遗先祖锤没有套装减伤，力量指环不能断。" },
+  { title: "火焰连锤", action: "全能火焰周期内站定连续锤击，避免无目标空耗。", reason: "火伤散件、全能、悔恨、审判之锤和先民护腕在这里叠加。" },
+  { title: "黄道续防", action: "火焰窗外继续命中以刷新无视苦痛和狂战，不要停手发呆。", reason: "主动减伤循环依靠黄道戒不断触发。" },
+];
+
+const LOD_HOTA_SPEED_ROTATION = [
+  { title: "开局检查", action: "确认速刷替换件也尽量为远古；远古不足时回到不朽先祖锤更稳。", reason: "普通传奇会明显降低梦遗攻防。" },
+  { title: "击杀启动", action: "先找精英触发寅剑，再用冲锋和疾奔连到下一组。", reason: "梦遗速刷依赖击杀冷却，不适合清零散小怪。" },
+  { title: "金币链续防", action: "拾取金币扩大贪婪之戒范围，并保持金织带护甲。", reason: "速刷替换掉部分主动防线后，金币链是主要安全网。" },
+  { title: "近身快锤", action: "伤害足够时不等全能周期，精英进场后直接连锤带走。", reason: "T16目标是缩短地图时间，而不是打满冲层窗口。" },
+  { title: "断链回切", action: "寅剑和金币链频繁断档时，降低层数或改玩不朽版本。", reason: "梦遗速刷门槛更高，未成型时效率和容错都不如套装。" },
+];
+
+const LOD_HOTA_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "leoric", shoulders: "fury-ancients", chest: "cindercoat", gloves: "magefist",
+    bracers: "morticks", belt: "cassius", pants: "blackthorne-pants", boots: "illusory-boots",
+    amulet: "hellfire", ring1: "zodiac", ring2: "band-of-might", weapon: "remorseless", offhand: "echoing-fury",
+  },
+  skills: [
+    { id: "furious-charge", rune: "无情突袭" }, { id: "hammer-of-the-ancients", rune: "蓄力重击" }, { id: "call-of-the-ancients", rune: "戮力同心" },
+    { id: "battle-rage", rune: "血溅十方" }, { id: "ignore-pain", rune: "百折不挠" }, { id: "wrath-of-the-berserker", rune: "癫狂" },
+  ],
+  passives: ["ruthless", "berserker-rage", "weapons-master", "boon-of-bulkathos"],
+  powers: { weapon: "gavel", armor: "first-men", jewelry: "coe", season: "furnace" },
+  legendaryGems: { dream: "legacy-of-dreams", control: "bane-of-the-trapped", boss: "bane-of-the-stricken" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"),
+    weapon: ["flawless-royal-emerald", "flawless-royal-emerald"],
+  },
+  follower: { id: "enchantress", items: [], skills: [] },
+  statPriorities: {
+    global: ["火焰元素伤", "先祖之锤伤害", "冷却缩减", "双暴", "范围伤害"],
+    survival: ["远古件数", "力量指环覆盖", "无视苦痛覆盖"],
+    resource: ["怒气上限", "能量消耗降低", "黄道刷新"],
+  },
+  rotation: LOD_HOTA_PUSH_ROTATION,
+};
+
+const LOD_HOTA_SPEED_SKILLS = [
+  { id: "furious-charge", rune: "无情突袭" }, { id: "hammer-of-the-ancients", rune: "蓄力重击" }, { id: "call-of-the-ancients", rune: "戮力同心" },
+  { id: "battle-rage", rune: "凶残" }, { id: "sprint", rune: "马拉松" }, { id: "wrath-of-the-berserker", rune: "癫狂" },
+];
+
+const LOD_HOTA_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "梦遗低巅峰只建议在远古件数足够后使用；基线保留黄道、卡修斯、莫提克和力量指环，先保证主动减伤循环。",
+    sourceRefs: [LOD_HOTA_SOURCES.overview, LOD_HOTA_SOURCES.skills, LOD_HOTA_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰梦遗开始体现上限，装备主属性让给范围伤、冷却和火焰词缀，防具宝石改为白宝石提高承伤。",
+    patch: {
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["火焰元素伤", "先祖之锤伤害", "范围伤害≥120%", "冷却缩减", "双暴"], survival: ["远古/太古正确词缀", "全元素抗性", "无视苦痛不断档"], resource: ["怒气上限保留", "黄道刷新", "武器主属性逐步洗范围伤"] },
+    },
+    sourceRefs: [LOD_HOTA_SOURCES.gear, LOD_HOTA_SOURCES.overview], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-low", label: "低巅峰速刷不推荐", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰梦遗速刷门槛高；若坚持使用，保留核心散件与审判之锤，只用斯奎特、金币链、疾奔和寅剑替换冲层节奏。",
+    patch: {
+      gear: { amulet: "squirts", ring1: "band-of-might", ring2: "avarice-band", belt: "goldwrap" },
+      skills: LOD_HOTA_SPEED_SKILLS,
+      passives: ["ruthless", "berserker-rage", "weapons-master", "boon-of-bulkathos"],
+      powers: { weapon: "gavel", armor: "first-men", jewelry: "coe", season: "ingeom" },
+      legendaryGems: { dream: "legacy-of-dreams", control: "bane-of-the-trapped", boss: "bane-of-the-powerful" },
+      statPriorities: { global: ["25%移速上限", "火焰元素伤", "先祖之锤伤害", "冷却缩减"], survival: ["远古替换件不足时不要速刷梦遗", "金币链启动前保留体能", "力量指环不断"], resource: ["怒气上限", "审判之锤返怒", "疾奔只在空图使用"] },
+      rotation: LOD_HOTA_SPEED_ROTATION,
+    },
+    sourceRefs: [LOD_HOTA_SOURCES.speed, LOD_HOTA_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-high", label: "高巅峰T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰且远古金币链部件成型后，可以用复仇者、斯奎特、贪婪之戒、金织带和寅剑换取速刷效率。",
+    patch: {
+      gear: { bracers: "nemesis-bracers", amulet: "squirts", ring1: "band-of-might", ring2: "avarice-band", belt: "goldwrap" },
+      skills: LOD_HOTA_SPEED_SKILLS,
+      passives: ["ruthless", "berserker-rage", "weapons-master", "boon-of-bulkathos"],
+      powers: { weapon: "gavel", armor: "first-men", jewelry: "coe", season: "ingeom" },
+      legendaryGems: { dream: "legacy-of-dreams", control: "bane-of-the-trapped", boss: "boon-of-the-hoarder" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "火焰元素伤", "范围伤害"], survival: ["金币链覆盖", "斯奎特层数保护", "远古件数不低于10件"], resource: ["怒气上限", "寅剑窗口内连续冲锋", "击杀层不断"] },
+      rotation: LOD_HOTA_SPEED_ROTATION,
+    },
+    sourceRefs: [LOD_HOTA_SOURCES.speed, LOD_HOTA_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+];
+
+const LOD_HOTA_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "梦遗缺套装机动，速刷尤其需要满移速。" },
+      { stat: "怒气上限", target: "优先点满", reason: "先祖之锤暴击、狂战盛怒和满怒输出都受怒气上限影响。" },
+      { stat: "力量", target: "剩余点数", reason: "远古件数不足时最稳定的伤害和护甲来源。" },
+      { stat: "体能", target: "被秒时临时投入", reason: "只补到力量指环空窗能生存，再转回力量。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "无视苦痛、狂战和先祖召唤都需要黄道配合冷却。" },
+      { stat: "暴击几率", target: "第二点满", reason: "先祖锤爆发波动依赖暴击。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击率共同成长。" },
+      { stat: "攻击速度", target: "最后点满", reason: "收益低于冷却和双暴。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量职业最缺全抗。" },
+      { stat: "生命%", target: "第二点满", reason: "扩大主动减伤后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "力量已经提供大量护甲。" },
+      { stat: "生命恢复", target: "最后点满", reason: "主要靠无视苦痛、吸血和击回。" },
+    ],
+    utility: [
+      { stat: "范围伤害", target: "优先点满", reason: "梦遗先祖锤高层收益很高。" },
+      { stat: "能量消耗降低", target: "第二点满", reason: "维持满怒和连续锤击。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "贴身锤击提供补充恢复。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "只服务金币链速刷。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "远古件数不足或默认冲层", reason: "补足梦遗成型前的伤害和护甲。" },
+    { priority: "体能", when: "无视苦痛或力量指环短空窗会被秒", reason: "只补到能完整打完一轮元素窗口。" },
+    { priority: "力量补回词缀让位", when: "高巅峰装备洗出范围伤/冷却/火伤", reason: "梦遗终局更依赖正确词缀，主属性由巅峰承担。" },
+  ],
+  checkpoints: [
+    { label: "刚到70级", target: "不推荐直接梦遗", action: "先玩不朽先祖锤，积累远古散件和梦遗宝石等级。" },
+    { label: "巅峰800", target: "梦遗宝石高等级、远古件数足够", action: "缺远古时不要把梦遗标为速刷配置。" },
+    { label: "巅峰2000+", target: "远古/太古正确词缀", action: "装备主属性逐步让给范围伤、冷却、火伤和双暴。" },
+  ],
+};
+
+const LOD_HOTA_REVIEWED_GUIDE: BuildGuide = {
+  ...completeBuildGuide({
+    ...LOD_HOTA_GUIDE,
+    gear: [...LOD_HOTA_GUIDE.gear, ...LOD_HOTA_EXTRA_GEAR],
+    skills: [...LOD_HOTA_GUIDE.skills, ability("sprint", "疾奔", "马拉松", "速刷时连接精英和空图路段。")],
+    passives: [...LOD_HOTA_GUIDE.passives],
+    powers: [...LOD_HOTA_GUIDE.powers, ...LOD_HOTA_EXTRA_POWERS],
+  }, CURRENT_SEASON.seasonId),
+  configurationBase: LOD_HOTA_CONFIGURATION_BASE,
+  defaultScenarioId: "push-low",
+  scenarios: LOD_HOTA_SCENARIOS,
+  paragonGuide: LOD_HOTA_PARAGON,
+  choicePolicies: [
+    { key: "lod-gate", targetType: "legendary-gem", targetId: "legacy-of-dreams", label: "梦遗宝石与远古散件", status: "locked", reason: "梦遗先祖锤的攻防来自梦之遗礼和远古散件；远古数量不足时应先玩不朽版本。" },
+    { key: "hota-engine", targetType: "gear", targetId: "remorseless", label: "悔恨、审判之锤、先民护腕", status: "locked", reason: "悔恨检测先祖与狂战，审判之锤负责返怒与技能乘区，先民护腕提供攻速和技能伤；三者缺一都会掉核心伤害。" },
+    { key: "survival-chain", targetType: "gear", targetId: "cassius", label: "黄道、卡修斯、莫提克与力量指环", status: "conditional", reason: "冲层必须靠主动减伤循环；速刷可以用金币链替代部分坚韧，但仅限会掉金币的内容。", alternatives: [{ id: "goldwrap", label: "金织带", when: "T16/蓝门/悬赏且远古金织带成型", gain: "金币链护甲和更少主动防御压力", cost: "大秘境完全无效，且失去卡修斯延长无视苦痛", scenarios: ["speed-low", "speed-high"] }] },
+    { key: "speed-jewelry", targetType: "gear", targetId: "hellfire", label: "速刷首饰", status: "conditional", reason: "冲层用地狱火、黄道和力量指环；速刷可换斯奎特、贪婪之戒和金币链。", alternatives: [{ id: "squirts", label: "斯奎特的项链", when: "高巅峰或低层能保护层数", gain: "更高常驻伤害", cost: "失去地狱火额外被动", scenarios: ["speed-low", "speed-high"] }, { id: "avarice-band", label: "贪婪之戒", when: "会掉金币的普通内容", gain: "拾取范围和金币链稳定性", cost: "失去黄道戒时主动冷却更依赖寅剑", scenarios: ["speed-low", "speed-high"] }] },
+    { key: "speed-warning", targetType: "gear", targetId: "nemesis-bracers", label: "梦遗速刷门槛", status: "conditional", reason: "复仇者和金币链只适合高巅峰远古件足够后使用；低配通常不如不朽先祖锤。", alternatives: [{ id: "ik-hota", label: "改玩不朽先祖锤", when: "远古件少、梦遗宝石低、寅剑金币链断档", gain: "成型更快、坚韧更稳定", cost: "理论上限低于完整梦遗", scenarios: ["speed-low"] }] },
+    { key: "third-gem", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "第三颗传奇宝石", status: "conditional", reason: "冲层需要受罚者；速刷改强者或囤宝者。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低层仍需要精英增伤", gain: "击杀精英后稳定增伤减伤", cost: "长首领战弱于受罚者", scenarios: ["speed-low"] }, { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "金币链速刷", gain: "金币、移速和金织带护甲", cost: "大秘境不生效", scenarios: ["speed-high"] }] },
+  ],
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const LOD_HOTA_VALIDATION_ERRORS = validateReviewedBuildGuide(LOD_HOTA_REVIEWED_GUIDE);
+if (LOD_HOTA_VALIDATION_ERRORS.length > 0) throw new Error(`梦遗先祖锤配置校验失败：${LOD_HOTA_VALIDATION_ERRORS.join("；")}`);
+
 const EARTH_GUIDE: BuildGuide = {
   id: "earth-leapquake", name: "大地跃击", set: "大地之力", core: "跃击连跳 → 自动地震",
   summary: "蕾蔻战靴让跃击连续施放，大地四件自动触发地震；刀锋部族再把战吼与威吓转成地震和雪崩。",
@@ -855,7 +1033,7 @@ export const BARBARIAN_BUILDS: Record<string, BuildGuide> = {
   [WASTES_REVIEWED_GUIDE.id]: WASTES_REVIEWED_GUIDE,
   [RAEKOR_REVIEWED_GUIDE.id]: RAEKOR_REVIEWED_GUIDE,
   [IK_HOTA_REVIEWED_GUIDE.id]: IK_HOTA_REVIEWED_GUIDE,
-  [LOD_HOTA_GUIDE.id]: completeBuildGuide(LOD_HOTA_GUIDE, CURRENT_SEASON.seasonId),
+  [LOD_HOTA_REVIEWED_GUIDE.id]: LOD_HOTA_REVIEWED_GUIDE,
   [EARTH_GUIDE.id]: completeBuildGuide(EARTH_GUIDE, CURRENT_SEASON.seasonId),
   [FRENZY_GUIDE.id]: completeBuildGuide(FRENZY_GUIDE, CURRENT_SEASON.seasonId),
   [IK_CHARGE_GUIDE.id]: completeBuildGuide(IK_CHARGE_GUIDE, CURRENT_SEASON.seasonId),
