@@ -1,6 +1,6 @@
 # BD 逐套校对 AI 交接手册
 
-更新日期：2026-08-16
+更新日期：2026-08-22
 
 这是一份可独立使用的续作说明。接手者应以本文件记录的状态为起点，不依赖此前对话记忆。当前目标不是一次性批量补齐 51 套 BD，而是按照清单逐套研究、实现、验证、记录和提交，确保页面上的场景变化来自真实配置，而不是只改变说明文字。
 
@@ -35,12 +35,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 19 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage` |
+| 已完整校对 | 20 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 32 | 见路线图第 9 节清单 |
-| 仍需完成 | 32 | 32 套草稿 |
+| 尚未逐套校对 | 31 | 见路线图第 9 节清单 |
+| 仍需完成 | 31 | 31 套草稿 |
 
-当前工作游标：路线图清单第 8 项 `raekor-boulder`。
+当前工作游标：路线图清单第 9 项 `ik-hota`。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -48,9 +48,11 @@ npm test
 
 巫医 `mundunugu-barrage` 已完成。
 
+野蛮人 `raekor-boulder` 已完成。
+
 建议后续顺序：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节顺序逐套推进（下一套 `raekor-boulder`）。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节顺序逐套推进（下一套 `ik-hota`）。
 
 已完成的基础设施：
 
@@ -59,7 +61,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为 `npm test` 31 项全部通过。
+- 最近一次完整验证为 `npm test` 34 项全部通过。
 
 已知部分实装的真实含义：
 
@@ -475,6 +477,7 @@ git log -1 --stat
 | 50 | `typhon-hydra` | 已校对 | `feat(bd): 完成魔法师全套多场景校对` | 蛇头攻防、宠物宝石、金币链速刷 | 仅回归维护 |
 | 51 | `lod-orb` | 已校对 | `feat(bd): 完成魔法师全套多场景校对` | 三元叠层、爆点距离、以太行者/金币链 | 仅回归维护 |
 | 6 | `mundunugu-barrage` | 已校对 | `feat(bd): 完成蒙嘟噜魂弹多场景校对` | 理发师延迟结算、拉昆巴收割防线、寅剑/金币链速刷、分支来源 | 仅回归维护 |
+| 8 | `raekor-boulder` | 已校对 | `feat(bd): 完成蕾蔻巨石多场景校对` | 双矛/斯古拉冲层、寅剑/梅斧冷却、复仇者/沃兹克与金币链速刷、分支来源 | 仅回归维护 |
 
 其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
 
@@ -491,4 +494,4 @@ git log -1 --stat
 - 禁止顺手重构无关页面、重生成物品索引或替换静态素材。
 - 禁止覆盖用户未提交的改动，或使用 `git reset --hard`、`git checkout --` 等破坏性命令。
 
-接手者的第一个具体任务是：回到路线图顺序，从 `app/data/barbarian-builds.ts` 的 `raekor-boulder` 开始，先研究并列出大秘境冲层、低层大秘境、T16/蓝门/悬赏与高低巅峰的逐项真实差异。研究结论落入数据和文档后，才进入完整实现。
+接手者的第一个具体任务是：回到路线图顺序，从 `app/data/barbarian-builds.ts` 的 `ik-hota` 开始，先研究并列出大秘境冲层、低层大秘境、T16/蓝门/悬赏与高低巅峰的逐项真实差异。研究结论落入数据和文档后，才进入完整实现。

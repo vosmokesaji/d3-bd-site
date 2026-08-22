@@ -12,6 +12,7 @@ const passiveImage = (slug: string) => `${S}barbarian-passive-${slug}.png`;
 const GEM = {
   trapped: { name: "困者之灾", image: image("bane-of-the-trapped-unique_gem_002_x1.png") },
   stricken: { name: "受罚者之灾", image: image("bane-of-the-stricken-unique_gem_018_x1.png") },
+  powerful: { name: "强者之灾", image: image("bane-of-the-powerful-unique_gem_001_x1.png") },
   zei: { name: "贼神的复仇之石", image: image("zeis-stone-of-vengeance-unique_gem_012_x1.png") },
   lod: { name: "梦之遗礼", image: image("legacy-of-dreams-unique_gem_023_x1.png") },
   taeguk: { name: "太极石", image: image("taeguk-unique_gem_015_x1.png") },
@@ -368,6 +369,192 @@ const RAEKOR_GUIDE: BuildGuide = {
   source: "https://www.icy-veins.com/d3/barbarian-boulder-toss-build-with-the-raekor-set",
 };
 
+const RAEKOR_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/barbarian-boulder-toss-build-with-the-raekor-set",
+  skills: "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-speed-farming-build",
+  maxroll: "https://maxroll.gg/d3/guides/raekor-boulder-toss-barbarian-guide",
+};
+
+const RAEKOR_EXTRA_GEAR: GuideGear[] = [
+  squirt(GEM.trapped),
+  legendary("nemesis-bracers", "腕部", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "开启圣坛和水晶塔时额外召唤精英，速刷用来提高进度密度。", ["物理技能伤害", "暴击几率", "力量", "体能"], ["血岩赌博护腕", "黄装升级70级护腕", "只在速刷或队伍需要额外精英时使用"]),
+  legendary("warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "打碎可破坏物后获得移动速度，适合小秘境和悬赏连图。", ["物理技能伤害", "暴击几率", "力量", "体能"], ["血岩赌博护腕", "黄装升级70级护腕", "地图可破坏物少时收益下降"]),
+  legendary("goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲，是T16金币链的生存核心。", ["特效接近上限", "力量", "体能", "生命%"], ["血岩赌博腰带", "黄装升级70级腰带", "大秘境不掉金币，完全不生效"], "仅普通小秘境、悬赏和蓝门可用。"),
+  legendary("avarice-band", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取半径，连接囤宝者、金织带和生命球。", ["镶孔", "暴击几率", "暴击伤害", "冷却缩减"], ["第三幕悬赏宝箱", "第四幕悬赏宝箱也可能掉落", "不能通过黄装升级稳定获取"], undefined, GEM.hoarder),
+];
+
+const RAEKOR_EXTRA_POWERS: GuidePower[] = [
+  power("ingeom", "武器", "寅剑", "in-geom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "T16连续击杀精英后压缩狂战、无视苦痛和冲锋空窗。", "黄装升级70级单手剑。"),
+  power("messerschmidt", "武器", "梅塞施密特的劫掠者", "messerschmidts-reaver-p66_unique_axe_2h_011.png", "击杀敌人缩短一个技能的剩余冷却。", "高巅峰速刷用大量击杀补充寅剑精英空窗。", "黄装升级70级双手斧。"),
+  power("goldwrap", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后提高护甲。", "不穿金织带时用防具槽接通金币链；仅T16/悬赏/蓝门生效。", "血岩赌博腰带后萃取。"),
+  power("warzechian", "防具", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "打碎可破坏物后获得移动速度。", "高配速刷如果穿复仇者护腕，可把移速护腕放进防具槽。", "血岩赌博护腕后萃取。"),
+];
+
+const RAEKOR_PUSH_ROTATION = [
+  { title: "刷新冲锋层", action: "用狂暴冲锋穿过怪群，优先命中5个以上目标。", reason: "蕾蔻六件最多消耗5层，冲锋和武器投掷都要为下一发巨石叠层。" },
+  { title: "拉开距离", action: "离开怪群后用武器投掷攒怒，不要贴脸投掷。", reason: "亚瑞特律法、无处可逃和贼神都要求远距离收益。" },
+  { title: "保留防线", action: "无视苦痛快断或力量指环快断时先补技能，再准备爆发。", reason: "高层巨石有准备期，断防时硬站定会损失斯奎特和旅者状态。" },
+  { title: "满怒巨石", action: "物理窗口或精英聚紧时释放巨石怒掷，并尽量命中精英与少量高血目标。", reason: "怒气消耗、斯古拉少目标翻倍、范围伤和元素周期在这一发结算。" },
+  { title: "重建循环", action: "投掷后立刻冲锋或武器投掷重建层数与怒气。", reason: "空怒站定不会产生输出，黄道也需要持续命中刷新长冷却。" },
+];
+
+const RAEKOR_SPEED_ROTATION = [
+  { title: "开局增益", action: "开启战斗怒火和狂战之怒后直接冲向第一组精英。", reason: "速刷不等完整元素周期，先建立机动与控制免疫。" },
+  { title: "圣坛拉进度", action: "触发复仇者护腕或利用沃兹克打碎场景物，优先找精英和大密度。", reason: "寅剑、梅斧和进度都依赖击杀链。" },
+  { title: "金币链覆盖", action: "拾取第一批金币后保持移动并让贪婪之戒扩大拾取半径。", reason: "囤宝者、贪婪之戒和金织带共同提供移速、拾取与护甲。" },
+  { title: "低层直接抛石", action: "怒气足够时直接向精英或密集白怪抛巨石，不为单体首领保留受罚者。", reason: "T16目标是单位时间完成地图，强者/囤宝者比受罚者更合适。" },
+  { title: "赶路续冷却", action: "精英死亡后利用寅剑窗口连续冲锋并补无视苦痛。", reason: "击杀冷却窗口内多走一屏比继续清残血小怪更有价值。" },
+];
+
+const RAEKOR_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "raekor-head", shoulders: "raekor-shoulders", chest: "raekor-chest", gloves: "raekor-gloves",
+    bracers: "skular", belt: "crimson-belt", pants: "crimson-pants", boots: "raekor-boots",
+    amulet: "travelers-pledge", ring1: "compass-rose", ring2: "band-of-might", weapon: "arreats-law", offhand: "three-hundredth",
+  },
+  skills: [
+    { id: "weapon-throw", rune: "平衡武器" }, { id: "ancient-spear", rune: "巨石怒掷" }, { id: "furious-charge", rune: "无情突袭" },
+    { id: "battle-rage", rune: "血溅十方" }, { id: "ignore-pain", rune: "铁骨钢筋" }, { id: "wrath-of-the-berserker", rune: "癫狂" },
+  ],
+  passives: ["rampage", "berserker-rage", "no-escape", "boon-of-bulkathos"],
+  powers: { weapon: "furnace", armor: "ancient-parthan", jewelry: "royal-grandeur", season: "zodiac" },
+  legendaryGems: { control: "bane-of-the-trapped", distance: "zeis-stone-of-vengeance", boss: "bane-of-the-stricken" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"),
+    weapon: ["flawless-royal-emerald", "flawless-royal-emerald"],
+  },
+  follower: { id: "enchantress", items: [], skills: [] },
+  statPriorities: {
+    global: ["物理元素伤", "上古之矛伤害", "范围伤害", "冷却缩减", "双暴"],
+    survival: ["力量与体能", "全元素抗性", "无视苦痛覆盖"],
+    resource: ["怒气上限", "能量消耗降低", "武器投掷回怒距离"],
+  },
+  rotation: RAEKOR_PUSH_ROTATION,
+};
+
+const RAEKOR_SPEED_SKILLS = [
+  { id: "ancient-spear", rune: "巨石怒掷" }, { id: "furious-charge", rune: "无情突袭" }, { id: "war-cry", rune: "蓄势待发" },
+  { id: "sprint", rune: "马拉松" }, { id: "battle-rage", rune: "凶残" }, { id: "wrath-of-the-berserker", rune: "癫狂" },
+];
+
+const RAEKOR_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "保留船长套、斯古拉、力量指环和古帕萨减伤，先用红宝石与体能保证巨石准备期不暴毙。",
+    sourceRefs: [RAEKOR_SOURCES.overview, RAEKOR_SOURCES.skills, RAEKOR_SOURCES.gear, RAEKOR_SOURCES.maxroll], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰由巅峰补主属性，装备更积极追范围伤、减耗和冷却，防具宝石切到白宝石提高高层元素承伤。",
+    patch: {
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: {
+        global: ["物理元素伤", "上古之矛伤害", "范围伤害≥120%", "冷却缩减", "能量消耗降低"],
+        survival: ["全元素抗性", "生命%", "无视苦痛与力量指环不断档"],
+        resource: ["怒气上限优先保留", "船长套把减耗转化为减伤", "武器主属性逐步洗范围伤"],
+      },
+    },
+    sourceRefs: [RAEKOR_SOURCES.gear, RAEKOR_SOURCES.maxroll], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-low", label: "低巅峰T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰速刷仍保留斯古拉和双矛核心，去掉武器投掷后用战吼回怒、寅剑、凶残战斗怒火、强者之灾和金币链替换首领战配置。",
+    patch: {
+      gear: { amulet: "squirts", ring1: "band-of-might", ring2: "avarice-band", belt: "goldwrap" },
+      skills: RAEKOR_SPEED_SKILLS,
+      passives: ["rampage", "berserker-rage", "no-escape", "boon-of-bulkathos"],
+      powers: { weapon: "ingeom", armor: "ancient-parthan", jewelry: "royal-grandeur", season: "zodiac" },
+      legendaryGems: { control: "bane-of-the-trapped", distance: "zeis-stone-of-vengeance", boss: "bane-of-the-powerful" },
+      statPriorities: { global: ["25%移速上限", "物理元素伤", "上古之矛伤害", "冷却缩减"], survival: ["金币链覆盖前保留红宝石", "力量", "体能"], resource: ["怒气上限", "武器投掷回怒", "不要为了移速放弃镶孔"] },
+      rotation: RAEKOR_SPEED_ROTATION,
+    },
+    sourceRefs: [RAEKOR_SOURCES.speed, RAEKOR_SOURCES.gear, RAEKOR_SOURCES.maxroll], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-high", label: "高巅峰T16极速配置", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "伤害溢出后把护腕换成进度/移速件，第4槽可用梅斧补击杀冷却，传奇宝石切囤宝者连接金币链。",
+    patch: {
+      gear: { bracers: "nemesis-bracers", amulet: "squirts", ring1: "band-of-might", ring2: "avarice-band", belt: "goldwrap" },
+      skills: RAEKOR_SPEED_SKILLS,
+      passives: ["rampage", "berserker-rage", "no-escape", "ruthless"],
+      powers: { weapon: "ingeom", armor: "warzechian", jewelry: "royal-grandeur", season: "messerschmidt" },
+      legendaryGems: { control: "bane-of-the-trapped", distance: "zeis-stone-of-vengeance", boss: "boon-of-the-hoarder" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "范围伤害", "物理元素伤"], survival: ["金币链覆盖", "高巅峰白宝石", "斯奎特护盾不断"], resource: ["怒气上限保留", "冷却优先于额外坚韧", "击杀链断档时回切斯古拉"] },
+      rotation: RAEKOR_SPEED_ROTATION,
+    },
+    sourceRefs: [RAEKOR_SOURCES.speed, RAEKOR_SOURCES.maxroll], reviewedAt: "2026-08-22",
+  },
+];
+
+const RAEKOR_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先扣除鞋子移速；速刷需要满移速但不能超过面板上限。" },
+      { stat: "怒气上限", target: "优先点满", reason: "巨石怒掷按消耗怒气放大，怒气上限直接影响单发爆发。" },
+      { stat: "力量", target: "剩余点数", reason: "力量同时提供伤害和护甲，是低巅峰默认投入。" },
+      { stat: "体能", target: "被秒时临时投入", reason: "只补到能完成冲锋、攒怒和投掷循环，再回到力量。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "狂战、无视苦痛和冲锋循环决定输出窗口与生存。" },
+      { stat: "暴击几率", target: "第二点满", reason: "巨石单发爆发依赖暴击，低暴击会让元素窗口波动很大。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率共同放大巨石和血溅十方。" },
+      { stat: "攻击速度", target: "最后点满", reason: "有助于武器投掷攒怒，但优先级低于冷却与双暴。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量职业护甲充足，更缺元素抗性。" },
+      { stat: "生命%", target: "第二点满", reason: "提高古帕萨、力量指环和无视苦痛之后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "作为力量职业的次级防御补充。" },
+      { stat: "生命恢复", target: "最后点满", reason: "巨石节奏是爆发循环，持续恢复价值最低。" },
+    ],
+    utility: [
+      { stat: "能量消耗降低", target: "优先点满", reason: "船长套把减耗转成减伤，也让巨石后重建资源更稳。" },
+      { stat: "范围伤害", target: "第二点满", reason: "800点内已有核心循环后，巨石高密度收益开始明显。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "武器投掷和冲锋能触发少量回复，但不是主要防线。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "只服务T16金币链，冲层中无意义。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认、冲层和低层速刷", reason: "继续提供伤害和护甲，直到装备开始洗掉主属性。" },
+    { priority: "体能", when: "无法在满怒前承受远程怪或精英词缀", reason: "补到无视苦痛空窗也能生存，再把新增点数转回力量。" },
+    { priority: "力量与范围伤词缀配合", when: "高巅峰且装备可洗出范围伤/冷却/减耗", reason: "巅峰承担主属性后，肩、手、武器等槽位优先保留范围伤和冷却。" },
+  ],
+  checkpoints: [
+    { label: "刚到70级", target: "双单手长矛+斯古拉", action: "先用黄装升级长矛和护腕，巅峰优先怒气上限与冷却。" },
+    { label: "巅峰800", target: "怒气上限、冷却、全抗、减耗全满", action: "冲层保留红宝石；被元素词缀秒杀时逐步换白宝石。" },
+    { label: "巅峰2000+", target: "白宝石、范围伤和减耗成型", action: "装备主属性可逐步洗范围伤/冷却/减耗，巅峰补回力量。" },
+  ],
+};
+
+const RAEKOR_REVIEWED_GUIDE: BuildGuide = {
+  ...completeBuildGuide({
+    ...RAEKOR_GUIDE,
+    gear: [...RAEKOR_GUIDE.gear, ...RAEKOR_EXTRA_GEAR],
+    skills: [...RAEKOR_GUIDE.skills, ability("sprint", "疾奔", "马拉松", "速刷把多余怒气与空档时间换成持续移速。"), ability("war-cry", "战吼", "蓄势待发", "速刷替代武器投掷，提供怒气和坚韧并减少停手。")],
+    passives: [...RAEKOR_GUIDE.passives, COMMON_PASSIVES.berserker, COMMON_PASSIVES.ruthless],
+    powers: [...RAEKOR_GUIDE.powers, ...RAEKOR_EXTRA_POWERS],
+  }, CURRENT_SEASON.seasonId),
+  configurationBase: RAEKOR_CONFIGURATION_BASE,
+  defaultScenarioId: "push-low",
+  scenarios: RAEKOR_SCENARIOS,
+  paragonGuide: RAEKOR_PARAGON,
+  choicePolicies: [
+    { key: "raekor-engine", targetType: "gear", targetId: "arreats-law", label: "蕾蔻六件、双矛和斯古拉", status: "locked", reason: "蕾蔻层数、亚瑞特回怒、三百壮矛技能乘区和斯古拉巨石乘区共同构成发动机，任意缺失都会让巨石循环失效。" },
+    { key: "bracer-slot", targetType: "gear", targetId: "skular", label: "护腕槽", status: "conditional", reason: "冲层固定斯古拉；速刷在伤害溢出后可换复仇者或沃兹克提高进度和移速。", alternatives: [{ id: "nemesis-bracers", label: "复仇者护腕", when: "T16/蓝门依赖圣坛额外精英推进度", gain: "更多精英触发寅剑和进度", cost: "失去斯古拉少目标翻倍，首领与孤立精英变慢", scenarios: ["speed-high"] }, { id: "warzechian", label: "沃兹克护腕", when: "小秘境/悬赏地图可破坏物密集", gain: "额外移动速度", cost: "无可破坏物地图收益很低", scenarios: ["speed-high"] }] },
+    { key: "jewelry-core", targetType: "gear", targetId: "travelers-pledge", label: "首饰组", status: "conditional", reason: "大秘境使用无尽之途和力量指环；T16可用斯奎特、贪婪之戒和金币链换效率。", alternatives: [{ id: "squirts", label: "斯奎特的项链", when: "速刷能秒怪且金币链/护盾可保护层数", gain: "更高常驻伤害", cost: "失去无尽之途移动减伤与站定增伤切换", scenarios: ["speed-low", "speed-high"] }, { id: "avarice-band", label: "贪婪之戒", when: "T16/悬赏/蓝门会掉金币", gain: "扩大拾取半径并维持金织带", cost: "大秘境无金币，且会牺牲首饰输出槽", scenarios: ["speed-low", "speed-high"] }] },
+    { key: "weapon-cube", targetType: "power", targetId: "furnace", label: "武器萃取", status: "conditional", reason: "冲层焚炉处理精英与首领；速刷用击杀冷却让机动和狂战不断。", alternatives: [{ id: "ingeom", label: "寅剑", when: "精英击杀频繁的T16和蓝门", gain: "大幅缩短冷却，连续冲锋赶路", cost: "首领战和断精英时没有增伤", scenarios: ["speed-low", "speed-high"] }, { id: "messerschmidt", label: "梅塞施密特", when: "高巅峰速刷普通怪击杀极快", gain: "大量小怪也能压缩冷却", cost: "没有焚炉精英增伤，低伤害阶段不推荐", scenarios: ["speed-high"] }] },
+    { key: "third-gem", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "第三颗传奇宝石", status: "conditional", reason: "冲层需要受罚者处理首领；速刷按是否金币链改强者或囤宝者。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低巅峰T16仍需要稳定精英增伤", gain: "击杀精英后获得稳定增伤和减伤", cost: "首领长战叠层能力弱于受罚者", scenarios: ["speed-low"] }, { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "高巅峰T16伤害溢出并穿金织带/贪婪之戒", gain: "金币、移速和护甲链", cost: "大秘境完全不掉金币", scenarios: ["speed-high"] }] },
+    { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女冷却适合默认循环；冲层需要暴击窗口可换盗贼，低巅峰缺治疗可换圣殿骑士。" },
+  ],
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const RAEKOR_VALIDATION_ERRORS = validateReviewedBuildGuide(RAEKOR_REVIEWED_GUIDE);
+if (RAEKOR_VALIDATION_ERRORS.length > 0) throw new Error(`蕾蔻巨石配置校验失败：${RAEKOR_VALIDATION_ERRORS.join("；")}`);
+
 const IK_HOTA_GUIDE: BuildGuide = {
   id: "ik-hota", name: "不朽先祖锤", set: "不朽之王的呼唤", core: "先祖与狂战常驻 → 先祖之锤",
   summary: "不朽六件让先祖召唤与狂战之怒常驻，悔恨与审判之锤把满怒先祖之锤放大成近战爆发。",
@@ -482,7 +669,7 @@ const IK_CHARGE_GUIDE: BuildGuide = {
 
 export const BARBARIAN_BUILDS: Record<string, BuildGuide> = {
   [WASTES_REVIEWED_GUIDE.id]: WASTES_REVIEWED_GUIDE,
-  [RAEKOR_GUIDE.id]: completeBuildGuide(RAEKOR_GUIDE, CURRENT_SEASON.seasonId),
+  [RAEKOR_REVIEWED_GUIDE.id]: RAEKOR_REVIEWED_GUIDE,
   [IK_HOTA_GUIDE.id]: completeBuildGuide(IK_HOTA_GUIDE, CURRENT_SEASON.seasonId),
   [LOD_HOTA_GUIDE.id]: completeBuildGuide(LOD_HOTA_GUIDE, CURRENT_SEASON.seasonId),
   [EARTH_GUIDE.id]: completeBuildGuide(EARTH_GUIDE, CURRENT_SEASON.seasonId),

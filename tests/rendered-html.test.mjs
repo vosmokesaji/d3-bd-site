@@ -400,6 +400,26 @@ test("renders reviewed mundunugu scenarios with branch-specific sources", async 
   assert.match(page, /function sourceLabel/);
 });
 
+test("renders the reviewed raekor-boulder scenarios as real boulder-toss loadouts", async () => {
+  const [html, barbarianData] = await Promise.all([
+    render("/builds/raekor-boulder").then((response) => response.text()),
+    readFile(new URL("../app/data/barbarian-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /蕾蔻巨石/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(barbarianData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["RAEKOR_CONFIGURATION_BASE", "RAEKOR_SOURCES", "nemesis-bracers", "warzechian", "goldwrap", "avarice-band", "ingeom", "messerschmidt", "bane-of-the-powerful", "boon-of-the-hoarder"]) {
+    assert.match(barbarianData, new RegExp(runtimeChoice));
+  }
+  assert.match(barbarianData, /validateReviewedBuildGuide\(RAEKOR_REVIEWED_GUIDE\)/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);
