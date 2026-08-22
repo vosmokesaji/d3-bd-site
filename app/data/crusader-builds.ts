@@ -166,6 +166,197 @@ const PONY_SOURCES = {
   cnAll: "https://m.3dmgame.com/ol/gl/301903.html",
 };
 
+const VALOR_FIST_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build",
+  skills: "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon",
+  speed: "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build",
+};
+
+const VALOR_FIST_ROTATION = [
+  { title: "保持变身", action: "进图先开阿卡拉特勇士，冷却快结束时靠黄道刷新。", reason: "先知化身提供护甲、回怒与容错，是低巅峰冲层的底线。" },
+  { title: "骑马进密度", action: "用战马穿到精英或高密度怪群，结束战马后再开始落雷。", reason: "诺瓦德两件的主要增伤发生在战马结束后的窗口。" },
+  { title: "压住天拳", action: "闪电周期和精英聚合时连续施放天堂之拳。", reason: "勇气六件、黑暗之光、正义灯塔腰带和斯奎特共同放大落雷。" },
+  { title: "补资源与冷却", action: "圣怒下降时用挑衅，危险地板前开钢铁之肤。", reason: "高位圣怒维持天鹰减伤，黄道命中刷新战马与变身。" },
+  { title: "转场控节奏", action: "精英死亡后立刻上马，不为残血白怪停留。", reason: "这套不是纯跑马速刷，效率来自在增伤窗内处理高价值目标。" },
+];
+
+const VALOR_FIST_SPEED_ROTATION = [
+  { title: "开局预热", action: "开启阿卡拉特勇士和希望律法。", reason: "先把回怒、防御与短距离穿怪接通。" },
+  { title: "骑马找精英", action: "沿主路战马穿图，破坏物顺路触发沃兹克。", reason: "速刷分支用移速、拾取范围和击杀冷却替代冲层等待。" },
+  { title: "下马落雷", action: "精英附近结束战马，短按天堂之拳清屏。", reason: "诺瓦德增伤和黑暗之光复制足够处理T16、蓝门与低层大秘境。" },
+  { title: "恐惧接速", action: "战马空档用挑衅恐惧敌人触发瑞秋戒。", reason: "填补寅剑击杀前后的移动断点。" },
+  { title: "拾金续防", action: "保持金币拾取链，看到精英优先击杀。", reason: "囤宝者、贪婪之戒与金织带同时提供金币、拾取范围和护甲。" },
+];
+
+const VALOR_FIST_SEED = seeds.find((seed) => seed.id === "valor-fist")!;
+const VALOR_FIST_BASE_GUIDE = createClassGuide({
+  ...VALOR_FIST_SEED,
+  gear: [
+    ...VALOR_FIST_SEED.gear,
+    legendary("valor-norvald-flail", "主手", "冲锋连枷", "flail-of-the-charge-p4_unique_flail_2h_set_01_x1.png", "与战马之盾组成诺瓦德两件：延长战马，并在战马结束后获得独立增伤。", { quality: "set", base: "双手连枷" }),
+    legendary("valor-warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "打碎可破坏物后获得移速；天拳速刷会沿路自动触发。", { element: "闪电" }),
+    legendary("valor-goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲；与囤宝者和贪婪之戒组成速刷防线。", { warning: "只适用于掉金币的T16、蓝门与悬赏；大秘境冲层不要使用。" }),
+    legendary("valor-vigilante", "腰部", "警戒腰带", "vigilante-belt-p76_unique_belt_002.png", "提供冷却缩减，适合不用金币链但需要压缩战马空档的低层大秘境。"),
+    legendary("valor-rechel", "手指", "瑞秋的行窃之戒", "rechels-ring-of-larceny-unique_ring_104_x1.png", "恐惧敌人后获得大幅移速，由挑衅的惊慌失措符文触发。", { gem: "powerful" }),
+    legendary("valor-avarice", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取范围，帮助持续触发金织带和囤宝者。", { gem: "hoarder" }),
+  ],
+  skills: [
+    ...VALOR_FIST_SEED.skills,
+    skill("laws-of-hope", "希望律法", "天使之翼", "速刷补移速与穿怪，填补战马空档。"),
+  ],
+  passives: [
+    ...VALOR_FIST_SEED.passives,
+    passive("heavenly-strength", "天堂之力", "允许双手连枷与盾牌同时装备，是诺瓦德版本的必要被动。"),
+    passive("lord-commander", "统御者", "缩短战马冲锋冷却，提高转场和诺瓦德窗口频率。"),
+    passive("long-arm-of-the-law", "律法无边", "延长律法主动效果，速刷时让希望律法覆盖更多路程。"),
+  ],
+  powers: [
+    ...VALOR_FIST_SEED.powers,
+    power("valor-darklight-power", "武器", "黑暗之光", "darklight-p67_unique_flail_1h_106.png", "天堂之拳额外施放两次并提高伤害。", "诺瓦德版本穿双手连枷和盾牌，黑暗之光必须放入魔方。", "黄装升级：70级单手连枷。"),
+    power("valor-vigilante-power", "防具", "警戒腰带", "vigilante-belt-p76_unique_belt_002.png", "提供额外冷却缩减。", "速刷时压缩战马、律法与变身空档。"),
+    power("valor-ingeom", "第4槽", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短冷却。", "只在精英连续死亡的速刷内容使用。"),
+  ],
+  links: [
+    { title: "正确的诺瓦德链", category: "movement", conclusion: "诺瓦德两件必须穿在身上：冲锋连枷放魔方不会激活套装。", steps: [["valor-norvald-flail", "冲锋连枷", "穿戴主手"], ["steed-shield", "战马之盾", "穿戴副手"], ["steed-charge", "战马结束", "建立增伤窗"], ["fist-of-the-heavens", "天堂之拳", "在窗口内落雷"]] },
+    { title: "天拳复制链", category: "damage", conclusion: "黑暗之光在魔方提供复制次数，正义灯塔提供技能乘区和资源稳定。", steps: [["valor-darklight-power", "黑暗之光", "额外天拳"], ["khasset", "正义灯塔腰带", "减耗与增伤"], ["fury-bracer", "愤怒护腕", "保留闪电元素词缀"], ["coe", "全能闪电", "冲层爆发"]] },
+    { title: "速刷金币链", category: "defense", conclusion: "T16、蓝门与悬赏才使用金币链；大秘境冲层回到天鹰和受罚者。", steps: [["valor-avarice", "贪婪之戒", "扩大拾取"], ["valor-goldwrap", "金织带", "拾金叠护甲"], ["boon-of-the-hoarder", "囤宝者", "制造金币"], ["valor-ingeom", "寅剑", "精英后刷新冷却"]] },
+  ],
+  rotation: VALOR_FIST_ROTATION,
+});
+
+const VALOR_FIST_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "valor-head", shoulders: "valor-shoulders", chest: "valor-chest", gloves: "valor-gloves",
+    bracers: "fury-bracer", belt: "khasset", pants: "valor-pants", boots: "valor-boots",
+    amulet: "squirts", ring1: "focus", ring2: "restraint", weapon: "valor-norvald-flail", offhand: "steed-shield",
+  },
+  skills: [
+    { id: "fist-of-the-heavens", rune: "雷霆裂隙" }, { id: "steed-charge", rune: "马不停蹄" },
+    { id: "akarats-champion", rune: "先知化身" }, { id: "laws-of-valor", rune: "势不可挡" },
+    { id: "iron-skin", rune: "疾行之肤" }, { id: "provoke", rune: "蓄电攻击" },
+  ],
+  passives: ["heavenly-strength", "lord-commander", "finery", "indestructible"],
+  powers: { weapon: "valor-darklight-power", armor: "aquila", jewelry: "zodiac", season: "coe" },
+  legendaryGems: { control: "bane-of-the-trapped", distance: "zei", boss: "bane-of-the-stricken" },
+  normalGems: {
+    head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"),
+    weapon: ["flawless-royal-emerald"],
+  },
+  follower: { id: "enchantress", items: ["不死圣物"], skills: ["冷却增强", "充能"] },
+  statPriorities: {
+    global: ["天堂之拳技能伤", "闪电元素伤", "冷却缩减", "暴击几率/暴击伤害"],
+    survival: ["天鹰减伤覆盖", "斯奎特护盾保持", "力量", "体能"],
+    endgame: ["范围伤害", "精英伤", "减耗维持天鹰"],
+  },
+  rotation: VALOR_FIST_ROTATION,
+};
+
+const VALOR_FIST_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰冲层保留勇气六件、穿戴诺瓦德两件、萃取黑暗之光、正义灯塔腰带与天鹰减伤；受罚者补首领，红宝石补力量与护甲。",
+    unchangedReason: "基础配置就是低巅峰冲层入口。",
+    sourceRefs: [VALOR_FIST_SOURCES.overview, VALOR_FIST_SOURCES.skills, VALOR_FIST_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰由巅峰提供主属性后，护甲宝石换钻石补全抗和冷却，保命被动换神圣使命，词缀更多让给范围伤与精英伤。",
+    patch: {
+      passives: ["heavenly-strength", "lord-commander", "finery", "holy-cause"],
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["天堂之拳技能伤", "闪电元素伤", "范围伤害", "冷却缩减"], survival: ["全元素抗性", "斯奎特护盾保持"], endgame: ["精英伤", "减耗阈值", "装备力量可洗范围伤"] },
+    },
+    sourceRefs: [VALOR_FIST_SOURCES.overview, VALOR_FIST_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-low", label: "低巅峰 T16 / 蓝门 / 低层大秘境", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
+    reason: "速刷从克制站桩冲层改为移动清图：腕部换沃兹克、腰带换金织带、戒指换瑞秋与贪婪，萃取寅剑并用囤宝者建立金币链；低巅峰保留红宝石和坚不可摧。",
+    patch: {
+      gear: { bracers: "valor-warzechian", belt: "valor-goldwrap", ring1: "valor-rechel", ring2: "valor-avarice" },
+      skills: [
+        { id: "fist-of-the-heavens", rune: "天雷风暴" }, { id: "steed-charge", rune: "马不停蹄" },
+        { id: "akarats-champion", rune: "先知化身" }, { id: "laws-of-hope", rune: "天使之翼" },
+        { id: "iron-skin", rune: "疾行之肤" }, { id: "provoke", rune: "惊慌失措" },
+      ],
+      powers: { armor: "valor-vigilante-power", season: "valor-ingeom" },
+      legendaryGems: { control: "zei", distance: "boon-of-the-hoarder", boss: "bane-of-the-powerful" },
+      follower: { items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "天堂之拳技能伤", "拾取范围"], survival: ["金币链覆盖", "力量", "体能"] },
+      rotation: VALOR_FIST_SPEED_ROTATION,
+    },
+    sourceRefs: [VALOR_FIST_SOURCES.speed, VALOR_FIST_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+  {
+    id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰速刷伤害溢出后，宝石转闪电华冠补移速，护甲钻石压缩冷却；保留金币链和寅剑，目标变成连续骑马与拾取效率。",
+    patch: {
+      gear: { bracers: "valor-warzechian", belt: "valor-goldwrap", ring1: "valor-rechel", ring2: "valor-avarice" },
+      skills: [
+        { id: "fist-of-the-heavens", rune: "天雷风暴" }, { id: "steed-charge", rune: "马不停蹄" },
+        { id: "akarats-champion", rune: "先知化身" }, { id: "laws-of-hope", rune: "天使之翼" },
+        { id: "iron-skin", rune: "疾行之肤" }, { id: "provoke", rune: "惊慌失措" },
+      ],
+      passives: ["heavenly-strength", "lord-commander", "long-arm-of-the-law", "finery"],
+      powers: { armor: "valor-vigilante-power", season: "valor-ingeom" },
+      legendaryGems: { control: "zei", distance: "boon-of-the-hoarder", boss: "wreath-of-lightning" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      follower: { items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "拾取范围", "范围伤害"], survival: ["金币链覆盖", "全元素抗性"], endgame: ["伤害溢出后不追受罚者层数", "优先连续转场"] },
+      rotation: VALOR_FIST_SPEED_ROTATION,
+    },
+    sourceRefs: [VALOR_FIST_SOURCES.speed, VALOR_FIST_SOURCES.gear], reviewedAt: "2026-08-22",
+  },
+];
+
+const VALOR_FIST_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先补到上限，速刷和冲层转场都吃收益。" },
+      { stat: "力量", target: "其余点数", reason: "默认伤害与护甲来源。" },
+      { stat: "体能", target: "被击杀时临时投入", reason: "低巅峰先保证不掉斯奎特和不被秒。" },
+      { stat: "圣怒上限", target: "0点", reason: "正义灯塔、挑衅和减耗比上限更关键。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "缩短战马、阿卡拉特勇士、律法和钢铁之肤空档。" },
+      { stat: "暴击几率", target: "第二点满", reason: "天拳高频命中先保证暴击触发密度。" },
+      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率共同放大落雷。" },
+      { stat: "攻击速度", target: "最后点满", reason: "收益低于冷却与双暴。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量职业护甲天然较高，先补短板。" },
+      { stat: "生命%", target: "第二点满", reason: "扩大天鹰和主动减伤后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "补充力量护甲。" },
+      { stat: "生命恢复", target: "最后点满", reason: "只作小额续航。" },
+    ],
+    utility: [
+      { stat: "能量消耗降低", target: "优先点满", reason: "稳定高圣怒，支撑天鹰减伤和连续落雷。" },
+      { stat: "范围伤害", target: "第二点满", reason: "冲层和密度速刷都吃范围伤。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "天拳高频命中带来稳定恢复。" },
+      { stat: "金币拾取范围", target: "最后点满", reason: "仅速刷金币链刚需，冲层收益低。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认", reason: "同时给伤害与护甲。" },
+    { priority: "体能", when: "低巅峰冲层频繁破盾或被秒", reason: "补到能稳定维持斯奎特后回到力量。" },
+  ],
+  checkpoints: [
+    { label: "刚成型", target: "冷却、减耗和红宝石", action: "先让变身、战马和天鹰尽量不断档。" },
+    { label: "巅峰800", target: "四页关键项点满", action: "冲层保留受罚者，速刷开始换金币链。" },
+    { label: "巅峰2000+", target: "范围伤、拾取与钻石", action: "冲层洗范围伤，速刷洗移速/拾取并用钻石压冷却。" },
+  ],
+};
+
+const VALOR_FIST_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "valor-fist-core", targetType: "gear", targetId: "valor-norvald-flail", label: "勇气六件、诺瓦德两件与黑暗之光", status: "locked", reason: "勇气六件提供天堂之拳倍率，诺瓦德必须穿戴连枷和盾牌才会激活两件套；黑暗之光放魔方复制落雷。把冲锋连枷放魔方不会激活诺瓦德，是这次校对特别修正的点。" },
+  { key: "passive-weapon-rule", targetType: "passive", targetId: "heavenly-strength", label: "天堂之力", status: "locked", reason: "穿双手连枷和圣教军盾必须携带天堂之力；因此原草稿里的热忱不适用于这套诺瓦德版本。" },
+  { key: "belt-slot", targetType: "gear", targetId: "khasset", label: "腰带槽", status: "conditional", reason: "冲层用正义灯塔腰带提高天拳伤害与减耗；T16、蓝门、悬赏用金织带接金币链；需要更多冷却而不靠金币时才用警戒腰带。", alternatives: [{ id: "valor-goldwrap", label: "金织带", when: "T16、蓝门、悬赏和低层大秘境速刷", gain: "拾金后护甲极高", cost: "大秘境冲层不掉金币，特效失效", scenarios: ["speed-low", "speed-high"] }, { id: "valor-vigilante", label: "警戒腰带", when: "低层大秘境不想用金币链且冷却不足", gain: "稳定CDR", cost: "失去天拳增伤或金币护甲" }] },
+  { key: "rings", targetType: "gear", targetId: "focus", label: "戒指组合", status: "conditional", reason: "冲层用克己守心保证高倍率；速刷换瑞秋戒和贪婪之戒，把恐惧移速、拾取范围和金币护甲串起来。", alternatives: [{ id: "valor-rechel", label: "瑞秋的行窃之戒", when: "速刷需要填补战马空档", gain: "挑衅恐惧后大幅移速", cost: "失去克己守心乘区", scenarios: ["speed-low", "speed-high"] }, { id: "valor-avarice", label: "贪婪之戒", when: "掉金币内容", gain: "扩大拾取范围并续金织带", cost: "大秘境冲层没有金币支持", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "fourth-cube", targetType: "power", targetId: "coe", label: "第39赛季第四槽", status: "conditional", reason: "冲层用全能法戒打闪电周期；速刷用寅剑在精英死亡后重置战马和变身；高巅峰若只追赶路可换闪电华冠宝石而不改寅剑。", alternatives: [{ id: "valor-ingeom", label: "寅剑", when: "T16、蓝门、悬赏与低层大秘境精英连续死亡", gain: "击杀精英后快速重置冷却", cost: "失去元素爆发窗", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "legendary-gems", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "第三传奇宝石", status: "conditional", reason: "冲层首领用受罚者；低层速刷用强者提高精英后续；高巅峰速刷伤害溢出后换闪电华冠补移速。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低层大秘境和T16速刷", gain: "精英后稳定增伤减伤", cost: "首领战成长不如受罚者", scenarios: ["speed-low"] }, { id: "wreath-of-lightning", label: "闪电华冠", when: "高巅峰速刷伤害溢出", gain: "额外移动速度", cost: "失去强者或受罚者伤害", scenarios: ["speed-high"] }, { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "掉金币内容", gain: "启动金币链", cost: "大秘境不掉金币", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-low", "speed-high"] }] },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从", status: "flexible", reason: "魔女冷却和攻速最通用；速刷让随从戴贪婪之戒扩大金币链，冲层用不死圣物保证控场不断。" },
+];
+
 const PONY_SPEED_ROTATION = [
   { title: "开局预热", action: "开启阿卡拉特勇士与希望律法。", reason: "先建立回怒、护甲和短距离移速。" },
   { title: "骑马找精英", action: "战马沿主路穿图，不为落单白怪停留。", reason: "效率来自把移动时间压到最低。" },
@@ -301,6 +492,25 @@ const PONY_CHOICE_POLICIES: BuildChoicePolicy[] = [
   { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女固定提供冷却与远程控场；速刷随从戴贪婪之戒扩大拾取，大秘境戴不死圣物保命，高巅峰换团结与角色分摊。" },
 ];
 
+const VALOR_FIST_REVIEWED_GUIDE: BuildGuide = {
+  ...VALOR_FIST_BASE_GUIDE,
+  configurationBase: VALOR_FIST_CONFIGURATION_BASE,
+  defaultMode: "push",
+  defaultScenarioId: "push-low",
+  scenarios: VALOR_FIST_SCENARIOS,
+  paragonGuide: VALOR_FIST_PARAGON,
+  choicePolicies: VALOR_FIST_CHOICE_POLICIES,
+  pushNote: "穿戴诺瓦德两件、萃取黑暗之光；围绕战马结束后的增伤窗和闪电周期打天堂之拳。",
+  speedNote: "T16、蓝门和悬赏切金币链、瑞秋戒、沃兹克和寅剑；低层大秘境可用强者替受罚者。",
+  lowNote: "先保证勇气六件、诺瓦德两件、黑暗之光、正义灯塔和天堂之力被动正确成立。",
+  highNote: "高巅峰把护甲宝石换钻石，冲层追范围伤/精英伤，速刷追冷却、移速和拾取范围。",
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const VALOR_FIST_VALIDATION_ERRORS = validateReviewedBuildGuide(VALOR_FIST_REVIEWED_GUIDE);
+if (VALOR_FIST_VALIDATION_ERRORS.length > 0) throw new Error(`勇气天拳配置校验失败：${VALOR_FIST_VALIDATION_ERRORS.join("；")}`);
+
 const PONY_REVIEWED_GUIDE: BuildGuide = {
   ...createClassGuide(ponySeed),
   configurationBase: PONY_CONFIGURATION_BASE,
@@ -321,5 +531,6 @@ export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
     const guide = createClassGuide(seed);
     return [guide.id, guide];
   })),
+  [VALOR_FIST_REVIEWED_GUIDE.id]: VALOR_FIST_REVIEWED_GUIDE,
   [PONY_REVIEWED_GUIDE.id]: PONY_REVIEWED_GUIDE,
 };

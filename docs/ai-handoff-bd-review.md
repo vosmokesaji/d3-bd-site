@@ -35,12 +35,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 22 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
+| 已完整校对 | 23 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 29 | 见路线图第 9 节清单 |
-| 仍需完成 | 29 | 29 套草稿 |
+| 尚未逐套校对 | 28 | 见路线图第 9 节清单 |
+| 仍需完成 | 28 | 28 套草稿 |
 
-当前工作游标：路线图清单第 11 项 `earth-leapquake`。
+当前工作游标：路线图清单第 15 项 `valor-fury`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -50,9 +50,11 @@ npm test
 
 野蛮人 `raekor-boulder`、`ik-hota`、`lod-hota` 已完成。
 
+圣教军 `pony-fist-farm`、`valor-fist` 已完成。
+
 建议后续顺序：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节顺序逐套推进（下一套 `earth-leapquake`）。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `valor-fury`）；之后依次处理 `akkhan-condemn`、`akkhan-phalanx`、`invoker-thorns`、`roland-sweep`、`seeker-hammer`、`lod-bombardment`。
 
 已完成的基础设施：
 
@@ -61,7 +63,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为 `npm test` 36 项全部通过。
+- 最近一次完整验证为 `npm test` 37 项全部通过。
 
 已知部分实装的真实含义：
 
@@ -240,7 +242,7 @@ npm test
 git diff --check
 ```
 
-当前基线是 22 项测试。新增一套 BD 的测试后，总数通常应增加；若减少，必须查明原因。
+当前基线是 37 项测试。新增一套 BD 的测试后，总数通常应增加；若减少，必须查明原因。
 
 ### 5.7 视觉验收
 
@@ -496,4 +498,4 @@ git log -1 --stat
 - 禁止顺手重构无关页面、重生成物品索引或替换静态素材。
 - 禁止覆盖用户未提交的改动，或使用 `git reset --hard`、`git checkout --` 等破坏性命令。
 
-接手者的第一个具体任务是：回到路线图顺序，从 `app/data/barbarian-builds.ts` 的 `earth-leapquake` 开始，先研究并列出大秘境冲层、低层大秘境、T16/蓝门/悬赏与高低巅峰的逐项真实差异。研究结论落入数据和文档后，才进入完整实现。
+接手者的第一个具体任务是：继续当前职业圣教军，从 `app/data/crusader-builds.ts` 的 `valor-fury` 开始，先研究并列出大秘境冲层、低层大秘境、T16/蓝门/悬赏与高低巅峰的逐项真实差异，并明确每个分支的来源链接。研究结论落入数据和文档后，才进入完整实现；野蛮人剩余三套之后再回补。

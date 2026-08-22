@@ -94,8 +94,8 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
 });
 
 test("keeps shared-configuration builds from receiving unreviewed variant swaps", async () => {
-  const [valor, godMonk, guideTypes, page] = await Promise.all([
-    render("/builds/valor-fist").then((response) => response.text()),
+  const [valorFury, godMonk, guideTypes, page] = await Promise.all([
+    render("/builds/valor-fury").then((response) => response.text()),
     render("/builds/god-monk").then((response) => response.text()),
     readFile(new URL("../app/data/build-guides.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -104,8 +104,8 @@ test("keeps shared-configuration builds from receiving unreviewed variant swaps"
   assert.match(guideTypes, /hasExplicitRuntimeVariants/);
   assert.match(guideTypes, /documented-shared/);
   assert.match(page, /resolveBuildVariantProfile/);
-  assert.match(valor, /配置差异待实装/);
-  assert.doesNotMatch(valor, /variant-goldwrap|variant-ingeom/);
+  assert.match(valorFury, /配置差异待实装/);
+  assert.doesNotMatch(valorFury, /variant-goldwrap|variant-ingeom/);
   assert.doesNotMatch(godMonk, /配置差异待实装/);
 });
 
@@ -184,6 +184,26 @@ test("renders the reviewed pony-fist-farm scenarios as real speed-farm loadouts"
   assert.doesNotMatch(crusaderData, /powerSets: \{ push: \["pony-darklight"/);
   assert.match(page, /gogok: \{ name: "迅捷勾玉"/);
   assert.match(page, /"bane-of-the-powerful": POWERFUL_GEM/);
+});
+
+test("renders the reviewed valor-fist scenarios as real Aegis of Valor loadouts", async () => {
+  const [html, crusaderData] = await Promise.all([
+    render("/builds/valor-fist").then((response) => response.text()),
+    readFile(new URL("../app/data/crusader-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /勇气天拳/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(crusaderData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["VALOR_FIST_CONFIGURATION_BASE", "VALOR_FIST_SOURCES", "valor-norvald-flail", "valor-darklight-power", "valor-goldwrap", "valor-avarice", "valor-rechel", "valor-ingeom", "boon-of-the-hoarder", "wreath-of-lightning"]) {
+    assert.match(crusaderData, new RegExp(runtimeChoice));
+  }
+  assert.match(crusaderData, /validateReviewedBuildGuide\(VALOR_FIST_REVIEWED_GUIDE\)/);
 });
 
 test("renders the reviewed god-hungering scenarios as real high-mobility loadouts", async () => {
