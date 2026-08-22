@@ -356,6 +356,27 @@ test("renders the reviewed masquerade-spear scenarios as real three-line spear l
   assert.match(necData, /validateReviewedBuildGuide/);
 });
 
+test("renders all reviewed wizard scenarios as real runtime loadouts", async () => {
+  const [talHtml, lodOrbHtml, wizardData] = await Promise.all([
+    render("/builds/tal-meteor").then((response) => response.text()),
+    render("/builds/lod-orb").then((response) => response.text()),
+    readFile(new URL("../app/data/wizard-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  for (const html of [talHtml, lodOrbHtml]) {
+    assert.match(html, /已逐项校对/);
+    assert.match(html, /巅峰加点/);
+    assert.match(html, /固定与替换/);
+    assert.doesNotMatch(html, /配置差异待实装/);
+  }
+  for (const buildId of ["tal-meteor", "lod-meteor", "firebird-eb", "delsere-twister", "vyr-archon", "typhon-hydra", "lod-orb"]) {
+    assert.match(wizardData, new RegExp(`id: "${buildId}"`));
+  }
+  for (const runtimeChoice of ["WIZARD_EXTRA_GEAR", "aether-walker", "ingeom", "goldwrap", "avarice-band", "messerschmidt", "validateReviewedBuildGuide"]) {
+    assert.match(wizardData, new RegExp(runtimeChoice));
+  }
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);

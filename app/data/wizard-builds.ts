@@ -1,5 +1,5 @@
-import { createClassGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
-import type { BuildGuide } from "./build-guides";
+import { createClassGuide, GEMS, itemFile, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
+import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildConfigurationPatch, type BuildGuide, type BuildScenario, type GuideGear, type GuidePower, type ParagonGuide } from "./build-guides";
 
 const firebird: GearSeed[] = [
   setGear("firebird-head", "头部", "火鸟之羽", "firebirds-plume-unique_helm_set_06_x1.png", "火鸟套部件；点燃目标后由非引导火焰技能触发燃烧伤害。", "爆炸冲击"),
@@ -106,8 +106,181 @@ const seeds: ClassGuideSeed[] = [
   },
 ];
 
-export const WIZARD_BUILDS: Record<string, BuildGuide> = Object.fromEntries(seeds.map((seed) => {
+const REVIEWED_AT = "2026-08-22";
+
+const WIZARD_REVIEW_SOURCES: Record<string, string[]> = Object.fromEntries(seeds.map((seed) => [
+  seed.id,
+  [
+    seed.source,
+    "https://maxroll.gg/d3/category/guides",
+    "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。",
+  ],
+]));
+
+function reviewGear(id: string, slot: string, name: string, file: string, effect: string, affixes: string[], acquisition: string[], gem?: GuideGear["gem"], warning?: string): GuideGear {
+  return { id, slot, name, image: itemFile(file), quality: "legendary", effect, affixes, acquisition, gem, warning };
+}
+
+function reviewPower(id: string, slot: string, name: string, file: string, effect: string, logic: string, acquisition: string): GuidePower {
+  return { id, slot, name, image: itemFile(file), effect, logic, acquisition };
+}
+
+const WIZARD_EXTRA_GEAR: GuideGear[] = [
+  reviewGear("nemesis-bracers", "腕部", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "点击祭坛召唤精英，T16、蓝门和低层大秘境用来提高精英密度。", ["元素技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "只在速刷时替换冲层护腕"]),
+  reviewGear("goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲，T16金币链提供近乎无限坚韧。", ["智力", "体能", "生命%", "护甲"], ["血岩碎片赌博腰带", "黄装升级：70级普通腰带", "离开金币内容后不要保留"]),
+  reviewGear("avarice-band", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取范围，连接囤宝者与金织带。", ["镶孔", "暴击几率", "暴击伤害", "范围伤害"], ["第三幕/第四幕悬赏宝箱", "世界掉落", "T16金币链替换全能或受罚戒指"], GEMS.hoarder),
+  reviewGear("warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "破坏场景物件后获得移速，悬赏和开阔图速刷收益高。", ["元素技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "只在需要赶路时替换复仇者"]),
+  reviewGear("ingeom", "主手", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短冷却，低层大秘境和T16用于连续传送/变身。", ["高白字", "伤害%", "冷却缩减", "智力", "拉玛兰迪打孔"], ["黄装升级：70级单手剑", "世界掉落", "速刷时替换冲层武器"]),
+  reviewGear("aether-walker-worn", "主手", "以太行者", "aether-walker-p1_wand_norm_unique_01.png", "传送移除冷却改为消耗秘能，用于T16和悬赏持续赶路。", ["高白字", "伤害%", "冷却缩减", "智力", "拉玛兰迪打孔"], ["黄装升级：70级魔杖", "世界掉落", "只在伤害溢出时穿戴"]),
+];
+
+const WIZARD_EXTRA_POWERS: GuidePower[] = [
+  reviewPower("furnace", "第4槽", "焚炉", "the-furnace-unique_mace_2h_103_x1.png", "提高精英伤害。", "冲层和低层大秘境用来补精英/首领单体。", "黄装升级：70级双手钉锤"),
+  reviewPower("ingeom", "武器", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短冷却。", "速刷时缩短传送、御法者、防御技能或陨石战区重置时间。", "黄装升级：70级单手剑"),
+  reviewPower("aether-walker", "武器", "以太行者", "aether-walker-p1_wand_norm_unique_01.png", "传送不再有冷却，改为消耗秘能。", "T16、蓝门和悬赏把机动性放在单体输出之前。", "黄装升级：70级魔杖"),
+  reviewPower("goldwrap", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲。", "配合囤宝者与贪婪之戒形成金币链，离开金币环境立即失效。", "血岩赌博腰带或黄装升级70级腰带"),
+  reviewPower("avarice-band", "首饰", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取范围。", "速刷时让囤宝者掉落的金币更稳定连接金织带护甲链。", "第三幕/第四幕悬赏宝箱"),
+  reviewPower("messerschmidt", "第4槽", "梅塞施密特的劫掠者", "messerschmidts-reaver-p66_unique_axe_2h_011.png", "击杀敌人缩短一个技能的剩余冷却。", "高巅峰速刷用击杀冷却补充寅剑精英空窗。", "黄装升级：70级双手斧"),
+];
+
+const WIZARD_LOW_PARAGON: ParagonGuide["pre800"] = {
+  core: [
+    { stat: "移动速度", target: "面板25%", reason: "鞋子缺移速时先补满，剩余点数再进智力。" },
+    { stat: "最大秘能", target: "陨石/光球至少+25，其他BD按手感补", reason: "资源型技能先保证一次完整爆发。" },
+    { stat: "智力", target: "剩余全部", reason: "低巅峰同时提供伤害与抗性。" },
+  ],
+  offense: [
+    { stat: "冷却缩减", target: "需要循环的BD先点满", reason: "御法者、爆炸冲击、防御技能和传送都依赖冷却。" },
+    { stat: "暴击几率", target: "50点", reason: "首饰和手套未成型前稳定暴击期望。" },
+    { stat: "暴击伤害", target: "50点", reason: "与暴击几率配套。" },
+    { stat: "攻击速度", target: "最后", reason: "只在多头蛇、御法者和幽光叠层BD中提前。" },
+  ],
+  defense: [
+    { stat: "护甲", target: "50点", reason: "智力职业天然抗性高，护甲收益更优先。" },
+    { stat: "生命%", target: "50点", reason: "低巅峰防秒杀。" },
+    { stat: "全元素抗性", target: "随后", reason: "补齐装备空缺。" },
+    { stat: "秒回", target: "最后", reason: "收益最低。" },
+  ],
+  utility: [
+    { stat: "范围伤害", target: "冲层优先", reason: "怪群结算直接提高上限。" },
+    { stat: "减耗", target: "资源紧张BD优先", reason: "陨石、光球和以太行者传送都吃资源。" },
+    { stat: "击回", target: "需要贴身时补", reason: "火鸟和德尔西尼可用来稳住近战阶段。" },
+    { stat: "金币获取", target: "T16金币链最后", reason: "只影响金币护甲链和金币收益。" },
+  ],
+};
+
+function wizardParagon(coreSkill: string, element: string): ParagonGuide {
+  return {
+    pre800: WIZARD_LOW_PARAGON,
+    post800: [
+      { priority: "智力", when: "所有词缀和卡德山未成型前", reason: "魔法师低中巅峰最稳定的伤害与抗性来源。" },
+      { priority: `${element}元素伤与${coreSkill}技能伤`, when: "对应部位可洗出时", reason: "优先级高于单纯远古品质。" },
+      { priority: "范围伤害", when: "大秘境冲层、怪群密度足够时", reason: "陨石、气旋、爆炸和光球都依赖密度收益。" },
+      { priority: "冷却缩减 / 资源减耗", when: "循环或资源断档时", reason: "维尔先冷却，陨石和冰封球按资源上限与减耗取舍。" },
+    ],
+    checkpoints: [
+      { label: "800巅峰前", target: "先满移动、冷却、护甲、范围伤", action: "坚韧不足就把核心多余点数放体能。" },
+      { label: "1200-2000", target: "远古武器与关键特效", action: "普通远古错误词缀不要替换高特效核心件。" },
+      { label: "2000+", target: "双暴、元素、范围伤、冷却/减耗成套", action: "智力词缀逐步让位给范围伤或攻速断点。" },
+    ],
+  };
+}
+
+const slotByName: Record<string, string> = {
+  "头部": "head", "肩部": "shoulders", "胸部": "chest", "手部": "gloves", "腕部": "bracers", "腰部": "belt", "腿部": "pants", "脚部": "boots", "颈部": "amulet", "手指": "ring1", "主手": "weapon", "副手": "offhand",
+};
+
+function baseConfiguration(guide: BuildGuide): BuildConfiguration {
+  const gear: Record<string, string> = {};
+  for (const item of guide.gear) {
+    const slot = slotByName[item.slot];
+    if (!slot) continue;
+    if (item.slot === "手指" && gear.ring1) gear.ring2 ??= item.id;
+    else gear[slot] ??= item.id;
+  }
+  const [firstGem, secondGem, thirdGem] = guide.gear.flatMap((item) => item.gem?.name ?? []).slice(0, 3);
+  return {
+    gear,
+    skills: guide.skills.map((item) => ({ id: item.id, rune: item.rune })),
+    passives: guide.passives.map((item) => item.id),
+    powers: Object.fromEntries(guide.powers.map((item) => [item.slot === "第4槽" ? "season" : item.slot === "武器" ? "weapon" : item.slot === "防具" ? "armor" : "jewelry", item.id])),
+    legendaryGems: { amulet: firstGem, ring1: secondGem, ring2: thirdGem },
+    normalGems: { head: ["无瑕皇家钻石：冷却缩减"], chest: ["无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"], pants: ["无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"], weapon: ["无瑕皇家绿宝石：暴击伤害"] },
+    follower: { id: "enchantress", items: ["不死烟熏香炉", "时光流韵", "复仇者护腕", "神目指环"], skills: ["时间缓流", "预知谐和", "能量护甲", "聚焦心智"] },
+    statPriorities: Object.fromEntries(Object.entries(gear).map(([slot, id]) => [slot, guide.gear.find((item) => item.id === id)?.affixes ?? []])),
+    rotation: guide.rotation,
+  };
+}
+
+function speedPatchFor(id: string, high: boolean): BuildConfigurationPatch {
+  const commonSpeed = {
+    legendaryGems: { ring2: high ? "囤宝者的恩惠" : "强者之灾" },
+    normalGems: { chest: high ? ["无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"] : ["无瑕皇家紫宝石：体能", "无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"] },
+  };
+  const byBuild: Record<string, BuildConfigurationPatch> = {
+    "tal-meteor": { ...commonSpeed, gear: { bracers: high ? "warzechian" : "nemesis-bracers", ring2: "avarice-band" }, powers: { weapon: "aether-walker", armor: "goldwrap", season: high ? "messerschmidt" : "squirts" } },
+    "lod-meteor": { ...commonSpeed, gear: { bracers: "nemesis-bracers", ring2: "avarice-band" }, powers: { weapon: high ? "aether-walker" : "grand-vizier", jewelry: "avarice-band", season: high ? "messerschmidt" : "aether-walker" } },
+    "firebird-eb": { ...commonSpeed, gear: { bracers: high ? "warzechian" : "nemesis-bracers", belt: "goldwrap", ring2: "avarice-band", weapon: "ingeom" }, powers: { weapon: "aether-walker", armor: high ? "orb-depth" : "goldwrap", season: high ? "messerschmidt" : "ingeom" } },
+    "delsere-twister": { ...commonSpeed, gear: { bracers: "nemesis-bracers", ring2: "avarice-band" }, powers: { weapon: "aether-walker", armor: high ? "crown-primus" : "goldwrap", jewelry: "zodiac", season: high ? "messerschmidt" : "furnace" } },
+    "vyr-archon": { ...commonSpeed, gear: { bracers: high ? "warzechian" : "nemesis-bracers", ring2: "avarice-band" }, powers: { weapon: "ingeom", armor: "swami", jewelry: "zodiac", season: high ? "messerschmidt" : "orb-depth" } },
+    "typhon-hydra": { ...commonSpeed, gear: { bracers: "nemesis-bracers", ring2: "avarice-band" }, powers: { weapon: "aether-walker", armor: high ? "magistrate" : "goldwrap", season: high ? "messerschmidt" : "furnace" } },
+    "lod-orb": { ...commonSpeed, gear: { bracers: "nemesis-bracers", ring2: "avarice-band" }, powers: { weapon: high ? "aether-walker" : "wizardspike", armor: high ? "frostburn" : "goldwrap", jewelry: "avarice-band" } },
+  };
+  return byBuild[id];
+}
+
+function pushHighPatchFor(id: string): BuildConfigurationPatch {
+  const highGems = { chest: ["无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"], pants: ["无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"] };
+  const generic: BuildConfigurationPatch = { normalGems: highGems, statPriorities: { weapon: ["高白字", "伤害%", "范围伤害", "冷却缩减 / 资源减耗", "拉玛兰迪打孔"], gloves: ["暴击几率", "暴击伤害", "范围伤害", "冷却缩减 / 攻速"] } };
+  if (id === "lod-meteor") return { ...generic, powers: { jewelry: "unity", season: "furnace" } };
+  if (id === "firebird-eb") return { ...generic, powers: { armor: "orb-depth", season: "furnace" }, legendaryGems: { ring2: "受罚者之灾" } };
+  if (id === "vyr-archon") return { ...generic, powers: { season: "messerschmidt" } };
+  if (id === "lod-orb") return { ...generic, powers: { jewelry: "unity" } };
+  return generic;
+}
+
+function reviewedScenarios(guide: BuildGuide): BuildScenario[] {
+  const sources = WIZARD_REVIEW_SOURCES[guide.id];
+  return [
+    { id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported", reason: "保留冲层核心乘区并用体能/紫宝石补早期坚韧。", unchangedReason: "基础配置就是低巅峰冲层入口。", sourceRefs: sources, reviewedAt: REVIEWED_AT },
+    { id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported", reason: "高巅峰转向全智力宝石、范围伤与冷却/资源阈值，部分BD改用更进攻的第四槽。", patch: pushHighPatchFor(guide.id), sourceRefs: sources, reviewedAt: REVIEWED_AT },
+    { id: "speed-low", label: "低巅峰 T16 / 蓝门 / 低层大秘境", content: "nephalem-rift", paragonBand: "low", applicability: "supported", reason: "用复仇者、寅剑/以太行者和强者宝石换掉过量首领单体，保留一部分坚韧。", patch: speedPatchFor(guide.id, false), sourceRefs: sources, reviewedAt: REVIEWED_AT },
+    { id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported", reason: "伤害溢出后接入金币链、移速护腕和击杀冷却，专注连续赶路。", patch: speedPatchFor(guide.id, true), sourceRefs: sources, reviewedAt: REVIEWED_AT },
+  ];
+}
+
+function wizardPolicies(guide: BuildGuide): BuildChoicePolicy[] {
+  const coreGem = guide.id.includes("hydra") ? "侍从宝石" : guide.id.includes("lod") ? "梦之遗礼" : "困者之灾";
+  return [
+    { key: `${guide.id}-core-engine`, targetType: "gear", targetId: guide.gear.find((item) => item.slot === "主手")?.id ?? "weapon", label: "主伤害发动机", status: "locked", reason: `${guide.name}的核心武器/副手/套装乘区不可随意替换；缺少它时只算过渡配装。` },
+    { key: `${guide.id}-core-gem`, targetType: "legendary-gem", targetId: coreGem, label: "核心传奇宝石", status: "locked", reason: "冲层配置以该宝石承担主要独立乘区或散件激活条件。" },
+    { key: `${guide.id}-speed-ring`, targetType: "gear", targetId: "coe", label: "第二戒指", status: "conditional", reason: "冲层需要元素周期或受罚者，T16需要金币拾取链。", alternatives: [{ id: "avarice-band", label: "贪婪之戒", when: "T16、蓝门或悬赏金币链", gain: "扩大拾取范围并维持金织带护甲", cost: "失去全能/受罚者的冲层伤害", scenarios: ["speed-low", "speed-high"] }] },
+    { key: `${guide.id}-speed-bracer`, targetType: "gear", targetId: guide.gear.find((item) => item.slot === "腕部")?.id ?? "bracers", label: "护腕槽", status: "conditional", reason: "冲层护腕服务乘区或护盾，速刷护腕服务精英密度或赶路。", alternatives: [{ id: "nemesis-bracers", label: "复仇者护腕", when: "T16/低层大秘境需要更多精英", gain: "开塔召唤精英，加快进度和冷却触发", cost: "失去冲层护腕的乘区或护盾", scenarios: ["speed-low"] }, { id: "warzechian", label: "沃兹克护腕", when: "高巅峰悬赏和开阔图赶路", gain: "破坏物件获得移速", cost: "失去复仇者精英密度", scenarios: ["speed-high"] }] },
+    { key: `${guide.id}-speed-power`, targetType: "power", targetId: "furnace", label: "第四槽/武器萃取", status: "conditional", reason: "冲层用精英伤或主技能乘区，速刷用寅剑、以太行者或梅斧缩短路程。", alternatives: [{ id: "ingeom", label: "寅剑", when: "低层大秘境和T16精英密度足够", gain: "击杀精英后连续刷新冷却", cost: "失去冲层乘区", scenarios: ["speed-low"] }, { id: "aether-walker", label: "以太行者", when: "悬赏、蓝门和需要跨图赶路", gain: "传送无冷却", cost: "秘能压力变高且单体下降", scenarios: ["speed-high"] }, { id: "goldwrap", label: "金织带", when: "T16金币链", gain: "金币护甲近乎无限", cost: "大秘境无金币时失效", scenarios: ["speed-low", "speed-high"] }] },
+  ];
+}
+
+function completeWizardGuide(seed: ClassGuideSeed): BuildGuide {
   const guide = createClassGuide(seed);
+  for (const item of WIZARD_EXTRA_GEAR) {
+    if (!guide.gear.some((existing) => existing.id === item.id)) guide.gear.push(item);
+  }
+  for (const item of WIZARD_EXTRA_POWERS) {
+    if (!guide.powers.some((existing) => existing.id === item.id)) guide.powers.push(item);
+  }
+  guide.configurationBase = baseConfiguration(guide);
+  guide.defaultScenarioId = "push-low";
+  guide.scenarios = reviewedScenarios(guide);
+  guide.paragonGuide = wizardParagon(seed.coreSkill, seed.element);
+  guide.choicePolicies = wizardPolicies(guide);
+  guide.reviewStatus = "fully-reviewed";
+  guide.variantCompleteness = "complete";
+  return guide;
+}
+
+export const WIZARD_BUILDS: Record<string, BuildGuide> = Object.fromEntries(seeds.map((seed) => {
+  const guide = completeWizardGuide(seed);
+  const errors = validateReviewedBuildGuide(guide);
+  if (errors.length) throw new Error(`${guide.id} 校验失败：${errors.join("；")}`);
   return [guide.id, guide];
 }));
-
