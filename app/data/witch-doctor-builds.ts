@@ -1,5 +1,5 @@
-import { createClassGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
-import type { BuildGuide } from "./build-guides";
+import { createClassGuide, GEMS, itemFile, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
+import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type GuideGear, type GuidePower, type ParagonGuide } from "./build-guides";
 
 const mundunugu: GearSeed[] = [
   setGear("mund-head", "头部", "蒙嘟噜的头饰", "mundunugus-headdress-p68_unique_helm_set_04.png", "蒙嘟噜套部件；法力回复会提高魂灵弹幕伤害。", "魂灵弹幕"),
@@ -114,7 +114,144 @@ const seeds: ClassGuideSeed[] = [
   },
 ];
 
-export const WITCH_DOCTOR_BUILDS: Record<string, BuildGuide> = Object.fromEntries(seeds.map((seed) => {
+const REVIEWED_AT = "2026-08-22";
+
+function reviewGear(id: string, slot: string, name: string, file: string, effect: string, affixes: string[], acquisition: string[], gem?: GuideGear["gem"], warning?: string): GuideGear {
+  return { id, slot, name, image: itemFile(file), quality: "legendary", effect, affixes, acquisition, gem, warning };
+}
+
+function reviewPower(id: string, slot: string, name: string, file: string, effect: string, logic: string, acquisition: string): GuidePower {
+  return { id, slot, name, image: itemFile(file), effect, logic, acquisition };
+}
+
+const MUNDUNUGU_SOURCES = {
+  icy: "https://www.icy-veins.com/d3/witch-doctor-mundunugu-spirit-barrage-build",
+  icySpeed: "https://www.icy-veins.com/d3/mundunugu-spirit-barrage-witch-doctor-speed-farming-build",
+  maxroll: "https://maxroll.gg/d3/guides/mundunugu-spirit-barrage-witch-doctor-guide",
+};
+
+const WITCH_DOCTOR_EXTRA_GEAR: GuideGear[] = [
+  reviewGear("nemesis-bracers", "腕部", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "点击祭坛召唤精英，T16、蓝门和低层大秘境用来提高精英密度。", ["冰霜技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "速刷时替换拉昆巴"]),
+  reviewGear("warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "破坏场景物件后获得移速，高巅峰悬赏和开阔图收益高。", ["冰霜技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "高巅峰速刷替换复仇者"]),
+  reviewGear("goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲，T16金币链提供近乎无限坚韧。", ["智力", "体能", "生命%", "护甲"], ["血岩碎片赌博腰带", "黄装升级：70级普通腰带", "离开金币内容后失效"]),
+  reviewGear("avarice-band", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取范围，连接囤宝者与金织带。", ["镶孔", "暴击几率", "暴击伤害", "范围伤害"], ["第三幕/第四幕悬赏宝箱", "世界掉落", "T16金币链替换虚空之戒或全能"], GEMS.hoarder),
+  reviewGear("ingeom", "主手", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短冷却，速刷时让灵行、收割和巫毒狂舞更频繁。", ["高白字", "伤害%", "冷却缩减", "智力", "拉玛兰迪打孔"], ["黄装升级：70级单手剑", "世界掉落", "低层大秘境和T16替换理发师"]),
+];
+
+const WITCH_DOCTOR_EXTRA_POWERS: GuidePower[] = [
+  reviewPower("ingeom", "武器", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短冷却。", "速刷时压缩灵行、收割和巫毒狂舞空窗。", "黄装升级：70级单手剑"),
+  reviewPower("goldwrap", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量提高护甲。", "配合囤宝者和贪婪之戒形成T16金币链。", "血岩赌博腰带或黄装升级70级腰带"),
+  reviewPower("avarice-band", "首饰", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取范围。", "让金币链不需要贴脸捡金币也能维持。", "第三幕/第四幕悬赏宝箱"),
+  reviewPower("furnace", "第4槽", "焚炉", "the-furnace-unique_mace_2h_103_x1.png", "提高精英伤害。", "冲层时补足理发师结算后的精英和首领单体。", "黄装升级：70级双手钉锤"),
+  reviewPower("shukrani", "第4槽", "舒克拉尼的胜利", "shukranis-triumph-p72_unique_mojo_102.png", "灵行在未攻击时持续存在。", "高巅峰悬赏和蓝门用于安全长距离转场。", "黄装升级：70级咒物"),
+];
+
+const MUNDUNUGU_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "mund-head", shoulders: "mund-shoulders", chest: "mund-chest", gloves: "mund-gloves", bracers: "lakumba", belt: "witching-hour",
+    pants: "mund-pants", boots: "mund-boots", amulet: "squirts", ring1: "coe", ring2: "emptiness", weapon: "barber", offhand: "gazing-demise",
+  },
+  skills: [
+    { id: "spirit-barrage", rune: "灵魂幻象" },
+    { id: "locust-swarm", rune: "瘟疫虫群" },
+    { id: "soul-harvest", rune: "困魂压魄" },
+    { id: "spirit-walk", rune: "灵魂漫步" },
+    { id: "piranhas", rune: "食人鱼旋风" },
+    { id: "big-bad-voodoo", rune: "鬼魂恩泽" },
+  ],
+  passives: ["grave-injustice", "confidence-ritual", "pierce-the-veil", "spirit-vessel"],
+  powers: { weapon: "sacred-harvester", armor: "frostburn", jewelry: "royal-grandeur", season: "ring-emptiness" },
+  legendaryGems: { amulet: "困者之灾", ring1: "受罚者之灾", ring2: "贼神的复仇之石" },
+  normalGems: { head: ["无瑕皇家钻石：冷却缩减"], chest: ["无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"], pants: ["无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"], weapon: ["无瑕皇家绿宝石：暴击伤害"] },
+  follower: { id: "enchantress", items: ["不死烟熏香炉", "时光流韵", "复仇者护腕", "神目指环"], skills: ["时间缓流", "预知谐和", "能量护甲", "聚焦心智"] },
+  statPriorities: {
+    head: ["魂灵弹幕伤害", "暴击几率", "智力", "镶孔"], shoulders: ["魂灵弹幕伤害", "范围伤害", "冷却缩减", "智力"], gloves: ["暴击几率", "暴击伤害", "范围伤害", "冷却缩减"], bracers: ["冰霜技能伤害", "暴击几率", "智力", "体能"], weapon: ["高白字", "伤害%", "范围伤害", "冷却缩减", "拉玛兰迪打孔"], offhand: ["魂灵弹幕伤害", "暴击几率", "范围伤害", "法力回复"],
+  },
+  rotation: [
+    { title: "叠满收割", action: "灵行进入怪群后使用魂灵收割。", reason: "建立拉昆巴减伤。" },
+    { title: "虫群标记", action: "让虫群覆盖精英和周围怪物。", reason: "启动虚空之戒。" },
+    { title: "食人鱼聚怪", action: "把目标拉入同一结算区域。", reason: "幻象覆盖越完整越好。" },
+    { title: "布置幻象", action: "围绕精英放置魂灵弹幕幻象。", reason: "理发师开始蓄积伤害。" },
+    { title: "等待结算", action: "不要过早离开或覆盖错误位置。", reason: "幻象结束时才统一爆发。" },
+  ],
+};
+
+const MUNDUNUGU_SCENARIOS: BuildScenario[] = [
+  { id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported", reason: "保留拉昆巴、霜燃和虚空乘区，低巅峰先保证收割层数与安全结算。", unchangedReason: "基础配置就是低巅峰冲层入口。", sourceRefs: [MUNDUNUGU_SOURCES.icy, MUNDUNUGU_SOURCES.maxroll], reviewedAt: REVIEWED_AT },
+  { id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported", reason: "高巅峰把更多词缀让给范围伤、法力回复和冷却，并用焚炉第四槽补精英单体。", patch: { powers: { season: "furnace" }, statPriorities: { gloves: ["暴击几率", "暴击伤害", "范围伤害", "冷却缩减"], offhand: ["魂灵弹幕伤害", "暴击几率", "范围伤害", "法力回复"] } }, sourceRefs: [MUNDUNUGU_SOURCES.icy, MUNDUNUGU_SOURCES.maxroll], reviewedAt: REVIEWED_AT },
+  { id: "speed-low", label: "低巅峰 T16 / 蓝门 / 低层大秘境", content: "nephalem-rift", paragonBand: "low", applicability: "supported", reason: "用复仇者、寅剑和强者宝石缩短冷却并提高精英密度，保留霜燃和部分坚韧。", patch: { gear: { bracers: "nemesis-bracers", ring2: "avarice-band", weapon: "ingeom" }, powers: { weapon: "sacred-harvester", season: "ingeom" }, legendaryGems: { ring1: "强者之灾", ring2: "囤宝者的恩惠" }, normalGems: { chest: ["无瑕皇家紫宝石：体能", "无瑕皇家黄宝石：智力", "无瑕皇家黄宝石：智力"] } }, sourceRefs: [MUNDUNUGU_SOURCES.icySpeed, MUNDUNUGU_SOURCES.maxroll], reviewedAt: REVIEWED_AT },
+  { id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported", reason: "伤害溢出后接入金织带、贪婪之戒、沃兹克和舒克拉尼，重点变成连续转场和金币护甲链。", patch: { gear: { bracers: "warzechian", belt: "goldwrap", ring2: "avarice-band", weapon: "ingeom" }, powers: { weapon: "ingeom", armor: "goldwrap", jewelry: "avarice-band", season: "shukrani" }, legendaryGems: { ring1: "强者之灾", ring2: "囤宝者的恩惠" } }, sourceRefs: [MUNDUNUGU_SOURCES.icySpeed, MUNDUNUGU_SOURCES.maxroll], reviewedAt: REVIEWED_AT },
+];
+
+const MUNDUNUGU_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "面板25%", reason: "鞋子未带移速时先补满。" },
+      { stat: "智力", target: "剩余全部", reason: "低巅峰最稳定的伤害与抗性来源。" },
+      { stat: "体能", target: "被秒杀时临时投入", reason: "理发师延迟结算期间需要活到爆炸。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "50点", reason: "灵行、收割、食人鱼和巫毒狂舞都依赖冷却。" },
+      { stat: "暴击几率", target: "50点", reason: "补齐首饰和手套未成型阶段。" },
+      { stat: "暴击伤害", target: "50点", reason: "和暴击几率配套。" },
+      { stat: "攻击速度", target: "最后", reason: "收益不如结算相关词缀稳定。" },
+    ],
+    defense: [
+      { stat: "护甲", target: "50点", reason: "智力职业优先补护甲。" },
+      { stat: "生命%", target: "50点", reason: "低巅峰防止结算前暴毙。" },
+      { stat: "全元素抗性", target: "随后", reason: "补装备缺口。" },
+      { stat: "秒回", target: "最后", reason: "收益最低。" },
+    ],
+    utility: [
+      { stat: "范围伤害", target: "冲层优先", reason: "理发师结算吃怪群密度。" },
+      { stat: "减耗", target: "法力紧张时补", reason: "穿透迷雾和频繁魂弹会增加法力压力。" },
+      { stat: "击回", target: "低巅峰可提前", reason: "布置幻象期间提高容错。" },
+      { stat: "金币获取", target: "T16金币链最后", reason: "只服务金织带护甲链。" },
+    ],
+  },
+  post800: [
+    { priority: "智力", when: "核心词缀未齐前", reason: "稳定提高伤害和抗性。" },
+    { priority: "冰霜元素、魂灵弹幕伤害、范围伤害", when: "大秘境冲层", reason: "直接影响理发师最终爆炸。" },
+    { priority: "法力回复", when: "副手、武器和头部可洗出时", reason: "蒙嘟噜套按法力回复提高魂灵弹幕伤害。" },
+    { priority: "冷却缩减", when: "灵行或收割断档", reason: "保证进场、收割和聚怪节奏。" },
+  ],
+  checkpoints: [
+    { label: "成型入口", target: "理发师 + 凝视死亡", action: "先升级祭祀刀和咒物，缺任一件不要标记完成。" },
+    { label: "低巅峰", target: "收割10层、拉昆巴不断", action: "宁可慢一点也不要空层布置幻象。" },
+    { label: "高巅峰", target: "范围伤和法力回复成套", action: "智力词缀逐步让位给结算上限词缀。" },
+  ],
+};
+
+const MUNDUNUGU_POLICIES: BuildChoicePolicy[] = [
+  { key: "mundunugu-engine", targetType: "gear", targetId: "barber", label: "理发师 + 凝视死亡", status: "locked", reason: "理发师负责延迟蓄积，凝视死亡负责灵魂幻象；缺少任一件就不是完整魂弹BD。" },
+  { key: "mundunugu-harvest", targetType: "gear", targetId: "lakumba", label: "收割防线", status: "conditional", reason: "冲层必须靠神圣收割者与拉昆巴叠满减伤，速刷才替换护腕。", alternatives: [{ id: "nemesis-bracers", label: "复仇者护腕", when: "T16和低层大秘境精英密度不足", gain: "开塔召唤精英并喂寅剑", cost: "失去拉昆巴减伤", scenarios: ["speed-low"] }, { id: "warzechian", label: "沃兹克护腕", when: "高巅峰悬赏和开阔图", gain: "破坏物件获得移速", cost: "失去复仇者精英密度", scenarios: ["speed-high"] }] },
+  { key: "mundunugu-ring", targetType: "gear", targetId: "emptiness", label: "虚空之戒 / 贪婪之戒", status: "conditional", reason: "冲层需要虫群触发虚空乘区，T16金币链需要拾取范围。", alternatives: [{ id: "avarice-band", label: "贪婪之戒", when: "T16、蓝门和悬赏金币链", gain: "扩大拾取范围并维持金织带", cost: "失去虚空或元素周期伤害", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "mundunugu-season", targetType: "power", targetId: "ring-emptiness", label: "第39赛季第四槽", status: "conditional", reason: "冲层第四槽补乘区，速刷第四槽补冷却或转场。", alternatives: [{ id: "furnace", label: "焚炉", when: "高巅峰大秘境冲层", gain: "提高精英和首领伤害", cost: "没有虚空戒第四槽时需调整首饰", scenarios: ["push-high"] }, { id: "ingeom", label: "寅剑", when: "T16/低层大秘境", gain: "击杀精英后连续刷新冷却", cost: "失去冲层乘区", scenarios: ["speed-low"] }, { id: "shukrani", label: "舒克拉尼的胜利", when: "高巅峰悬赏和蓝门转场", gain: "未攻击时灵行持续", cost: "单体伤害下降", scenarios: ["speed-high"] }] },
+  { key: "mundunugu-gems", targetType: "legendary-gem", targetId: "bane-of-the-stricken", label: "传奇宝石", status: "conditional", reason: "冲层首领需要受罚，速刷怪物血量低改用强者和囤宝者。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低层大秘境或T16", gain: "击杀精英后常驻增伤", cost: "首领叠层能力下降", scenarios: ["speed-low", "speed-high"] }, { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "T16金币链", gain: "掉金币并触发金织带", cost: "大秘境无金币时失效", scenarios: ["speed-low", "speed-high"] }] },
+];
+
+function completeWitchDoctorGuide(seed: ClassGuideSeed): BuildGuide {
   const guide = createClassGuide(seed);
+  if (guide.id !== "mundunugu-barrage") return guide;
+  for (const item of WITCH_DOCTOR_EXTRA_GEAR) {
+    if (!guide.gear.some((existing) => existing.id === item.id)) guide.gear.push(item);
+  }
+  for (const item of WITCH_DOCTOR_EXTRA_POWERS) {
+    if (!guide.powers.some((existing) => existing.id === item.id)) guide.powers.push(item);
+  }
+  guide.configurationBase = MUNDUNUGU_CONFIGURATION_BASE;
+  guide.defaultScenarioId = "push-low";
+  guide.scenarios = MUNDUNUGU_SCENARIOS;
+  guide.paragonGuide = MUNDUNUGU_PARAGON;
+  guide.choicePolicies = MUNDUNUGU_POLICIES;
+  guide.reviewStatus = "fully-reviewed";
+  guide.variantCompleteness = "complete";
+  return guide;
+}
+
+export const WITCH_DOCTOR_BUILDS: Record<string, BuildGuide> = Object.fromEntries(seeds.map((seed) => {
+  const guide = completeWitchDoctorGuide(seed);
+  const errors = validateReviewedBuildGuide(guide);
+  if (errors.length) throw new Error(`${guide.id} 校验失败：${errors.join("；")}`);
   return [guide.id, guide];
 }));

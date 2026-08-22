@@ -377,6 +377,29 @@ test("renders all reviewed wizard scenarios as real runtime loadouts", async () 
   }
 });
 
+test("renders reviewed mundunugu scenarios with branch-specific sources", async () => {
+  const [html, wdData, page] = await Promise.all([
+    render("/builds/mundunugu-barrage").then((response) => response.text()),
+    readFile(new URL("../app/data/witch-doctor-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /蒙嘟噜魂弹/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(wdData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["MUNDUNUGU_CONFIGURATION_BASE", "nemesis-bracers", "warzechian", "goldwrap", "avarice-band", "ingeom", "shukrani"]) {
+    assert.match(wdData, new RegExp(runtimeChoice));
+  }
+  assert.match(wdData, /MUNDUNUGU_SOURCES/);
+  assert.match(wdData, /icySpeed/);
+  assert.match(page, /function sourceLabel/);
+});
+
 test("a non-prototype build uses the unified interactive detail renderer", async () => {
   const response = await render("/builds/typhon-hydra");
   assert.equal(response.status, 200);

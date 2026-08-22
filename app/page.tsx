@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { Fragment, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import {
   BUILD_CATALOG,
@@ -1628,6 +1628,17 @@ function buildConfigurationValue(guide: UnifiedBuildGuide, value?: string) {
   return item?.name ?? power?.name ?? skill?.name ?? passive?.name ?? known[value] ?? value;
 }
 
+function sourceLabel(source: string, index: number) {
+  try {
+    const url = new URL(source);
+    const host = url.hostname.replace(/^www\./, "");
+    const path = url.pathname.split("/").filter(Boolean).at(-1)?.replace(/-/g, " ");
+    return path ? `${host} · ${path}` : host;
+  } catch {
+    return `来源 ${index + 1}`;
+  }
+}
+
 function BuildReviewPanel({
   guide,
   scenario,
@@ -1661,7 +1672,7 @@ function BuildReviewPanel({
           )}
           {diffs.some((diff) => diff.category === "statPriorities") && <p className="review-change-note">属性目标也随场景更新，详见装备盘和下方检查点。</p>}
           {diffs.some((diff) => diff.category === "rotation") && <p className="review-change-note">实战循环已切换为小秘境短按虹吸与金币链。</p>}
-          <div className="review-sources"><span>校对来源</span>{scenario.sourceRefs.map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>来源 {index + 1}</a>)}<small>{scenario.reviewedAt}</small></div>
+          <div className="review-sources"><span>校对来源</span>{scenario.sourceRefs.map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>{sourceLabel(source, index)}</a>)}<small>{scenario.reviewedAt}</small></div>
         </article>
 
         <article className="paragon-guide-card">
@@ -1954,7 +1965,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         </article>
       </section>
 
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p></div><p><a href="/builds">返回全职业 BD</a> · <a href={guide.source} target="_blank" rel="noreferrer">查看校对来源</a></p></footer>
+      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p></div><p><a href="/builds">返回全职业 BD</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}> · <a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></Fragment>)}</p></footer>
     </main>
   );
 }
