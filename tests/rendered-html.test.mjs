@@ -130,8 +130,8 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
 });
 
 test("keeps shared-configuration builds from receiving unreviewed variant swaps", async () => {
-  const [akkhanCondemn, godMonk, guideTypes, page] = await Promise.all([
-    render("/builds/akkhan-condemn").then((response) => response.text()),
+  const [akkhanPhalanx, godMonk, guideTypes, page] = await Promise.all([
+    render("/builds/akkhan-phalanx").then((response) => response.text()),
     render("/builds/god-monk").then((response) => response.text()),
     readFile(new URL("../app/data/build-guides.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -140,9 +140,27 @@ test("keeps shared-configuration builds from receiving unreviewed variant swaps"
   assert.match(guideTypes, /hasExplicitRuntimeVariants/);
   assert.match(guideTypes, /documented-shared/);
   assert.match(page, /resolveBuildVariantProfile/);
-  assert.match(akkhanCondemn, /配置差异待实装/);
-  assert.doesNotMatch(akkhanCondemn, /variant-goldwrap|variant-ingeom/);
+  assert.match(akkhanPhalanx, /配置差异待实装/);
+  assert.doesNotMatch(akkhanPhalanx, /variant-goldwrap|variant-ingeom/);
   assert.doesNotMatch(godMonk, /配置差异待实装/);
+});
+
+test("renders the reviewed Akkhan Condemn scenarios as separate push and T16 loadouts", async () => {
+  const [html, crusaderData] = await Promise.all([
+    render("/builds/akkhan-condemn").then((response) => response.text()),
+    readFile(new URL("../app/data/crusader-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /阿克汉天谴/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /卡萨的战盔/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const value of ["AKKHAN_CONDEMN_SOURCES", "kassar-helm", "frydehr-power", "unrelenting-power", "goldwrap-power", "messerschmidt", "bane-of-the-stricken", "boon-of-the-hoarder"]) {
+    assert.match(crusaderData, new RegExp(value));
+  }
+  assert.match(crusaderData, /validateReviewedBuildGuide\(AKKHAN_CONDEMN_REVIEWED_GUIDE\)/);
 });
 
 test("validates reviewed scenarios and renders Trag'Oul guidance from complete data", async () => {

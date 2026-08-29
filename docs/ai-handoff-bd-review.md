@@ -1,6 +1,6 @@
 # BD 逐套校对 AI 交接手册
 
-更新日期：2026-08-22
+更新日期：2026-08-29
 
 这是一份可独立使用的续作说明。接手者应以本文件记录的状态为起点，不依赖此前对话记忆。当前目标不是一次性批量补齐 51 套 BD，而是按照清单逐套研究、实现、验证、记录和提交，确保页面上的场景变化来自真实配置，而不是只改变说明文字。
 
@@ -36,12 +36,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 24 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
+| 已完整校对 | 25 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 27 | 见路线图第 9 节清单 |
-| 仍需完成 | 27 | 27 套草稿 |
+| 尚未逐套校对 | 26 | 见路线图第 9 节清单 |
+| 仍需完成 | 26 | 26 套草稿 |
 
-当前工作游标：路线图清单第 16 项 `akkhan-condemn`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
+当前工作游标：路线图清单第 17 项 `akkhan-phalanx`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -51,11 +51,11 @@ npm test
 
 野蛮人 `raekor-boulder`、`ik-hota`、`lod-hota` 已完成。
 
-圣教军 `pony-fist-farm`、`valor-fist`、`valor-fury` 已完成。
+圣教军 `pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn` 已完成。
 
 建议后续顺序：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `akkhan-condemn`）；之后依次处理 `akkhan-phalanx`、`invoker-thorns`、`roland-sweep`、`seeker-hammer`、`lod-bombardment`。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `akkhan-phalanx`）；之后依次处理 `invoker-thorns`、`roland-sweep`、`seeker-hammer`、`lod-bombardment`。
 
 已完成的基础设施：
 
@@ -64,7 +64,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为 `npm test` 38 项全部通过。
+- 最近一次完整验证为构建后执行的 `node --test tests/*.test.mjs`，42 项全部通过。
 
 已知部分实装的真实含义：
 
@@ -79,6 +79,7 @@ feat(bd): 完成死灵法师新星系多场景校对（梦遗/伊纳瑞斯）
 feat(bd): 完成上帝僧多场景校对
 feat(bd): 完成恐惧冰吞多场景校对
 feat(bd): 完成跑马天拳多场景校对
+feat(bd): 完成阿克汉天谴多场景校对
 80b78c6 docs(bd): 编写逐套校对 AI 交接手册
 37a6c42 feat(bd): 完成荒原旋风痛割多场景校对
 09f04ef fix(ui): 校正装备详情宝石与镶孔圆框
@@ -483,6 +484,7 @@ git log -1 --stat
 | 8 | `raekor-boulder` | 已校对 | `feat(bd): 完成蕾蔻巨石多场景校对` | 双矛/斯古拉冲层、寅剑/梅斧冷却、复仇者/沃兹克与金币链速刷、分支来源 | 仅回归维护 |
 | 9 | `ik-hota` | 已校对 | `feat(bd): 完成不朽先祖锤多场景校对` | 不朽双常驻、审判之锤/先民护腕/悔恨、金币链与寅剑速刷、分支来源 | 仅回归维护 |
 | 10 | `lod-hota` | 已校对 | `feat(bd): 完成梦遗先祖锤多场景校对` | 梦遗远古门槛、黄道/卡修斯主动防线、金币链速刷与不推荐边界、分支来源 | 仅回归维护 |
+| 16 | `akkhan-condemn` | 已校对 | `feat(bd): 完成阿克汉天谴多场景校对` | 双盾弓手冲层、自施天谴金币链速刷、冷却/攻速阈值与来源 | 下一套 `akkhan-phalanx` |
 
 其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
 
