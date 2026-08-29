@@ -56,6 +56,7 @@ npm test
 - [数据采集与更新](./data-pipeline.md)：暴雪数据抓取、缓存、增量更新与校验。
 - [开发与维护指南](./development-guide.md)：本地开发、增加 BD、修改页面、测试和故障排查。
 - [技术债与还债计划](./technical-debt.md)：技术债优先级、影响范围、拆解步骤和验收标准。
+- [项目最终目标与差距记录](./project-goal-and-gap.md)：最终体验目标、当前差距和近期执行方向。
 - [BD 内容与界面重构路线](./bd-content-and-ui-roadmap.md)：51 套 BD 的场景配置、巅峰、替换项、随从、装备框和字号实施计划。
 - [BD 逐套校对 AI 交接手册](./ai-handoff-bd-review.md)：当前完成状态、下一套 BD、实施步骤、验收、记录和提交规范。
 

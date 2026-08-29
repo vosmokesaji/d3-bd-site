@@ -5,11 +5,13 @@ export function GearDetailPanel({
   gear,
   sockets,
   originalEffect,
+  officialItemHref,
   socketNote,
 }: {
   gear: BuildGear;
   sockets: GearSocket[];
   originalEffect: string;
+  officialItemHref?: string;
   socketNote?: string;
 }) {
   return (
@@ -30,6 +32,7 @@ export function GearDetailPanel({
             <strong>{gear.quality === "set" ? "套装物品" : "传奇物品"}</strong>
             <small>{gear.slot}</small>
             <b>远古 / 太古均可用</b>
+            {officialItemHref && <a className="gear-library-link" href={officialItemHref}>打开物品详情</a>}
           </div>
         </div>
         <section className="original-effect"><p>{originalEffect}</p></section>

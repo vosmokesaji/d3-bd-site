@@ -11,7 +11,7 @@ export function PaperdollGearSlot({
   dimmed,
   sockets = [],
   onSelect,
-  onPreview,
+  onFocusSelect,
 }: {
   gear: BuildGear;
   position?: string;
@@ -20,14 +20,13 @@ export function PaperdollGearSlot({
   dimmed?: boolean;
   sockets?: GearSocket[];
   onSelect: (id: string) => void;
-  onPreview: (id: string) => void;
+  onFocusSelect?: (id: string) => void;
 }) {
   return (
     <button
       className={`item-slot ${gear.quality} ${position ? `slot-${position}` : ""} ${selected ? "selected" : ""} ${related ? "related" : ""} ${dimmed ? "dimmed" : ""}`}
       onClick={() => onSelect(gear.id)}
-      onMouseEnter={() => onPreview(gear.id)}
-      onFocus={() => onPreview(gear.id)}
+      onFocus={() => onFocusSelect?.(gear.id)}
       aria-label={`${gear.slot}：${gear.name}`}
     >
       <DiabloItemFrame image={gear.image} quality={gear.quality} shape="fill" size="fill" sockets={sockets} fit="native" />

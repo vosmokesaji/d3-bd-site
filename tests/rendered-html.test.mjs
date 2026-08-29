@@ -37,6 +37,42 @@ test("server-renders the complete seven-class build atlas", async () => {
   assert.doesNotMatch(html, /待制作|即将接入/);
 });
 
+test("keeps the selected class in build atlas navigation links", async () => {
+  const [atlas, detail, page] = await Promise.all([
+    render("/builds?class=crusader").then((response) => response.text()),
+    render("/builds/valor-fury").then((response) => response.text()),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(atlas, /圣教军(?:<!-- -->)?目录/);
+  assert.match(atlas, /href="\/builds\/valor-fist\?fromClass=crusader"/);
+  assert.match(detail, /href="\/builds\?class=crusader"/);
+  assert.match(page, /window\.history\.replaceState\(null, "", `\/builds\?class=\$\{nextClass\}`\)/);
+});
+
+test("documents the project goal and renders a compact PC build command deck", async () => {
+  const [goal, readme, handoff, page, css] = await Promise.all([
+    readFile(new URL("../docs/project-goal-and-gap.md", import.meta.url), "utf8"),
+    readFile(new URL("../docs/README.md", import.meta.url), "utf8"),
+    readFile(new URL("../docs/ai-handoff-bd-review.md", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(goal, /PC 端进入 BD 详情后，首屏尽可能同时看到纸娃娃装备、技能、萃取、巅峰\/场景选择和核心构筑原因/);
+  assert.match(goal, /装备和 BD 双向关联/);
+  assert.match(readme, /项目最终目标与差距记录/);
+  assert.match(handoff, /project-goal-and-gap/);
+  assert.match(goal, /纸娃娃、当前装备详情、构筑原因、技能、魔方与巅峰摘要/);
+  assert.match(page, /function BuildCommandDeck/);
+  assert.match(page, /<BuildCommandDeck/);
+  assert.match(page, /paperdoll-compact-stage/);
+  assert.match(css, /\.build-command-deck \{/);
+  assert.match(css, /\.bd-detail-page \.build-command-deck \{ grid-column: 3; grid-row: 6; height: 518px;/);
+  assert.match(css, /\.bd-detail-page \.loadout-panel \.paperdoll \{[\s\S]*transform: scale\(0\.62\);/);
+  assert.match(css, /\.bd-detail-page \.build-review-panel \{ grid-row: 11; \}/);
+});
+
 test("all catalog entries resolve through data-driven class guide modules", async () => {
   const [catalog, page, guideTypes] = await Promise.all([
     readFile(new URL("../app/data/site-catalog.ts", import.meta.url), "utf8"),
@@ -663,6 +699,29 @@ test("moves shared build UI into components and removes the retired guide styles
   assert.doesNotMatch(css, /\.guide-/);
 });
 
+test("locks build gear details on selection and cross-links items with builds", async () => {
+  const [page, gearSlot, gearDetail, css] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/build/PaperdollGearSlot.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/build/GearDetailPanel.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.doesNotMatch(gearSlot, /onMouseEnter|onPreview/);
+  assert.match(page, /点击装备查看 · 焦点跟随键盘/);
+  assert.match(page, /relatedBuildsForOfficialItem/);
+  assert.match(page, /itemReferenceMatchesOfficial/);
+  assert.match(page, /officialItemHref=\{selectedOfficialHref\}/);
+  assert.match(page, /href=\{`\/builds\/\$\{build\.id\}\?fromClass=\$\{build\.classId\}`\}/);
+  assert.match(page, /reference\.effect/);
+  assert.match(page, /className="item-build-card"[\s\S]*?<strong>\{build\.name\}<\/strong>[\s\S]*?build\.usages\.map/);
+  assert.match(gearDetail, /officialItemHref\?: string/);
+  assert.match(gearDetail, /className="gear-library-link"/);
+  assert.match(css, /\.gear-library-link/);
+  assert.match(css, /\.item-build-links/);
+  assert.match(css, /\.item-build-card/);
+});
+
 test("renders complete follower paperdolls with explicit empty slots on a mobile-safe layout", async () => {
   const [html, page, data, paperdoll, css] = await Promise.all([
     render("/builds/tragoul-nova").then((response) => response.text()),
@@ -730,7 +789,9 @@ test("uses shared readable typography tokens across build, follower, and item de
   ]) assert.match(css, new RegExp(token));
   assert.match(css, /\.choice-policy > p,[^]*font-size: var\(--text-small-size\)/);
   assert.match(css, /\.follower-card > p,[^]*font-size: var\(--text-small-size\)/);
-  assert.match(css, /\.item-detail-effect p,[^]*font-size: var\(--text-small-size\)/);
+  assert.match(css, /\.item-detail-effect p \{[^}]*font-size: var\(--text-body-size\)/);
+  assert.match(css, /\.official-property-list > li,[^]*font-size: var\(--text-body-size\)/);
+  assert.match(css, /\.gear-detail p,[^]*font-size: var\(--text-body-size\)/);
   assert.doesNotMatch(css, /clamp\(/);
   assert.match(tragoul, /diablo-item-frame/);
 });

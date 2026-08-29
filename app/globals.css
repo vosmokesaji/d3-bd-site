@@ -628,6 +628,60 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
   line-height: 1.55;
 }
 
+.build-first-screen-overview {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 1px solid rgba(139, 101, 55, 0.45);
+  padding: 8px;
+  background:
+    linear-gradient(180deg, rgba(31, 25, 18, 0.92), rgba(8, 9, 9, 0.96)),
+    url("/d3/f6398f67c47a46bd.jpg") center / cover;
+}
+
+.build-first-screen-overview article {
+  min-width: 0;
+  border: 1px solid rgba(83, 67, 44, 0.62);
+  padding: 10px 12px;
+  background: rgba(4, 5, 5, 0.66);
+}
+
+.build-first-screen-overview span,
+.build-first-screen-overview strong,
+.build-first-screen-overview p {
+  display: block;
+}
+
+.build-first-screen-overview span {
+  color: #9b6b39;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.build-first-screen-overview strong {
+  overflow: hidden;
+  margin-top: 5px;
+  color: #e1c28a;
+  font: 500 15px/1.35 "Noto Serif SC", SimSun, serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.build-first-screen-overview p {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: 38px;
+  margin: 6px 0 0;
+  color: #92897b;
+  font-size: 12px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .build-review-panel {
   grid-column: 1 / -1;
   width: 100%;
@@ -2586,14 +2640,15 @@ main > footer { grid-row: 13; }
 .bd-detail-page .site-header { grid-row: 1; }
 .bd-detail-page .hero { grid-row: 2; }
 .bd-detail-page .variant-bar { grid-row: 3; }
-.bd-detail-page .build-review-panel { grid-row: 4; }
+.bd-detail-page .build-first-screen-overview { grid-row: 4; }
+.bd-detail-page .build-review-panel { grid-row: 10; }
 .bd-detail-page .loadout-panel { grid-row: 5; }
 .bd-detail-page .skills-panel { grid-row: 6; }
 .bd-detail-page .cube-panel { grid-row: 6; }
 .bd-detail-page .synergy-panel { grid-row: 7; }
 .bd-detail-page .follower-panel { grid-row: 8; }
 .bd-detail-page .combat-panel { grid-row: 9; }
-.bd-detail-page > footer { grid-row: 10; }
+.bd-detail-page > footer { grid-row: 11; }
 
 .library-groups {
   display: grid;
@@ -2731,6 +2786,57 @@ main > footer { grid-row: 13; }
 .library-detail-card dt { color: #635d54; }
 .library-detail-card dd { margin: 0; color: #aaa08f; }
 
+.item-build-links {
+  margin-top: 28px;
+}
+
+.item-build-links h3 {
+  margin: 0 0 12px;
+  color: #d7c79b;
+  font: 500 16px/1.2 "Noto Serif SC", SimSun, serif;
+}
+
+.item-build-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.item-build-card {
+  display: block;
+  border: 1px solid #37291b;
+  padding: 14px;
+  color: #aca08d;
+  background: #0a0b0b;
+  text-decoration: none;
+}
+
+.item-build-card:hover,
+.item-build-card:focus-visible {
+  border-color: #8b6335;
+  background: #120f0b;
+}
+
+.item-build-card span,
+.item-build-card small {
+  display: block;
+  color: #8b7658;
+  font-size: 11px;
+}
+
+.item-build-card strong {
+  display: block;
+  margin: 5px 0;
+  color: #d8b975;
+  font: 500 16px/1.25 "Noto Serif SC", SimSun, serif;
+}
+
+.item-build-card p {
+  margin: 8px 0 0;
+  color: #928979;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .detail-runes { margin-top: 22px; }
 .detail-runes h3 { color: #bca379; font: 500 12px/1.2 "Noto Serif SC", SimSun, serif; }
 .detail-runes span { display: inline-flex; align-items: center; gap: 6px; margin: 0 6px 6px 0; border: 1px solid #35434a; padding: 7px 9px; color: #8fa6ad; background: #0b1113; font-size: 8px; }
@@ -2856,6 +2962,7 @@ main {
 .site-header,
 .hero,
 .variant-bar,
+.build-first-screen-overview,
 footer {
   grid-column: 1 / -1;
 }
@@ -2877,13 +2984,17 @@ footer {
   margin: -12px 0 0;
 }
 
+.build-first-screen-overview {
+  grid-row: 4;
+}
+
 .workbench,
 .lower-grid {
   display: contents;
 }
 
 .loadout-panel {
-  grid-row: 4;
+  grid-row: 5;
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1018px minmax(440px, 1fr);
@@ -3523,6 +3634,25 @@ footer {
   font-weight: 500;
 }
 
+.gear-library-link {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 14px;
+  border: 1px solid #73552d;
+  padding: 8px 10px;
+  color: #ddb973;
+  background: #1a120b;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.gear-library-link:hover,
+.gear-library-link:focus-visible {
+  border-color: #b8843d;
+  color: #fff0bd;
+}
+
 .detail-sockets {
   position: absolute;
   right: -10px;
@@ -3631,30 +3761,30 @@ footer {
 }
 
 .skills-panel {
-  grid-row: 5;
+  grid-row: 6;
   grid-column: 1;
   min-height: 0;
 }
 
 .cube-panel {
-  grid-row: 5;
+  grid-row: 6;
   grid-column: 2;
   min-height: 0;
 }
 
 .synergy-panel {
-  grid-row: 6;
+  grid-row: 7;
   grid-column: 1 / -1;
   min-height: 0;
 }
 
 .follower-panel {
-  grid-row: 7;
+  grid-row: 8;
   grid-column: 1 / -1;
 }
 
 .combat-panel {
-  grid-row: 8;
+  grid-row: 9;
   grid-column: 1 / -1;
   min-height: auto;
 }
@@ -4824,9 +4954,6 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
 .post-paragon p span,
 .choice-policy > p,
 .choice-policy dd span,
-.gear-detail p,
-.gear-detail li,
-.gear-detail .socket-advice span,
 .follower-card > p,
 .follower-item-copy em,
 .follower-rule,
@@ -4838,6 +4965,20 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
 .official-property-list li {
   font-size: var(--text-small-size);
   line-height: var(--text-small-line);
+}
+
+.gear-detail p,
+.gear-detail li,
+.gear-detail .socket-advice span {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+}
+
+.gear-detail .affix-list b,
+.gear-detail .socket-advice small,
+.gear-detail .warning {
+  font-size: var(--text-meta-size);
+  line-height: var(--text-meta-line);
 }
 
 .build-review-grid h3,
@@ -4876,14 +5017,14 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
   font: 500 11px/1.3 "Noto Serif SC", SimSun, serif;
 }
 
-.item-detail-effect p { margin: 0; color: #e39732; font-size: 9px; line-height: 1.65; }
+.item-detail-effect p { margin: 0; color: #e39732; font-size: var(--text-body-size); line-height: var(--text-body-line); }
 .item-detail-lines ul,
 .item-detail-set ul { margin: 0; padding: 0; list-style: none; }
 .item-detail-lines li,
-.item-detail-set li { padding: 2px 0; color: #928c82; font-size: 8px; line-height: 1.5; }
+.item-detail-set li { padding: 2px 0; color: #928c82; font-size: var(--text-body-size); line-height: var(--text-body-line); }
 .item-detail-set li { color: #8fcf47; }
-.item-detail-extras { display: flex; gap: 8px; margin-top: 17px; color: #7d715e; font-size: 7px; }
-.library-detail-card blockquote { margin: 18px 0 0; padding: 12px; border-left: 2px solid #684b2b; color: #8c785f; background: #100d0a; font-size: 8px; font-style: italic; line-height: 1.6; }
+.item-detail-extras { display: flex; gap: 8px; margin-top: 17px; color: #7d715e; font-size: var(--text-meta-size); line-height: var(--text-meta-line); }
+.library-detail-card blockquote { margin: 18px 0 0; padding: 12px; border-left: 2px solid #684b2b; color: #8c785f; background: #100d0a; font-size: var(--text-small-size); font-style: italic; line-height: var(--text-small-line); }
 
 .item-detail-properties {
   margin-top: 18px;
@@ -4912,8 +5053,8 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
   position: relative;
   padding: 2px 0 2px 15px;
   color: #8d8cf2;
-  font-size: 9px;
-  line-height: 1.55;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
 }
 
 .official-property-list li > i {
@@ -4969,8 +5110,8 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
 
 .item-set-pieces li {
   padding: 1px 0 1px 16px;
-  font-size: 9px;
-  line-height: 1.5;
+  font-size: var(--text-small-size);
+  line-height: var(--text-small-line);
 }
 
 .item-set-pieces a,
@@ -4999,6 +5140,7 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
 @media (max-width: 1100px) {
   .variant-bar { flex-wrap: wrap; }
   .variant-note { width: 100%; margin-left: 0; }
+  .build-first-screen-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .build-review-panel > header { grid-template-columns: 1fr auto; }
   .build-review-panel > header p { grid-column: 1 / -1; grid-row: 2; }
   .build-review-grid { grid-template-columns: 1fr; }
@@ -5161,13 +5303,18 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
   }
 
   .hero,
-  .variant-bar {
+  .variant-bar,
+  .build-first-screen-overview {
     width: calc(100% + 16px);
     margin-left: -8px;
   }
 
   .variant-bar {
     position: static;
+  }
+
+  .build-first-screen-overview {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero {
@@ -5263,4 +5410,289 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
   .combat-panel .rotation-list li {
     min-height: 0;
   }
+}
+
+/* PC BD command deck: keep the build's decision-making surface together. */
+.build-command-deck {
+  min-width: 0;
+  border: 1px solid #4c3a25;
+  background: linear-gradient(145deg, rgba(24, 18, 12, 0.98), rgba(5, 7, 7, 0.98));
+  box-shadow: inset 0 0 40px rgba(115, 70, 30, 0.08), 0 12px 28px rgba(0, 0, 0, 0.36);
+}
+
+.command-deck-intro {
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid rgba(140, 103, 59, 0.35);
+  background: linear-gradient(100deg, rgba(68, 42, 21, 0.38), transparent 72%);
+}
+
+.command-deck-intro span,
+.command-deck-intro strong,
+.command-deck-intro p,
+.command-deck-heading span,
+.command-deck-heading small {
+  display: block;
+}
+
+.command-deck-intro span,
+.command-deck-heading span {
+  color: #a6753b;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
+.command-deck-intro strong {
+  margin-top: 5px;
+  color: #ead7b2;
+  font: 500 17px/1.25 "Noto Serif SC", SimSun, serif;
+}
+
+.command-deck-intro p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 6px 0 0;
+  color: #a59a8b;
+  font-size: 11px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.command-deck-section {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(135, 97, 55, 0.2);
+}
+
+.command-deck-section:last-child { border-bottom: 0; }
+
+.command-deck-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.command-deck-heading small {
+  overflow: hidden;
+  color: #776956;
+  font-size: 9px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.command-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.command-skill-grid button,
+.command-passives button,
+.command-cube-grid button {
+  min-width: 0;
+  border: 1px solid rgba(70, 92, 94, 0.45);
+  color: inherit;
+  background: rgba(8, 13, 14, 0.72);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease, opacity 140ms ease;
+}
+
+.command-skill-grid button {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 4px 5px;
+  gap: 6px;
+  text-align: left;
+}
+
+.command-skill-grid img {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+
+.command-skill-grid span,
+.command-skill-grid strong,
+.command-skill-grid small,
+.command-cube-grid span,
+.command-cube-grid small,
+.command-cube-grid strong,
+.command-cube-grid em {
+  display: block;
+  min-width: 0;
+}
+
+.command-skill-grid strong {
+  overflow: hidden;
+  color: #d2c9b9;
+  font-size: 10px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.command-skill-grid small {
+  overflow: hidden;
+  margin-top: 2px;
+  color: #7c9aa5;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.command-passives {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.command-passives button {
+  display: grid;
+  grid-template-columns: 21px minmax(0, 1fr);
+  align-items: center;
+  min-height: 29px;
+  padding: 3px;
+  gap: 4px;
+  text-align: left;
+}
+
+.command-passives img { width: 19px; height: 19px; object-fit: cover; }
+
+.command-passives span {
+  overflow: hidden;
+  color: #a7c6d0;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.command-cube-grid { display: grid; gap: 5px; }
+
+.command-cube-grid button {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  min-height: 42px;
+  padding: 4px;
+  gap: 7px;
+  text-align: left;
+}
+
+.command-cube-grid img { width: 31px; height: 31px; object-fit: contain; }
+.command-cube-grid small { color: #886640; font-size: 8px; }
+.command-cube-grid strong { overflow: hidden; margin-top: 1px; color: #d39b55; font-size: 10px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.command-cube-grid em { display: -webkit-box; overflow: hidden; margin-top: 2px; color: #817568; font-size: 8px; font-style: normal; line-height: 1.3; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+
+.command-paragon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.command-paragon-grid article {
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid rgba(112, 78, 43, 0.36);
+  background: rgba(19, 15, 11, 0.68);
+}
+
+.command-paragon-grid small,
+.command-paragon-grid strong,
+.command-paragon-grid span { display: block; }
+.command-paragon-grid small { color: #886942; font-size: 8px; }
+.command-paragon-grid strong { overflow: hidden; margin-top: 3px; color: #d7c6a6; font-size: 10px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.command-paragon-grid span { overflow: hidden; margin-top: 2px; color: #8b8175; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+
+.command-skill-grid button:hover,
+.command-passives button:hover,
+.command-cube-grid button:hover,
+.command-skill-grid button.active,
+.command-passives button.active,
+.command-cube-grid button.active,
+.command-skill-grid button.related,
+.command-passives button.related,
+.command-cube-grid button.related {
+  border-color: #c99449;
+  background: rgba(77, 47, 22, 0.64);
+}
+
+@media (min-width: 1180px) {
+  .bd-detail-page {
+    grid-template-columns: minmax(500px, 1.25fr) minmax(310px, 0.78fr) minmax(350px, 0.92fr);
+    gap: 10px;
+  }
+
+  .bd-detail-page .hero {
+    min-height: 142px;
+    padding: 20px 30px;
+  }
+
+  .bd-detail-page .hero h1 { margin: 6px 0 4px; font-size: 32px; }
+  .bd-detail-page .hero p { display: -webkit-box; overflow: hidden; font-size: 12px; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .bd-detail-page .breadcrumbs { margin-bottom: 10px; font-size: 9px; }
+  .bd-detail-page .build-rating { margin-top: 0; }
+  .bd-detail-page .build-rating span { min-width: 98px; padding: 7px 9px; font-size: 9px; }
+  .bd-detail-page .variant-bar { min-height: 50px; padding: 7px 12px; }
+  .bd-detail-page .variant-group button { padding: 6px 9px; font-size: 10px; }
+  .bd-detail-page .variant-note { font-size: 10px; line-height: 1.35; }
+
+  .bd-detail-page .variant-audit-note { grid-column: 1 / -1; grid-row: 4; }
+  .bd-detail-page .loadout-comparison { grid-column: 1 / -1; grid-row: 5; }
+  .bd-detail-page .loadout-panel { grid-column: 1 / 3; grid-row: 6; grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.88fr); min-height: 518px; }
+  .bd-detail-page .build-command-deck { grid-column: 3; grid-row: 6; height: 518px; overflow: hidden; }
+  .bd-detail-page .skills-panel { grid-column: 1 / 3; grid-row: 7; }
+  .bd-detail-page .cube-panel { grid-column: 3; grid-row: 7; }
+  .bd-detail-page .synergy-panel { grid-row: 8; }
+  .bd-detail-page .follower-panel { grid-row: 9; }
+  .bd-detail-page .combat-panel { grid-row: 10; }
+  .bd-detail-page .build-review-panel { grid-row: 11; }
+  .bd-detail-page > footer { grid-row: 12; }
+
+  .bd-detail-page .loadout-panel > .panel-heading { min-height: 44px; }
+  .bd-detail-page .loadout-panel .paperdoll-compact-stage {
+    width: min(100%, 620px);
+    height: 402px;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .bd-detail-page .loadout-panel .paperdoll {
+    width: 994px;
+    max-width: none;
+    height: 645px;
+    margin: 0;
+    transform: scale(0.62);
+    transform-origin: top left;
+  }
+
+  .bd-detail-page .loadout-panel .gear-detail-shell {
+    height: 438px;
+    min-height: 0;
+    margin: 12px 14px 14px 0;
+    align-self: center;
+  }
+
+  .bd-detail-page .gear-detail.blizzard-tooltip { padding: 12px 14px 16px; }
+  .bd-detail-page .detail-item-icon { width: 78px; height: 96px; }
+  .bd-detail-page .gear-detail-title .detail-item-icon > img { width: 70px; height: 88px; }
+  .bd-detail-page .gear-detail-title { margin-bottom: 8px; }
+  .bd-detail-page .original-effect,
+  .bd-detail-page .build-gear-effect,
+  .bd-detail-page .socket-advice { margin: 8px 0; }
+  .bd-detail-page .gear-library-link { margin-top: 8px; padding: 6px 8px; }
+}
+
+@media (min-width: 1180px) and (max-width: 1380px) {
+  .bd-detail-page { grid-template-columns: minmax(455px, 1.13fr) minmax(285px, 0.72fr) minmax(330px, 0.86fr); }
+  .bd-detail-page .loadout-panel .paperdoll-compact-stage { width: 560px; height: 362px; }
+  .bd-detail-page .loadout-panel .paperdoll { transform: scale(0.56); }
+  .command-deck-intro { padding: 11px 12px 9px; }
+  .command-deck-section { padding: 7px 9px; }
+  .command-passives { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

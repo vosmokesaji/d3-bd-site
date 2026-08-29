@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import {
   BUILD_CATALOG,
   CAMPAIGN_ACTS,
@@ -687,16 +687,24 @@ type ItemCategoryRecord = {
 
 function SiteHeader({ active }: { active?: "story" | "season" | "builds" | "library" }) {
   const { openSettings } = useSiteSettings();
+  const pathname = usePathname() || "/builds";
+  const searchParams = useSearchParams();
+  const requestedClass = searchParams.get("class") ?? searchParams.get("fromClass");
+  const pathBuildId = pathname.startsWith("/builds/") ? pathname.split("/").filter(Boolean)[1] : null;
+  const pathBuildClass = BUILD_CATALOG.find((build) => build.id === pathBuildId)?.classId;
+  const buildsHref = active === "builds" && (isClassId(requestedClass) || pathBuildClass)
+    ? `/builds?class=${isClassId(requestedClass) ? requestedClass : pathBuildClass}`
+    : "/builds";
   return (
     <header className="site-header global-tabs">
-      <a className="brand" href="/builds" aria-label="返回赛季全职业BD">
+      <a className="brand" href={buildsHref} aria-label="返回赛季全职业BD">
         <span className="brand-mark">III</span>
         <span><strong>圣休亚瑞秘典</strong><small>NEPHALEM ARCHIVE</small></span>
       </a>
       <nav aria-label="站点主导航">
         <a className={active === "story" ? "active" : ""} href="/story">剧情线路</a>
         <a className={active === "season" ? "active" : ""} href="/season-start">赛季开荒</a>
-        <a className={active === "builds" ? "active" : ""} href="/builds">赛季全职业BD</a>
+        <a className={active === "builds" ? "active" : ""} href={buildsHref}>赛季全职业BD</a>
         <a className={active === "library" ? "active" : ""} href="/library">物品</a>
       </nav>
       <div className="season-pill"><i /> {SEASON_PLATFORM_LABEL}</div>
@@ -718,10 +726,17 @@ function RoutePage({ active, title, eyebrow, children }: { active: "story" | "se
   );
 }
 
+function isClassId(value: string | null): value is ClassId {
+  return CLASS_CATALOG.some((hero) => hero.id === value);
+}
+
 function BuildAtlas() {
-  const [classId, setClassId] = useState<ClassId>("necromancer");
+  const searchParams = useSearchParams();
+  const requestedClass = searchParams.get("class");
+  const initialClass = isClassId(requestedClass) ? requestedClass : "necromancer";
+  const [classId, setClassId] = useState<ClassId>(initialClass);
   const [query, setQuery] = useState("");
-  const [selectedId, setSelectedId] = useState("tragoul-nova");
+  const [selectedId, setSelectedId] = useState(() => BUILD_CATALOG.find((build) => build.classId === initialClass)?.id ?? "tragoul-nova");
   const visibleBuilds = BUILD_CATALOG.filter((build) => {
     const matchesClass = build.classId === classId;
     const haystack = `${build.name}${build.set}${build.core}`.toLowerCase();
@@ -729,6 +744,22 @@ function BuildAtlas() {
   });
   const selected = BUILD_CATALOG.find((build) => build.id === selectedId) ?? visibleBuilds[0] ?? BUILD_CATALOG[0];
   const selectedClass = CLASS_CATALOG.find((hero) => hero.id === selected.classId) ?? CLASS_CATALOG[0];
+
+  useEffect(() => {
+    const nextClass = isClassId(requestedClass) ? requestedClass : null;
+    if (nextClass && nextClass !== classId) {
+      setClassId(nextClass);
+      const first = BUILD_CATALOG.find((build) => build.classId === nextClass);
+      if (first) setSelectedId(first.id);
+    }
+  }, [classId, requestedClass]);
+
+  function updateClass(nextClass: ClassId) {
+    setClassId(nextClass);
+    const first = BUILD_CATALOG.find((build) => build.classId === nextClass);
+    if (first) setSelectedId(first.id);
+    window.history.replaceState(null, "", `/builds?class=${nextClass}`);
+  }
 
   return (
     <section className="archive-section build-atlas" id="builds">
@@ -742,9 +773,7 @@ function BuildAtlas() {
             key={hero.id}
             className={classId === hero.id ? "active" : ""}
             onClick={() => {
-              setClassId(hero.id);
-              const first = BUILD_CATALOG.find((build) => build.classId === hero.id);
-              if (first) setSelectedId(first.id);
+              updateClass(hero.id);
             }}
           >
             <img src={hero.portrait} alt="" />
@@ -764,7 +793,7 @@ function BuildAtlas() {
               className={`build-card ${selected.id === build.id ? "active" : ""}`}
               onMouseEnter={() => setSelectedId(build.id)}
               onFocus={() => setSelectedId(build.id)}
-              onClick={() => { window.location.href = `/builds/${build.id}`; }}
+              onClick={() => { window.location.href = `/builds/${build.id}?fromClass=${classId}`; }}
             >
               <img src={build.image} alt="" />
               <span>
@@ -788,7 +817,7 @@ function BuildAtlas() {
           </dl>
           <p>{selected.summary}</p>
           {selected.content && <p><strong>适用：</strong>{selected.content.join(" · ")}</p>}
-          <a href={`/builds/${selected.id}`}>{selected.complete ? "打开完整装备与联动图" : "进入 BD 资料页"}</a>
+          <a href={`/builds/${selected.id}?fromClass=${classId}`}>{selected.complete ? "打开完整装备与联动图" : "进入 BD 资料页"}</a>
           {!selected.complete && <small>装备库与技能库已接入；完整词缀和联动图正在按原型标准逐套校对。</small>}
         </aside>
       </div>
@@ -995,6 +1024,50 @@ function findOfficialItem(records: OfficialItemRecord[], gear?: Gear) {
     ?? records.find((record) => record.id.toLowerCase() === gear.id.toLowerCase());
 }
 
+type BuildItemReference = {
+  id: string;
+  name: string;
+  image: string;
+  effect: string;
+  kind: "装备" | "魔盒威能";
+};
+
+type RelatedBuildReference = {
+  id: string;
+  name: string;
+  classId: ClassId;
+  usages: string[];
+};
+
+function itemReferenceMatchesOfficial(record: OfficialItemRecord, reference: BuildItemReference) {
+  const officialAssetKey = itemAssetKey(record.image);
+  const referenceAssetKey = itemAssetKey(reference.image);
+  return Boolean(officialAssetKey && referenceAssetKey && officialAssetKey === referenceAssetKey)
+    || record.id === OFFICIAL_ITEM_IDS_BY_GUIDE_ID[reference.id]
+    || record.id.toLowerCase() === reference.id.toLowerCase();
+}
+
+function relatedBuildsForOfficialItem(record: OfficialItemRecord): RelatedBuildReference[] {
+  return ALL_BUILD_GUIDES.flatMap((guide) => {
+    const catalog = BUILD_CATALOG.find((entry) => entry.id === guide.id);
+    if (!catalog) return [];
+    const references: BuildItemReference[] = [
+      ...guide.gear.map((item) => ({ id: item.id, name: item.name, image: item.image, effect: item.effect, kind: "装备" as const })),
+      ...guide.powers.map((power) => ({ id: power.id, name: power.name, image: power.image, effect: power.summary, kind: "魔盒威能" as const })),
+    ];
+    const usages = Array.from(new Set(references
+      .filter((reference) => itemReferenceMatchesOfficial(record, reference))
+      .map((reference) => reference.kind === "魔盒威能" ? `魔盒威能：${reference.effect}` : reference.effect)));
+    if (usages.length === 0) return [];
+    return [{
+      id: guide.id,
+      name: guide.name,
+      classId: catalog.classId,
+      usages,
+    }];
+  });
+}
+
 function LibraryCategory({ category }: { category: string }) {
   const records = useLibraryRecords(category);
   const categories = useItemCategories();
@@ -1036,6 +1109,7 @@ function LibraryCategory({ category }: { category: string }) {
 function LibraryRecordDetail({ category, id }: { category: string; id: string }) {
   const index = useItemIndex();
   const record = useLibraryRecord(id);
+  const relatedBuilds = useMemo(() => record ? relatedBuildsForOfficialItem(record) : [], [record]);
   if (!record) return <section className="archive-section library-detail-page"><p className="library-empty">正在载入资料详情…</p></section>;
   return (
     <section className="archive-section library-detail-page">
@@ -1057,6 +1131,19 @@ function LibraryRecordDetail({ category, id }: { category: string; id: string })
           {record.set && <OfficialSetBlock itemSet={record.set} records={index as OfficialItemRecord[]} />}
           {record.extras && record.extras.length > 0 && <section className="item-detail-extras">{record.extras.map((line, index) => <span key={`${line}-${index}`}>{line}</span>)}</section>}
           {record.flavor && <blockquote>{record.flavor}</blockquote>}
+          {relatedBuilds.length > 0 && (
+            <section className="item-build-links" aria-label="使用该物品的 BD">
+              <h3>相关 BD</h3>
+              <div className="item-build-grid">
+                {relatedBuilds.map((build) => (
+                  <a key={build.id} className="item-build-card" href={`/builds/${build.id}?fromClass=${build.classId}`}>
+                    <strong>{build.name}</strong>
+                    {build.usages.map((usage) => <p key={usage}>{usage}</p>)}
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
         </article>
       </div>
     </section>
@@ -1070,6 +1157,16 @@ type UnifiedBuildGuide = NecromancerGuide & {
   resolveRotation?: (mode: Mode) => NecromancerGuide["rotation"];
   originalEffects?: Record<string, string>;
 };
+
+const ALL_BUILD_GUIDES: UnifiedBuildGuide[] = [
+  ...Object.values(NECROMANCER_BUILDS),
+  ...Object.values(BARBARIAN_BUILDS),
+  ...Object.values(CRUSADER_BUILDS),
+  ...Object.values(DEMON_HUNTER_BUILDS),
+  ...Object.values(MONK_BUILDS),
+  ...Object.values(WITCH_DOCTOR_BUILDS),
+  ...Object.values(WIZARD_BUILDS),
+] as UnifiedBuildGuide[];
 
 const PAPERDOLL_SLOT_ORDER = [
   ["head", "头部"], ["shoulders", "肩部"], ["chest", "胸部"], ["gloves", "手部"],
@@ -1691,12 +1788,89 @@ function BuildReviewPanel({
   );
 }
 
+function BuildCommandDeck({
+  guide,
+  scenario,
+  skills,
+  passives,
+  powers,
+  paragon,
+  activeNode,
+  relatedIds,
+  onNodeSelect,
+  onPowerSelect,
+}: {
+  guide: UnifiedBuildGuide;
+  scenario?: BuildScenario;
+  skills: Array<Skill & { logic?: string }>;
+  passives: Array<Passive & { logic?: string }>;
+  powers: CubePower[];
+  paragon: Paragon;
+  activeNode: FlowNode | null;
+  relatedIds: Set<string>;
+  onNodeSelect: (node: FlowNode) => void;
+  onPowerSelect: (power: CubePower) => void;
+}) {
+  const paragonPriorities = guide.paragonGuide?.pre800;
+  const paragonGroups = [
+    ["core", "核心"],
+    ["offense", "进攻"],
+    ["defense", "防御"],
+    ["utility", "通用"],
+  ] as const;
+  return (
+    <aside className="build-command-deck" aria-label="首屏构筑指挥台">
+      <header className="command-deck-intro">
+        <span>BUILD COMMAND DECK</span>
+        <strong>{scenario?.label ?? guide.name}</strong>
+        <p>{scenario?.reason ?? guide.summary}</p>
+      </header>
+
+      <section className="command-deck-section command-skills" aria-label="技能配置摘要">
+        <div className="command-deck-heading"><span>技能配置</span><small>点击可联动装备</small></div>
+        <div className="command-skill-grid">
+          {skills.slice(0, 6).map((skill) => {
+            const related = Boolean(activeNode && relatedIds.has(skill.id));
+            return <button key={skill.id} className={`${activeNode?.id === skill.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic ?? skill.effect, kind: "skill", image: skill.image })}>
+              <img src={skill.image} alt="" /><span><strong>{skill.name}</strong><small>{skill.rune || "无符文"}</small></span>
+            </button>;
+          })}
+        </div>
+        <div className="command-passives">{passives.slice(0, 4).map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic ?? passive.effect, kind: "passive", image: passive.image })}><img src={passive.image} alt="" /><span>{passive.name}</span></button>)}</div>
+      </section>
+
+      <section className="command-deck-section command-cube" aria-label="卡奈魔方摘要">
+        <div className="command-deck-heading"><span>{CUBE_SEASON_LABEL}</span><small>{CURRENT_SEASON.guideBaseline}</small></div>
+        <div className="command-cube-grid">
+          {powers.map((power) => {
+            const related = Boolean(activeNode && relatedIds.has(power.id));
+            return <button key={`${power.slot}-${power.id}`} className={`${activeNode?.id === power.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onPowerSelect(power)}>
+              <img src={power.image} alt="" /><span><small>{power.slot}</small><strong>{power.name}</strong><em>{power.summary}</em></span>
+            </button>;
+          })}
+        </div>
+      </section>
+
+      <section className="command-deck-section command-paragon" aria-label="巅峰加点摘要">
+        <div className="command-deck-heading"><span>巅峰加点</span><small>{paragon === "low" ? "低巅峰优先级" : "800 点后投入"}</small></div>
+        <div className="command-paragon-grid">
+          {paragonGroups.map(([key, label]) => {
+            const entry = paragonPriorities?.[key]?.[0];
+            return <article key={key}><small>{label}</small><strong>{entry?.stat ?? "按生存阈值"}</strong><span>{entry?.target ?? guide.paragonGuide?.post800[0]?.priority ?? ""}</span></article>;
+          })}
+        </div>
+      </section>
+    </aside>
+  );
+}
+
 function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const { genders } = useSiteSettings();
   const itemIndex = useItemIndex();
   const catalogEntry = BUILD_CATALOG.find((entry) => entry.id === guide.id);
   const classId = catalogEntry?.classId ?? "necromancer";
   const hero = CLASS_CATALOG.find((entry) => entry.id === classId) ?? CLASS_CATALOG[4];
+  const buildListHref = `/builds?class=${classId}`;
   const [mode, setMode] = useState<Mode>(guide.defaultMode ?? "push");
   const [paragon, setParagon] = useState<Paragon>("low");
   const [loadoutId, setLoadoutId] = useState(guide.defaultLoadoutId ?? guide.loadouts?.[0]?.id ?? "");
@@ -1773,7 +1947,9 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const selectedGear = (gear.find((item) => item.id === selectedGearId) ?? positions[0]?.gear ?? gear[0]) as Gear;
   const selectedPower = powers.find((power) => power.id === selectedPowerId) ?? powers[0];
   const selectedOfficialId = useMemo(() => findOfficialItem(itemIndex as OfficialItemRecord[], selectedGear)?.id ?? "", [itemIndex, selectedGear]);
+  const selectedOfficialIndexItem = useMemo(() => itemIndex.find((record) => record.id === selectedOfficialId), [itemIndex, selectedOfficialId]);
   const selectedOfficialItem = useLibraryRecord(selectedOfficialId);
+  const selectedOfficialHref = selectedOfficialIndexItem?.category ? `/library/${selectedOfficialIndexItem.category}/${encodeURIComponent(selectedOfficialIndexItem.id)}` : "";
   const originalItemEffect = officialItemEffect(selectedOfficialItem) || activeGuide.originalEffects?.[selectedGear?.id] || selectedGear?.effect;
   const selectedSockets = selectedGear ? guideSockets(selectedGear, classId, activeConfiguration?.normalGems) : [];
   const statRows = useMemo(() => equipmentStatRows(positions, classId, paragon), [positions, classId, paragon]);
@@ -1847,8 +2023,6 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         <span>当前 BD 已保留用途与巅峰说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。</span>
       </section>}
 
-      {activeScenario && activeConfiguration && <BuildReviewPanel guide={activeGuide} scenario={activeScenario} configuration={activeConfiguration} />}
-
       {guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
         <header><span>配装选择</span><strong>两套都能无限疾风，区别在于谁负责杀怪</strong></header>
         <div>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}><span>{loadout.label}</span><h3>{loadout.title}</h3><p>{loadout.summary}</p><dl><div><dt>推荐</dt><dd>{loadout.bestFor}</dd></div><div><dt>取舍</dt><dd>{loadout.tradeoff}</dd></div></dl></button>)}</div>
@@ -1856,7 +2030,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
 
       <section className="workbench">
         <article className="panel loadout-panel">
-          <div className="panel-heading"><div><span className="section-index">01</span><h2>装备盘</h2></div><small>悬停查看 · 点击锁定</small></div>
+          <div className="panel-heading"><div><span className="section-index">01</span><h2>装备盘</h2></div><small>点击装备查看 · 焦点跟随键盘</small></div>
+          <div className="paperdoll-compact-stage">
           <div className="paperdoll" style={{ "--paperdoll-image": `url("${paperdollImage}")` } as CSSProperties}>
             <div className="paperdoll-lines" aria-hidden="true" />
             <div className="paperdoll-profile"><span>70级 · {hero.name} · {SEASON_LABEL}</span><strong>{guide.name}</strong><small>{activeLoadout ? `${activeLoadout.label} · ` : ""}{mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷")} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small></div>
@@ -1886,7 +2061,6 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
                   <button
                     key={`label-${position}`}
                     className={`paperdoll-label label-${position} quality-${item.quality} ${selectedGearId === item.id ? "selected" : ""} ${activeStat && statMaximum ? "stat-related" : ""} ${activeStat && !statMaximum ? "stat-dimmed" : ""}`}
-                    onMouseEnter={() => setSelectedGearId(item.id)}
                     onFocus={() => setSelectedGearId(item.id)}
                     onClick={() => focusGear(item.id)}
                   >
@@ -1913,14 +2087,31 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
                     dimmed={activeStat ? !statRelated : Boolean(activeNode && !relatedIds.has(item.id))}
                     sockets={guideSockets(item, classId, activeConfiguration?.normalGems)}
                     onSelect={focusGear}
-                    onPreview={setSelectedGearId}
+                    onFocusSelect={setSelectedGearId}
                   />
                 );
               })}
             </div>
           </div>
-          <GearDetailPanel gear={selectedGear} sockets={selectedSockets} originalEffect={originalItemEffect} />
+          </div>
+          <GearDetailPanel gear={selectedGear} sockets={selectedSockets} originalEffect={originalItemEffect} officialItemHref={selectedOfficialHref} />
         </article>
+
+        <BuildCommandDeck
+          guide={activeGuide}
+          scenario={activeScenario}
+          skills={scenarioSkills}
+          passives={scenarioPassives}
+          powers={powers}
+          paragon={paragon}
+          activeNode={activeNode}
+          relatedIds={relatedIds}
+          onNodeSelect={handleNodeSelect}
+          onPowerSelect={(power) => {
+            setSelectedPowerId(power.id);
+            handleNodeSelect({ id: power.id, label: power.name, detail: power.summary, kind: "power", image: power.image });
+          }}
+        />
 
         <article className="panel synergy-panel" id="synergy">
           <div className="panel-heading"><div><span className="section-index">04</span><h2>核心 BD 联动</h2></div><small>点击节点 · 周围装备、技能、被动与威能同步高亮</small></div>
@@ -1965,7 +2156,9 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         </article>
       </section>
 
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p></div><p><a href="/builds">返回全职业 BD</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}> · <a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></Fragment>)}</p></footer>
+      {activeScenario && activeConfiguration && <BuildReviewPanel guide={activeGuide} scenario={activeScenario} configuration={activeConfiguration} />}
+
+      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p></div><p><a href={buildListHref}>返回全职业 BD</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}> · <a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></Fragment>)}</p></footer>
     </main>
   );
 }
@@ -1977,7 +2170,7 @@ function PendingBuildDetail({ buildId }: { buildId: string }) {
   return (
     <RoutePage active="builds" eyebrow={`${hero.name} · ${SEASON_LABEL}`} title={build.name}>
       <section className="archive-section pending-build-detail">
-        <img src={hero.crest} alt="" /><article><span>{build.set}</span><h2>{build.name}</h2><p>{build.summary}</p><dl><div><dt>核心技能</dt><dd>{build.core}</dd></div><div><dt>主要用途</dt><dd>{build.role}</dd></div><div><dt>操作门槛</dt><dd>{build.difficulty}</dd></div></dl><div className="pending-notice"><strong>完整攻略校对中</strong><p>该页路由与资料库关联已建立；装备盘、低/高巅峰、速刷/冲层、词缀、定向获取、联动图与输出手法会按照塔格奥新星的标准逐项补齐。</p></div><a href="/builds">返回全职业 BD 列表</a></article>
+        <img src={hero.crest} alt="" /><article><span>{build.set}</span><h2>{build.name}</h2><p>{build.summary}</p><dl><div><dt>核心技能</dt><dd>{build.core}</dd></div><div><dt>主要用途</dt><dd>{build.role}</dd></div><div><dt>操作门槛</dt><dd>{build.difficulty}</dd></div></dl><div className="pending-notice"><strong>完整攻略校对中</strong><p>该页路由与资料库关联已建立；装备盘、低/高巅峰、速刷/冲层、词缀、定向获取、联动图与输出手法会按照塔格奥新星的标准逐项补齐。</p></div><a href={`/builds?class=${build.classId}`}>返回全职业 BD 列表</a></article>
       </section>
     </RoutePage>
   );
@@ -2155,7 +2348,7 @@ function HomeContent() {
               <span className="section-index">01</span>
               <h2>装备盘</h2>
             </div>
-            <small>悬停查看 · 点击锁定</small>
+            <small>点击装备查看 · 焦点跟随键盘</small>
           </div>
 
           <div className="paperdoll">
@@ -2184,7 +2377,6 @@ function HomeContent() {
                   <button
                     key={`label-${position}`}
                     className={`paperdoll-label label-${position} quality-${gear.quality} ${selectedGearId === gear.id ? "selected" : ""}`}
-                    onMouseEnter={() => setSelectedGearId(gear.id)}
                     onFocus={() => setSelectedGearId(gear.id)}
                     onClick={() => handleGearSelect(gear.id)}
                   >
@@ -2211,7 +2403,7 @@ function HomeContent() {
                     dimmed={Boolean(activeNode && !relatedIds.has(gear.id))}
                     sockets={SOCKETS[gear.id] ?? []}
                     onSelect={handleGearSelect}
-                    onPreview={setSelectedGearId}
+                    onFocusSelect={setSelectedGearId}
                   />
                 );
               })}
