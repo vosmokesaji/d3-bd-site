@@ -32,8 +32,12 @@ import { FOLLOWERS, FOLLOWER_SKILLS } from "./data/followers";
 import {
   CUBE_SEASON_LABEL,
   CURRENT_SEASON,
+  SEASON_CATALOG,
   SEASON_LABEL,
-  SEASON_PLATFORM_LABEL,
+  cubeSeasonLabel,
+  seasonLabel,
+  seasonPlatformLabel,
+  type SeasonConfig,
 } from "./data/season-config";
 import { BuildAbilitiesPanel } from "../components/build/BuildAbilitiesPanel";
 import { GearDetailPanel } from "../components/build/GearDetailPanel";
@@ -686,7 +690,7 @@ type ItemCategoryRecord = {
 };
 
 function SiteHeader({ active }: { active?: "story" | "season" | "builds" | "library" }) {
-  const { openSettings } = useSiteSettings();
+  const { openSettings, season, setSeason } = useSiteSettings();
   const pathname = usePathname() || "/builds";
   const searchParams = useSearchParams();
   const requestedClass = searchParams.get("class") ?? searchParams.get("fromClass");
@@ -707,13 +711,14 @@ function SiteHeader({ active }: { active?: "story" | "season" | "builds" | "libr
         <a className={active === "builds" ? "active" : ""} href={buildsHref}>赛季全职业BD</a>
         <a className={active === "library" ? "active" : ""} href="/library">物品</a>
       </nav>
-      <div className="season-pill"><i /> {SEASON_PLATFORM_LABEL}</div>
+      <label className="season-pill"><i /><select value={season.seasonId} onChange={(event) => setSeason(event.target.value)} aria-label="选择赛季主题">{SEASON_CATALOG.map((candidate) => <option key={candidate.seasonId} value={candidate.seasonId}>{seasonPlatformLabel(candidate)}{candidate.availability === "preview" ? "（预设）" : ""}</option>)}</select></label>
       <button className="settings-trigger" onClick={openSettings} aria-label="打开网站设置"><span>⚙</span> 网站设置</button>
     </header>
   );
 }
 
 function RoutePage({ active, title, eyebrow, children }: { active: "story" | "season" | "builds" | "library"; title: string; eyebrow: string; children: ReactNode }) {
+  const { season } = useSiteSettings();
   return (
     <main className={`route-page route-${active}`}>
       <SiteHeader active={active} />
@@ -721,7 +726,7 @@ function RoutePage({ active, title, eyebrow, children }: { active: "story" | "se
         <span>{eyebrow}</span><h1>{title}</h1>
       </section>
       <div className="route-content">{children}</div>
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · {CURRENT_SEASON.modeLabel}</small></p></div><p>页面资料用于私人攻略整理。</p></footer>
+      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典</strong><small>{season.platformLabel} · {seasonLabel(season)} · {season.modeLabel}</small></p></div><p>页面资料用于私人攻略整理。</p></footer>
     </main>
   );
 }
@@ -1794,6 +1799,7 @@ function BuildCommandDeck({
   skills,
   passives,
   powers,
+  season,
   paragon,
   activeNode,
   relatedIds,
@@ -1805,6 +1811,7 @@ function BuildCommandDeck({
   skills: Array<Skill & { logic?: string }>;
   passives: Array<Passive & { logic?: string }>;
   powers: CubePower[];
+  season: SeasonConfig;
   paragon: Paragon;
   activeNode: FlowNode | null;
   relatedIds: Set<string>;
@@ -1840,7 +1847,7 @@ function BuildCommandDeck({
       </section>
 
       <section className="command-deck-section command-cube" aria-label="卡奈魔方摘要">
-        <div className="command-deck-heading"><span>{CUBE_SEASON_LABEL}</span><small>{CURRENT_SEASON.guideBaseline}</small></div>
+        <div className="command-deck-heading"><span>{cubeSeasonLabel(season)}</span><small>{season.guideBaseline}</small></div>
         <div className="command-cube-grid">
           {powers.map((power) => {
             const related = Boolean(activeNode && relatedIds.has(power.id));
@@ -1865,7 +1872,7 @@ function BuildCommandDeck({
 }
 
 function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
-  const { genders } = useSiteSettings();
+  const { genders, season } = useSiteSettings();
   const itemIndex = useItemIndex();
   const catalogEntry = BUILD_CATALOG.find((entry) => entry.id === guide.id);
   const classId = catalogEntry?.classId ?? "necromancer";
@@ -1925,6 +1932,10 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     },
     [activeGuide, activeConfiguration, mode, paragon, activeVariant],
   );
+  const displayedPowers = useMemo(
+    () => season.cubeSlots === 3 ? powers.filter((power) => !["第4槽", "赛季槽", "赛季"].includes(power.slot)) : powers,
+    [powers, season.cubeSlots],
+  );
   const setFamilies = useMemo(() => buildSetFamilies(activeGuide, gear as Gear[]), [activeGuide, gear]);
   const rows = useMemo(
     () => [...guideRows(activeGuide, mode), ...buildAutomaticSetRows(setFamilies, powers)],
@@ -1945,7 +1956,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const [selectedStat, setSelectedStat] = useState<EquipmentStatKey | null>("main");
   const [flowFilter, setFlowFilter] = useState<FlowFilter>("all");
   const selectedGear = (gear.find((item) => item.id === selectedGearId) ?? positions[0]?.gear ?? gear[0]) as Gear;
-  const selectedPower = powers.find((power) => power.id === selectedPowerId) ?? powers[0];
+  const selectedPower = displayedPowers.find((power) => power.id === selectedPowerId) ?? displayedPowers[0];
   const selectedOfficialId = useMemo(() => findOfficialItem(itemIndex as OfficialItemRecord[], selectedGear)?.id ?? "", [itemIndex, selectedGear]);
   const selectedOfficialIndexItem = useMemo(() => itemIndex.find((record) => record.id === selectedOfficialId), [itemIndex, selectedOfficialId]);
   const selectedOfficialItem = useLibraryRecord(selectedOfficialId);
@@ -1980,8 +1991,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     if (!gear.some((item) => item.id === selectedGearId)) setSelectedGearId(positions[0]?.gear.id ?? gear[0]?.id ?? "");
   }, [gear, positions, selectedGearId]);
   useEffect(() => {
-    if (!powers.some((power) => power.id === selectedPowerId)) setSelectedPowerId(powers[0]?.id ?? "");
-  }, [powers, selectedPowerId]);
+    if (!displayedPowers.some((power) => power.id === selectedPowerId)) setSelectedPowerId(displayedPowers[0]?.id ?? "");
+  }, [displayedPowers, selectedPowerId]);
 
   const handleNodeSelect = (node: FlowNode) => {
     setSelectedStat(null);
@@ -2005,7 +2016,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
       <section className="hero" id="top">
         <div className="breadcrumbs">{hero.name} <span>›</span> 单人BD <span>›</span> {guide.core}</div>
         <div className="hero-content">
-          <div><div className="eyebrow"><span>{CURRENT_SEASON.platformLabel} 专用校对</span><b>PATCH {CURRENT_SEASON.patch}</b></div><h1>{guide.name}</h1><p>{guide.summary}</p></div>
+          <div><div className="eyebrow"><span>{season.platformLabel} 专用校对</span><b>PATCH {season.patch}</b></div><h1>{guide.name}</h1><p>{guide.summary}</p></div>
           <div className="build-rating" aria-label="BD定位"><span><b>{catalogEntry?.role === "冲层" ? "S" : "A"}</b> {catalogEntry?.purpose ?? "单人强度"}</span><span><b>{catalogEntry?.difficulty ?? "中"}</b> 操作门槛</span><span><b>强</b> NS适配</span></div>
         </div>
       </section>
@@ -2023,6 +2034,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         <span>当前 BD 已保留用途与巅峰说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。</span>
       </section>}
 
+      {season.availability === "preview" && <section className="season-preview-note" aria-label="轮换预设说明"><strong>{season.label}</strong><span>{season.theme}</span></section>}
+
       {guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
         <header><span>配装选择</span><strong>两套都能无限疾风，区别在于谁负责杀怪</strong></header>
         <div>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}><span>{loadout.label}</span><h3>{loadout.title}</h3><p>{loadout.summary}</p><dl><div><dt>推荐</dt><dd>{loadout.bestFor}</dd></div><div><dt>取舍</dt><dd>{loadout.tradeoff}</dd></div></dl></button>)}</div>
@@ -2034,7 +2047,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
           <div className="paperdoll-compact-stage">
           <div className="paperdoll" style={{ "--paperdoll-image": `url("${paperdollImage}")` } as CSSProperties}>
             <div className="paperdoll-lines" aria-hidden="true" />
-            <div className="paperdoll-profile"><span>70级 · {hero.name} · {SEASON_LABEL}</span><strong>{guide.name}</strong><small>{activeLoadout ? `${activeLoadout.label} · ` : ""}{mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷")} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small></div>
+            <div className="paperdoll-profile"><span>70级 · {hero.name} · {seasonLabel(season)}</span><strong>{guide.name}</strong><small>{activeLoadout ? `${activeLoadout.label} · ` : ""}{mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷")} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small></div>
             <div className="paperdoll-stats">
               <h3>装备加成 <small>点击反查词缀</small></h3>
               {statRows.map((stat) => (
@@ -2102,7 +2115,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
           scenario={activeScenario}
           skills={scenarioSkills}
           passives={scenarioPassives}
-          powers={powers}
+          powers={displayedPowers}
+          season={season}
           paragon={paragon}
           activeNode={activeNode}
           relatedIds={relatedIds}
@@ -2122,7 +2136,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         </article>
 
         <aside className="panel combat-panel" id="rotation">
-          <div className="panel-heading"><div><span className="section-index">06</span><h2>实战手法</h2></div><small>{CURRENT_SEASON.guideBaseline}</small></div>
+          <div className="panel-heading"><div><span className="section-index">06</span><h2>实战手法</h2></div><small>{season.guideBaseline}</small></div>
           <div className="combat-summary"><div><span>输出</span><i><b style={{ width: mode === "push" ? "92%" : "80%" }} /></i><em>{mode === "push" ? "92" : "80"}</em></div><div><span>坚韧</span><i><b style={{ width: paragon === "low" ? "90%" : "82%" }} /></i><em>{paragon === "low" ? "90" : "82"}</em></div><div><span>机动</span><i><b style={{ width: mode === "speed" ? "95%" : "64%" }} /></i><em>{mode === "speed" ? "95" : "64"}</em></div></div>
           <ol className="rotation-list">{rotation.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{step.title}</h3><p>{step.action}</p><small><b>为什么：</b>{step.reason}</small></div></li>)}</ol>
           <div className="ns-note"><div className="switch-icon"><span>−</span><b>NS</b><span>+</span></div><div><strong>主机操作提醒</strong><p>{activeGuide.consoleNote ?? "锁定目标偏离怪群中心时，松开技能、调整摇杆方向后重新施放，比持续硬拉视角更稳定。"}</p></div></div>
@@ -2139,11 +2153,11 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         />
 
         <KanaiCubePanel
-          powers={powers}
+          powers={displayedPowers}
           selectedPower={selectedPower}
           activeNode={activeNode}
           relatedIds={relatedIds}
-          seasonLabel={CUBE_SEASON_LABEL}
+          seasonLabel={cubeSeasonLabel(season)}
           onPowerSelect={(power) => {
             setSelectedPowerId(power.id);
             handleNodeSelect({ id: power.id, label: power.name, detail: power.summary, kind: "power", image: power.image });
@@ -2158,7 +2172,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
 
       {activeScenario && activeConfiguration && <BuildReviewPanel guide={activeGuide} scenario={activeScenario} configuration={activeConfiguration} />}
 
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p></div><p><a href={buildListHref}>返回全职业 BD</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}> · <a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></Fragment>)}</p></footer>
+      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{season.platformLabel} · {seasonLabel(season)} · 仅单人玩法</small></p></div><p><a href={buildListHref}>返回全职业 BD</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}> · <a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></Fragment>)}</p></footer>
     </main>
   );
 }

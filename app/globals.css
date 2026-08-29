@@ -304,6 +304,20 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
   box-shadow: 0 0 8px #7fb13f;
 }
 
+.season-pill select {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  color: #d8c8aa;
+  background: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.season-pill select:focus-visible { outline: 1px solid #bd8640; outline-offset: 4px; }
+.season-pill option { color: #d8c8aa; background: #17130f; }
+
 .settings-trigger {
   height: 34px;
   display: inline-flex;
@@ -384,6 +398,37 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
 .settings-class-genders button:hover,
 .settings-class-genders button.active,
 .site-settings-dialog > footer button:hover { border-color: #c58842; color: #f0d29f; background: #2b1b0e; }
+
+.settings-season-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 16px 16px;
+  padding: 12px;
+  border: 1px solid rgba(103, 75, 42, 0.5);
+  background: rgba(13, 12, 10, 0.72);
+}
+
+.settings-season-select span,
+.settings-season-select strong,
+.settings-season-select small { display: block; }
+.settings-season-select strong { color: #d1bea0; font-size: 13px; }
+.settings-season-select small { margin-top: 4px; color: #746c61; font-size: 9px; }
+.settings-season-select select { min-width: 180px; border: 1px solid #664622; padding: 8px 10px; color: #d9bf90; background: #17110c; font-size: 10px; }
+
+.season-preview-note {
+  max-width: 1600px;
+  display: flex;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(126, 93, 47, 0.52);
+  color: #a69a89;
+  background: rgba(29, 21, 13, 0.82);
+}
+
+.season-preview-note strong { color: #d2a35c; font-size: 11px; white-space: nowrap; }
+.season-preview-note span { font-size: 11px; line-height: 1.55; }
 
 .settings-class-genders { display: grid; gap: 6px; padding: 0 16px 16px; }
 .settings-class-genders article { display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 12px; padding: 8px 12px; border: 1px solid rgba(93, 72, 49, 0.28); background: rgba(8, 9, 9, 0.58); }
@@ -5642,16 +5687,17 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
   .bd-detail-page .variant-note { font-size: 10px; line-height: 1.35; }
 
   .bd-detail-page .variant-audit-note { grid-column: 1 / -1; grid-row: 4; }
-  .bd-detail-page .loadout-comparison { grid-column: 1 / -1; grid-row: 5; }
-  .bd-detail-page .loadout-panel { grid-column: 1 / 3; grid-row: 6; grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.88fr); min-height: 518px; }
-  .bd-detail-page .build-command-deck { grid-column: 3; grid-row: 6; height: 518px; overflow: hidden; }
-  .bd-detail-page .skills-panel { grid-column: 1 / 3; grid-row: 7; }
-  .bd-detail-page .cube-panel { grid-column: 3; grid-row: 7; }
-  .bd-detail-page .synergy-panel { grid-row: 8; }
-  .bd-detail-page .follower-panel { grid-row: 9; }
-  .bd-detail-page .combat-panel { grid-row: 10; }
-  .bd-detail-page .build-review-panel { grid-row: 11; }
-  .bd-detail-page > footer { grid-row: 12; }
+  .bd-detail-page .season-preview-note { grid-column: 1 / -1; grid-row: 5; }
+  .bd-detail-page .loadout-comparison { grid-column: 1 / -1; grid-row: 6; }
+  .bd-detail-page .loadout-panel { grid-column: 1 / 3; grid-row: 7; grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.88fr); min-height: 518px; }
+  .bd-detail-page .build-command-deck { grid-column: 3; grid-row: 7; height: 518px; overflow: hidden; }
+  .bd-detail-page .skills-panel { grid-column: 1 / 3; grid-row: 8; }
+  .bd-detail-page .cube-panel { grid-column: 3; grid-row: 8; }
+  .bd-detail-page .synergy-panel { grid-row: 9; }
+  .bd-detail-page .follower-panel { grid-row: 10; }
+  .bd-detail-page .combat-panel { grid-row: 11; }
+  .bd-detail-page .build-review-panel { grid-row: 12; }
+  .bd-detail-page > footer { grid-row: 13; }
 
   .bd-detail-page .loadout-panel > .panel-heading { min-height: 44px; }
   .bd-detail-page .loadout-panel .paperdoll-compact-stage {

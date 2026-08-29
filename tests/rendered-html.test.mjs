@@ -68,9 +68,9 @@ test("documents the project goal and renders a compact PC build command deck", a
   assert.match(page, /<BuildCommandDeck/);
   assert.match(page, /paperdoll-compact-stage/);
   assert.match(css, /\.build-command-deck \{/);
-  assert.match(css, /\.bd-detail-page \.build-command-deck \{ grid-column: 3; grid-row: 6; height: 518px;/);
+  assert.match(css, /\.bd-detail-page \.build-command-deck \{ grid-column: 3; grid-row: 7; height: 518px;/);
   assert.match(css, /\.bd-detail-page \.loadout-panel \.paperdoll \{[\s\S]*transform: scale\(0\.62\);/);
-  assert.match(css, /\.bd-detail-page \.build-review-panel \{ grid-row: 11; \}/);
+  assert.match(css, /\.bd-detail-page \.build-review-panel \{ grid-row: 12; \}/);
 });
 
 test("all catalog entries resolve through data-driven class guide modules", async () => {
@@ -796,7 +796,7 @@ test("uses shared readable typography tokens across build, follower, and item de
   assert.match(tragoul, /diablo-item-frame/);
 });
 
-test("centralizes season metadata, asset roots, and versions client settings", async () => {
+test("centralizes switchable season presets, asset roots, and versioned client settings", async () => {
   const [page, season, assets, factory, settings] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/data/season-config.ts", import.meta.url), "utf8"),
@@ -806,11 +806,20 @@ test("centralizes season metadata, asset roots, and versions client settings", a
   ]);
   assert.match(season, /number:\s*39/);
   assert.match(season, /seasonId:\s*"s39-ns-2\.7\.8"/);
+  assert.match(season, /export const SEASON_CATALOG/);
+  assert.match(season, /rotation-standard-three-slot/);
+  assert.match(season, /rotation-fourth-cube-slot/);
+  assert.match(season, /function seasonById/);
   assert.doesNotMatch(page, /第39赛季|PATCH 2\.7\.8/);
+  assert.match(page, /season\.cubeSlots === 3/);
+  assert.match(page, /season-preview-note/);
+  assert.match(page, /<select value=\{season\.seasonId\}/);
   assert.match(assets, /D3_ITEM_ROOT/);
   assert.match(assets, /skillAsset/);
   assert.match(factory, /itemAsset/);
   assert.match(factory, /skillAsset/);
-  assert.match(settings, /SETTINGS_VERSION = 2/);
+  assert.match(settings, /SETTINGS_VERSION = 3/);
+  assert.match(settings, /seasonId/);
+  assert.match(settings, /setSeason/);
   assert.match(settings, /syncAcrossTabs/);
 });
