@@ -3,6 +3,9 @@
 import type { BuildGear, GearSocket } from "./types";
 import { DiabloItemFrame } from "../items/DiabloItemFrame";
 
+// These sprites intentionally break their frame bounds in Blizzard's paperdoll art.
+const ART_OVERFLOW_POSITIONS = new Set(["head", "shoulders", "gloves", "bracers", "boots"]);
+
 export function PaperdollGearSlot({
   gear,
   position,
@@ -24,7 +27,7 @@ export function PaperdollGearSlot({
 }) {
   return (
     <button
-      className={`item-slot ${gear.quality} ${position ? `slot-${position}` : ""} ${selected ? "selected" : ""} ${related ? "related" : ""} ${dimmed ? "dimmed" : ""}`}
+      className={`item-slot ${gear.quality} ${position ? `slot-${position}` : ""} ${position && ART_OVERFLOW_POSITIONS.has(position) ? "art-overflow" : ""} ${selected ? "selected" : ""} ${related ? "related" : ""} ${dimmed ? "dimmed" : ""}`}
       onClick={() => onSelect(gear.id)}
       onFocus={() => onFocusSelect?.(gear.id)}
       aria-label={`${gear.slot}：${gear.name}`}

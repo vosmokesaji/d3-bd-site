@@ -5742,3 +5742,462 @@ a:hover .item-list-icon-inner::after { background-color: rgba(255, 255, 255, 0.0
   .command-deck-section { padding: 7px 9px; }
   .command-passives { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* PC first-screen redesign: responsive paperdoll plus a layered reading panel. */
+.unified-build-detail .loadout-panel {
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.unified-build-detail .loadout-panel > .panel-heading {
+  min-height: 44px;
+}
+
+.unified-build-detail .paperdoll-compact-stage {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 8px;
+  padding: 10px 12px 12px;
+  overflow: visible;
+}
+
+.unified-build-detail .loadout-panel .paperdoll {
+  --paperdoll-item-width: 6.4386cqw;
+  --paperdoll-item-height: 12.8773cqw;
+  --paperdoll-socket-size: 3.2193cqw;
+  --paperdoll-gem-size: 2.0121cqw;
+  --paperdoll-gem-inset: .6036cqw;
+  --paperdoll-socket-atlas-width: 17.4044cqw;
+  --paperdoll-socket-atlas-height: 10.3622cqw;
+  --paperdoll-socket-atlas-offset: -7.1429cqw;
+  width: min(100%, 720px);
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 994 / 645;
+  max-width: none;
+  margin: 0;
+  transform: none;
+  transform-origin: center;
+  container-type: inline-size;
+}
+
+.unified-build-detail .paperdoll-profile {
+  top: 6.047%;
+  right: 1.509%;
+  width: 70.423%;
+}
+
+.unified-build-detail .paperdoll-profile span {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.unified-build-detail .paperdoll-profile strong {
+  margin-top: 10px;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.unified-build-detail .paperdoll-profile small {
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.unified-build-detail .paperdoll-lines {
+  top: 26.202%;
+  left: 46.479%;
+  width: 33.4%;
+  height: 64.806%;
+}
+
+.unified-build-detail .paperdoll-gear-zone {
+  top: 24.031%;
+  left: 47.686%;
+  width: 30.684%;
+  height: 65.891%;
+}
+
+.unified-build-detail .paperdoll-labels {
+  top: 24.031%;
+  right: .402%;
+  width: 73.038%;
+  height: 75.969%;
+}
+
+.unified-build-detail .paperdoll-label {
+  width: 25.62%;
+  padding: 0 5px 0 0;
+}
+
+.unified-build-detail .paperdoll-label strong {
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.unified-build-detail .paperdoll-label span,
+.unified-build-detail .paperdoll-label .bonus-value,
+.unified-build-detail .paperdoll-label .bonus-value .value {
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.unified-build-detail .paperdoll-label.label-head { top: 1.224%; }
+.unified-build-detail .paperdoll-label.label-amulet { top: 15.306%; }
+.unified-build-detail .paperdoll-label.label-bracers { top: 29.388%; }
+.unified-build-detail .paperdoll-label.label-belt { top: 43.469%; }
+.unified-build-detail .paperdoll-label.label-ring2 { top: 55.918%; }
+.unified-build-detail .paperdoll-label.label-offhand { top: 69.388%; }
+.unified-build-detail .paperdoll-label.label-boots { top: 86.327%; }
+.unified-build-detail .paperdoll-label.label-shoulders { top: 6.122%; }
+.unified-build-detail .paperdoll-label.label-chest { top: 20.204%; }
+.unified-build-detail .paperdoll-label.label-gloves { top: 34.286%; }
+.unified-build-detail .paperdoll-label.label-ring1 { top: 48.367%; }
+.unified-build-detail .paperdoll-label.label-pants { top: 61.429%; }
+.unified-build-detail .paperdoll-label.label-weapon { top: 76.735%; }
+
+.unified-build-detail .loadout-panel .slot-head { top: .941%; left: 39.672%; width: 21.639%; height: 15.529%; }
+.unified-build-detail .loadout-panel .slot-shoulders { top: 6.588%; left: 12.787%; width: 21.639%; height: 20.706%; }
+.unified-build-detail .loadout-panel .slot-amulet { top: 11.294%; right: 14.426%; width: 18.361%; height: 13.176%; }
+.unified-build-detail .loadout-panel .slot-chest { top: 17.412%; left: 37.049%; width: 26.885%; height: 27.059%; }
+.unified-build-detail .loadout-panel .slot-gloves { top: 29.882%; left: 4.262%; width: 21.639%; height: 20.706%; }
+.unified-build-detail .loadout-panel .slot-bracers { top: 29.882%; right: 3.279%; width: 21.639%; height: 20.706%; }
+.unified-build-detail .loadout-panel .slot-belt { top: 45.412%; left: 37.049%; width: 26.885%; height: 8%; }
+.unified-build-detail .loadout-panel .slot-ring1 { top: auto; right: auto; bottom: 36.706%; left: 8.197%; width: 13.77%; height: 9.882%; }
+.unified-build-detail .loadout-panel .slot-ring2 { top: auto; right: 7.213%; bottom: 36.706%; left: auto; width: 13.77%; height: 9.882%; }
+.unified-build-detail .loadout-panel .slot-pants { top: auto; bottom: 24.941%; left: 39.672%; width: 21.639%; height: 20.706%; }
+.unified-build-detail .loadout-panel .slot-weapon { top: auto; right: auto; bottom: 3.059%; left: 4.262%; width: 21.639%; height: 30.588%; }
+.unified-build-detail .loadout-panel .slot-offhand { top: auto; right: 3.279%; bottom: 3.059%; left: auto; width: 21.639%; height: 30.588%; }
+.unified-build-detail .loadout-panel .slot-boots { top: auto; bottom: 3.294%; left: 39.672%; width: 21.639%; height: 20.706%; }
+
+.unified-build-detail .paperdoll-gear-zone .item-slot {
+  clip: auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Keep this selector narrow: only these documented Blizzard sprites may escape the item frame. */
+.unified-build-detail .paperdoll-gear-zone .diablo-item-frame-surface,
+.unified-build-detail .paperdoll-gear-zone .diablo-item-frame-image {
+  overflow: hidden;
+}
+
+.unified-build-detail .paperdoll-gear-zone .item-slot.art-overflow .diablo-item-frame-surface,
+.unified-build-detail .paperdoll-gear-zone .item-slot.art-overflow .diablo-item-frame-image {
+  overflow: visible;
+}
+
+.unified-build-detail .paperdoll-gear-zone .diablo-item-frame-image img {
+  top: 0;
+  left: 0;
+  width: var(--paperdoll-item-width);
+  height: var(--paperdoll-item-height);
+  max-width: none;
+  max-height: none;
+  object-fit: fill;
+  transform: none;
+}
+
+.unified-build-detail .paperdoll-gear-zone .diablo-item-frame-sockets > span {
+  width: var(--paperdoll-socket-size);
+  height: var(--paperdoll-socket-size);
+  flex: 0 0 var(--paperdoll-socket-size);
+  /* Blizzard's 32px socket sprite, scaled with the paperdoll rather than the atlas width. */
+  background-size: var(--paperdoll-socket-atlas-width) var(--paperdoll-socket-atlas-height);
+  background-position: 0 var(--paperdoll-socket-atlas-offset);
+}
+
+.unified-build-detail .paperdoll-gear-zone .diablo-item-frame-sockets {
+  opacity: .8;
+  transition: opacity 120ms ease;
+}
+
+.unified-build-detail .paperdoll-gear-zone .item-slot:hover .diablo-item-frame-sockets,
+.unified-build-detail .paperdoll-gear-zone .item-slot:focus-visible .diablo-item-frame-sockets,
+.unified-build-detail .paperdoll-gear-zone .item-slot.selected .diablo-item-frame-sockets {
+  opacity: 1;
+}
+
+.unified-build-detail .paperdoll-gear-zone .diablo-item-frame-sockets img {
+  width: var(--paperdoll-gem-size);
+  height: var(--paperdoll-gem-size);
+  margin: var(--paperdoll-gem-inset) auto 0;
+}
+
+/* Exact hero-slots.css sprite geometry, expressed against the 994px local paperdoll. */
+.unified-build-detail .paperdoll-gear-zone .slot-head .diablo-item-frame-image img { top: -3.1187cqw; }
+.unified-build-detail .paperdoll-gear-zone .slot-shoulders .diablo-item-frame-image img { top: -2.0121cqw; }
+.unified-build-detail .paperdoll-gear-zone .slot-amulet .diablo-item-frame-image img {
+  top: .1006cqw;
+  left: .1006cqw;
+  width: 5.2314cqw;
+  height: 5.2314cqw;
+}
+.unified-build-detail .paperdoll-gear-zone .slot-chest .diablo-item-frame-image img {
+  top: -1.4085cqw;
+  left: calc(50% - 3.2193cqw - .1006cqw);
+}
+.unified-build-detail .paperdoll-gear-zone .slot-gloves .diablo-item-frame-image img,
+.unified-build-detail .paperdoll-gear-zone .slot-bracers .diablo-item-frame-image img { top: -2.0121cqw; }
+.unified-build-detail .paperdoll-gear-zone .slot-belt .diablo-item-frame-image img {
+  top: -1.5091cqw;
+  left: calc(50% - 3.2193cqw);
+  height: var(--paperdoll-item-width);
+}
+.unified-build-detail .paperdoll-gear-zone .slot-ring1 .diablo-item-frame-image img,
+.unified-build-detail .paperdoll-gear-zone .slot-ring2 .diablo-item-frame-image img {
+  top: -1.2072cqw;
+  left: -1.2072cqw;
+  height: var(--paperdoll-item-width);
+}
+.unified-build-detail .paperdoll-gear-zone .slot-pants .diablo-item-frame-image img,
+.unified-build-detail .paperdoll-gear-zone .slot-boots .diablo-item-frame-image img { top: -2.0121cqw; }
+
+.unified-build-detail .paperdoll-gear-zone .slot-label {
+  bottom: -15px;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.unified-build-detail .paperdoll-stats {
+  bottom: 4.5%;
+  left: 3.1%;
+  width: 30%;
+  padding: 0 4px;
+}
+
+.unified-build-detail .paperdoll-stats h3 {
+  margin-bottom: 6px;
+  padding-bottom: 5px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.unified-build-detail .paperdoll-stats h3 small {
+  margin-top: 2px;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+.unified-build-detail .paperdoll-stats button {
+  margin: 4px 0;
+  gap: 5px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.unified-build-detail .paperdoll-stats strong { font-size: 11px; }
+
+.unified-build-detail .paperdoll-stats .paperdoll-stat-hint {
+  margin-top: 6px;
+  padding-top: 5px;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.command-deck-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid rgba(140, 103, 59, .35);
+  background: #0b0c0b;
+}
+
+.command-deck-tabs button {
+  min-height: 42px;
+  border: 0;
+  border-right: 1px solid rgba(140, 103, 59, .25);
+  color: #837666;
+  background: transparent;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.command-deck-tabs button:last-child { border-right: 0; }
+.command-deck-tabs button:hover { color: #d0b888; }
+.command-deck-tabs button.active {
+  color: #ead7b2;
+  background: #251a10;
+  box-shadow: inset 0 -2px #aa7137;
+}
+
+.command-deck-intro { padding: 11px 13px 10px; }
+.command-deck-intro span,
+.command-deck-heading span { font-size: 11px; letter-spacing: 0; }
+.command-deck-intro strong { font-size: 18px; }
+.command-deck-intro p { margin-top: 4px; font-size: 13px; line-height: 1.45; }
+.command-deck-section { padding: 8px 10px; }
+.command-deck-heading small { font-size: 11px; }
+.command-skill-grid button { min-height: 40px; padding: 4px 5px; gap: 7px; }
+.command-skill-grid img { width: 31px; height: 31px; }
+.command-skill-grid strong { font-size: 13px; }
+.command-skill-grid small { font-size: 11px; }
+.command-passives button { min-height: 31px; grid-template-columns: 22px minmax(0, 1fr); padding: 3px; gap: 5px; }
+.command-passives img { width: 20px; height: 20px; }
+.command-passives span { font-size: 11px; }
+.command-cube-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.command-cube-grid button { min-height: 50px; grid-template-columns: 36px minmax(0, 1fr); padding: 5px; }
+.command-cube-grid img { width: 34px; height: 34px; }
+.command-cube-grid small { font-size: 10px; }
+.command-cube-grid strong { font-size: 12px; }
+.command-cube-grid em { font-size: 11px; line-height: 1.35; }
+.command-paragon-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.command-paragon-grid article { padding: 7px; }
+.command-paragon-grid small { font-size: 10px; }
+.command-paragon-grid strong { font-size: 12px; }
+.command-paragon-grid span { font-size: 10px; }
+
+.command-gear-view { padding: 16px; }
+.command-gear-title { display: flex; align-items: center; gap: 14px; padding-bottom: 14px; border-bottom: 1px solid #382b1e; }
+.command-gear-title > .diablo-item-frame { --frame-width: 72px; --frame-height: 108px; }
+.command-gear-title > .frame-shape-square { --frame-height: 72px; }
+.command-gear-title > .frame-shape-big { --frame-width: 78px; --frame-height: 118px; }
+.command-gear-title div { min-width: 0; }
+.command-gear-title span,
+.command-gear-title strong,
+.command-gear-title small { display: block; letter-spacing: 0; }
+.command-gear-title span { color: #986b35; font-size: 11px; }
+.command-gear-title strong { margin-top: 5px; color: #e29b38; font: 500 19px/1.25 "Noto Serif SC", SimSun, serif; }
+.command-gear-view.quality-set .command-gear-title strong { color: #9bdc49; }
+.command-gear-title small { margin-top: 5px; color: #82786b; font-size: 11px; }
+.command-gear-role { padding: 16px 0; border-bottom: 1px solid #30271e; }
+.command-gear-view h3 { margin: 0; color: #b68a52; font-size: 12px; font-weight: 600; letter-spacing: 0; }
+.command-gear-role p { margin: 7px 0 0; color: #c2b7a5; font-size: 14px; line-height: 1.65; }
+.command-gear-facts { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(135px, .75fr); gap: 16px; padding: 16px 0; }
+.command-gear-facts ol,
+.command-gear-facts ul { margin: 8px 0 0; padding: 0; list-style: none; }
+.command-gear-facts li { min-height: 30px; display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid rgba(64, 54, 42, .55); color: #a8a092; font-size: 12px; line-height: 1.45; }
+.command-gear-facts li b { width: 20px; height: 20px; flex: none; display: grid; place-items: center; border: 1px solid #5a442c; color: #b58c55; font-size: 10px; }
+.command-gear-socket-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: block;
+  line-height: 0;
+  background: url("/d3/skill-overlays.png") 0 -71px / 173px 103px no-repeat;
+}
+.command-gear-socket-icon img { display: block; width: 20px; height: 20px; margin: 6px auto 0; object-fit: contain; }
+.command-gear-facts section > p { margin: 8px 0 0; color: #82796e; font-size: 12px; line-height: 1.55; }
+.command-gear-warning { margin: 0; padding: 10px 12px; border-left: 2px solid #9a4e2c; color: #9d8f7e; background: #18120e; font-size: 12px; line-height: 1.55; }
+.command-gear-warning b { margin-right: 8px; color: #d58c55; }
+.command-gear-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.command-gear-actions button,
+.command-gear-actions a { min-height: 38px; display: inline-flex; align-items: center; justify-content: center; padding: 7px 11px; border: 1px solid #5a442d; color: #c7ae82; background: #17120d; cursor: pointer; font-size: 12px; text-decoration: none; }
+.command-gear-actions button:hover,
+.command-gear-actions a:hover { border-color: #ae7a3f; color: #f0d8ae; background: #2b1d11; }
+
+@media (min-width: 1180px) {
+  .bd-detail-page {
+    grid-template-columns: minmax(700px, 1.45fr) minmax(410px, .85fr);
+  }
+
+  .bd-detail-page .loadout-panel {
+    grid-column: 1;
+    grid-row: 7;
+    min-height: 0;
+  }
+
+  .bd-detail-page .build-command-deck {
+    grid-column: 2;
+    grid-row: 7;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    align-self: stretch;
+  }
+
+  .bd-detail-page .skills-panel { grid-column: 1; grid-row: 8; }
+  .bd-detail-page .cube-panel { grid-column: 2; grid-row: 8; }
+
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .loadout-panel,
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .build-command-deck { grid-row: 4; }
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .skills-panel,
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .cube-panel { grid-row: 5; }
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .synergy-panel { grid-row: 6; }
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .follower-panel { grid-row: 7; }
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .combat-panel { grid-row: 8; }
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) .build-review-panel { grid-row: 9; }
+  .bd-detail-page:not(:has(.variant-audit-note)):not(:has(.season-preview-note)):not(:has(.loadout-comparison)) > footer { grid-row: 10; }
+
+  .bd-detail-page.unified-build-detail .loadout-panel .paperdoll-compact-stage {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    align-self: start;
+    justify-self: stretch;
+  }
+
+  .build-command-deck .command-skill-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .build-command-deck .command-cube-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .build-command-deck .command-cube-grid button { grid-template-columns: 30px minmax(0, 1fr); min-height: 54px; gap: 5px; }
+  .build-command-deck .command-cube-grid img { width: 29px; height: 29px; }
+  .build-command-deck .command-cube-grid em { display: none; }
+}
+
+@media (min-width: 1180px) and (max-width: 1380px) {
+  .bd-detail-page { grid-template-columns: minmax(690px, 1.35fr) minmax(410px, .8fr); }
+  .bd-detail-page .hero { min-height: 122px; padding: 12px 24px; }
+  .bd-detail-page .breadcrumbs { margin-bottom: 6px; }
+  .unified-build-detail .loadout-panel .paperdoll { width: min(100%, 560px); }
+  .build-command-deck .command-passives { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .build-command-deck .command-paragon-grid article { padding: 5px; }
+  .build-command-deck .command-paragon-grid span { display: none; }
+}
+
+@media (min-width: 1381px) and (max-width: 1500px) {
+  .unified-build-detail .loadout-panel .paperdoll { width: min(100%, 720px); }
+}
+
+@media (max-width: 1100px) {
+  .unified-build-detail .loadout-panel { overflow: hidden; }
+  .unified-build-detail .paperdoll-compact-stage { width: 100%; overflow: visible; }
+  .unified-build-detail .loadout-panel .paperdoll { width: min(100%, 760px); }
+  .build-command-deck { margin-bottom: 10px; }
+}
+
+@media (max-width: 700px) {
+  .site-header .brand {
+    width: 100%;
+    min-width: 220px;
+    flex: 1 0 100%;
+  }
+
+  .site-header .brand strong { letter-spacing: 0; }
+
+  .site-header .season-pill,
+  .site-header .settings-trigger {
+    order: 2;
+    margin-left: 0;
+  }
+
+  .site-header .season-pill { flex: 1 1 200px; }
+
+  .unified-build-detail .paperdoll-compact-stage {
+    display: block;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .unified-build-detail .loadout-panel .paperdoll {
+    width: 720px;
+    justify-self: start;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .command-deck-tabs button { min-height: 46px; }
+  .command-skill-grid,
+  .command-cube-grid,
+  .command-paragon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .command-passives { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .command-gear-facts { grid-template-columns: minmax(0, 1fr); }
+}

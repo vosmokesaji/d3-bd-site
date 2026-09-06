@@ -45,6 +45,7 @@ import { KanaiCubePanel } from "../components/build/KanaiCubePanel";
 import { PaperdollGearSlot } from "../components/build/PaperdollGearSlot";
 import type { GearSocket } from "../components/build/types";
 import { FollowerShowcase } from "../components/followers/FollowerShowcase";
+import { DiabloItemFrame, itemFrameShapeForSlot } from "../components/items/DiabloItemFrame";
 import {
   BlizzardItemIcon,
   OfficialPropertySections,
@@ -981,23 +982,6 @@ function itemAssetKey(path = "") {
   return path.split("/").pop()?.replace(/\.[^.]+$/, "").toLowerCase() ?? "";
 }
 
-function officialItemEffect(record?: OfficialItemRecord | null) {
-  if (!record) return "";
-  if (record.legendaryPower) return record.legendaryPower;
-  if (record.set?.bonuses.length) {
-    return record.set.bonuses.flatMap((tier) => [
-      `(${tier.pieces})件：`,
-      ...tier.lines.map((line) => line.text),
-    ]).join("\n");
-  }
-  if (record.properties) {
-    return Object.values(record.properties).flatMap((entries) => entries.flatMap((entry) => (
-      entry.kind === "choice" ? [entry.label, ...entry.options.map((option) => option.text)] : [entry.text]
-    ))).join("\n");
-  }
-  return "";
-}
-
 const OFFICIAL_ITEM_IDS_BY_GUIDE_ID: Record<string, string> = {
   "tragoul-helm": "tragouls-guise-P6_Necro_Set_2_Helm",
   "tragoul-shoulders": "tragouls-heart-P6_Necro_Set_2_Shoulders",
@@ -1803,6 +1787,11 @@ function BuildCommandDeck({
   paragon,
   activeNode,
   relatedIds,
+  view = "overview",
+  gear,
+  sockets,
+  officialItemHref,
+  onViewChange,
   onNodeSelect,
   onPowerSelect,
 }: {
@@ -1815,6 +1804,11 @@ function BuildCommandDeck({
   paragon: Paragon;
   activeNode: FlowNode | null;
   relatedIds: Set<string>;
+  view?: "overview" | "gear";
+  gear?: Gear;
+  sockets: GearSocket[];
+  officialItemHref?: string;
+  onViewChange: (view: "overview" | "gear") => void;
   onNodeSelect: (node: FlowNode) => void;
   onPowerSelect: (power: CubePower) => void;
 }) {
@@ -1827,46 +1821,65 @@ function BuildCommandDeck({
   ] as const;
   return (
     <aside className="build-command-deck" aria-label="首屏构筑指挥台">
-      <header className="command-deck-intro">
-        <span>BUILD COMMAND DECK</span>
-        <strong>{scenario?.label ?? guide.name}</strong>
-        <p>{scenario?.reason ?? guide.summary}</p>
-      </header>
+      <div className="command-deck-tabs" role="tablist" aria-label="首屏信息">
+        <button id="command-tab-overview" role="tab" aria-selected={view === "overview"} aria-controls="command-panel-overview" className={view === "overview" ? "active" : ""} onClick={() => onViewChange("overview")}>构筑总览</button>
+        <button id="command-tab-gear" role="tab" aria-selected={view === "gear"} aria-controls="command-panel-gear" className={view === "gear" ? "active" : ""} onClick={() => onViewChange("gear")}>装备作用</button>
+      </div>
 
-      <section className="command-deck-section command-skills" aria-label="技能配置摘要">
-        <div className="command-deck-heading"><span>技能配置</span><small>点击可联动装备</small></div>
-        <div className="command-skill-grid">
-          {skills.slice(0, 6).map((skill) => {
-            const related = Boolean(activeNode && relatedIds.has(skill.id));
-            return <button key={skill.id} className={`${activeNode?.id === skill.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic ?? skill.effect, kind: "skill", image: skill.image })}>
-              <img src={skill.image} alt="" /><span><strong>{skill.name}</strong><small>{skill.rune || "无符文"}</small></span>
-            </button>;
-          })}
-        </div>
-        <div className="command-passives">{passives.slice(0, 4).map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic ?? passive.effect, kind: "passive", image: passive.image })}><img src={passive.image} alt="" /><span>{passive.name}</span></button>)}</div>
-      </section>
+      {view === "overview" || !gear ? <div id="command-panel-overview" role="tabpanel" aria-labelledby="command-tab-overview">
+        <header className="command-deck-intro">
+          <span>BUILD COMMAND DECK</span>
+          <strong>{scenario?.label ?? guide.name}</strong>
+          <p>{scenario?.reason ?? guide.summary}</p>
+        </header>
 
-      <section className="command-deck-section command-cube" aria-label="卡奈魔方摘要">
-        <div className="command-deck-heading"><span>{cubeSeasonLabel(season)}</span><small>{season.guideBaseline}</small></div>
-        <div className="command-cube-grid">
-          {powers.map((power) => {
-            const related = Boolean(activeNode && relatedIds.has(power.id));
-            return <button key={`${power.slot}-${power.id}`} className={`${activeNode?.id === power.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onPowerSelect(power)}>
-              <img src={power.image} alt="" /><span><small>{power.slot}</small><strong>{power.name}</strong><em>{power.summary}</em></span>
-            </button>;
-          })}
-        </div>
-      </section>
+        <section className="command-deck-section command-skills" aria-label="技能配置摘要">
+          <div className="command-deck-heading"><span>技能配置</span><small>点击可联动装备</small></div>
+          <div className="command-skill-grid">
+            {skills.slice(0, 6).map((skill) => {
+              const related = Boolean(activeNode && relatedIds.has(skill.id));
+              return <button key={skill.id} className={`${activeNode?.id === skill.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic ?? skill.effect, kind: "skill", image: skill.image })}>
+                <img src={skill.image} alt="" /><span><strong>{skill.name}</strong><small>{skill.rune || "无符文"}</small></span>
+              </button>;
+            })}
+          </div>
+          <div className="command-passives">{passives.slice(0, 4).map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic ?? passive.effect, kind: "passive", image: passive.image })}><img src={passive.image} alt="" /><span>{passive.name}</span></button>)}</div>
+        </section>
 
-      <section className="command-deck-section command-paragon" aria-label="巅峰加点摘要">
-        <div className="command-deck-heading"><span>巅峰加点</span><small>{paragon === "low" ? "低巅峰优先级" : "800 点后投入"}</small></div>
-        <div className="command-paragon-grid">
-          {paragonGroups.map(([key, label]) => {
-            const entry = paragonPriorities?.[key]?.[0];
-            return <article key={key}><small>{label}</small><strong>{entry?.stat ?? "按生存阈值"}</strong><span>{entry?.target ?? guide.paragonGuide?.post800[0]?.priority ?? ""}</span></article>;
-          })}
+        <section className="command-deck-section command-cube" aria-label="卡奈魔方摘要">
+          <div className="command-deck-heading"><span>{cubeSeasonLabel(season)}</span><small>{season.guideBaseline}</small></div>
+          <div className="command-cube-grid">
+            {powers.map((power) => {
+              const related = Boolean(activeNode && relatedIds.has(power.id));
+              return <button key={`${power.slot}-${power.id}`} className={`${activeNode?.id === power.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onPowerSelect(power)}>
+                <img src={power.image} alt="" /><span><small>{power.slot}</small><strong>{power.name}</strong><em>{power.summary}</em></span>
+              </button>;
+            })}
+          </div>
+        </section>
+
+        <section className="command-deck-section command-paragon" aria-label="巅峰加点摘要">
+          <div className="command-deck-heading"><span>巅峰加点</span><small>{paragon === "low" ? "低巅峰优先级" : "800 点后投入"}</small></div>
+          <div className="command-paragon-grid">
+            {paragonGroups.map(([key, label]) => {
+              const entry = paragonPriorities?.[key]?.[0];
+              return <article key={key}><small>{label}</small><strong>{entry?.stat ?? "按生存阈值"}</strong><span>{entry?.target ?? guide.paragonGuide?.post800[0]?.priority ?? ""}</span></article>;
+            })}
+          </div>
+        </section>
+      </div> : <section id="command-panel-gear" className={`command-gear-view quality-${gear.quality}`} role="tabpanel" aria-labelledby="command-tab-gear">
+        <header className="command-gear-title">
+          <DiabloItemFrame image={gear.image} quality={gear.quality} shape={itemFrameShapeForSlot(gear.slot)} size="lg" fit="contain" sockets={sockets} label={gear.name} />
+          <div><span>{gear.quality === "set" ? "套装物品" : "传奇物品"}</span><strong>{gear.name}</strong><small>{gear.slot} · 点击装备后锁定</small></div>
+        </header>
+        <section className="command-gear-role"><h3>这件装备在 BD 中的作用</h3><p>{gear.effect}</p></section>
+        <div className="command-gear-facts">
+          <section><h3>关键词缀</h3><ol>{gear.affixes.map((affix, index) => <li key={affix}><b>{index + 1}</b><span>{affix}</span></li>)}</ol></section>
+          <section><h3>镶嵌</h3>{sockets.length > 0 ? <ul>{sockets.map((socket, index) => <li key={`${socket.label}-${index}`}><i className="command-gear-socket-icon"><img src={socket.image} alt="" /></i><span>{socket.label}</span></li>)}</ul> : <p>该部位没有固定镶嵌。</p>}</section>
         </div>
-      </section>
+        {gear.warning && <p className="command-gear-warning"><b>避坑</b>{gear.warning}</p>}
+        <div className="command-gear-actions"><button onClick={() => onViewChange("overview")}>返回构筑总览</button>{officialItemHref && <a href={officialItemHref}>打开完整物品详情</a>}</div>
+      </section>}
     </aside>
   );
 }
@@ -1952,6 +1965,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   }) ?? activeGuide.passives, [activeConfiguration, activeGuide.passives]);
   const [selectedGearId, setSelectedGearId] = useState(positions[0]?.gear.id ?? "");
   const [selectedPowerId, setSelectedPowerId] = useState(powers[0]?.id ?? "");
+  const [commandView, setCommandView] = useState<"overview" | "gear">("overview");
   const [activeNode, setActiveNode] = useState<FlowNode | null>(null);
   const [selectedStat, setSelectedStat] = useState<EquipmentStatKey | null>("main");
   const [flowFilter, setFlowFilter] = useState<FlowFilter>("all");
@@ -1959,9 +1973,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const selectedPower = displayedPowers.find((power) => power.id === selectedPowerId) ?? displayedPowers[0];
   const selectedOfficialId = useMemo(() => findOfficialItem(itemIndex as OfficialItemRecord[], selectedGear)?.id ?? "", [itemIndex, selectedGear]);
   const selectedOfficialIndexItem = useMemo(() => itemIndex.find((record) => record.id === selectedOfficialId), [itemIndex, selectedOfficialId]);
-  const selectedOfficialItem = useLibraryRecord(selectedOfficialId);
   const selectedOfficialHref = selectedOfficialIndexItem?.category ? `/library/${selectedOfficialIndexItem.category}/${encodeURIComponent(selectedOfficialIndexItem.id)}` : "";
-  const originalItemEffect = officialItemEffect(selectedOfficialItem) || activeGuide.originalEffects?.[selectedGear?.id] || selectedGear?.effect;
   const selectedSockets = selectedGear ? guideSockets(selectedGear, classId, activeConfiguration?.normalGems) : [];
   const statRows = useMemo(() => equipmentStatRows(positions, classId, paragon), [positions, classId, paragon]);
   const activeStat = statRows.find((stat) => stat.key === selectedStat);
@@ -2000,11 +2012,16 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     if (gear.some((item) => item.id === node.id)) setSelectedGearId(node.id);
     if (powers.some((power) => power.id === node.id)) setSelectedPowerId(node.id);
   };
+  const showGearDetail = (id: string) => {
+    if (!gear.some((item) => item.id === id)) return;
+    setSelectedGearId(id);
+    setCommandView("gear");
+  };
   const focusGear = (id: string) => {
     const item = gear.find((candidate) => candidate.id === id);
     if (!item) return;
     setSelectedStat(null);
-    setSelectedGearId(id);
+    showGearDetail(id);
     handleNodeSelect({ id, label: item.name, detail: item.effect, kind: "gear", image: item.image });
   };
 
@@ -2074,7 +2091,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
                   <button
                     key={`label-${position}`}
                     className={`paperdoll-label label-${position} quality-${item.quality} ${selectedGearId === item.id ? "selected" : ""} ${activeStat && statMaximum ? "stat-related" : ""} ${activeStat && !statMaximum ? "stat-dimmed" : ""}`}
-                    onFocus={() => setSelectedGearId(item.id)}
+                    onFocus={() => showGearDetail(item.id)}
                     onClick={() => focusGear(item.id)}
                   >
                     <strong>{item.name}</strong>
@@ -2100,14 +2117,13 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
                     dimmed={activeStat ? !statRelated : Boolean(activeNode && !relatedIds.has(item.id))}
                     sockets={guideSockets(item, classId, activeConfiguration?.normalGems)}
                     onSelect={focusGear}
-                    onFocusSelect={setSelectedGearId}
+                    onFocusSelect={showGearDetail}
                   />
                 );
               })}
             </div>
           </div>
           </div>
-          <GearDetailPanel gear={selectedGear} sockets={selectedSockets} originalEffect={originalItemEffect} officialItemHref={selectedOfficialHref} />
         </article>
 
         <BuildCommandDeck
@@ -2120,6 +2136,11 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
           paragon={paragon}
           activeNode={activeNode}
           relatedIds={relatedIds}
+          view={commandView}
+          gear={selectedGear}
+          sockets={selectedSockets}
+          officialItemHref={selectedOfficialHref}
+          onViewChange={setCommandView}
           onNodeSelect={handleNodeSelect}
           onPowerSelect={(power) => {
             setSelectedPowerId(power.id);

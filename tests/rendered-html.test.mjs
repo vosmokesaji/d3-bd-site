@@ -50,9 +50,10 @@ test("keeps the selected class in build atlas navigation links", async () => {
   assert.match(page, /window\.history\.replaceState\(null, "", `\/builds\?class=\$\{nextClass\}`\)/);
 });
 
-test("documents the project goal and renders a compact PC build command deck", async () => {
-  const [goal, readme, handoff, page, css] = await Promise.all([
+test("documents and implements the readable two-column PC build command deck", async () => {
+  const [goal, redesign, readme, handoff, page, css] = await Promise.all([
     readFile(new URL("../docs/project-goal-and-gap.md", import.meta.url), "utf8"),
+    readFile(new URL("../docs/bd-first-screen-redesign.md", import.meta.url), "utf8"),
     readFile(new URL("../docs/README.md", import.meta.url), "utf8"),
     readFile(new URL("../docs/ai-handoff-bd-review.md", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -63,13 +64,31 @@ test("documents the project goal and renders a compact PC build command deck", a
   assert.match(goal, /装备和 BD 双向关联/);
   assert.match(readme, /项目最终目标与差距记录/);
   assert.match(handoff, /project-goal-and-gap/);
-  assert.match(goal, /纸娃娃、当前装备详情、构筑原因、技能、魔方与巅峰摘要/);
+  assert.match(redesign, /禁止再整体缩放包含文字和点击区域的纸娃娃/);
+  assert.match(redesign, /构筑总览.*装备作用/);
   assert.match(page, /function BuildCommandDeck/);
   assert.match(page, /<BuildCommandDeck/);
   assert.match(page, /paperdoll-compact-stage/);
+  assert.match(page, /paperdoll-stats/);
+  assert.match(page, /view=\{commandView\}/);
+  assert.match(page, /gear=\{selectedGear\}/);
+  assert.match(page, /gear\.affixes\.map/);
+  assert.match(page, /command-gear-socket-icon/);
   assert.match(css, /\.build-command-deck \{/);
-  assert.match(css, /\.bd-detail-page \.build-command-deck \{ grid-column: 3; grid-row: 7; height: 518px;/);
-  assert.match(css, /\.bd-detail-page \.loadout-panel \.paperdoll \{[\s\S]*transform: scale\(0\.62\);/);
+  assert.match(css, /\.bd-detail-page \.build-command-deck \{[\s\S]*?grid-column: 2;[\s\S]*?height: auto;/);
+  assert.match(css, /\.unified-build-detail \.loadout-panel \.paperdoll \{[\s\S]*?aspect-ratio: 994 \/ 645;[\s\S]*?transform: none;/);
+  assert.match(css, /\.command-deck-tabs \{/);
+  assert.match(css, /\.command-gear-role p \{[^}]*font-size: 14px;/);
+  assert.match(css, /\.item-slot\.art-overflow \.diablo-item-frame-surface,[\s\S]*?overflow:\s*visible;/);
+  assert.match(css, /--paperdoll-item-width:\s*6\.4386cqw;/);
+  assert.match(css, /--paperdoll-socket-size:\s*3\.2193cqw;/);
+  assert.match(css, /object-fit:\s*fill;/);
+  assert.match(css, /\.paperdoll-gear-zone \.diablo-item-frame-sockets > span\s*\{[^}]*width:\s*var\(--paperdoll-socket-size\);[^}]*background-size:\s*var\(--paperdoll-socket-atlas-width\) var\(--paperdoll-socket-atlas-height\);/s);
+  assert.match(css, /\.paperdoll-gear-zone \.slot-chest \.diablo-item-frame-image img\s*\{[^}]*top:\s*-1\.4085cqw;[^}]*left:\s*calc\(50% - 3\.2193cqw - \.1006cqw\);/s);
+  assert.match(css, /\.paperdoll-gear-zone \.slot-belt \.diablo-item-frame-image img\s*\{[^}]*height:\s*var\(--paperdoll-item-width\);/s);
+  assert.match(css, /\.paperdoll-gear-zone \.slot-ring2 \.diablo-item-frame-image img\s*\{[^}]*height:\s*var\(--paperdoll-item-width\);/s);
+  assert.match(css, /\.paperdoll-gear-zone \.diablo-item-frame-sockets\s*\{[^}]*opacity:\s*\.8;/s);
+  assert.match(css, /\.command-gear-socket-icon\s*\{[^}]*width:\s*32px;[^}]*background: url\("\/d3\/skill-overlays\.png"\) 0 -71px \/ 173px 103px no-repeat;/s);
   assert.match(css, /\.bd-detail-page \.build-review-panel \{ grid-row: 12; \}/);
 });
 
