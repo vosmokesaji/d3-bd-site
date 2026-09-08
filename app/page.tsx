@@ -39,6 +39,8 @@ import {
   seasonPlatformLabel,
   type SeasonConfig,
 } from "./data/season-config";
+import { BuildTableView, type BuildTableData } from "../components/build/BuildTableView";
+import skillLibrary from "../public/d3/library/skills.json";
 import { BuildAbilitiesPanel } from "../components/build/BuildAbilitiesPanel";
 import { GearDetailPanel } from "../components/build/GearDetailPanel";
 import { KanaiCubePanel } from "../components/build/KanaiCubePanel";
@@ -1797,8 +1799,8 @@ function BuildCommandDeck({
 }: {
   guide: UnifiedBuildGuide;
   scenario?: BuildScenario;
-  skills: Array<Skill & { logic?: string }>;
-  passives: Array<Passive & { logic?: string }>;
+  skills: UnifiedBuildGuide["skills"];
+  passives: UnifiedBuildGuide["passives"];
   powers: CubePower[];
   season: SeasonConfig;
   paragon: Paragon;
@@ -1838,12 +1840,12 @@ function BuildCommandDeck({
           <div className="command-skill-grid">
             {skills.slice(0, 6).map((skill) => {
               const related = Boolean(activeNode && relatedIds.has(skill.id));
-              return <button key={skill.id} className={`${activeNode?.id === skill.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic ?? skill.effect, kind: "skill", image: skill.image })}>
+              return <button key={skill.id} className={`${activeNode?.id === skill.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic, kind: "skill", image: skill.image })}>
                 <img src={skill.image} alt="" /><span><strong>{skill.name}</strong><small>{skill.rune || "无符文"}</small></span>
               </button>;
             })}
           </div>
-          <div className="command-passives">{passives.slice(0, 4).map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic ?? passive.effect, kind: "passive", image: passive.image })}><img src={passive.image} alt="" /><span>{passive.name}</span></button>)}</div>
+          <div className="command-passives">{passives.slice(0, 4).map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic, kind: "passive", image: passive.image })}><img src={passive.image} alt="" /><span>{passive.name}</span></button>)}</div>
         </section>
 
         <section className="command-deck-section command-cube" aria-label="卡奈魔方摘要">
@@ -1884,18 +1886,10 @@ function BuildCommandDeck({
   );
 }
 
-function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
-  const { genders, season } = useSiteSettings();
-  const itemIndex = useItemIndex();
-  const catalogEntry = BUILD_CATALOG.find((entry) => entry.id === guide.id);
-  const classId = catalogEntry?.classId ?? "necromancer";
-  const hero = CLASS_CATALOG.find((entry) => entry.id === classId) ?? CLASS_CATALOG[4];
-  const buildListHref = `/builds?class=${classId}`;
-  const [mode, setMode] = useState<Mode>(guide.defaultMode ?? "push");
-  const [paragon, setParagon] = useState<Paragon>("low");
-  const [loadoutId, setLoadoutId] = useState(guide.defaultLoadoutId ?? guide.loadouts?.[0]?.id ?? "");
-  const activeLoadout = guide.loadouts?.find((loadout) => loadout.id === loadoutId) ?? guide.loadouts?.[0];
-  const activeGuide = useMemo(() => ({
+function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Paragon, loadoutId?: string) {
+  const classId = BUILD_CATALOG.find((entry) => entry.id === guide.id)?.classId ?? "necromancer";
+  const activeLoadout = guide.loadouts?.find((loadout) => loadout.id === (loadoutId ?? guide.defaultLoadoutId)) ?? guide.loadouts?.[0];
+  const activeGuide = {
     ...guide,
     set: activeLoadout?.set ?? guide.set,
     core: activeLoadout?.core ?? guide.core,
@@ -1907,62 +1901,90 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     rotation: activeLoadout?.rotation ?? guide.rotation,
     powerSets: activeLoadout?.powerSets ?? guide.powerSets,
     consoleNote: activeLoadout?.consoleNote ?? guide.consoleNote,
-  }) as UnifiedBuildGuide, [guide, activeLoadout]);
+  } as UnifiedBuildGuide;
   const activeVariant = resolveBuildVariantProfile(activeGuide, mode, paragon);
   const activeScenario = activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`);
-  const activeConfiguration = useMemo(() => activeGuide.configurationBase && activeScenario
-    ? resolveBuildConfiguration(activeGuide.configurationBase, activeScenario.patch)
-    : undefined, [activeGuide.configurationBase, activeScenario]);
-  const gear = useMemo(
-    () => {
-      if (activeGuide.resolveGear) return activeGuide.resolveGear(mode, paragon);
-      if (!activeConfiguration) return resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant);
-      const gemIds = Object.values(activeConfiguration.legendaryGems);
-      let jewelryIndex = 0;
-      return Object.values(activeConfiguration.gear).flatMap((id) => {
-        const item = activeGuide.gear.find((candidate) => candidate.id === id);
-        if (!item) return [];
-        const gemId = item.slot === "颈部" || item.slot === "手指" ? gemIds[jewelryIndex++] : undefined;
-        return [{
-          ...item,
-          gem: gemId ? CONFIGURATION_LEGENDARY_GEMS[gemId] ?? item.gem : item.gem,
-          affixes: normalizeGuideAffixes(item as Gear, classId, mode, paragon),
-        } as Gear];
-      });
-    },
-    [activeGuide, activeConfiguration, classId, mode, paragon, activeVariant],
-  );
-  const positions = useMemo(() => arrangeGuideGear(gear as Gear[]), [gear]);
-  const powers = useMemo(
-    () => {
-      if (activeGuide.resolvePowers) return activeGuide.resolvePowers(mode, paragon);
-      if (!activeConfiguration) return resolveDefaultVariantPowers(activeGuide, mode, paragon, activeVariant);
-      const labels: Record<string, string> = { weapon: "武器", armor: "防具", jewelry: "首饰", season: "第4槽" };
-      return Object.entries(activeConfiguration.powers).flatMap(([slot, id]) => {
-        const selected = activeGuide.powers.find((candidate) => candidate.id === id);
-        return selected ? [{ id: selected.id, slot: labels[slot] ?? selected.slot, name: selected.name, image: selected.image, original: selected.effect, summary: selected.logic }] : [];
-      });
-    },
-    [activeGuide, activeConfiguration, mode, paragon, activeVariant],
-  );
-  const displayedPowers = useMemo(
-    () => season.cubeSlots === 3 ? powers.filter((power) => !["第4槽", "赛季槽", "赛季"].includes(power.slot)) : powers,
-    [powers, season.cubeSlots],
-  );
+  const activeConfiguration = activeGuide.configurationBase && activeScenario ? resolveBuildConfiguration(activeGuide.configurationBase, activeScenario.patch) : undefined;
+  const gemIds = Object.values(activeConfiguration?.legendaryGems ?? {});
+  let jewelryIndex = 0;
+  const gear: Gear[] = activeGuide.resolveGear?.(mode, paragon) ?? (activeConfiguration
+    ? Object.values(activeConfiguration.gear).flatMap((id) => {
+      const item = activeGuide.gear.find((candidate) => candidate.id === id);
+      if (!item) return [];
+      const gemId = item.slot === "颈部" || item.slot === "手指" ? gemIds[jewelryIndex++] : undefined;
+      return [{ ...item, gem: gemId ? CONFIGURATION_LEGENDARY_GEMS[gemId] ?? item.gem : item.gem, affixes: normalizeGuideAffixes(item as Gear, classId, mode, paragon) } as Gear];
+    }) : resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant));
+  const labels: Record<string, string> = { weapon: "武器", armor: "防具", jewelry: "首饰", season: "第4槽" };
+  const powers = activeGuide.resolvePowers?.(mode, paragon) ?? (activeConfiguration
+    ? Object.entries(activeConfiguration.powers).flatMap(([slot, id]) => {
+      const selected = activeGuide.powers.find((candidate) => candidate.id === id);
+      return selected ? [{ id: selected.id, slot: labels[slot] ?? selected.slot, name: selected.name, image: selected.image, original: selected.effect, summary: selected.logic }] : [];
+    }) : resolveDefaultVariantPowers(activeGuide, mode, paragon, activeVariant));
+  const rotation = activeGuide.resolveRotation?.(mode) ?? activeConfiguration?.rotation ?? activeGuide.rotation;
+  const scenarioSkills = activeConfiguration?.skills.flatMap((configured) => {
+    const skill = activeGuide.skills.find((candidate) => candidate.id === configured.id);
+    return skill ? [{ ...skill, rune: configured.rune ?? skill.rune }] : [];
+  }) ?? activeGuide.skills;
+  const scenarioPassives = activeConfiguration?.passives.flatMap((id) => {
+    const passive = activeGuide.passives.find((candidate) => candidate.id === id);
+    return passive ? [passive] : [];
+  }) ?? activeGuide.passives;
+  return { classId, activeLoadout, activeGuide, activeVariant, activeScenario, activeConfiguration, gear, powers, rotation, scenarioSkills, scenarioPassives };
+}
+
+function makeBuildTableData(guide: UnifiedBuildGuide, resolved: ReturnType<typeof resolveDetailData>, mode: Mode, paragon: Paragon, season: SeasonConfig): BuildTableData {
+  const { classId, activeLoadout, activeGuide, activeConfiguration, activeScenario, gear, powers, rotation, scenarioSkills, scenarioPassives } = resolved;
+  return {
+    id: `${guide.id}${activeLoadout ? `-${activeLoadout.id}` : ""}`,
+    name: guide.name,
+    classId,
+    className: CLASS_CATALOG.find((entry) => entry.id === classId)?.name ?? classId,
+    variant: [activeLoadout?.label, guide.modeLabels?.[mode] ?? (mode === "push" ? "大秘境冲层" : "T16 / 速刷"), paragon === "low" ? "低巅峰 < 2000" : "高巅峰 2000+"].filter(Boolean).join(" · "),
+    season: `${season.platformLabel} · ${seasonLabel(season)}`,
+    summary: activeLoadout?.summary ?? guide.summary,
+    notice: [activeGuide.variantCompleteness === "documented-shared" ? "配置差异待实装：用途与巅峰说明已保留，装备、宝石、萃取和技能暂按共用配置展示。" : "", activeScenario && activeScenario.applicability !== "supported" ? activeScenario.reason : "", season.availability === "preview" ? `${season.label}：${season.theme}` : ""].filter(Boolean).join(" ") || undefined,
+    gear: arrangeGuideGear(gear).map(({ gear: item }) => ({ ...item, sockets: guideSockets(item, classId, activeConfiguration?.normalGems) })),
+    skills: scenarioSkills.map((skill) => ({ ...skill, runeKey: (guide.id === "tragoul-nova" ? SKILLS.find((entry) => entry.id === skill.id && entry.rune === skill.rune)?.runeKey : undefined) ?? skillLibrary.find((entry) => entry.classId === classId && entry.slug === skill.id)?.runes?.find((rune) => rune.name === skill.rune)?.key })),
+    passives: scenarioPassives,
+    powers: season.cubeSlots === 3 ? powers.filter((power) => !["第4槽", "赛季槽", "赛季"].includes(power.slot)) : powers,
+    rotation,
+    follower: Object.values(FOLLOWERS).find((follower) => follower.name === guide.follower)?.key ?? "enchantress",
+    followerReason: guide.followerReason,
+    source: guide.source,
+  };
+}
+
+export function allBuildTableData(season: SeasonConfig): BuildTableData[] {
+  return BUILD_CATALOG.flatMap((entry) => {
+    const guide = entry.id === "tragoul-nova" ? TRAGOUL_GUIDE : ALL_BUILD_GUIDES.find((candidate) => candidate.id === entry.id);
+    if (!guide) throw new Error(`BD 缺少配置：${entry.name}`);
+    const mode = guide.defaultMode ?? "push";
+    return (guide.loadouts?.length ? guide.loadouts.map((loadout) => loadout.id) : [undefined]).map((loadoutId) => makeBuildTableData(guide, resolveDetailData(guide, mode, "low", loadoutId), mode, "low", season));
+  });
+}
+
+function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
+  const { genders, season } = useSiteSettings();
+  const itemIndex = useItemIndex();
+  const catalogEntry = BUILD_CATALOG.find((entry) => entry.id === guide.id);
+  const classId = catalogEntry?.classId ?? "necromancer";
+  const hero = CLASS_CATALOG.find((entry) => entry.id === classId) ?? CLASS_CATALOG[4];
+  const buildListHref = `/builds?class=${classId}`;
+  const [mode, setMode] = useState<Mode>(guide.defaultMode ?? "push");
+  const [paragon, setParagon] = useState<Paragon>("low");
+  const [loadoutId, setLoadoutId] = useState(guide.defaultLoadoutId ?? guide.loadouts?.[0]?.id ?? "");
+  const searchParams = useSearchParams();
+  const [detailView, setDetailView] = useState<"detail" | "table">(searchParams.get("view") === "table" ? "table" : "detail");
+  const resolved = useMemo(() => resolveDetailData(guide, mode, paragon, loadoutId), [guide, mode, paragon, loadoutId]);
+  const { activeLoadout, activeGuide, activeVariant, activeScenario, activeConfiguration, gear, powers, rotation, scenarioSkills, scenarioPassives } = resolved;
+  const positions = useMemo(() => arrangeGuideGear(gear), [gear]);
+  const displayedPowers = useMemo(() => season.cubeSlots === 3 ? powers.filter((power) => !["第4槽", "赛季槽", "赛季"].includes(power.slot)) : powers, [powers, season.cubeSlots]);
+  const tableData = makeBuildTableData(guide, resolved, mode, paragon, season);
   const setFamilies = useMemo(() => buildSetFamilies(activeGuide, gear as Gear[]), [activeGuide, gear]);
   const rows = useMemo(
     () => [...guideRows(activeGuide, mode), ...buildAutomaticSetRows(setFamilies, powers)],
     [activeGuide, mode, setFamilies, powers],
   );
-  const rotation = activeGuide.resolveRotation?.(mode) ?? activeConfiguration?.rotation ?? activeGuide.rotation;
-  const scenarioSkills = useMemo(() => activeConfiguration?.skills.flatMap((configured) => {
-    const skill = activeGuide.skills.find((candidate) => candidate.id === configured.id);
-    return skill ? [{ ...skill, rune: configured.rune ?? skill.rune }] : [];
-  }) ?? activeGuide.skills, [activeConfiguration, activeGuide.skills]);
-  const scenarioPassives = useMemo(() => activeConfiguration?.passives.flatMap((id) => {
-    const passive = activeGuide.passives.find((candidate) => candidate.id === id);
-    return passive ? [passive] : [];
-  }) ?? activeGuide.passives, [activeConfiguration, activeGuide.passives]);
   const [selectedGearId, setSelectedGearId] = useState(positions[0]?.gear.id ?? "");
   const [selectedPowerId, setSelectedPowerId] = useState(powers[0]?.id ?? "");
   const [commandView, setCommandView] = useState<"overview" | "gear">("overview");
@@ -2028,7 +2050,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   if (!selectedGear || !selectedPower) return <PendingBuildDetail buildId={guide.id} />;
 
   return (
-    <main className="bd-detail-page unified-build-detail">
+    <main className={`bd-detail-page unified-build-detail ${detailView === "table" ? "bd-table-page" : ""}`}>
       <SiteHeader active="builds" />
       <section className="hero" id="top">
         <div className="breadcrumbs">{hero.name} <span>›</span> 单人BD <span>›</span> {guide.core}</div>
@@ -2039,6 +2061,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
       </section>
 
       <section className="variant-bar" aria-label="配置切换">
+        <div className="variant-group" role="group" aria-label="详情视图"><button aria-pressed={detailView === "detail"} className={detailView === "detail" ? "active" : ""} onClick={() => setDetailView("detail")}>图文详情</button><button aria-pressed={detailView === "table"} className={detailView === "table" ? "active" : ""} onClick={() => setDetailView("table")}>BD 表格</button></div><div className="variant-divider" />
         {guide.loadouts && guide.loadouts.length > 1 && <><div className="variant-group"><span>套装方案</span>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}>{loadout.label}</button>)}</div><div className="variant-divider" /></>}
         <div className="variant-group"><span>用途</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{guide.modeLabels?.push ?? "大秘境冲层"}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{guide.modeLabels?.speed ?? "T16 / 速刷"}</button></div>
         <div className="variant-divider" />
@@ -2046,18 +2069,19 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         <div className="variant-note"><strong>{activeLoadout ? `${activeLoadout.title} · ` : ""}{activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`}</strong><span>{activeLoadout?.summary ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`}</span></div>
       </section>
 
-      {activeGuide.variantCompleteness === "documented-shared" && <section className="variant-audit-note" aria-label="BD 数据完整度">
+      {detailView === "detail" && activeGuide.variantCompleteness === "documented-shared" && <section className="variant-audit-note" aria-label="BD 数据完整度">
         <strong>配置差异待实装</strong>
         <span>当前 BD 已保留用途与巅峰说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。</span>
       </section>}
 
-      {season.availability === "preview" && <section className="season-preview-note" aria-label="轮换预设说明"><strong>{season.label}</strong><span>{season.theme}</span></section>}
+      {detailView === "detail" && season.availability === "preview" && <section className="season-preview-note" aria-label="轮换预设说明"><strong>{season.label}</strong><span>{season.theme}</span></section>}
 
-      {guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
+      {detailView === "detail" && guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
         <header><span>配装选择</span><strong>两套都能无限疾风，区别在于谁负责杀怪</strong></header>
         <div>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}><span>{loadout.label}</span><h3>{loadout.title}</h3><p>{loadout.summary}</p><dl><div><dt>推荐</dt><dd>{loadout.bestFor}</dd></div><div><dt>取舍</dt><dd>{loadout.tradeoff}</dd></div></dl></button>)}</div>
       </section>}
 
+      {detailView === "table" ? <BuildTableView key={guide.id} data={tableData} getAllBuilds={() => allBuildTableData(season)} /> : <>
       <section className="workbench">
         <article className="panel loadout-panel">
           <div className="panel-heading"><div><span className="section-index">01</span><h2>装备盘</h2></div><small>点击装备查看 · 焦点跟随键盘</small></div>
@@ -2192,6 +2216,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
       </section>
 
       {activeScenario && activeConfiguration && <BuildReviewPanel guide={activeGuide} scenario={activeScenario} configuration={activeConfiguration} />}
+
+      </>}
 
       <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{season.platformLabel} · {seasonLabel(season)} · 仅单人玩法</small></p></div><p><a href={buildListHref}>返回全职业 BD</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}> · <a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></Fragment>)}</p></footer>
     </main>

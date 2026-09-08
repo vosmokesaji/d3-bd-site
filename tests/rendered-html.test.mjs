@@ -860,3 +860,18 @@ test("centralizes switchable season presets, asset roots, and versioned client s
   assert.match(settings, /setSeason/);
   assert.match(settings, /syncAcrossTabs/);
 });
+
+test("BD table route renders the shared loadout and export controls without duplicate detail panels", async () => {
+  const response = await render("/builds/tragoul-nova?view=table");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /aria-label="BD 表格视图"/);
+  assert.match(html, /词缀优先级/);
+  assert.match(html, /导出当前 PNG/);
+  assert.match(html, /全职业全部 BD/);
+  assert.match(html, /魔女/);
+  assert.match(html, /盗贼/);
+  assert.match(html, /圣殿骑士/);
+  assert.match(html, /输出手法/);
+  assert.doesNotMatch(html, /class="workbench"/);
+});
