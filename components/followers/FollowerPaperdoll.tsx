@@ -1,3 +1,7 @@
+"use client";
+
+import { useI18n } from "../../app/i18n/I18nProvider";
+
 import {
   FOLLOWER_SKILLS,
   FOLLOWER_SLOT_ORDER,
@@ -24,10 +28,11 @@ const DEFAULT_SLOT_LABELS: Record<FollowerSlotKey, string> = {
 };
 
 export function FollowerPaperdoll({ follower }: { follower: FollowerDefinition }) {
+  const { tr, entity } = useI18n();
   const items = new Map(follower.items.map((item) => [item.position, item]));
 
   return (
-    <div className="follower-paperdoll" aria-label={`${follower.name}装备盘`}>
+    <div className="follower-paperdoll" aria-label={tr(`${follower.name}装备盘`)}>
       <div className="follower-card-model" style={{ backgroundImage: `url(${follower.model})` }} aria-hidden="true" />
       <div className="follower-silhouette" aria-hidden="true" />
       {FOLLOWER_SLOT_ORDER.map((position) => {
@@ -36,9 +41,9 @@ export function FollowerPaperdoll({ follower }: { follower: FollowerDefinition }
 
         if (!item) {
           return (
-            <span className={`follower-item follower-item-empty follower-slot-${position}`} key={position} aria-label={`${slotLabel}：未装备`}>
+            <span className={`follower-item follower-item-empty follower-slot-${position}`} key={position} aria-label={tr(`${slotLabel}：未装备`)}>
               <span className="follower-empty-slot" aria-hidden="true" />
-              <small>{slotLabel}</small>
+              <small>{tr(slotLabel)}</small>
             </span>
           );
         }
@@ -48,11 +53,11 @@ export function FollowerPaperdoll({ follower }: { follower: FollowerDefinition }
             type="button"
             key={`${position}-${item.name}`}
             className={`follower-item follower-slot-${position}`}
-            title={`${item.name}：${item.reason}`}
+            title={`${entity(item, "name")}${tr("：")}${tr(item.reason)}`}
           >
             <DiabloItemFrame image={item.image} quality={item.quality ?? "legendary"} shape="fill" size="fill" fit="contain" />
-            <small>{slotLabel}</small>
-            <span className="follower-item-copy"><strong>{item.name}</strong><em>{item.reason}</em></span>
+            <small>{tr(slotLabel)}</small>
+            <span className="follower-item-copy"><strong>{entity(item, "name")}</strong><em>{tr(item.reason)}</em></span>
           </button>
         );
       })}
@@ -69,17 +74,18 @@ export function FollowerCard({
   recommended: boolean;
   recommendation?: string;
 }) {
+  const { tr, entity } = useI18n();
   return (
     <section className={`follower-card follower-${follower.key} ${recommended ? "recommended" : ""}`}>
       <header>
-        <span><strong>{follower.name}</strong><small>{recommended ? `首选 · ${follower.role}` : `备选 · ${follower.role}`}</small></span>
+        <span><strong>{entity(follower, "name")}</strong><small>{tr(recommended ? `首选 · ${follower.role}` : `备选 · ${follower.role}`)}</small></span>
         <img src={follower.model} alt="" />
       </header>
       <FollowerPaperdoll follower={follower} />
       <div className="follower-skill-strip">
-        {FOLLOWER_SKILLS[follower.key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{skill.name}</strong></span>)}
+        {FOLLOWER_SKILLS[follower.key].map((skill) => <span key={skill.name}><img src={skill.image} alt="" /><strong>{entity(skill, "name")}</strong></span>)}
       </div>
-      <p>{recommended && recommendation ? recommendation : follower.note}</p>
+      <p>{tr(recommended && recommendation ? recommendation : follower.note)}</p>
     </section>
   );
 }

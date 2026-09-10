@@ -1,0 +1,52 @@
+{
+  "push": {
+    "zhCN": "冲层",
+    "zhTW": "衝層",
+    "enUS": "pushing"
+  },
+  "speed-farming": {
+    "zhCN": "速刷",
+    "zhTW": "速刷",
+    "enUS": "speed farming"
+  },
+  "low-paragon": {
+    "zhCN": "低巅峰",
+    "zhTW": "低巔峰",
+    "enUS": "low Paragon"
+  },
+  "high-paragon": {
+    "zhCN": "高巅峰",
+    "zhTW": "高巔峰",
+    "enUS": "high Paragon"
+  },
+  "paragon": {
+    "zhCN": "巅峰",
+    "zhTW": "巔峰",
+    "enUS": "Paragon"
+  },
+  "solo": {
+    "zhCN": "单人",
+    "zhTW": "單人",
+    "enUS": "solo"
+  },
+  "multiplier": {
+    "zhCN": "乘区",
+    "zhTW": "乘區",
+    "enUS": "multiplier"
+  },
+  "damage-reduction": {
+    "zhCN": "减伤",
+    "zhTW": "減傷",
+    "enUS": "damage reduction"
+  },
+  "damage-boost": {
+    "zhCN": "增伤",
+    "zhTW": "增傷",
+    "enUS": "damage boost"
+  },
+  "crowd-control": {
+    "zhCN": "强控",
+    "zhTW": "強控",
+    "enUS": "hard crowd control"
+  }
+}

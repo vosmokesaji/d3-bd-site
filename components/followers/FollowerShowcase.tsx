@@ -1,3 +1,7 @@
+"use client";
+
+import { useI18n } from "../../app/i18n/I18nProvider";
+
 import { FOLLOWERS, type FollowerKey } from "../../app/data/followers";
 import { FollowerCard } from "./FollowerPaperdoll";
 
@@ -8,6 +12,7 @@ export function FollowerShowcase({
   recommendedFollower?: string;
   recommendation?: string;
 }) {
+  const { t } = useI18n();
   return (
     <>
       <div className="follower-showcase">
@@ -23,7 +28,7 @@ export function FollowerShowcase({
           );
         })}
       </div>
-      <div className="follower-rule"><b>通用原则</b><span>主属性洗成智力 / 敏捷 / 力量以匹配随从；优先冷却、攻速与坚韧。携带“不死”专属饰品后，再用团结分摊伤害。</span></div>
+      <div className="follower-rule"><b>{t("app.fede4b57e32f274f")}</b><span>{t("app.e7e4b06becf4f5c0")}</span></div>
     </>
   );
 }

@@ -151,6 +151,10 @@ export type BuildLoadout = {
 };
 
 export type BuildGuide = {
+  pushNote?: string;
+  speedNote?: string;
+  lowNote?: string;
+  highNote?: string;
   id: string;
   name: string;
   set: string;

@@ -30,7 +30,7 @@ test("server-renders the complete seven-class build atlas", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>圣休亚瑞秘典/);
-  assert.match(html, /小秘境、蓝门与外观收集专用趣味 BD/);
+  assert.match(html, /奈非天秘境、蓝门与外观收集专用趣味 BD/);
   for (const className of ["野蛮人", "圣教军", "猎魔人", "武僧", "死灵法师", "巫医", "魔法师"]) {
     assert.match(html, new RegExp(className));
   }
@@ -129,7 +129,7 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
     render("/builds/god-monk").then((response) => response.text()),
   ]);
   assert.match(pony, /跑马天拳 · 全能速刷/);
-  assert.match(pony, /T16小秘境/);
+  assert.match(pony, /T16奈非天秘境/);
   assert.match(pony, /大秘境≤110/);
   assert.match(pony, /T16 \/ 蓝门 \/ 悬赏/);
   assert.match(pony, /蓝门（敌意幻象）/);
@@ -200,7 +200,7 @@ test("validates reviewed scenarios and renders Trag'Oul guidance from complete d
   }
   assert.match(page, /reviewStatus: "fully-reviewed"/);
   assert.match(page, /TRAGOUL_VALIDATION_ERRORS/);
-  assert.match(html, /SCENARIO REVIEW/);
+  assert.match(html, /场景评审/);
   assert.match(html, /配置差异/);
   assert.match(html, /巅峰加点/);
   assert.match(html, /必须固定/);
@@ -516,7 +516,7 @@ test("renders the reviewed raekor-boulder scenarios as real boulder-toss loadout
     readFile(new URL("../app/data/barbarian-builds.ts", import.meta.url), "utf8"),
   ]);
 
-  assert.match(html, /蕾蔻巨石/);
+  assert.match(html, /蕾蔻的传世铠巨石/);
   assert.match(html, /已逐项校对/);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
@@ -593,11 +593,11 @@ test("restores legendary gems and renders class-specific armor gems and stat loo
   assert.match(tragoul, /困者之灾/);
   assert.match(tragoul, /贼神的复仇之石/);
   assert.match(tragoul, /受罚者之灾/);
-  assert.match(crusader, /无瑕皇家红宝石：力量/);
+  assert.match(crusader, /无瑕的皇家红宝石：力量/);
   assert.match(crusader, /点击反查词缀/);
   assert.match(crusader, /力量/);
-  assert.match(demonHunter, /无瑕皇家绿宝石：敏捷/);
-  assert.match(wizard, /无瑕皇家黄宝石：智力/);
+  assert.match(demonHunter, /无瑕的皇家绿宝石：敏捷/);
+  assert.match(wizard, /无瑕的皇家黄宝石：智力/);
   assert.match(wizard, /class="value">\+1000<\/b>[\s\S]*?智力/);
 });
 
@@ -630,7 +630,7 @@ test("keeps lower paperdoll slots anchored and mirrors Blizzard icon treatments"
   assert.match(css, /background:\s*url\("\/d3\/passive-skills\.png"\) 0 -41px no-repeat;/);
   assert.match(css, /\.cube-grid button img\s*\{[^}]*margin:\s*4px auto;/s);
   assert.match(css, /\.synergy-panel \.node-icon img\s*\{[^}]*object-position:\s*center center;/s);
-  assert.match(abilities, /function runeKeyFor\(/);
+  assert.match(abilities, /resolveRuneKey\(skill\)/);
   assert.doesNotMatch(abilities, /className="rune-icon rune-a"/);
   assert.match(page, /套装联动/);
   assert.match(page, /皇家华戒/);
@@ -664,8 +664,8 @@ test("ships the complete local Blizzard item mirror and local-only detail UI", a
   assert.ok(fatesVow.properties);
   assert.equal(items.every((item) => item.schemaVersion === 3), true);
   assert.equal(items.every((item) => !("effects" in item) && !("setBonuses" in item)), true);
-  assert.match(page, />物品<\/a>/);
-  assert.match(page, /物品详情与原特效均来自本地官方镜像/);
+  assert.match(page, /href="\/library"/);
+  assert.match(JSON.parse(await readFile(new URL("../app/i18n/manual.json", import.meta.url), "utf8"))["名称来自 PC 客户端；数值沿用原站资料，说明译文非客户端原文。"].zhCN, /数值沿用原站/);
   assert.match(libraryComponents, /function OfficialPropertySections/);
   assert.match(libraryComponents, /function OfficialSetBlock/);
   assert.doesNotMatch(page, /fetch\("\/d3\/library\/items\.json"\)/);
@@ -745,13 +745,13 @@ test("locks build gear details on selection and cross-links items with builds", 
   ]);
 
   assert.doesNotMatch(gearSlot, /onMouseEnter|onPreview/);
-  assert.match(page, /点击装备查看 · 焦点跟随键盘/);
+  assert.match(page, new RegExp(JSON.parse(await readFile(new URL("../app/i18n/source-index.json", import.meta.url), "utf8"))["点击装备查看 · 焦点跟随键盘"]));
   assert.match(page, /relatedBuildsForOfficialItem/);
   assert.match(page, /itemReferenceMatchesOfficial/);
   assert.match(page, /officialItemHref=\{selectedOfficialHref\}/);
   assert.match(page, /href=\{`\/builds\/\$\{build\.id\}\?fromClass=\$\{build\.classId\}`\}/);
   assert.match(page, /reference\.effect/);
-  assert.match(page, /className="item-build-card"[\s\S]*?<strong>\{build\.name\}<\/strong>[\s\S]*?build\.usages\.map/);
+  assert.match(page, /className="item-build-card"[\s\S]*?<strong>\{entity\(build, "name"\)\}<\/strong>[\s\S]*?build\.usages\.map/);
   assert.match(gearDetail, /officialItemHref\?: string/);
   assert.match(gearDetail, /className="gear-library-link"/);
   assert.match(css, /\.gear-library-link/);
@@ -855,7 +855,7 @@ test("centralizes switchable season presets, asset roots, and versioned client s
   assert.match(assets, /skillAsset/);
   assert.match(factory, /itemAsset/);
   assert.match(factory, /skillAsset/);
-  assert.match(settings, /SETTINGS_VERSION = 3/);
+  assert.match(settings, /SETTINGS_VERSION = 4/);
   assert.match(settings, /seasonId/);
   assert.match(settings, /setSeason/);
   assert.match(settings, /syncAcrossTabs/);
@@ -870,7 +870,7 @@ test("BD table route renders the shared loadout and export controls without dupl
   assert.match(html, /导出当前 PNG/);
   assert.match(html, /全职业全部 BD/);
   assert.match(html, /魔女/);
-  assert.match(html, /盗贼/);
+  assert.match(html, /痞子/);
   assert.match(html, /圣殿骑士/);
   assert.match(html, /输出手法/);
   assert.doesNotMatch(html, /class="workbench"/);

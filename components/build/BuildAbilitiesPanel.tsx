@@ -1,13 +1,10 @@
 "use client";
 
+import { useI18n } from "../../app/i18n/I18nProvider";
+
+import { resolveRuneKey } from "../../app/i18n/core";
 import type { AbilityCard, BuildFlowNode } from "./types";
 
-function runeKeyFor(skillId: string, rune?: string) {
-  if (!rune || rune.includes("全符文")) return "none";
-  const keys = ["a", "b", "c", "d", "e"] as const;
-  const score = Array.from(`${skillId}:${rune}`).reduce((sum, character) => sum + (character.codePointAt(0) ?? 0), 0);
-  return keys[score % keys.length];
-}
 
 export function BuildAbilitiesPanel({
   skills,
@@ -22,26 +19,27 @@ export function BuildAbilitiesPanel({
   relatedIds: Set<string>;
   onNodeSelect: (node: BuildFlowNode) => void;
 }) {
+  const { tr, t, entity } = useI18n();
   return (
     <article className="panel skills-panel" id="skills">
-      <div className="panel-heading"><div><span className="section-index">02</span><h2>技能与符文</h2></div><small>技能、符文、被动均可点击联动</small></div>
+      <div className="panel-heading"><div><span className="section-index">{t("app.a953f09a1b6b6725")}</span><h2>{t("app.ed6a21fda639bbb9")}</h2></div><small>{t("app.96cb3b6759188a4b")}</small></div>
       <div className="skill-grid">
         {skills.map((skill) => {
           const runeId = skill.runeId ?? `${skill.id}-rune`;
           const runeLogic = skill.runeLogic ?? skill.logic;
           const skillRelated = Boolean(activeNode && relatedIds.has(skill.id));
           const runeRelated = Boolean(activeNode && relatedIds.has(runeId));
-          const key = skill.runeKey ?? runeKeyFor(skill.id, skill.rune);
+          const key = resolveRuneKey(skill);
           return (
             <div className={`skill-card ${skillRelated || runeRelated ? "related" : ""} ${activeNode && !skillRelated && !runeRelated ? "dimmed" : ""}`} key={skill.id}>
               <button className={`skill-main ${activeNode?.id === skill.id ? "active" : ""}`} onClick={() => onNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic, kind: "skill", image: skill.image })}>
                 <span className="skill-icon"><img src={skill.image} alt="" /></span>
-                <span><strong>{skill.name}</strong><small>{skill.logic}</small></span>
+                <span><strong>{entity(skill, "name")}</strong><small>{tr(skill.logic)}</small></span>
               </button>
               {skill.rune && (
                 <button className={`rune-choice ${activeNode?.id === runeId ? "active" : ""}`} onClick={() => onNodeSelect({ id: runeId, label: skill.rune ?? "符文", detail: runeLogic, kind: "rune", image: skill.image })}>
                   <i className={`rune-icon rune-${key}`} />
-                  <span><strong>{skill.rune}</strong><small>{runeLogic}</small></span>
+                  <span><strong>{entity(skill, "rune")}</strong><small>{tr(runeLogic)}</small></span>
                 </button>
               )}
             </div>
@@ -49,7 +47,7 @@ export function BuildAbilitiesPanel({
         })}
       </div>
       <div className="passives">
-        <span className="passive-title">被动技能</span>
+        <span className="passive-title">{t("app.e353d08f0a58de17")}</span>
         {passives.map((passive) => (
           <button
             key={passive.id}
@@ -57,8 +55,8 @@ export function BuildAbilitiesPanel({
             onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic, kind: "passive", image: passive.image })}
           >
             <span><img src={passive.image} alt="" /></span>
-            <strong>{passive.name}</strong>
-            <small>{passive.logic}</small>
+            <strong>{entity(passive, "name")}</strong>
+            <small>{tr(passive.logic)}</small>
           </button>
         ))}
       </div>

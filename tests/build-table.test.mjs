@@ -9,7 +9,7 @@ import { unzipSync, strFromU8 } from "fflate";
 const out = new URL("../.cache/build-table-tests/", import.meta.url);
 await mkdir(out, { recursive: true });
 const bundle = await build({
-  stdin: { contents: `export { allBuildTableData } from './app/page'; export { BuildTableSheet } from './components/build/BuildTableView'; export { CURRENT_SEASON, SEASON_CATALOG } from './app/data/season-config'; export { BUILD_CATALOG } from './app/data/site-catalog';`, resolveDir: process.cwd(), loader: "tsx" },
+  stdin: { contents: `export { createTranslator } from './app/i18n/core'; export { I18nProvider } from './app/i18n/I18nProvider'; export { allBuildTableData } from './app/page'; export { BuildTableSheet } from './components/build/BuildTableView'; export { CURRENT_SEASON, SEASON_CATALOG } from './app/data/season-config'; export { BUILD_CATALOG } from './app/data/site-catalog';`, resolveDir: process.cwd(), loader: "tsx" },
   bundle: true, platform: "node", format: "esm", write: false, external: ["react", "react-dom", "react-dom/*"],
   plugins: [{ name: "static-test-inputs", setup(builder) {
     builder.onResolve({ filter: /^next\/navigation$/ }, () => ({ path: "navigation", namespace: "test" }));
@@ -18,7 +18,7 @@ const bundle = await build({
   } }],
 });
 await writeFile(new URL("catalog.mjs", out), bundle.outputFiles[0].text);
-const { allBuildTableData, BuildTableSheet, CURRENT_SEASON, BUILD_CATALOG } = await import(new URL("catalog.mjs", out));
+const { allBuildTableData, BuildTableSheet, CURRENT_SEASON, BUILD_CATALOG, createTranslator, I18nProvider } = await import(new URL("catalog.mjs", out));
 const all = allBuildTableData(CURRENT_SEASON);
 
 test("export catalog covers every BD, seven classes and every loadout with complete local imagery", async () => {
@@ -44,13 +44,13 @@ test("export catalog covers every BD, seven classes and every loadout with compl
 
 test("the table renders complete text, socket counts, rune and all three follower configurations", () => {
   const data = all.find((data) => data.id === "tragoul-nova");
-  for (const [followerKey, name, token] of [["enchantress", "魔女", "烟熏香炉"], ["scoundrel", "盗贼", "骷髅钥匙"], ["templar", "圣殿骑士", "附魔之恩"]]) {
+  for (const [followerKey, name, token] of [["enchantress", "魔女", "烟熏香炉"], ["scoundrel", "痞子", "骷髅钥匙"], ["templar", "圣殿骑士", "附魔之恩"]]) {
     const html = renderToStaticMarkup(createElement(BuildTableSheet, { data, followerKey }));
     assert.ok(html.includes(name));
-    assert.ok(html.includes(token));
-    for (const item of data.gear) assert.ok(html.includes(item.name));
-    for (const skill of data.skills) assert.ok(html.includes(skill.rune));
-    for (const step of data.rotation) assert.ok(html.includes(step.action));
+    assert.ok(html.includes(createTranslator("zhCN").tr(token)));
+    for (const item of data.gear) assert.ok(html.includes(createTranslator("zhCN").entity(item)));
+    for (const skill of data.skills) assert.ok(html.includes(createTranslator("zhCN").entity(skill,"rune")));
+    for (const step of data.rotation) assert.ok(html.includes(createTranslator("zhCN").tr(step.action)));
     assert.match(html, /×3/);
     assert.match(html, /词缀优先级/);
     assert.match(html, /输出手法/);
@@ -68,7 +68,7 @@ const exporter = await build({
   external: ["react", "react/jsx-runtime", "fflate"],
   plugins: [{ name: "export-render-boundary", setup(builder) {
     builder.onResolve({ filter: /^(react-dom\/client|react-dom|html-to-image)$|\/BuildTableView$/ }, (args) => ({ path: args.path, namespace: "mock" }));
-    builder.onLoad({ filter: /.*/, namespace: "mock" }, ({ path }) => ({ contents: path === "react-dom/client" ? `export const createRoot = () => ({ render: node => { globalThis.exportHarness.current = node.props.data; }, unmount: () => { globalThis.exportHarness.unmounted++; } });` : path === "react-dom" ? `export const flushSync = fn => fn();` : path === "html-to-image" ? `export const toBlob = async (node, options) => globalThis.exportHarness.capture(options);` : `export const BuildTableSheet = () => null;` }));
+    builder.onLoad({ filter: /.*/, namespace: "mock" }, ({ path }) => ({ contents: path === "react-dom/client" ? `export const createRoot = () => ({ render: node => { globalThis.exportHarness.current = node.props.children.props.data; }, unmount: () => { globalThis.exportHarness.unmounted++; } });` : path === "react-dom" ? `export const flushSync = fn => fn();` : path === "html-to-image" ? `export const toBlob = async (node, options) => globalThis.exportHarness.capture(options);` : `export const BuildTableSheet = () => null;` }));
   } }],
 });
 await writeFile(new URL("exporter.mjs", out), exporter.outputFiles[0].text);
@@ -105,8 +105,15 @@ test("a failed image is reported, remaining builds export, cancellation cleans u
   assert.equal(result.failed, 1);
   assert.equal(result.succeeded, 1);
   const files = unzipSync(new Uint8Array(await result.blob.arrayBuffer()));
-  assert.match(strFromU8(files["失败清单.txt"]), /missing image/);
+  assert.match(strFromU8(files["failures.txt"]), /missing image/);
   await assert.rejects(exportBuildTables(all, true, controller.signal, () => controller.abort()), { name: "AbortError" });
   assert.equal(state.unmounted, 2);
   assert.equal(state.removed, 2);
+});
+
+test("all export sheets render in three locales without missing prose or unprocessed tokens", () => {
+  for (const locale of ["zhCN", "zhTW", "enUS"]) for (const data of all) {
+    const html = renderToStaticMarkup(createElement(I18nProvider, {initialLocale: locale, syncDocument: false}, createElement(BuildTableSheet, {data})));
+    assert.doesNotMatch(html, /译文待补齐|譯文待補齊|Translation pending|ZXQ\d+XZ|Script Formula|\[\[|\{\d+\}/, `${locale}: ${data.id}`);
+  }
 });

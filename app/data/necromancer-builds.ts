@@ -694,7 +694,7 @@ const LOD_CORPSE_PARAGON: ParagonGuide = {
     { priority: "其余全部智力", when: "生命与减伤稳定", reason: "智力继续提高伤害与全抗。" },
   ],
   checkpoints: [
-    { label: "冷却缩减", target: "约60%", reason: "对齐亡者领域与元素周期。" },
+    { label: "冷却缩减", target: "约60%", action: "对齐亡者领域与元素周期。" },
     { label: "范围伤害", target: "高巅峰约190%", action: "肩、手、戒指、武器补足。" },
     { label: "攻速档位", target: "尸爆档位", action: "达标后冲更高档位。" },
   ],

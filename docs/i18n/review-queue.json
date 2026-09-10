@@ -1,0 +1,937 @@
+[
+  {
+    "type": "missing-client-translation",
+    "id": "Powers/Scoundrel_Multishot_name",
+    "locale": "zhCN"
+  },
+  {
+    "type": "missing-client-translation",
+    "id": "Powers/Scoundrel_Multishot_name",
+    "locale": "zhTW"
+  },
+  {
+    "type": "unmapped-guide-rune",
+    "image": "/d3/library/skills/barbarian-active-war-cry.png",
+    "skill": "战吼",
+    "rune": "蓄势待发",
+    "where": "data.barbarian-builds.js.BARBARIAN_BUILDS.raekor-boulder.skills[7]",
+    "options": {
+      "a": "AttributeDescriptions/NameRune_A#X1_Barbarian_WarCry_v2",
+      "d": "AttributeDescriptions/NameRune_D#X1_Barbarian_WarCry_v2",
+      "e": "AttributeDescriptions/NameRune_E#X1_Barbarian_WarCry_v2",
+      "b": "AttributeDescriptions/NameRune_B#X1_Barbarian_WarCry_v2",
+      "c": "AttributeDescriptions/NameRune_C#X1_Barbarian_WarCry_v2",
+      "alias:顽抗战吼": "AttributeDescriptions/NameRune_C#X1_Barbarian_WarCry_v2"
+    }
+  },
+  {
+    "type": "unmapped-guide-rune",
+    "image": "/d3/library/skills/barbarian-active-threatening-shout.png",
+    "skill": "威吓呐喊",
+    "rune": "恫吓",
+    "where": "data.barbarian-builds.js.BARBARIAN_BUILDS.h90-frenzy.skills[3]",
+    "options": {
+      "b": "AttributeDescriptions/NameRune_B#Barbarian_ThreateningShout",
+      "d": "AttributeDescriptions/NameRune_D#Barbarian_ThreateningShout",
+      "c": "AttributeDescriptions/NameRune_C#Barbarian_ThreateningShout",
+      "a": "AttributeDescriptions/NameRune_A#Barbarian_ThreateningShout",
+      "e": "AttributeDescriptions/NameRune_E#Barbarian_ThreateningShout"
+    }
+  },
+  {
+    "type": "unmapped-guide-rune",
+    "image": "/d3/library/skills/crusader-active-condemn.png",
+    "skill": "天谴",
+    "rune": "无情爆发",
+    "where": "data.crusader-builds.js.CRUSADER_BUILDS.akkhan-condemn.skills[5]",
+    "options": {
+      "b": "AttributeDescriptions/NameRune_B#X1_Crusader_Condemn",
+      "e": "AttributeDescriptions/NameRune_E#X1_Crusader_Condemn",
+      "c": "AttributeDescriptions/NameRune_C#X1_Crusader_Condemn",
+      "d": "AttributeDescriptions/NameRune_D#X1_Crusader_Condemn",
+      "a": "AttributeDescriptions/NameRune_A#X1_Crusader_Condemn"
+    }
+  },
+  {
+    "type": "unmapped-guide-rune",
+    "image": "/d3/library/skills/crusader-active-sweep-attack.png",
+    "skill": "横扫攻击",
+    "rune": "电流扫击",
+    "where": "data.crusader-builds.js.CRUSADER_BUILDS.roland-sweep.skills[0]",
+    "options": {
+      "b": "AttributeDescriptions/NameRune_B#X1_Crusader_SweepAttack",
+      "d": "AttributeDescriptions/NameRune_D#X1_Crusader_SweepAttack",
+      "c": "AttributeDescriptions/NameRune_C#X1_Crusader_SweepAttack",
+      "a": "AttributeDescriptions/NameRune_A#X1_Crusader_SweepAttack",
+      "e": "AttributeDescriptions/NameRune_E#X1_Crusader_SweepAttack"
+    }
+  },
+  {
+    "type": "unmapped-guide-rune",
+    "image": "/d3/library/skills/crusader-active-provoke.png",
+    "skill": "挑衅",
+    "rune": "蓄势待发",
+    "where": "data.crusader-builds.js.CRUSADER_BUILDS.lod-bombardment.skills[3]",
+    "options": {
+      "a": "AttributeDescriptions/NameRune_A#X1_Crusader_Provoke",
+      "b": "AttributeDescriptions/NameRune_B#X1_Crusader_Provoke",
+      "c": "AttributeDescriptions/NameRune_C#X1_Crusader_Provoke",
+      "d": "AttributeDescriptions/NameRune_D#X1_Crusader_Provoke",
+      "e": "AttributeDescriptions/NameRune_E#X1_Crusader_Provoke",
+      "alias:蓄电攻击": "AttributeDescriptions/NameRune_D#X1_Crusader_Provoke",
+      "alias:畏怯": "AttributeDescriptions/NameRune_C#X1_Crusader_Provoke",
+      "alias:净化": "AttributeDescriptions/NameRune_A#X1_Crusader_Provoke",
+      "alias:惊慌失措": "AttributeDescriptions/NameRune_C#X1_Crusader_Provoke"
+    }
+  },
+  {
+    "type": "legacy-rune-key-conflict",
+    "where": "data.home.SKILLS[2]",
+    "image": "/d3/bone-armor.png",
+    "rune": "白骨脱臼",
+    "oldKey": "b",
+    "resolvedKey": "c",
+    "ref": "AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor",
+    "resolution": "Exact name inside the identified skill takes precedence; business IDs and guide choice retained."
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "裂肉斧",
+    "candidates": [
+      "Items/Unique_Axe_1H_001_x1",
+      "Items/Axe_2H_302"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "裹腰",
+    "candidates": [
+      "Items/Belt_102",
+      "Items/Belt_001"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "束腰",
+    "candidates": [
+      "Items/Belt_204",
+      "Items/Belt_103"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "設計圖：煉獄裝置",
+    "candidates": [
+      "Items/CraftingPlan_Smith_12_Legendary_Set_InfernalMachine_X1",
+      "Items/CraftingPlan_Smith_Smith_RedPortalDevice"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "短靴",
+    "candidates": [
+      "Items/Boots_102",
+      "Items/Boots_002"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "木棒",
+    "candidates": [
+      "Items/CombatStaff_2H_001",
+      "Items/Mace_1H_001"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "短棒",
+    "candidates": [
+      "Items/Mace_1H_001",
+      "Items/Mace_1H_002"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "先祖之怒",
+    "candidates": [
+      "Items/P67_Unique_Shoulder_102",
+      "AttributeDescriptions/NameRune_C#Barbarian_CallOfTheAncients"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "眉尖刀",
+    "candidates": [
+      "Items/Polearm_105",
+      "Items/Polearm_102"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "克己",
+    "candidates": [
+      "Items/Unique_Ring_Set_002_x1",
+      "Items/Unique_Ring_Set_001_x1"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "魚叉",
+    "candidates": [
+      "Items/Spear_201",
+      "AttributeDescriptions/NameRune_A#X1_Barbarian_AncientSpear"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "曲刀",
+    "candidates": [
+      "Items/Sword_1H_206",
+      "Items/Sword_1H_205"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "颶風轉",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#Barbarian_Whirlwind",
+      "Powers/Monk_CycloneStrike_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "血債血償",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#Barbarian_Revenge",
+      "Powers/P6_Necro_Passive_HealthGlobesFreeCast_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "挑釁",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#Barbarian_Revenge",
+      "Powers/X1_Crusader_Provoke_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "撕裂",
+    "candidates": [
+      "Powers/Barbarian_Rend_name",
+      "AttributeDescriptions/NameRune_A#Barbarian_Rend"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "大地之力",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#Barbarian_SeismicSlam",
+      "ItemSets/Earthquake_Set_x1",
+      "Powers/X1_Barbarian_Passive_EarthenMight_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "吸收生命",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#X1_Crusader_Smite",
+      "Powers/P6_Necro_Passive_HealthRegen_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "死亡蔓延",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#DemonHunter_MarkedForDeath",
+      "Powers/Witchdoctor_Passive_CreepingDeath_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "穿刺箭",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#DemonHunter_HungeringArrow",
+      "AttributeDescriptions/NameRune_B#DemonHunter_Sentry"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "集中心智",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#DemonHunter_Preparation",
+      "Powers/Enchantress_FocusedMind_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "精力充沛",
+    "candidates": [
+      "AttributeDescriptions/NameRune_A#X1_Monk_MantraOfHealing_v2",
+      "AttributeDescriptions/NameRune_B#DemonHunter_Preparation",
+      "AttributeDescriptions/NameRune_A#P6_Necro_LandOfTheDead"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "生生不息",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#Monk_BreathOfHeaven",
+      "Powers/Witchdoctor_Passive_CircleOfLife_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "死亡之谷",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#P6_Necro_SkeleBomb",
+      "AttributeDescriptions/NameRune_C#DemonHunter_MarkedForDeath"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "烈火焚身",
+    "candidates": [
+      "Powers/Wizard_Passive_Conflagration_name",
+      "AttributeDescriptions/NameRune_A#Wizard_MagicWeapon"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "憎恨",
+    "candidates": [
+      "H2OLayout/Hatred",
+      "AttributeDescriptions/NameRune_C#Barbarian_Revenge"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "坚韧",
+    "candidates": [
+      "Hero/Survivability",
+      "Powers/Barbarian_Passive_Relentless_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "脆弱光环",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#P6_Necro_Frailty",
+      "Powers/P6_Necro_Frailty_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "守心",
+    "candidates": [
+      "Items/Unique_Ring_Set_002_x1",
+      "Items/Unique_Ring_Set_001_x1"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "狂暴者之怒",
+    "candidates": [
+      "Powers/Barbarian_Passive_Relentless_name",
+      "Powers/Barbarian_WrathOfTheBerserker_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "地狱火护符",
+    "candidates": [
+      "Items/CraftingPlan_Jeweler_12_Legendary_Hellfire_Amulet_x1",
+      "Items/x1_Amulet_norm_unique_25"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "狂乱",
+    "candidates": [
+      "Powers/Barbarian_Frenzy_name",
+      "AttributeDescriptions/NameRune_E#P6_Necro_CommandSkeletons"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "兵要护符",
+    "candidates": [
+      "Items/P68_Unique_Mighty_2H_004",
+      "Items/Unique_Amulet_104_x1"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "势不可挡",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#X1_Crusader_LawsOfValor2",
+      "AttributeDescriptions/NameRune_B#Barbarian_FuriousCharge",
+      "Powers/Barbarian_Passive_Juggernaut_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "挑衅",
+    "candidates": [
+      "Powers/X1_Crusader_Provoke_name",
+      "AttributeDescriptions/NameRune_B#Barbarian_Revenge"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "坚不可摧",
+    "candidates": [
+      "Powers/X1_Crusader_Passive_Indestructible_name",
+      "AttributeDescriptions/NameRune_B#X1_Crusader_LawsOfJustice2"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "盾牌猛击",
+    "candidates": [
+      "Powers/X1_Crusader_ShieldGlare_name",
+      "Powers/X1_Crusader_ShieldBash2_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "神圣裁决",
+    "candidates": [
+      "AttributeDescriptions/NameRune_A#X1_Crusader_ShieldGlare",
+      "Items/Unique_HandXBow_016_x1"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "惩罚",
+    "candidates": [
+      "Powers/X1_Crusader_Punish_name",
+      "AttributeDescriptions/NameRune_A#DemonHunter_Preparation"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "复仇",
+    "candidates": [
+      "Powers/X1_DemonHunter_Vengeance_name",
+      "Powers/Barbarian_Revenge_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "多重射击",
+    "candidates": [
+      "Powers/DemonHunter_Multishot_name",
+      "Powers/Scoundrel_Multishot_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "轰击",
+    "candidates": [
+      "AttributeDescriptions/NameRune_A#DemonHunter_RapidFire",
+      "Powers/X1_Crusader_Bombardment_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "贤者之旅",
+    "candidates": [
+      "Items/Unique_Boots_018_x1",
+      "ItemSets/Crafted Inferno Set 002_x1",
+      "Items/Unique_Boots_018_1xx"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "神龙之魂",
+    "candidates": [
+      "Items/Unique_Fist_011_x1",
+      "ItemSets/Inferno Set 004_x1"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "禅定",
+    "candidates": [
+      "Powers/X1_Monk_InnerSanctuary_name",
+      "Powers/Monk_Serenity_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "瘟疫虫群",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#Witchdoctor_Locust_Swarm",
+      "Powers/Witchdoctor_Locust_Swarm_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "魂灵归体",
+    "candidates": [
+      "Powers/Witchdoctor_Passive_GraveInjustice_name",
+      "Powers/Witchdoctor_Passive_SpiritVessel_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "亡者之墙",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#Witchdoctor_WallOfZombies",
+      "Powers/Witchdoctor_WallOfZombies_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "神圣守御",
+    "candidates": [
+      "ItemSets/Crafted Inferno Set 003_104",
+      "Items/Unique_Shield_012_1xx"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "守护者的剑套",
+    "candidates": [
+      "Items/Unique_Belt_013_1xx",
+      "Items/P74_Unique_Belt_013"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Sage's Journey",
+    "candidates": [
+      "ItemSets/Crafted Inferno Set 002_x1",
+      "Items/Unique_Boots_018_1xx"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "图纸：炼狱装置",
+    "candidates": [
+      "Items/CraftingPlan_Smith_12_Legendary_Set_InfernalMachine_X1",
+      "Items/CraftingPlan_Smith_Smith_RedPortalDevice"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "曲刃刀",
+    "candidates": [
+      "Items/CeremonialDagger_1H_003",
+      "AttributeDescriptions/NameRune_C#X1_Barbarian_AncientSpear"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Jagged Edge",
+    "candidates": [
+      "Items/CeremonialDagger_1H_003",
+      "AttributeDescriptions/NameRune_C#X1_Barbarian_AncientSpear"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Piercer",
+    "candidates": [
+      "Items/Dagger_206",
+      "Items/FistWeapon_1H_004a"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "锤拳",
+    "candidates": [
+      "Items/Unique_Fist_012_x1",
+      "Items/FistWeapon_1H_202"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Enforcer",
+    "candidates": [
+      "Items/Unique_Gem_010_x1_PTR",
+      "Items/Unique_Gem_010_x1",
+      "AttributeDescriptions/NameRune_A#P6_Necro_CommandSkeletons"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Fists of Thunder",
+    "candidates": [
+      "Items/Unique_Gloves_Set_08_x1",
+      "Powers/Monk_FistsofThunder_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Calamity",
+    "candidates": [
+      "Items/Unique_HandXBow_012_x1",
+      "AttributeDescriptions/NameRune_A#Wizard_Teleport"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Reaver",
+    "candidates": [
+      "Items/MightyWeapon1H_102a",
+      "Items/Sword_2H_102"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "双手巨剑",
+    "candidates": [
+      "Items/MightyWeapon2H_002",
+      "Items/Sword_2H_101"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "巨人之刃",
+    "candidates": [
+      "Items/MightyWeapon2H_102",
+      "Items/Sword_2H_204"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Singularity",
+    "candidates": [
+      "Items/Unique_Orb_004_1xx",
+      "AttributeDescriptions/NameRune_B#P6_Necro_RaiseDead"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "法典",
+    "candidates": [
+      "Items/Orb_202",
+      "Items/Templar_Special_001a",
+      "Items/Templar_Special_205"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "战戟",
+    "candidates": [
+      "Items/Polearm_202",
+      "Items/Scythe_2H_001_t3"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Fauchard",
+    "candidates": [
+      "Items/Polearm_202",
+      "Items/Scythe_2H_001_t3"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "无尽恢复药水",
+    "candidates": [
+      "Items/HealthPotionLegendary_03",
+      "Items/P2_HealthPotionLegendary_07"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Unity",
+    "candidates": [
+      "Items/Unique_Ring_010_x1",
+      "Powers/X1_Monk_Passive_Unity_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Focus",
+    "candidates": [
+      "Items/Unique_Ring_Set_001_x1",
+      "AttributeDescriptions/NameRune_E#X1_DemonHunter_EvasiveFire"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "锋锐镰",
+    "candidates": [
+      "Items/Scythe_2H_001_t2",
+      "Items/Scythe_2H_003_t2"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Sharp Scythe",
+    "candidates": [
+      "Items/Scythe_2H_001_t2",
+      "Items/Scythe_2H_003_t2"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "尸墙",
+    "candidates": [
+      "Items/Unique_Shield_011_x1",
+      "AttributeDescriptions/NameRune_D#Witchdoctor_WallOfZombies"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Harpoon",
+    "candidates": [
+      "Items/Spear_201",
+      "AttributeDescriptions/NameRune_A#X1_Barbarian_AncientSpear"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Prism",
+    "candidates": [
+      "Items/SpiritStone_102",
+      "AttributeDescriptions/NameRune_D#Wizard_DiamondSkin"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "风暴之眼",
+    "candidates": [
+      "Items/Unique_SpiritStone_006_x1",
+      "AttributeDescriptions/NameRune_D#Monk_CycloneStrike"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Guardian",
+    "candidates": [
+      "Items/Wand_202",
+      "Powers/Templar_CheatDeath_Passive_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "雷霆震击",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#Barbarian_HammerOfTheAncients",
+      "AttributeDescriptions/NameRune_A#Monk_FistsofThunder"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Frenzy",
+    "candidates": [
+      "Powers/Barbarian_Frenzy_name",
+      "AttributeDescriptions/NameRune_E#P6_Necro_CommandSkeletons"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Smite",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#Barbarian_Frenzy",
+      "Powers/X1_Crusader_Smite_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Punish",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#Barbarian_Bash",
+      "Powers/X1_Crusader_Punish_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Retribution",
+    "candidates": [
+      "AttributeDescriptions/NameRune_A#Barbarian_Revenge",
+      "AttributeDescriptions/NameRune_E#X1_Crusader_FistOfTheHeavens"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Ricochet",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#X1_Barbarian_WeaponThrow",
+      "AttributeDescriptions/NameRune_D#DemonHunter_Impale",
+      "AttributeDescriptions/NameRune_A#P6_Necro_CorpseLance"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Shattered Ground",
+    "candidates": [
+      "AttributeDescriptions/NameRune_A#Barbarian_SeismicSlam",
+      "AttributeDescriptions/NameRune_D#X1_Crusader_Consecration"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Momentum",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#Barbarian_Overpower",
+      "Powers/X1_Monk_Passive_Momentum_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Ruthless",
+    "candidates": [
+      "Powers/Barbarian_Passive_Ruthless_name",
+      "AttributeDescriptions/NameRune_B#P6_Necro_Devour"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Flurry",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#X1_Crusader_FallingSword",
+      "AttributeDescriptions/NameRune_E#Monk_TempestRush"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Unleashed",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#X1_Crusader_Condemn",
+      "AttributeDescriptions/NameRune_D#Wizard_ExplosiveBlast"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Bombardment",
+    "candidates": [
+      "Powers/X1_Crusader_Bombardment_name",
+      "AttributeDescriptions/NameRune_A#DemonHunter_RapidFire"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Fury",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#X1_Crusader_Punish",
+      "H2OLayout/Fury"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Charged Up",
+    "candidates": [
+      "AttributeDescriptions/NameRune_D#X1_Crusader_Provoke",
+      "AttributeDescriptions/NameRune_A#X1_Crusader_IronSkin"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Electrify",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#X1_Crusader_Slash",
+      "AttributeDescriptions/NameRune_B#Wizard_MagicWeapon"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Stampede",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#x1_Crusader_Phalanx3",
+      "AttributeDescriptions/NameRune_E#DemonHunter_RainOfVengeance"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "衰弱",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#X1_Crusader_Judgment",
+      "AttributeDescriptions/NameRune_A#P6_Necro_Decrepify"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Flash",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#X1_Crusader_IronSkin",
+      "AttributeDescriptions/NameRune_C#Wizard_ExplosiveBlast"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "爆裂之链",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#X1_Crusader_Smite",
+      "AttributeDescriptions/NameRune_B#P6_Necro_BoneSpear"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Shatter",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#X1_Crusader_Smite",
+      "AttributeDescriptions/NameRune_B#P6_Necro_BoneSpear",
+      "AttributeDescriptions/NameRune_B#Wizard_FrostNova"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Surge",
+    "candidates": [
+      "AttributeDescriptions/NameRune_E#X1_Crusader_Smite",
+      "AttributeDescriptions/NameRune_D#X1_DemonHunter_EvasiveFire"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Multishot",
+    "candidates": [
+      "Powers/DemonHunter_Multishot_name",
+      "Powers/Scoundrel_Multishot_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Invigoration",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#DemonHunter_Preparation",
+      "AttributeDescriptions/NameRune_A#P6_Necro_LandOfTheDead"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Focused Mind",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#DemonHunter_Preparation",
+      "Powers/Enchantress_FocusedMind_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Leech",
+    "candidates": [
+      "Powers/X1_DemonHunter_Passive_Leech_name",
+      "Powers/P6_Necro_Leech_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "闪电风暴",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#Monk_SweepingWind",
+      "AttributeDescriptions/NameRune_C#Wizard_Blizzard"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "Circle of Life",
+    "candidates": [
+      "AttributeDescriptions/NameRune_B#Monk_BreathOfHeaven",
+      "Powers/Witchdoctor_Passive_CircleOfLife_name"
+    ]
+  },
+  {
+    "type": "ambiguous-alias",
+    "text": "吸取生命",
+    "candidates": [
+      "AttributeDescriptions/NameRune_C#P6_Necro_SiphonBlood",
+      "Powers/P6_Necro_Leech_name"
+    ]
+  }
+]

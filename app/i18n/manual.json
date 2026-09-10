@@ -1,0 +1,345 @@
+{
+  "网站设置": {
+    "zhCN": "网站设置",
+    "zhTW": "網站設定",
+    "enUS": "Site settings"
+  },
+  "语言": {
+    "zhCN": "语言",
+    "zhTW": "語言",
+    "enUS": "Language"
+  },
+  "选择语言": {
+    "zhCN": "选择语言",
+    "zhTW": "選擇語言",
+    "enUS": "Choose language"
+  },
+  "语言与游戏译名": {
+    "zhCN": "语言与游戏译名",
+    "zhTW": "語言與遊戲譯名",
+    "enUS": "Language and game terminology"
+  },
+  "名称采用 PC 客户端译名；Switch 译名尚未核验。": {
+    "zhCN": "名称采用 PC 客户端译名；Switch 译名尚未核验。",
+    "zhTW": "名稱採用 PC 用戶端譯名；Switch 譯名尚未核驗。",
+    "enUS": "Names follow the PC client. Switch terminology has not been verified."
+  },
+  "名称来自 PC 客户端；数值沿用原站资料，说明译文非客户端原文。": {
+    "zhCN": "名称及可匹配描述采用 PC 客户端文本；数值沿用原站，其他说明为本站译文。Switch 译名尚未核验。",
+    "zhTW": "名稱及可匹配描述採用 PC 用戶端文本；數值沿用原站，其他說明為本站譯文。Switch 譯名尚未核驗。",
+    "enUS": "Names and matching descriptions use PC client text. Original site values are retained; other explanations are site translations. Switch terminology is unverified."
+  },
+  "圣休亚瑞秘典": {
+    "zhCN": "圣休亚瑞秘典",
+    "zhTW": "聖休亞瑞秘典",
+    "enUS": "Sanctuary Codex"
+  },
+  "圣休亚瑞秘典｜暗黑破坏神 III 单人攻略站": {
+    "zhCN": "圣休亚瑞秘典｜暗黑破坏神 III 单人攻略站",
+    "zhTW": "聖休亞瑞秘典｜暗黑破壞神 III 單人攻略站",
+    "enUS": "Sanctuary Codex | Diablo III Solo Guides"
+  },
+  "冲层": {
+    "zhCN": "冲层",
+    "zhTW": "衝層",
+    "enUS": "Push"
+  },
+  "速刷": {
+    "zhCN": "速刷",
+    "zhTW": "速刷",
+    "enUS": "Speed farming"
+  },
+  "通用": {
+    "zhCN": "通用",
+    "zhTW": "通用",
+    "enUS": "General"
+  },
+  "低": {
+    "zhCN": "低",
+    "zhTW": "低",
+    "enUS": "Low"
+  },
+  "中": {
+    "zhCN": "中",
+    "zhTW": "中",
+    "enUS": "Medium"
+  },
+  "高": {
+    "zhCN": "高",
+    "zhTW": "高",
+    "enUS": "High"
+  },
+  "BD": {
+    "zhCN": "BD",
+    "zhTW": "BD",
+    "enUS": "Build"
+  },
+  "大秘境": {
+    "zhCN": "大秘境",
+    "zhTW": "宏偉秘境",
+    "enUS": "Greater Rift"
+  },
+  "小秘境": {
+    "zhCN": "小秘境",
+    "zhTW": "奈非天秘境",
+    "enUS": "Nephalem Rift"
+  },
+  "蓝门": {
+    "zhCN": "蓝门",
+    "zhTW": "藍門",
+    "enUS": "Nephalem Rift"
+  },
+  "巅峰": {
+    "zhCN": "巅峰",
+    "zhTW": "巔峰",
+    "enUS": "Paragon"
+  },
+  "原有配置说明": {
+    "zhCN": "原有配置说明",
+    "zhTW": "原有配置說明",
+    "enUS": "Original build notes"
+  },
+  "物品资料暂时无法加载，请重试。": {
+    "zhCN": "物品资料暂时无法加载，请重试。",
+    "zhTW": "物品資料暫時無法載入，請重試。",
+    "enUS": "Item data could not be loaded. Please try again."
+  },
+  "没有匹配的结果": {
+    "zhCN": "没有匹配的结果",
+    "zhTW": "沒有符合的結果",
+    "enUS": "No matching results"
+  },
+  "游戏原特效": {
+    "zhCN": "原站特效说明",
+    "zhTW": "原站特效說明",
+    "enUS": "Original effect notes"
+  },
+  "件；物品详情与原特效均来自本地官方镜像。": {
+    "zhCN": "件；名称及可匹配描述采用 PC 客户端文本，数值沿用原站。",
+    "zhTW": "件；名稱及可匹配描述採用 PC 用戶端文本，數值沿用原站。",
+    "enUS": "items. Names and matching descriptions use PC client text; values are retained from the original site."
+  },
+  "上易伤": {
+    "zhCN": "上易伤",
+    "zhTW": "施加易傷",
+    "enUS": "Apply vulnerability"
+  },
+  "制作": {
+    "zhCN": "制作",
+    "zhTW": "製作",
+    "enUS": "Crafting"
+  },
+  "怎么获得": {
+    "zhCN": "怎么获得",
+    "zhTW": "如何取得",
+    "enUS": "How to obtain"
+  },
+  "T16小秘境、蓝门与悬赏使用金织带、囤宝者和贪婪之戒组成金币链，配瑞秋戒与寅剑把赶路和冷却压到最低。；伤害溢出后把宝石与词缀转向移速、冷却和拾取范围；高巅峰尝试接近110层时可换团结提容错。": {
+    "enUS": "For T16 [[General/LootRunPortal]], blue portals and bounties, combine [[Items/Unique_Belt_010_x1]], [[Items/Unique_Gem_014_x1]] and [[Items/Unique_Ring_108_x1]] for the gold setup, with [[Items/Unique_Ring_104_x1]] and [[Items/Unique_Sword_1H_113_x1]] to minimize travel time and cooldowns. Once damage is sufficient, prioritize movement speed, cooldown reduction and pickup radius in gems and affixes. At high Paragon, consider [[Items/Unique_Ring_010_x1]] for survivability when approaching tier 110."
+  },
+  "提丰多头蛇的核心武器/副手/套装乘区不可随意替换；缺少它时只算过渡配装。": {
+    "enUS": "The core weapon, off-hand and set multipliers of the Typhon Hydra build cannot be freely replaced; a setup missing this item is only transitional."
+  },
+  "领域内连续按吞噬。": {
+    "enUS": "Repeatedly use [[Powers/P6_Necro_Devour_name]] within the area."
+  },
+  "闪避射击后使用烟雾弹。": {
+    "enUS": "Use [[Powers/DemonHunter_SmokeScreen_name]] after [[Powers/X1_DemonHunter_EvasiveFire_name]]."
+  },
+  "暗影飞刀后短时间内翻滚不消耗戒律。": {
+    "enUS": "For a short time after [[Powers/DemonHunter_Impale_name]], [[Powers/DemonHunter_Vault_name]] costs no Discipline."
+  },
+  "NEPHALEM ARCHIVE": {
+    "zhCN": "奈非天档案",
+    "zhTW": "奈非天檔案",
+    "enUS": "NEPHALEM ARCHIVE"
+  },
+  "SCENARIO REVIEW": {
+    "zhCN": "场景评审",
+    "zhTW": "情境評審",
+    "enUS": "SCENARIO REVIEW"
+  },
+  "BUILD COMMAND DECK": {
+    "zhCN": "构筑总览",
+    "zhTW": "配置總覽",
+    "enUS": "BUILD COMMAND DECK"
+  },
+  "PATCH": {
+    "zhCN": "版本",
+    "zhTW": "版本",
+    "enUS": "PATCH"
+  },
+  "SITE SETTINGS": {
+    "zhCN": "网站设置",
+    "zhTW": "網站設定",
+    "enUS": "SITE SETTINGS"
+  },
+  "BUILD NOT FOUND": {
+    "zhCN": "未找到构筑",
+    "zhTW": "找不到配置",
+    "enUS": "BUILD NOT FOUND"
+  },
+  "SEASON 39 · SOLO BUILDS": {
+    "zhCN": "第39赛季 · 单人构筑",
+    "zhTW": "第39賽季 · 單人配置",
+    "enUS": "SEASON 39 · SOLO BUILDS"
+  },
+  "THE CAMPAIGN · ACT I–V": {
+    "zhCN": "主线剧情 · 第一至第五幕",
+    "zhTW": "主線劇情 · 第一至第五幕",
+    "enUS": "THE CAMPAIGN · ACT I–V"
+  },
+  "SEASON START · 0 TO 70": {
+    "zhCN": "赛季开荒 · 0 至 70 级",
+    "zhTW": "賽季拓荒 · 0 至 70 級",
+    "enUS": "SEASON START · 0 TO 70"
+  },
+  "OFFICIAL ITEM DATABASE": {
+    "zhCN": "物品资料库",
+    "zhTW": "物品資料庫",
+    "enUS": "OFFICIAL ITEM DATABASE"
+  },
+  "剧情线路": {
+    "enUS": "Campaign"
+  },
+  "赛季开荒": {
+    "enUS": "Season start"
+  },
+  "赛季全职业BD": {
+    "enUS": "All class builds"
+  },
+  "返回赛季全职业BD": {
+    "enUS": "Back to all class builds"
+  },
+  "图文详情": {
+    "enUS": "Build details"
+  },
+  "BD 表格": {
+    "enUS": "Build table"
+  },
+  "BD 表格视图": {
+    "enUS": "Build table view"
+  },
+  "装备盘": {
+    "enUS": "Equipment"
+  },
+  "装备加成": {
+    "enUS": "Equipment bonuses"
+  },
+  "点击反查词缀": {
+    "enUS": "Find matching affixes"
+  },
+  "大秘境冲层": {
+    "enUS": "Greater Rift pushing"
+  },
+  "T16 / 速刷": {
+    "enUS": "T16 / Speed farming"
+  },
+  "低巅峰 &lt; 2000": {
+    "enUS": "Low Paragon < 2000"
+  },
+  "高巅峰 2000+": {
+    "enUS": "High Paragon 2000+"
+  },
+  "单人强度": {
+    "enUS": "Solo rating"
+  },
+  "操作门槛": {
+    "enUS": "Difficulty"
+  },
+  "NS适配": {
+    "enUS": "Switch suitability"
+  },
+  "BD定位": {
+    "enUS": "Build role"
+  },
+  "用途": {
+    "enUS": "Purpose"
+  },
+  "装备作用": {
+    "enUS": "Equipment details"
+  },
+  "構築總覽": {
+    "enUS": "Build overview"
+  },
+  "构筑总览": {
+    "enUS": "Build overview"
+  },
+  "资料库": {
+    "enUS": "Library"
+  },
+  "技能配置": {
+    "enUS": "Skills"
+  },
+  "单人BD": {
+    "enUS": "Solo build"
+  },
+  "当前配置": {
+    "enUS": "Current setup"
+  },
+  "装备与宝石": {
+    "enUS": "Equipment and gems"
+  },
+  "词缀优先级": {
+    "enUS": "Affix priority"
+  },
+  "输出手法": {
+    "enUS": "Rotation"
+  },
+  "全职业全部 BD · ZIP": {
+    "enUS": "All class builds · ZIP"
+  },
+  "亡者领域内高速吞噬，瞬间叠满后续尸枪乘区。": {
+    "enUS": "Use [[Powers/P6_Necro_Devour_name]] rapidly during [[Powers/P6_Necro_LandOfTheDead_name]] to instantly build the multiplier for subsequent Corpse Lance attacks."
+  },
+  "少任意一件都会明显变脆；团结随从没有不死圣物时反而会断减伤。": {
+    "enUS": "Missing any piece significantly reduces survivability. With [[Items/Unique_Ring_010_x1]], a follower without an immortality relic can interrupt the damage reduction setup."
+  },
+  "速刷时替换冲层武器": {
+    "enUS": "Replace the pushing weapon for speed farming."
+  },
+  "翻滚后获得减伤。": {
+    "enUS": "Gain damage reduction after [[Powers/DemonHunter_Vault_name]]."
+  },
+  "烟雾弹后获得减伤。": {
+    "enUS": "Gain damage reduction after [[Powers/DemonHunter_SmokeScreen_name]]."
+  },
+  "每个受到诅咒的敌人都会提高你的伤害；怪群越密，脆弱光环的增伤越高。": {
+    "enUS": "Each cursed enemy increases your damage; denser groups make the damage boost from the [[Powers/P6_Necro_Frailty_name]] aura stronger."
+  },
+  "飓风破后获得减伤。": {
+    "enUS": "Gain damage reduction after [[Powers/Monk_CycloneStrike_name]]."
+  },
+  "魔女冷却最通用；冲层若需要暴击爆发可换盗贼，低巅峰缺治疗时可换圣殿骑士。": {
+    "enUS": "The cooldown benefit from the [[Pets/HirelingEnchantress]] is the most versatile. For pushing, use the [[Pets/HirelingScoundrel]] if you need critical-hit burst; at low Paragon, use the [[Pets/HirelingTemplar]] if you need [[Powers/Templar_Heal_110_name]]."
+  },
+  "疾风击后获得减伤。": {
+    "enUS": "Gain damage reduction after [[Powers/X1_Monk_DashingStrike_name]]."
+  },
+  "速刷时替换全能法戒": {
+    "enUS": "Replace [[Items/P2_Unique_Ring_04]] for speed farming."
+  },
+  "速刷时替换杰瑟斯骨镰": {
+    "enUS": "Replace [[Items/P6_Unique_Scythe1H_04]] for speed farming."
+  },
+  "速刷时替换杰瑟斯骨盾": {
+    "enUS": "Replace [[Items/P6_Unique_Shield_01]] for speed farming."
+  },
+  "结束后建立增伤": {
+    "enUS": "Build the damage boost after it ends."
+  },
+  "T16速刷把腰带换金织带、护腕换复仇者、戒指换贪婪组成金币链；第4槽换寅剑或梅斧压缩亡者大军空窗，宝石用困者/勾玉/囤宝者。": {
+    "zhCN": "T16速刷把腰带换[[Items/Unique_Belt_010_x1]]、护腕换[[Items/Unique_Bracer_106_x1]]、戒指换[[Items/Unique_Ring_108_x1]]组成金币链；第4槽换[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]压缩[[Powers/P6_Necro_SkeleBomb_name]]空窗，宝石用[[Items/Unique_Gem_002_x1]]/[[Items/Unique_Gem_008_x1]]/[[Items/Unique_Gem_014_x1]]。",
+    "zhTW": "T16速刷將腰帶換成[[Items/Unique_Belt_010_x1]]、護腕換成[[Items/Unique_Bracer_106_x1]]、戒指換成[[Items/Unique_Ring_108_x1]]組成金幣鏈；第4槽改用[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]縮短[[Powers/P6_Necro_SkeleBomb_name]]空窗，寶石使用[[Items/Unique_Gem_002_x1]]/[[Items/Unique_Gem_008_x1]]/[[Items/Unique_Gem_014_x1]]。",
+    "enUS": "For T16 speed farming, equip [[Items/Unique_Belt_010_x1]], [[Items/Unique_Bracer_106_x1]] and [[Items/Unique_Ring_108_x1]] for the gold setup. Use [[Items/Unique_Sword_1H_113_x1]] or [[Items/P66_Unique_Axe_2H_011]] in slot 4 to reduce [[Powers/P6_Necro_SkeleBomb_name]] downtime, with [[Items/Unique_Gem_002_x1]] / [[Items/Unique_Gem_008_x1]] / [[Items/Unique_Gem_014_x1]] as gems."
+  },
+  "持续引导": {
+    "enUS": "Channel continuously"
+  },
+  "机动": {
+    "enUS": "Mobility"
+  },
+  "输出": {
+    "enUS": "Damage"
+  }
+}

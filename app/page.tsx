@@ -1,5 +1,7 @@
 "use client";
 
+import { useI18n } from "./i18n/I18nProvider";
+
 import { Fragment, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import {
@@ -40,7 +42,7 @@ import {
   type SeasonConfig,
 } from "./data/season-config";
 import { BuildTableView, type BuildTableData } from "../components/build/BuildTableView";
-import skillLibrary from "../public/d3/library/skills.json";
+import { resolveRuneKey } from "./i18n/core";
 import { BuildAbilitiesPanel } from "../components/build/BuildAbilitiesPanel";
 import { GearDetailPanel } from "../components/build/GearDetailPanel";
 import { KanaiCubePanel } from "../components/build/KanaiCubePanel";
@@ -662,18 +664,19 @@ function FlowNodeButton({
   active: boolean;
   onSelect: (node: FlowNode) => void;
 }) {
+  const { tr } = useI18n();
   return (
     <button
       className={`flow-node node-${node.kind} ${dimmed ? "dimmed" : ""} ${active ? "active" : ""}`}
       onClick={() => onSelect(node)}
-      title={node.detail}
+      title={tr(node.detail)}
     >
       <span className="node-icon">
-        {node.image ? <img src={node.image} alt="" /> : <span>{node.kind === "damage" ? "✦" : node.kind === "defense" ? "◆" : "◈"}</span>}
+        {node.image ? <img src={node.image} alt="" /> : <span>{tr(node.kind === "damage" ? "✦" : node.kind === "defense" ? "◆" : "◈")}</span>}
       </span>
       <span className="node-copy">
-        <strong>{node.label}</strong>
-        <small>{node.detail}</small>
+        <strong>{tr(node.label)}</strong>
+        <small>{tr(node.detail)}</small>
       </span>
     </button>
   );
@@ -693,6 +696,7 @@ type ItemCategoryRecord = {
 };
 
 function SiteHeader({ active }: { active?: "story" | "season" | "builds" | "library" }) {
+  const { tr, t } = useI18n();
   const { openSettings, season, setSeason } = useSiteSettings();
   const pathname = usePathname() || "/builds";
   const searchParams = useSearchParams();
@@ -704,32 +708,33 @@ function SiteHeader({ active }: { active?: "story" | "season" | "builds" | "libr
     : "/builds";
   return (
     <header className="site-header global-tabs">
-      <a className="brand" href={buildsHref} aria-label="返回赛季全职业BD">
-        <span className="brand-mark">III</span>
-        <span><strong>圣休亚瑞秘典</strong><small>NEPHALEM ARCHIVE</small></span>
+      <a className="brand" href={buildsHref} aria-label={tr("返回赛季全职业BD")}>
+        <span className="brand-mark">{t("app.399dbc8659309a24")}</span>
+        <span><strong>{t("app.3214f58d2c8069f0")}</strong><small>{t("app.4dcfd16673efc71d")}</small></span>
       </a>
-      <nav aria-label="站点主导航">
-        <a className={active === "story" ? "active" : ""} href="/story">剧情线路</a>
-        <a className={active === "season" ? "active" : ""} href="/season-start">赛季开荒</a>
-        <a className={active === "builds" ? "active" : ""} href={buildsHref}>赛季全职业BD</a>
-        <a className={active === "library" ? "active" : ""} href="/library">物品</a>
+      <nav aria-label={tr("站点主导航")}>
+        <a className={active === "story" ? "active" : ""} href="/story">{t("app.41f2a414af622975")}</a>
+        <a className={active === "season" ? "active" : ""} href="/season-start">{t("app.7b0aa028c2d0bd39")}</a>
+        <a className={active === "builds" ? "active" : ""} href={buildsHref}>{t("app.0089f38c12c4ae05")}</a>
+        <a className={active === "library" ? "active" : ""} href="/library">{t("app.7c89d6ebe1f9c88d")}</a>
       </nav>
-      <label className="season-pill"><i /><select value={season.seasonId} onChange={(event) => setSeason(event.target.value)} aria-label="选择赛季主题">{SEASON_CATALOG.map((candidate) => <option key={candidate.seasonId} value={candidate.seasonId}>{seasonPlatformLabel(candidate)}{candidate.availability === "preview" ? "（预设）" : ""}</option>)}</select></label>
-      <button className="settings-trigger" onClick={openSettings} aria-label="打开网站设置"><span>⚙</span> 网站设置</button>
+      <label className="season-pill"><i /><select value={season.seasonId} onChange={(event) => setSeason(event.target.value)} aria-label={tr("选择赛季主题")}>{SEASON_CATALOG.map((candidate) => <option key={candidate.seasonId} value={candidate.seasonId}>{tr(seasonPlatformLabel(candidate))}{tr(candidate.availability === "preview" ? "（预设）" : "")}</option>)}</select></label>
+      <button className="settings-trigger" onClick={openSettings} aria-label={tr("打开网站设置")}><span>{t("app.e5235a4a75e63aaa")}</span>{" "}{t("app.a7f3c0fcaeb4c7cb")}</button>
     </header>
   );
 }
 
 function RoutePage({ active, title, eyebrow, children }: { active: "story" | "season" | "builds" | "library"; title: string; eyebrow: string; children: ReactNode }) {
+  const { tr, t } = useI18n();
   const { season } = useSiteSettings();
   return (
     <main className={`route-page route-${active}`}>
       <SiteHeader active={active} />
       <section className="route-masthead">
-        <span>{eyebrow}</span><h1>{title}</h1>
+        <span>{tr(eyebrow)}</span><h1>{tr(title)}</h1>
       </section>
-      <div className="route-content">{children}</div>
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典</strong><small>{season.platformLabel} · {seasonLabel(season)} · {season.modeLabel}</small></p></div><p>页面资料用于私人攻略整理。</p></footer>
+      <div className="route-content">{tr(children)}</div>
+      <footer><div><span className="footer-mark">{t("app.8ce86a6ae65d3692")}</span><p><strong>{t("app.3214f58d2c8069f0")}</strong><small>{tr(season.platformLabel)}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(seasonLabel(season))}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(season.modeLabel)}</small></p></div><p>{t("app.a88160b302cb49fe")}</p></footer>
     </main>
   );
 }
@@ -739,6 +744,7 @@ function isClassId(value: string | null): value is ClassId {
 }
 
 function BuildAtlas() {
+  const { tr, t, entity, matches } = useI18n();
   const searchParams = useSearchParams();
   const requestedClass = searchParams.get("class");
   const initialClass = isClassId(requestedClass) ? requestedClass : "necromancer";
@@ -747,8 +753,7 @@ function BuildAtlas() {
   const [selectedId, setSelectedId] = useState(() => BUILD_CATALOG.find((build) => build.classId === initialClass)?.id ?? "tragoul-nova");
   const visibleBuilds = BUILD_CATALOG.filter((build) => {
     const matchesClass = build.classId === classId;
-    const haystack = `${build.name}${build.set}${build.core}`.toLowerCase();
-    return matchesClass && haystack.includes(query.trim().toLowerCase());
+    return matchesClass && matches(query, build.name, build.set, build.core);
   });
   const selected = BUILD_CATALOG.find((build) => build.id === selectedId) ?? visibleBuilds[0] ?? BUILD_CATALOG[0];
   const selectedClass = CLASS_CATALOG.find((hero) => hero.id === selected.classId) ?? CLASS_CATALOG[0];
@@ -772,10 +777,10 @@ function BuildAtlas() {
   return (
     <section className="archive-section build-atlas" id="builds">
       <div className="archive-heading">
-        <div><span>全职业 · 单人</span><h2>职业与主流 BD</h2></div>
-        <p>七大职业的主流大秘境构筑之外，现已增加小秘境、蓝门与外观收集专用趣味 BD；全部复用同一套交互装备盘和联动系统。</p>
+        <div><span>{t("app.7311197a001d838b")}</span><h2>{t("app.b1716fb724664b65")}</h2></div>
+        <p>{t("app.cdd4af472e92a7ea")}</p>
       </div>
-      <div className="class-rail" role="tablist" aria-label="选择职业">
+      <div className="class-rail" role="tablist" aria-label={tr("选择职业")}>
         {CLASS_CATALOG.map((hero) => (
           <button
             key={hero.id}
@@ -785,13 +790,13 @@ function BuildAtlas() {
             }}
           >
             <img src={hero.portrait} alt="" />
-            <span><strong>{hero.name}</strong><small>{BUILD_CATALOG.filter((build) => build.classId === hero.id).length} 套主流 BD</small></span>
+            <span><strong>{entity(hero, "name")}</strong><small>{tr(BUILD_CATALOG.filter((build) => build.classId === hero.id).length)}{" "}{t("app.b7a8d9c5c89501cb")}</small></span>
           </button>
         ))}
       </div>
       <div className="atlas-toolbar">
-        <span>{CLASS_CATALOG.find((hero) => hero.id === classId)?.name}目录</span>
-        <label><span>筛选</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="套装、技能或 BD 名" /></label>
+        <span>{entity(CLASS_CATALOG.find((hero) => hero.id === classId), "name")}{t("app.52daa71ebc310581")}</span>
+        <label><span>{t("app.b5f15473fdc0fefe")}</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={tr("套装、技能或 BD 名")} /></label>
       </div>
       <div className="atlas-body">
         <div className="build-card-grid">
@@ -805,28 +810,28 @@ function BuildAtlas() {
             >
               <img src={build.image} alt="" />
               <span>
-                <small>{build.set}</small>
-                <strong>{build.name}</strong>
-                <em>{build.core}</em>
-                {build.content && <small>{build.content.join(" · ")}</small>}
+                <small>{tr(build.set)}</small>
+                <strong>{entity(build, "name")}</strong>
+                <em>{tr(build.core)}</em>
+                {build.content && <small>{tr(build.content.join(" · "))}</small>}
               </span>
-              <b className={build.complete ? "complete" : "indexed"}>{build.complete ? "完整" : "已入库"}</b>
+              <b className={build.complete ? "complete" : "indexed"}>{tr(build.complete ? "完整" : "已入库")}</b>
             </button>
           ))}
         </div>
         <aside className="build-readout">
           <img className="build-readout-crest" src={selectedClass.crest} alt="" />
-          <span>{selectedClass.name} · {selected.role}</span>
-          <h3>{selected.name}</h3>
+          <span>{entity(selectedClass, "name")}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(selected.role)}</span>
+          <h3>{entity(selected, "name")}</h3>
           <dl>
-            <div><dt>核心</dt><dd>{selected.core}</dd></div>
-            <div><dt>体系</dt><dd>{selected.set}</dd></div>
-            <div><dt>操作</dt><dd>{selected.difficulty}</dd></div>
+            <div><dt>{t("app.a8a88ddbea1594b7")}</dt><dd>{tr(selected.core)}</dd></div>
+            <div><dt>{t("app.53ff29bd1507ab35")}</dt><dd>{tr(selected.set)}</dd></div>
+            <div><dt>{t("app.ed31fbb483ee1b0a")}</dt><dd>{tr(selected.difficulty)}</dd></div>
           </dl>
-          <p>{selected.summary}</p>
-          {selected.content && <p><strong>适用：</strong>{selected.content.join(" · ")}</p>}
-          <a href={`/builds/${selected.id}?fromClass=${classId}`}>{selected.complete ? "打开完整装备与联动图" : "进入 BD 资料页"}</a>
-          {!selected.complete && <small>装备库与技能库已接入；完整词缀和联动图正在按原型标准逐套校对。</small>}
+          <p>{tr(selected.summary)}</p>
+          {selected.content && <p><strong>{t("app.f40bb3246ea21c69")}</strong>{tr(selected.content.join(" · "))}</p>}
+          <a href={`/builds/${selected.id}?fromClass=${classId}`}>{tr(selected.complete ? "打开完整装备与联动图" : "进入 BD 资料页")}</a>
+          {!selected.complete && <small>{t("app.39da26eeefdebc41")}</small>}
         </aside>
       </div>
     </section>
@@ -834,34 +839,35 @@ function BuildAtlas() {
 }
 
 function SeasonStartGuide() {
+  const { tr, t } = useI18n();
   return (
     <section className="archive-section season-start" id="season-start">
       <div className="archive-heading">
-        <div><span>0 → 70 → 六件套</span><h2>赛季开荒流程</h2></div>
-        <p>以单人和 NS 操作为基准；关键节点写清底材类型，避免把材料浪费在错误的黄装或普通盾牌上。</p>
+        <div><span>{t("app.b556c026fae2b58c")}</span><h2>{t("app.b2ad0851cb0a6705")}</h2></div>
+        <p>{t("app.5feec3f9bbf35e7b")}</p>
       </div>
       <div className="starter-layout">
         <div className="starter-timeline">
           {SEASON_START_STEPS.map((step, index) => (
             <article key={step.time}>
-              <b>{String(index + 1).padStart(2, "0")}</b>
-              <span><small>{step.time}</small><strong>{step.title}</strong><p>{step.detail}</p></span>
+              <b>{tr(String(index + 1).padStart(2, "0"))}</b>
+              <span><small>{tr(step.time)}</small><strong>{tr(step.title)}</strong><p>{tr(step.detail)}</p></span>
             </article>
           ))}
         </div>
         <aside className="starter-ranking">
-          <h3>单人开荒推荐</h3>
-          <p>按练级速度、首套成型与容错综合排序。</p>
+          <h3>{t("app.72cef708fb67e221")}</h3>
+          <p>{t("app.55bdbc849a380c9f")}</p>
           {STARTER_CLASSES.map((entry) => {
             const hero = CLASS_CATALOG.find((candidate) => candidate.id === entry.classId)!;
             return (
               <article key={entry.classId}>
-                <b>{entry.rank}</b><img src={hero.portrait} alt="" />
-                <span><strong>{entry.title}</strong><small>{entry.note}</small></span>
+                <b>{tr(entry.rank)}</b><img src={hero.portrait} alt="" />
+                <span><strong>{tr(entry.title)}</strong><small>{tr(entry.note)}</small></span>
               </article>
             );
           })}
-          <div className="ns-caution"><strong>NS 提醒</strong><span>主机版主要差异集中在操作方式、本地/离线状态、赛季验证和组队生态；装备倍率、套装机制和大多数 BD 逻辑与 PC 一致。</span></div>
+          <div className="ns-caution"><strong>{t("app.d9beb25cbc7e0cea")}</strong><span>{t("app.4b3755b9fd51c856")}</span></div>
         </aside>
       </div>
     </section>
@@ -869,32 +875,33 @@ function SeasonStartGuide() {
 }
 
 function CampaignRoute() {
+  const { tr, t, entity } = useI18n();
   const [selectedAct, setSelectedAct] = useState(0);
   const act = CAMPAIGN_ACTS[selectedAct];
   return (
     <section className="archive-section campaign-route" id="campaign">
       <div className="archive-heading">
-        <div><span>剧情模式 · 五幕</span><h2>主线剧情线路图</h2></div>
-        <p>选择幕章后查看完整任务顺序、经过区域、路线与通关目标；从新崔斯特姆一直追踪到混沌界要塞。</p>
+        <div><span>{t("app.2fdeb258ba1466d3")}</span><h2>{t("app.40881bb37c7002f3")}</h2></div>
+        <p>{t("app.fd383d264f5dbb84")}</p>
       </div>
-      <div className="act-selector" role="tablist" aria-label="选择剧情幕章">
+      <div className="act-selector" role="tablist" aria-label={tr("选择剧情幕章")}>
         {CAMPAIGN_ACTS.map((act, actIndex) => (
           <button key={act.act} className={selectedAct === actIndex ? "active" : ""} style={{ "--act-color": act.color } as CSSProperties} onClick={() => setSelectedAct(actIndex)}>
-            <b>{actIndex + 1}</b><span><small>{act.zone}</small><strong>{act.act}</strong></span><em>{act.quests.length} 条主线</em>
+            <b>{tr(actIndex + 1)}</b><span><small>{tr(act.zone)}</small><strong>{tr(act.act)}</strong></span><em>{tr(act.quests.length)}{" "}{t("app.17100d067e0116ff")}</em>
           </button>
         ))}
       </div>
       <div className="campaign-act-detail" style={{ "--act-color": act.color } as CSSProperties}>
         <aside>
-          <span>{act.zone}</span><h3>{act.act}</h3><p>{act.story}</p>
-          <div><small>幕末首领</small><strong>{act.boss}</strong></div>
-          <ol>{act.quests.map((quest, index) => <li key={quest.name}><span>{String(index + 1).padStart(2, "0")}</span>{quest.name}</li>)}</ol>
+          <span>{tr(act.zone)}</span><h3>{tr(act.act)}</h3><p>{tr(act.story)}</p>
+          <div><small>{t("app.3a9836aa8d1255e6")}</small><strong>{tr(act.boss)}</strong></div>
+          <ol>{act.quests.map((quest, index) => <li key={quest.name}><span>{tr(String(index + 1).padStart(2, "0"))}</span>{entity(quest, "name")}</li>)}</ol>
         </aside>
         <div className="quest-route-list">
           {act.quests.map((quest, index) => (
             <article key={quest.name}>
-              <b>{String(index + 1).padStart(2, "0")}</b>
-              <div><span>{quest.area}</span><h4>{quest.name}</h4><p>{quest.route}</p><small><i />通关节点：{quest.objective}</small></div>
+              <b>{tr(String(index + 1).padStart(2, "0"))}</b>
+              <div><span>{tr(quest.area)}</span><h4>{entity(quest, "name")}</h4><p>{tr(quest.route)}</p><small><i />{t("app.b9dc8bb14f31fa3d")}{tr(quest.objective)}</small></div>
             </article>
           ))}
         </div>
@@ -904,6 +911,7 @@ function CampaignRoute() {
 }
 
 function OfficialLibrary() {
+  const { tr, t, entity } = useI18n();
   const categories = useItemCategories();
   const [classFilter, setClassFilter] = useState("all");
   const [followerFilter, setFollowerFilter] = useState("all");
@@ -920,19 +928,20 @@ function OfficialLibrary() {
   ] as const;
   return (
     <section className="archive-section official-library" id="library">
+      <p className="i18n-source-note">{tr("名称来自 PC 客户端；数值沿用原站资料，说明译文非客户端原文。")}</p>
       <div className="archive-heading">
-        <div><span>暴雪物品系统 · 本地镜像</span><h2>物品</h2></div>
-        <p>55 个官方分类、2353 条物品记录与图标已保存在站内；列表和详情不再跳转暴雪官网。</p>
+        <div><span>{t("app.75aac05c1384c74f")}</span><h2>{t("app.7c89d6ebe1f9c88d")}</h2></div>
+        <p>{t("app.f09f361b9454ea08")}</p>
       </div>
       <div className="item-directory-filters">
-        <label><span>按职业筛选</span><select value={classFilter} onChange={(event) => { setClassFilter(event.target.value); setFollowerFilter("all"); setArtisanFilter("all"); }}><option value="all">全部职业</option>{CLASS_CATALOG.map((hero) => <option value={hero.id} key={hero.id}>{hero.name}</option>)}</select></label>
-        <label><span>追随者</span><select value={followerFilter} onChange={(event) => { setFollowerFilter(event.target.value); setClassFilter("all"); setArtisanFilter("all"); }}><option value="all">全部追随者</option><option value="enchantress">魔女</option><option value="scoundrel">盗贼</option><option value="templar">圣殿骑士</option></select></label>
-        <label><span>工匠制作</span><select value={artisanFilter} onChange={(event) => { setArtisanFilter(event.target.value); setClassFilter("all"); setFollowerFilter("all"); }}><option value="all">全部工匠</option><option value="blacksmith">铁匠</option><option value="jeweler">珠宝匠</option><option value="mystic">秘术师</option></select></label>
-        <button onClick={() => { setClassFilter("all"); setFollowerFilter("all"); setArtisanFilter("all"); }}>重置筛选</button>
+        <label><span>{t("app.b35c808574a0d8ce")}</span><select value={classFilter} onChange={(event) => { setClassFilter(event.target.value); setFollowerFilter("all"); setArtisanFilter("all"); }}><option value="all">{t("app.aec73bb05b182bd3")}</option>{CLASS_CATALOG.map((hero) => <option value={hero.id} key={hero.id}>{entity(hero, "name")}</option>)}</select></label>
+        <label><span>{t("app.967eaf6d248f775b")}</span><select value={followerFilter} onChange={(event) => { setFollowerFilter(event.target.value); setClassFilter("all"); setArtisanFilter("all"); }}><option value="all">{t("app.698ed6e020c16573")}</option><option value="enchantress">{t("app.186ec1a871e42d20")}</option><option value="scoundrel">{t("app.137185418062c9b6")}</option><option value="templar">{t("app.6f6341a606d6d3e4")}</option></select></label>
+        <label><span>{t("app.672f516bd0d59aa5")}</span><select value={artisanFilter} onChange={(event) => { setArtisanFilter(event.target.value); setClassFilter("all"); setFollowerFilter("all"); }}><option value="all">{t("app.48bc531a3115139f")}</option><option value="blacksmith">{t("app.a245622e6f949097")}</option><option value="jeweler">{t("app.51a3c221eac73de1")}</option><option value="mystic">{t("app.8e7d44407f374600")}</option></select></label>
+        <button onClick={() => { setClassFilter("all"); setFollowerFilter("all"); setArtisanFilter("all"); }}>{t("app.13a431e59b658d16")}</button>
       </div>
-      <div className="item-directory-summary"><strong>{visible.reduce((sum, category) => sum + category.count, 0)}</strong><span>条物品 · {visible.length} 个可用分类</span></div>
+      <div className="item-directory-summary"><strong>{tr(visible.reduce((sum, category) => sum + category.count, 0))}</strong><span>{t("app.feb90b4e38379339")}{" "}{tr(visible.length)}{" "}{t("app.9371809be962c758")}</span></div>
       <div className="item-directory-groups">
-        {grouped.map((group) => <section key={group.id}><header><span>{group.eyebrow}</span><h3>{group.name}</h3></header><div>{visible.filter((category) => category.group === group.id).map((category) => <a href={`/library/${category.id}`} key={category.id}><span><strong>{category.name}</strong><small>{category.count} 件物品</small></span><b>›</b></a>)}</div></section>)}
+        {grouped.map((group) => <section key={group.id}><header><span>{tr(group.eyebrow)}</span><h3>{entity(group, "name")}</h3></header><div>{visible.filter((category) => category.group === group.id).map((category) => <a href={`/library/${category.id}`} key={category.id}><span><strong>{entity(category, "name")}</strong><small>{tr(category.count)}{" "}{t("app.902a447ac93f73f6")}</small></span><b>{t("app.7bb37df5cb369f18")}</b></a>)}</div></section>)}
       </div>
     </section>
   );
@@ -1044,7 +1053,7 @@ function relatedBuildsForOfficialItem(record: OfficialItemRecord): RelatedBuildR
     if (!catalog) return [];
     const references: BuildItemReference[] = [
       ...guide.gear.map((item) => ({ id: item.id, name: item.name, image: item.image, effect: item.effect, kind: "装备" as const })),
-      ...guide.powers.map((power) => ({ id: power.id, name: power.name, image: power.image, effect: power.summary, kind: "魔盒威能" as const })),
+      ...guide.powers.map((power) => ({ id: power.id, name: power.name, image: power.image, effect: power.logic, kind: "魔盒威能" as const })),
     ];
     const usages = Array.from(new Set(references
       .filter((reference) => itemReferenceMatchesOfficial(record, reference))
@@ -1060,6 +1069,7 @@ function relatedBuildsForOfficialItem(record: OfficialItemRecord): RelatedBuildR
 }
 
 function LibraryCategory({ category }: { category: string }) {
+  const { tr, t, entity, matches } = useI18n();
   const records = useLibraryRecords(category);
   const categories = useItemCategories();
   const currentCategory = categories.find((entry) => entry.id === category);
@@ -1067,7 +1077,7 @@ function LibraryCategory({ category }: { category: string }) {
   const [typeFilter, setTypeFilter] = useState<"all" | "common" | "crafted" | "legendary" | "set">("all");
   const [levelSort, setLevelSort] = useState<"asc" | "desc">("asc");
   const filtered = records.filter((record) => record.category === category).filter((record) => {
-    const matchesQuery = `${record.name}${record.type ?? ""}${record.legendaryPower ?? ""}`.toLowerCase().includes(query.trim().toLowerCase());
+    const matchesQuery = matches(query, record, record.type ?? "", record.legendaryPower ?? "");
     const matchesType = typeFilter === "all" || (typeFilter === "crafted" ? record.crafted : record.quality === typeFilter);
     return matchesQuery && matchesType;
   }).sort((a, b) => {
@@ -1078,58 +1088,59 @@ function LibraryCategory({ category }: { category: string }) {
 
   return (
     <section className="archive-section library-category-page">
-      <div className="archive-heading"><div><span>{currentCategory?.group === "weapons" ? "WEAPONS" : currentCategory?.group === "other" ? "OTHER ITEMS" : "ARMOR & OFF-HANDS"}</span><h2>{currentCategory?.name ?? category}</h2></div><p>当前显示 {filtered.length} 件；物品详情与原特效均来自本地官方镜像。</p></div>
-      <div className="item-quality-tabs" role="tablist">{([['all', '全部'], ['common', '普通'], ['crafted', '制作'], ['legendary', '传奇'], ['set', '套装']] as const).map(([value, label]) => <button key={value} className={typeFilter === value ? "active" : ""} onClick={() => setTypeFilter(value)}>{label}</button>)}</div>
+      <div className="archive-heading"><div><span>{tr(currentCategory?.group === "weapons" ? "WEAPONS" : currentCategory?.group === "other" ? "OTHER ITEMS" : "ARMOR & OFF-HANDS")}</span><h2>{tr(currentCategory?.name ?? category)}</h2></div><p>{t("app.774309b6c203852d")}{" "}{tr(filtered.length)}{" "}{t("app.bf7e2ac7d2492b54")}</p></div>
+      <div className="item-quality-tabs" role="tablist">{([['all', '全部'], ['common', '普通'], ['crafted', '制作'], ['legendary', '传奇'], ['set', '套装']] as const).map(([value, label]) => <button key={value} className={typeFilter === value ? "active" : ""} onClick={() => setTypeFilter(value)}>{tr(label)}</button>)}</div>
       <div className="library-category-toolbar">
-        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索物品名称、类型或特效" />
-        <button onClick={() => setLevelSort((current) => current === "asc" ? "desc" : "asc")}>需要等级 {levelSort === "asc" ? "↑" : "↓"}</button>
-        <a href="/library">返回物品目录</a>
+        <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={tr("搜索物品名称、类型或特效")} />
+        <button onClick={() => setLevelSort((current) => current === "asc" ? "desc" : "asc")}>{t("app.0da4e41a848b212e")}{" "}{tr(levelSort === "asc" ? "↑" : "↓")}</button>
+        <a href="/library">{t("app.77cf3a8183783556")}</a>
       </div>
-      <div className="item-list-table"><header><span>物品详情</span><b>需要等级</b></header><div className="library-record-grid">
+      <div className="item-list-table"><header><span>{t("app.3681df6fbd43b6b4")}</span><b>{t("app.0da4e41a848b212e")}</b></header><div className="library-record-grid">
         {filtered.map((record) => (
           <a className={`item-record item-icon-shape-${officialItemIconShape(record.category)}`} key={record.id} href={`/library/${category}/${encodeURIComponent(record.id)}`}>
-            <BlizzardItemIcon record={record} /><span><strong>{record.name}</strong><small>{record.type ?? record.categoryName ?? record.quality}</small>{record.legendaryPower && <em>{record.legendaryPower}</em>}</span><b>{record.requiredLevel ?? "—"}</b>
+            <BlizzardItemIcon record={record} /><span><strong>{entity(record, "name")}</strong><small>{tr(record.type ?? record.categoryName ?? record.quality)}</small>{record.legendaryPower && <em>{tr(record.legendaryPower)}</em>}</span><b>{tr(record.requiredLevel ?? "—")}</b>
           </a>
         ))}
-        {filtered.length === 0 && <p className="library-empty">资料加载中，或当前分类没有匹配结果。</p>}
+        {filtered.length === 0 && <p className="library-empty">{t("app.dca8c38a2f082e27")}</p>}
       </div></div>
     </section>
   );
 }
 
 function LibraryRecordDetail({ category, id }: { category: string; id: string }) {
+  const { tr, t, entity } = useI18n();
   const index = useItemIndex();
   const record = useLibraryRecord(id);
   const relatedBuilds = useMemo(() => record ? relatedBuildsForOfficialItem(record) : [], [record]);
-  if (!record) return <section className="archive-section library-detail-page"><p className="library-empty">正在载入资料详情…</p></section>;
+  if (!record) return <section className="archive-section library-detail-page"><p className="library-empty">{t("app.59973f7ac21824c5")}</p></section>;
   return (
     <section className="archive-section library-detail-page">
-      <a className="detail-back" href={`/library/${category}`}>← 返回列表</a>
+      <a className="detail-back" href={`/library/${category}`}>{t("app.3534cbca34dc1af0")}</a>
       <div className={`library-detail-card quality-${record.quality}`}>
         <div className="library-detail-art"><BlizzardItemIcon record={record} size="lg" /></div>
         <article>
-          <span>{record.categoryName ?? record.type ?? record.category}</span><h2>{record.name}</h2>
+          <span>{tr(record.categoryName ?? record.type ?? record.category)}</span><h2>{entity(record, "name")}</h2>
           <dl>
-            <div><dt>物品类型</dt><dd>{record.type ?? record.categoryName ?? record.category}</dd></div>
-            <div><dt>品质</dt><dd>{record.quality === "set" ? "套装" : record.quality === "legendary" ? "传奇" : record.crafted ? "工匠制作" : "普通"}</dd></div>
-            <div><dt>需要等级</dt><dd>{record.requiredLevel ?? "—"}</dd></div>
-            {record.className && <div><dt>所属职业</dt><dd>{record.className}</dd></div>}
-            {record.craftedBy && <div><dt>制作工匠</dt><dd>{record.craftedBy}</dd></div>}
-            {record.armorWeapon && <div><dt>基础数值</dt><dd>{record.armorWeapon}</dd></div>}
+            <div><dt>{t("app.011ff1d948c2c78a")}</dt><dd>{tr(record.type ?? record.categoryName ?? record.category)}</dd></div>
+            <div><dt>{t("app.207c32c6b845e8b7")}</dt><dd>{tr(record.quality === "set" ? "套装" : record.quality === "legendary" ? "传奇" : record.crafted ? "工匠制作" : "普通")}</dd></div>
+            <div><dt>{t("app.0da4e41a848b212e")}</dt><dd>{tr(record.requiredLevel ?? "—")}</dd></div>
+            {record.className && <div><dt>{t("app.fc25e0070e13f8f3")}</dt><dd>{tr(record.className)}</dd></div>}
+            {record.craftedBy && <div><dt>{t("app.25110cd65f0c9257")}</dt><dd>{tr(record.craftedBy)}</dd></div>}
+            {record.armorWeapon && <div><dt>{t("app.182f30c10375c9ff")}</dt><dd>{tr(record.armorWeapon)}</dd></div>}
           </dl>
           <OfficialPropertySections record={record} />
-          {!record.properties && record.legendaryPower && <section className="item-detail-effect"><p>{record.legendaryPower}</p></section>}
+          {!record.properties && record.legendaryPower && <section className="item-detail-effect"><p>{tr(record.legendaryPower)}</p></section>}
           {record.set && <OfficialSetBlock itemSet={record.set} records={index as OfficialItemRecord[]} />}
-          {record.extras && record.extras.length > 0 && <section className="item-detail-extras">{record.extras.map((line, index) => <span key={`${line}-${index}`}>{line}</span>)}</section>}
-          {record.flavor && <blockquote>{record.flavor}</blockquote>}
+          {record.extras && record.extras.length > 0 && <section className="item-detail-extras">{record.extras.map((line, index) => <span key={`${line}-${index}`}>{tr(line)}</span>)}</section>}
+          {record.flavor && <blockquote>{tr(record.flavor)}</blockquote>}
           {relatedBuilds.length > 0 && (
-            <section className="item-build-links" aria-label="使用该物品的 BD">
-              <h3>相关 BD</h3>
+            <section className="item-build-links" aria-label={tr("使用该物品的 BD")}>
+              <h3>{t("app.15551afcabd6ff11")}</h3>
               <div className="item-build-grid">
                 {relatedBuilds.map((build) => (
                   <a key={build.id} className="item-build-card" href={`/builds/${build.id}?fromClass=${build.classId}`}>
-                    <strong>{build.name}</strong>
-                    {build.usages.map((usage) => <p key={usage}>{usage}</p>)}
+                    <strong>{entity(build, "name")}</strong>
+                    {build.usages.map((usage) => <p key={usage}>{tr(usage)}</p>)}
                   </a>
                 ))}
               </div>
@@ -1736,6 +1747,7 @@ function BuildReviewPanel({
   scenario: BuildScenario;
   configuration: BuildConfiguration;
 }) {
+  const { tr, t } = useI18n();
   const diffs = diffBuildConfigurations(guide.configurationBase!, configuration);
   const visibleDiffs = diffs.filter((diff) => ["gear", "skills", "passives", "powers", "legendaryGems"].includes(diff.category));
   const groupedParagon = guide.paragonGuide?.pre800;
@@ -1746,33 +1758,33 @@ function BuildReviewPanel({
     { status: "flexible", label: "可自由调整" },
   ] as const;
   return (
-    <section className="build-review-panel" aria-label="BD 场景评审结果">
+    <section className="build-review-panel" aria-label={tr("BD 场景评审结果")}>
       <header>
-        <div><span>SCENARIO REVIEW</span><h2>{scenario.label}</h2></div>
-        <p>{scenario.reason}</p>
-        <b>已逐项校对</b>
+        <div><span>{t("app.6b32b8423e0a8ab7")}</span><h2>{tr(scenario.label)}</h2></div>
+        <p>{tr(scenario.reason)}</p>
+        <b>{t("app.02d9eb394fc529d0")}</b>
       </header>
       <div className="build-review-grid">
         <article className="scenario-diff-card">
-          <h3>配置差异</h3>
-          {visibleDiffs.length === 0 ? <p className="review-baseline">这是四套配置的低巅峰冲层基线，其余场景都以它做显式差异。</p> : (
-            <dl>{visibleDiffs.map((diff) => <div key={`${diff.category}-${diff.key}`}><dt>{CONFIGURATION_CATEGORY_LABELS[diff.category]} · {diff.key}</dt><dd><del>{buildConfigurationValue(guide, diff.before)}</del><span>→</span><strong>{buildConfigurationValue(guide, diff.after)}</strong></dd></div>)}</dl>
+          <h3>{t("app.43164224cdd9336d")}</h3>
+          {visibleDiffs.length === 0 ? <p className="review-baseline">{t("app.8b6adc116f14b167")}</p> : (
+            <dl>{visibleDiffs.map((diff) => <div key={`${diff.category}-${diff.key}`}><dt>{tr(CONFIGURATION_CATEGORY_LABELS[diff.category])}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(diff.key)}</dt><dd><del>{tr(buildConfigurationValue(guide, diff.before))}</del><span>{t("app.161660030aa6c9e3")}</span><strong>{tr(buildConfigurationValue(guide, diff.after))}</strong></dd></div>)}</dl>
           )}
-          {diffs.some((diff) => diff.category === "statPriorities") && <p className="review-change-note">属性目标也随场景更新，详见装备盘和下方检查点。</p>}
-          {diffs.some((diff) => diff.category === "rotation") && <p className="review-change-note">实战循环已切换为小秘境短按虹吸与金币链。</p>}
-          <div className="review-sources"><span>校对来源</span>{scenario.sourceRefs.map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>{sourceLabel(source, index)}</a>)}<small>{scenario.reviewedAt}</small></div>
+          {diffs.some((diff) => diff.category === "statPriorities") && <p className="review-change-note">{t("app.cb4677555161737e")}</p>}
+          {diffs.some((diff) => diff.category === "rotation") && <p className="review-change-note">{t("app.f0b57ebfe553f457")}</p>}
+          <div className="review-sources"><span>{t("app.0b0f97cd8f4035ad")}</span>{scenario.sourceRefs.map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>{tr(sourceLabel(source, index))}</a>)}<small>{tr(scenario.reviewedAt)}</small></div>
         </article>
 
         <article className="paragon-guide-card">
-          <h3>巅峰加点</h3>
-          <div className="paragon-priority-grid">{groupedParagon && Object.entries(groupedParagon).map(([group, entries]) => <section key={group}><h4>{{ core: "核心", offense: "进攻", defense: "防御", utility: "通用" }[group as keyof typeof groupedParagon]}</h4><ol>{entries.map((entry) => <li key={entry.stat}><strong>{entry.stat}</strong><span>{entry.target}</span><small>{entry.reason}</small></li>)}</ol></section>)}</div>
-          <div className="paragon-checkpoints">{guide.paragonGuide?.checkpoints.map((checkpoint) => <span key={checkpoint.label}><b>{checkpoint.label}</b><strong>{checkpoint.target}</strong><small>{checkpoint.action}</small></span>)}</div>
-          {guide.paragonGuide && <div className="post-paragon"><b>800点以后</b>{guide.paragonGuide.post800.map((entry) => <p key={entry.priority}><strong>{entry.priority}</strong><span>{entry.when}：{entry.reason}</span></p>)}</div>}
+          <h3>{t("app.f665170eeebffc3a")}</h3>
+          <div className="paragon-priority-grid">{groupedParagon && Object.entries(groupedParagon).map(([group, entries]) => <section key={group}><h4>{tr({ core: "核心", offense: "进攻", defense: "防御", utility: "通用" }[group as keyof typeof groupedParagon])}</h4><ol>{entries.map((entry) => <li key={entry.stat}><strong>{tr(entry.stat)}</strong><span>{tr(entry.target)}</span><small>{tr(entry.reason)}</small></li>)}</ol></section>)}</div>
+          <div className="paragon-checkpoints">{guide.paragonGuide?.checkpoints.map((checkpoint) => <span key={checkpoint.label}><b>{tr(checkpoint.label)}</b><strong>{tr(checkpoint.target)}</strong><small>{tr(checkpoint.action)}</small></span>)}</div>
+          {guide.paragonGuide && <div className="post-paragon"><b>{t("app.c8cd84d7fd9bda5f")}</b>{guide.paragonGuide.post800.map((entry) => <p key={entry.priority}><strong>{tr(entry.priority)}</strong><span>{tr(entry.when)}{t("app.f114611cd61000bf")}{tr(entry.reason)}</span></p>)}</div>}
         </article>
 
         <article className="choice-policy-card">
-          <h3>固定与替换</h3>
-          {policyGroups.map((group) => <section key={group.status}><h4>{group.label}</h4>{policies.filter((policy) => policy.status === group.status).map((policy) => <div className="choice-policy" key={policy.key}><strong>{policy.label}</strong><p>{policy.reason}</p>{policy.alternatives?.map((alternative) => <dl className={alternative.scenarios?.includes(scenario.id) ? "active" : ""} key={alternative.id}><dt>{alternative.label}{alternative.scenarios?.includes(scenario.id) && <b>当前</b>}</dt><dd><span>何时：{alternative.when}</span><span>收益：{alternative.gain}</span><span>代价：{alternative.cost}</span></dd></dl>)}</div>)}</section>)}
+          <h3>{t("app.b334711753aea027")}</h3>
+          {policyGroups.map((group) => <section key={group.status}><h4>{tr(group.label)}</h4>{policies.filter((policy) => policy.status === group.status).map((policy) => <div className="choice-policy" key={policy.key}><strong>{tr(policy.label)}</strong><p>{tr(policy.reason)}</p>{policy.alternatives?.map((alternative) => <dl className={alternative.scenarios?.includes(scenario.id) ? "active" : ""} key={alternative.id}><dt>{tr(alternative.label)}{alternative.scenarios?.includes(scenario.id) && <b>{t("app.cb62ebd689ee8f20")}</b>}</dt><dd><span>{t("app.fb5cd241a350b3e2")}{tr(alternative.when)}</span><span>{t("app.a5e29a76057a8317")}{tr(alternative.gain)}</span><span>{t("app.fc85865c6b7df90a")}{tr(alternative.cost)}</span></dd></dl>)}</div>)}</section>)}
         </article>
       </div>
     </section>
@@ -1814,6 +1826,7 @@ function BuildCommandDeck({
   onNodeSelect: (node: FlowNode) => void;
   onPowerSelect: (power: CubePower) => void;
 }) {
+  const { tr, t, entity } = useI18n();
   const paragonPriorities = guide.paragonGuide?.pre800;
   const paragonGroups = [
     ["core", "核心"],
@@ -1822,65 +1835,65 @@ function BuildCommandDeck({
     ["utility", "通用"],
   ] as const;
   return (
-    <aside className="build-command-deck" aria-label="首屏构筑指挥台">
-      <div className="command-deck-tabs" role="tablist" aria-label="首屏信息">
-        <button id="command-tab-overview" role="tab" aria-selected={view === "overview"} aria-controls="command-panel-overview" className={view === "overview" ? "active" : ""} onClick={() => onViewChange("overview")}>构筑总览</button>
-        <button id="command-tab-gear" role="tab" aria-selected={view === "gear"} aria-controls="command-panel-gear" className={view === "gear" ? "active" : ""} onClick={() => onViewChange("gear")}>装备作用</button>
+    <aside className="build-command-deck" aria-label={tr("首屏构筑指挥台")}>
+      <div className="command-deck-tabs" role="tablist" aria-label={tr("首屏信息")}>
+        <button id="command-tab-overview" role="tab" aria-selected={view === "overview"} aria-controls="command-panel-overview" className={view === "overview" ? "active" : ""} onClick={() => onViewChange("overview")}>{t("app.073d08366ae4886c")}</button>
+        <button id="command-tab-gear" role="tab" aria-selected={view === "gear"} aria-controls="command-panel-gear" className={view === "gear" ? "active" : ""} onClick={() => onViewChange("gear")}>{t("app.65c5527c2a4cd03e")}</button>
       </div>
 
       {view === "overview" || !gear ? <div id="command-panel-overview" role="tabpanel" aria-labelledby="command-tab-overview">
         <header className="command-deck-intro">
-          <span>BUILD COMMAND DECK</span>
-          <strong>{scenario?.label ?? guide.name}</strong>
-          <p>{scenario?.reason ?? guide.summary}</p>
+          <span>{t("app.1f6533aad524764b")}</span>
+          <strong>{tr(scenario?.label ?? guide.name)}</strong>
+          <p>{tr(scenario?.reason ?? guide.summary)}</p>
         </header>
 
-        <section className="command-deck-section command-skills" aria-label="技能配置摘要">
-          <div className="command-deck-heading"><span>技能配置</span><small>点击可联动装备</small></div>
+        <section className="command-deck-section command-skills" aria-label={tr("技能配置摘要")}>
+          <div className="command-deck-heading"><span>{t("app.ba365699ea9593a3")}</span><small>{t("app.0be1e5d85b0ba97e")}</small></div>
           <div className="command-skill-grid">
             {skills.slice(0, 6).map((skill) => {
               const related = Boolean(activeNode && relatedIds.has(skill.id));
               return <button key={skill.id} className={`${activeNode?.id === skill.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: skill.id, label: skill.name, detail: skill.logic, kind: "skill", image: skill.image })}>
-                <img src={skill.image} alt="" /><span><strong>{skill.name}</strong><small>{skill.rune || "无符文"}</small></span>
+                <img src={skill.image} alt="" /><span><strong>{entity(skill, "name")}</strong><small>{skill.rune ? entity(skill, "rune") : tr("无符文")}</small></span>
               </button>;
             })}
           </div>
-          <div className="command-passives">{passives.slice(0, 4).map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic, kind: "passive", image: passive.image })}><img src={passive.image} alt="" /><span>{passive.name}</span></button>)}</div>
+          <div className="command-passives">{passives.slice(0, 4).map((passive) => <button key={passive.id} className={`${activeNode?.id === passive.id ? "active" : ""} ${activeNode && relatedIds.has(passive.id) ? "related" : ""} ${activeNode && !relatedIds.has(passive.id) ? "dimmed" : ""}`} onClick={() => onNodeSelect({ id: passive.id, label: passive.name, detail: passive.logic, kind: "passive", image: passive.image })}><img src={passive.image} alt="" /><span>{entity(passive, "name")}</span></button>)}</div>
         </section>
 
-        <section className="command-deck-section command-cube" aria-label="卡奈魔方摘要">
-          <div className="command-deck-heading"><span>{cubeSeasonLabel(season)}</span><small>{season.guideBaseline}</small></div>
+        <section className="command-deck-section command-cube" aria-label={tr("卡奈魔方摘要")}>
+          <div className="command-deck-heading"><span>{tr(cubeSeasonLabel(season))}</span><small>{tr(season.guideBaseline)}</small></div>
           <div className="command-cube-grid">
             {powers.map((power) => {
               const related = Boolean(activeNode && relatedIds.has(power.id));
               return <button key={`${power.slot}-${power.id}`} className={`${activeNode?.id === power.id ? "active" : ""} ${related ? "related" : ""} ${activeNode && !related ? "dimmed" : ""}`} onClick={() => onPowerSelect(power)}>
-                <img src={power.image} alt="" /><span><small>{power.slot}</small><strong>{power.name}</strong><em>{power.summary}</em></span>
+                <img src={power.image} alt="" /><span><small>{tr(power.slot)}</small><strong>{entity(power, "name")}</strong><em>{tr(power.summary)}</em></span>
               </button>;
             })}
           </div>
         </section>
 
-        <section className="command-deck-section command-paragon" aria-label="巅峰加点摘要">
-          <div className="command-deck-heading"><span>巅峰加点</span><small>{paragon === "low" ? "低巅峰优先级" : "800 点后投入"}</small></div>
+        <section className="command-deck-section command-paragon" aria-label={tr("巅峰加点摘要")}>
+          <div className="command-deck-heading"><span>{t("app.f665170eeebffc3a")}</span><small>{tr(paragon === "low" ? "低巅峰优先级" : "800 点后投入")}</small></div>
           <div className="command-paragon-grid">
             {paragonGroups.map(([key, label]) => {
               const entry = paragonPriorities?.[key]?.[0];
-              return <article key={key}><small>{label}</small><strong>{entry?.stat ?? "按生存阈值"}</strong><span>{entry?.target ?? guide.paragonGuide?.post800[0]?.priority ?? ""}</span></article>;
+              return <article key={key}><small>{tr(label)}</small><strong>{tr(entry?.stat ?? "按生存阈值")}</strong><span>{tr(entry?.target ?? guide.paragonGuide?.post800[0]?.priority ?? "")}</span></article>;
             })}
           </div>
         </section>
       </div> : <section id="command-panel-gear" className={`command-gear-view quality-${gear.quality}`} role="tabpanel" aria-labelledby="command-tab-gear">
         <header className="command-gear-title">
           <DiabloItemFrame image={gear.image} quality={gear.quality} shape={itemFrameShapeForSlot(gear.slot)} size="lg" fit="contain" sockets={sockets} label={gear.name} />
-          <div><span>{gear.quality === "set" ? "套装物品" : "传奇物品"}</span><strong>{gear.name}</strong><small>{gear.slot} · 点击装备后锁定</small></div>
+          <div><span>{tr(gear.quality === "set" ? "套装物品" : "传奇物品")}</span><strong>{entity(gear, "name")}</strong><small>{tr(gear.slot)}{" "}{t("app.adff873b064a2241")}</small></div>
         </header>
-        <section className="command-gear-role"><h3>这件装备在 BD 中的作用</h3><p>{gear.effect}</p></section>
+        <section className="command-gear-role"><h3>{t("app.cbf259f9b9f3c0b3")}</h3><p>{tr(gear.effect)}</p></section>
         <div className="command-gear-facts">
-          <section><h3>关键词缀</h3><ol>{gear.affixes.map((affix, index) => <li key={affix}><b>{index + 1}</b><span>{affix}</span></li>)}</ol></section>
-          <section><h3>镶嵌</h3>{sockets.length > 0 ? <ul>{sockets.map((socket, index) => <li key={`${socket.label}-${index}`}><i className="command-gear-socket-icon"><img src={socket.image} alt="" /></i><span>{socket.label}</span></li>)}</ul> : <p>该部位没有固定镶嵌。</p>}</section>
+          <section><h3>{t("app.53e04c35c62fc825")}</h3><ol>{gear.affixes.map((affix, index) => <li key={affix}><b>{tr(index + 1)}</b><span>{tr(affix)}</span></li>)}</ol></section>
+          <section><h3>{t("app.d26be62e5c768b00")}</h3>{sockets.length > 0 ? <ul>{sockets.map((socket, index) => <li key={`${socket.label}-${index}`}><i className="command-gear-socket-icon"><img src={socket.image} alt="" /></i><span>{tr(socket.label)}</span></li>)}</ul> : <p>{t("app.d43829780559f2c1")}</p>}</section>
         </div>
-        {gear.warning && <p className="command-gear-warning"><b>避坑</b>{gear.warning}</p>}
-        <div className="command-gear-actions"><button onClick={() => onViewChange("overview")}>返回构筑总览</button>{officialItemHref && <a href={officialItemHref}>打开完整物品详情</a>}</div>
+        {gear.warning && <p className="command-gear-warning"><b>{t("app.a46603950c1df4c0")}</b>{tr(gear.warning)}</p>}
+        <div className="command-gear-actions"><button onClick={() => onViewChange("overview")}>{t("app.ad3c4f2cd08bb234")}</button>{officialItemHref && <a href={officialItemHref}>{t("app.666576437b7bcae6")}</a>}</div>
       </section>}
     </aside>
   );
@@ -1944,7 +1957,7 @@ function makeBuildTableData(guide: UnifiedBuildGuide, resolved: ReturnType<typeo
     summary: activeLoadout?.summary ?? guide.summary,
     notice: [activeGuide.variantCompleteness === "documented-shared" ? "配置差异待实装：用途与巅峰说明已保留，装备、宝石、萃取和技能暂按共用配置展示。" : "", activeScenario && activeScenario.applicability !== "supported" ? activeScenario.reason : "", season.availability === "preview" ? `${season.label}：${season.theme}` : ""].filter(Boolean).join(" ") || undefined,
     gear: arrangeGuideGear(gear).map(({ gear: item }) => ({ ...item, sockets: guideSockets(item, classId, activeConfiguration?.normalGems) })),
-    skills: scenarioSkills.map((skill) => ({ ...skill, runeKey: (guide.id === "tragoul-nova" ? SKILLS.find((entry) => entry.id === skill.id && entry.rune === skill.rune)?.runeKey : undefined) ?? skillLibrary.find((entry) => entry.classId === classId && entry.slug === skill.id)?.runes?.find((rune) => rune.name === skill.rune)?.key })),
+    skills: scenarioSkills.map((skill) => ({ ...skill, runeKey: resolveRuneKey(skill) })),
     passives: scenarioPassives,
     powers: season.cubeSlots === 3 ? powers.filter((power) => !["第4槽", "赛季槽", "赛季"].includes(power.slot)) : powers,
     rotation,
@@ -1964,6 +1977,7 @@ export function allBuildTableData(season: SeasonConfig): BuildTableData[] {
 }
 
 function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
+  const { tr, t, entity } = useI18n();
   const { genders, season } = useSiteSettings();
   const itemIndex = useItemIndex();
   const catalogEntry = BUILD_CATALOG.find((entry) => entry.id === guide.id);
@@ -1997,7 +2011,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const selectedOfficialIndexItem = useMemo(() => itemIndex.find((record) => record.id === selectedOfficialId), [itemIndex, selectedOfficialId]);
   const selectedOfficialHref = selectedOfficialIndexItem?.category ? `/library/${selectedOfficialIndexItem.category}/${encodeURIComponent(selectedOfficialIndexItem.id)}` : "";
   const selectedSockets = selectedGear ? guideSockets(selectedGear, classId, activeConfiguration?.normalGems) : [];
-  const statRows = useMemo(() => equipmentStatRows(positions, classId, paragon), [positions, classId, paragon]);
+  const statRows = equipmentStatRows(positions, classId, paragon);
   const activeStat = statRows.find((stat) => stat.key === selectedStat);
   const relatedIds = useMemo(() => {
     if (!activeNode) return new Set<string>();
@@ -2053,44 +2067,44 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     <main className={`bd-detail-page unified-build-detail ${detailView === "table" ? "bd-table-page" : ""}`}>
       <SiteHeader active="builds" />
       <section className="hero" id="top">
-        <div className="breadcrumbs">{hero.name} <span>›</span> 单人BD <span>›</span> {guide.core}</div>
+        <div className="breadcrumbs">{entity(hero, "name")} <span>{t("app.7bb37df5cb369f18")}</span>{" "}{t("app.e0cf133297fe62b6")}{" "}<span>{t("app.7bb37df5cb369f18")}</span> {tr(guide.core)}</div>
         <div className="hero-content">
-          <div><div className="eyebrow"><span>{season.platformLabel} 专用校对</span><b>PATCH {season.patch}</b></div><h1>{guide.name}</h1><p>{guide.summary}</p></div>
-          <div className="build-rating" aria-label="BD定位"><span><b>{catalogEntry?.role === "冲层" ? "S" : "A"}</b> {catalogEntry?.purpose ?? "单人强度"}</span><span><b>{catalogEntry?.difficulty ?? "中"}</b> 操作门槛</span><span><b>强</b> NS适配</span></div>
+          <div><div className="eyebrow"><span>{tr(season.platformLabel)}{" "}{t("app.fd3a43ef425af872")}</span><b>{t("app.8dce33b49f31396a")}{" "}{tr(season.patch)}</b></div><h1>{entity(guide, "name")}</h1><p>{tr(guide.summary)}</p></div>
+          <div className="build-rating" aria-label={tr("BD定位")}><span><b>{tr(catalogEntry?.role === "冲层" ? "S" : "A")}</b> {tr(catalogEntry?.purpose ?? "单人强度")}</span><span><b>{tr(catalogEntry?.difficulty ?? "中")}</b>{" "}{t("app.9b949463c1e0f0d7")}</span><span><b>{t("app.f038053bedb1b9ed")}</b>{" "}{t("app.1bbf3970dd9a8deb")}</span></div>
         </div>
       </section>
 
-      <section className="variant-bar" aria-label="配置切换">
-        <div className="variant-group" role="group" aria-label="详情视图"><button aria-pressed={detailView === "detail"} className={detailView === "detail" ? "active" : ""} onClick={() => setDetailView("detail")}>图文详情</button><button aria-pressed={detailView === "table"} className={detailView === "table" ? "active" : ""} onClick={() => setDetailView("table")}>BD 表格</button></div><div className="variant-divider" />
-        {guide.loadouts && guide.loadouts.length > 1 && <><div className="variant-group"><span>套装方案</span>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}>{loadout.label}</button>)}</div><div className="variant-divider" /></>}
-        <div className="variant-group"><span>用途</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{guide.modeLabels?.push ?? "大秘境冲层"}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{guide.modeLabels?.speed ?? "T16 / 速刷"}</button></div>
+      <section className="variant-bar" aria-label={tr("配置切换")}>
+        <div className="variant-group" role="group" aria-label={tr("详情视图")}><button aria-pressed={detailView === "detail"} className={detailView === "detail" ? "active" : ""} onClick={() => setDetailView("detail")}>{t("app.e79643a0e65f2272")}</button><button aria-pressed={detailView === "table"} className={detailView === "table" ? "active" : ""} onClick={() => setDetailView("table")}>{t("app.59bc316ed88b4c70")}</button></div><div className="variant-divider" />
+        {guide.loadouts && guide.loadouts.length > 1 && <><div className="variant-group"><span>{t("app.80a0b2822379c152")}</span>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}>{tr(loadout.label)}</button>)}</div><div className="variant-divider" /></>}
+        <div className="variant-group"><span>{t("app.05b36669c4ad9a73")}</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{tr(guide.modeLabels?.push ?? "大秘境冲层")}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{tr(guide.modeLabels?.speed ?? "T16 / 速刷")}</button></div>
         <div className="variant-divider" />
-        <div className="variant-group"><span>巅峰</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>低巅峰 &lt; 2000</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>高巅峰 2000+</button></div>
-        <div className="variant-note"><strong>{activeLoadout ? `${activeLoadout.title} · ` : ""}{activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`}</strong><span>{activeLoadout?.summary ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`}</span></div>
+        <div className="variant-group"><span>{t("app.724c4ca9ce4f003f")}</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>{t("app.72d8c9e002e9e369")}</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>{t("app.5d1eb39df9f0de0e")}</button></div>
+        <div className="variant-note"><strong>{tr(activeLoadout ? `${activeLoadout.title} · ` : "")}{tr(activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`)}</strong><span>{tr(activeLoadout?.summary ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`)}</span></div>
       </section>
 
-      {detailView === "detail" && activeGuide.variantCompleteness === "documented-shared" && <section className="variant-audit-note" aria-label="BD 数据完整度">
-        <strong>配置差异待实装</strong>
-        <span>当前 BD 已保留用途与巅峰说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。</span>
+      {detailView === "detail" && activeGuide.variantCompleteness === "documented-shared" && <section className="variant-audit-note" aria-label={tr("BD 数据完整度")}>
+        <strong>{t("app.6455f91b0ff3d730")}</strong>
+        <span>{t("app.c6ac1a026f2c0b82")}</span>
       </section>}
 
-      {detailView === "detail" && season.availability === "preview" && <section className="season-preview-note" aria-label="轮换预设说明"><strong>{season.label}</strong><span>{season.theme}</span></section>}
+      {detailView === "detail" && season.availability === "preview" && <section className="season-preview-note" aria-label={tr("轮换预设说明")}><strong>{tr(season.label)}</strong><span>{tr(season.theme)}</span></section>}
 
-      {detailView === "detail" && guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label="配装方案怎么选">
-        <header><span>配装选择</span><strong>两套都能无限疾风，区别在于谁负责杀怪</strong></header>
-        <div>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}><span>{loadout.label}</span><h3>{loadout.title}</h3><p>{loadout.summary}</p><dl><div><dt>推荐</dt><dd>{loadout.bestFor}</dd></div><div><dt>取舍</dt><dd>{loadout.tradeoff}</dd></div></dl></button>)}</div>
+      {detailView === "detail" && guide.loadouts && guide.loadouts.length > 1 && <section className="loadout-comparison" aria-label={tr("配装方案怎么选")}>
+        <header><span>{t("app.d2da154297947b24")}</span><strong>{t("app.b5fc414c78a72603")}</strong></header>
+        <div>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}><span>{tr(loadout.label)}</span><h3>{tr(loadout.title)}</h3><p>{tr(loadout.summary)}</p><dl><div><dt>{t("app.1452deafc6d96546")}</dt><dd>{tr(loadout.bestFor)}</dd></div><div><dt>{t("app.e825877d1b36f9d9")}</dt><dd>{tr(loadout.tradeoff)}</dd></div></dl></button>)}</div>
       </section>}
 
       {detailView === "table" ? <BuildTableView key={guide.id} data={tableData} getAllBuilds={() => allBuildTableData(season)} /> : <>
       <section className="workbench">
         <article className="panel loadout-panel">
-          <div className="panel-heading"><div><span className="section-index">01</span><h2>装备盘</h2></div><small>点击装备查看 · 焦点跟随键盘</small></div>
+          <div className="panel-heading"><div><span className="section-index">{t("app.938db8c9f82c8cb5")}</span><h2>{t("app.25894f4417234f30")}</h2></div><small>{t("app.62598000b3c7ef52")}</small></div>
           <div className="paperdoll-compact-stage">
           <div className="paperdoll" style={{ "--paperdoll-image": `url("${paperdollImage}")` } as CSSProperties}>
             <div className="paperdoll-lines" aria-hidden="true" />
-            <div className="paperdoll-profile"><span>70级 · {hero.name} · {seasonLabel(season)}</span><strong>{guide.name}</strong><small>{activeLoadout ? `${activeLoadout.label} · ` : ""}{mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷")} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small></div>
+            <div className="paperdoll-profile"><span>{t("app.ebdb03777a32fcc0")}{" "}{entity(hero, "name")}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(seasonLabel(season))}</span><strong>{entity(guide, "name")}</strong><small>{tr(activeLoadout ? `${activeLoadout.label} · ` : "")}{tr(mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷"))}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(paragon === "low" ? "低巅峰配置" : "高巅峰配置")}</small></div>
             <div className="paperdoll-stats">
-              <h3>装备加成 <small>点击反查词缀</small></h3>
+              <h3>{t("app.c7cb53a63234a64d")}{" "}<small>{t("app.c30646abe94323c2")}</small></h3>
               {statRows.map((stat) => (
                 <button
                   key={stat.key}
@@ -2102,11 +2116,11 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
                   aria-pressed={selectedStat === stat.key}
                 >
                   <i />
-                  <span>{stat.label}</span>
-                  <strong>{selectedStat === stat.key ? `${stat.targets.size} 件可出` : stat.summary}</strong>
+                  <span>{tr(stat.label)}</span>
+                  <strong>{tr(selectedStat === stat.key ? `${stat.targets.size} 件可出` : stat.summary)}</strong>
                 </button>
               ))}
-              <p className="paperdoll-stat-hint">{activeStat ? `已高亮能获得“${activeStat.label}”的装备；装备名下显示该部位上限。` : "点击一项属性查看可出现该词缀的装备与上限。"}</p>
+              <p className="paperdoll-stat-hint">{tr(activeStat ? `已高亮能获得“${activeStat.label}”的装备；装备名下显示该部位上限。` : "点击一项属性查看可出现该词缀的装备与上限。")}</p>
             </div>
             <div className="paperdoll-labels">
               {positions.map(({ position, gear: item }) => {
@@ -2118,12 +2132,12 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
                     onFocus={() => showGearDetail(item.id)}
                     onClick={() => focusGear(item.id)}
                   >
-                    <strong>{item.name}</strong>
+                    <strong>{entity(item, "name")}</strong>
                     {statMaximum ? (
                       <span className="bonus-value">
-                        <b className="value">{statMaximum.replace(/^远古最高\s*/, "").replace(/^最高\s*/, "")}</b>{" "}{activeStat?.label}
+                        <b className="value">{tr(statMaximum.replace(/^远古最高\s*/, "").replace(/^最高\s*/, ""))}</b>{tr(" ")}{tr(activeStat?.label)}
                       </span>
-                    ) : <span>{item.affixes[0]}</span>}
+                    ) : <span>{tr(item.affixes[0])}</span>}
                   </button>
                 );
               })}
@@ -2173,18 +2187,18 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         />
 
         <article className="panel synergy-panel" id="synergy">
-          <div className="panel-heading"><div><span className="section-index">04</span><h2>核心 BD 联动</h2></div><small>点击节点 · 周围装备、技能、被动与威能同步高亮</small></div>
-          <div className="flow-toolbar">{[["all", "全部链路"], ["damage", "增伤"], ["defense", "减伤"], ["movement", "速刷"], ["set", "套装联动"], ["royal", "皇家华戒"]].map(([value, label]) => <button key={value} className={flowFilter === value ? "active" : ""} onClick={() => setFlowFilter(value as FlowFilter)}>{label}</button>)}{activeNode && <button className="clear-focus" onClick={() => setActiveNode(null)}>清除聚焦 ×</button>}</div>
-          <div className="flow-legend"><span><i className="legend-skill" />技能</span><span><i className="legend-gear" />装备 / 威能</span><span><i className="legend-set" />套装</span><span><i className="legend-damage" />伤害结果</span><span><i className="legend-defense" />生存结果</span></div>
-          <div className="flow-map">{visibleRows.map((row) => <div className="flow-chain" key={row.id}><div className="chain-title"><span>{row.title}</span><i /></div><div className="flow-row">{row.nodes.map((node, index) => <div className="flow-step" key={`${row.id}-${node.id}-${index}`}><FlowNodeButton node={node} active={activeNode?.id === node.id} dimmed={Boolean(activeNode && !relatedIds.has(node.id))} onSelect={handleNodeSelect} />{index < row.nodes.length - 1 && <span className="flow-arrow">→</span>}</div>)}</div></div>)}</div>
-          <div className="focus-readout"><span>{activeNode ? "当前聚焦" : "阅读方式"}</span><strong>{activeNode?.label ?? "从左向右阅读每条因果链"}</strong><p>{activeNode?.detail ?? "选择任一节点，周围模块里的对应装备、技能、被动与威能会同步高亮。"}</p></div>
+          <div className="panel-heading"><div><span className="section-index">{t("app.6cd5b6e51936a442")}</span><h2>{t("app.b38a7ff0b6acbe5b")}</h2></div><small>{t("app.d8aa675edf89a3fe")}</small></div>
+          <div className="flow-toolbar">{[["all", "全部链路"], ["damage", "增伤"], ["defense", "减伤"], ["movement", "速刷"], ["set", "套装联动"], ["royal", "皇家华戒"]].map(([value, label]) => <button key={value} className={flowFilter === value ? "active" : ""} onClick={() => setFlowFilter(value as FlowFilter)}>{tr(label)}</button>)}{activeNode && <button className="clear-focus" onClick={() => setActiveNode(null)}>{t("app.5e9efa07e677f529")}</button>}</div>
+          <div className="flow-legend"><span><i className="legend-skill" />{t("app.99aea2f9131ad6da")}</span><span><i className="legend-gear" />{t("app.506ce1114e574308")}</span><span><i className="legend-set" />{t("app.3b71bdee11f13a5a")}</span><span><i className="legend-damage" />{t("app.1de75703ad926e0f")}</span><span><i className="legend-defense" />{t("app.20d95dea7783ff21")}</span></div>
+          <div className="flow-map">{visibleRows.map((row) => <div className="flow-chain" key={row.id}><div className="chain-title"><span>{tr(row.title)}</span><i /></div><div className="flow-row">{row.nodes.map((node, index) => <div className="flow-step" key={`${row.id}-${node.id}-${index}`}><FlowNodeButton node={node} active={activeNode?.id === node.id} dimmed={Boolean(activeNode && !relatedIds.has(node.id))} onSelect={handleNodeSelect} />{index < row.nodes.length - 1 && <span className="flow-arrow">{t("app.161660030aa6c9e3")}</span>}</div>)}</div></div>)}</div>
+          <div className="focus-readout"><span>{tr(activeNode ? "当前聚焦" : "阅读方式")}</span><strong>{tr(activeNode?.label ?? "从左向右阅读每条因果链")}</strong><p>{tr(activeNode?.detail ?? "选择任一节点，周围模块里的对应装备、技能、被动与威能会同步高亮。")}</p></div>
         </article>
 
         <aside className="panel combat-panel" id="rotation">
-          <div className="panel-heading"><div><span className="section-index">06</span><h2>实战手法</h2></div><small>{season.guideBaseline}</small></div>
-          <div className="combat-summary"><div><span>输出</span><i><b style={{ width: mode === "push" ? "92%" : "80%" }} /></i><em>{mode === "push" ? "92" : "80"}</em></div><div><span>坚韧</span><i><b style={{ width: paragon === "low" ? "90%" : "82%" }} /></i><em>{paragon === "low" ? "90" : "82"}</em></div><div><span>机动</span><i><b style={{ width: mode === "speed" ? "95%" : "64%" }} /></i><em>{mode === "speed" ? "95" : "64"}</em></div></div>
-          <ol className="rotation-list">{rotation.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{step.title}</h3><p>{step.action}</p><small><b>为什么：</b>{step.reason}</small></div></li>)}</ol>
-          <div className="ns-note"><div className="switch-icon"><span>−</span><b>NS</b><span>+</span></div><div><strong>主机操作提醒</strong><p>{activeGuide.consoleNote ?? "锁定目标偏离怪群中心时，松开技能、调整摇杆方向后重新施放，比持续硬拉视角更稳定。"}</p></div></div>
+          <div className="panel-heading"><div><span className="section-index">{t("app.aacd834b5cdc64a3")}</span><h2>{t("app.bc564d4e524ff4cc")}</h2></div><small>{tr(season.guideBaseline)}</small></div>
+          <div className="combat-summary"><div><span>{t("app.fb04addb4c2654f5")}</span><i><b style={{ width: mode === "push" ? "92%" : "80%" }} /></i><em>{tr(mode === "push" ? "92" : "80")}</em></div><div><span>{t("app.8e44926ca5db650e")}</span><i><b style={{ width: paragon === "low" ? "90%" : "82%" }} /></i><em>{tr(paragon === "low" ? "90" : "82")}</em></div><div><span>{t("app.25ee118c551b966b")}</span><i><b style={{ width: mode === "speed" ? "95%" : "64%" }} /></i><em>{tr(mode === "speed" ? "95" : "64")}</em></div></div>
+          <ol className="rotation-list">{rotation.map((step, index) => <li key={step.title}><span>{tr(String(index + 1).padStart(2, "0"))}</span><div><h3>{tr(step.title)}</h3><p>{tr(step.action)}</p><small><b>{t("app.b1c77ff2030c90be")}</b>{tr(step.reason)}</small></div></li>)}</ol>
+          <div className="ns-note"><div className="switch-icon"><span>{t("app.afba2418d6aec23d")}</span><b>{t("app.4b8f6e7e7d992196")}</b><span>{t("app.a318c24216defe20")}</span></div><div><strong>{t("app.22cdb60bedf6bb12")}</strong><p>{tr(activeGuide.consoleNote ?? "锁定目标偏离怪群中心时，松开技能、调整摇杆方向后重新施放，比持续硬拉视角更稳定。")}</p></div></div>
         </aside>
       </section>
 
@@ -2210,7 +2224,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         />
 
         <article className="panel follower-panel" id="followers">
-          <div className="panel-heading"><div><span className="section-index">05</span><h2>随从配装</h2></div><small>三名随从并列对比 · 首选项高亮</small></div>
+          <div className="panel-heading"><div><span className="section-index">{t("app.c97550ce8213ef5c")}</span><h2>{t("app.66c75e13cba8ba80")}</h2></div><small>{t("app.f9278ca1dc12d691")}</small></div>
           <FollowerShowcase recommendedFollower={guide.follower} recommendation={guide.followerReason} />
         </article>
       </section>
@@ -2219,25 +2233,27 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
 
       </>}
 
-      <footer><div><span className="footer-mark">N</span><p><strong>圣休亚瑞秘典 · 数据驱动攻略</strong><small>{season.platformLabel} · {seasonLabel(season)} · 仅单人玩法</small></p></div><p><a href={buildListHref}>返回全职业 BD</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}> · <a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></Fragment>)}</p></footer>
+      <footer><div><span className="footer-mark">{t("app.8ce86a6ae65d3692")}</span><p><strong>{t("app.c218904160a9bbc2")}</strong><small>{tr(season.platformLabel)}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(seasonLabel(season))}{" "}{t("app.da6d3c7ddf710a92")}</small></p></div><p><a href={buildListHref}>{t("app.058b12a12ce8d94d")}</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}>{" "}{t("app.a137f17a19a09cbe")}{" "}<a href={source} target="_blank" rel="noreferrer">{tr(sourceLabel(source, index))}</a></Fragment>)}</p></footer>
     </main>
   );
 }
 
 function PendingBuildDetail({ buildId }: { buildId: string }) {
+  const { tr, t, entity } = useI18n();
   const build = BUILD_CATALOG.find((entry) => entry.id === buildId);
-  if (!build) return <RoutePage active="builds" eyebrow="BUILD NOT FOUND" title="未找到该 BD"><section className="archive-section"><p className="library-empty">该 BD 不在当前赛季目录中。</p></section></RoutePage>;
+  if (!build) return <RoutePage active="builds" eyebrow="BUILD NOT FOUND" title={tr("未找到该 BD")}><section className="archive-section"><p className="library-empty">{t("app.41a35367f1eed572")}</p></section></RoutePage>;
   const hero = CLASS_CATALOG.find((entry) => entry.id === build.classId)!;
   return (
-    <RoutePage active="builds" eyebrow={`${hero.name} · ${SEASON_LABEL}`} title={build.name}>
+    <RoutePage active="builds" eyebrow={`${hero.name} · ${SEASON_LABEL}`} title={tr(build.name)}>
       <section className="archive-section pending-build-detail">
-        <img src={hero.crest} alt="" /><article><span>{build.set}</span><h2>{build.name}</h2><p>{build.summary}</p><dl><div><dt>核心技能</dt><dd>{build.core}</dd></div><div><dt>主要用途</dt><dd>{build.role}</dd></div><div><dt>操作门槛</dt><dd>{build.difficulty}</dd></div></dl><div className="pending-notice"><strong>完整攻略校对中</strong><p>该页路由与资料库关联已建立；装备盘、低/高巅峰、速刷/冲层、词缀、定向获取、联动图与输出手法会按照塔格奥新星的标准逐项补齐。</p></div><a href={`/builds?class=${build.classId}`}>返回全职业 BD 列表</a></article>
+        <img src={hero.crest} alt="" /><article><span>{tr(build.set)}</span><h2>{entity(build, "name")}</h2><p>{tr(build.summary)}</p><dl><div><dt>{t("app.c2ff315d4fc178bd")}</dt><dd>{tr(build.core)}</dd></div><div><dt>{t("app.20b349591d385057")}</dt><dd>{tr(build.role)}</dd></div><div><dt>{t("app.9b949463c1e0f0d7")}</dt><dd>{tr(build.difficulty)}</dd></div></dl><div className="pending-notice"><strong>{t("app.f43ff73fc03d7b0d")}</strong><p>{t("app.a6a1b702679a3e9e")}</p></div><a href={`/builds?class=${build.classId}`}>{t("app.f3d0053bdc3100ac")}</a></article>
       </section>
     </RoutePage>
   );
 }
 
 function HomeContent() {
+  const { tr, t, entity } = useI18n();
   const pathname = usePathname() || "/builds";
   const [mode, setMode] = useState<Mode>("push");
   const [paragon, setParagon] = useState<Paragon>("low");
@@ -2322,21 +2338,21 @@ function HomeContent() {
   const selectedSockets = SOCKETS[selectedGear.id] ?? [];
 
   if (pathname === "/" || pathname === "/builds") {
-    return <RoutePage active="builds" eyebrow="SEASON 39 · SOLO BUILDS" title="赛季全职业 BD"><BuildAtlas /></RoutePage>;
+    return <RoutePage active="builds" eyebrow="SEASON 39 · SOLO BUILDS" title={tr("赛季全职业 BD")}><BuildAtlas /></RoutePage>;
   }
   if (pathname === "/story") {
-    return <RoutePage active="story" eyebrow="THE CAMPAIGN · ACT I–V" title="主线剧情线路"><CampaignRoute /></RoutePage>;
+    return <RoutePage active="story" eyebrow="THE CAMPAIGN · ACT I–V" title={tr("主线剧情线路")}><CampaignRoute /></RoutePage>;
   }
   if (pathname === "/season-start") {
-    return <RoutePage active="season" eyebrow="SEASON START · 0 TO 70" title="赛季开荒流程"><SeasonStartGuide /></RoutePage>;
+    return <RoutePage active="season" eyebrow="SEASON START · 0 TO 70" title={tr("赛季开荒流程")}><SeasonStartGuide /></RoutePage>;
   }
   if (pathname === "/library") {
-    return <RoutePage active="library" eyebrow="OFFICIAL ITEM DATABASE" title="物品"><OfficialLibrary /></RoutePage>;
+    return <RoutePage active="library" eyebrow="OFFICIAL ITEM DATABASE" title={tr("物品")}><OfficialLibrary /></RoutePage>;
   }
   if (pathname.startsWith("/library/")) {
     const [, , category, encodedId] = pathname.split("/");
     return (
-      <RoutePage active="library" eyebrow="OFFICIAL ITEM DATABASE" title={encodedId ? "物品详情" : "物品列表"}>
+      <RoutePage active="library" eyebrow="OFFICIAL ITEM DATABASE" title={tr(encodedId ? "物品详情" : "物品列表")}>
         {encodedId ? <LibraryRecordDetail category={category} id={decodeURIComponent(encodedId)} /> : <LibraryCategory category={category} />}
       </RoutePage>
     );
@@ -2361,44 +2377,36 @@ function HomeContent() {
       <SiteHeader />
 
       <section className="hero" id="top">
-        <div className="breadcrumbs">死灵法师 <span>›</span> 单人BD <span>›</span> 死亡新星</div>
+        <div className="breadcrumbs">{t("app.40c05bf4a912bb95")}{" "}<span>{t("app.7bb37df5cb369f18")}</span>{" "}{t("app.e0cf133297fe62b6")}{" "}<span>{t("app.7bb37df5cb369f18")}</span>{" "}{t("app.d4892d30c3f01463")}</div>
         <div className="hero-content">
           <div>
-            <div className="eyebrow"><span>{CURRENT_SEASON.platformLabel} 专用校对</span><b>PATCH {CURRENT_SEASON.patch}</b></div>
-            <h1>塔格奥 <em>·</em> 死亡新星</h1>
-            <p>让每一滴鲜血都成为一次爆炸。装备、技能与威能不再是清单，而是一张可以追溯的因果图。</p>
+            <div className="eyebrow"><span>{tr(CURRENT_SEASON.platformLabel)}{" "}{t("app.fd3a43ef425af872")}</span><b>{t("app.8dce33b49f31396a")}{" "}{tr(CURRENT_SEASON.patch)}</b></div>
+            <h1>{t("app.a1dd6c68e8b9c95e")}{" "}<em>{t("app.a137f17a19a09cbe")}</em>{" "}{t("app.d4892d30c3f01463")}</h1>
+            <p>{t("app.23e5a12115ce6349")}</p>
           </div>
-          <div className="build-rating" aria-label="BD定位">
-            <span><b>S</b> 单人强度</span>
-            <span><b>低</b> 操作门槛</span>
-            <span><b>强</b> NS适配</span>
+          <div className="build-rating" aria-label={tr("BD定位")}>
+            <span><b>{t("app.8de0b3c47f112c59")}</b>{" "}{t("app.04e8de6a422dead4")}</span>
+            <span><b>{t("app.aa9e366f68d3d097")}</b>{" "}{t("app.9b949463c1e0f0d7")}</span>
+            <span><b>{t("app.f038053bedb1b9ed")}</b>{" "}{t("app.1bbf3970dd9a8deb")}</span>
           </div>
         </div>
       </section>
 
-      <section className="variant-bar" aria-label="配置切换">
+      <section className="variant-bar" aria-label={tr("配置切换")}>
         <div className="variant-group">
-          <span>用途</span>
-          <button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")} aria-pressed={mode === "push"}>
-            大秘境冲层
-          </button>
-          <button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")} aria-pressed={mode === "speed"}>
-            T16 / 速刷
-          </button>
+          <span>{t("app.05b36669c4ad9a73")}</span>
+          <button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")} aria-pressed={mode === "push"}>{t("app.2053b873917664cf")}</button>
+          <button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")} aria-pressed={mode === "speed"}>{t("app.ddc03d32979f0148")}</button>
         </div>
         <div className="variant-divider" />
         <div className="variant-group">
-          <span>巅峰</span>
-          <button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")} aria-pressed={paragon === "low"}>
-            低巅峰 &lt; 2000
-          </button>
-          <button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")} aria-pressed={paragon === "high"}>
-            高巅峰 2000+
-          </button>
+          <span>{t("app.724c4ca9ce4f003f")}</span>
+          <button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")} aria-pressed={paragon === "low"}>{t("app.72d8c9e002e9e369")}</button>
+          <button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")} aria-pressed={paragon === "high"}>{t("app.5d1eb39df9f0de0e")}</button>
         </div>
         <div className="variant-note">
-          <strong>{paragon === "low" ? "守护者过渡" : mode === "push" ? "奥吉德冲层" : "金币速刷"}</strong>
-          <span>{paragon === "low" ? "翻倍装备智力与体能" : mode === "push" ? "提高精英伤害与减免" : "放弃多余坚韧换取机动"}</span>
+          <strong>{tr(paragon === "low" ? "守护者过渡" : mode === "push" ? "奥吉德冲层" : "金币速刷")}</strong>
+          <span>{tr(paragon === "low" ? "翻倍装备智力与体能" : mode === "push" ? "提高精英伤害与减免" : "放弃多余坚韧换取机动")}</span>
         </div>
       </section>
 
@@ -2406,26 +2414,26 @@ function HomeContent() {
         <article className="panel loadout-panel">
           <div className="panel-heading">
             <div>
-              <span className="section-index">01</span>
-              <h2>装备盘</h2>
+              <span className="section-index">{t("app.938db8c9f82c8cb5")}</span>
+              <h2>{t("app.25894f4417234f30")}</h2>
             </div>
-            <small>点击装备查看 · 焦点跟随键盘</small>
+            <small>{t("app.62598000b3c7ef52")}</small>
           </div>
 
           <div className="paperdoll">
             <div className="paperdoll-lines" aria-hidden="true" />
-            <div className="paperdoll-profile" aria-label="当前配装概览">
-              <span>70级 · 死灵法师 · {SEASON_LABEL}</span>
-              <strong>塔格奥 · 死亡新星</strong>
-              <small>{mode === "push" ? "单人大秘境冲层" : "T16 / 大秘境速刷"} · {paragon === "low" ? "低巅峰配置" : "高巅峰配置"}</small>
+            <div className="paperdoll-profile" aria-label={tr("当前配装概览")}>
+              <span>{t("app.373e3e47c36b6ee8")}{" "}{tr(SEASON_LABEL)}</span>
+              <strong>{t("app.7467fc251d589f95")}</strong>
+              <small>{tr(mode === "push" ? "单人大秘境冲层" : "T16 / 大秘境速刷")}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(paragon === "low" ? "低巅峰配置" : "高巅峰配置")}</small>
             </div>
-            <div className="paperdoll-stats" aria-label="装备属性目标">
-              <h3>装备加成</h3>
-              <p><i />主属性 <strong>智力优先</strong></p>
-              <p><i />暴击几率 <strong>≥ 50%</strong></p>
-              <p><i />暴击伤害 <strong>≥ 400%</strong></p>
-              <p><i />冷却缩减 <strong>≥ 50%</strong></p>
-              <p><i />范围伤害 <strong>{paragon === "high" && mode === "push" ? "高巅峰补足" : "随装备补充"}</strong></p>
+            <div className="paperdoll-stats" aria-label={tr("装备属性目标")}>
+              <h3>{t("app.c7cb53a63234a64d")}</h3>
+              <p><i />{t("app.7362d8b21ac30608")}{" "}<strong>{t("app.da6412bef831cef5")}</strong></p>
+              <p><i />{t("app.dfd74f409a93245e")}{" "}<strong>{t("app.a070209776f7ddd0")}</strong></p>
+              <p><i />{t("app.15bccc395156a90f")}{" "}<strong>{t("app.cff9ffe091d923b6")}</strong></p>
+              <p><i />{t("app.792d34f8d3b29944")}{" "}<strong>{t("app.a070209776f7ddd0")}</strong></p>
+              <p><i />{t("app.1a84857871a119d3")}{" "}<strong>{tr(paragon === "high" && mode === "push" ? "高巅峰补足" : "随装备补充")}</strong></p>
             </div>
             <div className="paperdoll-labels">
               {SLOT_ORDER.map(([position, key]) => {
@@ -2441,8 +2449,8 @@ function HomeContent() {
                     onFocus={() => setSelectedGearId(gear.id)}
                     onClick={() => handleGearSelect(gear.id)}
                   >
-                    <strong>{gear.name}</strong>
-                    <span>{gear.affixes[0]}</span>
+                    <strong>{entity(gear, "name")}</strong>
+                    <span>{tr(gear.affixes[0])}</span>
                   </button>
                 );
               })}
@@ -2482,10 +2490,10 @@ function HomeContent() {
         <article className="panel synergy-panel" id="synergy">
           <div className="panel-heading">
             <div>
-              <span className="section-index">04</span>
-              <h2>核心 BD 联动</h2>
+              <span className="section-index">{t("app.6cd5b6e51936a442")}</span>
+              <h2>{t("app.b38a7ff0b6acbe5b")}</h2>
             </div>
-            <small>点击节点 · 上方装备、技能、被动与威能同步高亮</small>
+            <small>{t("app.e1d673c1433a47f5")}</small>
           </div>
 
           <div className="flow-toolbar">
@@ -2502,28 +2510,26 @@ function HomeContent() {
                 className={flowFilter === value ? "active" : ""}
                 onClick={() => setFlowFilter(value as typeof flowFilter)}
               >
-                {label}
+                {tr(label)}
               </button>
             ))}
             {activeNode && (
-              <button className="clear-focus" onClick={() => setActiveNode(null)}>
-                清除聚焦 ×
-              </button>
+              <button className="clear-focus" onClick={() => setActiveNode(null)}>{t("app.5e9efa07e677f529")}</button>
             )}
           </div>
 
           <div className="flow-legend">
-            <span><i className="legend-skill" />技能</span>
-            <span><i className="legend-gear" />装备 / 威能</span>
-            <span><i className="legend-set" />套装</span>
-            <span><i className="legend-damage" />伤害结果</span>
-            <span><i className="legend-defense" />生存结果</span>
+            <span><i className="legend-skill" />{t("app.99aea2f9131ad6da")}</span>
+            <span><i className="legend-gear" />{t("app.506ce1114e574308")}</span>
+            <span><i className="legend-set" />{t("app.3b71bdee11f13a5a")}</span>
+            <span><i className="legend-damage" />{t("app.1de75703ad926e0f")}</span>
+            <span><i className="legend-defense" />{t("app.20d95dea7783ff21")}</span>
           </div>
 
           <div className="flow-map">
             {visibleRows.map((row) => (
               <div className="flow-chain" key={row.id}>
-                <div className="chain-title"><span>{row.title}</span><i /></div>
+                <div className="chain-title"><span>{tr(row.title)}</span><i /></div>
                 <div className="flow-row">
                   {row.nodes.map((node, index) => (
                     <div className="flow-step" key={`${row.id}-${node.id}-${index}`}>
@@ -2533,7 +2539,7 @@ function HomeContent() {
                         dimmed={Boolean(activeNode && !relatedIds.has(node.id))}
                         onSelect={handleNodeSelect}
                       />
-                      {index < row.nodes.length - 1 && <span className="flow-arrow" aria-hidden="true">→</span>}
+                      {index < row.nodes.length - 1 && <span className="flow-arrow" aria-hidden="true">{t("app.161660030aa6c9e3")}</span>}
                     </div>
                   ))}
                 </div>
@@ -2542,45 +2548,45 @@ function HomeContent() {
           </div>
 
           <div className="focus-readout">
-            <span>{activeNode ? "当前聚焦" : "阅读方式"}</span>
-            <strong>{activeNode?.label ?? "从左向右阅读每条因果链"}</strong>
-            <p>{activeNode?.detail ?? "选择任一装备或技能，其他无关节点会淡出；相同节点可同时连接多条增伤与减伤链。"}</p>
+            <span>{tr(activeNode ? "当前聚焦" : "阅读方式")}</span>
+            <strong>{tr(activeNode?.label ?? "从左向右阅读每条因果链")}</strong>
+            <p>{tr(activeNode?.detail ?? "选择任一装备或技能，其他无关节点会淡出；相同节点可同时连接多条增伤与减伤链。")}</p>
           </div>
         </article>
 
         <aside className="panel combat-panel" id="rotation">
           <div className="panel-heading">
             <div>
-              <span className="section-index">06</span>
-              <h2>实战手法</h2>
+              <span className="section-index">{t("app.aacd834b5cdc64a3")}</span>
+              <h2>{t("app.bc564d4e524ff4cc")}</h2>
             </div>
-            <small>{CURRENT_SEASON.guideBaseline}</small>
+            <small>{tr(CURRENT_SEASON.guideBaseline)}</small>
           </div>
 
           <div className="combat-summary">
-            <div><span>输出</span><i><b style={{ width: mode === "push" ? "94%" : "80%" }} /></i><em>{mode === "push" ? "94" : "80"}</em></div>
-            <div><span>坚韧</span><i><b style={{ width: paragon === "low" ? "91%" : "82%" }} /></i><em>{paragon === "low" ? "91" : "82"}</em></div>
-            <div><span>机动</span><i><b style={{ width: mode === "speed" ? "95%" : "62%" }} /></i><em>{mode === "speed" ? "95" : "62"}</em></div>
+            <div><span>{t("app.fb04addb4c2654f5")}</span><i><b style={{ width: mode === "push" ? "94%" : "80%" }} /></i><em>{tr(mode === "push" ? "94" : "80")}</em></div>
+            <div><span>{t("app.8e44926ca5db650e")}</span><i><b style={{ width: paragon === "low" ? "91%" : "82%" }} /></i><em>{tr(paragon === "low" ? "91" : "82")}</em></div>
+            <div><span>{t("app.25ee118c551b966b")}</span><i><b style={{ width: mode === "speed" ? "95%" : "62%" }} /></i><em>{tr(mode === "speed" ? "95" : "62")}</em></div>
           </div>
 
           <ol className="rotation-list">
             {rotation.map(([title, action, reason], index) => (
               <li key={title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span>{tr(String(index + 1).padStart(2, "0"))}</span>
                 <div>
-                  <h3>{title}</h3>
-                  <p>{action}</p>
-                  <small><b>为什么：</b>{reason}</small>
+                  <h3>{tr(title)}</h3>
+                  <p>{tr(action)}</p>
+                  <small><b>{t("app.b1c77ff2030c90be")}</b>{tr(reason)}</small>
                 </div>
               </li>
             ))}
           </ol>
 
           <div className="ns-note">
-            <div className="switch-icon"><span>−</span><b>NS</b><span>+</span></div>
+            <div className="switch-icon"><span>{t("app.afba2418d6aec23d")}</span><b>{t("app.4b8f6e7e7d992196")}</b><span>{t("app.a318c24216defe20")}</span></div>
             <div>
-              <strong>主机操作提醒</strong>
-              <p>虹吸会自动锁定目标。面对怪堆中心再按住技能；若锁到边缘小怪，松开并重新调整摇杆方向，比硬拉视角更快。</p>
+              <strong>{t("app.22cdb60bedf6bb12")}</strong>
+              <p>{t("app.13af49f34504124f")}</p>
             </div>
           </div>
         </aside>
@@ -2610,19 +2616,19 @@ function HomeContent() {
         <article className="panel follower-panel" id="followers">
           <div className="panel-heading">
             <div>
-              <span className="section-index">05</span>
-              <h2>随从配装</h2>
+              <span className="section-index">{t("app.c97550ce8213ef5c")}</span>
+              <h2>{t("app.66c75e13cba8ba80")}</h2>
             </div>
-            <small>三名随从并列对比 · 悬停装备查看用途</small>
+            <small>{t("app.bfba2dbaab780ce1")}</small>
           </div>
-          <FollowerShowcase recommendedFollower={guide.follower} recommendation={guide.followerReason} />
+          <FollowerShowcase recommendedFollower={TRAGOUL_GUIDE.follower} recommendation={TRAGOUL_GUIDE.followerReason} />
         </article>
 
         <article className="panel gem-panel">
           <div className="panel-heading">
             <div>
-              <span className="section-index">06</span>
-              <h2>传奇宝石</h2>
+              <span className="section-index">{t("app.aacd834b5cdc64a3")}</span>
+              <h2>{t("app.4a2237392bed6450")}</h2>
             </div>
           </div>
           <div className="gem-list">
@@ -2633,7 +2639,7 @@ function HomeContent() {
             ].map(([name, effect, image]) => (
               <div key={name}>
                 <img src={image} alt="" />
-                <span><strong>{name}</strong><small>{effect}</small></span>
+                <span><strong>{tr(name)}</strong><small>{tr(effect)}</small></span>
               </div>
             ))}
           </div>
@@ -2642,15 +2648,16 @@ function HomeContent() {
 
       <footer>
         <div>
-          <span className="footer-mark">N</span>
-          <p><strong>圣休亚瑞秘典 · 私人原型</strong><small>{CURRENT_SEASON.platformLabel} · {SEASON_LABEL} · 仅单人玩法</small></p>
+          <span className="footer-mark">{t("app.8ce86a6ae65d3692")}</span>
+          <p><strong>{t("app.9f4fc445772ed972")}</strong><small>{tr(CURRENT_SEASON.platformLabel)}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(SEASON_LABEL)}{" "}{t("app.da6d3c7ddf710a92")}</small></p>
         </div>
-        <p>游戏名称、图像与素材归 Blizzard Entertainment 所有。本页用于个人攻略整理。</p>
+        <p>{t("app.0e9b157227a654bf")}</p>
       </footer>
     </main>
   );
 }
 
 export default function Home() {
+
   return <SiteSettingsProvider><HomeContent /></SiteSettingsProvider>;
 }

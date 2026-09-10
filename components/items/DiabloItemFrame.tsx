@@ -1,3 +1,7 @@
+"use client";
+
+import { useI18n } from "../../app/i18n/I18nProvider";
+
 export type DiabloItemQuality = "common" | "crafted" | "legendary" | "set";
 export type DiabloItemShape = "default" | "square" | "big" | "fill";
 export type DiabloItemFrameSize = "sm" | "md" | "lg" | "fill";
@@ -32,11 +36,12 @@ export function DiabloItemFrame({
   label?: string;
   fit?: "native" | "contain";
 }) {
+  const { tr, entity, locale } = useI18n();
   return (
     <span
       className={`diablo-item-frame frame-shape-${shape} frame-size-${size} quality-${quality} frame-fit-${fit} ${className}`.trim()}
       data-socket-count={sockets.length}
-      aria-label={label}
+      aria-label={tr(label)}
       aria-hidden={label ? undefined : true}
     >
       <span className="diablo-item-frame-surface">
@@ -44,7 +49,7 @@ export function DiabloItemFrame({
         <span className="diablo-item-frame-sheen" aria-hidden="true" />
       </span>
       {sockets.length > 0 && (
-        <span className="diablo-item-frame-sockets" aria-label={sockets.map((socket) => socket.label).join("、")}>
+        <span className="diablo-item-frame-sockets" aria-label={sockets.map((socket) => entity({...socket, name: socket.label})).join(locale === "enUS" ? ", " : "、")}>
           {sockets.map((socket, index) => <span key={`${socket.label}-${index}`}><img src={socket.image} alt="" /></span>)}
         </span>
       )}
