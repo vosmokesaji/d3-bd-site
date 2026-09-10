@@ -51,16 +51,15 @@ export function BuildTableSheet({ data, followerKey = data.follower }: { data: B
   const follower = FOLLOWERS[followerKey];
   return <article className="bd-sheet" aria-label={tr(`${data.name} BD 表格`)}>
     <header className="bd-sheet-header">
-      <div><span className="bd-sheet-eyebrow">{t("app.166f372cd4bf81b0")}{" "}{tr(data.className)}</span><h2>{entity(data, "name")}</h2><p>{tr(data.variant)}</p></div>
+      <div className="bd-sheet-heading"><span className="bd-sheet-eyebrow">{t("app.166f372cd4bf81b0")}{" "}{tr(data.className)}</span><div className="bd-sheet-title-line"><h2>{entity(data, "name")}</h2><p>{tr(data.variant)}</p></div><div className="bd-sheet-intro">{tr(data.summary)}</div></div>
       <div className="bd-sheet-season"><strong>{tr(data.season)}</strong><span>{t("app.8e50af4e2bef3df6")}</span></div>
     </header>
-    <div className="bd-sheet-intro">{tr(data.summary)}</div>
     {data.notice && <p className="bd-sheet-notice">{tr(data.notice)}</p>}
     <div className="bd-sheet-columns">
       <div>
         <h3 className="bd-sheet-section"><span>{t("app.938db8c9f82c8cb5")}</span>{" "}{t("app.3ab9f7ee59e79982")}{" "}<small><b className="bd-sheet-rare">{t("app.878711c2f76c167a")}</b> <b className="bd-sheet-set">{t("app.62e38cb5bca949b4")}</b> <b className="bd-sheet-legendary">{t("app.34a721a9751de83d")}</b>{" "}{t("app.0dc0c2054e22ae18")}</small></h3>
         <table className="bd-sheet-gear"><colgroup><col className="bd-sheet-slot-col" /><col className="bd-sheet-item-col" /><col /><col className="bd-sheet-gem-col" /></colgroup><thead><tr><th scope="col">{t("app.c4322846fc0283a7")}</th><th scope="col">{t("app.144a327039fee815")}</th><th scope="col">{t("app.8151bb7f2be16abf")}</th><th scope="col">{t("app.b4bcba98915eb718")}</th></tr></thead><tbody>
-          {data.gear.map((item) => <tr key={item.id}><th scope="row">{tr(item.slot)}</th><td><TableEntity name={item.name} image={item.image} quality={item.quality} /><small className="bd-sheet-quality">{tr(item.quality === "set" ? "套装" : item.quality === "rare" ? "稀有" : "传奇")}</small></td><td><ol className="bd-sheet-affixes">{[...new Set(item.affixes)].map((affix, index) => <li key={affix}><b>{tr(index + 1)}</b>{tr(affix)}</li>)}</ol>{item.warning && <small className="bd-sheet-warning">{tr(item.warning)}</small>}</td><td><GemList sockets={item.sockets} /></td></tr>)}
+          {data.gear.map((item) => <tr key={item.id}><th scope="row">{tr(item.slot)}</th><td><div className="bd-sheet-item-name"><TableEntity name={item.name} image={item.image} quality={item.quality} /><small className="bd-sheet-quality">{tr(item.quality === "set" ? "套装" : item.quality === "rare" ? "稀有" : "传奇")}</small></div></td><td><ol className="bd-sheet-affixes">{[...new Set(item.affixes)].map((affix, index) => <li key={affix}><b>{tr(index + 1)}</b>{tr(affix)}</li>)}</ol>{item.warning && <small className="bd-sheet-warning">{tr(item.warning)}</small>}</td><td><GemList sockets={item.sockets} /></td></tr>)}
         </tbody></table>
         <h3 className="bd-sheet-section"><span>{t("app.a953f09a1b6b6725")}</span>{" "}{t("app.ed6a21fda639bbb9")}</h3>
         <table className="bd-sheet-skills"><thead><tr><th scope="col">{t("app.edb7b4b3a9e3905c")}</th><th scope="col">{t("app.f360525ced2b6a62")}</th><th scope="col">{t("app.a63a1030ef50eb8d")}</th></tr></thead><tbody>

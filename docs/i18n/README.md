@@ -11,6 +11,7 @@
 - `app/i18n/client-texts.json`：2,581 条完整描述、属性或经验证的组合文本；数值取自原站。
 - `app/i18n/zhCN.json`、`zhTW.json`、`enUS.json`：应用文案。`manual.json` 保存人工编辑的覆盖；`site-terms.json` 是“冲层、速刷、低巅峰”等本站用语，均不声称是官方原文。
 - `app/i18n/source-index.json`：原站文案到稳定 `app.<hash>` 键的索引。业务数据保留原始 ID、路由、关联和资源路径，在显示处本地化。
+- `docs/i18n/translation-source-report.md`：按条数说明完整官方文本、官方术语、混合文案及本站重新翻译内容。
 
 ## 来源与匹配规则
 
