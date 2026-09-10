@@ -11,25 +11,30 @@
 | UI ID | 属性 | evidenceType | 直接证据 / sourceValue | adoptedValue / implementationValue | 级别 | 核对方式 |
 |---|---|---|---|---|---|---|
 | UI-LAYOUT-01 | 插入与定位 | source | app/page.tsx UnifiedBuildDetail 配置栏后的 workbench，普通流 | 同位置切换表格，grid-column 1 / -1，grid-row 4 / 同采用值（已实现） | core | SSR 与结构检查 |
-| UI-LAYOUT-02 | 宽度 | inferred | N/A；新密集表格 | 页面 100%，表格 min-width 1080px，导出 1440px / 同采用值（已实现） | core | 宽屏及窄屏横向滚动 |
+| UI-LAYOUT-02 | 宽度 | inferred | N/A；新密集表格 | 页面 100%，表格 min-width 1240px，导出 1440px / 同采用值（已实现） | core | 宽屏及窄屏横向滚动 |
 | UI-LAYOUT-03 | 高度 | inferred | N/A；长文本不得截断 | auto / 同采用值（已实现） | core | 长文自适应 |
-| UI-LAYOUT-04 | 分栏 | inferred | N/A；参考图装备与手法相邻 | 装备 2.15fr、侧栏 .85fr / 同采用值（已实现） | core | 表格与侧栏顶对齐 |
-| UI-LAYOUT-05 | 内边距 | explicit | 用户要求导出图减少无效留白 | 页头 14px 18px，单元格 5px 8px，分区 7px 10px / 同采用值（已实现） | core | 对齐与可读性 |
+| UI-LAYOUT-04 | 分栏 | explicit | 用户要求魔盒、随从移到被动下方 | 主内容单列；被动下方魔盒与随从各占 1fr / 同采用值（已实现） | core | 信息顺序与宽度检查 |
+| UI-LAYOUT-05 | 内边距 | explicit | 用户要求导出图减少无效留白 | 页头 14px 18px，单元格 4px 7px，分区 7px 10px / 同采用值（已实现） | core | 对齐与可读性 |
 | UI-LAYOUT-06 | 间距 | explicit | 用户要求更紧凑并保持层次 | 图文 gap 7px，控制区 gap 6px / 同采用值（已实现） | warning | 图文不重叠 |
 | UI-SURFACE-01 | 背景 | source | globals.css :root --ink #07090a | var(--ink) / 同采用值（已实现） | warning | 实现检查 |
 | UI-SURFACE-02 | 边框 | source | globals.css :root --line rgba(170,139,84,.27) | 1px solid var(--line) / 同采用值（已实现） | warning | 实现检查 |
 | UI-SURFACE-03 | 圆角 | inferred | N/A；暗黑三硬质表格 | 0 / 同采用值（已实现） | warning | 无圆角卡片 |
 | UI-SURFACE-04 | 阴影 | inferred | N/A；框内金属包边 | inset 0 0 0 3px #07090a, inset 0 0 0 4px var(--line) / 同采用值（已实现） | warning | 导出包含内框 |
-| UI-TYPOGRAPHY-01 | 正文字号 | source | globals.css :root --text-body-size 16px | 16px / 同采用值（已实现） | core | 不通过缩放减小字体 |
-| UI-TYPOGRAPHY-02 | 表格字号 | source | globals.css :root --text-small-size 14px | 14px / 同采用值（已实现） | core | 长装备名换行 |
-| UI-TYPOGRAPHY-03 | 行高 | explicit | 用户要求次要信息更紧凑 | 主表 1.45，次要说明 1.35–1.4 / 同采用值（已实现） | warning | 实现检查 |
+| UI-TYPOGRAPHY-01 | 主要字号 | explicit | 用户要求只保留两种字号 | 14px / 同采用值（已实现） | core | 浏览器计算样式去重 |
+| UI-TYPOGRAPHY-02 | 说明字号 | explicit | 用户要求只保留两种字号 | 11px / 同采用值（已实现） | core | 浏览器计算样式去重 |
+| UI-TYPOGRAPHY-03 | 行高 | explicit | 用户要求次要信息更紧凑 | 主要内容 1.35，说明 1.15–1.4 / 同采用值（已实现） | warning | 实现检查 |
 | UI-TYPOGRAPHY-04 | 字重 | inferred | N/A；标题强于说明 | 标题 600、正文 400 / 同采用值（已实现） | warning | 实现检查 |
 | UI-TYPOGRAPHY-05 | 文本颜色 | source | globals.css :root --parchment #d4c5a8，--gold-bright #f0d28b | 正文 parchment，标题 gold-bright / 同采用值（已实现） | warning | 实现检查 |
-| UI-TYPOGRAPHY-06 | 品质颜色 | inferred | N/A；D3 套装绿、传奇橙、稀有黄 | #83cf60 / #e9ad61 / #efe16f / 同采用值（已实现） | core | 同时显示品质文字 |
+| UI-TYPOGRAPHY-06 | 品质颜色 | explicit | 用户要求去掉稀有，增加铁匠锻造蓝色 | 套装 #83cf60、传奇 #e9ad61、铁匠锻造 #61aee8 / 同采用值（已实现） | core | 图例和锻造装备文字 |
 | UI-TYPOGRAPHY-07 | 对齐 | inferred | N/A；装备扫描表 | 左对齐、单元格垂直居中 / 同采用值（已实现） | warning | 表头和内容对齐 |
 | UI-TYPOGRAPHY-08 | 换行溢出 | inferred | N/A；完整攻略和导出要求 | overflow-wrap anywhere，无省略，外层 overflow-x auto / 同采用值（已实现） | core | 长文不截断 |
 | UI-ASSET-01 | 游戏素材 | explicit | 用户要求有图则图文；public/d3 现有素材 | 装备 / 宝石 / 技能 / 被动 / 萃取复用真实图；符文只用已知映射，否则通用符文标记 / 同采用值（已实现） | core | 所有素材路径存在性检查 |
-| UI-ASSET-02 | 图片尺寸 | explicit | 用户要求导出图减少留空 | 30×36 装备框、28×28 技能、20×20 宝石 / 同采用值（已实现） | warning | contain 不变形 |
+| UI-ASSET-02 | 图片尺寸 | explicit | 用户要求装备图更大并取消边框 | 44×48 无框装备图、28×28 技能、20×20 宝石 / 同采用值（已实现） | warning | contain 不变形 |
+| UI-CONTENT-01 | 装备表列 | explicit | 用户要求词缀分列并补充获取/注意事项 | 部位、装备、四个等宽无序号词缀、精简宝石、获取/避坑；词缀下方标注单件最大值 / 同采用值（已实现） | core | 表头、各装备行与导出图 |
+| UI-CONTENT-02 | 普通宝石文案 | explicit | 用户示例“紫 - 生命%” | 颜色 · 作用，保留数量；传奇宝石仍显示名称 / 同采用值（已实现） | core | 三语静态渲染 |
+| UI-CONTENT-03 | 词缀缩写 | explicit | 用户给出智、体、敏、CDR、AD、ED 等示例 | 常用词缀采用游戏社区缩写，表头解释英文缩写 / 同采用值（已实现） | core | 首行文字与缩写图例 |
+| UI-CONTENT-04 | 功能图例 | explicit | 用户要求主动、被动、萃取统一标记功能 | 主要输出、增伤、减伤、位移、控制共用五色标签和淡色底纹 / 同采用值（已实现） | core | 三个区块 class 与图例 |
+| UI-CONTENT-05 | 技能列 | explicit | 用户要求删除使用要点 | 主动技能表仅保留技能与符文两列 / 同采用值（已实现） | core | 表头与列数 |
 | UI-INTERACTION-01 | 视图 | explicit | 用户要求新增 BD 表格视图 | 配置栏按钮切换，aria-pressed / 同采用值（已实现） | core | SSR table 参数 |
 | UI-INTERACTION-02 | 随从 | explicit | 魔女 / 盗贼 / 圣殿骑士切换 | 同一表格更新装备与技能 / 同采用值（已实现） | core | 三随从分别渲染 |
 | UI-INTERACTION-03 | 导出 | explicit | 当前 / 全部 BD 图片 | 单 PNG / 职业目录 ZIP、进度、取消、失败报告 / 同采用值（已实现） | core | 导出任务与 ZIP 数据检查 |
@@ -47,6 +52,6 @@
 - 全仓 TypeScript 检查通过。
 - 新增导出模块与表格模块 ESLint 无错误；保留原生 img 以适配本地游戏素材和 DOM 导出（Next 图片优化提示属 warning）。
 
-补充映射：摘要并入页头，标题保持 27px，装备/技能名称和关键信息保持明亮；词缀、使用说明、随从理由和循环补充说明使用 12–13px 与较暗的灰褐色。输出循环宽屏每行三项，最后两项自动各占半行，最后一项自动占满，减少空白。UI-INTERACTION-03 离屏宿主 absolute left:-100000px top:0 width:1440px，aria-hidden、不参与页面布局、finally 清理。所有新增 CSS 限定在 bd-sheet / bd-table 前缀下。
+补充映射：摘要并入页头，层级改由字重、颜色和间距表达；整个表格只使用 14px 主要内容与 11px 说明两档字号。词缀固定四列，符文图保持完整 42×42 雪碧图尺寸。输出循环宽屏每行三项，最后两项自动各占半行，最后一项自动占满，减少空白。UI-INTERACTION-03 离屏宿主 absolute left:-100000px top:0 width:1440px，aria-hidden、不参与页面布局、finally 清理。所有新增 CSS 限定在 bd-sheet / bd-table 前缀下。
 
 导出库依据：[html-to-image](https://github.com/bubkoo/html-to-image) 的 toBlob、pixelRatio 和 fetchRequestInit；[fflate](https://github.com/101arrowz/fflate) 的 zipSync 和 UTF-8 文件名。PNG 已压缩，ZIP 使用 STORE，避免重复压缩。

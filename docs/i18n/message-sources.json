@@ -150,6 +150,7 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "evaluated data factories"
   ],
   "app.b6a8430c6dd3b3d1": [
@@ -197,6 +198,7 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "components/followers/FollowerPaperdoll.tsx",
     "evaluated data factories"
   ],
@@ -237,6 +239,7 @@
   "app.34c1168e95dc3b9c": [
     "app/data/barbarian-builds.ts",
     "app/data/necromancer-builds.ts",
+    "components/build/BuildTableView.tsx",
     "evaluated data factories"
   ],
   "app.06a2308373bf6ac0": [
@@ -639,6 +642,7 @@
     "app/data/necromancer-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "components/followers/FollowerPaperdoll.tsx",
     "components/items/DiabloItemFrame.tsx",
     "evaluated data factories"
@@ -938,6 +942,7 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "evaluated data factories"
   ],
   "app.15433749f3d5480c": [
@@ -994,6 +999,7 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "components/followers/FollowerPaperdoll.tsx",
     "evaluated data factories",
     "public/d3/library/items.json"
@@ -12125,7 +12131,9 @@
     "app/data/monk-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
-    "evaluated data factories"
+    "components/build/BuildTableView.tsx",
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.ed90774fe10d5c00": [
     "app/data/demon-hunter-builds.ts",
@@ -13303,6 +13311,7 @@
   "app.0f6a012a7280ea97": [
     "app/data/demon-hunter-builds.ts",
     "app/data/necromancer-builds.ts",
+    "components/build/BuildTableView.tsx",
     "evaluated data factories"
   ],
   "app.9d5bf953a0b98b80": [
@@ -25098,7 +25107,9 @@
   ],
   "app.b77b702fb76360af": [
     "app/data/wizard-builds.ts",
-    "evaluated data factories"
+    "components/build/BuildTableView.tsx",
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.43e32727fe706a2b": [
     "app/data/wizard-builds.ts",
@@ -27195,9 +27206,10 @@
     "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.393b7cabe3189b49": [
+  "app.07f132b83944cde0": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.2d9cd92dba924c34": [
     "app/page.tsx",
@@ -27384,9 +27396,10 @@
     "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.a791531166c14f43": [
+  "app.452876e1a4349ed4": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.a1cd160423d42d7b": [
     "app/page.tsx",
@@ -28440,8 +28453,9 @@
   "app.525ba0de08cc3572": [
     "app/page.tsx"
   ],
-  "app.ecf5d062e7d00eab": [
-    "app/page.tsx"
+  "app.00211029c8e9a4fa": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.78d88adb76872ab5": [
     "app/page.tsx"
@@ -28655,6 +28669,7 @@
   ],
   "app.a46603950c1df4c0": [
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "components/build/GearDetailPanel.tsx"
   ],
   "app.ad3c4f2cd08bb234": [
@@ -28818,10 +28833,14 @@
     "app/page.tsx"
   ],
   "app.bbd5f83fca5e12c4": [
-    "app/page.tsx"
+    "app/page.tsx",
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
   ],
   "app.74bc91c57e366677": [
-    "app/page.tsx"
+    "app/page.tsx",
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
   ],
   "app.76163d1da2de1c8d": [
     "app/page.tsx"
@@ -29067,6 +29086,94 @@
     "components/build/BuildAbilitiesPanel.tsx",
     "components/build/BuildTableView.tsx"
   ],
+  "app.9ce22316bf95f9af": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.4f51d0285e88c4c9": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.fe556b299a239e49": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.ff1a4c12532f968a": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.5c179fce17ab8bb7": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.e29819879046dd06": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.d4705df97e2019b5": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.d08d660b7de4e231": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.7693917a5ab03b42": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.59e525009d405ccc": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.c750f692ee895ded": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.b9670616856719e9": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.bb7963849dab4e67": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.f5276534dcfe2507": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.bd01642faa631fcf": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.7521e8c77256ca49": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.06ef8910ea79e81a": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.c9c84303e00d5896": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.1f960f0178bdee4c": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.83049af977274ef6": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.abc511ca956e37e4": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.5579548d49f2e137": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.bda050585a00f0f6": [
     "components/build/BuildTableView.tsx"
   ],
@@ -29083,17 +29190,15 @@
     "components/build/BuildTableView.tsx",
     "app/i18n/manual.json"
   ],
-  "app.878711c2f76c167a": [
-    "components/build/BuildTableView.tsx"
-  ],
   "app.62e38cb5bca949b4": [
     "components/build/BuildTableView.tsx"
   ],
   "app.34a721a9751de83d": [
     "components/build/BuildTableView.tsx"
   ],
-  "app.0dc0c2054e22ae18": [
-    "components/build/BuildTableView.tsx"
+  "app.c3adf76ae59a8543": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
   ],
   "app.c4322846fc0283a7": [
     "components/build/BuildTableView.tsx"
@@ -29103,19 +29208,22 @@
     "components/build/GearDetailPanel.tsx",
     "app/i18n/manual.json"
   ],
+  "app.1409ae7246d9586d": [
+    "components/build/BuildTableView.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.b4bcba98915eb718": [
     "components/build/BuildTableView.tsx"
   ],
-  "app.050c11f35aa1955b": [
-    "components/build/BuildTableView.tsx"
+  "app.22d7a734fbd07997": [
+    "components/build/BuildTableView.tsx",
+    "components/build/GearDetailPanel.tsx",
+    "app/i18n/manual.json"
   ],
   "app.edb7b4b3a9e3905c": [
     "components/build/BuildTableView.tsx"
   ],
   "app.f360525ced2b6a62": [
-    "components/build/BuildTableView.tsx"
-  ],
-  "app.a63a1030ef50eb8d": [
     "components/build/BuildTableView.tsx"
   ],
   "app.0b8efa5a3bf10441": [
@@ -29193,10 +29301,6 @@
   ],
   "app.019c1b4eda17a160": [
     "components/build/GearDetailPanel.tsx"
-  ],
-  "app.22d7a734fbd07997": [
-    "components/build/GearDetailPanel.tsx",
-    "app/i18n/manual.json"
   ],
   "app.01beb6a296240ebb": [
     "components/build/KanaiCubePanel.tsx"

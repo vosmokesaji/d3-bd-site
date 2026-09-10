@@ -289,7 +289,7 @@ const GEAR: Record<string, Gear> = {
     effect: "鲜血虹吸多连两个目标；受虹吸影响的目标承受最高300%增伤，单体时翻倍。",
     affixes: ["高白字伤害", "范围伤害", "伤害%", "智力", "拉玛兰迪打孔"],
     acquisition: ["黄装升级：必须使用70级单手镰刀", "不要升级双手镰刀或普通单手武器", "死灵法师角色升级可缩小掉落池"],
-    warning: "关键分类：单手镰刀。不是任意镰刀。",
+    warning: "底材限定：70级单手镰刀。",
   },
   "iron-rose": {
     id: "iron-rose",
@@ -445,7 +445,7 @@ const CUBE_POWERS: Record<string, Omit<CubePower, "slot">> = {
     name: "血潮利刃",
     image: "/d3/bloodtide-blade.png",
     original: "25码内每个敌人使死亡新星的伤害提高300%–400%，最多计算25个敌人。",
-    summary: "把怪聚密不是手感问题，而是直接把新星推入最高密度乘区。",
+    summary: "拉密怪群，让死亡新星吃满25码内敌人数乘区。",
   },
   dayntee: {
     id: "dayntee",
@@ -1668,7 +1668,7 @@ const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   name: "塔格奥 · 死亡新星",
   set: "塔格奥的化身",
   core: "鲜血虹吸 → 铁玫瑰 → 死亡新星",
-  summary: "让每一滴鲜血都成为一次爆炸。装备、技能与威能不是清单，而是一张可以追溯的因果图。",
+  summary: "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
   difficulty: "低操作 · 强 NS 适配",
   follower: "魔女",
   followerReason: FOLLOWERS.enchantress.note,

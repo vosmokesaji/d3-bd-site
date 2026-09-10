@@ -52,7 +52,19 @@ test("the table renders complete text, socket counts, rune and all three followe
     for (const skill of data.skills) assert.ok(html.includes(createTranslator("zhCN").entity(skill,"rune")));
     for (const step of data.rotation) assert.ok(html.includes(createTranslator("zhCN").tr(step.action)));
     assert.match(html, /×3/);
+    assert.match(html, /紫 · 生命%/);
+    assert.doesNotMatch(html, /无瑕(?:的)?皇家紫宝石/);
+    assert.match(html, /怎么获得/);
+    assert.match(html, /血岩碎片：赌头盔/);
     assert.match(html, /词缀优先级/);
+    assert.match(html, /下方小字为单件最大值/);
+    assert.match(html, /<strong>技能伤<\/strong><small>15%<\/small>/);
+    assert.match(html, /<strong>暴率<\/strong><small>6%<\/small>/);
+    assert.doesNotMatch(html, /<li><b>[1-4]<\/b><span>/);
+    assert.match(html, /CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害/);
+    assert.match(html, /主要输出/);
+    assert.doesNotMatch(html, /使用要点/);
+    assert.match(html, /bd-sheet-lower-grid/);
     assert.match(html, /输出手法/);
   }
 });

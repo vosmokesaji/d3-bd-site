@@ -11566,7 +11566,12 @@
   },
   "app.e627c1d2a20aa719": {
     "source": "铁匠锻造",
-    "template": "铁匠锻造"
+    "template": "铁匠锻造",
+    "manual": {
+      "zhCN": "铁匠锻造",
+      "zhTW": "鐵匠鍛造",
+      "enUS": "Crafted"
+    }
   },
   "app.ed90774fe10d5c00": {
     "source": "不要黄装升级",
@@ -24450,7 +24455,12 @@
   },
   "app.b77b702fb76360af": {
     "source": "主要输出",
-    "template": "主要输出"
+    "template": "主要输出",
+    "manual": {
+      "zhCN": "主要输出",
+      "zhTW": "主要輸出",
+      "enUS": "Main damage"
+    }
   },
   "app.43e32727fe706a2b": {
     "source": "护盾卡里尼",
@@ -26552,9 +26562,14 @@
     "source": "死灵法师角色升级可缩小掉落池",
     "template": "[[Bnet_Classes/Necromancer]]角色升级可缩小掉落池"
   },
-  "app.393b7cabe3189b49": {
-    "source": "关键分类：单手镰刀。不是任意镰刀。",
-    "template": "关键分类：单手镰刀。不是任意镰刀。"
+  "app.07f132b83944cde0": {
+    "source": "底材限定：70级单手镰刀。",
+    "template": "底材限定：70级单手镰刀。",
+    "manual": {
+      "zhCN": "底材限定：70级单手镰刀。",
+      "zhTW": "底材限定：70級單手鐮刀。",
+      "enUS": "Required base: a level 70 one-handed scythe."
+    }
   },
   "app.2d9cd92dba924c34": {
     "source": "鲜血虹吸100%触发免费鲜血新星；损失生命还能叠加新星伤害。",
@@ -26743,9 +26758,14 @@
     "source": "25码内每个敌人使死亡新星的伤害提高300%–400%，最多计算25个敌人。",
     "template": "[[Number/25/yard]]内每个敌人使[[Powers/P6_Necro_BloodNova_name]]的伤害提高300%–400%，最多计算25个敌人。"
   },
-  "app.a791531166c14f43": {
-    "source": "把怪聚密不是手感问题，而是直接把新星推入最高密度乘区。",
-    "template": "把怪聚密不是手感问题，而是直接把新星推入最高密度[[Site/multiplier]]。"
+  "app.452876e1a4349ed4": {
+    "source": "拉密怪群，让死亡新星吃满25码内敌人数乘区。",
+    "template": "拉密怪群，让[[Powers/P6_Necro_BloodNova_name]]吃满[[Number/25/yard]]内敌人数[[Site/multiplier]]。",
+    "manual": {
+      "zhCN": "拉密怪群，让死亡新星吃满25码内敌人数乘区。",
+      "zhTW": "聚攏怪群，讓死亡新星吃滿25碼內的敵人數量乘區。",
+      "enUS": "Pack enemies tightly so Death Nova gets the full enemy-count multiplier within 25 yards."
+    }
   },
   "app.a1cd160423d42d7b": {
     "source": "当有敌人受到你的诅咒时，获得40%–50%额外伤害减免。",
@@ -28049,9 +28069,14 @@
     "source": "鲜血虹吸 → 铁玫瑰 → 死亡新星",
     "template": "[[Powers/P6_Necro_SiphonBlood_name]] → [[Items/P74_Unique_Phylactery_04]] → [[Powers/P6_Necro_BloodNova_name]]"
   },
-  "app.ecf5d062e7d00eab": {
-    "source": "让每一滴鲜血都成为一次爆炸。装备、技能与威能不是清单，而是一张可以追溯的因果图。",
-    "template": "让每一滴鲜血都成为一次爆炸。装备、技能与威能不是清单，而是一张可以追溯的因果图。"
+  "app.00211029c8e9a4fa": {
+    "source": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
+    "template": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
+    "manual": {
+      "zhCN": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
+      "zhTW": "讓每一滴鮮血都成為一次爆炸。裝備、技能與威能共同組成一張可追溯的因果圖。",
+      "enUS": "Turn every drop of blood into an explosion. Gear, skills, and powers form one traceable chain of cause and effect."
+    }
   },
   "app.78d88adb76872ab5": {
     "source": "低操作 · 强 NS 适配",
@@ -28584,11 +28609,21 @@
   },
   "app.bbd5f83fca5e12c4": {
     "source": "增伤",
-    "template": "[[Site/damage-boost]]"
+    "template": "[[Site/damage-boost]]",
+    "manual": {
+      "zhCN": "增伤",
+      "zhTW": "增傷",
+      "enUS": "Damage buff"
+    }
   },
   "app.74bc91c57e366677": {
     "source": "减伤",
-    "template": "[[Site/damage-reduction]]"
+    "template": "[[Site/damage-reduction]]",
+    "manual": {
+      "zhCN": "减伤",
+      "zhTW": "減傷",
+      "enUS": "Defense"
+    }
   },
   "app.76163d1da2de1c8d": {
     "source": "套装联动",
@@ -28912,6 +28947,204 @@
     "source": "被动技能",
     "template": "被动技能"
   },
+  "app.9ce22316bf95f9af": {
+    "source": "位移",
+    "template": "位移",
+    "manual": {
+      "zhCN": "位移",
+      "zhTW": "位移",
+      "enUS": "Mobility"
+    }
+  },
+  "app.4f51d0285e88c4c9": {
+    "source": "控制",
+    "template": "控制",
+    "manual": {
+      "zhCN": "控制",
+      "zhTW": "控制",
+      "enUS": "Control"
+    }
+  },
+  "app.fe556b299a239e49": {
+    "source": "孔×{0}",
+    "template": "孔×{0}",
+    "manual": {
+      "zhCN": "孔×{0}",
+      "zhTW": "孔×{0}",
+      "enUS": "Sockets ×{0}"
+    }
+  },
+  "app.ff1a4c12532f968a": {
+    "source": "智",
+    "template": "智",
+    "manual": {
+      "zhCN": "智",
+      "zhTW": "智",
+      "enUS": "INT"
+    }
+  },
+  "app.5c179fce17ab8bb7": {
+    "source": "力",
+    "template": "力",
+    "manual": {
+      "zhCN": "力",
+      "zhTW": "力",
+      "enUS": "STR"
+    }
+  },
+  "app.e29819879046dd06": {
+    "source": "敏",
+    "template": "敏",
+    "manual": {
+      "zhCN": "敏",
+      "zhTW": "敏",
+      "enUS": "DEX"
+    }
+  },
+  "app.d4705df97e2019b5": {
+    "source": "體",
+    "template": "體",
+    "manual": {
+      "zhCN": "体",
+      "zhTW": "體",
+      "enUS": "VIT"
+    }
+  },
+  "app.d08d660b7de4e231": {
+    "source": "体",
+    "template": "体",
+    "manual": {
+      "zhCN": "体",
+      "zhTW": "體",
+      "enUS": "VIT"
+    }
+  },
+  "app.7693917a5ab03b42": {
+    "source": "爆率",
+    "template": "爆率",
+    "manual": {
+      "zhCN": "暴率",
+      "zhTW": "爆率",
+      "enUS": "CHC"
+    }
+  },
+  "app.59e525009d405ccc": {
+    "source": "暴率",
+    "template": "暴率",
+    "manual": {
+      "zhCN": "暴率",
+      "zhTW": "爆率",
+      "enUS": "CHC"
+    }
+  },
+  "app.c750f692ee895ded": {
+    "source": "爆伤",
+    "template": "爆伤",
+    "manual": {
+      "zhCN": "爆伤",
+      "zhTW": "爆傷",
+      "enUS": "CHD"
+    }
+  },
+  "app.b9670616856719e9": {
+    "source": "孔",
+    "template": "孔",
+    "manual": {
+      "zhCN": "孔",
+      "zhTW": "孔",
+      "enUS": "Socket"
+    }
+  },
+  "app.bb7963849dab4e67": {
+    "source": "白字范围",
+    "template": "白字范围",
+    "manual": {
+      "zhCN": "白字范围",
+      "zhTW": "白字範圍",
+      "enUS": "Damage range"
+    }
+  },
+  "app.f5276534dcfe2507": {
+    "source": "白字",
+    "template": "白字",
+    "manual": {
+      "zhCN": "白字",
+      "zhTW": "白字",
+      "enUS": "Weapon damage"
+    }
+  },
+  "app.bd01642faa631fcf": {
+    "source": "技能伤",
+    "template": "技能伤",
+    "manual": {
+      "zhCN": "技能伤",
+      "zhTW": "技能傷",
+      "enUS": "Skill damage"
+    }
+  },
+  "app.7521e8c77256ca49": {
+    "source": "{0}孔",
+    "template": "{0}孔",
+    "manual": {
+      "zhCN": "{0}孔",
+      "zhTW": "{0}孔",
+      "enUS": "{0} sockets"
+    }
+  },
+  "app.06ef8910ea79e81a": {
+    "source": "1孔",
+    "template": "1孔",
+    "manual": {
+      "zhCN": "1孔",
+      "zhTW": "1孔",
+      "enUS": "1 socket"
+    }
+  },
+  "app.c9c84303e00d5896": {
+    "source": "满特效",
+    "template": "满特效",
+    "manual": {
+      "zhCN": "满特效",
+      "zhTW": "滿特效",
+      "enUS": "Max power"
+    }
+  },
+  "app.1f960f0178bdee4c": {
+    "source": "满白字",
+    "template": "满白字",
+    "manual": {
+      "zhCN": "满白字",
+      "zhTW": "滿白字",
+      "enUS": "Max weapon damage"
+    }
+  },
+  "app.83049af977274ef6": {
+    "source": "满值",
+    "template": "满值",
+    "manual": {
+      "zhCN": "满值",
+      "zhTW": "滿值",
+      "enUS": "Max roll"
+    }
+  },
+  "app.abc511ca956e37e4": {
+    "source": "满",
+    "template": "满",
+    "manual": {
+      "zhCN": "满",
+      "zhTW": "滿",
+      "enUS": "Max"
+    }
+  },
+  "app.5579548d49f2e137": {
+    "source": "滿",
+    "template": "滿",
+    "manual": {
+      "zhCN": "满",
+      "zhTW": "滿",
+      "enUS": "Max"
+    }
+  },
   "app.bda050585a00f0f6": {
     "source": "—",
     "template": "—"
@@ -28935,10 +29168,6 @@
       "enUS": "Equipment and gems"
     }
   },
-  "app.878711c2f76c167a": {
-    "source": "● 稀有",
-    "template": "● 稀有"
-  },
   "app.62e38cb5bca949b4": {
     "source": "● 套装",
     "template": "● 套装"
@@ -28947,9 +29176,14 @@
     "source": "● 传奇",
     "template": "● 传奇"
   },
-  "app.0dc0c2054e22ae18": {
-    "source": "· 词缀由高到低",
-    "template": "· 词缀由高到低"
+  "app.c3adf76ae59a8543": {
+    "source": "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害",
+    "template": "CDR=[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]] · AD=[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]] · ED=精英伤害",
+    "manual": {
+      "zhCN": "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害",
+      "zhTW": "CDR=冷卻縮減 · AD=範圍傷害 · ED=菁英傷害",
+      "enUS": "CDR=Cooldown · AD=Area Damage · ED=Elite Damage"
+    }
   },
   "app.c4322846fc0283a7": {
     "source": "部位",
@@ -28962,13 +29196,27 @@
       "enUS": "Affix priority"
     }
   },
+  "app.1409ae7246d9586d": {
+    "source": "下方小字为单件最大值",
+    "template": "下方小字为单件最大值",
+    "manual": {
+      "zhCN": "下方小字为单件最大值",
+      "zhTW": "下方小字為單件最大值",
+      "enUS": "Small text: per-item maximum"
+    }
+  },
   "app.b4bcba98915eb718": {
     "source": "镶嵌宝石",
     "template": "镶嵌宝石"
   },
-  "app.050c11f35aa1955b": {
-    "source": "稀有",
-    "template": "稀有"
+  "app.22d7a734fbd07997": {
+    "source": "怎么获得",
+    "template": "怎么获得",
+    "manual": {
+      "zhCN": "怎么获得",
+      "zhTW": "如何取得",
+      "enUS": "How to obtain"
+    }
   },
   "app.edb7b4b3a9e3905c": {
     "source": "主动技能",
@@ -28977,10 +29225,6 @@
   "app.f360525ced2b6a62": {
     "source": "技能符文",
     "template": "技能符文"
-  },
-  "app.a63a1030ef50eb8d": {
-    "source": "使用要点",
-    "template": "使用要点"
   },
   "app.0b8efa5a3bf10441": {
     "source": "03",
@@ -29083,15 +29327,6 @@
   "app.019c1b4eda17a160": {
     "source": "这件装备在 BD 里做什么",
     "template": "这件装备在 BD 里做什么"
-  },
-  "app.22d7a734fbd07997": {
-    "source": "怎么获得",
-    "template": "怎么获得",
-    "manual": {
-      "zhCN": "怎么获得",
-      "zhTW": "如何取得",
-      "enUS": "How to obtain"
-    }
   },
   "app.01beb6a296240ebb": {
     "source": "卡奈魔方",

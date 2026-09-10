@@ -1,4 +1,72 @@
 {
+  "智": { "zhCN": "智", "zhTW": "智", "enUS": "INT" },
+  "力": { "zhCN": "力", "zhTW": "力", "enUS": "STR" },
+  "敏": { "zhCN": "敏", "zhTW": "敏", "enUS": "DEX" },
+  "体": { "zhCN": "体", "zhTW": "體", "enUS": "VIT" },
+  "體": { "zhCN": "体", "zhTW": "體", "enUS": "VIT" },
+  "暴率": { "zhCN": "暴率", "zhTW": "爆率", "enUS": "CHC" },
+  "爆率": { "zhCN": "暴率", "zhTW": "爆率", "enUS": "CHC" },
+  "爆伤": { "zhCN": "爆伤", "zhTW": "爆傷", "enUS": "CHD" },
+  "孔": { "zhCN": "孔", "zhTW": "孔", "enUS": "Socket" },
+  "白字范围": { "zhCN": "白字范围", "zhTW": "白字範圍", "enUS": "Damage range" },
+  "白字": { "zhCN": "白字", "zhTW": "白字", "enUS": "Weapon damage" },
+  "技能伤": { "zhCN": "技能伤", "zhTW": "技能傷", "enUS": "Skill damage" },
+  "1孔": { "zhCN": "1孔", "zhTW": "1孔", "enUS": "1 socket" },
+  "满特效": { "zhCN": "满特效", "zhTW": "滿特效", "enUS": "Max power" },
+  "满白字": { "zhCN": "满白字", "zhTW": "滿白字", "enUS": "Max weapon damage" },
+  "满值": { "zhCN": "满值", "zhTW": "滿值", "enUS": "Max roll" },
+  "满": { "zhCN": "满", "zhTW": "滿", "enUS": "Max" },
+  "滿": { "zhCN": "满", "zhTW": "滿", "enUS": "Max" },
+  "孔×{0}": {
+    "zhCN": "孔×{0}",
+    "zhTW": "孔×{0}",
+    "enUS": "Sockets ×{0}"
+  },
+  "{0}孔": {
+    "zhCN": "{0}孔",
+    "zhTW": "{0}孔",
+    "enUS": "{0} sockets"
+  },
+  "主要输出": {
+    "zhCN": "主要输出",
+    "zhTW": "主要輸出",
+    "enUS": "Main damage"
+  },
+  "增伤": {
+    "zhCN": "增伤",
+    "zhTW": "增傷",
+    "enUS": "Damage buff"
+  },
+  "减伤": {
+    "zhCN": "减伤",
+    "zhTW": "減傷",
+    "enUS": "Defense"
+  },
+  "位移": {
+    "zhCN": "位移",
+    "zhTW": "位移",
+    "enUS": "Mobility"
+  },
+  "控制": {
+    "zhCN": "控制",
+    "zhTW": "控制",
+    "enUS": "Control"
+  },
+  "铁匠锻造": {
+    "zhCN": "铁匠锻造",
+    "zhTW": "鐵匠鍛造",
+    "enUS": "Crafted"
+  },
+  "下方小字为单件最大值": {
+    "zhCN": "下方小字为单件最大值",
+    "zhTW": "下方小字為單件最大值",
+    "enUS": "Small text: per-item maximum"
+  },
+  "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害": {
+    "zhCN": "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害",
+    "zhTW": "CDR=冷卻縮減 · AD=範圍傷害 · ED=菁英傷害",
+    "enUS": "CDR=Cooldown · AD=Area Damage · ED=Elite Damage"
+  },
   "网站设置": {
     "zhCN": "网站设置",
     "zhTW": "網站設定",
@@ -341,5 +409,20 @@
   },
   "输出": {
     "enUS": "Damage"
+  },
+  "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。": {
+    "zhCN": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
+    "zhTW": "讓每一滴鮮血都成為一次爆炸。裝備、技能與威能共同組成一張可追溯的因果圖。",
+    "enUS": "Turn every drop of blood into an explosion. Gear, skills, and powers form one traceable chain of cause and effect."
+  },
+  "拉密怪群，让死亡新星吃满25码内敌人数乘区。": {
+    "zhCN": "拉密怪群，让死亡新星吃满25码内敌人数乘区。",
+    "zhTW": "聚攏怪群，讓死亡新星吃滿25碼內的敵人數量乘區。",
+    "enUS": "Pack enemies tightly so Death Nova gets the full enemy-count multiplier within 25 yards."
+  },
+  "底材限定：70级单手镰刀。": {
+    "zhCN": "底材限定：70级单手镰刀。",
+    "zhTW": "底材限定：70級單手鐮刀。",
+    "enUS": "Required base: a level 70 one-handed scythe."
   }
 }
