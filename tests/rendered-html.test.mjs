@@ -861,8 +861,8 @@ test("centralizes switchable season presets, asset roots, and versioned client s
   assert.match(settings, /syncAcrossTabs/);
 });
 
-test("BD table route renders the shared loadout and export controls without duplicate detail panels", async () => {
-  const response = await render("/builds/tragoul-nova?view=table");
+test("BD table route restores URL configuration and renders export controls without duplicate detail panels", async () => {
+  const response = await render("/builds/tragoul-nova?fromClass=necromancer&mode=speed&paragon=high&view=table");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /aria-label="BD 表格视图"/);
@@ -873,6 +873,7 @@ test("BD table route renders the shared loadout and export controls without dupl
   assert.match(html, /痞子/);
   assert.match(html, /圣殿骑士/);
   assert.match(html, /输出手法/);
+  assert.match(html, /T16 \/ 速刷 · 高巅峰 2000\+/);
   assert.match(html, /以鲜血虹吸触发铁玫瑰的死亡新星/);
   assert.doesNotMatch(html, /让每一滴鲜血都成为一次爆炸/);
   assert.doesNotMatch(html, /class="workbench"/);

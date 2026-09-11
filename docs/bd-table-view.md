@@ -13,9 +13,10 @@
 | UI-LAYOUT-01 | 插入与定位 | source | app/page.tsx UnifiedBuildDetail 配置栏后的 workbench，普通流 | 同位置切换表格，grid-column 1 / -1，grid-row 4 / 同采用值（已实现） | core | SSR 与结构检查 |
 | UI-LAYOUT-02 | 宽度 | inferred | N/A；新密集表格 | 页面 100%，表格 min-width 1240px，导出 1440px / 同采用值（已实现） | core | 宽屏及窄屏横向滚动 |
 | UI-LAYOUT-03 | 高度 | inferred | N/A；长文本不得截断 | auto / 同采用值（已实现） | core | 长文自适应 |
-| UI-LAYOUT-04 | 分栏 | explicit | 用户要求技能与魔盒同排、随从满宽横排 | 技能与魔盒按 1.62fr / 1fr 同排；被动满宽；随从装备每行四件 / 同采用值（已实现） | core | 信息顺序与宽度检查 |
+| UI-LAYOUT-04 | 分栏 | explicit | 用户要求技能、被动、魔盒依次同排，随从满宽横排 | 技能、四项纵排被动、魔盒按 1.35fr / .75fr / 1fr 同排；随从装备每行四件 / 同采用值（已实现） | core | 信息顺序与宽度检查 |
 | UI-LAYOUT-05 | 内边距 | explicit | 用户要求导出图减少无效留白 | 页头 14px 18px，单元格 4px 7px，分区 7px 10px / 同采用值（已实现） | core | 对齐与可读性 |
 | UI-LAYOUT-06 | 间距 | explicit | 用户要求更紧凑并保持层次 | 图文 gap 7px，控制区 gap 6px / 同采用值（已实现） | warning | 图文不重叠 |
+| UI-LAYOUT-07 | 模块分块 | explicit | 用户要求 01–05 像详情视图一样分块 | 各模块 10px 间隔、独立边框和左上/右下角饰线；输出手法沿用同一分块 / 同采用值（已实现） | core | 模块间距和角饰检查 |
 | UI-SURFACE-01 | 背景 | source | globals.css :root --ink #07090a | var(--ink) / 同采用值（已实现） | warning | 实现检查 |
 | UI-SURFACE-02 | 边框 | source | globals.css :root --line rgba(170,139,84,.27) | 1px solid var(--line) / 同采用值（已实现） | warning | 实现检查 |
 | UI-SURFACE-03 | 圆角 | inferred | N/A；暗黑三硬质表格 | 0 / 同采用值（已实现） | warning | 无圆角卡片 |
@@ -39,6 +40,7 @@
 | UI-INTERACTION-02 | 随从 | explicit | 魔女 / 盗贼 / 圣殿骑士切换 | 同一表格更新装备与技能 / 同采用值（已实现） | core | 三随从分别渲染 |
 | UI-INTERACTION-03 | 导出 | explicit | 当前 / 全部 BD 图片 | 单 PNG / 职业目录 ZIP、进度、取消、失败报告 / 同采用值（已实现） | core | 导出任务与 ZIP 数据检查 |
 | UI-INTERACTION-04 | 状态 | inferred | N/A；异步图片生成 | 导出禁用重复操作，aria-live 反馈，完成保留下载链接 / 同采用值（已实现） | core | 卸载与取消清理 |
+| UI-INTERACTION-05 | URL 配置 | explicit | 用户要求可由 URL 直达 T16、巅峰和视图 | `mode`、`paragon`、`view` 与可选 `loadout` 初始化并同步到地址栏，保留来源等其他参数 / 同采用值（已实现） | core | SSR 深链与源码检查 |
 
 ## Verify
 

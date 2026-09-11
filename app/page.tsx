@@ -1979,15 +1979,19 @@ export function allBuildTableData(season: SeasonConfig): BuildTableData[] {
 function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const { tr, t, entity } = useI18n();
   const { genders, season } = useSiteSettings();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const itemIndex = useItemIndex();
   const catalogEntry = BUILD_CATALOG.find((entry) => entry.id === guide.id);
   const classId = catalogEntry?.classId ?? "necromancer";
   const hero = CLASS_CATALOG.find((entry) => entry.id === classId) ?? CLASS_CATALOG[4];
   const buildListHref = `/builds?class=${classId}`;
-  const [mode, setMode] = useState<Mode>(guide.defaultMode ?? "push");
-  const [paragon, setParagon] = useState<Paragon>("low");
-  const [loadoutId, setLoadoutId] = useState(guide.defaultLoadoutId ?? guide.loadouts?.[0]?.id ?? "");
-  const searchParams = useSearchParams();
+  const requestedMode = searchParams.get("mode");
+  const requestedParagon = searchParams.get("paragon");
+  const requestedLoadout = searchParams.get("loadout");
+  const [mode, setMode] = useState<Mode>(requestedMode === "speed" ? "speed" : requestedMode === "push" ? "push" : guide.defaultMode ?? "push");
+  const [paragon, setParagon] = useState<Paragon>(requestedParagon === "high" ? "high" : "low");
+  const [loadoutId, setLoadoutId] = useState(guide.loadouts?.some((loadout) => loadout.id === requestedLoadout) ? requestedLoadout ?? "" : guide.defaultLoadoutId ?? guide.loadouts?.[0]?.id ?? "");
   const [detailView, setDetailView] = useState<"detail" | "table">(searchParams.get("view") === "table" ? "table" : "detail");
   const resolved = useMemo(() => resolveDetailData(guide, mode, paragon, loadoutId), [guide, mode, paragon, loadoutId]);
   const { activeLoadout, activeGuide, activeVariant, activeScenario, activeConfiguration, gear, powers, rotation, scenarioSkills, scenarioPassives } = resolved;
@@ -2041,6 +2045,18 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   useEffect(() => {
     if (!displayedPowers.some((power) => power.id === selectedPowerId)) setSelectedPowerId(displayedPowers[0]?.id ?? "");
   }, [displayedPowers, selectedPowerId]);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    params.set("mode", mode);
+    params.set("paragon", paragon);
+    params.set("view", detailView);
+    if (guide.loadouts?.length) params.set("loadout", loadoutId);
+    else params.delete("loadout");
+    const query = params.toString();
+    const nextUrl = `${pathname}${query ? `?${query}` : ""}${window.location.hash}`;
+    const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (nextUrl !== currentUrl) window.history.replaceState(window.history.state, "", nextUrl);
+  }, [detailView, guide.loadouts, loadoutId, mode, paragon, pathname]);
 
   const handleNodeSelect = (node: FlowNode) => {
     setSelectedStat(null);

@@ -67,7 +67,9 @@ test("the table renders complete text, socket counts, rune and all three followe
     assert.match(skillRows.find((row) => row.includes("死亡新星")) ?? "", /bd-sheet-role-row-output/);
     assert.doesNotMatch(skillRows.find((row) => row.includes("血魂双分")) ?? "", /bd-sheet-role-row-output|主要输出/);
     assert.doesNotMatch(html, /使用要点/);
-    assert.match(html, /bd-sheet-skills-cube-grid/);
+    assert.match(html, /bd-sheet-core-grid/);
+    assert.ok(html.indexOf("02") < html.indexOf("03") && html.indexOf("03") < html.indexOf("04"));
+    assert.equal((html.match(/bd-sheet-block/g) ?? []).length, 6);
     assert.match(html, /bd-sheet-follower-items/);
     assert.match(html, /输出手法/);
   }

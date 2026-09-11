@@ -166,6 +166,7 @@ export function BuildTableSheet({ data, followerKey = data.follower }: { data: B
     </header>
     {data.notice && <p className="bd-sheet-notice">{tr(data.notice)}</p>}
     <div className="bd-sheet-content">
+      <section className="bd-sheet-block bd-sheet-gear-section">
         <h3 className="bd-sheet-section"><span>{t("app.938db8c9f82c8cb5")}</span>{" "}{t("app.3ab9f7ee59e79982")}{" "}<small className="bd-sheet-legend"><b className="bd-sheet-crafted">{tr("铁匠锻造")}</b><b className="bd-sheet-set">{t("app.62e38cb5bca949b4")}</b><b className="bd-sheet-legendary">{t("app.34a721a9751de83d")}</b><em>{tr("CDR=冷却缩减 · AD=范围伤害 · ED=百分比伤害")}</em></small></h3>
         <table className="bd-sheet-gear"><colgroup><col className="bd-sheet-slot-col" /><col className="bd-sheet-item-col" /><col className="bd-sheet-affix-col" /><col className="bd-sheet-gem-col" /><col className="bd-sheet-note-col" /></colgroup><thead><tr><th scope="col">{t("app.c4322846fc0283a7")}</th><th scope="col">{t("app.144a327039fee815")}</th><th scope="col"><span>{t("app.8151bb7f2be16abf")}</span><small>{tr("下方小字为单件最大值")}</small></th><th scope="col">{t("app.b4bcba98915eb718")}</th><th scope="col"><span>{t("app.22d7a734fbd07997")}</span><small>{t("app.a46603950c1df4c0")}</small></th></tr></thead><tbody>
           {data.gear.map((item) => {
@@ -173,29 +174,34 @@ export function BuildTableSheet({ data, followerKey = data.follower }: { data: B
             return <tr key={item.id}><th scope="row">{tr(item.slot)}</th><td><div className="bd-sheet-item-name"><TableEntity name={item.name} image={item.image} quality={displayQuality} /><span className="bd-sheet-sr-only">{tr(displayQuality === "crafted" ? "铁匠锻造" : displayQuality === "set" ? "套装" : "传奇")}</span></div></td><td><ol className="bd-sheet-affixes">{[...new Set(item.affixes)].map((affix) => <li key={affix}><strong>{compactAffixLabel(affix, locale)}</strong><small>{affixMaximum(affix, item.slot, locale)}</small></li>)}</ol></td><td><GemList sockets={item.sockets} /></td><td><GearNotes item={item} /></td></tr>;
           })}
         </tbody></table>
-        <div className="bd-sheet-skills-cube-grid">
-          <section>
+      </section>
+        <div className="bd-sheet-core-grid">
+          <section className="bd-sheet-block">
             <h3 className="bd-sheet-section"><span>{t("app.a953f09a1b6b6725")}</span>{" "}{t("app.ed6a21fda639bbb9")}<RoleLegend /></h3>
             <table className="bd-sheet-skills"><thead><tr><th scope="col">{t("app.edb7b4b3a9e3905c")}</th><th scope="col">{t("app.f360525ced2b6a62")}</th></tr></thead><tbody>
               {data.skills.map((skill) => { const roles = buildRoles(skill); return <tr key={skill.id} className={`bd-sheet-role-row bd-sheet-role-row-${roles[0]}`}><td><div className="bd-sheet-role-head"><TableEntity name={skill.name} image={skill.image} kind="skill" /><RoleMarks roles={roles} /></div></td><td><span className="bd-sheet-rune"><i aria-hidden="true" className={`rune-icon rune-${skill.runeKey ?? "none"}`} /><span>{skill.rune ? entity(skill, "rune") : tr("无符文")}</span></span></td></tr>; })}
             </tbody></table>
           </section>
-          <section className="bd-sheet-cube-section">
+          <section className="bd-sheet-block">
+            <h3 className="bd-sheet-section"><span>{t("app.0b8efa5a3bf10441")}</span>{" "}{t("app.e353d08f0a58de17")}</h3>
+            <div className="bd-sheet-passives">{data.passives.map((passive) => { const roles = buildRoles(passive); return <div key={passive.id} className={`bd-sheet-role-panel bd-sheet-role-panel-${roles[0]}`}><div className="bd-sheet-role-head"><TableEntity name={passive.name} image={passive.image} kind="skill" /><RoleMarks roles={roles} /></div><p>{tr(passive.logic)}</p></div>; })}</div>
+          </section>
+          <section className="bd-sheet-block bd-sheet-cube-section">
             <h3 className="bd-sheet-section"><span>{t("app.6cd5b6e51936a442")}</span>{" "}{t("app.b43b3c54524fa3a1")}</h3>
             <div className="bd-sheet-powers">{data.powers.map((power) => { const roles = buildRoles(power); return <div key={power.id} className={`bd-sheet-role-panel bd-sheet-role-panel-${roles[0]}`}><div className="bd-sheet-role-head"><small>{tr(power.slot)}</small><TableEntity name={power.name} image={power.image} quality="legendary" /><RoleMarks roles={roles} /></div><p>{tr(power.summary)}</p></div>; })}</div>
           </section>
         </div>
-        <h3 className="bd-sheet-section"><span>{t("app.0b8efa5a3bf10441")}</span>{" "}{t("app.e353d08f0a58de17")}</h3>
-        <div className="bd-sheet-passives">{data.passives.map((passive) => { const roles = buildRoles(passive); return <div key={passive.id} className={`bd-sheet-role-panel bd-sheet-role-panel-${roles[0]}`}><div className="bd-sheet-role-head"><TableEntity name={passive.name} image={passive.image} kind="skill" /><RoleMarks roles={roles} /></div><p>{tr(passive.logic)}</p></div>; })}</div>
-        <section className="bd-sheet-follower-section">
+        <section className="bd-sheet-block bd-sheet-follower-section">
           <h3 className="bd-sheet-section"><span>{t("app.c97550ce8213ef5c")}</span>{" "}{t("app.361f1205099b031c")}{" "}{entity(follower, "name")}</h3>
           <p className="bd-sheet-follower-note">{tr(followerKey === data.follower ? data.followerReason : follower.note)}</p>
           <div className="bd-sheet-follower-items">{follower.items.map((item) => <div key={item.position}><small>{tr(item.slot)}</small><TableEntity name={item.name} image={item.image} quality={item.quality ?? "legendary"} /><p>{tr(item.reason)}</p></div>)}</div>
           <div className="bd-sheet-follower-skills">{FOLLOWER_SKILLS[followerKey].map((skill) => <TableEntity key={skill.name} name={skill.name} image={skill.image} kind="skill" />)}</div>
         </section>
+        <section className="bd-sheet-block bd-sheet-rotation-section">
+          <h3 className="bd-sheet-section"><span>{t("app.aacd834b5cdc64a3")}</span>{" "}{t("app.1611050fd81ecebd")}</h3>
+          <ol className="bd-sheet-rotation">{data.rotation.map((step, index) => <li key={`${step.title}-${index}`}><b>{tr(String(index + 1).padStart(2, "0"))}</b><div><h4>{tr(step.title)}</h4><p>{tr(step.action)}</p>{step.reason && <small>{tr(step.reason)}</small>}</div></li>)}</ol>
+        </section>
     </div>
-    <h3 className="bd-sheet-section"><span>{t("app.aacd834b5cdc64a3")}</span>{" "}{t("app.1611050fd81ecebd")}</h3>
-    <ol className="bd-sheet-rotation">{data.rotation.map((step, index) => <li key={`${step.title}-${index}`}><b>{tr(String(index + 1).padStart(2, "0"))}</b><div><h4>{tr(step.title)}</h4><p>{tr(step.action)}</p>{step.reason && <small>{tr(step.reason)}</small>}</div></li>)}</ol>
     <div className="bd-sheet-footer"><span>{t("app.166f372cd4bf81b0")}{" "}{tr(data.className)}{" "}{t("app.8a5edab282632443")}{" "}{entity(data, "name")}</span><span>{tr(data.season)}{" "}{t("app.a137f17a19a09cbe")}{" "}{entity(follower, "name")}</span></div>
   </article>;
 }
