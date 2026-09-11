@@ -870,6 +870,8 @@ test("BD table route restores URL configuration and renders export controls with
   assert.match(html, /导出当前 PNG/);
   assert.match(html, /全职业全部 BD/);
   assert.match(html, /魔女/);
+  assert.match(html, /<button aria-pressed="true">魔女 · 推荐<\/button>/);
+  assert.doesNotMatch(html, /魔女<!-- -->· 推荐/);
   assert.match(html, /痞子/);
   assert.match(html, /圣殿骑士/);
   assert.match(html, /输出手法/);

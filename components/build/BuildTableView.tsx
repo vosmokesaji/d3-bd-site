@@ -252,7 +252,11 @@ export function BuildTableView({ data, getAllBuilds }: { data: BuildTableData; g
 
   return <section className="bd-table-view" aria-label={tr("BD 表格视图")}>
     <div className="bd-table-toolbar">
-      <div className="bd-table-followers" role="group" aria-label={tr("表格随从配装")}><span>{t("app.34448448dda154c2")}</span>{Object.values(FOLLOWERS).map((entry) => <button key={entry.key} aria-pressed={follower === entry.key} onClick={() => setFollower(entry.key)}>{entity(entry, "name")}{tr(entry.key === data.follower ? " · 推荐" : "")}</button>)}</div>
+      <div className="bd-table-followers" role="group" aria-label={tr("表格随从配装")}><span>{t("app.34448448dda154c2")}</span>{Object.values(FOLLOWERS).map((entry) => {
+        const name = entity(entry, "name");
+        const label = entry.key === data.follower ? `${name} · ${tr("推荐")}` : name;
+        return <button key={entry.key} aria-pressed={follower === entry.key} onClick={() => setFollower(entry.key)}>{label}</button>;
+      })}</div>
       <div className="bd-table-actions"><button disabled={!!progress} onClick={() => runExport(false)}>{t("app.410bcae20d3db386")}</button><button disabled={!!progress} onClick={() => runExport(true)}>{t("app.0ab380532ec5c75b")}</button></div>
     </div>
     <p className="bd-table-help">{t("app.efa56f3072182769")}</p>
