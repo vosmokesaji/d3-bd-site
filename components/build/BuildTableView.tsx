@@ -45,6 +45,8 @@ function buildRoles(entry: { name: string; logic?: string; summary?: string }): 
   if (/减伤|伤害减免|护甲|保命|无敌|治疗|恢复|护盾|坚韧|免疫/.test(text)) roles.push("defense");
   if (/位移|移速|移动速度|跳图|赶路|冲刺|传送|穿行/.test(text)) roles.push("movement");
   if (/控制|眩晕|昏迷|冻结|冰冻|击退|聚怪|恐惧|减速|定身|致盲|诅咒/.test(text)) roles.push("control");
+  if (entry.name === "血魂双分") return [...new Set<BuildRole>(["boost", ...roles.filter((role) => role !== "output")])];
+  if (entry.name === "死亡新星") return [...new Set<BuildRole>(["output", ...roles])];
   return roles.length ? roles : ["boost"];
 }
 
@@ -68,9 +70,9 @@ function compactAffixLabel(affix: string, locale: string) {
   const source = affix.replace(/（[^）]*）|\([^)]*\)/g, "").replace(/\s*→.*$/, "").trim();
   const en: [RegExp, string][] = [
     [/智力/, "INT"], [/力量/, "STR"], [/敏捷/, "DEX"], [/体能/, "VIT"], [/全元素抗性|全抗/, "All Res"],
-    [/暴击几率/, "CHC"], [/暴击伤害/, "CHD"], [/冷却缩减/, "CDR"], [/范围伤害/, "AD"], [/精英伤害/, "ED"],
+    [/暴击几率/, "CHC"], [/暴击伤害/, "CHD"], [/冷却缩减/, "CDR"], [/范围伤害/, "AD"], [/精英伤害/, "Elite dmg"],
     [/攻击速度|攻速/, "IAS"], [/生命%/, "Life%"], [/护甲/, "Armor"], [/移动速度/, "Move"], [/资源减耗|能量消耗降低/, "RCR"],
-    [/镶孔|拉玛兰迪打孔/, "Socket"], [/高伤害范围/, "Damage range"], [/高白字伤害|高白字/, "Weapon dmg"], [/伤害%/, "Damage%"],
+    [/镶孔|拉玛兰迪打孔/, "Socket"], [/高伤害范围/, "Damage range"], [/高白字伤害|高白字/, "Weapon dmg"], [/伤害%/, "ED"],
     [/物理技能伤害/, "Physical"], [/冰霜技能伤害/, "Cold"], [/火焰技能伤害/, "Fire"], [/毒素技能伤害/, "Poison"], [/闪电技能伤害/, "Lightning"],
     [/.*(?:技能)?伤害/, "Skill dmg"],
   ];
@@ -80,7 +82,7 @@ function compactAffixLabel(affix: string, locale: string) {
   const replacements: [RegExp, string][] = [
     [/智力/, "智"], [/力量/, "力"], [/敏捷/, "敏"], [/体能/, locale === "zhTW" ? "體" : "体"],
     [/全元素抗性/, "全抗"], [/暴击几率/, locale === "zhTW" ? "爆率" : "暴率"], [/暴击伤害/, "爆伤"],
-    [/冷却缩减/, "CDR"], [/范围伤害/, "AD"], [/精英伤害/, "ED"], [/攻击速度/, "攻速"],
+    [/冷却缩减/, "CDR"], [/范围伤害/, "AD"], [/精英伤害/, "精英伤"], [/伤害%/, "ED"], [/攻击速度/, "攻速"],
     [/镶孔|拉玛兰迪打孔/, "孔"], [/高伤害范围/, "白字范围"], [/高白字伤害|高白字/, "白字"],
     [/死亡新星伤害|尸爆伤害|尸枪术伤害|骨矛伤害|旋风斩伤害|痛割伤害|上古之矛伤害|先祖之锤伤害|地震伤害|狂乱伤害/, "技能伤"],
   ];
@@ -164,31 +166,33 @@ export function BuildTableSheet({ data, followerKey = data.follower }: { data: B
     </header>
     {data.notice && <p className="bd-sheet-notice">{tr(data.notice)}</p>}
     <div className="bd-sheet-content">
-        <h3 className="bd-sheet-section"><span>{t("app.938db8c9f82c8cb5")}</span>{" "}{t("app.3ab9f7ee59e79982")}{" "}<small className="bd-sheet-legend"><b className="bd-sheet-crafted">{tr("铁匠锻造")}</b><b className="bd-sheet-set">{t("app.62e38cb5bca949b4")}</b><b className="bd-sheet-legendary">{t("app.34a721a9751de83d")}</b><em>{tr("CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害")}</em></small></h3>
+        <h3 className="bd-sheet-section"><span>{t("app.938db8c9f82c8cb5")}</span>{" "}{t("app.3ab9f7ee59e79982")}{" "}<small className="bd-sheet-legend"><b className="bd-sheet-crafted">{tr("铁匠锻造")}</b><b className="bd-sheet-set">{t("app.62e38cb5bca949b4")}</b><b className="bd-sheet-legendary">{t("app.34a721a9751de83d")}</b><em>{tr("CDR=冷却缩减 · AD=范围伤害 · ED=百分比伤害")}</em></small></h3>
         <table className="bd-sheet-gear"><colgroup><col className="bd-sheet-slot-col" /><col className="bd-sheet-item-col" /><col className="bd-sheet-affix-col" /><col className="bd-sheet-gem-col" /><col className="bd-sheet-note-col" /></colgroup><thead><tr><th scope="col">{t("app.c4322846fc0283a7")}</th><th scope="col">{t("app.144a327039fee815")}</th><th scope="col"><span>{t("app.8151bb7f2be16abf")}</span><small>{tr("下方小字为单件最大值")}</small></th><th scope="col">{t("app.b4bcba98915eb718")}</th><th scope="col"><span>{t("app.22d7a734fbd07997")}</span><small>{t("app.a46603950c1df4c0")}</small></th></tr></thead><tbody>
           {data.gear.map((item) => {
             const displayQuality = isCraftedGear(item) ? "crafted" : item.quality;
             return <tr key={item.id}><th scope="row">{tr(item.slot)}</th><td><div className="bd-sheet-item-name"><TableEntity name={item.name} image={item.image} quality={displayQuality} /><span className="bd-sheet-sr-only">{tr(displayQuality === "crafted" ? "铁匠锻造" : displayQuality === "set" ? "套装" : "传奇")}</span></div></td><td><ol className="bd-sheet-affixes">{[...new Set(item.affixes)].map((affix) => <li key={affix}><strong>{compactAffixLabel(affix, locale)}</strong><small>{affixMaximum(affix, item.slot, locale)}</small></li>)}</ol></td><td><GemList sockets={item.sockets} /></td><td><GearNotes item={item} /></td></tr>;
           })}
         </tbody></table>
-        <h3 className="bd-sheet-section"><span>{t("app.a953f09a1b6b6725")}</span>{" "}{t("app.ed6a21fda639bbb9")}<RoleLegend /></h3>
-        <table className="bd-sheet-skills"><thead><tr><th scope="col">{t("app.edb7b4b3a9e3905c")}</th><th scope="col">{t("app.f360525ced2b6a62")}</th></tr></thead><tbody>
-          {data.skills.map((skill) => { const roles = buildRoles(skill); return <tr key={skill.id} className={`bd-sheet-role-row bd-sheet-role-row-${roles[0]}`}><td><TableEntity name={skill.name} image={skill.image} kind="skill" /><RoleMarks roles={roles} /></td><td><span className="bd-sheet-rune"><i aria-hidden="true" className={`rune-icon rune-${skill.runeKey ?? "none"}`} /><span>{skill.rune ? entity(skill, "rune") : tr("无符文")}</span></span></td></tr>; })}
-        </tbody></table>
-        <h3 className="bd-sheet-section"><span>{t("app.0b8efa5a3bf10441")}</span>{" "}{t("app.e353d08f0a58de17")}</h3>
-        <div className="bd-sheet-passives">{data.passives.map((passive) => { const roles = buildRoles(passive); return <div key={passive.id} className={`bd-sheet-role-panel bd-sheet-role-panel-${roles[0]}`}><TableEntity name={passive.name} image={passive.image} kind="skill" /><RoleMarks roles={roles} /><p>{tr(passive.logic)}</p></div>; })}</div>
-        <div className="bd-sheet-lower-grid">
+        <div className="bd-sheet-skills-cube-grid">
           <section>
-            <h3 className="bd-sheet-section"><span>{t("app.6cd5b6e51936a442")}</span>{" "}{t("app.b43b3c54524fa3a1")}</h3>
-            <div className="bd-sheet-powers">{data.powers.map((power) => { const roles = buildRoles(power); return <div key={power.id} className={`bd-sheet-role-panel bd-sheet-role-panel-${roles[0]}`}><small>{tr(power.slot)}</small><TableEntity name={power.name} image={power.image} quality="legendary" /><RoleMarks roles={roles} /><p>{tr(power.summary)}</p></div>; })}</div>
+            <h3 className="bd-sheet-section"><span>{t("app.a953f09a1b6b6725")}</span>{" "}{t("app.ed6a21fda639bbb9")}<RoleLegend /></h3>
+            <table className="bd-sheet-skills"><thead><tr><th scope="col">{t("app.edb7b4b3a9e3905c")}</th><th scope="col">{t("app.f360525ced2b6a62")}</th></tr></thead><tbody>
+              {data.skills.map((skill) => { const roles = buildRoles(skill); return <tr key={skill.id} className={`bd-sheet-role-row bd-sheet-role-row-${roles[0]}`}><td><div className="bd-sheet-role-head"><TableEntity name={skill.name} image={skill.image} kind="skill" /><RoleMarks roles={roles} /></div></td><td><span className="bd-sheet-rune"><i aria-hidden="true" className={`rune-icon rune-${skill.runeKey ?? "none"}`} /><span>{skill.rune ? entity(skill, "rune") : tr("无符文")}</span></span></td></tr>; })}
+            </tbody></table>
           </section>
-          <section className="bd-sheet-follower-section">
-            <h3 className="bd-sheet-section"><span>{t("app.c97550ce8213ef5c")}</span>{" "}{t("app.361f1205099b031c")}{" "}{entity(follower, "name")}</h3>
-            <p className="bd-sheet-follower-note">{tr(followerKey === data.follower ? data.followerReason : follower.note)}</p>
-            <table className="bd-sheet-follower"><thead><tr><th scope="col">{t("app.c4322846fc0283a7")}</th><th scope="col">{t("app.d69df1cc161cb852")}</th></tr></thead><tbody>{follower.items.map((item) => <tr key={item.position}><th scope="row">{tr(item.slot)}</th><td><TableEntity name={item.name} image={item.image} quality={item.quality ?? "legendary"} /><small>{tr(item.reason)}</small></td></tr>)}</tbody></table>
-            <div className="bd-sheet-follower-skills">{FOLLOWER_SKILLS[followerKey].map((skill) => <TableEntity key={skill.name} name={skill.name} image={skill.image} kind="skill" />)}</div>
+          <section className="bd-sheet-cube-section">
+            <h3 className="bd-sheet-section"><span>{t("app.6cd5b6e51936a442")}</span>{" "}{t("app.b43b3c54524fa3a1")}</h3>
+            <div className="bd-sheet-powers">{data.powers.map((power) => { const roles = buildRoles(power); return <div key={power.id} className={`bd-sheet-role-panel bd-sheet-role-panel-${roles[0]}`}><div className="bd-sheet-role-head"><small>{tr(power.slot)}</small><TableEntity name={power.name} image={power.image} quality="legendary" /><RoleMarks roles={roles} /></div><p>{tr(power.summary)}</p></div>; })}</div>
           </section>
         </div>
+        <h3 className="bd-sheet-section"><span>{t("app.0b8efa5a3bf10441")}</span>{" "}{t("app.e353d08f0a58de17")}</h3>
+        <div className="bd-sheet-passives">{data.passives.map((passive) => { const roles = buildRoles(passive); return <div key={passive.id} className={`bd-sheet-role-panel bd-sheet-role-panel-${roles[0]}`}><div className="bd-sheet-role-head"><TableEntity name={passive.name} image={passive.image} kind="skill" /><RoleMarks roles={roles} /></div><p>{tr(passive.logic)}</p></div>; })}</div>
+        <section className="bd-sheet-follower-section">
+          <h3 className="bd-sheet-section"><span>{t("app.c97550ce8213ef5c")}</span>{" "}{t("app.361f1205099b031c")}{" "}{entity(follower, "name")}</h3>
+          <p className="bd-sheet-follower-note">{tr(followerKey === data.follower ? data.followerReason : follower.note)}</p>
+          <div className="bd-sheet-follower-items">{follower.items.map((item) => <div key={item.position}><small>{tr(item.slot)}</small><TableEntity name={item.name} image={item.image} quality={item.quality ?? "legendary"} /><p>{tr(item.reason)}</p></div>)}</div>
+          <div className="bd-sheet-follower-skills">{FOLLOWER_SKILLS[followerKey].map((skill) => <TableEntity key={skill.name} name={skill.name} image={skill.image} kind="skill" />)}</div>
+        </section>
     </div>
     <h3 className="bd-sheet-section"><span>{t("app.aacd834b5cdc64a3")}</span>{" "}{t("app.1611050fd81ecebd")}</h3>
     <ol className="bd-sheet-rotation">{data.rotation.map((step, index) => <li key={`${step.title}-${index}`}><b>{tr(String(index + 1).padStart(2, "0"))}</b><div><h4>{tr(step.title)}</h4><p>{tr(step.action)}</p>{step.reason && <small>{tr(step.reason)}</small>}</div></li>)}</ol>

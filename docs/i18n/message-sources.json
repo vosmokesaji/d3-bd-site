@@ -9331,6 +9331,7 @@
   ],
   "app.4ef678f4c018ddd9": [
     "app/data/crusader-builds.ts",
+    "components/build/BuildTableView.tsx",
     "evaluated data factories"
   ],
   "app.e33cab54abdfcb83": [
@@ -17691,6 +17692,7 @@
     "app/data/necromancer-builds.ts",
     "app/data/site-catalog.ts",
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "evaluated data factories",
     "public/d3/library/skills.json"
   ],
@@ -17706,6 +17708,7 @@
   "app.a96604744e9e0952": [
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
+    "components/build/BuildTableView.tsx",
     "evaluated data factories"
   ],
   "app.cbd048335968b35b": [
@@ -28453,7 +28456,7 @@
   "app.525ba0de08cc3572": [
     "app/page.tsx"
   ],
-  "app.00211029c8e9a4fa": [
+  "app.93fd5ad1cb7598d8": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
@@ -29196,7 +29199,7 @@
   "app.34a721a9751de83d": [
     "components/build/BuildTableView.tsx"
   ],
-  "app.c3adf76ae59a8543": [
+  "app.dda7f0b3a105b98b": [
     "components/build/BuildTableView.tsx",
     "app/i18n/manual.json"
   ],
@@ -29226,17 +29229,14 @@
   "app.f360525ced2b6a62": [
     "components/build/BuildTableView.tsx"
   ],
+  "app.b43b3c54524fa3a1": [
+    "components/build/BuildTableView.tsx"
+  ],
   "app.0b8efa5a3bf10441": [
     "components/build/BuildTableView.tsx",
     "components/build/KanaiCubePanel.tsx"
   ],
-  "app.b43b3c54524fa3a1": [
-    "components/build/BuildTableView.tsx"
-  ],
   "app.361f1205099b031c": [
-    "components/build/BuildTableView.tsx"
-  ],
-  "app.d69df1cc161cb852": [
     "components/build/BuildTableView.tsx"
   ],
   "app.1611050fd81ecebd": [

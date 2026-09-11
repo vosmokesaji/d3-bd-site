@@ -62,10 +62,10 @@
     "zhTW": "下方小字為單件最大值",
     "enUS": "Small text: per-item maximum"
   },
-  "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害": {
-    "zhCN": "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害",
-    "zhTW": "CDR=冷卻縮減 · AD=範圍傷害 · ED=菁英傷害",
-    "enUS": "CDR=Cooldown · AD=Area Damage · ED=Elite Damage"
+  "CDR=冷却缩减 · AD=范围伤害 · ED=百分比伤害": {
+    "zhCN": "CDR=冷却缩减 · AD=范围伤害 · ED=百分比伤害",
+    "zhTW": "CDR=冷卻縮減 · AD=範圍傷害 · ED=百分比傷害",
+    "enUS": "CDR=Cooldown · AD=Area Damage · ED=Damage %"
   },
   "网站设置": {
     "zhCN": "网站设置",
@@ -410,10 +410,10 @@
   "输出": {
     "enUS": "Damage"
   },
-  "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。": {
-    "zhCN": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
-    "zhTW": "讓每一滴鮮血都成為一次爆炸。裝備、技能與威能共同組成一張可追溯的因果圖。",
-    "enUS": "Turn every drop of blood into an explosion. Gear, skills, and powers form one traceable chain of cause and effect."
+  "以鲜血虹吸触发铁玫瑰的死亡新星，依靠塔格奥六件与血魂双分扩大范围伤害，适合单人大秘境冲层。": {
+    "zhCN": "以鲜血虹吸触发铁玫瑰的死亡新星，依靠塔格奥六件与血魂双分扩大范围伤害，适合单人大秘境冲层。",
+    "zhTW": "以虹吸血液觸發鐵玫瑰的死亡新星，依靠塔格奧六件與血魂分體擴大範圍傷害，適合單人大秘境衝層。",
+    "enUS": "Siphon Blood triggers Iron Rose's Death Nova, while Trag'Oul's six-piece bonus and Simulacrum scale its area damage for solo Greater Rift pushing."
   },
   "拉密怪群，让死亡新星吃满25码内敌人数乘区。": {
     "zhCN": "拉密怪群，让死亡新星吃满25码内敌人数乘区。",

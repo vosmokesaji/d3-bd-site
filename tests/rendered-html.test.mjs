@@ -873,5 +873,7 @@ test("BD table route renders the shared loadout and export controls without dupl
   assert.match(html, /痞子/);
   assert.match(html, /圣殿骑士/);
   assert.match(html, /输出手法/);
+  assert.match(html, /以鲜血虹吸触发铁玫瑰的死亡新星/);
+  assert.doesNotMatch(html, /让每一滴鲜血都成为一次爆炸/);
   assert.doesNotMatch(html, /class="workbench"/);
 });

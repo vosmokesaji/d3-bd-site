@@ -28069,13 +28069,13 @@
     "source": "鲜血虹吸 → 铁玫瑰 → 死亡新星",
     "template": "[[Powers/P6_Necro_SiphonBlood_name]] → [[Items/P74_Unique_Phylactery_04]] → [[Powers/P6_Necro_BloodNova_name]]"
   },
-  "app.00211029c8e9a4fa": {
-    "source": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
-    "template": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
+  "app.93fd5ad1cb7598d8": {
+    "source": "以鲜血虹吸触发铁玫瑰的死亡新星，依靠塔格奥六件与血魂双分扩大范围伤害，适合单人大秘境冲层。",
+    "template": "以[[Powers/P6_Necro_SiphonBlood_name]]触发[[Items/P74_Unique_Phylactery_04]]的[[Powers/P6_Necro_BloodNova_name]]，依靠[[ItemSets/P6_Necro_Set_2]]六件与[[Powers/P6_Necro_Simulacrum_name]]扩大[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]，适合[[Site/solo]][[NephalemRift/TieredRift]][[Site/push]]。",
     "manual": {
-      "zhCN": "让每一滴鲜血都成为一次爆炸。装备、技能与威能共同组成一张可追溯的因果图。",
-      "zhTW": "讓每一滴鮮血都成為一次爆炸。裝備、技能與威能共同組成一張可追溯的因果圖。",
-      "enUS": "Turn every drop of blood into an explosion. Gear, skills, and powers form one traceable chain of cause and effect."
+      "zhCN": "以鲜血虹吸触发铁玫瑰的死亡新星，依靠塔格奥六件与血魂双分扩大范围伤害，适合单人大秘境冲层。",
+      "zhTW": "以虹吸血液觸發鐵玫瑰的死亡新星，依靠塔格奧六件與血魂分體擴大範圍傷害，適合單人大秘境衝層。",
+      "enUS": "Siphon Blood triggers Iron Rose's Death Nova, while Trag'Oul's six-piece bonus and Simulacrum scale its area damage for solo Greater Rift pushing."
     }
   },
   "app.78d88adb76872ab5": {
@@ -29176,13 +29176,13 @@
     "source": "● 传奇",
     "template": "● 传奇"
   },
-  "app.c3adf76ae59a8543": {
-    "source": "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害",
-    "template": "CDR=[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]] · AD=[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]] · ED=精英伤害",
+  "app.dda7f0b3a105b98b": {
+    "source": "CDR=冷却缩减 · AD=范围伤害 · ED=百分比伤害",
+    "template": "CDR=[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]] · AD=[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]] · ED=百分比伤害",
     "manual": {
-      "zhCN": "CDR=冷却缩减 · AD=范围伤害 · ED=精英伤害",
-      "zhTW": "CDR=冷卻縮減 · AD=範圍傷害 · ED=菁英傷害",
-      "enUS": "CDR=Cooldown · AD=Area Damage · ED=Elite Damage"
+      "zhCN": "CDR=冷却缩减 · AD=范围伤害 · ED=百分比伤害",
+      "zhTW": "CDR=冷卻縮減 · AD=範圍傷害 · ED=百分比傷害",
+      "enUS": "CDR=Cooldown · AD=Area Damage · ED=Damage %"
     }
   },
   "app.c4322846fc0283a7": {
@@ -29226,21 +29226,17 @@
     "source": "技能符文",
     "template": "技能符文"
   },
-  "app.0b8efa5a3bf10441": {
-    "source": "03",
-    "template": "03"
-  },
   "app.b43b3c54524fa3a1": {
     "source": "卡奈魔方 · 萃取",
     "template": "[[Kanais_Cube/header_title]] · 萃取"
   },
+  "app.0b8efa5a3bf10441": {
+    "source": "03",
+    "template": "03"
+  },
   "app.361f1205099b031c": {
     "source": "随从 ·",
     "template": "随从 ·"
-  },
-  "app.d69df1cc161cb852": {
-    "source": "配装与作用",
-    "template": "配装与作用"
   },
   "app.1611050fd81ecebd": {
     "source": "输出手法",
