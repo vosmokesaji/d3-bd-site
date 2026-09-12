@@ -1363,6 +1363,103 @@ const INVOKER_THORNS_REVIEWED_GUIDE: BuildGuide = {
 const INVOKER_THORNS_VALIDATION_ERRORS = validateReviewedBuildGuide(INVOKER_THORNS_REVIEWED_GUIDE);
 if (INVOKER_THORNS_VALIDATION_ERRORS.length > 0) throw new Error(`唤魔荆棘配置校验失败：${INVOKER_THORNS_VALIDATION_ERRORS.join("；")}`);
 
+const ROLAND_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/crusader-rolands-sweep-attack-build",
+  skills: "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-speed-farming-build",
+};
+
+const ROLAND_SEED = seeds.find((seed) => seed.id === "roland-sweep")!;
+const ROLAND_BASE_GUIDE = createClassGuide({
+  ...ROLAND_SEED,
+  gear: [
+    ...ROLAND_SEED.gear,
+    legendary("roland-warzechian", "腕部", "沃兹克臂甲", "warzechian-armguards-unique_bracer_101_x1.png", "破坏物后短暂提高移动速度，横扫的范围伤害很容易触发。"),
+    legendary("roland-nemesis", "腕部", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "祭坛生成额外精英，配合寅剑压缩速刷路径。"),
+    legendary("roland-goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后获得护甲，只在掉金币内容中使用。"),
+    legendary("roland-avarice", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币扩大拾取范围，连接囤宝者与金织带。"),
+    legendary("roland-sage-belt", "腰部", "贤者之旅腰带", "sages-ribbon-unique_belt_010_x1.png", "与贤者之握组成死亡之息速刷两件套。", { quality: "set" }),
+    legendary("roland-sage-pants", "腿部", "贤者之旅腿甲", "sages-passage-unique_pants_010_x1.png", "与贤者腰带组成死亡之息速刷两件套。", { quality: "set" }),
+    legendary("roland-ingeom", "主手", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短冷却，连续速刷专用。", { base: "剑" }),
+    legendary("roland-soj", "手指", "乔丹之石", "stone-of-jordan-p69_unique_ring_019.png", "提供稳定元素与精英伤，不必等待全能法戒周期。"),
+  ],
+  powers: [
+    ...ROLAND_SEED.powers,
+    power("roland-ingeom-power", "武器", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "速刷用连续精英击杀把战马、钢铁之肤和阿卡拉特勇士重新接上。"),
+    power("roland-goldwrap-power", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后获得与金币量相关的护甲。", "只在 T16、蓝门和悬赏中配合囤宝者与贪婪之戒使用。"),
+  ],
+  source: ROLAND_SOURCES.overview,
+});
+
+const ROLAND_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "roland-head", shoulders: "roland-shoulders", chest: "roland-chest", gloves: "roland-gloves",
+    bracers: "drakon", belt: "golden-flense", pants: "roland-pants", boots: "roland-boots",
+    amulet: "travelers-pledge", ring1: "compass-rose", ring2: "coe", weapon: "swiftmount", offhand: "denial",
+  },
+  skills: [
+    { id: "sweep-attack", rune: "电流扫击" }, { id: "steed-charge", rune: "马不停蹄" }, { id: "akarats-champion", rune: "先知化身" },
+    { id: "iron-skin", rune: "钢铁闪光" }, { id: "laws-of-valor", rune: "势不可挡" }, { id: "provoke", rune: "净化" },
+  ],
+  passives: ["finery", "fervor", "holy-cause", "indestructible"],
+  powers: { weapon: "golden-flense", armor: "aquila", jewelry: "zodiac", season: "furnace" },
+  legendaryGems: { control: "bane-of-the-trapped", thorns: "gogok", boss: "bane-of-the-stricken" },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"), weapon: ["flawless-royal-emerald"] },
+  follower: { id: "templar", items: ["不死圣物", "复仇者护腕"], skills: ["治疗", "回能", "保命"] },
+  statPriorities: { global: ["攻速断点", "闪电元素伤", "横扫攻击技能伤", "冷却缩减"], survival: ["全元素抗性", "体能", "格挡"], endgame: ["范围伤害", "冷却覆盖", "受罚者首领阶段"] },
+  rotation: ROLAND_SEED.rotation,
+};
+
+const ROLAND_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "五件罗兰、拒绝盾、黄金剥皮者和全能法戒组成冲层底盘；用横扫叠攻速与减伤，密度不足时依靠德拉孔护腕处理精英。",
+    sourceRefs: [ROLAND_SOURCES.overview, ROLAND_SOURCES.skills, ROLAND_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。",
+    patch: { normalGems: { armor: Array(5).fill("flawless-royal-diamond") }, statPriorities: { global: ["攻速断点", "冷却缩减", "闪电元素伤", "范围伤害"], survival: ["全元素抗性", "生命%", "护甲", "生命恢复"], endgame: ["首领阶段受罚者", "拒绝盾高特效", "不牺牲横扫技能伤"] } },
+    sourceRefs: [ROLAND_SOURCES.gear, ROLAND_SOURCES.overview], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "speed-low", label: "低巅峰低层大秘境", content: "greater-rift-speed", paragonBand: "low", applicability: "supported",
+    reason: "低层保留横扫与拒绝盾，只换沃兹克和寅剑压缩转场；用希望律法与战马赶路，不套用只适合金币内容的金织带。",
+    patch: { gear: { bracers: "roland-warzechian", weapon: "roland-ingeom" }, skills: [{ id: "sweep-attack", rune: "聚力扫击" }, { id: "steed-charge", rune: "马不停蹄" }, { id: "laws-of-valor", rune: "势不可挡" }], powers: { season: "roland-ingeom-power" }, legendaryGems: { control: "bane-of-the-trapped", thorns: "gogok", boss: "bane-of-the-powerful" }, statPriorities: { global: ["25%移速上限", "冷却缩减", "攻速", "横扫攻击技能伤"], survival: ["全元素抗性", "体能", "击中回复生命"] } },
+    sourceRefs: [ROLAND_SOURCES.speed, ROLAND_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "金币内容换沃兹克、金织带、贪婪之戒和贤者两件，寅剑与囤宝者建立连续击杀、死亡之息和护甲链；不掉金币的大秘境不使用这套分支。",
+    patch: { gear: { bracers: "roland-warzechian", belt: "roland-goldwrap", pants: "roland-sage-pants", ring2: "roland-avarice", weapon: "roland-ingeom" }, powers: { armor: "roland-goldwrap-power", season: "roland-ingeom-power" }, legendaryGems: { control: "gogok", thorns: "bane-of-the-powerful", boss: "boon-of-the-hoarder" }, normalGems: { armor: Array(5).fill("flawless-royal-diamond") }, statPriorities: { global: ["25%移速上限", "拾取范围", "冷却缩减", "攻速"], survival: ["金织带护甲", "全元素抗性", "护盾覆盖"], endgame: ["连续击杀触发寅剑", "贤者两件", "只在金币内容启用囤宝者"] } },
+    sourceRefs: [ROLAND_SOURCES.speed, ROLAND_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+];
+
+const ROLAND_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [{ stat: "移动速度", target: "装备+巅峰合计25%", reason: "速刷先到上限，冲层再把剩余点数投向力量。" }, { stat: "力量", target: "其余点数", reason: "提供伤害和护甲，是默认主属性。" }, { stat: "体能", target: "生存不足时投入", reason: "贴身横扫需要先保证不被精英技能秒杀。" }, { stat: "最大圣怒", target: "0点", reason: "黄金剥皮者按命中返怒，不需要大资源池。" }],
+    offense: [{ stat: "冷却缩减", target: "优先", reason: "覆盖阿卡拉特勇士、钢铁之肤和战马。" }, { stat: "暴击几率", target: "第二", reason: "配合横扫与元素爆发提高稳定伤害。" }, { stat: "暴击伤害", target: "第三", reason: "与暴击几率共同成长。" }, { stat: "攻击速度", target: "完成断点", reason: "罗兰层数和攻速决定横扫循环。" }],
+    defense: [{ stat: "全元素抗性", target: "优先点满", reason: "力量已提供护甲，先补全抗。" }, { stat: "生命%", target: "第二", reason: "提高贴身有效生命。" }, { stat: "护甲", target: "第三", reason: "补齐近战防线。" }, { stat: "生命恢复", target: "最后", reason: "作为持续横扫的续航补充。" }],
+    utility: [{ stat: "范围伤害", target: "优先", reason: "横扫与密度清场直接受益。" }, { stat: "能量消耗降低", target: "第二", reason: "帮助天鹰与连续横扫维持资源。" }, { stat: "击中回复生命", target: "第三", reason: "高频横扫命中提供稳定治疗。" }, { stat: "金币拾取范围", target: "金币速刷最后", reason: "只为 T16、蓝门与悬赏服务。" }],
+  },
+  post800: [{ priority: "力量", when: "默认", reason: "继续提供伤害与护甲。" }, { priority: "体能", when: "贴身冲层承受不住", reason: "补到能维持横扫循环后再回力量。" }, { priority: "攻速/冷却/闪电/范围伤", when: "高巅峰冲层", reason: "围绕断点精修，不盲目追单一面板。" }],
+  checkpoints: [{ label: "刚成型", target: "五件罗兰、拒绝盾、黄金剥皮者", action: "先确认罗兰层数、攻速与回怒链成立。" }, { label: "巅峰800", target: "冷却、攻速、三颗核心传奇宝石", action: "让变身和钢铁之肤覆盖稳定。" }, { label: "巅峰2000+", target: "攻速断点、闪电元素、范围伤和钻石", action: "冲层精修生存，金币内容再切换贤者与金币链。" }],
+};
+
+const ROLAND_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "roland-core", targetType: "gear", targetId: "denial", label: "罗兰五件 + 拒绝盾 + 黄金剥皮者", status: "locked", reason: "横扫需要罗兰层数与拒绝盾命中计数，黄金剥皮者负责高密度返怒；缺少其中任一项都不是完整横扫底盘。" },
+  { key: "roland-speed-bracers", targetType: "gear", targetId: "drakon", label: "德拉孔护腕 / 沃兹克护腕", status: "conditional", reason: "冲层和少目标阶段用德拉孔，低层与金币速刷用沃兹克触发破坏物移速。", alternatives: [{ id: "roland-warzechian", label: "沃兹克护腕", when: "低层大秘境、T16、蓝门与悬赏", gain: "破坏物移速", cost: "少目标增伤下降", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "roland-gold-chain", targetType: "gear", targetId: "roland-goldwrap", label: "金织带 + 贪婪之戒 + 囤宝者", status: "conditional", reason: "只在掉金币的内容建立护甲与移速；大秘境不掉金币，必须回到天鹰和冲层戒指。", alternatives: [{ id: "roland-aquila", label: "天鹰胸甲", when: "大秘境冲层与低层大秘境", gain: "不依赖金币的稳定减伤", cost: "失去金币护甲", scenarios: ["push-low", "push-high", "speed-low"] }] },
+  { key: "roland-fourth-slot", targetType: "power", targetId: "furnace", label: "第39赛季第四槽", status: "conditional", reason: "冲层用焚炉处理精英，低层和金币速刷用寅剑把击杀转成连续冷却。", alternatives: [{ id: "roland-ingeom-power", label: "寅剑", when: "精英连续死亡的速刷内容", gain: "击杀精英后重置冷却", cost: "失去焚炉精英增伤", scenarios: ["speed-low", "speed-high"] }] },
+  { key: "roland-follower", targetType: "follower", targetId: "templar", label: "圣殿骑士", status: "flexible", reason: "治疗和回能适合长时间贴身横扫；金币速刷可让随从携带复仇者护腕和金币装备。" },
+];
+
+const ROLAND_REVIEWED_GUIDE: BuildGuide = { ...ROLAND_BASE_GUIDE, configurationBase: ROLAND_CONFIGURATION_BASE, defaultMode: "push", defaultScenarioId: "push-low", scenarios: ROLAND_SCENARIOS, paragonGuide: ROLAND_PARAGON, choicePolicies: ROLAND_CHOICE_POLICIES, reviewStatus: "fully-reviewed", variantCompleteness: "complete" };
+const ROLAND_VALIDATION_ERRORS = validateReviewedBuildGuide(ROLAND_REVIEWED_GUIDE);
+if (ROLAND_VALIDATION_ERRORS.length > 0) throw new Error(`罗兰横扫配置校验失败：${ROLAND_VALIDATION_ERRORS.join("；")}`);
+
 const PONY_REVIEWED_GUIDE: BuildGuide = {
   ...createClassGuide(ponySeed),
   configurationBase: PONY_CONFIGURATION_BASE,
@@ -1388,5 +1485,6 @@ export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
   [AKKHAN_CONDEMN_REVIEWED_GUIDE.id]: AKKHAN_CONDEMN_REVIEWED_GUIDE,
   [AKKHAN_PHALANX_REVIEWED_GUIDE.id]: AKKHAN_PHALANX_REVIEWED_GUIDE,
   [INVOKER_THORNS_REVIEWED_GUIDE.id]: INVOKER_THORNS_REVIEWED_GUIDE,
+  [ROLAND_REVIEWED_GUIDE.id]: ROLAND_REVIEWED_GUIDE,
   [PONY_REVIEWED_GUIDE.id]: PONY_REVIEWED_GUIDE,
 };

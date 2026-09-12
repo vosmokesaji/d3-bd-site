@@ -55708,5 +55708,289 @@
     "manual": {
       "enUS": "Invoker Thorns build guidance"
     }
+  },
+  "app.c31c595649a0b21a": {
+    "source": "破坏物后短暂提高移动速度，横扫的范围伤害很容易触发。",
+    "template": "破坏物后短暂提高移动速度，横扫的[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]很容易触发。"
+  },
+  "app.0e1e878248f4e325": {
+    "source": "祭坛生成额外精英，配合寅剑压缩速刷路径。",
+    "template": "祭坛生成额外精英，配合[[Items/Unique_Sword_1H_113_x1]]压缩[[Site/speed-farming]]路径。"
+  },
+  "app.0839df82250874b8": {
+    "source": "拾取金币后获得护甲，只在掉金币内容中使用。",
+    "template": "拾取金币后获得护甲，只在掉金币内容中使用。"
+  },
+  "app.4046f5ec22a06933": {
+    "source": "拾取金币扩大拾取范围，连接囤宝者与金织带。",
+    "template": "拾取金币扩大拾取范围，连接[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Belt_010_x1]]。"
+  },
+  "app.cbf8a209a2f97cf9": {
+    "source": "贤者之旅腰带",
+    "template": "[[Items/Unique_Boots_018_x1]]腰带"
+  },
+  "app.6ece76851cc8fea4": {
+    "source": "与贤者之握组成死亡之息速刷两件套。",
+    "template": "与贤者之握组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。"
+  },
+  "app.d2e6453e9ccdab1b": {
+    "source": "贤者之旅腿甲",
+    "template": "[[Items/Unique_Boots_018_x1]]腿甲"
+  },
+  "app.f62a502d22930b91": {
+    "source": "与贤者腰带组成死亡之息速刷两件套。",
+    "template": "与[[Items/P66_Unique_Belt_016]]组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。"
+  },
+  "app.38511880cb51f85e": {
+    "source": "击杀精英后大幅缩短冷却，连续速刷专用。",
+    "template": "击杀精英后大幅缩短冷却，连续[[Site/speed-farming]]专用。"
+  },
+  "app.cd7d8caf883be95d": {
+    "source": "提供稳定元素与精英伤，不必等待全能法戒周期。",
+    "template": "提供稳定元素与精英伤，不必等待[[Items/P2_Unique_Ring_04]]周期。"
+  },
+  "app.bf19903c10c80771": {
+    "source": "速刷用连续精英击杀把战马、钢铁之肤和阿卡拉特勇士重新接上。",
+    "template": "[[Site/speed-farming]]用连续精英击杀把战马、[[Powers/X1_Crusader_IronSkin_name]]和[[Powers/X1_Crusader_AkaratsChampion_name]]重新接上。"
+  },
+  "app.b946e03c60f07196": {
+    "source": "只在 T16、蓝门和悬赏中配合囤宝者与贪婪之戒使用。",
+    "template": "只在 T16、蓝门和悬赏中配合[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Ring_108_x1]]使用。"
+  },
+  "app.4cfee15197b5adda": {
+    "source": "横扫攻击技能伤",
+    "template": "[[Powers/X1_Crusader_SweepAttack_name]]技能伤"
+  },
+  "app.65f80704d3bc59f0": {
+    "source": "冷却覆盖",
+    "template": "冷却覆盖"
+  },
+  "app.4b117a7118c24c99": {
+    "source": "受罚者首领阶段",
+    "template": "[[Items/Unique_Gem_018_x1]]首领阶段"
+  },
+  "app.bf521e16c67af7de": {
+    "source": "五件罗兰、拒绝盾、黄金剥皮者和全能法戒组成冲层底盘；用横扫叠攻速与减伤，密度不足时依靠德拉孔护腕处理精英。",
+    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]和[[Items/P2_Unique_Ring_04]]组成[[Site/push]]底盘；用横扫叠攻速与[[Site/damage-reduction]]，密度不足时依靠德拉孔护腕处理精英。"
+  },
+  "app.bc860c0b30fd162e": {
+    "source": "高巅峰保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。",
+    "template": "[[Site/high-paragon]]保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。"
+  },
+  "app.b12d7bfceb8d360f": {
+    "source": "拒绝盾高特效",
+    "template": "[[Items/P61_Unique_Shield_007]]盾高特效"
+  },
+  "app.33085b334dbbf83f": {
+    "source": "不牺牲横扫技能伤",
+    "template": "不牺牲横扫技能伤"
+  },
+  "app.afdd44c4f45db1d1": {
+    "source": "低层保留横扫与拒绝盾，只换沃兹克和寅剑压缩转场；用希望律法与战马赶路，不套用只适合金币内容的金织带。",
+    "template": "低层保留横扫与[[Items/P61_Unique_Shield_007]]盾，只换[[Items/Unique_Bracer_101_x1]]和[[Items/Unique_Sword_1H_113_x1]]压缩转场；用[[Powers/X1_Crusader_LawsOfHope2_name]]与战马赶路，不套用只适合金币内容的[[Items/Unique_Belt_010_x1]]。"
+  },
+  "app.182e8006a250cf2b": {
+    "source": "聚力扫击",
+    "template": "聚力扫击"
+  },
+  "app.ee2723b4cea2d143": {
+    "source": "金币内容换沃兹克、金织带、贪婪之戒和贤者两件，寅剑与囤宝者建立连续击杀、死亡之息和护甲链；不掉金币的大秘境不使用这套分支。",
+    "template": "金币内容换[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Belt_010_x1]]、[[Items/Unique_Ring_108_x1]]和贤者两件，[[Items/Unique_Sword_1H_113_x1]]与[[Items/Unique_Gem_014_x1]]建立连续击杀、[[Items/Crafting_Looted_Reagent_01]]和护甲链；不掉金币的[[NephalemRift/TieredRift]]不使用这套分支。"
+  },
+  "app.85e56dec84919ab6": {
+    "source": "金织带护甲",
+    "template": "[[Items/Unique_Belt_010_x1]]护甲"
+  },
+  "app.66b4fad2baaa187b": {
+    "source": "贤者两件",
+    "template": "贤者两件"
+  },
+  "app.6f128a4b231f4fc5": {
+    "source": "只在金币内容启用囤宝者",
+    "template": "只在金币内容启用[[Items/Unique_Gem_014_x1]]"
+  },
+  "app.c39fa14129b37a7a": {
+    "source": "速刷先到上限，冲层再把剩余点数投向力量。",
+    "template": "[[Site/speed-farming]]先到上限，[[Site/push]]再把剩余点数投向力量。"
+  },
+  "app.1560ea95199ab2e6": {
+    "source": "提供伤害和护甲，是默认主属性。",
+    "template": "提供伤害和护甲，是默认主属性。"
+  },
+  "app.6c9ba7bcfca6154f": {
+    "source": "生存不足时投入",
+    "template": "生存不足时投入"
+  },
+  "app.0d4c9ba4c7465d99": {
+    "source": "贴身横扫需要先保证不被精英技能秒杀。",
+    "template": "贴身横扫需要先保证不被精英技能秒杀。"
+  },
+  "app.eba457b5b2779478": {
+    "source": "黄金剥皮者按命中返怒，不需要大资源池。",
+    "template": "[[Items/P61_Unique_Flail_2H_104]]按命中返怒，不需要大资源池。"
+  },
+  "app.80738beeb05ddcf3": {
+    "source": "覆盖阿卡拉特勇士、钢铁之肤和战马。",
+    "template": "覆盖[[Powers/X1_Crusader_AkaratsChampion_name]]、[[Powers/X1_Crusader_IronSkin_name]]和战马。"
+  },
+  "app.164fc065fb46acfe": {
+    "source": "配合横扫与元素爆发提高稳定伤害。",
+    "template": "配合横扫与元素爆发提高稳定伤害。"
+  },
+  "app.446713cdf622914d": {
+    "source": "完成断点",
+    "template": "完成断点"
+  },
+  "app.b8874fdfc28234a7": {
+    "source": "罗兰层数和攻速决定横扫循环。",
+    "template": "罗兰层数和攻速决定横扫循环。"
+  },
+  "app.99bbfc5a1aadcccd": {
+    "source": "力量已提供护甲，先补全抗。",
+    "template": "力量已提供护甲，先补全抗。"
+  },
+  "app.14866d573ff3784e": {
+    "source": "提高贴身有效生命。",
+    "template": "提高贴身有效生命。"
+  },
+  "app.137a5c92b6505dfd": {
+    "source": "补齐近战防线。",
+    "template": "补齐近战防线。"
+  },
+  "app.94361fdada60e44a": {
+    "source": "作为持续横扫的续航补充。",
+    "template": "作为持续横扫的续航补充。"
+  },
+  "app.fb5758e763372950": {
+    "source": "横扫与密度清场直接受益。",
+    "template": "横扫与密度清场直接受益。"
+  },
+  "app.95d88d1d338897cb": {
+    "source": "帮助天鹰与连续横扫维持资源。",
+    "template": "帮助天鹰与连续横扫维持资源。"
+  },
+  "app.832a704300ad5d00": {
+    "source": "高频横扫命中提供稳定治疗。",
+    "template": "高频横扫命中提供稳定[[Powers/Templar_Heal_110_name]]。"
+  },
+  "app.40cea5708343abf9": {
+    "source": "金币速刷最后",
+    "template": "金币[[Site/speed-farming]]最后"
+  },
+  "app.699295ca41898c86": {
+    "source": "只为 T16、蓝门与悬赏服务。",
+    "template": "只为 T16、蓝门与悬赏服务。"
+  },
+  "app.2c4d07511c6a1f6b": {
+    "source": "继续提供伤害与护甲。",
+    "template": "继续提供伤害与护甲。"
+  },
+  "app.ea28661b35a37c7c": {
+    "source": "贴身冲层承受不住",
+    "template": "贴身[[Site/push]]承受不住"
+  },
+  "app.a9786e16e09b3916": {
+    "source": "补到能维持横扫循环后再回力量。",
+    "template": "补到能维持横扫循环后再回力量。"
+  },
+  "app.173c4a0dc06e4ea8": {
+    "source": "攻速/冷却/闪电/范围伤",
+    "template": "攻速/冷却/闪电/范围伤"
+  },
+  "app.fd9dc054700be7bf": {
+    "source": "围绕断点精修，不盲目追单一面板。",
+    "template": "围绕断点精修，不盲目追单一面板。"
+  },
+  "app.7ba50a0ee3f4c1d1": {
+    "source": "五件罗兰、拒绝盾、黄金剥皮者",
+    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]"
+  },
+  "app.7eecd59ebe6a6912": {
+    "source": "先确认罗兰层数、攻速与回怒链成立。",
+    "template": "先确认罗兰层数、攻速与回怒链成立。"
+  },
+  "app.5c2b03165a01c56e": {
+    "source": "冷却、攻速、三颗核心传奇宝石",
+    "template": "冷却、攻速、三颗核心传奇宝石"
+  },
+  "app.0b1869935c97bf7d": {
+    "source": "让变身和钢铁之肤覆盖稳定。",
+    "template": "让变身和[[Powers/X1_Crusader_IronSkin_name]]覆盖稳定。"
+  },
+  "app.ce7514fe38dfe28d": {
+    "source": "攻速断点、闪电元素、范围伤和钻石",
+    "template": "攻速断点、闪电元素、范围伤和钻石"
+  },
+  "app.51d02b2fc493a991": {
+    "source": "冲层精修生存，金币内容再切换贤者与金币链。",
+    "template": "[[Site/push]]精修生存，金币内容再切换贤者与金币链。"
+  },
+  "app.4af7b901fad6ac59": {
+    "source": "罗兰五件 + 拒绝盾 + 黄金剥皮者",
+    "template": "罗兰五件 + [[Items/P61_Unique_Shield_007]]盾 + [[Items/P61_Unique_Flail_2H_104]]"
+  },
+  "app.8e96f1072d04a86f": {
+    "source": "横扫需要罗兰层数与拒绝盾命中计数，黄金剥皮者负责高密度返怒；缺少其中任一项都不是完整横扫底盘。",
+    "template": "横扫需要罗兰层数与[[Items/P61_Unique_Shield_007]]盾命中计数，[[Items/P61_Unique_Flail_2H_104]]负责高密度返怒；缺少其中任一项都不是完整横扫底盘。"
+  },
+  "app.a42c5bdaa11b9999": {
+    "source": "德拉孔护腕 / 沃兹克护腕",
+    "template": "德拉孔护腕 / [[Items/Unique_Bracer_101_x1]]"
+  },
+  "app.8191cc85ce79361d": {
+    "source": "冲层和少目标阶段用德拉孔，低层与金币速刷用沃兹克触发破坏物移速。",
+    "template": "[[Site/push]]和少目标阶段用德拉孔，低层与金币[[Site/speed-farming]]用[[Items/Unique_Bracer_101_x1]]触发破坏物移速。"
+  },
+  "app.907df5a001347a6b": {
+    "source": "低层大秘境、T16、蓝门与悬赏",
+    "template": "低层[[NephalemRift/TieredRift]]、T16、蓝门与悬赏"
+  },
+  "app.5ca36a9de8e8ccf2": {
+    "source": "少目标增伤下降",
+    "template": "少目标[[Site/damage-boost]]下降"
+  },
+  "app.38dadc4b16deca27": {
+    "source": "金织带 + 贪婪之戒 + 囤宝者",
+    "template": "[[Items/Unique_Belt_010_x1]] + [[Items/Unique_Ring_108_x1]] + [[Items/Unique_Gem_014_x1]]"
+  },
+  "app.4932fd6b19b42e53": {
+    "source": "只在掉金币的内容建立护甲与移速；大秘境不掉金币，必须回到天鹰和冲层戒指。",
+    "template": "只在掉金币的内容建立护甲与移速；[[NephalemRift/TieredRift]]不掉金币，必须回到天鹰和[[Site/push]]戒指。"
+  },
+  "app.77076ff12eaeee23": {
+    "source": "大秘境冲层与低层大秘境",
+    "template": "[[NephalemRift/TieredRift]][[Site/push]]与低层[[NephalemRift/TieredRift]]"
+  },
+  "app.e0032c3c829343ec": {
+    "source": "不依赖金币的稳定减伤",
+    "template": "不依赖金币的稳定[[Site/damage-reduction]]"
+  },
+  "app.46d80d2dc0a022d3": {
+    "source": "失去金币护甲",
+    "template": "失去金币护甲"
+  },
+  "app.db0328d0fb3a5758": {
+    "source": "冲层用焚炉处理精英，低层和金币速刷用寅剑把击杀转成连续冷却。",
+    "template": "[[Site/push]]用[[Items/Unique_Mace_2H_103_x1]]处理精英，低层和金币[[Site/speed-farming]]用[[Items/Unique_Sword_1H_113_x1]]把击杀转成连续冷却。"
+  },
+  "app.9810163d276a8346": {
+    "source": "精英连续死亡的速刷内容",
+    "template": "精英连续死亡的[[Site/speed-farming]]内容"
+  },
+  "app.4dec3ba22eb44a7a": {
+    "source": "击杀精英后重置冷却",
+    "template": "击杀精英后重置冷却"
+  },
+  "app.793a815ee6399f97": {
+    "source": "失去焚炉精英增伤",
+    "template": "失去[[Items/Unique_Mace_2H_103_x1]]精英[[Site/damage-boost]]"
+  },
+  "app.fba9d27bf74d10b5": {
+    "source": "治疗和回能适合长时间贴身横扫；金币速刷可让随从携带复仇者护腕和金币装备。",
+    "template": "[[Powers/Templar_Heal_110_name]]和回能适合长时间贴身横扫；金币[[Site/speed-farming]]可让随从携带[[Items/Unique_Bracer_106_x1]]和金币装备。"
+  },
+  "app.55904ff4ebf8c3be": {
+    "source": "罗兰横扫配置校验失败：{0}",
+    "template": "罗兰横扫配置校验失败：{0}"
   }
 }

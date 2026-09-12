@@ -183,6 +183,28 @@ test("renders the reviewed Invoker Thorns scenarios with thorns and gold-speed b
   assert.match(crusaderData, /validateReviewedBuildGuide\(INVOKER_THORNS_REVIEWED_GUIDE\)/);
 });
 
+test("renders the reviewed Roland Sweep scenarios with density and gold-speed branches", async () => {
+  const [html, crusaderData] = await Promise.all([
+    render("/builds/roland-sweep").then((response) => response.text()),
+    readFile(new URL("../app/data/crusader-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /罗兰横扫/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /T16 \/ 速刷/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(crusaderData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["ROLAND_CONFIGURATION_BASE", "ROLAND_SOURCES", "denial", "golden-flense", "roland-warzechian", "roland-ingeom", "roland-goldwrap", "roland-avarice", "roland-ingeom-power", "boon-of-the-hoarder"]) {
+    assert.match(crusaderData, new RegExp(runtimeChoice));
+  }
+  assert.match(crusaderData, /validateReviewedBuildGuide\(ROLAND_REVIEWED_GUIDE\)/);
+});
+
 test("renders the reviewed Akkhan Phalanx scenarios with pet and self-cast branches", async () => {
   const [html, crusaderData] = await Promise.all([
     render("/builds/akkhan-phalanx").then((response) => response.text()),

@@ -36,12 +36,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 27 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx`、`invoker-thorns`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
+| 已完整校对 | 28 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx`、`invoker-thorns`、`roland-sweep`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 24 | 见路线图第 9 节清单 |
-| 仍需完成 | 24 | 24 套草稿 |
+| 尚未逐套校对 | 23 | 见路线图第 9 节清单 |
+| 仍需完成 | 23 | 23 套草稿 |
 
-当前工作游标：路线图清单第 19 项 `roland-sweep`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
+当前工作游标：路线图清单第 20 项 `seeker-hammer`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -55,7 +55,7 @@ npm test
 
 建议后续顺序：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `roland-sweep`）；之后依次处理 `seeker-hammer`、`lod-bombardment`、`marauder-sentry`。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `seeker-hammer`）；之后依次处理 `lod-bombardment`、`marauder-sentry`、`ue-multishot`。
 
 已完成的基础设施：
 
@@ -64,7 +64,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为构建后执行的 `npm test`，65 项全部通过。
+- 最近一次完整验证为构建后执行的 `npm test`，66 项全部通过。
 
 已知部分实装的真实含义：
 
@@ -397,7 +397,20 @@ npm run dev -- --port 3003
 - 低层大秘境：保留荆棘点杀与团结防线，换寅剑、复仇者护腕和希望律法压缩精英转场。
 - T16 / 蓝门 / 悬赏：改沃兹克、金织带、贪婪之戒、傲慢之冠与囤宝者，只有稳定掉金币的内容启用金币链。
 
-已补齐四场景的装备、技能、被动、魔方、传奇/普通宝石、随从、循环、800 点前后与高巅峰指导，以及固定/条件替换策略。`validateReviewedBuildGuide(INVOKER_THORNS_REVIEWED_GUIDE)` 通过；新增路由回归确认荆棘与金币速刷分支进入真实运行时配置；`npm test` 65 项全部通过。下一套为 `roland-sweep`。
+已补齐四场景的装备、技能、被动、魔方、传奇/普通宝石、随从、循环、800 点前后与高巅峰指导，以及固定/条件替换策略。`validateReviewedBuildGuide(INVOKER_THORNS_REVIEWED_GUIDE)` 通过；新增路由回归确认荆棘与金币速刷分支进入真实运行时配置；`npm test` 66 项全部通过。下一套为 `roland-sweep`。
+
+## 6.7 已完成：罗兰横扫
+
+目标 ID：`roland-sweep`（2026-09-12 完成）
+
+以第 39 赛季 NS、补丁 2.7.8 和第四魔方槽为基准，按当前 Icy Veins 罗兰横扫资料拆成四个真实场景：
+
+- 低巅峰冲层：五件罗兰、拒绝盾、黄金剥皮者、德拉孔护腕和全能法戒，靠密度返怒与横扫层数维持攻速和减伤。
+- 高巅峰冲层：护甲宝石换钻石，围绕攻速断点、冷却、闪电元素、范围伤和首领受罚者优化。
+- 低层大秘境：换沃兹克护腕与寅剑，保留横扫点杀并用击杀冷却和战马压缩转场。
+- T16 / 蓝门 / 悬赏：换金织带、贪婪之戒、贤者两件、沃兹克和寅剑，只有掉金币内容启用囤宝者金币链。
+
+已补齐四场景的装备、技能、被动、魔方、传奇/普通宝石、随从、循环、800 点前后与高巅峰指导，以及固定/条件替换策略。`validateReviewedBuildGuide(ROLAND_REVIEWED_GUIDE)` 通过；新增路由回归确认密度回怒与金币速刷分支进入真实运行时配置；`npm test` 66 项全部通过。下一套为 `seeker-hammer`。
 
 ## 7. 做完后如何记录
 
@@ -511,7 +524,8 @@ git log -1 --stat
 | 10 | `lod-hota` | 已校对 | `feat(bd): 完成梦遗先祖锤多场景校对` | 梦遗远古门槛、黄道/卡修斯主动防线、金币链速刷与不推荐边界、分支来源 | 仅回归维护 |
 | 16 | `akkhan-condemn` | 已校对 | `feat(bd): 完成阿克汉天谴多场景校对` | 双盾弓手冲层、自施天谴金币链速刷、冷却/攻速阈值与来源 | 仅回归维护 |
 | 17 | `akkhan-phalanx` | 已校对 | `feat(bd): 完成阿克汉圣军多场景校对` | 弓手触发天谴、低层弓手速刷、T16 自施天谴金币链、1.78 攻速与来源 | 仅回归维护 |
-| 18 | `invoker-thorns` | 已校对 | `feat(bd): 完成唤魔荆棘多场景校对` | 五件唤魔师+两件船长、博雅斯基碎片、攻速/荆棘点杀、寅剑低层分支与金币链速刷 | 下一套 `roland-sweep` |
+| 18 | `invoker-thorns` | 已校对 | `feat(bd): 完成唤魔荆棘多场景校对` | 五件唤魔师+两件船长、博雅斯基碎片、攻速/荆棘点杀、寅剑低层分支与金币链速刷 | 仅回归维护 |
+| 19 | `roland-sweep` | 已校对 | `feat(bd): 完成罗兰横扫多场景校对` | 罗兰层数、拒绝盾、黄金剥皮者密度回怒、寅剑低层分支与贤者/金币链速刷 | 下一套 `seeker-hammer` |
 
 其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
 
