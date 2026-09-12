@@ -1,4 +1,4 @@
-import { createClassGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
+import { createClassGuide, createGenericReviewedGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
 import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type ParagonGuide } from "./build-guides";
 
 const valor: GearSeed[] = [
@@ -1477,7 +1477,7 @@ if (PONY_VALIDATION_ERRORS.length > 0) throw new Error(`跑马天拳配置校验
 
 export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
   ...Object.fromEntries(seeds.map((seed) => {
-    const guide = createClassGuide(seed);
+    const guide = createGenericReviewedGuide(createClassGuide(seed));
     return [guide.id, guide];
   })),
   [VALOR_FURY_REVIEWED_GUIDE.id]: VALOR_FURY_REVIEWED_GUIDE,

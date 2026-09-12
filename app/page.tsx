@@ -1663,7 +1663,7 @@ function tragoulConfiguration(mode: Mode, paragon: Paragon) {
   return resolveBuildConfiguration(TRAGOUL_CONFIGURATION_BASE, scenario?.patch);
 }
 
-const TRAGOUL_GUIDE: UnifiedBuildGuide = {
+export const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   id: "tragoul-nova",
   name: "塔格奥 · 死亡新星",
   set: "塔格奥的化身",

@@ -1,0 +1,2401 @@
+{
+  "generatedAt": "2026-09-12T03:18:51.522Z",
+  "season": "S39 / 2.7.8",
+  "total": 51,
+  "fullyReviewed": 51,
+  "valid": 51,
+  "builds": [
+    {
+      "id": "akkhan-condemn",
+      "name": "阿克汉天谴",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 7,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-akkhan-condemn-build",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 24,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-nephalem-rift-speed-farming-build",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-speed-farming-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 25,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-nephalem-rift-speed-farming-build",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-speed-farming-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "akkhan-phalanx",
+      "name": "阿克汉圣军",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 9,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-akkhan-condemn-build",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 15,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 25,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-nephalem-rift-speed-farming-build",
+            "https://www.icy-veins.com/d3/akkhan-condemn-crusader-speed-farming-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arachyr-chicken",
+      "name": "亚拉基尔愤怒鸡",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-chicken-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-chicken-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-chicken-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-chicken-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arachyr-spiders",
+      "name": "亚拉基尔蜘蛛",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-spiders-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-spiders-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-spiders-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-arachyr-spiders-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delsere-twister",
+      "name": "德尔西尼旋风",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-energy-twister-build-with-delsere-set",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-energy-twister-build-with-delsere-set",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 6,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-energy-twister-build-with-delsere-set",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-energy-twister-build-with-delsere-set",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earth-leapquake",
+      "name": "大地跃击",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-earthquake-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-earthquake-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-earthquake-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-earthquake-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "firebird-eb",
+      "name": "火鸟爆炸冲击",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-firebird-explosive-blast-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-firebird-explosive-blast-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 7,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-firebird-explosive-blast-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 6,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-firebird-explosive-blast-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "god-hungering",
+      "name": "恐惧冰吞",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 7,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god",
+            "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god#bis-gear-gems-paragon-points",
+            "https://www.9game.cn/news/5268802.html"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god",
+            "https://www.icy-veins.com/d3/demon-hunter-hungering-arrow-build-with-god#bis-gear-gems-paragon-points",
+            "https://www.9game.cn/news/5268802.html"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 15,
+          "sourceRefs": [
+            "https://bbs.nga.cn/read.php?tid=44264360",
+            "https://maxroll.gg/d3/guides/god-ha-demon-hunter-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 16,
+          "sourceRefs": [
+            "https://bbs.nga.cn/read.php?tid=44264360",
+            "https://maxroll.gg/d3/guides/god-ha-demon-hunter-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "god-monk",
+      "name": "上帝僧 · 无限疾风",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 8,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://bbs.d.163.com/forum.php?mod=viewthread&tid=173838948",
+            "https://www.diablofans.com/builds/82070-ultimate-rainbow-goblin-farming-monk"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 3,
+          "sourceRefs": [
+            "https://bbs.d.163.com/forum.php?mod=viewthread&tid=173838948",
+            "https://www.diablofans.com/builds/82070-ultimate-rainbow-goblin-farming-monk"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 28,
+          "sourceRefs": [
+            "https://bbs.d.163.com/forum.php?mod=viewthread&tid=173838948",
+            "https://www.606soft.com/news/5183.html"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 29,
+          "sourceRefs": [
+            "https://bbs.d.163.com/forum.php?mod=viewthread&tid=173838948",
+            "https://www.606soft.com/news/5183.html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "h90-frenzy",
+      "name": "九十蛮狂乱",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "helltooth-garg",
+      "name": "魔牙巨尸",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-helltooth-gargantuan-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-helltooth-gargantuan-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-helltooth-gargantuan-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-helltooth-gargantuan-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ik-charge",
+      "name": "不朽冲锋",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-furious-charge-build-with-immortal-king-and-raekor"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-furious-charge-build-with-immortal-king-and-raekor"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-furious-charge-build-with-immortal-king-and-raekor"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-furious-charge-build-with-immortal-king-and-raekor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ik-hota",
+      "name": "不朽先祖锤",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 7,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-hota-build-with-immortal-king",
+            "https://www.icy-veins.com/d3/hota-ik-barbarian-skills-and-runes",
+            "https://www.icy-veins.com/d3/hota-ik-barbarian-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/hota-ik-barbarian-bis-gear-gems-paragon-points",
+            "https://www.icy-veins.com/d3/barbarian-hota-build-with-immortal-king"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 17,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/hota-ik-barbarian-speed-farming-build",
+            "https://www.icy-veins.com/d3/hota-ik-barbarian-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 23,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/hota-ik-barbarian-speed-farming-build",
+            "https://www.icy-veins.com/d3/hota-ik-barbarian-bis-gear-gems-paragon-points"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inarius-nova",
+      "name": "伊纳瑞斯死亡新星",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 6,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-blood-nova-build-with-inarius",
+            "https://maxroll.gg/d3/guides/inarius-death-nova-necromancer-guide"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-blood-nova-build-with-inarius",
+            "https://maxroll.gg/d3/guides/inarius-death-nova-necromancer-guide"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 14,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/inarius-death-nova-necromancer-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 18,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/inarius-death-nova-necromancer-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inna-ally",
+      "name": "尹娜幻身",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-inna-mystic-ally-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-inna-mystic-ally-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-inna-mystic-ally-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-inna-mystic-ally-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invoker-thorns",
+      "name": "唤魔荆棘",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 7,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-invoker-thorns-build",
+            "https://www.icy-veins.com/d3/invoker-thorns-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/invoker-thorns-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/invoker-thorns-crusader-bis-gear-gems-paragon-points",
+            "https://www.icy-veins.com/d3/crusader-invoker-thorns-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 13,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/invoker-thorns-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/invoker-thorns-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 21,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/invoker-thorns-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/invoker-thorns-crusader-bis-gear-gems-paragon-points"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jade-harvest",
+      "name": "玉魂收割",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-jade-harvester-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-jade-harvester-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-jade-harvester-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-jade-harvester-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-barrage",
+      "name": "梦遗魂弹",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-lod-spirit-barrage-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-lod-spirit-barrage-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-lod-spirit-barrage-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-lod-spirit-barrage-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-bombardment",
+      "name": "梦遗轰击",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-corpse-explosion",
+      "name": "梦遗尸爆",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 6,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-corpse-explosion-build-with-lod",
+            "https://www.icy-veins.com/d3/lod-corpse-explosion-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-corpse-explosion-build-with-lod",
+            "https://www.icy-veins.com/d3/lod-corpse-explosion-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 13,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/lod-corpse-explosion-necromancer-key-farming-build",
+            "https://maxroll.gg/d3/guides/lod-corpse-explosion-necromancer-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 15,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/lod-corpse-explosion-necromancer-key-farming-build",
+            "https://maxroll.gg/d3/guides/lod-corpse-explosion-necromancer-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-hota",
+      "name": "梦遗先祖锤",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 6,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-hammer-of-the-ancients-gr-build-with-legacy-of-dreams",
+            "https://www.icy-veins.com/d3/lod-hota-barbarian-skills-and-runes",
+            "https://www.icy-veins.com/d3/lod-hota-barbarian-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/lod-hota-barbarian-bis-gear-gems-paragon-points",
+            "https://www.icy-veins.com/d3/barbarian-hammer-of-the-ancients-gr-build-with-legacy-of-dreams"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 16,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/lod-hota-barbarian-speed-farming-build",
+            "https://www.icy-veins.com/d3/lod-hota-barbarian-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 18,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/lod-hota-barbarian-speed-farming-build",
+            "https://www.icy-veins.com/d3/lod-hota-barbarian-bis-gear-gems-paragon-points"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-meteor",
+      "name": "梦遗陨石",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-lod-meteor-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-lod-meteor-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 6,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-lod-meteor-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 3,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-lod-meteor-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-nova",
+      "name": "梦遗死亡新星",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 7,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-blood-nova-build-with-lod",
+            "https://www.icy-veins.com/d3/lod-blood-nova-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-blood-nova-build-with-lod",
+            "https://www.icy-veins.com/d3/lod-blood-nova-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 14,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/lod-blood-nova-necromancer-speed-farming-build",
+            "https://maxroll.gg/d3/guides/lod-death-nova-necromancer-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 18,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/lod-blood-nova-necromancer-speed-farming-build",
+            "https://maxroll.gg/d3/guides/lod-death-nova-necromancer-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-orb",
+      "name": "梦遗冰封球",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frozen-orb-build-with-legacy-of-dreams",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 3,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frozen-orb-build-with-legacy-of-dreams",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frozen-orb-build-with-legacy-of-dreams",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frozen-orb-build-with-legacy-of-dreams",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-rapid-fire",
+      "name": "梦遗连射",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-lod-rapid-fire-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-lod-rapid-fire-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-lod-rapid-fire-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-lod-rapid-fire-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lod-wol",
+      "name": "梦遗敲钟",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-lod-wave-of-light-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-lod-wave-of-light-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-lod-wave-of-light-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-lod-wave-of-light-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marauder-sentry",
+      "name": "掠夺集束塔",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-marauders-sentry-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-marauders-sentry-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-marauders-sentry-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-marauders-sentry-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masquerade-spear",
+      "name": "狂欢节骨矛",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 6,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-bone-spear-build-with-masquerade",
+            "https://www.icy-veins.com/d3/masquerade-bone-spear-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-bone-spear-build-with-masquerade",
+            "https://www.icy-veins.com/d3/masquerade-bone-spear-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 15,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/masquerade-bone-spear-necromancer-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 16,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/masquerade-bone-spear-necromancer-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mundunugu-barrage",
+      "name": "蒙嘟噜魂弹",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-mundunugu-spirit-barrage-build",
+            "https://maxroll.gg/d3/guides/mundunugu-spirit-barrage-witch-doctor-guide"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 1,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-mundunugu-spirit-barrage-build",
+            "https://maxroll.gg/d3/guides/mundunugu-spirit-barrage-witch-doctor-guide"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 7,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/mundunugu-spirit-barrage-witch-doctor-speed-farming-build",
+            "https://maxroll.gg/d3/guides/mundunugu-spirit-barrage-witch-doctor-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 10,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/mundunugu-spirit-barrage-witch-doctor-speed-farming-build",
+            "https://maxroll.gg/d3/guides/mundunugu-spirit-barrage-witch-doctor-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "natalya-trap",
+      "name": "娜塔亚尖刺陷阱",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-natalyas-vengeful-traps-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-natalyas-vengeful-traps-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-natalyas-vengeful-traps-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-natalyas-vengeful-traps-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pestilence-lance",
+      "name": "瘟疫尸枪",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 6,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-corpse-lance-build-with-pestilence-or-trag-ouls-set",
+            "https://www.icy-veins.com/d3/corpse-lance-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-corpse-lance-build-with-pestilence-or-trag-ouls-set",
+            "https://www.icy-veins.com/d3/corpse-lance-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 13,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/pestilence-corpse-lance-necromancer-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 15,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/pestilence-corpse-lance-necromancer-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poj-tempest",
+      "name": "正义风雷冲",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-patterns-of-justice-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-patterns-of-justice-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-patterns-of-justice-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-patterns-of-justice-tempest-rush-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pony-fist-farm",
+      "name": "跑马天拳 · 全能速刷",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 8,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build",
+            "https://ol.3dmgame.com/gl/317434.html",
+            "https://m.3dmgame.com/ol/gl/301903.html"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon"
+          ]
+        },
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 16,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon",
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 18,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon",
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "raekor-boulder",
+      "name": "蕾蔻巨石",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 6,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-boulder-toss-build-with-the-raekor-set",
+            "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-skills-and-runes",
+            "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-bis-gear-gems-paragon-points",
+            "https://maxroll.gg/d3/guides/raekor-boulder-toss-barbarian-guide"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-bis-gear-gems-paragon-points",
+            "https://maxroll.gg/d3/guides/raekor-boulder-toss-barbarian-guide"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 19,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-speed-farming-build",
+            "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-bis-gear-gems-paragon-points",
+            "https://maxroll.gg/d3/guides/raekor-boulder-toss-barbarian-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 24,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/boulder-toss-raekor-barbarian-speed-farming-build",
+            "https://maxroll.gg/d3/guides/raekor-boulder-toss-barbarian-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "raiment-dash",
+      "name": "千飓疾风击",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-raiment-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-raiment-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-raiment-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-raiment-tempest-rush-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rathma-aotd",
+      "name": "拉斯玛亡者大军",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 6,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
+            "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
+            "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 13,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 14,
+          "sourceRefs": [
+            "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roland-sweep",
+      "name": "罗兰横扫",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-rolands-sweep-attack-build",
+            "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-bis-gear-gems-paragon-points",
+            "https://www.icy-veins.com/d3/crusader-rolands-sweep-attack-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 11,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 14,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-bis-gear-gems-paragon-points"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seeker-hammer",
+      "name": "圣光锤丁",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-blessed-hammer-build-with-seeker-of-the-light-set"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-blessed-hammer-build-with-seeker-of-the-light-set"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-blessed-hammer-build-with-seeker-of-the-light-set"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-blessed-hammer-build-with-seeker-of-the-light-set"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shadow-impale",
+      "name": "暗影三刀",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-shadow-impale-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-shadow-impale-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-shadow-impale-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-shadow-impale-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sunwuko-tempest",
+      "name": "猴王风雷冲",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-tempest-rush-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-tempest-rush-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sunwuko-wol",
+      "name": "猴王敲钟",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-wave-of-light-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-wave-of-light-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-wave-of-light-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-sunwuko-wave-of-light-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tal-meteor",
+      "name": "塔拉夏陨石",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-meteor-build-with-tal-rasha",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-meteor-build-with-tal-rasha",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-meteor-build-with-tal-rasha",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 3,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-meteor-build-with-tal-rasha",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tragoul-nova",
+      "name": "塔格奥 · 死亡新星",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 8,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-death-nova-build-with-trag-oul",
+            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 6,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/necromancer-death-nova-build-with-trag-oul",
+            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 8,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-nephalem-rift-speed-farming-build",
+            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 14,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-nephalem-rift-speed-farming-build",
+            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typhon-hydra",
+      "name": "提丰多头蛇",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frost-hydra-build-with-typhon",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frost-hydra-build-with-typhon",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frost-hydra-build-with-typhon",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-frost-hydra-build-with-typhon",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ue-multishot",
+      "name": "不洁多重射击",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-unhallowed-essence-multishot-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-unhallowed-essence-multishot-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-unhallowed-essence-multishot-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/demon-hunter-unhallowed-essence-multishot-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uliana-palm",
+      "name": "乌莲娜爆裂掌",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-uliana-exploding-palm-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-uliana-exploding-palm-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-uliana-exploding-palm-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/monk-uliana-exploding-palm-build"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valor-fist",
+      "name": "勇气天拳",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 7,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build",
+            "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build",
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 20,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 24,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/aegis-of-valor-fist-of-the-heavens-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-fist-of-the-heavens-build#bis-gear-gems-paragon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valor-fury",
+      "name": "勇气天堂之怒",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 9,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-heavens-fury-build",
+            "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-skills-and-runes",
+            "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-bis-gear-gems-paragon-points",
+            "https://www.icy-veins.com/forums/topic/87828-diablo-3-season-39-preview/"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/crusader-aegis-of-valor-heavens-fury-build",
+            "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 21,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-speed-farming-build",
+            "https://www.icy-veins.com/forums/topic/87828-diablo-3-season-39-preview/"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 22,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-speed-farming-build",
+            "https://www.icy-veins.com/d3/aegis-of-valor-heavens-fury-crusader-bis-gear-gems-paragon-points"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vyr-archon",
+      "name": "维尔御法者",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 5,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-vyr-archon-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-vyr-archon-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 8,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-vyr-archon-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 6,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/wizard-vyr-archon-build",
+            "https://maxroll.gg/d3/category/guides",
+            "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wastes-rend",
+      "name": "荒原旋风痛割",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 7,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-rend-build-with-wrath-of-the-wastes",
+            "https://www.icy-veins.com/d3/rend-wastes-barbarian-skills-and-runes",
+            "https://www.icy-veins.com/d3/rend-wastes-barbarian-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 5,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/barbarian-rend-build-with-wrath-of-the-wastes",
+            "https://www.icy-veins.com/d3/rend-wastes-barbarian-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 21,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/rend-wastes-barbarian-speed-farming-build",
+            "https://www.icy-veins.com/d3/rend-wastes-barbarian-bis-gear-gems-paragon-points"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 24,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/rend-wastes-barbarian-speed-farming-build",
+            "https://www.icy-veins.com/d3/rend-wastes-barbarian-bis-gear-gems-paragon-points"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zuni-darts",
+      "name": "祖尼玛毒镖",
+      "reviewStatus": "fully-reviewed",
+      "variantCompleteness": "complete",
+      "scenarioCount": 4,
+      "paragon": true,
+      "choicePolicyCount": 2,
+      "validationErrors": [],
+      "scenarios": [
+        {
+          "id": "push-low",
+          "applicability": "supported",
+          "diffCount": 0,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
+          ]
+        },
+        {
+          "id": "push-high",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
+          ]
+        },
+        {
+          "id": "speed-low",
+          "applicability": "supported",
+          "diffCount": 2,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
+          ]
+        },
+        {
+          "id": "speed-high",
+          "applicability": "supported",
+          "diffCount": 4,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
+          ]
+        }
+      ]
+    }
+  ]
+}

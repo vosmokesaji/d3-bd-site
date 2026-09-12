@@ -895,5 +895,13 @@
   "击杀精英后重置冷却": {"enUS":"Roland Sweep build guidance"},
   "失去焚炉精英增伤": {"enUS":"Roland Sweep build guidance"},
   "治疗和回能适合长时间贴身横扫；金币速刷可让随从携带复仇者护腕和金币装备。": {"enUS":"Roland Sweep build guidance"},
-  "罗兰横扫配置校验失败：{0}": {"enUS":"Roland Sweep build guidance"}
+  "罗兰横扫配置校验失败：{0}": {"enUS":"Roland Sweep build guidance"},
+  "最大资源": {"zhCN":"最大资源","zhTW":"最大資源","enUS":"Maximum resource"},
+  "冷却、攻速与技能伤": {"zhCN":"冷却、攻速与技能伤","zhTW":"冷卻、攻速與技能傷","enUS":"Cooldown, attack speed and skill damage"},
+  "速刷宝石": {"zhCN":"速刷宝石","zhTW":"速刷寶石","enUS":"Speed-farming gem"},
+  "治疗": {"zhCN":"治疗","zhTW":"治療","enUS":"Healing"},
+  "生存不足": {"zhCN":"生存不足","zhTW":"生存不足","enUS":"Low toughness"},
+  "冷却与三颗核心传奇宝石": {"zhCN":"冷却与三颗核心传奇宝石","zhTW":"冷卻與三顆核心傳奇寶石","enUS":"Cooldown and three core legendary gems"},
+  "正确词缀与生存": {"zhCN":"正确词缀与生存","zhTW":"正確詞綴與生存","enUS":"Correct affixes and toughness"},
+  "冷却、攻速与范围伤": {"zhCN":"冷却、攻速与范围伤","zhTW":"冷卻、攻速與範圍傷","enUS":"Cooldown, attack speed and area damage"}
 }

@@ -15,7 +15,8 @@
     "build:item-library": "node scripts/build-item-library.mjs",
     "db:generate": "drizzle-kit generate",
     "typecheck": "tsc --noEmit --incremental false",
-    "test:i18n": "node --test tests/i18n.test.mjs"
+    "test:i18n": "node --test tests/i18n.test.mjs",
+    "audit:bd": "node scripts/audit-bd-review.mjs --write"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",

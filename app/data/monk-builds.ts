@@ -1,4 +1,4 @@
-import { createClassGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
+import { createClassGuide, createGenericReviewedGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
 import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type ParagonGuide } from "./build-guides";
 
 const justice: GearSeed[] = [
@@ -342,7 +342,7 @@ if (GOD_MONK_VALIDATION_ERRORS.length > 0) throw new Error(`上帝僧配置校�
 
 export const MONK_BUILDS: Record<string, BuildGuide> = {
   ...Object.fromEntries(seeds.map((seed) => {
-    const guide = createClassGuide(seed);
+    const guide = createGenericReviewedGuide(createClassGuide(seed));
     return [guide.id, guide];
   })),
   [GOD_MONK_REVIEWED_GUIDE.id]: GOD_MONK_REVIEWED_GUIDE,

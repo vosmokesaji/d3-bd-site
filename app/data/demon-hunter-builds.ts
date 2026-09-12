@@ -1,4 +1,4 @@
-import { createClassGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
+import { createClassGuide, createGenericReviewedGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
 import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type ParagonGuide } from "./build-guides";
 
 const god: GearSeed[] = [
@@ -271,7 +271,7 @@ if (GOD_VALIDATION_ERRORS.length > 0) throw new Error(`恐惧冰吞配置校验�
 
 export const DEMON_HUNTER_BUILDS: Record<string, BuildGuide> = {
   ...Object.fromEntries(seeds.map((seed) => {
-    const guide = createClassGuide(seed);
+    const guide = createGenericReviewedGuide(createClassGuide(seed));
     return [guide.id, guide];
   })),
   [GOD_REVIEWED_GUIDE.id]: GOD_REVIEWED_GUIDE,

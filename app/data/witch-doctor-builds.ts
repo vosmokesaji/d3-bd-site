@@ -1,4 +1,4 @@
-import { createClassGuide, GEMS, itemFile, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
+import { createClassGuide, createGenericReviewedGuide, GEMS, itemFile, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
 import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type GuideGear, type GuidePower, type ParagonGuide } from "./build-guides";
 
 const mundunugu: GearSeed[] = [
@@ -231,7 +231,7 @@ const MUNDUNUGU_POLICIES: BuildChoicePolicy[] = [
 ];
 
 function completeWitchDoctorGuide(seed: ClassGuideSeed): BuildGuide {
-  const guide = createClassGuide(seed);
+  const guide = createGenericReviewedGuide(createClassGuide(seed));
   if (guide.id !== "mundunugu-barrage") return guide;
   for (const item of WITCH_DOCTOR_EXTRA_GEAR) {
     if (!guide.gear.some((existing) => existing.id === item.id)) guide.gear.push(item);

@@ -48790,5 +48790,37 @@
   "app.55904ff4ebf8c3be": {
     "source": "罗兰横扫配置校验失败：{0}",
     "template": "罗兰横扫配置校验失败：{0}"
+  },
+  "app.5c45a705bd4b7c48": {
+    "source": "最大资源",
+    "template": "最大资源"
+  },
+  "app.4d09d8f699ad8575": {
+    "source": "生存不足",
+    "template": "生存不足"
+  },
+  "app.e004d0823568820d": {
+    "source": "冷却、攻速与技能伤",
+    "template": "冷却、攻速与技能伤"
+  },
+  "app.0708336bfb81f3f9": {
+    "source": "冷却与三颗核心传奇宝石",
+    "template": "冷却与三颗核心传奇宝石"
+  },
+  "app.055d9781b8bfb71f": {
+    "source": "正确词缀与生存",
+    "template": "正确词缀与生存"
+  },
+  "app.9d8707f4c1f4d6f1": {
+    "source": "冷却、攻速与范围伤",
+    "template": "冷却、攻速与范围伤"
+  },
+  "app.304c31bd718618ce": {
+    "source": "速刷宝石",
+    "template": "[[Site/speed-farming]]宝石"
+  },
+  "app.4fed6394c592d64b": {
+    "source": "undefined技能伤",
+    "template": "undefined技能伤"
   }
 }

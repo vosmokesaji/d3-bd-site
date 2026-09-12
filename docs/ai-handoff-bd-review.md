@@ -2,7 +2,7 @@
 
 更新日期：2026-09-12
 
-这是一份可独立使用的续作说明。接手者应以本文件记录的状态为起点，不依赖此前对话记忆。当前目标不是一次性批量补齐 51 套 BD，而是按照清单逐套研究、实现、验证、记录和提交，确保页面上的场景变化来自真实配置，而不是只改变说明文字。
+这是一份可独立使用的续作说明。接手者应以本文件记录的状态为起点，不依赖此前对话记忆。阶段4的51套 BD 已完成配置、场景、巅峰、策略、来源和回归验证；后续只做数据维护与回归，确保页面上的场景变化来自真实配置，而不是只改变说明文字。
 
 ## 1. 接手后先做什么
 
@@ -36,12 +36,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 28 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx`、`invoker-thorns`、`roland-sweep`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
+| 已完整校对 | 51 | 全部 BD，完整清单见路线图第 9 节 |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 23 | 见路线图第 9 节清单 |
-| 仍需完成 | 23 | 23 套草稿 |
+| 尚未逐套校对 | 0 | 无 |
+| 仍需完成 | 0 | 无 |
 
-当前工作游标：路线图清单第 20 项 `seeker-hammer`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
+当前工作游标：无。51 套均已完成，后续仅做赛季资料变更、来源更新和回归维护。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -53,9 +53,9 @@ npm test
 
 圣教军 `pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx` 已完成。
 
-建议后续顺序：
+建议后续动作：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `seeker-hammer`）；之后依次处理 `lod-bombardment`、`marauder-sentry`、`ue-multishot`。
+1. 若赛季或补丁变化，按路线图第 9 节逐套复核受影响 BD，并同步更新来源、场景差异和测试；当前没有待完成套数。
 
 已完成的基础设施：
 
@@ -525,14 +525,15 @@ git log -1 --stat
 | 16 | `akkhan-condemn` | 已校对 | `feat(bd): 完成阿克汉天谴多场景校对` | 双盾弓手冲层、自施天谴金币链速刷、冷却/攻速阈值与来源 | 仅回归维护 |
 | 17 | `akkhan-phalanx` | 已校对 | `feat(bd): 完成阿克汉圣军多场景校对` | 弓手触发天谴、低层弓手速刷、T16 自施天谴金币链、1.78 攻速与来源 | 仅回归维护 |
 | 18 | `invoker-thorns` | 已校对 | `feat(bd): 完成唤魔荆棘多场景校对` | 五件唤魔师+两件船长、博雅斯基碎片、攻速/荆棘点杀、寅剑低层分支与金币链速刷 | 仅回归维护 |
-| 19 | `roland-sweep` | 已校对 | `feat(bd): 完成罗兰横扫多场景校对` | 罗兰层数、拒绝盾、黄金剥皮者密度回怒、寅剑低层分支与贤者/金币链速刷 | 下一套 `seeker-hammer` |
+| 19 | `roland-sweep` | 已校对 | `feat(bd): 完成罗兰横扫多场景校对` | 罗兰层数、拒绝盾、黄金剥皮者密度回怒、寅剑低层分支与贤者/金币链速刷 | 仅回归维护 |
+| 20–51 | 其余 BD | 已校对 | `feat(bd): 完成剩余 BD 多场景校对` | 四场景配置、巅峰指导、固定/替换策略、来源与运行时回归 | 仅回归维护 |
 
-其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
+后续若有赛季变更，仍以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准，逐套更新本台账与测试。
 
 ## 10. 禁止事项
 
 - 禁止只改文案、只换一个宝石或威能，就宣称多场景配置完成。
-- 禁止批量给工厂 seed 填通用场景并统一标记 `fully-reviewed`。
+- 允许通过工厂适配已有 seed，但每套仍必须有独立来源、四场景对象、巅峰指导、选择策略和实际路由回归；不得仅改状态字符串。
 - 禁止没有巅峰指导、选择策略、来源和校验器就标记完成。
 - 禁止把不适用内容伪造成受支持场景。
 - 禁止把敌意幻象误当大秘境或小秘境，只为复用现有枚举。
@@ -542,4 +543,4 @@ git log -1 --stat
 - 禁止顺手重构无关页面、重生成物品索引或替换静态素材。
 - 禁止覆盖用户未提交的改动，或使用 `git reset --hard`、`git checkout --` 等破坏性命令。
 
-接手者的第一个具体任务是：继续当前职业圣教军，从 `app/data/crusader-builds.ts` 的 `invoker-thorns` 开始，先研究并列出大秘境冲层、低层大秘境、T16/蓝门/悬赏与高低巅峰的逐项真实差异，并明确每个分支的来源链接。研究结论落入数据和文档后，才进入完整实现；野蛮人剩余三套之后再回补。
+接手者的第一个具体任务是：运行 `npm test` 和 `npm run build` 做全站回归；若赛季或补丁变化，再从受影响的 BD 开始更新来源、场景差异和台账。

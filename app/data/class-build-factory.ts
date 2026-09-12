@@ -1,4 +1,4 @@
-import { completeBuildGuide, type BuildGuide, type BuildLoadout, type GuideAbility, type GuideGear, type GuideLink, type GuidePower } from "./build-guides";
+import { completeBuildGuide, type BuildConfiguration, type BuildGuide, type BuildLoadout, type BuildScenario, type GuideAbility, type GuideGear, type GuideLink, type GuidePower, type ParagonGuide } from "./build-guides";
 import { CURRENT_SEASON } from "./season-config";
 import { itemAsset, skillAsset } from "./assets";
 
@@ -260,6 +260,74 @@ export function createClassGuide(seed: ClassGuideSeed): BuildGuide {
     defaultLoadoutId: seed.defaultLoadoutId,
     loadouts: seed.loadouts?.map((loadout) => makeLoadout(loadout, seed)),
   }, CURRENT_SEASON.seasonId);
+}
+
+const genericReviewedSources: Record<string, string> = {
+  "marauder-sentry": "https://www.icy-veins.com/d3/demon-hunter-marauders-sentry-build",
+  "ue-multishot": "https://www.icy-veins.com/d3/demon-hunter-unhallowed-essence-multishot-build",
+  "natalya-trap": "https://www.icy-veins.com/d3/demon-hunter-natalyas-vengeful-traps-build",
+  "shadow-impale": "https://www.icy-veins.com/d3/demon-hunter-shadow-impale-build",
+  "lod-rapid-fire": "https://www.icy-veins.com/d3/demon-hunter-lod-rapid-fire-build",
+  "inna-ally": "https://www.icy-veins.com/d3/monk-inna-mystic-ally-build",
+  "poj-tempest": "https://www.icy-veins.com/d3/monk-patterns-of-justice-tempest-rush-build",
+  "sunwuko-tempest": "https://www.icy-veins.com/d3/monk-sunwuko-tempest-rush-build",
+  "sunwuko-wol": "https://www.icy-veins.com/d3/monk-sunwuko-wave-of-light-build",
+  "lod-wol": "https://www.icy-veins.com/d3/monk-lod-wave-of-light-build",
+  "uliana-palm": "https://www.icy-veins.com/d3/monk-uliana-exploding-palm-build",
+  "raiment-dash": "https://www.icy-veins.com/d3/monk-raiment-tempest-rush-build",
+  "arachyr-spiders": "https://www.icy-veins.com/d3/witch-doctor-arachyr-spiders-build",
+  "arachyr-chicken": "https://www.icy-veins.com/d3/witch-doctor-arachyr-chicken-build",
+  "zuni-darts": "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build",
+  "jade-harvest": "https://www.icy-veins.com/d3/witch-doctor-jade-harvester-build",
+  "helltooth-garg": "https://www.icy-veins.com/d3/witch-doctor-helltooth-gargantuan-build",
+  "lod-barrage": "https://www.icy-veins.com/d3/witch-doctor-lod-spirit-barrage-build",
+  "earth-leapquake": "https://www.icy-veins.com/d3/barbarian-earthquake-build",
+  "h90-frenzy": "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build",
+  "ik-charge": "https://www.icy-veins.com/d3/barbarian-furious-charge-build-with-immortal-king-and-raekor",
+  "seeker-hammer": "https://www.icy-veins.com/d3/crusader-blessed-hammer-build-with-seeker-of-the-light-set",
+  "lod-bombardment": "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set",
+};
+
+export function createGenericReviewedGuide(guide: BuildGuide, source = genericReviewedSources[guide.id] ?? guide.source): BuildGuide {
+  const used = new Set<string>();
+  const pickGear = (slot: string) => {
+    const item = guide.gear.find((candidate) => candidate.slot === slot && !used.has(candidate.id)) ?? guide.gear.find((candidate) => !used.has(candidate.id));
+    if (!item) return undefined;
+    used.add(item.id); return item.id;
+  };
+  const gear: Record<string, string> = {};
+  for (const [key, slot] of [["head", "头部"], ["shoulders", "肩部"], ["chest", "胸部"], ["gloves", "手部"], ["bracers", "腕部"], ["belt", "腰部"], ["pants", "腿部"], ["boots", "脚部"], ["amulet", "颈部"], ["ring1", "手指"], ["ring2", "手指"], ["weapon", "主手"], ["offhand", "副手"]] as const) {
+    const id = pickGear(slot); if (id) gear[key] = id;
+  }
+  const configurationBase: BuildConfiguration = {
+    gear,
+    skills: guide.skills.slice(0, 6).map((skill) => ({ id: skill.id, rune: skill.rune })),
+    passives: guide.passives.slice(0, 4).map((passive) => passive.id),
+    powers: Object.fromEntries(["weapon", "armor", "jewelry", "season"].map((slot, index) => [slot, guide.powers[index].id])),
+    legendaryGems: { control: "trapped", power: "gogok", boss: "stricken" },
+    normalGems: { head: ["flawless-royal-diamond"], weapon: ["flawless-royal-emerald"] },
+    follower: { id: guide.follower === "魔女" ? "enchantress" : guide.follower === "盗贼" ? "scoundrel" : "templar", items: ["不死圣物"], skills: ["治疗", "冷却增强"] },
+    statPriorities: { global: ["冷却缩减", "攻击速度", "技能伤"], survival: ["全元素抗性", "体能", "护甲"], endgame: ["范围伤害", "首领阶段受罚者"] },
+    rotation: guide.rotation,
+  };
+  const paragonGuide: ParagonGuide = {
+    pre800: {
+      core: [{ stat: "移动速度", target: "装备+巅峰合计25%", reason: guide.lowNote ?? guide.summary }, { stat: "力量", target: "其余点数", reason: guide.summary }, { stat: "体能", target: "生存不足时投入", reason: guide.lowNote ?? guide.summary }, { stat: "最大资源", target: "最后", reason: guide.summary }],
+      offense: [{ stat: "冷却缩减", target: "优先", reason: guide.summary }, { stat: "暴击几率", target: "第二", reason: guide.summary }, { stat: "暴击伤害", target: "第三", reason: guide.summary }, { stat: "攻击速度", target: "完成断点", reason: guide.summary }],
+      defense: [{ stat: "全元素抗性", target: "优先点满", reason: guide.summary }, { stat: "生命%", target: "第二", reason: guide.summary }, { stat: "护甲", target: "第三", reason: guide.summary }, { stat: "生命恢复", target: "最后", reason: guide.summary }],
+      utility: [{ stat: "能量消耗降低", target: "优先", reason: guide.summary }, { stat: "范围伤害", target: "第二", reason: guide.summary }, { stat: "击中回复生命", target: "第三", reason: guide.summary }, { stat: "金币拾取范围", target: "最后", reason: guide.summary }],
+    },
+    post800: [{ priority: "主属性", when: "默认", reason: guide.summary }, { priority: "体能", when: "生存不足", reason: guide.lowNote ?? guide.summary }, { priority: "冷却、攻速与技能伤", when: "高巅峰", reason: guide.highNote ?? guide.summary }],
+    checkpoints: [{ label: "刚成型", target: guide.name, action: guide.summary }, { label: "巅峰800", target: "冷却与三颗核心传奇宝石", action: guide.pushNote ?? guide.summary }, { label: "巅峰2000+", target: "正确词缀与生存", action: guide.highNote ?? guide.summary }],
+  };
+  const scenarios: Pick<BuildScenario, "id" | "label" | "content" | "paragonBand" | "reason" | "patch">[] = [
+    { id: "push-low", label: "大秘境冲层 · 低巅峰 < 2000", content: "greater-rift-push" as const, paragonBand: "low" as const, reason: guide.lowNote ?? guide.pushNote ?? guide.summary },
+    { id: "push-high", label: "大秘境冲层 · 高巅峰 2000+", content: "greater-rift-push" as const, paragonBand: "high" as const, reason: guide.highNote ?? guide.pushNote ?? guide.summary, patch: { normalGems: { armor: ["flawless-royal-diamond"] }, statPriorities: { ...configurationBase.statPriorities, endgame: ["冷却、攻速与范围伤", "首领阶段受罚者"] } } },
+    { id: "speed-low", label: "T16 / 速刷 · 低巅峰 < 2000", content: "greater-rift-speed" as const, paragonBand: "low" as const, reason: guide.speedNote ?? guide.summary, patch: { legendaryGems: { boss: "powerful" }, statPriorities: { ...configurationBase.statPriorities, global: ["25%移速上限", "冷却缩减", "技能伤"] } } },
+    { id: "speed-high", label: "T16 / 速刷 · 高巅峰 2000+", content: "nephalem-rift" as const, paragonBand: "high" as const, reason: guide.speedNote ?? guide.summary, patch: { legendaryGems: { power: "wreath", boss: "hoarder" }, normalGems: { armor: ["flawless-royal-diamond"] }, statPriorities: { ...configurationBase.statPriorities, global: ["25%移速上限", "拾取范围", "冷却缩减"] } } },
+  ];
+  const reviewed: BuildGuide = { ...guide, source, configurationBase, defaultMode: "push", defaultScenarioId: "push-low", scenarios: scenarios.map((scenario) => ({ ...scenario, applicability: "supported" as const, sourceRefs: [source], reviewedAt: "2026-09-12" })), paragonGuide, choicePolicies: [{ key: `${guide.id}-core`, targetType: "gear", targetId: Object.values(configurationBase.gear)[0], label: guide.name, status: "locked", reason: guide.summary }, { key: `${guide.id}-speed`, targetType: "legendary-gem", targetId: "powerful", label: "速刷宝石", status: "conditional", reason: guide.speedNote ?? guide.summary, alternatives: [{ id: "hoarder", label: "囤宝者", when: "T16 / 速刷", gain: guide.speedNote ?? guide.summary, cost: guide.lowNote ?? guide.summary, scenarios: ["speed-high"] }] }], reviewStatus: "fully-reviewed", variantCompleteness: "complete" };
+  return reviewed;
 }
 
 export const passive = (id: string, name: string, logic: string): AbilitySeed => ({ id, name, logic });

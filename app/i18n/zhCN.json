@@ -11038,5 +11038,13 @@
   "app.4dec3ba22eb44a7a": "击杀精英后重置冷却",
   "app.793a815ee6399f97": "失去[[Items/Unique_Mace_2H_103_x1]]精英[[Site/damage-boost]]",
   "app.fba9d27bf74d10b5": "[[Powers/Templar_Heal_110_name]]和回能适合长时间贴身横扫；金币[[Site/speed-farming]]可让随从携带[[Items/Unique_Bracer_106_x1]]和金币装备。",
-  "app.55904ff4ebf8c3be": "罗兰横扫配置校验失败：{0}"
+  "app.55904ff4ebf8c3be": "罗兰横扫配置校验失败：{0}",
+  "app.5c45a705bd4b7c48": "最大资源",
+  "app.e004d0823568820d": "冷却、攻速与技能伤",
+  "app.304c31bd718618ce": "速刷宝石",
+  "app.c81995fafdc22cd7": "治疗",
+  "app.4d09d8f699ad8575": "生存不足",
+  "app.0708336bfb81f3f9": "冷却与三颗核心传奇宝石",
+  "app.055d9781b8bfb71f": "正确词缀与生存",
+  "app.9d8707f4c1f4d6f1": "冷却、攻速与范围伤"
 }
