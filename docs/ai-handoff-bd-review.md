@@ -36,12 +36,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 26 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
+| 已完整校对 | 27 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx`、`invoker-thorns`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 25 | 见路线图第 9 节清单 |
-| 仍需完成 | 25 | 25 套草稿 |
+| 尚未逐套校对 | 24 | 见路线图第 9 节清单 |
+| 仍需完成 | 24 | 24 套草稿 |
 
-当前工作游标：路线图清单第 18 项 `invoker-thorns`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
+当前工作游标：路线图清单第 19 项 `roland-sweep`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -55,7 +55,7 @@ npm test
 
 建议后续顺序：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `invoker-thorns`）；之后依次处理 `roland-sweep`、`seeker-hammer`、`lod-bombardment`。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `roland-sweep`）；之后依次处理 `seeker-hammer`、`lod-bombardment`、`marauder-sentry`。
 
 已完成的基础设施：
 
@@ -64,7 +64,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为构建后执行的 `npm test`，64 项全部通过。
+- 最近一次完整验证为构建后执行的 `npm test`，65 项全部通过。
 
 已知部分实装的真实含义：
 
@@ -372,7 +372,7 @@ npm run dev -- --port 3003
 - 目标 guide 通过 `validateReviewedBuildGuide`。
 - 路由切换展示真实配置差异。
 - `reviewStatus` 已为 `fully-reviewed`，并已纳入完成台账。
-- 本轮完成后总体剩余 25 套；下一工作游标为 `invoker-thorns`。
+- 本轮完成后总体剩余 24 套；下一工作游标为 `roland-sweep`。
 
 ## 6.5 已完成：阿克汉圣军
 
@@ -385,6 +385,19 @@ npm run dev -- --port 3003
 - T16/蓝门/悬赏：穿弗莱德之怒与傲慢之冠、沃兹克，角色自施天谴，使用金织带、贪婪之戒、囤宝者和击杀冷却链。
 
 已补齐四场景的装备、技能、被动、魔方、传奇/普通宝石、随从、循环、800 点前后与高巅峰指导，以及固定/条件替换策略。`validateReviewedBuildGuide(AKKHAN_PHALANX_REVIEWED_GUIDE)` 通过；`npm test` 64 项全部通过；路由测试确认宠物触发和 T16 自施天谴分支均为真实运行时配置。下一套为 `invoker-thorns`。
+
+## 6.6 已完成：唤魔荆棘
+
+目标 ID：`invoker-thorns`（2026-09-12 完成）
+
+以第 39 赛季 NS、补丁 2.7.8 和第四魔方槽为基准，按当前 Icy Veins 唤魔荆棘资料拆成四个真实场景：
+
+- 低巅峰冲层：五件唤魔师、两件克里森船长、皇家华戒、天鹰胸甲与顿悟盾，博雅斯基的碎片负责荆棘，斩击堆攻速，火炮轰击在物理窗口收尾。
+- 高巅峰冲层：保留唤魔核心，改用钻石与冷却/攻速断点、物理元素和生存词缀，不把暴击或范围伤害当作荆棘主乘区。
+- 低层大秘境：保留荆棘点杀与团结防线，换寅剑、复仇者护腕和希望律法压缩精英转场。
+- T16 / 蓝门 / 悬赏：改沃兹克、金织带、贪婪之戒、傲慢之冠与囤宝者，只有稳定掉金币的内容启用金币链。
+
+已补齐四场景的装备、技能、被动、魔方、传奇/普通宝石、随从、循环、800 点前后与高巅峰指导，以及固定/条件替换策略。`validateReviewedBuildGuide(INVOKER_THORNS_REVIEWED_GUIDE)` 通过；新增路由回归确认荆棘与金币速刷分支进入真实运行时配置；`npm test` 65 项全部通过。下一套为 `roland-sweep`。
 
 ## 7. 做完后如何记录
 
@@ -497,7 +510,8 @@ git log -1 --stat
 | 9 | `ik-hota` | 已校对 | `feat(bd): 完成不朽先祖锤多场景校对` | 不朽双常驻、审判之锤/先民护腕/悔恨、金币链与寅剑速刷、分支来源 | 仅回归维护 |
 | 10 | `lod-hota` | 已校对 | `feat(bd): 完成梦遗先祖锤多场景校对` | 梦遗远古门槛、黄道/卡修斯主动防线、金币链速刷与不推荐边界、分支来源 | 仅回归维护 |
 | 16 | `akkhan-condemn` | 已校对 | `feat(bd): 完成阿克汉天谴多场景校对` | 双盾弓手冲层、自施天谴金币链速刷、冷却/攻速阈值与来源 | 仅回归维护 |
-| 17 | `akkhan-phalanx` | 已校对 | `feat(bd): 完成阿克汉圣军多场景校对` | 弓手触发天谴、低层弓手速刷、T16 自施天谴金币链、1.78 攻速与来源 | 下一套 `invoker-thorns` |
+| 17 | `akkhan-phalanx` | 已校对 | `feat(bd): 完成阿克汉圣军多场景校对` | 弓手触发天谴、低层弓手速刷、T16 自施天谴金币链、1.78 攻速与来源 | 仅回归维护 |
+| 18 | `invoker-thorns` | 已校对 | `feat(bd): 完成唤魔荆棘多场景校对` | 五件唤魔师+两件船长、博雅斯基碎片、攻速/荆棘点杀、寅剑低层分支与金币链速刷 | 下一套 `roland-sweep` |
 
 其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
 

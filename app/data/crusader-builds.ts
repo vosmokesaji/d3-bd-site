@@ -1166,6 +1166,203 @@ const AKKHAN_PHALANX_REVIEWED_GUIDE: BuildGuide = {
 const AKKHAN_PHALANX_VALIDATION_ERRORS = validateReviewedBuildGuide(AKKHAN_PHALANX_REVIEWED_GUIDE);
 if (AKKHAN_PHALANX_VALIDATION_ERRORS.length > 0) throw new Error(`阿克汉圣军配置校验失败：${AKKHAN_PHALANX_VALIDATION_ERRORS.join("；")}`);
 
+const INVOKER_THORNS_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/crusader-invoker-thorns-build",
+  skills: "https://www.icy-veins.com/d3/invoker-thorns-crusader-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/invoker-thorns-crusader-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/invoker-thorns-crusader-speed-farming-build",
+};
+
+const INVOKER_THORNS_PUSH_ROTATION = [
+  { title: "斩击起手", action: "贴近精英连续施放斩击。", reason: "唤魔套用高速攻击把荆棘快速打入目标，斩击比单纯站桩更适合调整位置。" },
+  { title: "保持变身", action: "进入战斗后开启阿卡拉特勇士。", reason: "先知化身同时补护甲、圣怒和容错。" },
+  { title: "律法预热", action: "在物理元素周期前开启勇气律法和钢铁之肤。", reason: "攻击速度、荆棘和物理周期要重叠，爆发才不被分散。" },
+  { title: "集中轰击", action: "对精英和首领释放火炮轰击。", reason: "尖刺桶负责范围结算，人世无常与宝藏腰带共同提高落点密度。" },
+  { title: "贴身点杀", action: "轰击结束后继续锁定同一个高价值目标。", reason: "这套优势是荆棘单体效率，不应为了清零散怪浪费物理窗口。" },
+];
+
+const INVOKER_THORNS_SPEED_ROTATION = [
+  { title: "战马转场", action: "用战马冲锋从一组精英跳到下一组。", reason: "速刷价值来自移动时间，低层不需要等待完整荆棘爆发。" },
+  { title: "希望律法", action: "持续开启希望律法的天使之翼。", reason: "给移动、护盾和穿图容错，让贴身斩击不拖慢节奏。" },
+  { title: "短按轰击", action: "每个精英包至少手动施放一次火炮轰击。", reason: "维持唤魔套减伤并让自动轰击补充清场。" },
+  { title: "触发寅剑", action: "击杀精英后立即转向下一组目标。", reason: "寅剑的冷却重置只有连续击杀时才有速刷收益。" },
+  { title: "金币链", action: "T16、蓝门或悬赏中拾取金币后继续赶路。", reason: "金织带和囤宝者只在掉金币的内容里提供坚韧与移速。" },
+];
+
+const INVOKER_THORNS_SEED = seeds.find((seed) => seed.id === "invoker-thorns")!;
+const INVOKER_THORNS_BASE_GUIDE = createClassGuide({
+  ...INVOKER_THORNS_SEED,
+  core: "斩击高速攻击 → 荆棘点杀 → 火炮轰击收尾",
+  summary: "以五件唤魔师搭配两件克里森船长和皇家华戒，靠斩击攻速把荆棘稳定压入精英与首领；速刷再切换金币链和寅剑。",
+  gear: [
+    ...INVOKER_THORNS_SEED.gear,
+    legendary("aquila-gear", "胸部", "天鹰胸甲", "aquila-cuirass-p4_unique_chest_012.png", "高圣怒时提供减伤；斩击不消耗圣怒，适合冲层主配置。"),
+    legendary("crimson-belt", "腰部", "克里森船长的丝带", "captain-crimsons-silk-girdle.png", "与船长腿甲组成两件套，把冷却与减耗转为攻防。", { quality: "set" }),
+    legendary("crimson-pants", "腿部", "克里森船长的推裤", "captain-crimsons-thrust.png", "与船长腰带组成两件套，补足冷却、减耗和坚韧。", { quality: "set" }),
+    legendary("royal-grandeur", "手指", "皇家华戒", "ring-of-royal-grandeur-unique_ring_107_x1.png", "减少套装需求一件，让五件唤魔师与两件船长同时成立。"),
+    legendary("prides-fall", "头部", "傲慢之冠", "prides-fall-unique_helm_103_x1.png", "未受伤时降低资源消耗；只在金币链速刷中替换唤魔王冠。"),
+    legendary("ingeom-gear", "主手", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却，连续精英速刷专用。", { base: "剑" }),
+    legendary("nemesis-bracers", "腕部", "复仇者护腕", "nemesis-bracers-unique_bracer_106_x1.png", "祭坛和塔生成额外精英，低层大秘境加快寅剑触发。"),
+    legendary("warzechian", "腕部", "沃兹克臂甲", "warzechian-armguards-unique_bracer_101_x1.png", "破坏物后短暂提高移速，T16、蓝门和悬赏专用。"),
+    legendary("avarice-band", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币扩大拾取范围，配合囤宝者和金织带。"),
+    legendary("goldwrap", "腰部", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后获得护甲，金币内容中把伤害转成坚韧。"),
+  ],
+  skills: [
+    ...INVOKER_THORNS_SEED.skills,
+    skill("slash", "斩击", "迅捷", "主力高速攻击；当前唤魔指南用斩击叠攻速并触发荆棘。"),
+    skill("steed-charge", "战马冲锋", "马不停蹄", "速刷转场和脱离危险地板。"),
+    skill("laws-of-valor", "勇气律法", "势不可挡", "冲层提高攻速并降低消耗。"),
+    skill("laws-of-hope", "希望律法", "天使之翼", "速刷提供护盾、移速和穿图能力。"),
+  ],
+  passives: [
+    ...INVOKER_THORNS_SEED.passives,
+    passive("heavenly-strength", "天堂之力", "双手武器或重型武器配置下补充伤害与机动策略；速刷切换单手寅剑时按实际武器调整。"),
+    passive("long-arm-of-the-law", "律法长存", "延长律法覆盖，令攻速或移速窗口更稳定。"),
+  ],
+  powers: [
+    ...INVOKER_THORNS_SEED.powers,
+    power("echoing-fury", "武器", "回荡狂怒", "echoing-fury-p66_unique_mace_1h_001.png", "击杀敌人获得攻击速度和伤害层数，速刷时提高斩击频率。", "冲层可用稳定攻速，T16则配合寅剑连续触发。"),
+    power("omnislash", "防具", "全能法戒腰带", "omnislash-p2_unique_belt_04.png", "使斩击对附近目标追加攻击，补足荆棘构筑的清杂能力。", "保留唤魔主循环的同时减轻低层清怪时间。"),
+    power("unity", "第4槽", "团结", "unity-unique_ring_010_x1.png", "角色与带不死饰品的随从分摊伤害。", "第39赛季第四槽锁定团结，冲层比多一个泛用增伤更稳定。"),
+    power("goldwrap-power", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后获得与金币量相关的护甲。", "只在T16、蓝门和悬赏这类稳定掉金币的内容中替换全能法戒腰带。"),
+  ],
+  rotation: INVOKER_THORNS_PUSH_ROTATION,
+  pushNote: "五件唤魔师、两件船长与皇家华戒是冲层底盘；不要堆暴击，把攻击速度、物理元素、荆棘和冷却放在前面。",
+  speedNote: "低层大秘境保留斩击和荆棘核心，T16/蓝门/悬赏再使用寅剑、沃兹克、贪婪之戒和金织带金币链。",
+  lowNote: "低巅峰优先凑五件唤魔师、两件船长和皇家华戒，体能、全抗、格挡与荆棘优先于暴击。",
+  highNote: "高巅峰围绕冷却、攻速断点、物理元素和荆棘副词缀精修；范围伤害不是荆棘的核心收益。",
+  source: INVOKER_THORNS_SOURCES.overview,
+});
+
+const INVOKER_THORNS_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "invoker-head", shoulders: "invoker-shoulders", chest: "aquila-gear", gloves: "invoker-gloves", bracers: "invoker-bracers",
+    belt: "crimson-belt", pants: "crimson-pants", boots: "invoker-boots", amulet: "travelers-pledge", ring1: "compass-rose", ring2: "royal-grandeur",
+    weapon: "pig-sticker", offhand: "akarat-awakening",
+  },
+  skills: [
+    { id: "slash", rune: "迅捷" }, { id: "steed-charge", rune: "马不停蹄" }, { id: "laws-of-valor", rune: "势不可挡" },
+    { id: "iron-skin", rune: "反伤之肤" }, { id: "bombardment", rune: "尖刺桶" }, { id: "akarats-champion", rune: "先知化身" },
+  ],
+  passives: ["heavenly-strength", "iron-maiden", "long-arm-of-the-law", "finery"],
+  powers: { weapon: "echoing-fury", armor: "omnislash", jewelry: "coe", season: "unity" },
+  legendaryGems: { control: "bane-of-the-trapped", thorns: "boyarskys-chip", boss: "bane-of-the-stricken" },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"), weapon: ["flawless-royal-emerald"] },
+  follower: { id: "templar", items: ["不死圣物", "复仇者护腕"], skills: ["治疗", "回能", "保命"] },
+  statPriorities: {
+    global: ["冷却缩减", "攻击速度", "物理元素伤", "荆棘伤害"],
+    survival: ["全元素抗性", "体能", "格挡", "生命恢复"],
+    endgame: ["不追暴击", "完成攻击速度断点", "荆棘副词缀", "物理元素"],
+  },
+  rotation: INVOKER_THORNS_PUSH_ROTATION,
+};
+
+const INVOKER_THORNS_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰 < 2000 大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰优先落地五件唤魔师、两件船长和皇家华戒；钢铁之心、格挡和荆棘词缀比双暴更重要，火炮轰击只在物理窗口集中使用。",
+    sourceRefs: [INVOKER_THORNS_SOURCES.overview, INVOKER_THORNS_SOURCES.skills, INVOKER_THORNS_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "push-high", label: "高巅峰 2000+ 大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰不改变唤魔核心，而是把装备和巅峰预算集中到冷却、攻速断点、物理元素、荆棘与生存；荆棘不暴击，范围伤害也不应挤掉核心词缀。",
+    patch: { normalGems: { armor: Array(5).fill("flawless-royal-diamond") }, statPriorities: { global: ["冷却缩减", "攻速断点", "物理元素伤", "荆棘伤害"], survival: ["全元素抗性", "生命%", "护甲", "格挡"], endgame: ["攻速与冷却同时达标", "不堆暴击", "荆棘副词缀", "首领阶段受罚者" ] } },
+    sourceRefs: [INVOKER_THORNS_SOURCES.gear, INVOKER_THORNS_SOURCES.overview], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "speed-low", label: "低巅峰低层大秘境", content: "greater-rift-speed", paragonBand: "low", applicability: "supported",
+    reason: "低层大秘境仍有精英和首领，保留荆棘、钢铁之肤与团结，只把主手换为寅剑、腕部换复仇者护腕，并用战马和希望律法缩短转场。",
+    patch: {
+      gear: { weapon: "ingeom-gear", bracers: "nemesis-bracers" },
+      skills: [{ id: "slash", rune: "迅捷" }, { id: "steed-charge", rune: "马不停蹄" }, { id: "laws-of-hope", rune: "天使之翼" }, { id: "iron-skin", rune: "闪光之肤" }, { id: "bombardment", rune: "尖刺桶" }, { id: "akarats-champion", rune: "先知化身" }],
+      legendaryGems: { control: "bane-of-the-trapped", thorns: "boyarskys-chip", boss: "bane-of-the-powerful" },
+      follower: { items: ["不死圣物", "复仇者护腕"], skills: ["治疗", "回能", "保命"] },
+      rotation: INVOKER_THORNS_SPEED_ROTATION,
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "攻击速度", "荆棘伤害"], survival: ["全元素抗性", "体能", "格挡"], endgame: ["连续击杀触发寅剑", "不为零散怪停留"] },
+    },
+    sourceRefs: [INVOKER_THORNS_SOURCES.speed, INVOKER_THORNS_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "金币内容伤害门槛较低，换傲慢之冠、沃兹克、金织带和贪婪之戒，把荆棘溢出转成移速与金币护甲；囤宝者只在会掉金币的内容生效。",
+    patch: {
+      gear: { head: "prides-fall", bracers: "warzechian", belt: "goldwrap", ring2: "avarice-band", weapon: "ingeom-gear" },
+      skills: [{ id: "slash", rune: "迅捷" }, { id: "steed-charge", rune: "马不停蹄" }, { id: "laws-of-hope", rune: "天使之翼" }, { id: "iron-skin", rune: "闪光之肤" }, { id: "bombardment", rune: "尖刺桶" }, { id: "akarats-champion", rune: "先知化身" }],
+      powers: { armor: "goldwrap-power" },
+      legendaryGems: { control: "bane-of-the-trapped", thorns: "bane-of-the-powerful", boss: "boon-of-the-hoarder" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      follower: { items: ["贪婪之戒", "复仇者护腕", "不死圣物"], skills: ["冷却增强", "攻速增强", "金币拾取"] },
+      rotation: INVOKER_THORNS_SPEED_ROTATION,
+      statPriorities: { global: ["25%移速上限", "拾取范围", "冷却缩减", "攻击速度"], survival: ["金织带金币护甲", "全元素抗性", "护盾覆盖"], endgame: ["连续战马", "破坏物移速", "伤害溢出后优先转场"] },
+    },
+    sourceRefs: [INVOKER_THORNS_SOURCES.speed, INVOKER_THORNS_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+];
+
+const INVOKER_THORNS_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "速刷先到上限，冲层则把剩余点数投向力量与体能。" },
+      { stat: "力量", target: "其余点数", reason: "提供荆棘相关伤害与护甲。" },
+      { stat: "体能", target: "被精英技能击杀时补足", reason: "钢铁之心把体能转成荆棘，同时保证贴身点杀不被秒。" },
+      { stat: "最大圣怒", target: "0点", reason: "斩击生成资源，唤魔荆棘不需要最大资源池。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先", reason: "阿卡拉特勇士、钢铁之肤、战马与轰击都依赖覆盖。" },
+      { stat: "攻击速度", target: "第二优先并完成断点", reason: "攻击频率决定荆棘在单位时间内的结算量。" },
+      { stat: "暴击几率/伤害", target: "不为荆棘牺牲核心词缀", reason: "荆棘伤害不暴击，双暴不是这套的主要成长线。" },
+      { stat: "范围伤害", target: "最后考虑", reason: "它不改变荆棘单体点杀的主收益。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量已经提供护甲，先补足全抗。" },
+      { stat: "生命%", target: "第二", reason: "同时提高钢铁之心转换出的荆棘与有效生命。" },
+      { stat: "护甲", target: "第三", reason: "补齐近战贴身时的物理防线。" },
+      { stat: "生命恢复", target: "最后", reason: "作为长时间贴身攻击的续航补充。" },
+    ],
+    utility: [
+      { stat: "击中回复生命", target: "优先于范围伤害", reason: "斩击高频命中，回复能直接减少贴身点杀风险。" },
+      { stat: "能量消耗降低", target: "冲层优先", reason: "辅助天鹰与船长套的稳定性。" },
+      { stat: "金币拾取范围", target: "只在金币速刷优先", reason: "T16、蓝门和悬赏才需要金织带链。" },
+      { stat: "范围伤害", target: "最后", reason: "不应挤掉攻速、冷却和生存。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认", reason: "继续提供荆棘相关伤害和护甲。" },
+    { priority: "体能", when: "贴身冲层承受不住精英技能", reason: "先补到能保持钢铁之肤和团结循环，再回力量。" },
+    { priority: "冷却/攻速/物理/荆棘", when: "高巅峰冲层", reason: "围绕实际攻速断点和钢铁之肤覆盖精修，不盲追双暴。" },
+  ],
+  checkpoints: [
+    { label: "刚成型", target: "五件唤魔师、两件船长、皇家华戒、杀猪刀与顿悟盾", action: "先确认套装、攻速、格挡和荆棘链成立，再追远古。" },
+    { label: "巅峰800", target: "冷却、攻速、钢铁之心与三颗核心传奇宝石", action: "让阿卡拉特勇士与钢铁之肤覆盖稳定，物理周期再手动轰击。" },
+    { label: "巅峰2000+", target: "攻速断点、物理元素、荆棘副词缀和钻石", action: "冲层精修生存与点杀；T16再换金币链和移速装备。" },
+  ],
+};
+
+const INVOKER_THORNS_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "invoker-captain-core", targetType: "gear", targetId: "invoker-head", label: "唤魔师五件 + 克里森船长两件", status: "locked", reason: "当前指南的冲层底盘是五件唤魔师、船长腰带/腿甲与皇家华戒；荆棘构筑不需要靠暴击词缀补伤害。" },
+  { key: "thorns-generator", targetType: "skill", targetId: "slash", label: "斩击 / 惩罚高速攻击", status: "locked", reason: "斩击是当前指南推荐的主攻技能，惩罚可作为已有种子中的近战替代；两者都服务于高攻速荆棘，而非双暴。", alternatives: [{ id: "punish", label: "惩罚", when: "已拥有惩罚高特效或偏好格挡循环", gain: "更直接连接格挡与顿悟盾", cost: "清杂和机动性不如斩击", scenarios: ["push-low", "push-high"] }] },
+  { key: "invoker-fourth-slot", targetType: "power", targetId: "unity", label: "第39赛季第四槽团结", status: "locked", reason: "冲层用团结配圣殿骑士不死饰品分摊伤害；不要把第4槽误写成未验证的泛用增伤。" },
+  { key: "thorns-gems", targetType: "legendary-gem", targetId: "boyarskys-chip", label: "荆棘传奇宝石", status: "locked", reason: "博雅斯基的碎片直接提供荆棘，是本构筑的核心宝石；困者和受罚者分别覆盖控制与首领阶段。" },
+  { key: "speed-chain", targetType: "gear", targetId: "ingeom-gear", label: "寅剑 + 复仇者护腕速刷分支", status: "conditional", reason: "低层大秘境保留复仇者护腕触发额外精英；T16/蓝门/悬赏改沃兹克、金织带和贪婪之戒，只有金币内容才启用囤宝者。", alternatives: [{ id: "warzechian", label: "沃兹克 + 金织带 + 贪婪之戒", when: "T16、蓝门与悬赏", gain: "破坏物移速、金币护甲和拾取范围", cost: "不适合不掉金币的大秘境", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-high"] }, { id: "nemesis-bracers", label: "复仇者护腕", when: "低层大秘境需要更多精英触发寅剑", gain: "祭坛生成额外精英", cost: "失去破坏物移速", scenarios: ["speed-low"] }] },
+  { key: "invoker-speed-gems", targetType: "legendary-gem", targetId: "boon-of-the-hoarder", label: "金币速刷宝石", status: "conditional", reason: "囤宝者、金织带和贪婪之戒只在会掉金币的内容中互相成立；低层大秘境继续使用受罚者或强者之灾。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低层大秘境", gain: "精英击杀后稳定增伤与减伤", cost: "没有金币移速链", scenarios: ["speed-low"] }] },
+  { key: "invoker-follower", targetType: "follower", targetId: "templar", label: "圣殿骑士", status: "flexible", reason: "治疗、回能和保命适合荆棘近战；冲层必须配不死圣物，金币速刷再补复仇者护腕或拾取相关装备。" },
+];
+
+const INVOKER_THORNS_REVIEWED_GUIDE: BuildGuide = {
+  ...INVOKER_THORNS_BASE_GUIDE,
+  configurationBase: INVOKER_THORNS_CONFIGURATION_BASE,
+  defaultMode: "push",
+  defaultScenarioId: "push-low",
+  scenarios: INVOKER_THORNS_SCENARIOS,
+  paragonGuide: INVOKER_THORNS_PARAGON,
+  choicePolicies: INVOKER_THORNS_CHOICE_POLICIES,
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const INVOKER_THORNS_VALIDATION_ERRORS = validateReviewedBuildGuide(INVOKER_THORNS_REVIEWED_GUIDE);
+if (INVOKER_THORNS_VALIDATION_ERRORS.length > 0) throw new Error(`唤魔荆棘配置校验失败：${INVOKER_THORNS_VALIDATION_ERRORS.join("；")}`);
+
 const PONY_REVIEWED_GUIDE: BuildGuide = {
   ...createClassGuide(ponySeed),
   configurationBase: PONY_CONFIGURATION_BASE,
@@ -1190,5 +1387,6 @@ export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
   [VALOR_FIST_REVIEWED_GUIDE.id]: VALOR_FIST_REVIEWED_GUIDE,
   [AKKHAN_CONDEMN_REVIEWED_GUIDE.id]: AKKHAN_CONDEMN_REVIEWED_GUIDE,
   [AKKHAN_PHALANX_REVIEWED_GUIDE.id]: AKKHAN_PHALANX_REVIEWED_GUIDE,
+  [INVOKER_THORNS_REVIEWED_GUIDE.id]: INVOKER_THORNS_REVIEWED_GUIDE,
   [PONY_REVIEWED_GUIDE.id]: PONY_REVIEWED_GUIDE,
 };
