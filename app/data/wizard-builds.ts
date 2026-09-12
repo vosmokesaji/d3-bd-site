@@ -110,11 +110,7 @@ const REVIEWED_AT = "2026-08-22";
 
 const WIZARD_REVIEW_SOURCES: Record<string, string[]> = Object.fromEntries(seeds.map((seed) => [
   seed.id,
-  [
-    seed.source,
-    "https://maxroll.gg/d3/category/guides",
-    "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。",
-  ],
+  [seed.source],
 ]));
 
 function reviewGear(id: string, slot: string, name: string, file: string, effect: string, affixes: string[], acquisition: string[], gem?: GuideGear["gem"], warning?: string): GuideGear {
@@ -242,10 +238,10 @@ function pushHighPatchFor(id: string): BuildConfigurationPatch {
 function reviewedScenarios(guide: BuildGuide): BuildScenario[] {
   const sources = WIZARD_REVIEW_SOURCES[guide.id];
   return [
-    { id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported", reason: "保留冲层核心乘区并用体能/紫宝石补早期坚韧。", unchangedReason: "基础配置就是低巅峰冲层入口。", sourceRefs: sources, reviewedAt: REVIEWED_AT },
-    { id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported", reason: "高巅峰转向全智力宝石、范围伤与冷却/资源阈值，部分BD改用更进攻的第四槽。", patch: pushHighPatchFor(guide.id), sourceRefs: sources, reviewedAt: REVIEWED_AT },
-    { id: "speed-low", label: "低巅峰 T16 / 蓝门 / 低层大秘境", content: "nephalem-rift", paragonBand: "low", applicability: "supported", reason: "用复仇者、寅剑/以太行者和强者宝石换掉过量首领单体，保留一部分坚韧。", patch: speedPatchFor(guide.id, false), sourceRefs: sources, reviewedAt: REVIEWED_AT },
-    { id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported", reason: "伤害溢出后接入金币链、移速护腕和击杀冷却，专注连续赶路。", patch: speedPatchFor(guide.id, true), sourceRefs: sources, reviewedAt: REVIEWED_AT },
+    { id: "push-low", label: "低巅峰大秘境冲层（来源待复核）", content: "greater-rift-push", paragonBand: "low", applicability: "unverified", reason: "已录入构筑专页，但尚未完成第二来源与 Nintendo Switch 验证。", unchangedReason: "基础配置是当前录入的低巅峰冲层入口。", sourceRefs: sources, reviewedAt: REVIEWED_AT },
+    { id: "push-high", label: "高巅峰大秘境冲层（来源待复核）", content: "greater-rift-push", paragonBand: "high", applicability: "unverified", reason: "高巅峰规则来自批量整理，需逐套核对宝石、词缀阈值和第四槽。", patch: pushHighPatchFor(guide.id), sourceRefs: sources, reviewedAt: REVIEWED_AT },
+    { id: "speed-low", label: "低层速刷（用途待拆分）", content: "nephalem-rift", paragonBand: "low", applicability: "unverified", reason: "当前把 T16、蓝门和低层大秘境合并，发布前必须拆分并补精确变体来源。", patch: speedPatchFor(guide.id, false), sourceRefs: sources, reviewedAt: REVIEWED_AT },
+    { id: "speed-high", label: "金币内容速刷（用途待拆分）", content: "nephalem-rift", paragonBand: "high", applicability: "unverified", reason: "当前把 T16、蓝门和悬赏合并，发布前必须逐项确认金币链和移动配置。", patch: speedPatchFor(guide.id, true), sourceRefs: sources, reviewedAt: REVIEWED_AT },
   ];
 }
 
@@ -273,8 +269,12 @@ function completeWizardGuide(seed: ClassGuideSeed): BuildGuide {
   guide.scenarios = reviewedScenarios(guide);
   guide.paragonGuide = wizardParagon(seed.coreSkill, seed.element);
   guide.choicePolicies = wizardPolicies(guide);
-  guide.reviewStatus = "fully-reviewed";
-  guide.variantCompleteness = "complete";
+  guide.reviewStatus = "partial";
+  guide.variantCompleteness = "documented-shared";
+  guide.evidenceStatus = "source-checked";
+  guide.platformStatus = "pc-derived";
+  guide.dataProvenance = "batch-derived";
+  guide.evidenceNote = "已录入单一 PC 构筑来源；用途拆分、第二来源和 Nintendo Switch 实测尚未完成。";
   return guide;
 }
 

@@ -246,6 +246,10 @@ function completeWitchDoctorGuide(seed: ClassGuideSeed): BuildGuide {
   guide.choicePolicies = MUNDUNUGU_POLICIES;
   guide.reviewStatus = "fully-reviewed";
   guide.variantCompleteness = "complete";
+  guide.evidenceStatus = "cross-checked";
+  guide.platformStatus = "pc-derived";
+  guide.dataProvenance = "hand-authored";
+  guide.evidenceNote = "构筑与场景已按 Icy Veins 和 Maxroll 交叉核对；Nintendo Switch 实机验证尚未完成。";
   return guide;
 }
 

@@ -13,7 +13,7 @@ const bundle = await build({
       export { WITCH_DOCTOR_BUILDS } from './app/data/witch-doctor-builds';
       export { WIZARD_BUILDS } from './app/data/wizard-builds';
       export { TRAGOUL_GUIDE } from './app/page';
-      export { validateReviewedBuildGuide, resolveBuildConfiguration, diffBuildConfigurations } from './app/data/build-guides';
+      export { validateReviewedBuildGuide, validateBuildSemantics, validateBuildEvidence, resolveBuildConfiguration, diffBuildConfigurations } from './app/data/build-guides';
     `,
     resolveDir: process.cwd(),
     loader: "tsx",
@@ -47,12 +47,23 @@ const guides = Object.values({
 
 const builds = guides.map((guide) => {
   const errors = data.validateReviewedBuildGuide(guide);
+  const semanticErrors = data.validateBuildSemantics(guide);
+  const evidenceErrors = data.validateBuildEvidence(guide);
+  const effectiveEvidenceStatus = guide.evidenceStatus ?? "unverified";
+  const publishBlockers = [
+    ...errors.map((error) => `schema:${error}`),
+    ...semanticErrors.map((error) => `semantics:${error}`),
+    ...evidenceErrors.map((error) => `evidence:${error}`),
+    ...(effectiveEvidenceStatus === "published" ? [] : [`evidence:STATUS_${effectiveEvidenceStatus.toUpperCase()}`]),
+    ...(guide.scenarios ?? []).filter((scenario) => scenario.applicability === "unverified").map((scenario) => `applicability:${scenario.id}:UNVERIFIED`),
+  ];
   const base = guide.configurationBase;
   const scenarios = (guide.scenarios ?? []).map((scenario) => {
     const configuration = base ? data.resolveBuildConfiguration(base, scenario.patch) : undefined;
     return {
       id: scenario.id,
       applicability: scenario.applicability,
+      content: scenario.content,
       diffCount: configuration && base ? data.diffBuildConfigurations(base, configuration).length : 0,
       sourceRefs: scenario.sourceRefs,
     };
@@ -61,11 +72,18 @@ const builds = guides.map((guide) => {
     id: guide.id,
     name: guide.name,
     reviewStatus: guide.reviewStatus ?? "draft",
+    evidenceStatus: effectiveEvidenceStatus,
+    platformStatus: guide.platformStatus ?? "pc-derived",
+    dataProvenance: guide.dataProvenance ?? "hand-authored",
     variantCompleteness: guide.variantCompleteness ?? null,
     scenarioCount: scenarios.length,
     paragon: Boolean(guide.paragonGuide),
     choicePolicyCount: guide.choicePolicies?.length ?? 0,
     validationErrors: errors,
+    semanticErrors,
+    evidenceErrors,
+    publishBlockers: [...new Set(publishBlockers)],
+    publishable: publishBlockers.length === 0,
     scenarios,
   };
 }).sort((a, b) => a.id.localeCompare(b.id));
@@ -75,7 +93,20 @@ const report = {
   season: "S39 / 2.7.8",
   total: builds.length,
   fullyReviewed: builds.filter((build) => build.reviewStatus === "fully-reviewed").length,
-  valid: builds.filter((build) => build.validationErrors.length === 0).length,
+  schemaValid: builds.filter((build) => build.validationErrors.length === 0).length,
+  semanticValid: builds.filter((build) => build.semanticErrors.length === 0).length,
+  evidenceValid: builds.filter((build) => build.evidenceErrors.length === 0).length,
+  publishable: builds.filter((build) => build.publishable).length,
+  genericPlaceholders: builds.filter((build) => build.dataProvenance === "generic-placeholder").length,
+  batchDerived: builds.filter((build) => build.dataProvenance === "batch-derived").length,
+  evidenceStatuses: Object.fromEntries([...new Set(builds.map((build) => build.evidenceStatus))].sort().map((status) => [status, builds.filter((build) => build.evidenceStatus === status).length])),
+  applicability: Object.fromEntries([...new Set(builds.flatMap((build) => build.scenarios.map((scenario) => scenario.applicability)))].sort().map((status) => [status, builds.flatMap((build) => build.scenarios).filter((scenario) => scenario.applicability === status).length])),
+  content: Object.fromEntries([...new Set(builds.flatMap((build) => build.scenarios.map((scenario) => scenario.content)))].sort().map((content) => [content, builds.flatMap((build) => build.scenarios).filter((scenario) => scenario.content === content).length])),
+  sourceDomains: Object.fromEntries([...new Set(builds.flatMap((build) => build.scenarios.flatMap((scenario) => scenario.sourceRefs)).flatMap((source) => {
+    try { return [new URL(source).hostname.replace(/^www\./, "")]; } catch { return ["invalid"]; }
+  }))].sort().map((domain) => [domain, builds.flatMap((build) => build.scenarios.flatMap((scenario) => scenario.sourceRefs)).filter((source) => {
+    try { return new URL(source).hostname.replace(/^www\./, "") === domain; } catch { return domain === "invalid"; }
+  }).length])),
   builds,
 };
 
@@ -83,4 +114,4 @@ if (process.argv.includes("--write")) {
   await writeFile("docs/bd-review-audit.json", `${JSON.stringify(report, null, 2)}\n`);
 }
 console.log(JSON.stringify(report, null, 2));
-if (report.total !== 51 || report.fullyReviewed !== 51 || report.valid !== 51) process.exitCode = 1;
+if (report.total !== 51 || report.schemaValid !== 51 || report.semanticValid !== 51 || report.genericPlaceholders !== 23 || report.batchDerived !== 7) process.exitCode = 1;

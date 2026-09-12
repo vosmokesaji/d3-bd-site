@@ -299,20 +299,22 @@ export function createGenericReviewedGuide(guide: BuildGuide, source = genericRe
   for (const [key, slot] of [["head", "头部"], ["shoulders", "肩部"], ["chest", "胸部"], ["gloves", "手部"], ["bracers", "腕部"], ["belt", "腰部"], ["pants", "腿部"], ["boots", "脚部"], ["amulet", "颈部"], ["ring1", "手指"], ["ring2", "手指"], ["weapon", "主手"], ["offhand", "副手"]] as const) {
     const id = pickGear(slot); if (id) gear[key] = id;
   }
+  const isLegacyOfDreams = guide.id.startsWith("lod-");
+  const mainAttribute = ["力量", "敏捷", "智力"].find((attribute) => guide.gear.some((item) => item.affixes.includes(attribute))) ?? "主属性";
   const configurationBase: BuildConfiguration = {
     gear,
     skills: guide.skills.slice(0, 6).map((skill) => ({ id: skill.id, rune: skill.rune })),
     passives: guide.passives.slice(0, 4).map((passive) => passive.id),
     powers: Object.fromEntries(["weapon", "armor", "jewelry", "season"].map((slot, index) => [slot, guide.powers[index].id])),
-    legendaryGems: { control: "trapped", power: "gogok", boss: "stricken" },
-    normalGems: { head: ["flawless-royal-diamond"], weapon: ["flawless-royal-emerald"] },
+    legendaryGems: { control: "bane-of-the-trapped", [isLegacyOfDreams ? "engine" : "power"]: isLegacyOfDreams ? "lod" : "gogok", boss: "bane-of-the-stricken" },
+    normalGems: { head: ["flawless-royal-diamond"], weapon: [guide.id === "lod-bombardment" ? "flawless-royal-topaz" : "flawless-royal-emerald"] },
     follower: { id: guide.follower === "魔女" ? "enchantress" : guide.follower === "盗贼" ? "scoundrel" : "templar", items: ["不死圣物"], skills: ["治疗", "冷却增强"] },
     statPriorities: { global: ["冷却缩减", "攻击速度", "技能伤"], survival: ["全元素抗性", "体能", "护甲"], endgame: ["范围伤害", "首领阶段受罚者"] },
     rotation: guide.rotation,
   };
   const paragonGuide: ParagonGuide = {
     pre800: {
-      core: [{ stat: "移动速度", target: "装备+巅峰合计25%", reason: guide.lowNote ?? guide.summary }, { stat: "力量", target: "其余点数", reason: guide.summary }, { stat: "体能", target: "生存不足时投入", reason: guide.lowNote ?? guide.summary }, { stat: "最大资源", target: "最后", reason: guide.summary }],
+      core: [{ stat: "移动速度", target: "装备+巅峰合计25%", reason: guide.lowNote ?? guide.summary }, { stat: mainAttribute, target: "其余点数", reason: guide.summary }, { stat: "体能", target: "生存不足时投入", reason: guide.lowNote ?? guide.summary }, { stat: "最大资源", target: "最后", reason: guide.summary }],
       offense: [{ stat: "冷却缩减", target: "优先", reason: guide.summary }, { stat: "暴击几率", target: "第二", reason: guide.summary }, { stat: "暴击伤害", target: "第三", reason: guide.summary }, { stat: "攻击速度", target: "完成断点", reason: guide.summary }],
       defense: [{ stat: "全元素抗性", target: "优先点满", reason: guide.summary }, { stat: "生命%", target: "第二", reason: guide.summary }, { stat: "护甲", target: "第三", reason: guide.summary }, { stat: "生命恢复", target: "最后", reason: guide.summary }],
       utility: [{ stat: "能量消耗降低", target: "优先", reason: guide.summary }, { stat: "范围伤害", target: "第二", reason: guide.summary }, { stat: "击中回复生命", target: "第三", reason: guide.summary }, { stat: "金币拾取范围", target: "最后", reason: guide.summary }],
@@ -322,11 +324,11 @@ export function createGenericReviewedGuide(guide: BuildGuide, source = genericRe
   };
   const scenarios: Pick<BuildScenario, "id" | "label" | "content" | "paragonBand" | "reason" | "patch">[] = [
     { id: "push-low", label: "大秘境冲层 · 低巅峰 < 2000", content: "greater-rift-push" as const, paragonBand: "low" as const, reason: guide.lowNote ?? guide.pushNote ?? guide.summary },
-    { id: "push-high", label: "大秘境冲层 · 高巅峰 2000+", content: "greater-rift-push" as const, paragonBand: "high" as const, reason: guide.highNote ?? guide.pushNote ?? guide.summary, patch: { normalGems: { armor: Array(5).fill("flawless-royal-diamond") }, statPriorities: { ...configurationBase.statPriorities, endgame: ["冷却、攻速与范围伤", "首领阶段受罚者"] } } },
-    { id: "speed-low", label: "T16 / 速刷 · 低巅峰 < 2000", content: "greater-rift-speed" as const, paragonBand: "low" as const, reason: guide.speedNote ?? guide.summary, patch: { legendaryGems: { boss: "powerful" }, statPriorities: { ...configurationBase.statPriorities, global: ["25%移速上限", "冷却缩减", "技能伤"] } } },
-    { id: "speed-high", label: "T16 / 速刷 · 高巅峰 2000+", content: "nephalem-rift" as const, paragonBand: "high" as const, reason: guide.speedNote ?? guide.summary, patch: { legendaryGems: { power: "wreath", boss: "hoarder" }, normalGems: { armor: Array(5).fill("flawless-royal-diamond") }, statPriorities: { ...configurationBase.statPriorities, global: ["25%移速上限", "拾取范围", "冷却缩减"] } } },
+    { id: "push-high", label: "大秘境冲层 · 高巅峰（未验证）", content: "greater-rift-push" as const, paragonBand: "high" as const, reason: guide.highNote ?? guide.pushNote ?? guide.summary, patch: { statPriorities: { ...configurationBase.statPriorities, endgame: ["冷却、攻速与范围伤", "首领阶段受罚者"] } } },
+    { id: "speed-low", label: "大秘境速刷（未验证）", content: "greater-rift-speed" as const, paragonBand: "low" as const, reason: guide.speedNote ?? guide.summary, patch: { legendaryGems: { boss: "bane-of-the-powerful" }, statPriorities: { ...configurationBase.statPriorities, global: ["25%移速上限", "冷却缩减", "技能伤"] } } },
+    { id: "speed-high", label: "T16 / 速刷（未验证）", content: "nephalem-rift" as const, paragonBand: "high" as const, reason: guide.speedNote ?? guide.summary, patch: { legendaryGems: { power: "wreath-of-lightning", boss: "boon-of-the-hoarder" }, statPriorities: { ...configurationBase.statPriorities, global: ["25%移速上限", "拾取范围", "冷却缩减"] } } },
   ];
-  const reviewed: BuildGuide = { ...guide, source, configurationBase, defaultMode: "push", defaultScenarioId: "push-low", scenarios: scenarios.map((scenario) => ({ ...scenario, applicability: "supported" as const, sourceRefs: [source], reviewedAt: "2026-09-12" })), paragonGuide, choicePolicies: [{ key: `${guide.id}-core`, targetType: "gear", targetId: Object.values(configurationBase.gear)[0], label: guide.name, status: "locked", reason: guide.summary }, { key: `${guide.id}-speed`, targetType: "legendary-gem", targetId: "powerful", label: "速刷宝石", status: "conditional", reason: guide.speedNote ?? guide.summary, alternatives: [{ id: "hoarder", label: "囤宝者", when: "T16 / 速刷", gain: guide.speedNote ?? guide.summary, cost: guide.lowNote ?? guide.summary, scenarios: ["speed-high"] }] }], reviewStatus: "fully-reviewed", variantCompleteness: "complete" };
+  const reviewed: BuildGuide = { ...guide, source, configurationBase, defaultMode: "push", defaultScenarioId: "push-low", scenarios: scenarios.map((scenario) => ({ ...scenario, applicability: "unverified" as const, sourceRefs: [source], reviewedAt: "2026-09-12" })), paragonGuide, choicePolicies: [{ key: `${guide.id}-core`, targetType: "gear", targetId: Object.values(configurationBase.gear)[0], label: guide.name, status: "locked", reason: guide.summary }, { key: `${guide.id}-speed`, targetType: "legendary-gem", targetId: "bane-of-the-powerful", label: "速刷宝石（待验证）", status: "conditional", reason: guide.speedNote ?? guide.summary, alternatives: [{ id: "boon-of-the-hoarder", label: "囤宝者", when: "T16 / 速刷", gain: guide.speedNote ?? guide.summary, cost: guide.lowNote ?? guide.summary, scenarios: ["speed-high"] }] }], reviewStatus: "draft", variantCompleteness: "documented-shared", evidenceStatus: "unverified", platformStatus: "pc-derived", dataProvenance: "generic-placeholder", evidenceNote: "由通用工厂生成的占位配置，尚未完成构筑专属来源、用途与 Nintendo Switch 验证。" };
   return reviewed;
 }
 

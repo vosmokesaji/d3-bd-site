@@ -10976,511 +10976,511 @@
     "source": "进场先开阿卡拉特勇士，并在冷却结束前补开。",
     "template": "进场先开[[Powers/X1_Crusader_AkaratsChampion_name]]，并在冷却结束前补开。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.73a61c4c89918840": {
     "source": "阿克汉四件套会让弓手攻击缩短变身冷却，常驻变身同时提供增伤、减伤和圣怒恢复。",
     "template": "阿克汉四件套会让弓手攻击缩短变身冷却，常驻变身同时提供[[Site/damage-boost]]、[[Site/damage-reduction]]和圣怒恢复。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.15c46b4405e5d609": {
     "source": "冷却转好就施放圣军之阵：弓手。",
     "template": "冷却转好就施放[[Powers/x1_Crusader_Phalanx3_name]]：弓手。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.8da7219f48b84d83": {
     "source": "卡萨的战盔和无情斗阵把弓手的持续时间、数量和冷却覆盖接起来。",
     "template": "[[Items/P4_Unique_Helm_102]]和[[Items/P1_CruShield_norm_unique_02]]把弓手的持续时间、数量和冷却覆盖接起来。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.176c30d9fccf2043": {
     "source": "审判标记",
     "template": "[[Powers/X1_Crusader_Judgment_name]]标记",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Judgment mark guidance"
     }
   },
   "app.d60affbae0f80aa7": {
     "source": "不断把审判铺在精英和密集怪群上。",
     "template": "不断把[[Powers/X1_Crusader_Judgment_name]]铺在精英和密集怪群上。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Judgment mark guidance"
     }
   },
   "app.35c652c36f79fb27": {
     "source": "阿克汉二件套让审判获得所有符文；四件套只会让弓手对被审判目标触发天谴。",
     "template": "阿克汉二件套让[[Powers/X1_Crusader_Judgment_name]]获得所有符文；四件套只会让弓手对被[[Powers/X1_Crusader_Judgment_name]]目标触发[[Powers/X1_Crusader_Condemn_name]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.3ac27b74e96d0fd0": {
     "source": "维持资源",
     "template": "维持资源",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.344e7f350170c8d1": {
     "source": "用正义补圣怒，在精英爆发前开启势不可挡。",
     "template": "用[[Powers/X1_Crusader_Justice_name]]补圣怒，在精英爆发前开启[[AttributeDescriptions/NameRune_D#X1_Crusader_LawsOfValor2]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.f4b465f311886257": {
     "source": "生成技能维持克己守心，勇气律法的减耗又会通过船长套转成伤害和减伤。",
     "template": "生成技能维持[[Items/Unique_Ring_Set_001_x1]][[Items/Unique_Ring_Set_002_x1]]，[[Powers/X1_Crusader_LawsOfValor2_name]]的减耗又会通过船长套转成伤害和[[Site/damage-reduction]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Damage and toughness guidance"
     }
   },
   "app.bd446c602ba91dcd": {
     "source": "保持弓手和审判覆盖，围绕首领移动而不是停在原地。",
     "template": "保持弓手和[[Powers/X1_Crusader_Judgment_name]]覆盖，围绕首领移动而不是停在原地。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.b5c41c38a5bc80cb": {
     "source": "困者、侍从与受罚者负责把持续的宠物触发伤害转成首领阶段的稳定输出。",
     "template": "[[Items/Unique_Gem_002_x1]]、侍从与[[Items/Unique_Gem_018_x1]]负责把持续的宠物触发伤害转成首领阶段的稳定输出。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.7bb497a35093e9e1": {
     "source": "开局加速",
     "template": "开局加速",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.bf941e63660e39d4": {
     "source": "开启阿卡拉特勇士与希望律法，长距离用战马冲锋。",
     "template": "开启[[Powers/X1_Crusader_AkaratsChampion_name]]与[[Powers/X1_Crusader_LawsOfHope2_name]]，长距离用[[Powers/X1_Crusader_SteedCharge_name]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.85a37b5a34ee5403": {
     "source": "低层大秘境优先缩短转场，弓手负责触发天谴而不是让角色站桩清每只白怪。",
     "template": "低层[[NephalemRift/TieredRift]]优先缩短转场，弓手负责触发[[Powers/X1_Crusader_Condemn_name]]而不是让角色站桩清每只白怪。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.f9c210ef4859c3b8": {
     "source": "铺审判",
     "template": "铺[[Powers/X1_Crusader_Judgment_name]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Judgment mark guidance"
     }
   },
   "app.72e6b3d3d3ad5153": {
     "source": "移动中连续施放审判，再补召弓手。",
     "template": "移动中连续施放[[Powers/X1_Crusader_Judgment_name]]，再补召弓手。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.dbb87b68010b1142": {
     "source": "审判会同时触发控制、困者和弓手的天谴条件。",
     "template": "[[Powers/X1_Crusader_Judgment_name]]会同时触发控制、[[Items/Unique_Gem_002_x1]]和弓手的[[Powers/X1_Crusader_Condemn_name]]条件。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.93893b8044176733": {
     "source": "追随爆炸",
     "template": "追随爆炸",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.730472e2366c5bbc": {
     "source": "让弓手攻击标记目标，必要时手动补天谴。",
     "template": "让弓手攻击标记目标，必要时手动补[[Powers/X1_Crusader_Condemn_name]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.bf68ea749861eeda": {
     "source": "低层大秘境仍保留宠物组件，重点是大范围覆盖而不是等待完整首领叠层。",
     "template": "低层[[NephalemRift/TieredRift]]仍保留宠物组件，重点是大范围覆盖而不是等待完整首领叠层。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.ca2c03e881fc2ca5": {
     "source": "精英死亡后立即继续骑马或用希望律法穿怪。",
     "template": "精英死亡后立即继续骑马或用[[Powers/X1_Crusader_LawsOfHope2_name]]穿怪。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Mobility guidance"
     }
   },
   "app.16ddfe678019d45c": {
     "source": "寅剑和梅塞施密特的击杀冷却要转化成下一组变身和移动技能。",
     "template": "[[Items/Unique_Sword_1H_113_x1]]和梅塞施密特的击杀冷却要转化成下一组变身和移动技能。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.70e7f997f31f1383": {
     "source": "开启阿卡拉特勇士与希望律法，保持不间断。",
     "template": "开启[[Powers/X1_Crusader_AkaratsChampion_name]]与[[Powers/X1_Crusader_LawsOfHope2_name]]，保持不间断。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.54ed659787e64ef3": {
     "source": "T16用金币链覆盖坚韧后，可以把变身符文和技能栏全部服务于连续清图。",
     "template": "T16用金币链覆盖坚韧后，可以把变身符文和技能栏全部服务于连续清图。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.34a68bc238fd74a2": {
     "source": "遇到怪群直接施放天谴：无情爆发。",
     "template": "遇到怪群直接施放[[Powers/X1_Crusader_Condemn_name]]：无情爆发。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Condemn damage guidance"
     }
   },
   "app.2679a5a0e573c07c": {
     "source": "T16不等待弓手触发，把弗莱德之怒和预言之刃放到身上后由角色即时清场。",
     "template": "T16不等待弓手触发，把[[Items/P61_CruShield_norm_unique_01]]和[[Items/P61_Unique_Sword_2H_007_x1]]放到身上后由角色即时清场。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.05c31cfeb82bf6db": {
     "source": "召唤刷新",
     "template": "召唤刷新",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.b47fae7cc1f0922b": {
     "source": "冷却转好就补施圣军之阵：弓手。",
     "template": "冷却转好就补施[[Powers/x1_Crusader_Phalanx3_name]]：弓手。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.534a0d13e0e8d792": {
     "source": "即使不再依赖弓手输出，阿克汉四件套仍用弓手攻击刷新变身。",
     "template": "即使不再依赖弓手输出，阿克汉四件套仍用弓手攻击刷新变身。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.5110d6bc08303c60": {
     "source": "金币转场",
     "template": "金币转场",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.ae9aedc9c352d5c2": {
     "source": "用挑衅恐惧、希望律法和战马穿图，并沿路拾金。",
     "template": "用[[Powers/X1_Crusader_Provoke_name]]恐惧、[[Powers/X1_Crusader_LawsOfHope2_name]]和战马穿图，并沿路拾金。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.b6452695a8ec36b8": {
     "source": "囤宝者、贪婪之戒与金织带共同提供移速、拾取范围和护甲。",
     "template": "[[Items/Unique_Gem_014_x1]]、[[Items/Unique_Ring_108_x1]]与[[Items/Unique_Belt_010_x1]]共同提供移速、拾取范围和护甲。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.b7dd99a847021e9f": {
     "source": "审判标记 → 圣军弓手触发天谴 → 变身常驻",
     "template": "[[Powers/X1_Crusader_Judgment_name]]标记 → 圣军弓手触发[[Powers/X1_Crusader_Condemn_name]] → 变身常驻",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.8f1e1736d5584cf6": {
     "source": "以卡萨战盔、无情斗阵和宠物攻速维持弓手火力；大秘境冲层让弓手触发天谴，T16则把同一套发动机改成角色自施天谴。",
     "template": "以卡萨战盔、[[Items/P1_CruShield_norm_unique_02]]和宠物攻速维持弓手火力；[[NephalemRift/TieredRift]][[Site/push]]让弓手触发[[Powers/X1_Crusader_Condemn_name]]，T16则把同一套发动机改成角色自施[[Powers/X1_Crusader_Condemn_name]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx trigger-engine guidance"
     }
   },
   "app.21126ca64cfdb0f8": {
     "source": "被审判的敌人被推移后承受更多伤害，冲层由审判全符文触发。",
     "template": "被[[Powers/X1_Crusader_Judgment_name]]的敌人被推移后承受更多伤害，[[Site/push]]由[[Powers/X1_Crusader_Judgment_name]]全符文触发。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.41a844cc3898fc4d": {
     "source": "与船长腿甲组成套装，把冷却和减耗转为攻防。",
     "template": "与船长腿甲组成套装，把冷却和减耗转为攻防。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.a3f02803b93f0815": {
     "source": "与船长腰带组成套装，提供冷却、减耗和坚韧转换。",
     "template": "与船长腰带组成套装，提供冷却、减耗和坚韧转换。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.0909496985be0633": {
     "source": "阿克汉套装部件，配皇家华戒让卡萨头盔和船长两件同时成立。",
     "template": "阿克汉套装部件，配[[Items/Unique_Ring_107_x1]]让卡萨头盔和船长两件同时成立。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.44a8ebaed32cd155": {
     "source": "天谴初始爆炸命中至少两个目标时，会在目标位置额外触发两次天谴。",
     "template": "[[Powers/X1_Crusader_Condemn_name]]初始爆炸命中至少两个目标时，会在目标位置额外触发两次[[Powers/X1_Crusader_Condemn_name]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Condemn damage guidance"
     }
   },
   "app.8f78492beb014b49": {
     "source": "移除天谴冷却并把天谴改为圣怒消耗技能；T16主动清场时穿戴。",
     "template": "移除[[Powers/X1_Crusader_Condemn_name]]冷却并把[[Powers/X1_Crusader_Condemn_name]]改为圣怒消耗技能；T16主动清场时穿戴。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.072a47c0a3e7d622": {
     "source": "5秒未受伤后降低资源消耗，服务T16连续自施天谴。",
     "template": "5秒未受伤后降低资源消耗，服务T16连续自施[[Powers/X1_Crusader_Condemn_name]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.37a364dee7c8acd5": {
     "source": "破坏可破坏物后提高移动速度，T16和悬赏赶路用。",
     "template": "破坏可破坏物后提高移动速度，T16和悬赏赶路用。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.ddb89d46e713f067": {
     "source": "提供稳定的神圣元素与精英伤，低层速刷不需要等待全能法戒周期。",
     "template": "提供稳定的神圣元素与精英伤，低层[[Site/speed-farming]]不需要等待[[Items/P2_Unique_Ring_04]]周期。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.dcfdd165fff47eaa": {
     "source": "挑衅恐惧敌人后提供移速，填补战马和寅剑之间的移动空档。",
     "template": "[[Powers/X1_Crusader_Provoke_name]]恐惧敌人后提供移速，填补战马和[[Items/Unique_Sword_1H_113_x1]]之间的移动空档。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Mobility guidance"
     }
   },
   "app.cf65fb1ffa50d4a4": {
     "source": "冲层生成圣怒并维持克己守心；远程剑气不会破坏弓手站位。",
     "template": "[[Site/push]]生成圣怒并维持[[Items/Unique_Ring_Set_001_x1]][[Items/Unique_Ring_Set_002_x1]]；远程剑气不会破坏弓手站位。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.e5826abba91213ee": {
     "source": "阿克汉二件套赋予所有符文，标记目标后弓手才会触发天谴。",
     "template": "阿克汉二件套赋予所有符文，标记目标后弓手才会触发[[Powers/X1_Crusader_Condemn_name]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.d792075e51cfeae4": {
     "source": "冲层降低圣怒消耗并提高弓手攻击频率。",
     "template": "[[Site/push]]降低圣怒消耗并提高弓手攻击频率。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.34f54752f162e403": {
     "source": "速刷提高转场速度并穿过怪群。",
     "template": "[[Site/speed-farming]]提高转场速度并穿过怪群。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.08ab2e78d1d0fc2a": {
     "source": "持续召唤弓手；攻速、数量和冷却是本套的三条主轴。",
     "template": "持续召唤弓手；攻速、数量和冷却是本套的三条主轴。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.c98a8f8ccebe4b78": {
     "source": "冲层由弓手触发，T16改为角色手动爆炸清场。",
     "template": "[[Site/push]]由弓手触发，T16改为角色手动爆炸清场。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.678ee45fe27bc010": {
     "source": "阿克汉的常驻攻防与圣怒恢复开关。",
     "template": "阿克汉的常驻攻防与圣怒恢复开关。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.7311d2e8dcb999a8": {
     "source": "低层大秘境和T16的长距离转场。",
     "template": "低层[[NephalemRift/TieredRift]]和T16的长距离转场。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.608992e0d0955561": {
     "source": "速刷补圣怒并触发瑞秋戒恐惧移速。",
     "template": "[[Site/speed-farming]]补圣怒并触发[[Items/Unique_Ring_104_x1]]恐惧移速。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.ccb5c635a6b5c4e8": {
     "source": "T16穿过怪群时补碰撞免疫与短时防御。",
     "template": "T16穿过怪群时补碰撞免疫与短时防御。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.6cf24e723017b053": {
     "source": "双手剑与圣教军盾同时装备时的必要被动。",
     "template": "双手剑与[[Items/CrusaderShield_000]]同时装备时的必要被动。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.34cbd14db33b1a38": {
     "source": "提高圣军之阵伤害并缩短弓手与战马冷却。",
     "template": "提高[[Powers/x1_Crusader_Phalanx3_name]]伤害并缩短弓手与战马冷却。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.47f159407e1642d5": {
     "source": "延长律法覆盖，减少资源和移动循环空档。",
     "template": "延长律法覆盖，减少资源和移动循环空档。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Mobility guidance"
     }
   },
   "app.8abf6b997a98dd23": {
     "source": "由镶嵌宝石提高力量和坚韧。",
     "template": "由镶嵌宝石提高力量和坚韧。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gem and stat guidance"
     }
   },
   "app.925d82caa2a0ade4": {
     "source": "T16金币链覆盖后可替换的容错被动。",
     "template": "T16金币链覆盖后可替换的容错被动。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.44c31c862abec541": {
     "source": "移除天谴冷却并提高天谴伤害。",
     "template": "移除[[Powers/X1_Crusader_Condemn_name]]冷却并提高[[Powers/X1_Crusader_Condemn_name]]伤害。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.0e17e289503b6443": {
     "source": "冲层把盾牌放入魔方，T16则穿在副手。",
     "template": "[[Site/push]]把盾牌放入魔方，T16则穿在副手。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.7977840a109247fb": {
     "source": "弓手攻速直接提高触发天谴的频率。",
     "template": "弓手攻速直接提高触发[[Powers/X1_Crusader_Condemn_name]]的频率。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.47ebaf24bc8cd4d3": {
     "source": "同时维持阿克汉六件和船长三件。",
     "template": "同时维持阿克汉六件和船长三件。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.61754db8c0850ba3": {
     "source": "第一幕或第四幕悬赏宝箱。",
     "template": "第一幕或第四幕悬赏宝箱。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.819cf5d862940cc4": {
     "source": "拾取金币后按金币数量获得护甲。",
     "template": "拾取金币后按金币数量获得护甲。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.a149501e1d9244ce": {
     "source": "只在T16、蓝门和悬赏等掉金币内容使用。",
     "template": "只在T16、蓝门和悬赏等掉金币内容使用。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.e3e12668c0769079": {
     "source": "低层和T16精英连续死亡时刷新战马与变身。",
     "template": "低层和T16精英连续死亡时刷新战马与变身。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.6b9065e8acfd37f7": {
     "source": "击杀敌人缩短一个技能的冷却。",
     "template": "击杀敌人缩短一个技能的冷却。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.71dd841ae0dc2967": {
     "source": "第39赛季速刷槽用普通击杀压缩变身和战马空档。",
     "template": "第39赛季[[Site/speed-farming]]槽用普通击杀压缩变身和战马空档。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.7e0b6fff1059894e": {
     "source": "大秘境冲层优先处理精英和首领。",
     "template": "[[NephalemRift/TieredRift]][[Site/push]]优先处理精英和首领。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.827c1dfe0e902508": {
     "source": "弓手触发链",
     "template": "弓手触发链",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx trigger-engine guidance"
     }
   },
   "app.e2c8a616b3469a1a": {
     "source": "审判是触发条件，圣军弓手是执行者，天谴是结算结果。",
     "template": "[[Powers/X1_Crusader_Judgment_name]]是触发条件，圣军弓手是执行者，[[Powers/X1_Crusader_Condemn_name]]是结算结果。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.0d6a13d79b272b02": {
@@ -11491,539 +11491,539 @@
     "source": "攻击标记目标",
     "template": "攻击标记目标",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.224ba0ee728afa7c": {
     "source": "触发范围爆炸",
     "template": "触发范围爆炸",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.1b2e6329a19f7a80": {
     "source": "放大宠物触发",
     "template": "放大宠物触发",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Pet-scaling guidance"
     }
   },
   "app.057478b54d4c41fb": {
     "source": "变身冷却链",
     "template": "变身冷却链",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.dd7c2b84b2c4c543": {
     "source": "卡萨战盔、弓手和宠物攻速共同让阿卡拉特勇士保持常驻。",
     "template": "卡萨战盔、弓手和宠物攻速共同让[[Powers/X1_Crusader_AkaratsChampion_name]]保持常驻。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.06a8ea15f0950b56": {
     "source": "压缩弓手冷却",
     "template": "压缩弓手冷却",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.a254d9aa5058fa16": {
     "source": "提高攻击频率",
     "template": "提高攻击频率",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.6c2f9254ff05e40b": {
     "source": "提供攻防和资源",
     "template": "提供攻防和资源",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.ae234b6dc2dedba2": {
     "source": "金币速刷链",
     "template": "金币[[Site/speed-farming]]链",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.81aff1a6283bf153": {
     "source": "掉金币内容才同时使用金币护甲、金币宝石和拾取戒指。",
     "template": "掉金币内容才同时使用金币护甲、金币宝石和拾取戒指。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.2239f3606ae7348b": {
     "source": "制造金币和移速",
     "template": "制造金币和移速",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.a7de9802bde2b66b": {
     "source": "冲层以审判标记为先，让弓手触发天谴；角色保持移动，用正义、律法和船长套维持圣怒。",
     "template": "[[Site/push]]以[[Powers/X1_Crusader_Judgment_name]]标记为先，让弓手触发[[Powers/X1_Crusader_Condemn_name]]；角色保持移动，用[[Powers/X1_Crusader_Justice_name]]、律法和船长套维持圣怒。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.0b27a3843ea6aa77": {
     "source": "低层大秘境保留弓手发动机；T16、蓝门和悬赏换成自施天谴、金织带和击杀冷却链。",
     "template": "低层[[NephalemRift/TieredRift]]保留弓手发动机；T16、蓝门和悬赏换成自施[[Powers/X1_Crusader_Condemn_name]]、[[Items/Unique_Belt_010_x1]]和击杀冷却链。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx trigger-engine guidance"
     }
   },
   "app.d64590d70f750e46": {
     "source": "先做卡萨战盔、无情斗阵、弗莱德之怒、皇家华戒与船长两件，再补宠物攻速和受罚者。",
     "template": "先做卡萨战盔、[[Items/P1_CruShield_norm_unique_02]]、[[Items/P61_CruShield_norm_unique_01]]、[[Items/Unique_Ring_107_x1]]与船长两件，再补宠物攻速和[[Items/Unique_Gem_018_x1]]。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.bfdac34833b569e1": {
     "source": "高巅峰优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；速刷才转钻石与拾取。",
     "template": "[[Site/high-paragon]]优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；[[Site/speed-farming]]才转钻石与拾取。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.714bca012917b20c": {
     "source": "圣军之阵/天谴技能伤",
     "template": "[[Powers/x1_Crusader_Phalanx3_name]]/[[Powers/X1_Crusader_Condemn_name]]技能伤",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Condemn damage guidance"
     }
   },
   "app.daf586df90681999": {
     "source": "70万–90万生命",
     "template": "[[Number/70/wan]]–[[Number/90/wan]]生命",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.8b0dc8e7064f0402": {
     "source": "先知化身覆盖",
     "template": "[[AttributeDescriptions/NameRune_D#X1_Crusader_AkaratsChampion]]覆盖",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.8eda67d3cf00399f": {
     "source": "弓手持续时间",
     "template": "弓手持续时间",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.032ee2406d81e81b": {
     "source": "受罚者首领叠层",
     "template": "[[Items/Unique_Gem_018_x1]]首领叠层",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.2cbdbec3a459c0bf": {
     "source": "高特效无情斗阵",
     "template": "高特效[[Items/P1_CruShield_norm_unique_02]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.acd39a1b95c2ae3b": {
     "source": "低巅峰冲层使用卡萨战盔、阿克汉五件、船长两件、皇家华戒、双盾逻辑和塔斯克；红宝石提供主属性与护甲，受罚者负责首领。",
     "template": "[[Site/low-paragon]][[Site/push]]使用卡萨战盔、阿克汉五件、船长两件、[[Items/Unique_Ring_107_x1]]、双盾逻辑和塔斯克；红宝石提供主属性与护甲，[[Items/Unique_Gem_018_x1]]负责首领。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.d18bb7309d32ec09": {
     "source": "高巅峰仍保留弓手触发天谴的核心配置，变化集中在巅峰、传奇宝石等级、远古特效、冷却和1.78攻速；不虚构一套不必要的换装。",
     "template": "[[Site/high-paragon]]仍保留弓手触发[[Powers/X1_Crusader_Condemn_name]]的核心配置，变化集中在[[Site/paragon]]、传奇宝石等级、远古特效、冷却和1.78攻速；不虚构一套不必要的换装。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Paragon progression guidance"
     }
   },
   "app.2c5e6b57a2558197": {
     "source": "变身不断档",
     "template": "变身不断档",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akarat Champion uptime guidance"
     }
   },
   "app.246d432a57e8e706": {
     "source": "装备力量洗范围伤",
     "template": "装备力量洗范围伤",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.7998b64e39bfab13": {
     "source": "弓手高攻速",
     "template": "弓手高攻速",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.6f56df297f1ccc27": {
     "source": "无情斗阵与卡萨高特效",
     "template": "[[Items/P1_CruShield_norm_unique_02]]与卡萨高特效",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.cb511f2ff72a1ef5": {
     "source": "低巅峰低层大秘境",
     "template": "[[Site/low-paragon]]低层[[NephalemRift/TieredRift]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.761943895d98a5c3": {
     "source": "低层大秘境仍会等待弓手触发天谴，所以保留卡萨、塔斯克和无情斗阵；换希望律法、战马、寅剑与梅斧压缩转场，不使用大秘境不会触发的金币链。",
     "template": "低层[[NephalemRift/TieredRift]]仍会等待弓手触发[[Powers/X1_Crusader_Condemn_name]]，所以保留卡萨、塔斯克和[[Items/P1_CruShield_norm_unique_02]]；换[[Powers/X1_Crusader_LawsOfHope2_name]]、战马、[[Items/Unique_Sword_1H_113_x1]]与[[Items/P66_Unique_Axe_2H_011]]压缩转场，不使用[[NephalemRift/TieredRift]]不会触发的金币链。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.c815c2b68eed38ae": {
     "source": "天谴技能伤",
     "template": "[[Powers/X1_Crusader_Condemn_name]]技能伤",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Condemn damage guidance"
     }
   },
   "app.c05aea86078afa0f": {
     "source": "连续骑马",
     "template": "连续骑马",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Mobility guidance"
     }
   },
   "app.52f958c9a33f21ea": {
     "source": "精英击杀触发寅剑",
     "template": "精英击杀触发[[Items/Unique_Sword_1H_113_x1]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.697bf18ae9088b00": {
     "source": "不等待首领叠层",
     "template": "不等待首领叠层",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.a910faf88982fce9": {
     "source": "T16、蓝门与悬赏掉金币且伤害门槛较低，去掉弓手专用头盔和护腕，穿傲慢之冠、沃兹克和弗莱德之怒，改为角色自施天谴；囤宝者、贪婪之戒和金织带建立金币防线。",
     "template": "T16、蓝门与悬赏掉金币且伤害门槛较低，去掉弓手专用头盔和护腕，穿[[Items/Unique_Helm_103_x1]]、[[Items/Unique_Bracer_101_x1]]和[[Items/P61_CruShield_norm_unique_01]]，改为角色自施[[Powers/X1_Crusader_Condemn_name]]；[[Items/Unique_Gem_014_x1]]、[[Items/Unique_Ring_108_x1]]和[[Items/Unique_Belt_010_x1]]建立金币防线。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.17424c71ae61d700": {
     "source": "伤害溢出后优先转场",
     "template": "伤害溢出后优先转场",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Mobility guidance"
     }
   },
   "app.4199b9a4283bc182": {
     "source": "速刷先到上限；冲层缺少专用位移时也能改善走位。",
     "template": "[[Site/speed-farming]]先到上限；[[Site/push]]缺少专用位移时也能改善走位。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.c9251f9b0a3b50cc": {
     "source": "同时提供弓手/天谴伤害与护甲。",
     "template": "同时提供弓手/[[Powers/X1_Crusader_Condemn_name]]伤害与护甲。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.9faef79c4e5b3c87": {
     "source": "被精英技能击杀时临时投入",
     "template": "被精英技能击杀时临时投入",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.d13106c07a5fe27f": {
     "source": "低巅峰先保证有时间完成审判和补召唤。",
     "template": "[[Site/low-paragon]]先保证有时间完成[[Powers/X1_Crusader_Judgment_name]]和补召唤。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Paragon progression guidance"
     }
   },
   "app.26496c417e736864": {
     "source": "最大圣怒",
     "template": "最大圣怒",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.d7d226bc7dfaaa0e": {
     "source": "阿卡拉特、正义和律法足以支撑循环。",
     "template": "阿卡拉特、[[Powers/X1_Crusader_Justice_name]]和律法足以支撑循环。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.b85bd8f3aff8e126": {
     "source": "弓手、阿卡拉特勇士、律法和战马都依赖冷却覆盖。",
     "template": "弓手、[[Powers/X1_Crusader_AkaratsChampion_name]]、律法和战马都依赖冷却覆盖。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.f4649e77e0e29483": {
     "source": "天谴爆炸和宠物触发都受双暴收益影响。",
     "template": "[[Powers/X1_Crusader_Condemn_name]]爆炸和宠物触发都受双暴收益影响。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Condemn damage guidance"
     }
   },
   "app.e26fe69ad66515ca": {
     "source": "补足与装备暴伤的比例。",
     "template": "补足与装备暴伤的比例。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.bf305e5cde291b8f": {
     "source": "第四点满并配合装备接近1.78",
     "template": "第四点满并配合装备接近1.78",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.a4669ebd9706ec63": {
     "source": "18帧弓手断点需要巅峰、武器词缀、律法和魔女共同完成。",
     "template": "18帧弓手断点需要[[Site/paragon]]、武器词缀、律法和[[Pets/HirelingEnchantress]]共同完成。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Paragon progression guidance"
     }
   },
   "app.40015bc4486e1024": {
     "source": "力量已经提供护甲，先补全抗。",
     "template": "力量已经提供护甲，先补全抗。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.2a83726aea2ab856": {
     "source": "扩大先知化身和船长减伤后的有效生命。",
     "template": "扩大[[AttributeDescriptions/NameRune_D#X1_Crusader_AkaratsChampion]]和船长[[Site/damage-reduction]]后的有效生命。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.e796fe6598de2ab6": {
     "source": "仅作审判治疗之外的续航补充。",
     "template": "仅作[[Powers/X1_Crusader_Judgment_name]][[Powers/Templar_Heal_110_name]]之外的续航补充。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Judgment mark guidance"
     }
   },
   "app.1438d372c57b88c3": {
     "source": "速刷优先，冲层后置",
     "template": "[[Site/speed-farming]]优先，[[Site/push]]后置",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Low-tier speed-farming guidance"
     }
   },
   "app.e0625532eaf17491": {
     "source": "只在T16/蓝门/悬赏金币链中是核心效率属性。",
     "template": "只在T16/蓝门/悬赏金币链中是核心效率属性。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.3eaa50330fccd067": {
     "source": "冲层优先点满",
     "template": "[[Site/push]]优先点满",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.b615132a3b969c2d": {
     "source": "降低审判、天谴和律法的圣怒压力，并转化为船长防御。",
     "template": "降低[[Powers/X1_Crusader_Judgment_name]]、[[Powers/X1_Crusader_Condemn_name]]和律法的圣怒压力，并转化为船长防御。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Condemn damage guidance"
     }
   },
   "app.0c67876d9d67f6f5": {
     "source": "弓手和天谴触发频率高，适合持续恢复。",
     "template": "弓手和[[Powers/X1_Crusader_Condemn_name]]触发频率高，适合持续恢复。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.9ce6cf1e0549a25a": {
     "source": "弓手触发的天谴不依赖范围伤，不能挤掉冷却和减耗。",
     "template": "弓手触发的[[Powers/X1_Crusader_Condemn_name]]不依赖范围伤，不能挤掉冷却和减耗。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.9c5e350cdf733ee3": {
     "source": "巅峰800后继续提供伤害和护甲。",
     "template": "[[Site/paragon]]800后继续提供伤害和护甲。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Paragon progression guidance"
     }
   },
   "app.4905269e9edd4f37": {
     "source": "冲层无法承受当前层精英技能",
     "template": "[[Site/push]]无法承受当前层精英技能",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.7fc591f7e2f3b319": {
     "source": "补到能稳定维持斯奎特或弓手站位，再回到力量。",
     "template": "补到能稳定维持斯奎特或弓手站位，再回到力量。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.d5ebe4ac8e0d7835": {
     "source": "攻速/冷却词缀",
     "template": "攻速/冷却词缀",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.098347945a86e0da": {
     "source": "高巅峰冲层",
     "template": "[[Site/high-paragon]][[Site/push]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Greater Rift pushing guidance"
     }
   },
   "app.64ff3d8809832366": {
     "source": "优先完成1.78攻速与足够冷却，不为虚假的固定CDR阈值牺牲更高伤害。",
     "template": "优先完成1.78攻速与足够冷却，不为虚假的固定CDR阈值牺牲更高伤害。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.1b5ff26aa6492f4b": {
     "source": "阿克汉、船长、卡萨、无情斗阵、弗莱德和皇家华戒",
     "template": "阿克汉、船长、卡萨、[[Items/P1_CruShield_norm_unique_02]]、弗莱德和[[Items/Unique_Ring_107_x1]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.2146dbb72ba95979": {
     "source": "确认五件阿克汉+两件船长与弓手触发链同时成立。",
     "template": "确认五件阿克汉+两件船长与弓手触发链同时成立。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx trigger-engine guidance"
     }
   },
   "app.df0dcf8b909a1604": {
     "source": "冷却、攻速、侍从与受罚者",
     "template": "冷却、攻速、侍从与[[Items/Unique_Gem_018_x1]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.f784e8e75d271dcd": {
     "source": "先让变身不断档，再围绕审判标记和弓手攻击处理精英。",
     "template": "先让变身不断档，再围绕[[Powers/X1_Crusader_Judgment_name]]标记和弓手攻击处理精英。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.82071e6c2ee9d536": {
     "source": "1.78攻速、钻石、范围伤与金币链",
     "template": "1.78攻速、钻石、范围伤与金币链",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Gold-chain speed-farming guidance"
     }
   },
   "app.9d66e56dbaca4261": {
     "source": "冲层装备逐步把力量让给终局词缀；T16再切钻石、金织带和拾取属性。",
     "template": "[[Site/push]]装备逐步把力量让给终局词缀；T16再切钻石、[[Items/Unique_Belt_010_x1]]和拾取属性。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.45ce06007c45e020": {
     "source": "阿克汉五件、船长两件与卡萨战盔",
     "template": "阿克汉五件、船长两件与卡萨战盔",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.cbcbda2a1019489a": {
     "source": "卡萨压缩圣军之阵冷却，阿克汉四件让弓手攻击刷新阿卡拉特勇士并触发被审判目标的天谴；皇家华戒和船长套把冷却/减耗转成攻防。",
     "template": "卡萨压缩[[Powers/x1_Crusader_Phalanx3_name]]冷却，阿克汉四件让弓手攻击刷新[[Powers/X1_Crusader_AkaratsChampion_name]]并触发被[[Powers/X1_Crusader_Judgment_name]]目标的[[Powers/X1_Crusader_Condemn_name]]；[[Items/Unique_Ring_107_x1]]和船长套把冷却/减耗转成攻防。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.e03c64bdbed97a24": {
     "source": "审判是弓手触发天谴的条件，弓手是阿克汉四件套的执行者；不能换成只会自施天谴的T16技能栏。",
     "template": "[[Powers/X1_Crusader_Judgment_name]]是弓手触发[[Powers/X1_Crusader_Condemn_name]]的条件，弓手是阿克汉四件套的执行者；不能换成只会自施[[Powers/X1_Crusader_Condemn_name]]的T16技能栏。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.c417fb2efdbc558c": {
     "source": "宠物攻速直接提高弓手触发频率，并帮助靠弓手攻击刷新变身。",
     "template": "宠物攻速直接提高弓手触发频率，并帮助靠弓手攻击刷新变身。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen attack-speed guidance"
     }
   },
   "app.eb3f4644726cdde5": {
     "source": "无情斗阵与弗莱德之怒",
     "template": "[[Items/P1_CruShield_norm_unique_02]]与[[Items/P61_CruShield_norm_unique_01]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.982c3df198d7724f": {
     "source": "冲层穿无情斗阵、魔方放弗莱德；T16反过来穿弗莱德并把无情斗阵移出主循环，因为角色自施天谴更快。",
     "template": "[[Site/push]]穿[[Items/P1_CruShield_norm_unique_02]]、魔方放弗莱德；T16反过来穿弗莱德并把[[Items/P1_CruShield_norm_unique_02]]移出主循环，因为角色自施[[Powers/X1_Crusader_Condemn_name]]更快。",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.b0c08291c7798bda": {
     "source": "穿戴弗莱德之怒",
     "template": "穿戴[[Items/P61_CruShield_norm_unique_01]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Akkhan Phalanx build guidance"
     }
   },
   "app.b52fc3bbfe51700d": {
     "source": "T16、蓝门与悬赏需要手动天谴",
     "template": "T16、蓝门与悬赏需要手动[[Powers/X1_Crusader_Condemn_name]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "T16, Nephalem Rift, and bounty guidance"
     }
   },
   "app.e79fd00e2a3c5b64": {
     "source": "即时无冷却天谴",
     "template": "即时无冷却[[Powers/X1_Crusader_Condemn_name]]",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Cooldown coverage guidance"
     }
   },
   "app.9409e547b9c0d476": {
     "source": "失去弓手数量翻倍",
     "template": "失去弓手数量翻倍",
     "manual": {
-      "enUS": "Akkhan Phalanx guide note"
+      "enUS": "Bowmen pet-damage guidance"
     }
   },
   "app.0a6a475d7358c766": {
@@ -14784,7 +14784,12 @@
   },
   "app.c81995fafdc22cd7": {
     "source": "治疗",
-    "template": "[[Powers/Templar_Heal_110_name]]"
+    "template": "[[Powers/Templar_Heal_110_name]]",
+    "manual": {
+      "zhCN": "治疗",
+      "zhTW": "治療",
+      "enUS": "Healing"
+    }
   },
   "app.eaf086f666cfdd93": {
     "source": "忠诚",
@@ -27564,10 +27569,6 @@
     "source": "冰霜元素、奥能上限、范围伤和爆点控制决定上限。",
     "template": "冰霜元素、奥能上限、范围伤和爆点控制决定上限。"
   },
-  "app.657cd38327318424": {
-    "source": "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层大秘境与冲层分支按本项目逐套校对规则整理。",
-    "template": "第39赛季 / 2.7.8：第四卡奈槽、T16金币链、低层[[NephalemRift/TieredRift]]与[[Site/push]]分支按本项目逐套校对规则整理。"
-  },
   "app.33ca5129715a7e7e": {
     "source": "元素技能伤害",
     "template": "元素技能伤害"
@@ -27790,22 +27791,6 @@
   "app.48086f6ec0c7518a": {
     "source": "冷却缩减 / 攻速",
     "template": "[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]] / 攻速"
-  },
-  "app.bab30716dbe460f6": {
-    "source": "保留冲层核心乘区并用体能/紫宝石补早期坚韧。",
-    "template": "保留[[Site/push]]核心[[Site/multiplier]]并用[[SkillsUI/ParagonBonusLabel_Vitality]]/紫宝石补早期坚韧。"
-  },
-  "app.ab14c9c627fa9575": {
-    "source": "高巅峰转向全智力宝石、范围伤与冷却/资源阈值，部分BD改用更进攻的第四槽。",
-    "template": "[[Site/high-paragon]]转向全[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]宝石、范围伤与冷却/资源阈值，部分BD改用更进攻的第四槽。"
-  },
-  "app.5c1b154b5568c368": {
-    "source": "用复仇者、寅剑/以太行者和强者宝石换掉过量首领单体，保留一部分坚韧。",
-    "template": "用[[Items/Unique_Bracer_106_x1]]、[[Items/Unique_Sword_1H_113_x1]]/[[Items/P1_Wand_norm_unique_01]]和[[Items/Unique_Gem_001_x1]]换掉过量首领单体，保留一部分坚韧。"
-  },
-  "app.13eceedf569ca7a7": {
-    "source": "伤害溢出后接入金币链、移速护腕和击杀冷却，专注连续赶路。",
-    "template": "伤害溢出后接入金币链、移速护腕和击杀冷却，专注连续赶路。"
   },
   "app.6b2fa34556e28d07": {
     "source": "主伤害发动机",
@@ -28860,14 +28845,6 @@
     "source": "套装、技能或 BD 名",
     "template": "套装、技能或 BD 名"
   },
-  "app.088b27d0ed00b747": {
-    "source": "完整",
-    "template": "完整"
-  },
-  "app.2bfa8a13150e11a2": {
-    "source": "已入库",
-    "template": "已入库"
-  },
   "app.a8a88ddbea1594b7": {
     "source": "核心",
     "template": "核心"
@@ -28884,17 +28861,9 @@
     "source": "适用：",
     "template": "适用："
   },
-  "app.02f8f09b9f19fd3b": {
-    "source": "打开完整装备与联动图",
-    "template": "打开完整装备与联动图"
-  },
   "app.2ddc1f1c3c17cad8": {
     "source": "进入 BD 资料页",
     "template": "进入 BD 资料页"
-  },
-  "app.39da26eeefdebc41": {
-    "source": "装备库与技能库已接入；完整词缀和联动图正在按原型标准逐套校对。",
-    "template": "装备库与技能库已接入；完整词缀和联动图正在按原型标准逐套校对。"
   },
   "app.b556c026fae2b58c": {
     "source": "0 → 70 → 六件套",
@@ -29785,10 +29754,6 @@
       "enUS": "SCENARIO REVIEW"
     }
   },
-  "app.02d9eb394fc529d0": {
-    "source": "已逐项校对",
-    "template": "已逐项校对"
-  },
   "app.43164224cdd9336d": {
     "source": "配置差异",
     "template": "配置差异"
@@ -30083,14 +30048,6 @@
   "app.6a65eb35e78a7d58": {
     "source": "BD 数据完整度",
     "template": "BD 数据完整度"
-  },
-  "app.6455f91b0ff3d730": {
-    "source": "配置差异待实装",
-    "template": "配置差异待实装"
-  },
-  "app.c6ac1a026f2c0b82": {
-    "source": "当前 BD 已保留用途与巅峰说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。",
-    "template": "当前 BD 已保留用途与[[Site/paragon]]说明；装备、宝石、魔方和技能暂按同一套共用配置展示，避免自动替换成未经校对的配装。"
   },
   "app.0eea2588203eefb7": {
     "source": "轮换预设说明",
@@ -31529,22 +31486,6 @@
   "app.d723da3b80d00e8e": {
     "source": "黄装升级：70级匕首，必须选对底材",
     "template": "黄装升级：70级匕首，必须选对底材"
-  },
-  "app.1ed5be0ca845e6df": {
-    "source": "围绕物理周期手动轰击，其余时间高速惩罚。；体能、荆棘和攻速优先，完全不需要暴击词缀。",
-    "template": "围绕物理周期手动轰击，其余时间高速惩罚。；[[SkillsUI/ParagonBonusLabel_Vitality]]、荆棘和攻速优先，完全不需要暴击词缀。"
-  },
-  "app.7f3dacff05b58b45": {
-    "source": "围绕物理周期手动轰击，其余时间高速惩罚。；精确堆叠攻速断点、冷却和物理元素。",
-    "template": "围绕物理周期手动轰击，其余时间高速惩罚。；精确堆叠攻速断点、冷却和物理元素。"
-  },
-  "app.6199aee5609c6c02": {
-    "source": "低层可用战马和自动轰击边走边清场。；体能、荆棘和攻速优先，完全不需要暴击词缀。",
-    "template": "低层可用战马和自动轰击边走边清场。；[[SkillsUI/ParagonBonusLabel_Vitality]]、荆棘和攻速优先，完全不需要暴击词缀。"
-  },
-  "app.956b676cfb3381e5": {
-    "source": "低层可用战马和自动轰击边走边清场。；精确堆叠攻速断点、冷却和物理元素。",
-    "template": "低层可用战马和自动轰击边走边清场。；精确堆叠攻速断点、冷却和物理元素。"
   },
   "app.bc2392214ba03e35": {
     "source": "横扫攻击伤害",
@@ -55711,287 +55652,500 @@
   },
   "app.c31c595649a0b21a": {
     "source": "破坏物后短暂提高移动速度，横扫的范围伤害很容易触发。",
-    "template": "破坏物后短暂提高移动速度，横扫的[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]很容易触发。"
+    "template": "破坏物后短暂提高移动速度，横扫的[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]很容易触发。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.0e1e878248f4e325": {
     "source": "祭坛生成额外精英，配合寅剑压缩速刷路径。",
-    "template": "祭坛生成额外精英，配合[[Items/Unique_Sword_1H_113_x1]]压缩[[Site/speed-farming]]路径。"
+    "template": "祭坛生成额外精英，配合[[Items/Unique_Sword_1H_113_x1]]压缩[[Site/speed-farming]]路径。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.0839df82250874b8": {
     "source": "拾取金币后获得护甲，只在掉金币内容中使用。",
-    "template": "拾取金币后获得护甲，只在掉金币内容中使用。"
+    "template": "拾取金币后获得护甲，只在掉金币内容中使用。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.4046f5ec22a06933": {
     "source": "拾取金币扩大拾取范围，连接囤宝者与金织带。",
-    "template": "拾取金币扩大拾取范围，连接[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Belt_010_x1]]。"
+    "template": "拾取金币扩大拾取范围，连接[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Belt_010_x1]]。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.cbf8a209a2f97cf9": {
     "source": "贤者之旅腰带",
-    "template": "[[Items/Unique_Boots_018_x1]]腰带"
+    "template": "[[Items/Unique_Boots_018_x1]]腰带",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.6ece76851cc8fea4": {
     "source": "与贤者之握组成死亡之息速刷两件套。",
-    "template": "与贤者之握组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。"
+    "template": "与贤者之握组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.d2e6453e9ccdab1b": {
     "source": "贤者之旅腿甲",
-    "template": "[[Items/Unique_Boots_018_x1]]腿甲"
+    "template": "[[Items/Unique_Boots_018_x1]]腿甲",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.f62a502d22930b91": {
     "source": "与贤者腰带组成死亡之息速刷两件套。",
-    "template": "与[[Items/P66_Unique_Belt_016]]组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。"
+    "template": "与[[Items/P66_Unique_Belt_016]]组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.38511880cb51f85e": {
     "source": "击杀精英后大幅缩短冷却，连续速刷专用。",
-    "template": "击杀精英后大幅缩短冷却，连续[[Site/speed-farming]]专用。"
+    "template": "击杀精英后大幅缩短冷却，连续[[Site/speed-farming]]专用。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.cd7d8caf883be95d": {
     "source": "提供稳定元素与精英伤，不必等待全能法戒周期。",
-    "template": "提供稳定元素与精英伤，不必等待[[Items/P2_Unique_Ring_04]]周期。"
+    "template": "提供稳定元素与精英伤，不必等待[[Items/P2_Unique_Ring_04]]周期。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.bf19903c10c80771": {
     "source": "速刷用连续精英击杀把战马、钢铁之肤和阿卡拉特勇士重新接上。",
-    "template": "[[Site/speed-farming]]用连续精英击杀把战马、[[Powers/X1_Crusader_IronSkin_name]]和[[Powers/X1_Crusader_AkaratsChampion_name]]重新接上。"
+    "template": "[[Site/speed-farming]]用连续精英击杀把战马、[[Powers/X1_Crusader_IronSkin_name]]和[[Powers/X1_Crusader_AkaratsChampion_name]]重新接上。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.b946e03c60f07196": {
     "source": "只在 T16、蓝门和悬赏中配合囤宝者与贪婪之戒使用。",
-    "template": "只在 T16、蓝门和悬赏中配合[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Ring_108_x1]]使用。"
+    "template": "只在 T16、蓝门和悬赏中配合[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Ring_108_x1]]使用。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.4cfee15197b5adda": {
     "source": "横扫攻击技能伤",
-    "template": "[[Powers/X1_Crusader_SweepAttack_name]]技能伤"
+    "template": "[[Powers/X1_Crusader_SweepAttack_name]]技能伤",
+    "manual": {
+      "enUS": "Sweep Attack skill damage"
+    }
   },
   "app.65f80704d3bc59f0": {
     "source": "冷却覆盖",
-    "template": "冷却覆盖"
+    "template": "冷却覆盖",
+    "manual": {
+      "enUS": "Cooldown coverage"
+    }
   },
   "app.4b117a7118c24c99": {
     "source": "受罚者首领阶段",
-    "template": "[[Items/Unique_Gem_018_x1]]首领阶段"
+    "template": "[[Items/Unique_Gem_018_x1]]首领阶段",
+    "manual": {
+      "enUS": "Stricken for the boss stage"
+    }
   },
   "app.bf521e16c67af7de": {
     "source": "五件罗兰、拒绝盾、黄金剥皮者和全能法戒组成冲层底盘；用横扫叠攻速与减伤，密度不足时依靠德拉孔护腕处理精英。",
-    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]和[[Items/P2_Unique_Ring_04]]组成[[Site/push]]底盘；用横扫叠攻速与[[Site/damage-reduction]]，密度不足时依靠德拉孔护腕处理精英。"
+    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]和[[Items/P2_Unique_Ring_04]]组成[[Site/push]]底盘；用横扫叠攻速与[[Site/damage-reduction]]，密度不足时依靠德拉孔护腕处理精英。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.bc860c0b30fd162e": {
     "source": "高巅峰保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。",
-    "template": "[[Site/high-paragon]]保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。"
+    "template": "[[Site/high-paragon]]保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.b12d7bfceb8d360f": {
     "source": "拒绝盾高特效",
-    "template": "[[Items/P61_Unique_Shield_007]]盾高特效"
+    "template": "[[Items/P61_Unique_Shield_007]]盾高特效",
+    "manual": {
+      "enUS": "High Denial affix"
+    }
   },
   "app.33085b334dbbf83f": {
     "source": "不牺牲横扫技能伤",
-    "template": "不牺牲横扫技能伤"
+    "template": "不牺牲横扫技能伤",
+    "manual": {
+      "enUS": "Do not sacrifice Sweep Attack damage"
+    }
   },
   "app.afdd44c4f45db1d1": {
     "source": "低层保留横扫与拒绝盾，只换沃兹克和寅剑压缩转场；用希望律法与战马赶路，不套用只适合金币内容的金织带。",
-    "template": "低层保留横扫与[[Items/P61_Unique_Shield_007]]盾，只换[[Items/Unique_Bracer_101_x1]]和[[Items/Unique_Sword_1H_113_x1]]压缩转场；用[[Powers/X1_Crusader_LawsOfHope2_name]]与战马赶路，不套用只适合金币内容的[[Items/Unique_Belt_010_x1]]。"
+    "template": "低层保留横扫与[[Items/P61_Unique_Shield_007]]盾，只换[[Items/Unique_Bracer_101_x1]]和[[Items/Unique_Sword_1H_113_x1]]压缩转场；用[[Powers/X1_Crusader_LawsOfHope2_name]]与战马赶路，不套用只适合金币内容的[[Items/Unique_Belt_010_x1]]。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.182e8006a250cf2b": {
     "source": "聚力扫击",
-    "template": "聚力扫击"
+    "template": "聚力扫击",
+    "manual": {
+      "enUS": "Gathering Sweep"
+    }
   },
   "app.ee2723b4cea2d143": {
     "source": "金币内容换沃兹克、金织带、贪婪之戒和贤者两件，寅剑与囤宝者建立连续击杀、死亡之息和护甲链；不掉金币的大秘境不使用这套分支。",
-    "template": "金币内容换[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Belt_010_x1]]、[[Items/Unique_Ring_108_x1]]和贤者两件，[[Items/Unique_Sword_1H_113_x1]]与[[Items/Unique_Gem_014_x1]]建立连续击杀、[[Items/Crafting_Looted_Reagent_01]]和护甲链；不掉金币的[[NephalemRift/TieredRift]]不使用这套分支。"
+    "template": "金币内容换[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Belt_010_x1]]、[[Items/Unique_Ring_108_x1]]和贤者两件，[[Items/Unique_Sword_1H_113_x1]]与[[Items/Unique_Gem_014_x1]]建立连续击杀、[[Items/Crafting_Looted_Reagent_01]]和护甲链；不掉金币的[[NephalemRift/TieredRift]]不使用这套分支。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.85e56dec84919ab6": {
     "source": "金织带护甲",
-    "template": "[[Items/Unique_Belt_010_x1]]护甲"
+    "template": "[[Items/Unique_Belt_010_x1]]护甲",
+    "manual": {
+      "enUS": "Goldwrap armor"
+    }
   },
   "app.66b4fad2baaa187b": {
     "source": "贤者两件",
-    "template": "贤者两件"
+    "template": "贤者两件",
+    "manual": {
+      "enUS": "Sage's two-piece"
+    }
   },
   "app.6f128a4b231f4fc5": {
     "source": "只在金币内容启用囤宝者",
-    "template": "只在金币内容启用[[Items/Unique_Gem_014_x1]]"
+    "template": "只在金币内容启用[[Items/Unique_Gem_014_x1]]",
+    "manual": {
+      "enUS": "Use Boon of the Hoarder only in gold content"
+    }
   },
   "app.c39fa14129b37a7a": {
     "source": "速刷先到上限，冲层再把剩余点数投向力量。",
-    "template": "[[Site/speed-farming]]先到上限，[[Site/push]]再把剩余点数投向力量。"
+    "template": "[[Site/speed-farming]]先到上限，[[Site/push]]再把剩余点数投向力量。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.1560ea95199ab2e6": {
     "source": "提供伤害和护甲，是默认主属性。",
-    "template": "提供伤害和护甲，是默认主属性。"
+    "template": "提供伤害和护甲，是默认主属性。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.6c9ba7bcfca6154f": {
     "source": "生存不足时投入",
-    "template": "生存不足时投入"
+    "template": "生存不足时投入",
+    "manual": {
+      "enUS": "Invest when toughness is low"
+    }
   },
   "app.0d4c9ba4c7465d99": {
     "source": "贴身横扫需要先保证不被精英技能秒杀。",
-    "template": "贴身横扫需要先保证不被精英技能秒杀。"
+    "template": "贴身横扫需要先保证不被精英技能秒杀。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.eba457b5b2779478": {
     "source": "黄金剥皮者按命中返怒，不需要大资源池。",
-    "template": "[[Items/P61_Unique_Flail_2H_104]]按命中返怒，不需要大资源池。"
+    "template": "[[Items/P61_Unique_Flail_2H_104]]按命中返怒，不需要大资源池。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.80738beeb05ddcf3": {
     "source": "覆盖阿卡拉特勇士、钢铁之肤和战马。",
-    "template": "覆盖[[Powers/X1_Crusader_AkaratsChampion_name]]、[[Powers/X1_Crusader_IronSkin_name]]和战马。"
+    "template": "覆盖[[Powers/X1_Crusader_AkaratsChampion_name]]、[[Powers/X1_Crusader_IronSkin_name]]和战马。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.164fc065fb46acfe": {
     "source": "配合横扫与元素爆发提高稳定伤害。",
-    "template": "配合横扫与元素爆发提高稳定伤害。"
+    "template": "配合横扫与元素爆发提高稳定伤害。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.446713cdf622914d": {
     "source": "完成断点",
-    "template": "完成断点"
+    "template": "完成断点",
+    "manual": {
+      "enUS": "Complete the breakpoint"
+    }
   },
   "app.b8874fdfc28234a7": {
     "source": "罗兰层数和攻速决定横扫循环。",
-    "template": "罗兰层数和攻速决定横扫循环。"
+    "template": "罗兰层数和攻速决定横扫循环。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.99bbfc5a1aadcccd": {
     "source": "力量已提供护甲，先补全抗。",
-    "template": "力量已提供护甲，先补全抗。"
+    "template": "力量已提供护甲，先补全抗。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.14866d573ff3784e": {
     "source": "提高贴身有效生命。",
-    "template": "提高贴身有效生命。"
+    "template": "提高贴身有效生命。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.137a5c92b6505dfd": {
     "source": "补齐近战防线。",
-    "template": "补齐近战防线。"
+    "template": "补齐近战防线。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.94361fdada60e44a": {
     "source": "作为持续横扫的续航补充。",
-    "template": "作为持续横扫的续航补充。"
+    "template": "作为持续横扫的续航补充。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.fb5758e763372950": {
     "source": "横扫与密度清场直接受益。",
-    "template": "横扫与密度清场直接受益。"
+    "template": "横扫与密度清场直接受益。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.95d88d1d338897cb": {
     "source": "帮助天鹰与连续横扫维持资源。",
-    "template": "帮助天鹰与连续横扫维持资源。"
+    "template": "帮助天鹰与连续横扫维持资源。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.832a704300ad5d00": {
     "source": "高频横扫命中提供稳定治疗。",
-    "template": "高频横扫命中提供稳定[[Powers/Templar_Heal_110_name]]。"
+    "template": "高频横扫命中提供稳定[[Powers/Templar_Heal_110_name]]。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.40cea5708343abf9": {
     "source": "金币速刷最后",
-    "template": "金币[[Site/speed-farming]]最后"
+    "template": "金币[[Site/speed-farming]]最后",
+    "manual": {
+      "enUS": "Last for gold speed farming"
+    }
   },
   "app.699295ca41898c86": {
     "source": "只为 T16、蓝门与悬赏服务。",
-    "template": "只为 T16、蓝门与悬赏服务。"
+    "template": "只为 T16、蓝门与悬赏服务。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.2c4d07511c6a1f6b": {
     "source": "继续提供伤害与护甲。",
-    "template": "继续提供伤害与护甲。"
+    "template": "继续提供伤害与护甲。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.ea28661b35a37c7c": {
     "source": "贴身冲层承受不住",
-    "template": "贴身[[Site/push]]承受不住"
+    "template": "贴身[[Site/push]]承受不住",
+    "manual": {
+      "enUS": "Cannot survive close-range pushing"
+    }
   },
   "app.a9786e16e09b3916": {
     "source": "补到能维持横扫循环后再回力量。",
-    "template": "补到能维持横扫循环后再回力量。"
+    "template": "补到能维持横扫循环后再回力量。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.173c4a0dc06e4ea8": {
     "source": "攻速/冷却/闪电/范围伤",
-    "template": "攻速/冷却/闪电/范围伤"
+    "template": "攻速/冷却/闪电/范围伤",
+    "manual": {
+      "enUS": "Attack speed / cooldown / lightning / area damage"
+    }
   },
   "app.fd9dc054700be7bf": {
     "source": "围绕断点精修，不盲目追单一面板。",
-    "template": "围绕断点精修，不盲目追单一面板。"
+    "template": "围绕断点精修，不盲目追单一面板。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.7ba50a0ee3f4c1d1": {
     "source": "五件罗兰、拒绝盾、黄金剥皮者",
-    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]"
+    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.7eecd59ebe6a6912": {
     "source": "先确认罗兰层数、攻速与回怒链成立。",
-    "template": "先确认罗兰层数、攻速与回怒链成立。"
+    "template": "先确认罗兰层数、攻速与回怒链成立。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.5c2b03165a01c56e": {
     "source": "冷却、攻速、三颗核心传奇宝石",
-    "template": "冷却、攻速、三颗核心传奇宝石"
+    "template": "冷却、攻速、三颗核心传奇宝石",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.0b1869935c97bf7d": {
     "source": "让变身和钢铁之肤覆盖稳定。",
-    "template": "让变身和[[Powers/X1_Crusader_IronSkin_name]]覆盖稳定。"
+    "template": "让变身和[[Powers/X1_Crusader_IronSkin_name]]覆盖稳定。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.ce7514fe38dfe28d": {
     "source": "攻速断点、闪电元素、范围伤和钻石",
-    "template": "攻速断点、闪电元素、范围伤和钻石"
+    "template": "攻速断点、闪电元素、范围伤和钻石",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.51d02b2fc493a991": {
     "source": "冲层精修生存，金币内容再切换贤者与金币链。",
-    "template": "[[Site/push]]精修生存，金币内容再切换贤者与金币链。"
+    "template": "[[Site/push]]精修生存，金币内容再切换贤者与金币链。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.4af7b901fad6ac59": {
     "source": "罗兰五件 + 拒绝盾 + 黄金剥皮者",
-    "template": "罗兰五件 + [[Items/P61_Unique_Shield_007]]盾 + [[Items/P61_Unique_Flail_2H_104]]"
+    "template": "罗兰五件 + [[Items/P61_Unique_Shield_007]]盾 + [[Items/P61_Unique_Flail_2H_104]]",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.8e96f1072d04a86f": {
     "source": "横扫需要罗兰层数与拒绝盾命中计数，黄金剥皮者负责高密度返怒；缺少其中任一项都不是完整横扫底盘。",
-    "template": "横扫需要罗兰层数与[[Items/P61_Unique_Shield_007]]盾命中计数，[[Items/P61_Unique_Flail_2H_104]]负责高密度返怒；缺少其中任一项都不是完整横扫底盘。"
+    "template": "横扫需要罗兰层数与[[Items/P61_Unique_Shield_007]]盾命中计数，[[Items/P61_Unique_Flail_2H_104]]负责高密度返怒；缺少其中任一项都不是完整横扫底盘。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.a42c5bdaa11b9999": {
     "source": "德拉孔护腕 / 沃兹克护腕",
-    "template": "德拉孔护腕 / [[Items/Unique_Bracer_101_x1]]"
+    "template": "德拉孔护腕 / [[Items/Unique_Bracer_101_x1]]",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.8191cc85ce79361d": {
     "source": "冲层和少目标阶段用德拉孔，低层与金币速刷用沃兹克触发破坏物移速。",
-    "template": "[[Site/push]]和少目标阶段用德拉孔，低层与金币[[Site/speed-farming]]用[[Items/Unique_Bracer_101_x1]]触发破坏物移速。"
+    "template": "[[Site/push]]和少目标阶段用德拉孔，低层与金币[[Site/speed-farming]]用[[Items/Unique_Bracer_101_x1]]触发破坏物移速。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.907df5a001347a6b": {
     "source": "低层大秘境、T16、蓝门与悬赏",
-    "template": "低层[[NephalemRift/TieredRift]]、T16、蓝门与悬赏"
+    "template": "低层[[NephalemRift/TieredRift]]、T16、蓝门与悬赏",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.5ca36a9de8e8ccf2": {
     "source": "少目标增伤下降",
-    "template": "少目标[[Site/damage-boost]]下降"
+    "template": "少目标[[Site/damage-boost]]下降",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.38dadc4b16deca27": {
     "source": "金织带 + 贪婪之戒 + 囤宝者",
-    "template": "[[Items/Unique_Belt_010_x1]] + [[Items/Unique_Ring_108_x1]] + [[Items/Unique_Gem_014_x1]]"
+    "template": "[[Items/Unique_Belt_010_x1]] + [[Items/Unique_Ring_108_x1]] + [[Items/Unique_Gem_014_x1]]",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.4932fd6b19b42e53": {
     "source": "只在掉金币的内容建立护甲与移速；大秘境不掉金币，必须回到天鹰和冲层戒指。",
-    "template": "只在掉金币的内容建立护甲与移速；[[NephalemRift/TieredRift]]不掉金币，必须回到天鹰和[[Site/push]]戒指。"
+    "template": "只在掉金币的内容建立护甲与移速；[[NephalemRift/TieredRift]]不掉金币，必须回到天鹰和[[Site/push]]戒指。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.77076ff12eaeee23": {
     "source": "大秘境冲层与低层大秘境",
-    "template": "[[NephalemRift/TieredRift]][[Site/push]]与低层[[NephalemRift/TieredRift]]"
+    "template": "[[NephalemRift/TieredRift]][[Site/push]]与低层[[NephalemRift/TieredRift]]",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.e0032c3c829343ec": {
     "source": "不依赖金币的稳定减伤",
-    "template": "不依赖金币的稳定[[Site/damage-reduction]]"
+    "template": "不依赖金币的稳定[[Site/damage-reduction]]",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.46d80d2dc0a022d3": {
     "source": "失去金币护甲",
-    "template": "失去金币护甲"
+    "template": "失去金币护甲",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.db0328d0fb3a5758": {
     "source": "冲层用焚炉处理精英，低层和金币速刷用寅剑把击杀转成连续冷却。",
-    "template": "[[Site/push]]用[[Items/Unique_Mace_2H_103_x1]]处理精英，低层和金币[[Site/speed-farming]]用[[Items/Unique_Sword_1H_113_x1]]把击杀转成连续冷却。"
+    "template": "[[Site/push]]用[[Items/Unique_Mace_2H_103_x1]]处理精英，低层和金币[[Site/speed-farming]]用[[Items/Unique_Sword_1H_113_x1]]把击杀转成连续冷却。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.9810163d276a8346": {
     "source": "精英连续死亡的速刷内容",
-    "template": "精英连续死亡的[[Site/speed-farming]]内容"
+    "template": "精英连续死亡的[[Site/speed-farming]]内容",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.4dec3ba22eb44a7a": {
     "source": "击杀精英后重置冷却",
-    "template": "击杀精英后重置冷却"
+    "template": "击杀精英后重置冷却",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.793a815ee6399f97": {
     "source": "失去焚炉精英增伤",
-    "template": "失去[[Items/Unique_Mace_2H_103_x1]]精英[[Site/damage-boost]]"
+    "template": "失去[[Items/Unique_Mace_2H_103_x1]]精英[[Site/damage-boost]]",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.fba9d27bf74d10b5": {
     "source": "治疗和回能适合长时间贴身横扫；金币速刷可让随从携带复仇者护腕和金币装备。",
-    "template": "[[Powers/Templar_Heal_110_name]]和回能适合长时间贴身横扫；金币[[Site/speed-farming]]可让随从携带[[Items/Unique_Bracer_106_x1]]和金币装备。"
+    "template": "[[Powers/Templar_Heal_110_name]]和回能适合长时间贴身横扫；金币[[Site/speed-farming]]可让随从携带[[Items/Unique_Bracer_106_x1]]和金币装备。",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.55904ff4ebf8c3be": {
     "source": "罗兰横扫配置校验失败：{0}",
-    "template": "罗兰横扫配置校验失败：{0}"
+    "template": "罗兰横扫配置校验失败：{0}",
+    "manual": {
+      "enUS": "Roland Sweep build guidance"
+    }
   },
   "app.5c45a705bd4b7c48": {
     "source": "最大资源",
@@ -56004,7 +56158,12 @@
   },
   "app.4d09d8f699ad8575": {
     "source": "生存不足",
-    "template": "生存不足"
+    "template": "生存不足",
+    "manual": {
+      "zhCN": "生存不足",
+      "zhTW": "生存不足",
+      "enUS": "Low toughness"
+    }
   },
   "app.e004d0823568820d": {
     "source": "冷却、攻速与技能伤",
@@ -56017,15 +56176,30 @@
   },
   "app.0708336bfb81f3f9": {
     "source": "冷却与三颗核心传奇宝石",
-    "template": "冷却与三颗核心传奇宝石"
+    "template": "冷却与三颗核心传奇宝石",
+    "manual": {
+      "zhCN": "冷却与三颗核心传奇宝石",
+      "zhTW": "冷卻與三顆核心傳奇寶石",
+      "enUS": "Cooldown and three core legendary gems"
+    }
   },
   "app.055d9781b8bfb71f": {
     "source": "正确词缀与生存",
-    "template": "正确词缀与生存"
+    "template": "正确词缀与生存",
+    "manual": {
+      "zhCN": "正确词缀与生存",
+      "zhTW": "正確詞綴與生存",
+      "enUS": "Correct affixes and toughness"
+    }
   },
   "app.9d8707f4c1f4d6f1": {
     "source": "冷却、攻速与范围伤",
-    "template": "冷却、攻速与范围伤"
+    "template": "冷却、攻速与范围伤",
+    "manual": {
+      "zhCN": "冷却、攻速与范围伤",
+      "zhTW": "冷卻、攻速與範圍傷",
+      "enUS": "Cooldown, attack speed and area damage"
+    }
   },
   "app.304c31bd718618ce": {
     "source": "速刷宝石",
@@ -56036,8 +56210,337 @@
       "enUS": "Speed-farming gem"
     }
   },
-  "app.4fed6394c592d64b": {
-    "source": "undefined技能伤",
-    "template": "undefined技能伤"
+  "app.2fd62668a5e27264": {
+    "source": "{0} 缺少梦之遗礼",
+    "template": "{0} 缺少[[Items/Unique_Gem_023_x1]]",
+    "manual": {
+      "zhCN": "{0} 缺少梦之遗礼",
+      "zhTW": "{0} 缺少夢之遺禮",
+      "enUS": "{0} is missing Legacy of Dreams"
+    }
+  },
+  "app.4a69acb76162e072": {
+    "source": "{0} 荆棘构筑不能使用武器绿宝石",
+    "template": "{0} 荆棘构筑不能使用武器绿宝石",
+    "manual": {
+      "zhCN": "{0} 荆棘构筑不能使用武器绿宝石",
+      "zhTW": "{0} 荊棘構築不能使用武器綠寶石",
+      "enUS": "{0} thorns builds cannot use an emerald in the weapon"
+    }
+  },
+  "app.28449a23a01b17e6": {
+    "source": "通用占位数据不能标记为完整评审",
+    "template": "通用占位数据不能标记为完整评审",
+    "manual": {
+      "zhCN": "通用占位数据不能标记为完整评审",
+      "zhTW": "通用佔位資料不能標記為完整評審",
+      "enUS": "Generic placeholder data cannot be marked as fully reviewed"
+    }
+  },
+  "app.5b94a5874f4c66bd": {
+    "source": "缺少证据状态",
+    "template": "缺少证据状态",
+    "manual": {
+      "zhCN": "缺少证据状态",
+      "zhTW": "缺少證據狀態",
+      "enUS": "Evidence status is missing"
+    }
+  },
+  "app.97c4c98c4c9e947f": {
+    "source": "缺少平台状态",
+    "template": "缺少平台状态",
+    "manual": {
+      "zhCN": "缺少平台状态",
+      "zhTW": "缺少平台狀態",
+      "enUS": "Platform status is missing"
+    }
+  },
+  "app.e848df948a70f70d": {
+    "source": "{0} 来源不是 HTTPS",
+    "template": "{0} 来源不是 HTTPS",
+    "manual": {
+      "zhCN": "{0} 来源不是 HTTPS",
+      "zhTW": "{0} 來源不是 HTTPS",
+      "enUS": "{0} source does not use HTTPS"
+    }
+  },
+  "app.40463949072205cb": {
+    "source": "{0} 来源不是有效 URL",
+    "template": "{0} 来源不是有效 URL",
+    "manual": {
+      "zhCN": "{0} 来源不是有效 URL",
+      "zhTW": "{0} 來源不是有效 URL",
+      "enUS": "{0} source is not a valid URL"
+    }
+  },
+  "app.957fa2afa1cc3b02": {
+    "source": "发布状态缺少 Nintendo Switch 实机验证",
+    "template": "发布状态缺少 Nintendo Switch 实机验证",
+    "manual": {
+      "zhCN": "发布状态缺少 Nintendo Switch 实机验证",
+      "zhTW": "發佈狀態缺少 Nintendo Switch 實機驗證",
+      "enUS": "Published status requires Nintendo Switch hardware verification"
+    }
+  },
+  "app.2883c3e7b258d4e6": {
+    "source": "通用占位数据必须保持未验证状态",
+    "template": "通用占位数据必须保持未验证状态",
+    "manual": {
+      "zhCN": "通用占位数据必须保持未验证状态",
+      "zhTW": "通用佔位資料必須保持未驗證狀態",
+      "enUS": "Generic placeholder data must remain unverified"
+    }
+  },
+  "app.273d3e8983ac3a2b": {
+    "source": "大秘境冲层 · 高巅峰（未验证）",
+    "template": "[[NephalemRift/TieredRift]][[Site/push]] · [[Site/high-paragon]]（未验证）",
+    "manual": {
+      "zhCN": "大秘境冲层 · 高巅峰（未验证）",
+      "zhTW": "大秘境衝層 · 高巔峰（未驗證）",
+      "enUS": "Greater Rift push · high Paragon (unverified)"
+    }
+  },
+  "app.45f8ccae481dc4ba": {
+    "source": "大秘境速刷（未验证）",
+    "template": "[[NephalemRift/TieredRift]][[Site/speed-farming]]（未验证）",
+    "manual": {
+      "zhCN": "大秘境速刷（未验证）",
+      "zhTW": "大秘境速刷（未驗證）",
+      "enUS": "Greater Rift speed farming (unverified)"
+    }
+  },
+  "app.5a68a5e37e9af677": {
+    "source": "T16 / 速刷（未验证）",
+    "template": "T16 / [[Site/speed-farming]]（未验证）",
+    "manual": {
+      "zhCN": "T16 / 速刷（未验证）",
+      "zhTW": "T16 / 速刷（未驗證）",
+      "enUS": "T16 / speed farming (unverified)"
+    }
+  },
+  "app.66526791a890f561": {
+    "source": "速刷宝石（待验证）",
+    "template": "[[Site/speed-farming]]宝石（待验证）",
+    "manual": {
+      "zhCN": "速刷宝石（待验证）",
+      "zhTW": "速刷寶石（待驗證）",
+      "enUS": "Speed-farming gem (verification pending)"
+    }
+  },
+  "app.e17f6578931aa9fb": {
+    "source": "由通用工厂生成的占位配置，尚未完成构筑专属来源、用途与 Nintendo Switch 验证。",
+    "template": "由通用工厂生成的占位配置，尚未完成构筑专属来源、用途与 Nintendo Switch 验证。",
+    "manual": {
+      "zhCN": "由通用工厂生成的占位配置，尚未完成构筑专属来源、用途与 Nintendo Switch 验证。",
+      "zhTW": "由通用工廠產生的佔位配置，尚未完成構築專屬來源、用途與 Nintendo Switch 驗證。",
+      "enUS": "Placeholder setup generated by the generic factory; build-specific sources, use cases, and Nintendo Switch verification are still pending."
+    }
+  },
+  "app.161c05ed0f2a64e2": {
+    "source": "构筑与场景已按 Icy Veins 和 Maxroll 交叉核对；Nintendo Switch 实机验证尚未完成。",
+    "template": "构筑与场景已按 Icy Veins 和 Maxroll 交叉核对；Nintendo Switch 实机验证尚未完成。",
+    "manual": {
+      "zhCN": "构筑与场景已按 Icy Veins 和 Maxroll 交叉核对；Nintendo Switch 实机验证尚未完成。",
+      "zhTW": "構築與場景已按 Icy Veins 和 Maxroll 交叉核對；Nintendo Switch 實機驗證尚未完成。",
+      "enUS": "The build and scenarios were cross-checked against Icy Veins and Maxroll; Nintendo Switch testing is still pending."
+    }
+  },
+  "app.1854504e051a8091": {
+    "source": "低巅峰大秘境冲层（来源待复核）",
+    "template": "[[Site/low-paragon]][[NephalemRift/TieredRift]][[Site/push]]（来源待复核）",
+    "manual": {
+      "zhCN": "低巅峰大秘境冲层（来源待复核）",
+      "zhTW": "低巔峰大秘境衝層（來源待複核）",
+      "enUS": "Low-Paragon Greater Rift push (source review pending)"
+    }
+  },
+  "app.c54f59230a3ff326": {
+    "source": "已录入构筑专页，但尚未完成第二来源与 Nintendo Switch 验证。",
+    "template": "已录入构筑专页，但尚未完成第二来源与 Nintendo Switch 验证。",
+    "manual": {
+      "zhCN": "已录入构筑专页，但尚未完成第二来源与 Nintendo Switch 验证。",
+      "zhTW": "已錄入構築專頁，但尚未完成第二來源與 Nintendo Switch 驗證。",
+      "enUS": "A build-specific page is recorded, but a second source and Nintendo Switch verification are still pending."
+    }
+  },
+  "app.69bc5b14e25f73bc": {
+    "source": "基础配置是当前录入的低巅峰冲层入口。",
+    "template": "基础配置是当前录入的[[Site/low-paragon]][[Site/push]]入口。",
+    "manual": {
+      "zhCN": "基础配置是当前录入的低巅峰冲层入口。",
+      "zhTW": "基礎配置是目前錄入的低巔峰衝層入口。",
+      "enUS": "The base setup is the currently recorded low-Paragon Greater Rift push entry point."
+    }
+  },
+  "app.6e81c027f57dab84": {
+    "source": "高巅峰大秘境冲层（来源待复核）",
+    "template": "[[Site/high-paragon]][[NephalemRift/TieredRift]][[Site/push]]（来源待复核）",
+    "manual": {
+      "zhCN": "高巅峰大秘境冲层（来源待复核）",
+      "zhTW": "高巔峰大秘境衝層（來源待複核）",
+      "enUS": "High-Paragon Greater Rift push (source review pending)"
+    }
+  },
+  "app.e29c0e97af65f673": {
+    "source": "高巅峰规则来自批量整理，需逐套核对宝石、词缀阈值和第四槽。",
+    "template": "[[Site/high-paragon]]规则来自批量整理，需逐套核对宝石、词缀阈值和第四槽。",
+    "manual": {
+      "zhCN": "高巅峰规则来自批量整理，需逐套核对宝石、词缀阈值和第四槽。",
+      "zhTW": "高巔峰規則來自批量整理，需逐套核對寶石、詞綴門檻和第四槽。",
+      "enUS": "The high-Paragon rules came from batch processing; gems, stat thresholds, and the fourth cube slot need build-by-build review."
+    }
+  },
+  "app.90119c53a4b65acc": {
+    "source": "低层速刷（用途待拆分）",
+    "template": "低层[[Site/speed-farming]]（用途待拆分）",
+    "manual": {
+      "zhCN": "低层速刷（用途待拆分）",
+      "zhTW": "低層速刷（用途待拆分）",
+      "enUS": "Low-tier speed farming (use cases need separation)"
+    }
+  },
+  "app.4f31c5cec8ad1c17": {
+    "source": "当前把 T16、蓝门和低层大秘境合并，发布前必须拆分并补精确变体来源。",
+    "template": "当前把 T16、蓝门和低层[[NephalemRift/TieredRift]]合并，发布前必须拆分并补精确变体来源。",
+    "manual": {
+      "zhCN": "当前把 T16、蓝门和低层大秘境合并，发布前必须拆分并补精确变体来源。",
+      "zhTW": "目前把 T16、藍門和低層大秘境合併，發佈前必須拆分並補上精確變體來源。",
+      "enUS": "T16, Visions of Enmity, and low-tier Greater Rifts are currently merged; they must be separated and backed by exact variant sources before publication."
+    }
+  },
+  "app.fe61b670f2431c4c": {
+    "source": "金币内容速刷（用途待拆分）",
+    "template": "金币内容[[Site/speed-farming]]（用途待拆分）",
+    "manual": {
+      "zhCN": "金币内容速刷（用途待拆分）",
+      "zhTW": "金幣內容速刷（用途待拆分）",
+      "enUS": "Gold-content speed farming (use cases need separation)"
+    }
+  },
+  "app.87d99f1daf759a71": {
+    "source": "当前把 T16、蓝门和悬赏合并，发布前必须逐项确认金币链和移动配置。",
+    "template": "当前把 T16、蓝门和悬赏合并，发布前必须逐项确认金币链和移动配置。",
+    "manual": {
+      "zhCN": "当前把 T16、蓝门和悬赏合并，发布前必须逐项确认金币链和移动配置。",
+      "zhTW": "目前把 T16、藍門和懸賞合併，發佈前必須逐項確認金幣鏈和移動配置。",
+      "enUS": "T16, Visions of Enmity, and bounties are currently merged; the gold chain and mobility setup must be verified for each activity before publication."
+    }
+  },
+  "app.cf3f42f76294fa15": {
+    "source": "已录入单一 PC 构筑来源；用途拆分、第二来源和 Nintendo Switch 实测尚未完成。",
+    "template": "已录入单一 PC 构筑来源；用途拆分、第二来源和 Nintendo Switch 实测尚未完成。",
+    "manual": {
+      "zhCN": "已录入单一 PC 构筑来源；用途拆分、第二来源和 Nintendo Switch 实测尚未完成。",
+      "zhTW": "已錄入單一 PC 構築來源；用途拆分、第二來源和 Nintendo Switch 實測尚未完成。",
+      "enUS": "One PC build source is recorded; use-case separation, a second source, and Nintendo Switch testing are still pending."
+    }
+  },
+  "app.6f83ca9fcb088e4d": {
+    "source": "未完成内容验证",
+    "template": "未完成内容验证",
+    "manual": {
+      "zhCN": "未完成内容验证",
+      "zhTW": "尚未完成內容驗證",
+      "enUS": "Content not yet verified"
+    }
+  },
+  "app.8177d03b1f7107a7": {
+    "source": "PC 资料派生 · Switch 未实测",
+    "template": "PC 资料派生 · Switch 未实测",
+    "manual": {
+      "zhCN": "PC 资料派生 · Switch 未实测",
+      "zhTW": "由 PC 資料推導 · Switch 未實測",
+      "enUS": "Derived from PC sources · not tested on Switch"
+    }
+  },
+  "app.5fdac90c87c31e73": {
+    "source": "塔格奥是当前人工样板，但现有证据仍以单一 PC 攻略站为主；第二来源与 Nintendo Switch 实测尚未完成。",
+    "template": "[[ItemSets/P6_Necro_Set_2]]是当前人工样板，但现有证据仍以单一 PC 攻略站为主；第二来源与 Nintendo Switch 实测尚未完成。",
+    "manual": {
+      "zhCN": "塔格奥是当前人工样板，但现有证据仍以单一 PC 攻略站为主；第二来源与 Nintendo Switch 实测尚未完成。",
+      "zhTW": "塔格奧是目前人工樣板，但現有證據仍以單一 PC 攻略站為主；第二來源與 Nintendo Switch 實測尚未完成。",
+      "enUS": "Trag'Oul is the current hand-authored reference, but its evidence still relies mainly on one PC guide site; a second source and Nintendo Switch testing are pending."
+    }
+  },
+  "app.8aa624add529f4df": {
+    "source": "已录入来源 · 待交叉验证",
+    "template": "已录入来源 · 待交叉验证",
+    "manual": {
+      "zhCN": "已录入来源 · 待交叉验证",
+      "zhTW": "已錄入來源 · 待交叉驗證",
+      "enUS": "Source recorded · cross-check pending"
+    }
+  },
+  "app.e002eccdaf4615cb": {
+    "source": "已交叉核对 · 待 Switch 实测",
+    "template": "已交叉核对 · 待 Switch 实测",
+    "manual": {
+      "zhCN": "已交叉核对 · 待 Switch 实测",
+      "zhTW": "已交叉核對 · 待 Switch 實測",
+      "enUS": "Cross-checked · Switch test pending"
+    }
+  },
+  "app.c107d8855d636c62": {
+    "source": "已完成 Switch 功能验证",
+    "template": "已完成 Switch 功能验证",
+    "manual": {
+      "zhCN": "已完成 Switch 功能验证",
+      "zhTW": "已完成 Switch 功能驗證",
+      "enUS": "Switch functionality verified"
+    }
+  },
+  "app.cf78133e79c6c0bc": {
+    "source": "已发布验证",
+    "template": "已发布验证",
+    "manual": {
+      "zhCN": "已发布验证",
+      "zhTW": "已發佈驗證",
+      "enUS": "Publication checks passed"
+    }
+  },
+  "app.fa784e591dd61316": {
+    "source": "Nintendo Switch 已验证",
+    "template": "Nintendo Switch 已验证",
+    "manual": {
+      "zhCN": "Nintendo Switch 已验证",
+      "zhTW": "Nintendo Switch 已驗證",
+      "enUS": "Verified on Nintendo Switch"
+    }
+  },
+  "app.31783c644467ed93": {
+    "source": "主机资料已核对",
+    "template": "主机资料已核对",
+    "manual": {
+      "zhCN": "主机资料已核对",
+      "zhTW": "主機資料已核對",
+      "enUS": "Console source checked"
+    }
+  },
+  "app.7e618e25d3f638ae": {
+    "source": "存在主机差异风险",
+    "template": "存在主机差异风险",
+    "manual": {
+      "zhCN": "存在主机差异风险",
+      "zhTW": "存在主機差異風險",
+      "enUS": "Console compatibility risk"
+    }
+  },
+  "app.100587977125c8c3": {
+    "source": "适用场景",
+    "template": "适用场景",
+    "manual": {
+      "zhCN": "适用场景",
+      "zhTW": "適用場景",
+      "enUS": "Applicable activities"
+    }
+  },
+  "app.0f98e1e6753a890c": {
+    "source": "当前配置尚未达到发布级验证，请把它作为研究中的参考，而不是已确认最优解。",
+    "template": "当前配置尚未达到发布级验证，请把它作为研究中的参考，而不是已确认最优解。",
+    "manual": {
+      "zhCN": "当前配置尚未达到发布级验证，请把它作为研究中的参考，而不是已确认最优解。",
+      "zhTW": "目前配置尚未達到發佈級驗證，請把它視為研究中的參考，而不是已確認的最佳解。",
+      "enUS": "This setup has not passed publication-level verification. Treat it as a research reference, not a confirmed optimum."
+    }
   }
 }

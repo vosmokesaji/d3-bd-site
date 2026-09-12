@@ -1247,7 +1247,7 @@ const INVOKER_THORNS_CONFIGURATION_BASE: BuildConfiguration = {
   passives: ["heavenly-strength", "iron-maiden", "long-arm-of-the-law", "finery"],
   powers: { weapon: "echoing-fury", armor: "omnislash", jewelry: "coe", season: "unity" },
   legendaryGems: { control: "bane-of-the-trapped", thorns: "boyarskys-chip", boss: "bane-of-the-stricken" },
-  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"), weapon: ["flawless-royal-emerald"] },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"), weapon: ["flawless-royal-topaz"] },
   follower: { id: "templar", items: ["不死圣物", "复仇者护腕"], skills: ["治疗", "回能", "保命"] },
   statPriorities: {
     global: ["冷却缩减", "攻击速度", "物理元素伤", "荆棘伤害"],

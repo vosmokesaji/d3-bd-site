@@ -582,6 +582,12 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
   gap: 7px;
 }
 
+.variant-group.scenario-options {
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
+
 .variant-group > span {
   margin-right: 5px;
   color: #777168;
@@ -612,6 +618,14 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
   color: #f0d28b;
   background: linear-gradient(#4a2d18, #28190f);
   box-shadow: inset 0 0 14px rgba(228, 139, 42, 0.12), 0 0 10px rgba(139, 76, 27, 0.15);
+}
+
+.variant-group button.applicability-unverified {
+  border-style: dashed;
+}
+
+.variant-group button.applicability-not-recommended {
+  color: #c7956a;
 }
 
 .variant-divider {

@@ -2,9 +2,38 @@ export type BuildMode = "push" | "speed";
 export type BuildParagon = "low" | "high";
 export type BuildPurpose = "greater-rift" | "nephalem-rift" | "echoing-nightmare" | "cosmetic-farm";
 export type BuildVariantKey = `${BuildMode}-${BuildParagon}`;
-export type BuildContent = "greater-rift-push" | "greater-rift-speed" | "nephalem-rift" | "bounty" | "echoing-nightmare" | "cosmetic-farm";
+export type BuildContent = "greater-rift-push" | "greater-rift-speed" | "nephalem-rift-t16" | "visions-of-enmity" | "bounty" | "echoing-nightmare" | "goblin-or-cosmetic-farm" | "nephalem-rift" | "cosmetic-farm";
 export type ParagonBand = "pre-800" | "low" | "high";
 export type BuildReviewStatus = "draft" | "partial" | "scenario-reviewed" | "fully-reviewed";
+export type BuildEvidenceStatus = "unverified" | "source-checked" | "cross-checked" | "switch-tested" | "published";
+export type BuildPlatformStatus = "switch-verified" | "console-sourced" | "pc-derived" | "platform-risk";
+export type BuildDataProvenance = "hand-authored" | "batch-derived" | "generic-placeholder";
+export type BuildApplicability = "recommended" | "viable" | "supported" | "not-recommended" | "not-applicable" | "unverified";
+
+export type BuildSource = {
+  id: string;
+  url: string;
+  title: string;
+  publisher: string;
+  author?: string;
+  updatedAt?: string;
+  accessedAt: string;
+  season?: string;
+  patch?: string;
+  platform: "nintendo-switch" | "console" | "pc" | "cross-platform";
+  content?: BuildContent[];
+  snapshot?: string;
+};
+
+export type EvidenceClaim = {
+  id: string;
+  category: "gear" | "skills" | "passives" | "powers" | "legendary-gems" | "normal-gems" | "stats" | "paragon" | "rotation" | "applicability" | "platform";
+  path: string;
+  conclusion: string;
+  sourceIds: string[];
+  status: "unverified" | "single-source" | "cross-checked" | "switch-tested";
+  conflictNote?: string;
+};
 
 export type BuildConfiguration = {
   gear: Record<string, string>;
@@ -35,11 +64,14 @@ export type BuildScenario = {
   label: string;
   content: BuildContent;
   paragonBand: ParagonBand;
-  applicability: "supported" | "not-recommended" | "not-applicable";
+  applicability: BuildApplicability;
   reason: string;
   patch?: BuildConfigurationPatch;
   unchangedReason?: string;
   sourceRefs: string[];
+  sourceIds?: string[];
+  configurationId?: string;
+  sameAsScenarioId?: string;
   reviewedAt: string;
 };
 
@@ -188,6 +220,12 @@ export type BuildGuide = {
   paragonGuide?: ParagonGuide;
   choicePolicies?: BuildChoicePolicy[];
   reviewStatus?: BuildReviewStatus;
+  evidenceStatus?: BuildEvidenceStatus;
+  platformStatus?: BuildPlatformStatus;
+  dataProvenance?: BuildDataProvenance;
+  evidenceNote?: string;
+  structuredSources?: BuildSource[];
+  evidenceClaims?: EvidenceClaim[];
 };
 
 export function resolveBuildConfiguration(base: BuildConfiguration, patch: BuildConfigurationPatch = {}): BuildConfiguration {
@@ -251,7 +289,9 @@ export function validateReviewedBuildGuide(guide: BuildGuide): string[] {
 
   for (const scenario of guide.scenarios) {
     if (!scenario.reviewedAt || scenario.sourceRefs.length === 0) errors.push(`${scenario.id} 缺少校对日期或来源`);
-    if (scenario.applicability !== "supported") continue;
+    if (scenario.sameAsScenarioId && (!scenarioIds.includes(scenario.sameAsScenarioId) || scenario.sameAsScenarioId === scenario.id)) errors.push(`${scenario.id}:SHARED_CONFIGURATION_TARGET_INVALID`);
+    if (scenario.sameAsScenarioId && scenario.patch) errors.push(`${scenario.id}:SHARED_CONFIGURATION_WITH_PATCH`);
+    if (!["supported", "recommended", "viable"].includes(scenario.applicability)) continue;
     const configuration = resolveBuildConfiguration(guide.configurationBase, scenario.patch);
     if (new Set(Object.values(configuration.gear)).size !== Object.values(configuration.gear).length) errors.push(`${scenario.id} 存在重复装备`);
     if (new Set(configuration.skills.map((skill) => skill.id)).size !== configuration.skills.length) errors.push(`${scenario.id} 存在重复技能`);
@@ -275,6 +315,78 @@ export function validateReviewedBuildGuide(guide: BuildGuide): string[] {
   if (guide.reviewStatus === "fully-reviewed") {
     if (!guide.paragonGuide) errors.push("完整评审 BD 缺少巅峰指导");
     if (!guide.choicePolicies?.length) errors.push("完整评审 BD 缺少固定/替换策略");
+  }
+  return [...new Set(errors)];
+}
+
+export function validateBuildSemantics(guide: BuildGuide): string[] {
+  if (!guide.configurationBase || !guide.scenarios) return [];
+  const errors: string[] = [];
+  const configurations = guide.scenarios
+    .filter((scenario) => scenario.applicability !== "not-applicable")
+    .map((scenario) => [scenario.id, resolveBuildConfiguration(guide.configurationBase!, scenario.patch)] as const);
+
+  if (guide.id.startsWith("lod-")) {
+    for (const [scenarioId, configuration] of configurations) {
+      const gems = Object.values(configuration.legendaryGems);
+      if (!gems.includes("lod") && !gems.includes("legacy-of-dreams") && !gems.includes("梦之遗礼")) errors.push(`${scenarioId} 缺少梦之遗礼`);
+    }
+  }
+
+  if (guide.id.includes("bombardment") || guide.id.includes("thorns")) {
+    for (const [scenarioId, configuration] of configurations) {
+      if (configuration.normalGems.weapon?.includes("flawless-royal-emerald")) errors.push(`${scenarioId} 荆棘构筑不能使用武器绿宝石`);
+    }
+  }
+
+  if (guide.dataProvenance === "generic-placeholder" && guide.reviewStatus === "fully-reviewed") {
+    errors.push("通用占位数据不能标记为完整评审");
+  }
+  if (guide.dataProvenance === "generic-placeholder") {
+    const expectedAttribute = ["力量", "敏捷", "智力"].find((attribute) => guide.gear.some((item) => item.affixes.includes(attribute)));
+    const coreStats = guide.paragonGuide?.pre800.core.map((entry) => entry.stat) ?? [];
+    if (expectedAttribute && !coreStats.includes(expectedAttribute)) errors.push("GENERIC_MAIN_ATTRIBUTE_MISMATCH");
+    for (const [scenarioId, configuration] of configurations) {
+      const armorGems = configuration.normalGems.armor ?? [];
+      if (armorGems.length === 5 && armorGems.every((gem) => gem === "flawless-royal-diamond")) errors.push(`${scenarioId}:GENERIC_HIGH_PARAGON_DIAMOND_TEMPLATE`);
+    }
+  }
+  return [...new Set(errors)];
+}
+
+export function validateBuildEvidence(guide: BuildGuide): string[] {
+  const errors: string[] = [];
+  if (!guide.evidenceStatus) errors.push("缺少证据状态");
+  if (!guide.platformStatus) errors.push("缺少平台状态");
+  for (const scenario of guide.scenarios ?? []) {
+    scenario.sourceRefs.forEach((source) => {
+      try {
+        const url = new URL(source);
+        if (url.protocol !== "https:") errors.push(`${scenario.id} 来源不是 HTTPS`);
+      } catch {
+        errors.push(`${scenario.id} 来源不是有效 URL`);
+      }
+    });
+  }
+  for (const source of guide.structuredSources ?? []) {
+    try {
+      const url = new URL(source.url);
+      if (url.protocol !== "https:") errors.push(`${source.id}:SOURCE_NOT_HTTPS`);
+    } catch {
+      errors.push(`${source.id}:SOURCE_URL_INVALID`);
+    }
+  }
+  if (guide.evidenceStatus === "published" && guide.platformStatus !== "switch-verified") {
+    errors.push("发布状态缺少 Nintendo Switch 实机验证");
+  }
+  if (guide.evidenceStatus === "published") {
+    const publishers = new Set((guide.structuredSources ?? []).map((source) => source.publisher));
+    if (publishers.size < 2) errors.push("PUBLISHED_REQUIRES_TWO_PUBLISHERS");
+    if (!(guide.evidenceClaims?.length)) errors.push("PUBLISHED_REQUIRES_CLAIM_EVIDENCE");
+    if (guide.evidenceClaims?.some((claim) => claim.status === "unverified" || claim.status === "single-source")) errors.push("PUBLISHED_HAS_INCOMPLETE_CLAIMS");
+  }
+  if (guide.dataProvenance === "generic-placeholder" && guide.evidenceStatus !== "unverified") {
+    errors.push("通用占位数据必须保持未验证状态");
   }
   return [...new Set(errors)];
 }

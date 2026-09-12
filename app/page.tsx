@@ -757,6 +757,8 @@ function BuildAtlas() {
   });
   const selected = BUILD_CATALOG.find((build) => build.id === selectedId) ?? visibleBuilds[0] ?? BUILD_CATALOG[0];
   const selectedClass = CLASS_CATALOG.find((hero) => hero.id === selected.classId) ?? CLASS_CATALOG[0];
+  const selectedGuide = selected.id === "tragoul-nova" ? TRAGOUL_GUIDE : ALL_BUILD_GUIDES.find((guide) => guide.id === selected.id);
+  const selectedEvidence = selectedGuide ? evidencePresentation(selectedGuide) : { status: "unverified" as const, label: "未完成内容验证", platformLabel: "PC 资料派生 · Switch 未实测" };
 
   useEffect(() => {
     const nextClass = isClassId(requestedClass) ? requestedClass : null;
@@ -800,8 +802,10 @@ function BuildAtlas() {
       </div>
       <div className="atlas-body">
         <div className="build-card-grid">
-          {visibleBuilds.map((build) => (
-            <button
+          {visibleBuilds.map((build) => {
+            const buildGuide = build.id === "tragoul-nova" ? TRAGOUL_GUIDE : ALL_BUILD_GUIDES.find((guide) => guide.id === build.id);
+            const evidence = buildGuide ? evidencePresentation(buildGuide) : selectedEvidence;
+            return <button
               key={build.id}
               className={`build-card ${selected.id === build.id ? "active" : ""}`}
               onMouseEnter={() => setSelectedId(build.id)}
@@ -815,9 +819,9 @@ function BuildAtlas() {
                 <em>{tr(build.core)}</em>
                 {build.content && <small>{tr(build.content.join(" · "))}</small>}
               </span>
-              <b className={build.complete ? "complete" : "indexed"}>{tr(build.complete ? "完整" : "已入库")}</b>
-            </button>
-          ))}
+              <b className={evidence.status === "published" ? "complete" : "indexed"}>{tr(evidence.label)}</b>
+            </button>;
+          })}
         </div>
         <aside className="build-readout">
           <img className="build-readout-crest" src={selectedClass.crest} alt="" />
@@ -830,8 +834,8 @@ function BuildAtlas() {
           </dl>
           <p>{tr(selected.summary)}</p>
           {selected.content && <p><strong>{t("app.f40bb3246ea21c69")}</strong>{tr(selected.content.join(" · "))}</p>}
-          <a href={`/builds/${selected.id}?fromClass=${classId}`}>{tr(selected.complete ? "打开完整装备与联动图" : "进入 BD 资料页")}</a>
-          {!selected.complete && <small>{t("app.39da26eeefdebc41")}</small>}
+          <a href={`/builds/${selected.id}?fromClass=${classId}`}>{tr("进入 BD 资料页")}</a>
+          <small>{tr(selectedEvidence.label)} · {tr(selectedEvidence.platformLabel)}</small>
         </aside>
       </div>
     </section>
@@ -1692,6 +1696,10 @@ export const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   choicePolicies: TRAGOUL_CHOICES,
   reviewStatus: "fully-reviewed",
   variantCompleteness: "complete",
+  evidenceStatus: "source-checked",
+  platformStatus: "pc-derived",
+  dataProvenance: "hand-authored",
+  evidenceNote: "塔格奥是当前人工样板，但现有证据仍以单一 PC 攻略站为主；第二来源与 Nintendo Switch 实测尚未完成。",
   originalEffects: ORIGINAL_EFFECTS,
   resolveGear: (mode, paragon) => {
     const configuration = tragoulConfiguration(mode, paragon);
@@ -1738,6 +1746,33 @@ function sourceLabel(source: string, index: number) {
   }
 }
 
+function validSourceUrl(source: string) {
+  try {
+    return new URL(source).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function evidencePresentation(guide: UnifiedBuildGuide) {
+  const status = guide.evidenceStatus ?? "unverified";
+  const platform = guide.platformStatus ?? "pc-derived";
+  const labels = {
+    unverified: "未完成内容验证",
+    "source-checked": "已录入来源 · 待交叉验证",
+    "cross-checked": "已交叉核对 · 待 Switch 实测",
+    "switch-tested": "已完成 Switch 功能验证",
+    published: "已发布验证",
+  } as const;
+  const platformLabels = {
+    "switch-verified": "Nintendo Switch 已验证",
+    "console-sourced": "主机资料已核对",
+    "pc-derived": "PC 资料派生 · Switch 未实测",
+    "platform-risk": "存在主机差异风险",
+  } as const;
+  return { status, label: labels[status], platformLabel: platformLabels[platform] };
+}
+
 function BuildReviewPanel({
   guide,
   scenario,
@@ -1752,6 +1787,7 @@ function BuildReviewPanel({
   const visibleDiffs = diffs.filter((diff) => ["gear", "skills", "passives", "powers", "legendaryGems"].includes(diff.category));
   const groupedParagon = guide.paragonGuide?.pre800;
   const policies = guide.choicePolicies ?? [];
+  const evidence = evidencePresentation(guide);
   const policyGroups = [
     { status: "locked", label: "必须固定" },
     { status: "conditional", label: "条件替换" },
@@ -1762,7 +1798,7 @@ function BuildReviewPanel({
       <header>
         <div><span>{t("app.6b32b8423e0a8ab7")}</span><h2>{tr(scenario.label)}</h2></div>
         <p>{tr(scenario.reason)}</p>
-        <b>{t("app.02d9eb394fc529d0")}</b>
+        <b>{tr(evidence.label)}</b>
       </header>
       <div className="build-review-grid">
         <article className="scenario-diff-card">
@@ -1772,7 +1808,7 @@ function BuildReviewPanel({
           )}
           {diffs.some((diff) => diff.category === "statPriorities") && <p className="review-change-note">{t("app.cb4677555161737e")}</p>}
           {diffs.some((diff) => diff.category === "rotation") && <p className="review-change-note">{t("app.f0b57ebfe553f457")}</p>}
-          <div className="review-sources"><span>{t("app.0b0f97cd8f4035ad")}</span>{scenario.sourceRefs.map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>{tr(sourceLabel(source, index))}</a>)}<small>{tr(scenario.reviewedAt)}</small></div>
+          <div className="review-sources"><span>{t("app.0b0f97cd8f4035ad")}</span>{scenario.sourceRefs.filter(validSourceUrl).map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>{tr(sourceLabel(source, index))}</a>)}<small>{tr(scenario.reviewedAt)} · {tr(evidence.platformLabel)}</small></div>
         </article>
 
         <article className="paragon-guide-card">
@@ -1899,7 +1935,12 @@ function BuildCommandDeck({
   );
 }
 
-function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Paragon, loadoutId?: string) {
+function scenarioLegacyState(scenario: BuildScenario): { mode: Mode; paragon: Paragon } {
+  const mode = scenario.content === "greater-rift-push" || scenario.id.startsWith("push") ? "push" : "speed";
+  return { mode, paragon: scenario.paragonBand === "high" ? "high" : "low" };
+}
+
+function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Paragon, loadoutId?: string, scenarioId?: string) {
   const classId = BUILD_CATALOG.find((entry) => entry.id === guide.id)?.classId ?? "necromancer";
   const activeLoadout = guide.loadouts?.find((loadout) => loadout.id === (loadoutId ?? guide.defaultLoadoutId)) ?? guide.loadouts?.[0];
   const activeGuide = {
@@ -1916,7 +1957,10 @@ function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Parago
     consoleNote: activeLoadout?.consoleNote ?? guide.consoleNote,
   } as UnifiedBuildGuide;
   const activeVariant = resolveBuildVariantProfile(activeGuide, mode, paragon);
-  const activeScenario = activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`);
+  const activeScenario = activeGuide.scenarios?.find((scenario) => scenario.id === scenarioId)
+    ?? activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`)
+    ?? activeGuide.scenarios?.find((scenario) => scenario.id === activeGuide.defaultScenarioId)
+    ?? activeGuide.scenarios?.[0];
   const activeConfiguration = activeGuide.configurationBase && activeScenario ? resolveBuildConfiguration(activeGuide.configurationBase, activeScenario.patch) : undefined;
   const gemIds = Object.values(activeConfiguration?.legendaryGems ?? {});
   let jewelryIndex = 0;
@@ -1947,15 +1991,18 @@ function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Parago
 
 function makeBuildTableData(guide: UnifiedBuildGuide, resolved: ReturnType<typeof resolveDetailData>, mode: Mode, paragon: Paragon, season: SeasonConfig): BuildTableData {
   const { classId, activeLoadout, activeGuide, activeConfiguration, activeScenario, gear, powers, rotation, scenarioSkills, scenarioPassives } = resolved;
+  const evidence = evidencePresentation(activeGuide);
   return {
     id: `${guide.id}${activeLoadout ? `-${activeLoadout.id}` : ""}`,
     name: guide.name,
     classId,
     className: CLASS_CATALOG.find((entry) => entry.id === classId)?.name ?? classId,
-    variant: [activeLoadout?.label, guide.modeLabels?.[mode] ?? (mode === "push" ? "大秘境冲层" : "T16 / 速刷"), paragon === "low" ? "低巅峰 < 2000" : "高巅峰 2000+"].filter(Boolean).join(" · "),
+    variant: [activeLoadout?.label, activeScenario?.label ?? guide.modeLabels?.[mode] ?? (mode === "push" ? "大秘境冲层" : "T16 / 速刷")].filter(Boolean).join(" · "),
     season: `${season.platformLabel} · ${seasonLabel(season)}`,
     summary: guide.summary,
-    notice: [activeGuide.variantCompleteness === "documented-shared" ? "配置差异待实装：用途与巅峰说明已保留，装备、宝石、萃取和技能暂按共用配置展示。" : "", activeScenario && activeScenario.applicability !== "supported" ? activeScenario.reason : "", season.availability === "preview" ? `${season.label}：${season.theme}` : ""].filter(Boolean).join(" ") || undefined,
+    notice: evidence.status !== "published"
+      ? activeGuide.evidenceNote ?? evidence.label
+      : [activeGuide.variantCompleteness === "documented-shared" ? "配置差异待实装：用途与巅峰说明已保留，装备、宝石、萃取和技能暂按共用配置展示。" : "", activeScenario && activeScenario.applicability !== "supported" ? activeScenario.reason : "", season.availability === "preview" ? `${season.label}：${season.theme}` : ""].filter(Boolean).join(" ") || undefined,
     gear: arrangeGuideGear(gear).map(({ gear: item }) => ({ ...item, sockets: guideSockets(item, classId, activeConfiguration?.normalGems) })),
     skills: scenarioSkills.map((skill) => ({ ...skill, runeKey: resolveRuneKey(skill) })),
     passives: scenarioPassives,
@@ -1988,13 +2035,23 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const buildListHref = `/builds?class=${classId}`;
   const requestedMode = searchParams.get("mode");
   const requestedParagon = searchParams.get("paragon");
+  const requestedScenario = searchParams.get("scenario");
   const requestedLoadout = searchParams.get("loadout");
-  const [mode, setMode] = useState<Mode>(requestedMode === "speed" ? "speed" : requestedMode === "push" ? "push" : guide.defaultMode ?? "push");
-  const [paragon, setParagon] = useState<Paragon>(requestedParagon === "high" ? "high" : "low");
+  const initialMode: Mode = requestedMode === "speed" ? "speed" : requestedMode === "push" ? "push" : guide.defaultMode ?? "push";
+  const initialParagon: Paragon = requestedParagon === "high" ? "high" : "low";
+  const initialScenario = guide.scenarios?.find((scenario) => scenario.id === requestedScenario)
+    ?? guide.scenarios?.find((scenario) => scenario.id === `${initialMode}-${initialParagon}`)
+    ?? guide.scenarios?.find((scenario) => scenario.id === guide.defaultScenarioId)
+    ?? guide.scenarios?.[0];
+  const initialLegacyState: { mode: Mode; paragon: Paragon } = initialScenario ? scenarioLegacyState(initialScenario) : { mode: initialMode, paragon: initialParagon };
+  const [mode, setMode] = useState<Mode>(initialLegacyState.mode);
+  const [paragon, setParagon] = useState<Paragon>(initialLegacyState.paragon);
+  const [scenarioId, setScenarioId] = useState(initialScenario?.id ?? "");
   const [loadoutId, setLoadoutId] = useState(guide.loadouts?.some((loadout) => loadout.id === requestedLoadout) ? requestedLoadout ?? "" : guide.defaultLoadoutId ?? guide.loadouts?.[0]?.id ?? "");
   const [detailView, setDetailView] = useState<"detail" | "table">(searchParams.get("view") === "table" ? "table" : "detail");
-  const resolved = useMemo(() => resolveDetailData(guide, mode, paragon, loadoutId), [guide, mode, paragon, loadoutId]);
+  const resolved = useMemo(() => resolveDetailData(guide, mode, paragon, loadoutId, scenarioId), [guide, mode, paragon, loadoutId, scenarioId]);
   const { activeLoadout, activeGuide, activeVariant, activeScenario, activeConfiguration, gear, powers, rotation, scenarioSkills, scenarioPassives } = resolved;
+  const evidence = evidencePresentation(activeGuide);
   const positions = useMemo(() => arrangeGuideGear(gear), [gear]);
   const displayedPowers = useMemo(() => season.cubeSlots === 3 ? powers.filter((power) => !["第4槽", "赛季槽", "赛季"].includes(power.slot)) : powers, [powers, season.cubeSlots]);
   const tableData = makeBuildTableData(guide, resolved, mode, paragon, season);
@@ -2038,6 +2095,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   }, [activeNode, rows, powers, setFamilies]);
   const visibleRows = flowFilter === "all" ? rows : rows.filter((row) => row.category === flowFilter);
   const paperdollImage = paperdollAsset(classId, genders[classId]);
+  const scenarioOptions = activeGuide.scenarios?.filter((scenario) => scenario.applicability !== "not-applicable") ?? [];
 
   useEffect(() => {
     if (!gear.some((item) => item.id === selectedGearId)) setSelectedGearId(positions[0]?.gear.id ?? gear[0]?.id ?? "");
@@ -2049,6 +2107,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     const params = new URLSearchParams(window.location.search);
     params.set("mode", mode);
     params.set("paragon", paragon);
+    if (scenarioId) params.set("scenario", scenarioId);
+    else params.delete("scenario");
     params.set("view", detailView);
     if (guide.loadouts?.length) params.set("loadout", loadoutId);
     else params.delete("loadout");
@@ -2056,7 +2116,14 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
     const nextUrl = `${pathname}${query ? `?${query}` : ""}${window.location.hash}`;
     const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
     if (nextUrl !== currentUrl) window.history.replaceState(window.history.state, "", nextUrl);
-  }, [detailView, guide.loadouts, loadoutId, mode, paragon, pathname]);
+  }, [detailView, guide.loadouts, loadoutId, mode, paragon, pathname, scenarioId]);
+
+  const selectScenario = (scenario: BuildScenario) => {
+    const next = scenarioLegacyState(scenario);
+    setScenarioId(scenario.id);
+    setMode(next.mode);
+    setParagon(next.paragon);
+  };
 
   const handleNodeSelect = (node: FlowNode) => {
     setSelectedStat(null);
@@ -2093,15 +2160,13 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
       <section className="variant-bar" aria-label={tr("配置切换")}>
         <div className="variant-group" role="group" aria-label={tr("详情视图")}><button aria-pressed={detailView === "detail"} className={detailView === "detail" ? "active" : ""} onClick={() => setDetailView("detail")}>{t("app.e79643a0e65f2272")}</button><button aria-pressed={detailView === "table"} className={detailView === "table" ? "active" : ""} onClick={() => setDetailView("table")}>{t("app.59bc316ed88b4c70")}</button></div><div className="variant-divider" />
         {guide.loadouts && guide.loadouts.length > 1 && <><div className="variant-group"><span>{t("app.80a0b2822379c152")}</span>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}>{tr(loadout.label)}</button>)}</div><div className="variant-divider" /></>}
-        <div className="variant-group"><span>{t("app.05b36669c4ad9a73")}</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{tr(guide.modeLabels?.push ?? "大秘境冲层")}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{tr(guide.modeLabels?.speed ?? "T16 / 速刷")}</button></div>
-        <div className="variant-divider" />
-        <div className="variant-group"><span>{t("app.724c4ca9ce4f003f")}</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>{t("app.72d8c9e002e9e369")}</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>{t("app.5d1eb39df9f0de0e")}</button></div>
-        <div className="variant-note"><strong>{tr(activeLoadout ? `${activeLoadout.title} · ` : "")}{tr(activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`)}</strong><span>{tr(activeLoadout?.summary ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`)}</span></div>
+        {scenarioOptions.length > 0 ? <div className="variant-group scenario-options" role="group" aria-label={tr("适用场景")}><span>{t("app.05b36669c4ad9a73")}</span>{scenarioOptions.map((scenario) => <button key={scenario.id} aria-pressed={activeScenario?.id === scenario.id} className={`${activeScenario?.id === scenario.id ? "active" : ""} applicability-${scenario.applicability}`} onClick={() => selectScenario(scenario)}>{tr(scenario.label)}</button>)}</div> : <><div className="variant-group"><span>{t("app.05b36669c4ad9a73")}</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{tr(guide.modeLabels?.push ?? "大秘境冲层")}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{tr(guide.modeLabels?.speed ?? "T16 / 速刷")}</button></div><div className="variant-divider" /><div className="variant-group"><span>{t("app.724c4ca9ce4f003f")}</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>{t("app.72d8c9e002e9e369")}</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>{t("app.5d1eb39df9f0de0e")}</button></div></>}
+        <div className="variant-note"><strong>{tr(activeLoadout ? `${activeLoadout.title} · ` : "")}{tr(activeScenario?.label ?? activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`)}</strong><span>{tr(activeLoadout?.summary ?? activeScenario?.reason ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`)}</span></div>
       </section>
 
-      {detailView === "detail" && activeGuide.variantCompleteness === "documented-shared" && <section className="variant-audit-note" aria-label={tr("BD 数据完整度")}>
-        <strong>{t("app.6455f91b0ff3d730")}</strong>
-        <span>{t("app.c6ac1a026f2c0b82")}</span>
+      {detailView === "detail" && (activeGuide.variantCompleteness === "documented-shared" || evidence.status !== "published") && <section className="variant-audit-note" aria-label={tr("BD 数据完整度")}>
+        <strong>{tr(evidence.label)}</strong>
+        <span>{activeGuide.evidenceNote ? tr(activeGuide.evidenceNote) : <>{tr(evidence.platformLabel)} {tr("当前配置尚未达到发布级验证，请把它作为研究中的参考，而不是已确认最优解。")}</>}</span>
       </section>}
 
       {detailView === "detail" && season.availability === "preview" && <section className="season-preview-note" aria-label={tr("轮换预设说明")}><strong>{tr(season.label)}</strong><span>{tr(season.theme)}</span></section>}
@@ -2249,7 +2314,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
 
       </>}
 
-      <footer><div><span className="footer-mark">{t("app.8ce86a6ae65d3692")}</span><p><strong>{t("app.c218904160a9bbc2")}</strong><small>{tr(season.platformLabel)}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(seasonLabel(season))}{" "}{t("app.da6d3c7ddf710a92")}</small></p></div><p><a href={buildListHref}>{t("app.058b12a12ce8d94d")}</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].map((source, index) => <Fragment key={source}>{" "}{t("app.a137f17a19a09cbe")}{" "}<a href={source} target="_blank" rel="noreferrer">{tr(sourceLabel(source, index))}</a></Fragment>)}</p></footer>
+      <footer><div><span className="footer-mark">{t("app.8ce86a6ae65d3692")}</span><p><strong>{t("app.c218904160a9bbc2")}</strong><small>{tr(season.platformLabel)}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(seasonLabel(season))}{" "}{t("app.da6d3c7ddf710a92")}</small></p></div><p><a href={buildListHref}>{t("app.058b12a12ce8d94d")}</a>{[...new Set(activeScenario?.sourceRefs ?? [guide.source])].filter(validSourceUrl).map((source, index) => <Fragment key={source}>{" "}{t("app.a137f17a19a09cbe")}{" "}<a href={source} target="_blank" rel="noreferrer">{tr(sourceLabel(source, index))}</a></Fragment>)}</p></footer>
     </main>
   );
 }

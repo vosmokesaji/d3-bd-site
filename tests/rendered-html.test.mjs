@@ -23,6 +23,11 @@ async function render(pathname = "/") {
   );
 }
 
+function assertShowsEvidenceStatus(html) {
+  assert.match(html, /未完成内容验证|已录入来源 · 待交叉验证|已交叉核对 · 待 Switch 实测/);
+  assert.doesNotMatch(html, /已逐项校对/);
+}
+
 test("server-renders the complete seven-class build atlas", async () => {
   const response = await render("/builds");
   assert.equal(response.status, 200);
@@ -168,9 +173,9 @@ test("renders the reviewed Invoker Thorns scenarios with thorns and gold-speed b
   ]);
 
   assert.match(html, /唤魔荆棘/);
-  assert.match(html, /已逐项校对/);
-  assert.match(html, /低巅峰 &lt; 2000/);
-  assert.match(html, /T16 \/ 速刷/);
+  assertShowsEvidenceStatus(html);
+  assert.match(html, /低巅峰 &lt; 2000 大秘境冲层/);
+  assert.match(html, /高巅峰 T16 \/ 蓝门 \/ 悬赏/);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -190,9 +195,9 @@ test("renders the reviewed Roland Sweep scenarios with density and gold-speed br
   ]);
 
   assert.match(html, /罗兰横扫/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /T16 \/ 速刷/);
+  assert.match(html, /高巅峰 T16 \/ 蓝门 \/ 悬赏/);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -212,9 +217,9 @@ test("renders the reviewed Akkhan Phalanx scenarios with pet and self-cast branc
   ]);
 
   assert.match(html, /阿克汉圣军/);
-  assert.match(html, /已逐项校对/);
-  assert.match(html, /低巅峰 &lt; 2000/);
-  assert.match(html, /T16 \/ 速刷/);
+  assertShowsEvidenceStatus(html);
+  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /高巅峰 T16 \/ 蓝门 \/ 悬赏/);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -234,7 +239,7 @@ test("renders the reviewed Akkhan Condemn scenarios as separate push and T16 loa
   ]);
 
   assert.match(html, /阿克汉天谴/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /卡萨的战盔/);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
@@ -281,7 +286,7 @@ test("renders the reviewed Wastes Rend scenarios as real runtime loadouts", asyn
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -306,7 +311,7 @@ test("renders the reviewed pony-fist-farm scenarios as real speed-farm loadouts"
   ]);
 
   assert.match(html, /低巅峰 T16 \/ 蓝门 \/ 悬赏/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -329,7 +334,7 @@ test("renders the reviewed valor-fist scenarios as real Aegis of Valor loadouts"
   ]);
 
   assert.match(html, /勇气天拳/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -349,7 +354,7 @@ test("renders the reviewed valor-fury scenarios as real Heaven's Fury loadouts",
   ]);
 
   assert.match(html, /勇气天堂之怒/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -367,7 +372,7 @@ test("renders the reviewed god-hungering scenarios as real high-mobility loadout
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -390,7 +395,7 @@ test("renders the reviewed god-monk scenarios as real infinite-dash loadouts", a
   ]);
 
   assert.match(html, /低巅峰 T16 \/ 蓝门/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -414,7 +419,7 @@ test("renders the reviewed lod-nova scenarios as real three-nova loadouts", asyn
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -435,7 +440,7 @@ test("renders the reviewed inarius-nova scenarios as real bone-storm nova loadou
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -455,7 +460,7 @@ test("renders the reviewed pestilence-lance scenarios as real corpse-lance loado
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -475,7 +480,7 @@ test("renders the reviewed lod-corpse-explosion scenarios as real poison-chain l
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -495,7 +500,7 @@ test("renders the reviewed rathma-aotd scenarios as real pet-engine loadouts", a
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -516,7 +521,7 @@ test("renders the reviewed masquerade-spear scenarios as real three-line spear l
   ]);
 
   assert.match(html, /低巅峰大秘境冲层/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -537,7 +542,7 @@ test("renders all reviewed wizard scenarios as real runtime loadouts", async () 
   ]);
 
   for (const html of [talHtml, lodOrbHtml]) {
-    assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
     assert.match(html, /巅峰加点/);
     assert.match(html, /固定与替换/);
     assert.doesNotMatch(html, /配置差异待实装/);
@@ -558,7 +563,7 @@ test("renders reviewed mundunugu scenarios with branch-specific sources", async 
   ]);
 
   assert.match(html, /蒙嘟噜魂弹/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -580,7 +585,7 @@ test("renders the reviewed raekor-boulder scenarios as real boulder-toss loadout
   ]);
 
   assert.match(html, /蕾蔻的传世铠巨石/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -600,7 +605,7 @@ test("renders the reviewed ik-hota scenarios as real immortal hammer loadouts", 
   ]);
 
   assert.match(html, /不朽先祖锤/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -620,7 +625,7 @@ test("renders the reviewed lod-hota scenarios as real dream hammer loadouts", as
   ]);
 
   assert.match(html, /梦遗先祖锤/);
-  assert.match(html, /已逐项校对/);
+  assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
@@ -664,9 +669,10 @@ test("restores legendary gems and renders class-specific armor gems and stat loo
   assert.match(wizard, /class="value">\+1000<\/b>[\s\S]*?智力/);
 });
 
-test("keeps all chest and pants sockets when a high-Paragon scenario switches armor gems", async () => {
+test("does not invent five high-Paragon diamonds for a generic Dexterity build", async () => {
   const html = await render("/builds/ue-multishot?mode=push&paragon=high").then((response) => response.text());
-  assert.ok((html.match(/gem-190\.png/g) ?? []).length >= 7);
+  assert.ok((html.match(/gem-190\.png/g) ?? []).length < 7);
+  assert.match(html, /未完成内容验证/);
 });
 
 test("keeps the paperdoll on Blizzard's exact pixel slot geometry", async () => {
@@ -943,7 +949,7 @@ test("BD table route restores URL configuration and renders export controls with
   assert.match(html, /痞子/);
   assert.match(html, /圣殿骑士/);
   assert.match(html, /输出手法/);
-  assert.match(html, /T16 \/ 速刷 · 高巅峰 2000\+/);
+  assert.match(html, /高巅峰T16奈非天秘境/);
   assert.match(html, /以鲜血虹吸触发铁玫瑰的死亡新星/);
   assert.doesNotMatch(html, /让每一滴鲜血都成为一次爆炸/);
   assert.doesNotMatch(html, /class="workbench"/);

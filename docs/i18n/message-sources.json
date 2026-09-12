@@ -36,6 +36,7 @@
   ],
   "app.8aa0db106d13e3f9": [
     "app/data/barbarian-builds.ts",
+    "app/data/build-guides.ts",
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
@@ -82,7 +83,8 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.ae549a2e68a7ed70": [
     "app/data/barbarian-builds.ts",
@@ -96,7 +98,8 @@
     "app/data/wizard-builds.ts",
     "app/page.tsx",
     "components/followers/FollowerPaperdoll.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.dfd74f409a93245e": [
     "app/data/barbarian-builds.ts",
@@ -108,10 +111,12 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.16b7568de4799d09": [
     "app/data/barbarian-builds.ts",
+    "app/data/build-guides.ts",
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/page.tsx",
@@ -138,7 +143,8 @@
     "app/data/wizard-builds.ts",
     "app/page.tsx",
     "components/followers/FollowerPaperdoll.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.792d34f8d3b29944": [
     "app/data/barbarian-builds.ts",
@@ -163,7 +169,8 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.c46177f4680a1e88": [
     "app/data/barbarian-builds.ts",
@@ -178,7 +185,8 @@
     "app/page.tsx",
     "components/followers/FollowerPaperdoll.tsx",
     "components/items/DiabloItemFrame.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.e5bd9509a4f5fc2f": [
     "app/data/barbarian-builds.ts",
@@ -200,7 +208,8 @@
     "app/page.tsx",
     "components/build/BuildTableView.tsx",
     "components/followers/FollowerPaperdoll.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.15bccc395156a90f": [
     "app/data/barbarian-builds.ts",
@@ -212,7 +221,8 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.019d85efc382b53e": [
     "app/data/barbarian-builds.ts",
@@ -227,7 +237,8 @@
     "app/page.tsx",
     "components/followers/FollowerPaperdoll.tsx",
     "evaluated data factories",
-    "public/d3/library/items.json"
+    "public/d3/library/items.json",
+    "app/i18n/manual.json"
   ],
   "app.17b43214c45c789d": [
     "app/data/barbarian-builds.ts",
@@ -348,7 +359,8 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.bb15dc6c4e90c676": [
     "app/data/barbarian-builds.ts",
@@ -386,7 +398,8 @@
     "app/data/wizard-builds.ts",
     "app/page.tsx",
     "components/followers/FollowerPaperdoll.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.5d3f3de5b0a7e210": [
     "app/data/barbarian-builds.ts",
@@ -474,7 +487,8 @@
     "components/followers/FollowerPaperdoll.tsx",
     "components/items/DiabloItemFrame.tsx",
     "evaluated data factories",
-    "public/d3/library/items.json"
+    "public/d3/library/items.json",
+    "app/i18n/manual.json"
   ],
   "app.0b64f81abd08f956": [
     "app/data/barbarian-builds.ts",
@@ -548,6 +562,7 @@
   ],
   "app.bf1835a0e3f0fdc8": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -555,7 +570,8 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.9eccc1c49671f9ee": [
     "app/data/barbarian-builds.ts",
@@ -576,7 +592,8 @@
     "app/page.tsx",
     "components/items/DiabloItemFrame.tsx",
     "evaluated data factories",
-    "public/d3/library/items.json"
+    "public/d3/library/items.json",
+    "app/i18n/manual.json"
   ],
   "app.1c8b0e8170fb8f91": [
     "app/data/barbarian-builds.ts",
@@ -645,7 +662,8 @@
     "components/build/BuildTableView.tsx",
     "components/followers/FollowerPaperdoll.tsx",
     "components/items/DiabloItemFrame.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.a00eb79d2099bed6": [
     "app/data/barbarian-builds.ts",
@@ -848,6 +866,7 @@
   "app.186ec1a871e42d20": [
     "app/data/barbarian-builds.ts",
     "app/data/build-guides.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/followers.ts",
@@ -1002,7 +1021,8 @@
     "components/build/BuildTableView.tsx",
     "components/followers/FollowerPaperdoll.tsx",
     "evaluated data factories",
-    "public/d3/library/items.json"
+    "public/d3/library/items.json",
+    "app/i18n/manual.json"
   ],
   "app.4c812e38338593e3": [
     "app/data/barbarian-builds.ts",
@@ -1122,6 +1142,7 @@
   ],
   "app.297100919942bd59": [
     "app/data/barbarian-builds.ts",
+    "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
   "app.68323871a1c3e3cd": [
@@ -1295,7 +1316,8 @@
     "app/data/wizard-builds.ts",
     "app/page.tsx",
     "components/followers/FollowerPaperdoll.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.1914f6cd8382bd91": [
     "app/data/barbarian-builds.ts",
@@ -1319,7 +1341,8 @@
     "app/data/wizard-builds.ts",
     "app/page.tsx",
     "evaluated data factories",
-    "public/d3/library/items.json"
+    "public/d3/library/items.json",
+    "app/i18n/manual.json"
   ],
   "app.329e6415984b755e": [
     "app/data/barbarian-builds.ts",
@@ -1352,7 +1375,8 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.268c0c4f117e5f1a": [
     "app/data/barbarian-builds.ts",
@@ -1795,7 +1819,6 @@
     "app/data/demon-hunter-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
   ],
@@ -1809,7 +1832,6 @@
     "app/data/demon-hunter-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
   ],
@@ -1842,6 +1864,7 @@
   ],
   "app.36e6614a2004654c": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -1874,6 +1897,7 @@
   ],
   "app.0129f25ebe727862": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -1881,10 +1905,12 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.f81c951e9cc8c01d": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -1899,6 +1925,7 @@
   ],
   "app.6c872ff9865941a5": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -1942,6 +1969,7 @@
   ],
   "app.f4426669a20ca99b": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -2010,6 +2038,7 @@
   ],
   "app.7906c24a2121c8d0": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -2022,6 +2051,7 @@
   ],
   "app.5995979333adc3c9": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -2033,12 +2063,14 @@
   ],
   "app.0b08675a6645c2a3": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.5d6f9b7c95713ba5": [
     "app/data/barbarian-builds.ts",
@@ -2050,12 +2082,14 @@
   ],
   "app.81e6dee0a6d6eb45": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.ac758bdac4fc7e52": [
     "app/data/barbarian-builds.ts",
@@ -2101,6 +2135,7 @@
   ],
   "app.3a2e7f17fc2d86f2": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -2120,6 +2155,7 @@
   ],
   "app.46ec22e0184d6842": [
     "app/data/barbarian-builds.ts",
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -2928,7 +2964,8 @@
     "app/data/barbarian-builds.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.53957dc055264dd8": [
     "app/data/barbarian-builds.ts",
@@ -5271,6 +5308,7 @@
   "app.137185418062c9b6": [
     "app/data/barbarian-builds.ts",
     "app/data/build-guides.ts",
+    "app/data/class-build-factory.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/followers.ts",
     "app/data/necromancer-builds.ts",
@@ -5994,7 +6032,8 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.3983417756b1adf7": [
     "app/data/class-build-factory.ts",
@@ -6031,6 +6070,7 @@
     "evaluated data factories"
   ],
   "app.2409e883cbc1a3df": [
+    "app/data/build-guides.ts",
     "app/data/class-build-factory.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -6038,6 +6078,7 @@
     "evaluated data factories"
   ],
   "app.d789646eda8f0379": [
+    "app/data/build-guides.ts",
     "app/data/class-build-factory.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -6128,7 +6169,8 @@
     "app/data/crusader-builds.ts",
     "app/data/site-catalog.ts",
     "evaluated data factories",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.5ef88330a7d68145": [
     "app/data/crusader-builds.ts",
@@ -6270,7 +6312,8 @@
   "app.ce90877e4874e0d1": [
     "app/data/crusader-builds.ts",
     "app/data/site-catalog.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.bfa2e93051c8720a": [
     "app/data/crusader-builds.ts",
@@ -6302,7 +6345,8 @@
   ],
   "app.660c7547ebd022bb": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.2ff8c05ebbc6c6d6": [
     "app/data/crusader-builds.ts",
@@ -6310,7 +6354,8 @@
   ],
   "app.f3f000198f23f4e0": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.46639f36058c1712": [
     "app/data/crusader-builds.ts",
@@ -6318,7 +6363,8 @@
   ],
   "app.3e8fa3c032fd13d5": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.55ddc2cc3805808e": [
     "app/data/crusader-builds.ts",
@@ -6333,10 +6379,12 @@
     "evaluated data factories"
   ],
   "app.6746bbc97a28c18e": [
-    "app/data/crusader-builds.ts"
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
   ],
   "app.b441c22b647b0588": [
-    "app/data/crusader-builds.ts"
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
   ],
   "app.b2e7f4df85673e10": [
     "app/data/crusader-builds.ts",
@@ -6371,7 +6419,8 @@
   "app.a8c1b5b5b172b128": [
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
-    "app/data/wizard-builds.ts"
+    "app/data/wizard-builds.ts",
+    "app/i18n/manual.json"
   ],
   "app.e23fd664d5f08b82": [
     "app/data/crusader-builds.ts",
@@ -6409,7 +6458,8 @@
   "app.9d0303ee929cc14c": [
     "app/data/crusader-builds.ts",
     "evaluated data factories",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.46acbab8da29339d": [
     "app/data/crusader-builds.ts",
@@ -6417,11 +6467,13 @@
   ],
   "app.d59e5af148411e2c": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.cd5661fb11b3f9fe": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.f23117a89bf4a4cd": [
     "app/data/crusader-builds.ts",
@@ -6430,12 +6482,14 @@
   "app.891e2e82add9f376": [
     "app/data/crusader-builds.ts",
     "evaluated data factories",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.2a624d8a8ad1e3a7": [
     "app/data/crusader-builds.ts",
     "evaluated data factories",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.0a3e57b90762efea": [
     "app/data/crusader-builds.ts",
@@ -6443,7 +6497,8 @@
   ],
   "app.74b6d4d71ef95eb3": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.d0745f9dded43789": [
     "app/data/crusader-builds.ts",
@@ -6455,11 +6510,13 @@
   ],
   "app.99f5d570c37d76ae": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.8a5fc550ce0a4c4d": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.5c444388ad251478": [
     "app/data/crusader-builds.ts",
@@ -6671,7 +6728,8 @@
     "app/data/crusader-builds.ts",
     "app/data/site-catalog.ts",
     "evaluated data factories",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.c4ed6da2b38e3130": [
     "app/data/crusader-builds.ts",
@@ -6713,7 +6771,8 @@
     "evaluated data factories"
   ],
   "app.1cd3804052d92c95": [
-    "app/data/crusader-builds.ts"
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
   ],
   "app.1da59aa8464ed488": [
     "app/data/crusader-builds.ts",
@@ -6741,7 +6800,8 @@
   ],
   "app.ee510cc8f75dfcf2": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.403b293192b21af6": [
     "app/data/crusader-builds.ts",
@@ -6931,7 +6991,8 @@
   "app.7e5c7356d50abeaa": [
     "app/data/crusader-builds.ts",
     "app/data/site-catalog.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.903566baec5fd0e8": [
     "app/data/crusader-builds.ts",
@@ -6953,7 +7014,8 @@
     "evaluated data factories"
   ],
   "app.3db03533c28b5e3e": [
-    "app/data/crusader-builds.ts"
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
   ],
   "app.f067d0e88c47e279": [
     "app/data/crusader-builds.ts",
@@ -6965,7 +7027,8 @@
   ],
   "app.c3dbf698a25a0ab0": [
     "app/data/crusader-builds.ts",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.e5f3a01cd9093412": [
     "app/data/crusader-builds.ts"
@@ -6978,7 +7041,8 @@
   ],
   "app.e3c59b93a8e25b72": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.482adeaa85b5728e": [
     "app/data/crusader-builds.ts"
@@ -7213,7 +7277,8 @@
   ],
   "app.923a019e954aeedb": [
     "app/data/crusader-builds.ts",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.e842c6a1b478fbd9": [
     "app/data/crusader-builds.ts"
@@ -7403,12 +7468,10 @@
     "evaluated data factories"
   ],
   "app.5997e0661fd5c6b1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.3d255c590e2b1683": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.2aba09440e49f3b5": [
     "app/data/crusader-builds.ts",
@@ -7500,7 +7563,8 @@
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "public/d3/library/items.json",
-    "public/d3/library/item-categories.json"
+    "public/d3/library/item-categories.json",
+    "app/i18n/manual.json"
   ],
   "app.a2a909884adb5186": [
     "app/data/crusader-builds.ts",
@@ -7512,7 +7576,8 @@
   ],
   "app.758dc22908d4a313": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.03951863bddfdf93": [
     "app/data/crusader-builds.ts",
@@ -7525,7 +7590,8 @@
   ],
   "app.d761e7b710f5154f": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.ec2927b4adf12d6c": [
     "app/data/crusader-builds.ts",
@@ -7537,7 +7603,8 @@
   ],
   "app.355477adccd1ce76": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.ccf88034faa730d8": [
     "app/data/crusader-builds.ts",
@@ -7545,7 +7612,8 @@
   ],
   "app.991c304c1f60b3c8": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.2985491f9c3d746e": [
     "app/data/crusader-builds.ts",
@@ -7557,7 +7625,8 @@
   ],
   "app.89be9136d89d5f81": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.03d4524fbc4abe53": [
     "app/data/crusader-builds.ts",
@@ -7565,7 +7634,8 @@
   ],
   "app.35685b247b44597d": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.225b37dd1d1f5f8a": [
     "app/data/crusader-builds.ts",
@@ -7573,7 +7643,8 @@
   ],
   "app.e848fc0f512873ca": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.e74a09ddf58578ab": [
     "app/data/crusader-builds.ts",
@@ -7700,76 +7771,59 @@
     "evaluated data factories"
   ],
   "app.87ccb7cdbfc9b4b0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.845506cf6891697a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.01826b66fca423e6": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.9f9832fc13ed573e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.7f32043eee5b5766": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.7a80f4a4bed5726f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.05eab20f7c4a4d59": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.0d6e9cb877e004bf": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.124d87183d1ba476": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
   "app.91cf2844d7ef83cd": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.80d520e8dc8d6c93": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.4ed69e15bcd445f5": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.8df5fb9235d0a0ab": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.a727f82c30e27a75": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.57172042fdff1b30": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.206b234f80b57eec": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.67a37b0e5c9ddb6d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.12e10d0bbbf1e3fe": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.dc6455eaa0f8b687": [
     "app/data/crusader-builds.ts",
@@ -7965,7 +8019,8 @@
   ],
   "app.da5c5f99cd041402": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.bac1914b84528102": [
     "app/data/crusader-builds.ts",
@@ -8108,7 +8163,8 @@
   ],
   "app.83d43da872dc2347": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.d545d468d8ec2dc1": [
     "app/data/crusader-builds.ts",
@@ -8116,7 +8172,8 @@
   ],
   "app.63c9f4d6a904aaab": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.6b2999dca6a7734f": [
     "app/data/crusader-builds.ts",
@@ -8704,12 +8761,14 @@
   ],
   "app.db23aedfedb64493": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.b5635f23d66842f4": [
     "app/data/crusader-builds.ts",
     "evaluated data factories",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.2d6d461cc276cdb9": [
     "app/data/crusader-builds.ts",
@@ -8721,7 +8780,8 @@
   ],
   "app.c367eaf2cd2ea308": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.3315ec27d481bb7b": [
     "app/data/crusader-builds.ts",
@@ -8734,7 +8794,8 @@
   "app.e2113a3e918262d8": [
     "app/data/crusader-builds.ts",
     "evaluated data factories",
-    "public/d3/library/skills.json"
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
   ],
   "app.eac2cd49eb3654dd": [
     "app/data/crusader-builds.ts",
@@ -8746,7 +8807,8 @@
   ],
   "app.052eaa5f11d9ec0f": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.ac6b00631904e3c2": [
     "app/data/crusader-builds.ts",
@@ -9233,6 +9295,7 @@
     "evaluated data factories"
   ],
   "app.97288c416b079003": [
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
@@ -9245,6 +9308,7 @@
     "evaluated data factories"
   ],
   "app.c8e5589c9a499eaa": [
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
@@ -9252,6 +9316,7 @@
     "evaluated data factories"
   ],
   "app.16af4fcf82c23c9a": [
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
@@ -9300,7 +9365,6 @@
   "app.22cc7dc99b07acbd": [
     "app/data/crusader-builds.ts",
     "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
   "app.b512a8e617234fb9": [
@@ -9316,7 +9380,6 @@
   "app.a1dd9eb8d432e4c9": [
     "app/data/crusader-builds.ts",
     "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
   "app.aa15b57db0514c2d": [
@@ -9324,6 +9387,7 @@
     "evaluated data factories"
   ],
   "app.95aa5fdc8016fdf4": [
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx"
@@ -9332,7 +9396,6 @@
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
   "app.94450f52bd625df8": [
@@ -9418,6 +9481,7 @@
     "evaluated data factories"
   ],
   "app.844b8cc8dff7c1d8": [
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
@@ -9434,6 +9498,7 @@
     "evaluated data factories"
   ],
   "app.06930bed53298a14": [
+    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
@@ -10089,11 +10154,13 @@
   ],
   "app.6df7be38aafabfcf": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.fe75e13baed82554": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.9df3aea593cae6be": [
     "app/data/crusader-builds.ts",
@@ -10669,11 +10736,13 @@
   ],
   "app.1ddaa4cb37dc1db5": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.26a9e1f8aa4e9083": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.8778bd7133706ae2": [
     "app/data/crusader-builds.ts",
@@ -14131,6 +14200,7 @@
     "evaluated data factories"
   ],
   "app.0f6a012a7280ea97": [
+    "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/necromancer-builds.ts",
     "components/build/BuildTableView.tsx",
@@ -14592,8 +14662,11 @@
     "evaluated data factories"
   ],
   "app.c81995fafdc22cd7": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
     "app/data/followers.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.eaf086f666cfdd93": [
     "app/data/followers.ts",
@@ -21833,6 +21906,7 @@
     "evaluated data factories"
   ],
   "app.411bb122dd62aec9": [
+    "app/data/crusader-builds.ts",
     "app/data/site-catalog.ts",
     "evaluated data factories"
   ],
@@ -25221,6 +25295,8 @@
     "evaluated data factories"
   ],
   "app.445905122e87b990": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "evaluated data factories"
@@ -25257,6 +25333,7 @@
     "evaluated data factories"
   ],
   "app.82fec4a0e86f4690": [
+    "app/data/crusader-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "evaluated data factories"
@@ -25362,6 +25439,7 @@
     "evaluated data factories"
   ],
   "app.72e8dac3e2eb206c": [
+    "app/data/class-build-factory.ts",
     "app/data/witch-doctor-builds.ts",
     "evaluated data factories"
   ],
@@ -26662,6 +26740,7 @@
     "evaluated data factories"
   ],
   "app.18a64a271bc2fa8d": [
+    "app/data/crusader-builds.ts",
     "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
@@ -27452,10 +27531,6 @@
     "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
-  "app.657cd38327318424": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
   "app.33ca5129715a7e7e": [
     "app/data/wizard-builds.ts",
     "evaluated data factories"
@@ -27674,22 +27749,6 @@
   ],
   "app.48086f6ec0c7518a": [
     "app/data/wizard-builds.ts"
-  ],
-  "app.bab30716dbe460f6": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.ab14c9c627fa9575": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.5c1b154b5568c368": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.13eceedf569ca7a7": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
   ],
   "app.6b2fa34556e28d07": [
     "app/data/wizard-builds.ts",
@@ -28678,12 +28737,6 @@
   "app.6281542ea5f44308": [
     "app/page.tsx"
   ],
-  "app.088b27d0ed00b747": [
-    "app/page.tsx"
-  ],
-  "app.2bfa8a13150e11a2": [
-    "app/page.tsx"
-  ],
   "app.a8a88ddbea1594b7": [
     "app/page.tsx"
   ],
@@ -28696,13 +28749,7 @@
   "app.f40bb3246ea21c69": [
     "app/page.tsx"
   ],
-  "app.02f8f09b9f19fd3b": [
-    "app/page.tsx"
-  ],
   "app.2ddc1f1c3c17cad8": [
-    "app/page.tsx"
-  ],
-  "app.39da26eeefdebc41": [
     "app/page.tsx"
   ],
   "app.b556c026fae2b58c": [
@@ -28910,7 +28957,9 @@
     "app/page.tsx"
   ],
   "app.7362d8b21ac30608": [
-    "app/page.tsx"
+    "app/data/class-build-factory.ts",
+    "app/page.tsx",
+    "evaluated data factories"
   ],
   "app.30e1196888bd941f": [
     "app/page.tsx"
@@ -29364,9 +29413,6 @@
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
-  "app.02d9eb394fc529d0": [
-    "app/page.tsx"
-  ],
   "app.43164224cdd9336d": [
     "app/page.tsx"
   ],
@@ -29569,12 +29615,6 @@
     "app/i18n/manual.json"
   ],
   "app.6a65eb35e78a7d58": [
-    "app/page.tsx"
-  ],
-  "app.6455f91b0ff3d730": [
-    "app/page.tsx"
-  ],
-  "app.c6ac1a026f2c0b82": [
     "app/page.tsx"
   ],
   "app.0eea2588203eefb7": [
@@ -29963,7 +30003,9 @@
     "app/i18n/manual.json"
   ],
   "app.bd01642faa631fcf": [
+    "app/data/class-build-factory.ts",
     "components/build/BuildTableView.tsx",
+    "evaluated data factories",
     "app/i18n/manual.json"
   ],
   "app.7521e8c77256ca49": [
@@ -30283,6 +30325,7 @@
     "evaluated data factories"
   ],
   "app.69d91e35dccfa576": [
+    "app/data/class-build-factory.ts",
     "evaluated data factories"
   ],
   "app.2c4539618903ee0c": [
@@ -30564,18 +30607,6 @@
     "evaluated data factories"
   ],
   "app.d723da3b80d00e8e": [
-    "evaluated data factories"
-  ],
-  "app.1ed5be0ca845e6df": [
-    "evaluated data factories"
-  ],
-  "app.7f3dacff05b58b45": [
-    "evaluated data factories"
-  ],
-  "app.6199aee5609c6c02": [
-    "evaluated data factories"
-  ],
-  "app.956b676cfb3381e5": [
     "evaluated data factories"
   ],
   "app.bc2392214ba03e35": [
@@ -47911,916 +47942,1273 @@
   "app.bf14973fee38b827": [
     "app/i18n/manual.json"
   ],
-  "app.e2a391f18da0d0de": {
-    "source": "斩击起手",
-    "template": "斩击起手"
-  },
-  "app.853420308d985152": {
-    "source": "贴近精英连续施放斩击。",
-    "template": "贴近精英连续施放斩击。"
-  },
-  "app.463c7d667d308d8e": {
-    "source": "唤魔套用高速攻击把荆棘快速打入目标，斩击比单纯站桩更适合调整位置。",
-    "template": "唤魔套用高速攻击把荆棘快速打入目标，斩击比单纯站桩更适合调整位置。"
-  },
-  "app.1d492c9e990e79ad": {
-    "source": "进入战斗后开启阿卡拉特勇士。",
-    "template": "进入战斗后开启[[Powers/X1_Crusader_AkaratsChampion_name]]。"
-  },
-  "app.469a4876526efc02": {
-    "source": "先知化身同时补护甲、圣怒和容错。",
-    "template": "[[AttributeDescriptions/NameRune_D#X1_Crusader_AkaratsChampion]]同时补护甲、圣怒和容错。"
-  },
-  "app.9abef41b9d24ae9e": {
-    "source": "律法预热",
-    "template": "律法预热"
-  },
-  "app.8e316ea84df8c991": {
-    "source": "在物理元素周期前开启勇气律法和钢铁之肤。",
-    "template": "在物理元素周期前开启[[Powers/X1_Crusader_LawsOfValor2_name]]和[[Powers/X1_Crusader_IronSkin_name]]。"
-  },
-  "app.a69e377d0c4b6c61": {
-    "source": "攻击速度、荆棘和物理周期要重叠，爆发才不被分散。",
-    "template": "[[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]、荆棘和物理周期要重叠，爆发才不被分散。"
-  },
-  "app.0f87c394012befa1": {
-    "source": "对精英和首领释放火炮轰击。",
-    "template": "对精英和首领释放[[Powers/X1_Crusader_Bombardment_name]]。"
-  },
-  "app.b7d51b8562da5e04": {
-    "source": "尖刺桶负责范围结算，人世无常与宝藏腰带共同提高落点密度。",
-    "template": "尖刺桶负责范围结算，[[Items/P610_Unique_Flail_2H_101]]与[[Items/P610_Unique_Belt_008]]共同提高落点密度。"
-  },
-  "app.6870d810c1b4715b": {
-    "source": "贴身点杀",
-    "template": "贴身点杀"
-  },
-  "app.4ca5090aa2aefbee": {
-    "source": "轰击结束后继续锁定同一个高价值目标。",
-    "template": "轰击结束后继续锁定同一个高价值目标。"
-  },
-  "app.5d5748f8432990b1": {
-    "source": "这套优势是荆棘单体效率，不应为了清零散怪浪费物理窗口。",
-    "template": "这套优势是荆棘单体效率，不应为了清零散怪浪费物理窗口。"
-  },
-  "app.94625d774086a294": {
-    "source": "战马转场",
-    "template": "战马转场"
-  },
-  "app.ec3afb4672c47c78": {
-    "source": "用战马冲锋从一组精英跳到下一组。",
-    "template": "用[[Powers/X1_Crusader_SteedCharge_name]]从一组精英跳到下一组。"
-  },
-  "app.674d57c788d051c6": {
-    "source": "速刷价值来自移动时间，低层不需要等待完整荆棘爆发。",
-    "template": "[[Site/speed-farming]]价值来自移动时间，低层不需要等待完整荆棘爆发。"
-  },
-  "app.def1b91285f3db1c": {
-    "source": "持续开启希望律法的天使之翼。",
-    "template": "持续开启[[Powers/X1_Crusader_LawsOfHope2_name]]的[[AttributeDescriptions/NameRune_A#X1_Crusader_LawsOfHope2]]。"
-  },
-  "app.5b3f21779601780a": {
-    "source": "给移动、护盾和穿图容错，让贴身斩击不拖慢节奏。",
-    "template": "给移动、护盾和穿图容错，让贴身斩击不拖慢节奏。"
-  },
-  "app.a88e62071b1127f7": {
-    "source": "短按轰击",
-    "template": "短按轰击"
-  },
-  "app.34d4e0649f9602a2": {
-    "source": "每个精英包至少手动施放一次火炮轰击。",
-    "template": "每个精英包至少手动施放一次[[Powers/X1_Crusader_Bombardment_name]]。"
-  },
-  "app.db692abe8549506a": {
-    "source": "维持唤魔套减伤并让自动轰击补充清场。",
-    "template": "维持唤魔套[[Site/damage-reduction]]并让自动轰击补充清场。"
-  },
-  "app.b6ca52d122d90004": {
-    "source": "触发寅剑",
-    "template": "触发[[Items/Unique_Sword_1H_113_x1]]"
-  },
-  "app.0eef13268fb6340d": {
-    "source": "击杀精英后立即转向下一组目标。",
-    "template": "击杀精英后立即转向下一组目标。"
-  },
-  "app.ee3a26061fb50582": {
-    "source": "寅剑的冷却重置只有连续击杀时才有速刷收益。",
-    "template": "[[Items/Unique_Sword_1H_113_x1]]的冷却重置只有连续击杀时才有[[Site/speed-farming]]收益。"
-  },
-  "app.cf7948bfaf8faa54": {
-    "source": "金币链",
-    "template": "金币链"
-  },
-  "app.ba2eeb12b6a46f11": {
-    "source": "T16、蓝门或悬赏中拾取金币后继续赶路。",
-    "template": "T16、蓝门或悬赏中拾取金币后继续赶路。"
-  },
-  "app.4f56b4041c0ae4f4": {
-    "source": "金织带和囤宝者只在掉金币的内容里提供坚韧与移速。",
-    "template": "[[Items/Unique_Belt_010_x1]]和[[Items/Unique_Gem_014_x1]]只在掉金币的内容里提供坚韧与移速。"
-  },
-  "app.81ae592479183031": {
-    "source": "斩击高速攻击 → 荆棘点杀 → 火炮轰击收尾",
-    "template": "斩击高速攻击 → 荆棘点杀 → [[Powers/X1_Crusader_Bombardment_name]]收尾"
-  },
-  "app.6657ad827b1d07dc": {
-    "source": "以五件唤魔师搭配两件克里森船长和皇家华戒，靠斩击攻速把荆棘稳定压入精英与首领；速刷再切换金币链和寅剑。",
-    "template": "以五件唤魔师搭配两件克里森船长和[[Items/Unique_Ring_107_x1]]，靠斩击攻速把荆棘稳定压入精英与首领；[[Site/speed-farming]]再切换金币链和[[Items/Unique_Sword_1H_113_x1]]。"
-  },
-  "app.0ff6d6d5aaccd255": {
-    "source": "高圣怒时提供减伤；斩击不消耗圣怒，适合冲层主配置。",
-    "template": "高圣怒时提供[[Site/damage-reduction]]；斩击不消耗圣怒，适合[[Site/push]]主配置。"
-  },
-  "app.d9154c89b2bfcadc": {
-    "source": "与船长腿甲组成两件套，把冷却与减耗转为攻防。",
-    "template": "与船长腿甲组成两件套，把冷却与减耗转为攻防。"
-  },
-  "app.778524353be42c29": {
-    "source": "与船长腰带组成两件套，补足冷却、减耗和坚韧。",
-    "template": "与船长腰带组成两件套，补足冷却、减耗和坚韧。"
-  },
-  "app.6f9d8378dceffc23": {
-    "source": "减少套装需求一件，让五件唤魔师与两件船长同时成立。",
-    "template": "减少套装需求一件，让五件唤魔师与两件船长同时成立。"
-  },
-  "app.ecdcb587ddac4945": {
-    "source": "未受伤时降低资源消耗；只在金币链速刷中替换唤魔王冠。",
-    "template": "未受伤时降低资源消耗；只在金币链[[Site/speed-farming]]中替换唤魔王冠。"
-  },
-  "app.838dfb59f32ab52e": {
-    "source": "击杀精英后大幅缩短技能冷却，连续精英速刷专用。",
-    "template": "击杀精英后大幅缩短技能冷却，连续精英[[Site/speed-farming]]专用。"
-  },
-  "app.391aa9b897c33d68": {
-    "source": "剑",
-    "template": "剑"
-  },
-  "app.9540ea8641db33d3": {
-    "source": "祭坛和塔生成额外精英，低层大秘境加快寅剑触发。",
-    "template": "祭坛和塔生成额外精英，低层[[NephalemRift/TieredRift]]加快[[Items/Unique_Sword_1H_113_x1]]触发。"
-  },
-  "app.dd9e776f643840de": {
-    "source": "沃兹克臂甲",
-    "template": "[[Items/Unique_Bracer_101_x1]]"
-  },
-  "app.2248c7d6294564ce": {
-    "source": "破坏物后短暂提高移速，T16、蓝门和悬赏专用。",
-    "template": "破坏物后短暂提高移速，T16、蓝门和悬赏专用。"
-  },
-  "app.4361ea0224f712d1": {
-    "source": "拾取金币扩大拾取范围，配合囤宝者和金织带。",
-    "template": "拾取金币扩大拾取范围，配合[[Items/Unique_Gem_014_x1]]和[[Items/Unique_Belt_010_x1]]。"
-  },
-  "app.84ee07d5ddc91bc0": {
-    "source": "拾取金币后获得护甲，金币内容中把伤害转成坚韧。",
-    "template": "拾取金币后获得护甲，金币内容中把伤害转成坚韧。"
-  },
-  "app.8ad9f44ada84a638": {
-    "source": "斩击",
-    "template": "斩击"
-  },
-  "app.667b623734d65b7d": {
-    "source": "主力高速攻击；当前唤魔指南用斩击叠攻速并触发荆棘。",
-    "template": "主力高速攻击；当前唤魔指南用斩击叠攻速并触发荆棘。"
-  },
-  "app.a11c851399f15ee0": {
-    "source": "速刷转场和脱离危险地板。",
-    "template": "[[Site/speed-farming]]转场和脱离危险地板。"
-  },
-  "app.09d75d2c94e0dae0": {
-    "source": "冲层提高攻速并降低消耗。",
-    "template": "[[Site/push]]提高攻速并降低消耗。"
-  },
-  "app.f4f558612b975e06": {
-    "source": "速刷提供护盾、移速和穿图能力。",
-    "template": "[[Site/speed-farming]]提供护盾、移速和穿图能力。"
-  },
-  "app.f6e0fcb1a4671001": {
-    "source": "双手武器或重型武器配置下补充伤害与机动策略；速刷切换单手寅剑时按实际武器调整。",
-    "template": "双手武器或重型武器配置下补充伤害与机动策略；[[Site/speed-farming]]切换单手[[Items/Unique_Sword_1H_113_x1]]时按实际武器调整。"
-  },
-  "app.b41329fe629f03c1": {
-    "source": "律法长存",
-    "template": "律法长存"
-  },
-  "app.cac086b1af394972": {
-    "source": "延长律法覆盖，令攻速或移速窗口更稳定。",
-    "template": "延长律法覆盖，令攻速或移速窗口更稳定。"
-  },
-  "app.be79813b5b3ff78d": {
-    "source": "击杀敌人获得攻击速度和伤害层数，速刷时提高斩击频率。",
-    "template": "击杀敌人获得[[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]和伤害层数，[[Site/speed-farming]]时提高斩击频率。"
-  },
-  "app.42536561c2d86661": {
-    "source": "冲层可用稳定攻速，T16则配合寅剑连续触发。",
-    "template": "[[Site/push]]可用稳定攻速，T16则配合[[Items/Unique_Sword_1H_113_x1]]连续触发。"
-  },
-  "app.5063e943960d6d8b": {
-    "source": "全能法戒腰带",
-    "template": "[[Items/P2_Unique_Ring_04]]腰带"
-  },
-  "app.9f98d77057db7a07": {
-    "source": "使斩击对附近目标追加攻击，补足荆棘构筑的清杂能力。",
-    "template": "使斩击对附近目标追加攻击，补足荆棘构筑的清杂能力。"
-  },
-  "app.e4226da5b918fc9e": {
-    "source": "保留唤魔主循环的同时减轻低层清怪时间。",
-    "template": "保留唤魔主循环的同时减轻低层清怪时间。"
-  },
-  "app.6f3bba7e78785b73": {
-    "source": "角色与带不死饰品的随从分摊伤害。",
-    "template": "角色与带不死饰品的随从分摊伤害。"
-  },
-  "app.77dec7f5843c8351": {
-    "source": "第39赛季第四槽锁定团结，冲层比多一个泛用增伤更稳定。",
-    "template": "第39赛季第四槽锁定[[Items/Unique_Ring_010_x1]]，[[Site/push]]比多一个泛用[[Site/damage-boost]]更稳定。"
-  },
-  "app.f4df3820102bb74e": {
-    "source": "拾取金币后获得与金币量相关的护甲。",
-    "template": "拾取金币后获得与金币量相关的护甲。"
-  },
-  "app.7996438f4fc452a2": {
-    "source": "只在T16、蓝门和悬赏这类稳定掉金币的内容中替换全能法戒腰带。",
-    "template": "只在T16、蓝门和悬赏这类稳定掉金币的内容中替换[[Items/P2_Unique_Ring_04]]腰带。"
-  },
-  "app.572e3cbed2620f25": {
-    "source": "五件唤魔师、两件船长与皇家华戒是冲层底盘；不要堆暴击，把攻击速度、物理元素、荆棘和冷却放在前面。",
-    "template": "五件唤魔师、两件船长与[[Items/Unique_Ring_107_x1]]是[[Site/push]]底盘；不要堆暴击，把[[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]、物理元素、荆棘和冷却放在前面。"
-  },
-  "app.d536d0e1b36b90a6": {
-    "source": "低层大秘境保留斩击和荆棘核心，T16/蓝门/悬赏再使用寅剑、沃兹克、贪婪之戒和金织带金币链。",
-    "template": "低层[[NephalemRift/TieredRift]]保留斩击和荆棘核心，T16/蓝门/悬赏再使用[[Items/Unique_Sword_1H_113_x1]]、[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Ring_108_x1]]和[[Items/Unique_Belt_010_x1]]金币链。"
-  },
-  "app.9ceb930ee411c8f7": {
-    "source": "低巅峰优先凑五件唤魔师、两件船长和皇家华戒，体能、全抗、格挡与荆棘优先于暴击。",
-    "template": "[[Site/low-paragon]]优先凑五件唤魔师、两件船长和[[Items/Unique_Ring_107_x1]]，[[SkillsUI/ParagonBonusLabel_Vitality]]、全抗、格挡与荆棘优先于暴击。"
-  },
-  "app.ab3034b242bfcb74": {
-    "source": "高巅峰围绕冷却、攻速断点、物理元素和荆棘副词缀精修；范围伤害不是荆棘的核心收益。",
-    "template": "[[Site/high-paragon]]围绕冷却、攻速断点、物理元素和荆棘副词缀精修；[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]不是荆棘的核心收益。"
-  },
-  "app.b45721e16c9c0502": {
-    "source": "回能",
-    "template": "回能"
-  },
-  "app.befe3e408089a87c": {
-    "source": "保命",
-    "template": "保命"
-  },
-  "app.b4f848d6a9c5939f": {
-    "source": "荆棘伤害",
-    "template": "荆棘伤害"
-  },
-  "app.7db3993bf2d564b2": {
-    "source": "格挡",
-    "template": "格挡"
-  },
-  "app.d549a5b59044e6f5": {
-    "source": "不追暴击",
-    "template": "不追暴击"
-  },
-  "app.82381eae2196a038": {
-    "source": "完成攻击速度断点",
-    "template": "完成[[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]断点"
-  },
-  "app.d56be7930799e45b": {
-    "source": "荆棘副词缀",
-    "template": "荆棘副词缀"
-  },
-  "app.6ce238e3c930b34e": {
-    "source": "物理元素",
-    "template": "物理元素"
-  },
-  "app.ee5c5c705fd230f0": {
-    "source": "低巅峰 < 2000 大秘境冲层",
-    "template": "[[Site/low-paragon]] < 2000 [[NephalemRift/TieredRift]][[Site/push]]"
-  },
-  "app.4082f7445b26ec02": {
-    "source": "低巅峰优先落地五件唤魔师、两件船长和皇家华戒；钢铁之心、格挡和荆棘词缀比双暴更重要，火炮轰击只在物理窗口集中使用。",
-    "template": "[[Site/low-paragon]]优先落地五件唤魔师、两件船长和[[Items/Unique_Ring_107_x1]]；[[Items/P4_Unique_Chest_018]]、格挡和荆棘词缀比双暴更重要，[[Powers/X1_Crusader_Bombardment_name]]只在物理窗口集中使用。"
-  },
-  "app.4342f6781e5f7ae6": {
-    "source": "高巅峰 2000+ 大秘境冲层",
-    "template": "[[Site/high-paragon]] 2000+ [[NephalemRift/TieredRift]][[Site/push]]"
-  },
-  "app.d1533af0ba91fe65": {
-    "source": "高巅峰不改变唤魔核心，而是把装备和巅峰预算集中到冷却、攻速断点、物理元素、荆棘与生存；荆棘不暴击，范围伤害也不应挤掉核心词缀。",
-    "template": "[[Site/high-paragon]]不改变唤魔核心，而是把装备和[[Site/paragon]]预算集中到冷却、攻速断点、物理元素、荆棘与生存；荆棘不暴击，[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]也不应挤掉核心词缀。"
-  },
-  "app.56bf958c9cffe74d": {
-    "source": "攻速断点",
-    "template": "攻速断点"
-  },
-  "app.134adfebb1647dd9": {
-    "source": "攻速与冷却同时达标",
-    "template": "攻速与冷却同时达标"
-  },
-  "app.708671db80a4488d": {
-    "source": "不堆暴击",
-    "template": "不堆暴击"
-  },
-  "app.da60055c650aca40": {
-    "source": "首领阶段受罚者",
-    "template": "首领阶段[[Items/Unique_Gem_018_x1]]"
-  },
-  "app.1c2473a73b446831": {
-    "source": "低层大秘境仍有精英和首领，保留荆棘、钢铁之肤与团结，只把主手换为寅剑、腕部换复仇者护腕，并用战马和希望律法缩短转场。",
-    "template": "低层[[NephalemRift/TieredRift]]仍有精英和首领，保留荆棘、[[Powers/X1_Crusader_IronSkin_name]]与[[Items/Unique_Ring_010_x1]]，只把主手换为[[Items/Unique_Sword_1H_113_x1]]、腕部换[[Items/Unique_Bracer_106_x1]]，并用战马和[[Powers/X1_Crusader_LawsOfHope2_name]]缩短转场。"
-  },
-  "app.c52f00a32629e1e9": {
-    "source": "连续击杀触发寅剑",
-    "template": "连续击杀触发[[Items/Unique_Sword_1H_113_x1]]"
-  },
-  "app.227b2e2f15a38631": {
-    "source": "金币内容伤害门槛较低，换傲慢之冠、沃兹克、金织带和贪婪之戒，把荆棘溢出转成移速与金币护甲；囤宝者只在会掉金币的内容生效。",
-    "template": "金币内容伤害门槛较低，换[[Items/Unique_Helm_103_x1]]、[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Belt_010_x1]]和[[Items/Unique_Ring_108_x1]]，把荆棘溢出转成移速与金币护甲；[[Items/Unique_Gem_014_x1]]只在会掉金币的内容生效。"
-  },
-  "app.74d34ed6f56db864": {
-    "source": "金币拾取",
-    "template": "金币拾取"
-  },
-  "app.78418f1164be354f": {
-    "source": "金织带金币护甲",
-    "template": "[[Items/Unique_Belt_010_x1]]金币护甲"
-  },
-  "app.1328a1bb6e6de612": {
-    "source": "速刷先到上限，冲层则把剩余点数投向力量与体能。",
-    "template": "[[Site/speed-farming]]先到上限，[[Site/push]]则把剩余点数投向力量与[[SkillsUI/ParagonBonusLabel_Vitality]]。"
-  },
-  "app.620a03e3a69afab4": {
-    "source": "提供荆棘相关伤害与护甲。",
-    "template": "提供荆棘相关伤害与护甲。"
-  },
-  "app.eeda8df730048aa8": {
-    "source": "被精英技能击杀时补足",
-    "template": "被精英技能击杀时补足"
-  },
-  "app.76bb8c84238a5455": {
-    "source": "钢铁之心把体能转成荆棘，同时保证贴身点杀不被秒。",
-    "template": "[[Items/P4_Unique_Chest_018]]把[[SkillsUI/ParagonBonusLabel_Vitality]]转成荆棘，同时保证贴身点杀不被秒。"
-  },
-  "app.9cf8833a41eba5da": {
-    "source": "斩击生成资源，唤魔荆棘不需要最大资源池。",
-    "template": "斩击生成资源，唤魔荆棘不需要最大资源池。"
-  },
-  "app.1a93c20d40a9b7cb": {
-    "source": "优先",
-    "template": "优先"
-  },
-  "app.23cddcc37e626b56": {
-    "source": "阿卡拉特勇士、钢铁之肤、战马与轰击都依赖覆盖。",
-    "template": "[[Powers/X1_Crusader_AkaratsChampion_name]]、[[Powers/X1_Crusader_IronSkin_name]]、战马与轰击都依赖覆盖。"
-  },
-  "app.bd574d8e3fd65da5": {
-    "source": "第二优先并完成断点",
-    "template": "第二优先并完成断点"
-  },
-  "app.8e7458873470b883": {
-    "source": "攻击频率决定荆棘在单位时间内的结算量。",
-    "template": "攻击频率决定荆棘在单位时间内的结算量。"
-  },
-  "app.762cbc141509548a": {
-    "source": "暴击几率/伤害",
-    "template": "[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]/伤害"
-  },
-  "app.f944b3531ce2c9bd": {
-    "source": "不为荆棘牺牲核心词缀",
-    "template": "不为荆棘牺牲核心词缀"
-  },
-  "app.8af944d37a6ab577": {
-    "source": "荆棘伤害不暴击，双暴不是这套的主要成长线。",
-    "template": "荆棘伤害不暴击，双暴不是这套的主要成长线。"
-  },
-  "app.e451b81ae4c49305": {
-    "source": "最后考虑",
-    "template": "最后考虑"
-  },
-  "app.2e63455da60d8986": {
-    "source": "它不改变荆棘单体点杀的主收益。",
-    "template": "它不改变荆棘单体点杀的主收益。"
-  },
-  "app.7ec95226f99e55fd": {
-    "source": "力量已经提供护甲，先补足全抗。",
-    "template": "力量已经提供护甲，先补足全抗。"
-  },
-  "app.af351f2b09936190": {
-    "source": "第二",
-    "template": "第二"
-  },
-  "app.83f077660d44169d": {
-    "source": "同时提高钢铁之心转换出的荆棘与有效生命。",
-    "template": "同时提高[[Items/P4_Unique_Chest_018]]转换出的荆棘与有效生命。"
-  },
-  "app.0bf0432eac557859": {
-    "source": "第三",
-    "template": "第三"
-  },
-  "app.921dc8914e731da9": {
-    "source": "补齐近战贴身时的物理防线。",
-    "template": "补齐近战贴身时的物理防线。"
-  },
-  "app.ebd7f284e2dc69c7": {
-    "source": "作为长时间贴身攻击的续航补充。",
-    "template": "作为长时间贴身攻击的续航补充。"
-  },
-  "app.b54cb5a3cacd910f": {
-    "source": "优先于范围伤害",
-    "template": "优先于[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]"
-  },
-  "app.961f585a6010b1b8": {
-    "source": "斩击高频命中，回复能直接减少贴身点杀风险。",
-    "template": "斩击高频命中，回复能直接减少贴身点杀风险。"
-  },
-  "app.b7ca749ce43bfbbd": {
-    "source": "辅助天鹰与船长套的稳定性。",
-    "template": "辅助天鹰与船长套的稳定性。"
-  },
-  "app.12d111ab1cc069ba": {
-    "source": "只在金币速刷优先",
-    "template": "只在金币[[Site/speed-farming]]优先"
-  },
-  "app.52678dbf20e2f7a7": {
-    "source": "T16、蓝门和悬赏才需要金织带链。",
-    "template": "T16、蓝门和悬赏才需要[[Items/Unique_Belt_010_x1]]链。"
-  },
-  "app.3b7a6e1b2e703b14": {
-    "source": "不应挤掉攻速、冷却和生存。",
-    "template": "不应挤掉攻速、冷却和生存。"
-  },
-  "app.0829d673c04a38a4": {
-    "source": "继续提供荆棘相关伤害和护甲。",
-    "template": "继续提供荆棘相关伤害和护甲。"
-  },
-  "app.8a2d87f505335f44": {
-    "source": "贴身冲层承受不住精英技能",
-    "template": "贴身[[Site/push]]承受不住精英技能"
-  },
-  "app.54ed0cdc75a36c7d": {
-    "source": "先补到能保持钢铁之肤和团结循环，再回力量。",
-    "template": "先补到能保持[[Powers/X1_Crusader_IronSkin_name]]和[[Items/Unique_Ring_010_x1]]循环，再回力量。"
-  },
-  "app.da273a5aa48ebca2": {
-    "source": "冷却/攻速/物理/荆棘",
-    "template": "冷却/攻速/物理/荆棘"
-  },
-  "app.f0e95ac74abca264": {
-    "source": "围绕实际攻速断点和钢铁之肤覆盖精修，不盲追双暴。",
-    "template": "围绕实际攻速断点和[[Powers/X1_Crusader_IronSkin_name]]覆盖精修，不盲追双暴。"
-  },
-  "app.7636052e11540c12": {
-    "source": "五件唤魔师、两件船长、皇家华戒、杀猪刀与顿悟盾",
-    "template": "五件唤魔师、两件船长、[[Items/Unique_Ring_107_x1]]、[[Items/Unique_Dagger_007_x1]]与顿悟盾"
-  },
-  "app.6b836e2bfec57a3b": {
-    "source": "先确认套装、攻速、格挡和荆棘链成立，再追远古。",
-    "template": "先确认套装、攻速、格挡和荆棘链成立，再追远古。"
-  },
-  "app.126d22b48a99246c": {
-    "source": "冷却、攻速、钢铁之心与三颗核心传奇宝石",
-    "template": "冷却、攻速、[[Items/P4_Unique_Chest_018]]与三颗核心传奇宝石"
-  },
-  "app.6d892a0146658251": {
-    "source": "让阿卡拉特勇士与钢铁之肤覆盖稳定，物理周期再手动轰击。",
-    "template": "让[[Powers/X1_Crusader_AkaratsChampion_name]]与[[Powers/X1_Crusader_IronSkin_name]]覆盖稳定，物理周期再手动轰击。"
-  },
-  "app.f051268fb2509c1f": {
-    "source": "攻速断点、物理元素、荆棘副词缀和钻石",
-    "template": "攻速断点、物理元素、荆棘副词缀和钻石"
-  },
-  "app.10a74af9b8664458": {
-    "source": "冲层精修生存与点杀；T16再换金币链和移速装备。",
-    "template": "[[Site/push]]精修生存与点杀；T16再换金币链和移速装备。"
-  },
-  "app.0ba759a7d03ca7a3": {
-    "source": "唤魔师五件 + 克里森船长两件",
-    "template": "唤魔师五件 + 克里森船长两件"
-  },
-  "app.2fbc1ab9c70bee93": {
-    "source": "当前指南的冲层底盘是五件唤魔师、船长腰带/腿甲与皇家华戒；荆棘构筑不需要靠暴击词缀补伤害。",
-    "template": "当前指南的[[Site/push]]底盘是五件唤魔师、船长腰带/腿甲与[[Items/Unique_Ring_107_x1]]；荆棘构筑不需要靠暴击词缀补伤害。"
-  },
-  "app.e4f76a7d4a5091cd": {
-    "source": "斩击 / 惩罚高速攻击",
-    "template": "斩击 / 惩罚高速攻击"
-  },
-  "app.66939e3a41035a78": {
-    "source": "斩击是当前指南推荐的主攻技能，惩罚可作为已有种子中的近战替代；两者都服务于高攻速荆棘，而非双暴。",
-    "template": "斩击是当前指南推荐的主攻技能，惩罚可作为已有种子中的近战替代；两者都服务于高攻速荆棘，而非双暴。"
-  },
-  "app.6284ca1e47e52027": {
-    "source": "已拥有惩罚高特效或偏好格挡循环",
-    "template": "已拥有惩罚高特效或偏好格挡循环"
-  },
-  "app.a704101c16cbfb4a": {
-    "source": "更直接连接格挡与顿悟盾",
-    "template": "更直接连接格挡与顿悟盾"
-  },
-  "app.6baec092f81d5cfe": {
-    "source": "清杂和机动性不如斩击",
-    "template": "清杂和机动性不如斩击"
-  },
-  "app.82186b73eec3f594": {
-    "source": "第39赛季第四槽团结",
-    "template": "第39赛季第四槽[[Items/Unique_Ring_010_x1]]"
-  },
-  "app.d1d0fdceff5cf0a0": {
-    "source": "冲层用团结配圣殿骑士不死饰品分摊伤害；不要把第4槽误写成未验证的泛用增伤。",
-    "template": "[[Site/push]]用[[Items/Unique_Ring_010_x1]]配[[Pets/HirelingTemplar]]不死饰品分摊伤害；不要把第4槽误写成未验证的泛用[[Site/damage-boost]]。"
-  },
-  "app.ce1f6ef7158ad4d7": {
-    "source": "荆棘传奇宝石",
-    "template": "荆棘传奇宝石"
-  },
-  "app.45a7e492a7b98440": {
-    "source": "博雅斯基的碎片直接提供荆棘，是本构筑的核心宝石；困者和受罚者分别覆盖控制与首领阶段。",
-    "template": "博雅斯基的碎片直接提供荆棘，是本构筑的核心宝石；[[Items/Unique_Gem_002_x1]]和[[Items/Unique_Gem_018_x1]]分别覆盖控制与首领阶段。"
-  },
-  "app.3466813de072fe61": {
-    "source": "寅剑 + 复仇者护腕速刷分支",
-    "template": "[[Items/Unique_Sword_1H_113_x1]] + [[Items/Unique_Bracer_106_x1]][[Site/speed-farming]]分支"
-  },
-  "app.828c2fd6440466df": {
-    "source": "低层大秘境保留复仇者护腕触发额外精英；T16/蓝门/悬赏改沃兹克、金织带和贪婪之戒，只有金币内容才启用囤宝者。",
-    "template": "低层[[NephalemRift/TieredRift]]保留[[Items/Unique_Bracer_106_x1]]触发额外精英；T16/蓝门/悬赏改[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Belt_010_x1]]和[[Items/Unique_Ring_108_x1]]，只有金币内容才启用[[Items/Unique_Gem_014_x1]]。"
-  },
-  "app.d010994c303532e6": {
-    "source": "沃兹克 + 金织带 + 贪婪之戒",
-    "template": "[[Items/Unique_Bracer_101_x1]] + [[Items/Unique_Belt_010_x1]] + [[Items/Unique_Ring_108_x1]]"
-  },
-  "app.dfbfcb49307cea4a": {
-    "source": "破坏物移速、金币护甲和拾取范围",
-    "template": "破坏物移速、金币护甲和拾取范围"
-  },
-  "app.959dbffe5651b5f9": {
-    "source": "低层大秘境需要更多精英触发寅剑",
-    "template": "低层[[NephalemRift/TieredRift]]需要更多精英触发[[Items/Unique_Sword_1H_113_x1]]"
-  },
-  "app.e2487816fe7013e9": {
-    "source": "祭坛生成额外精英",
-    "template": "祭坛生成额外精英"
-  },
-  "app.d5e4c670e59e14ea": {
-    "source": "失去破坏物移速",
-    "template": "失去破坏物移速"
-  },
-  "app.85d35874f3a0276d": {
-    "source": "金币速刷宝石",
-    "template": "金币[[Site/speed-farming]]宝石"
-  },
-  "app.8c58238be49a189e": {
-    "source": "囤宝者、金织带和贪婪之戒只在会掉金币的内容中互相成立；低层大秘境继续使用受罚者或强者之灾。",
-    "template": "[[Items/Unique_Gem_014_x1]]、[[Items/Unique_Belt_010_x1]]和[[Items/Unique_Ring_108_x1]]只在会掉金币的内容中互相成立；低层[[NephalemRift/TieredRift]]继续使用[[Items/Unique_Gem_018_x1]]或[[Items/Unique_Gem_001_x1]]。"
-  },
-  "app.1aa25d1f20f4cfc1": {
-    "source": "精英击杀后稳定增伤与减伤",
-    "template": "精英击杀后稳定[[Site/damage-boost]]与[[Site/damage-reduction]]"
-  },
-  "app.c61843aba570edef": {
-    "source": "没有金币移速链",
-    "template": "没有金币移速链"
-  },
-  "app.f9a381599fcb5b6b": {
-    "source": "治疗、回能和保命适合荆棘近战；冲层必须配不死圣物，金币速刷再补复仇者护腕或拾取相关装备。",
-    "template": "[[Powers/Templar_Heal_110_name]]、回能和保命适合荆棘近战；[[Site/push]]必须配不死圣物，金币[[Site/speed-farming]]再补[[Items/Unique_Bracer_106_x1]]或拾取相关装备。"
-  },
-  "app.4ac5d84e32c82d54": {
-    "source": "唤魔荆棘配置校验失败：{0}",
-    "template": "唤魔荆棘配置校验失败：{0}"
-  },
-  "app.7a27788ebb8524b7": {
-    "source": "黄装升级：70级剑，必须选对底材",
-    "template": "黄装升级：70级剑，必须选对底材"
-  },
-  "app.2266022ae955b412": {
-    "source": "五件唤魔师、两件船长与皇家华戒是冲层底盘；不要堆暴击，把攻击速度、物理元素、荆棘和冷却放在前面。；低巅峰优先凑五件唤魔师、两件船长和皇家华戒，体能、全抗、格挡与荆棘优先于暴击。",
-    "template": "五件唤魔师、两件船长与[[Items/Unique_Ring_107_x1]]是[[Site/push]]底盘；不要堆暴击，把[[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]、物理元素、荆棘和冷却放在前面。；[[Site/low-paragon]]优先凑五件唤魔师、两件船长和[[Items/Unique_Ring_107_x1]]，[[SkillsUI/ParagonBonusLabel_Vitality]]、全抗、格挡与荆棘优先于暴击。"
-  },
-  "app.75a68b9687aa0266": {
-    "source": "五件唤魔师、两件船长与皇家华戒是冲层底盘；不要堆暴击，把攻击速度、物理元素、荆棘和冷却放在前面。；高巅峰围绕冷却、攻速断点、物理元素和荆棘副词缀精修；范围伤害不是荆棘的核心收益。",
-    "template": "五件唤魔师、两件船长与[[Items/Unique_Ring_107_x1]]是[[Site/push]]底盘；不要堆暴击，把[[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]、物理元素、荆棘和冷却放在前面。；[[Site/high-paragon]]围绕冷却、攻速断点、物理元素和荆棘副词缀精修；[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]不是荆棘的核心收益。"
-  },
-  "app.e704eca4747457f0": {
-    "source": "低层大秘境保留斩击和荆棘核心，T16/蓝门/悬赏再使用寅剑、沃兹克、贪婪之戒和金织带金币链。；低巅峰优先凑五件唤魔师、两件船长和皇家华戒，体能、全抗、格挡与荆棘优先于暴击。",
-    "template": "低层[[NephalemRift/TieredRift]]保留斩击和荆棘核心，T16/蓝门/悬赏再使用[[Items/Unique_Sword_1H_113_x1]]、[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Ring_108_x1]]和[[Items/Unique_Belt_010_x1]]金币链。；[[Site/low-paragon]]优先凑五件唤魔师、两件船长和[[Items/Unique_Ring_107_x1]]，[[SkillsUI/ParagonBonusLabel_Vitality]]、全抗、格挡与荆棘优先于暴击。"
-  },
-  "app.f1c4ddef4518854a": {
-    "source": "低层大秘境保留斩击和荆棘核心，T16/蓝门/悬赏再使用寅剑、沃兹克、贪婪之戒和金织带金币链。；高巅峰围绕冷却、攻速断点、物理元素和荆棘副词缀精修；范围伤害不是荆棘的核心收益。",
-    "template": "低层[[NephalemRift/TieredRift]]保留斩击和荆棘核心，T16/蓝门/悬赏再使用[[Items/Unique_Sword_1H_113_x1]]、[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Ring_108_x1]]和[[Items/Unique_Belt_010_x1]]金币链。；[[Site/high-paragon]]围绕冷却、攻速断点、物理元素和荆棘副词缀精修；[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]不是荆棘的核心收益。"
-  },
-  "app.c31c595649a0b21a": {
-    "source": "破坏物后短暂提高移动速度，横扫的范围伤害很容易触发。",
-    "template": "破坏物后短暂提高移动速度，横扫的[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]很容易触发。"
-  },
-  "app.0e1e878248f4e325": {
-    "source": "祭坛生成额外精英，配合寅剑压缩速刷路径。",
-    "template": "祭坛生成额外精英，配合[[Items/Unique_Sword_1H_113_x1]]压缩[[Site/speed-farming]]路径。"
-  },
-  "app.0839df82250874b8": {
-    "source": "拾取金币后获得护甲，只在掉金币内容中使用。",
-    "template": "拾取金币后获得护甲，只在掉金币内容中使用。"
-  },
-  "app.4046f5ec22a06933": {
-    "source": "拾取金币扩大拾取范围，连接囤宝者与金织带。",
-    "template": "拾取金币扩大拾取范围，连接[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Belt_010_x1]]。"
-  },
-  "app.cbf8a209a2f97cf9": {
-    "source": "贤者之旅腰带",
-    "template": "[[Items/Unique_Boots_018_x1]]腰带"
-  },
-  "app.6ece76851cc8fea4": {
-    "source": "与贤者之握组成死亡之息速刷两件套。",
-    "template": "与贤者之握组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。"
-  },
-  "app.d2e6453e9ccdab1b": {
-    "source": "贤者之旅腿甲",
-    "template": "[[Items/Unique_Boots_018_x1]]腿甲"
-  },
-  "app.f62a502d22930b91": {
-    "source": "与贤者腰带组成死亡之息速刷两件套。",
-    "template": "与[[Items/P66_Unique_Belt_016]]组成[[Items/Crafting_Looted_Reagent_01]][[Site/speed-farming]]两件套。"
-  },
-  "app.38511880cb51f85e": {
-    "source": "击杀精英后大幅缩短冷却，连续速刷专用。",
-    "template": "击杀精英后大幅缩短冷却，连续[[Site/speed-farming]]专用。"
-  },
-  "app.cd7d8caf883be95d": {
-    "source": "提供稳定元素与精英伤，不必等待全能法戒周期。",
-    "template": "提供稳定元素与精英伤，不必等待[[Items/P2_Unique_Ring_04]]周期。"
-  },
-  "app.bf19903c10c80771": {
-    "source": "速刷用连续精英击杀把战马、钢铁之肤和阿卡拉特勇士重新接上。",
-    "template": "[[Site/speed-farming]]用连续精英击杀把战马、[[Powers/X1_Crusader_IronSkin_name]]和[[Powers/X1_Crusader_AkaratsChampion_name]]重新接上。"
-  },
-  "app.b946e03c60f07196": {
-    "source": "只在 T16、蓝门和悬赏中配合囤宝者与贪婪之戒使用。",
-    "template": "只在 T16、蓝门和悬赏中配合[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Ring_108_x1]]使用。"
-  },
-  "app.4cfee15197b5adda": {
-    "source": "横扫攻击技能伤",
-    "template": "[[Powers/X1_Crusader_SweepAttack_name]]技能伤"
-  },
-  "app.65f80704d3bc59f0": {
-    "source": "冷却覆盖",
-    "template": "冷却覆盖"
-  },
-  "app.4b117a7118c24c99": {
-    "source": "受罚者首领阶段",
-    "template": "[[Items/Unique_Gem_018_x1]]首领阶段"
-  },
-  "app.bf521e16c67af7de": {
-    "source": "五件罗兰、拒绝盾、黄金剥皮者和全能法戒组成冲层底盘；用横扫叠攻速与减伤，密度不足时依靠德拉孔护腕处理精英。",
-    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]和[[Items/P2_Unique_Ring_04]]组成[[Site/push]]底盘；用横扫叠攻速与[[Site/damage-reduction]]，密度不足时依靠德拉孔护腕处理精英。"
-  },
-  "app.bc860c0b30fd162e": {
-    "source": "高巅峰保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。",
-    "template": "[[Site/high-paragon]]保留罗兰横扫循环，护甲宝石换钻石，围绕攻速断点、冷却、闪电元素和范围伤优化；不要因堆暴击而放弃套装技能伤。"
-  },
-  "app.b12d7bfceb8d360f": {
-    "source": "拒绝盾高特效",
-    "template": "[[Items/P61_Unique_Shield_007]]盾高特效"
-  },
-  "app.33085b334dbbf83f": {
-    "source": "不牺牲横扫技能伤",
-    "template": "不牺牲横扫技能伤"
-  },
-  "app.afdd44c4f45db1d1": {
-    "source": "低层保留横扫与拒绝盾，只换沃兹克和寅剑压缩转场；用希望律法与战马赶路，不套用只适合金币内容的金织带。",
-    "template": "低层保留横扫与[[Items/P61_Unique_Shield_007]]盾，只换[[Items/Unique_Bracer_101_x1]]和[[Items/Unique_Sword_1H_113_x1]]压缩转场；用[[Powers/X1_Crusader_LawsOfHope2_name]]与战马赶路，不套用只适合金币内容的[[Items/Unique_Belt_010_x1]]。"
-  },
-  "app.182e8006a250cf2b": {
-    "source": "聚力扫击",
-    "template": "聚力扫击"
-  },
-  "app.ee2723b4cea2d143": {
-    "source": "金币内容换沃兹克、金织带、贪婪之戒和贤者两件，寅剑与囤宝者建立连续击杀、死亡之息和护甲链；不掉金币的大秘境不使用这套分支。",
-    "template": "金币内容换[[Items/Unique_Bracer_101_x1]]、[[Items/Unique_Belt_010_x1]]、[[Items/Unique_Ring_108_x1]]和贤者两件，[[Items/Unique_Sword_1H_113_x1]]与[[Items/Unique_Gem_014_x1]]建立连续击杀、[[Items/Crafting_Looted_Reagent_01]]和护甲链；不掉金币的[[NephalemRift/TieredRift]]不使用这套分支。"
-  },
-  "app.85e56dec84919ab6": {
-    "source": "金织带护甲",
-    "template": "[[Items/Unique_Belt_010_x1]]护甲"
-  },
-  "app.66b4fad2baaa187b": {
-    "source": "贤者两件",
-    "template": "贤者两件"
-  },
-  "app.6f128a4b231f4fc5": {
-    "source": "只在金币内容启用囤宝者",
-    "template": "只在金币内容启用[[Items/Unique_Gem_014_x1]]"
-  },
-  "app.c39fa14129b37a7a": {
-    "source": "速刷先到上限，冲层再把剩余点数投向力量。",
-    "template": "[[Site/speed-farming]]先到上限，[[Site/push]]再把剩余点数投向力量。"
-  },
-  "app.1560ea95199ab2e6": {
-    "source": "提供伤害和护甲，是默认主属性。",
-    "template": "提供伤害和护甲，是默认主属性。"
-  },
-  "app.6c9ba7bcfca6154f": {
-    "source": "生存不足时投入",
-    "template": "生存不足时投入"
-  },
-  "app.0d4c9ba4c7465d99": {
-    "source": "贴身横扫需要先保证不被精英技能秒杀。",
-    "template": "贴身横扫需要先保证不被精英技能秒杀。"
-  },
-  "app.eba457b5b2779478": {
-    "source": "黄金剥皮者按命中返怒，不需要大资源池。",
-    "template": "[[Items/P61_Unique_Flail_2H_104]]按命中返怒，不需要大资源池。"
-  },
-  "app.80738beeb05ddcf3": {
-    "source": "覆盖阿卡拉特勇士、钢铁之肤和战马。",
-    "template": "覆盖[[Powers/X1_Crusader_AkaratsChampion_name]]、[[Powers/X1_Crusader_IronSkin_name]]和战马。"
-  },
-  "app.164fc065fb46acfe": {
-    "source": "配合横扫与元素爆发提高稳定伤害。",
-    "template": "配合横扫与元素爆发提高稳定伤害。"
-  },
-  "app.446713cdf622914d": {
-    "source": "完成断点",
-    "template": "完成断点"
-  },
-  "app.b8874fdfc28234a7": {
-    "source": "罗兰层数和攻速决定横扫循环。",
-    "template": "罗兰层数和攻速决定横扫循环。"
-  },
-  "app.99bbfc5a1aadcccd": {
-    "source": "力量已提供护甲，先补全抗。",
-    "template": "力量已提供护甲，先补全抗。"
-  },
-  "app.14866d573ff3784e": {
-    "source": "提高贴身有效生命。",
-    "template": "提高贴身有效生命。"
-  },
-  "app.137a5c92b6505dfd": {
-    "source": "补齐近战防线。",
-    "template": "补齐近战防线。"
-  },
-  "app.94361fdada60e44a": {
-    "source": "作为持续横扫的续航补充。",
-    "template": "作为持续横扫的续航补充。"
-  },
-  "app.fb5758e763372950": {
-    "source": "横扫与密度清场直接受益。",
-    "template": "横扫与密度清场直接受益。"
-  },
-  "app.95d88d1d338897cb": {
-    "source": "帮助天鹰与连续横扫维持资源。",
-    "template": "帮助天鹰与连续横扫维持资源。"
-  },
-  "app.832a704300ad5d00": {
-    "source": "高频横扫命中提供稳定治疗。",
-    "template": "高频横扫命中提供稳定[[Powers/Templar_Heal_110_name]]。"
-  },
-  "app.40cea5708343abf9": {
-    "source": "金币速刷最后",
-    "template": "金币[[Site/speed-farming]]最后"
-  },
-  "app.699295ca41898c86": {
-    "source": "只为 T16、蓝门与悬赏服务。",
-    "template": "只为 T16、蓝门与悬赏服务。"
-  },
-  "app.2c4d07511c6a1f6b": {
-    "source": "继续提供伤害与护甲。",
-    "template": "继续提供伤害与护甲。"
-  },
-  "app.ea28661b35a37c7c": {
-    "source": "贴身冲层承受不住",
-    "template": "贴身[[Site/push]]承受不住"
-  },
-  "app.a9786e16e09b3916": {
-    "source": "补到能维持横扫循环后再回力量。",
-    "template": "补到能维持横扫循环后再回力量。"
-  },
-  "app.173c4a0dc06e4ea8": {
-    "source": "攻速/冷却/闪电/范围伤",
-    "template": "攻速/冷却/闪电/范围伤"
-  },
-  "app.fd9dc054700be7bf": {
-    "source": "围绕断点精修，不盲目追单一面板。",
-    "template": "围绕断点精修，不盲目追单一面板。"
-  },
-  "app.7ba50a0ee3f4c1d1": {
-    "source": "五件罗兰、拒绝盾、黄金剥皮者",
-    "template": "五件罗兰、[[Items/P61_Unique_Shield_007]]盾、[[Items/P61_Unique_Flail_2H_104]]"
-  },
-  "app.7eecd59ebe6a6912": {
-    "source": "先确认罗兰层数、攻速与回怒链成立。",
-    "template": "先确认罗兰层数、攻速与回怒链成立。"
-  },
-  "app.5c2b03165a01c56e": {
-    "source": "冷却、攻速、三颗核心传奇宝石",
-    "template": "冷却、攻速、三颗核心传奇宝石"
-  },
-  "app.0b1869935c97bf7d": {
-    "source": "让变身和钢铁之肤覆盖稳定。",
-    "template": "让变身和[[Powers/X1_Crusader_IronSkin_name]]覆盖稳定。"
-  },
-  "app.ce7514fe38dfe28d": {
-    "source": "攻速断点、闪电元素、范围伤和钻石",
-    "template": "攻速断点、闪电元素、范围伤和钻石"
-  },
-  "app.51d02b2fc493a991": {
-    "source": "冲层精修生存，金币内容再切换贤者与金币链。",
-    "template": "[[Site/push]]精修生存，金币内容再切换贤者与金币链。"
-  },
-  "app.4af7b901fad6ac59": {
-    "source": "罗兰五件 + 拒绝盾 + 黄金剥皮者",
-    "template": "罗兰五件 + [[Items/P61_Unique_Shield_007]]盾 + [[Items/P61_Unique_Flail_2H_104]]"
-  },
-  "app.8e96f1072d04a86f": {
-    "source": "横扫需要罗兰层数与拒绝盾命中计数，黄金剥皮者负责高密度返怒；缺少其中任一项都不是完整横扫底盘。",
-    "template": "横扫需要罗兰层数与[[Items/P61_Unique_Shield_007]]盾命中计数，[[Items/P61_Unique_Flail_2H_104]]负责高密度返怒；缺少其中任一项都不是完整横扫底盘。"
-  },
-  "app.a42c5bdaa11b9999": {
-    "source": "德拉孔护腕 / 沃兹克护腕",
-    "template": "德拉孔护腕 / [[Items/Unique_Bracer_101_x1]]"
-  },
-  "app.8191cc85ce79361d": {
-    "source": "冲层和少目标阶段用德拉孔，低层与金币速刷用沃兹克触发破坏物移速。",
-    "template": "[[Site/push]]和少目标阶段用德拉孔，低层与金币[[Site/speed-farming]]用[[Items/Unique_Bracer_101_x1]]触发破坏物移速。"
-  },
-  "app.907df5a001347a6b": {
-    "source": "低层大秘境、T16、蓝门与悬赏",
-    "template": "低层[[NephalemRift/TieredRift]]、T16、蓝门与悬赏"
-  },
-  "app.5ca36a9de8e8ccf2": {
-    "source": "少目标增伤下降",
-    "template": "少目标[[Site/damage-boost]]下降"
-  },
-  "app.38dadc4b16deca27": {
-    "source": "金织带 + 贪婪之戒 + 囤宝者",
-    "template": "[[Items/Unique_Belt_010_x1]] + [[Items/Unique_Ring_108_x1]] + [[Items/Unique_Gem_014_x1]]"
-  },
-  "app.4932fd6b19b42e53": {
-    "source": "只在掉金币的内容建立护甲与移速；大秘境不掉金币，必须回到天鹰和冲层戒指。",
-    "template": "只在掉金币的内容建立护甲与移速；[[NephalemRift/TieredRift]]不掉金币，必须回到天鹰和[[Site/push]]戒指。"
-  },
-  "app.77076ff12eaeee23": {
-    "source": "大秘境冲层与低层大秘境",
-    "template": "[[NephalemRift/TieredRift]][[Site/push]]与低层[[NephalemRift/TieredRift]]"
-  },
-  "app.e0032c3c829343ec": {
-    "source": "不依赖金币的稳定减伤",
-    "template": "不依赖金币的稳定[[Site/damage-reduction]]"
-  },
-  "app.46d80d2dc0a022d3": {
-    "source": "失去金币护甲",
-    "template": "失去金币护甲"
-  },
-  "app.db0328d0fb3a5758": {
-    "source": "冲层用焚炉处理精英，低层和金币速刷用寅剑把击杀转成连续冷却。",
-    "template": "[[Site/push]]用[[Items/Unique_Mace_2H_103_x1]]处理精英，低层和金币[[Site/speed-farming]]用[[Items/Unique_Sword_1H_113_x1]]把击杀转成连续冷却。"
-  },
-  "app.9810163d276a8346": {
-    "source": "精英连续死亡的速刷内容",
-    "template": "精英连续死亡的[[Site/speed-farming]]内容"
-  },
-  "app.4dec3ba22eb44a7a": {
-    "source": "击杀精英后重置冷却",
-    "template": "击杀精英后重置冷却"
-  },
-  "app.793a815ee6399f97": {
-    "source": "失去焚炉精英增伤",
-    "template": "失去[[Items/Unique_Mace_2H_103_x1]]精英[[Site/damage-boost]]"
-  },
-  "app.fba9d27bf74d10b5": {
-    "source": "治疗和回能适合长时间贴身横扫；金币速刷可让随从携带复仇者护腕和金币装备。",
-    "template": "[[Powers/Templar_Heal_110_name]]和回能适合长时间贴身横扫；金币[[Site/speed-farming]]可让随从携带[[Items/Unique_Bracer_106_x1]]和金币装备。"
-  },
-  "app.55904ff4ebf8c3be": {
-    "source": "罗兰横扫配置校验失败：{0}",
-    "template": "罗兰横扫配置校验失败：{0}"
-  },
-  "app.5c45a705bd4b7c48": {
-    "source": "最大资源",
-    "template": "最大资源"
-  },
-  "app.4d09d8f699ad8575": {
-    "source": "生存不足",
-    "template": "生存不足"
-  },
-  "app.e004d0823568820d": {
-    "source": "冷却、攻速与技能伤",
-    "template": "冷却、攻速与技能伤"
-  },
-  "app.0708336bfb81f3f9": {
-    "source": "冷却与三颗核心传奇宝石",
-    "template": "冷却与三颗核心传奇宝石"
-  },
-  "app.055d9781b8bfb71f": {
-    "source": "正确词缀与生存",
-    "template": "正确词缀与生存"
-  },
-  "app.9d8707f4c1f4d6f1": {
-    "source": "冷却、攻速与范围伤",
-    "template": "冷却、攻速与范围伤"
-  },
-  "app.304c31bd718618ce": {
-    "source": "速刷宝石",
-    "template": "[[Site/speed-farming]]宝石"
-  },
-  "app.4fed6394c592d64b": {
-    "source": "undefined技能伤",
-    "template": "undefined技能伤"
-  }
+  "app.e2a391f18da0d0de": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.853420308d985152": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.463c7d667d308d8e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1d492c9e990e79ad": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.469a4876526efc02": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9abef41b9d24ae9e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8e316ea84df8c991": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a69e377d0c4b6c61": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0f87c394012befa1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b7d51b8562da5e04": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6870d810c1b4715b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4ca5090aa2aefbee": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5d5748f8432990b1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.94625d774086a294": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.ec3afb4672c47c78": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.674d57c788d051c6": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.def1b91285f3db1c": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.5b3f21779601780a": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.a88e62071b1127f7": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.34d4e0649f9602a2": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.db692abe8549506a": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.b6ca52d122d90004": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.0eef13268fb6340d": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.ee3a26061fb50582": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.cf7948bfaf8faa54": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.ba2eeb12b6a46f11": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.4f56b4041c0ae4f4": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.81ae592479183031": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6657ad827b1d07dc": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0ff6d6d5aaccd255": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d9154c89b2bfcadc": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.778524353be42c29": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f9d8378dceffc23": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ecdcb587ddac4945": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.838dfb59f32ab52e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.391aa9b897c33d68": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.9540ea8641db33d3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dd9e776f643840de": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2248c7d6294564ce": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4361ea0224f712d1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.84ee07d5ddc91bc0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8ad9f44ada84a638": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.667b623734d65b7d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a11c851399f15ee0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.09d75d2c94e0dae0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f4f558612b975e06": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f6e0fcb1a4671001": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b41329fe629f03c1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cac086b1af394972": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.be79813b5b3ff78d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.42536561c2d86661": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5063e943960d6d8b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9f98d77057db7a07": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e4226da5b918fc9e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f3bba7e78785b73": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.77dec7f5843c8351": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f4df3820102bb74e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7996438f4fc452a2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.572e3cbed2620f25": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d536d0e1b36b90a6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9ceb930ee411c8f7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ab3034b242bfcb74": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b45721e16c9c0502": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.befe3e408089a87c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b4f848d6a9c5939f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7db3993bf2d564b2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d549a5b59044e6f5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.82381eae2196a038": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d56be7930799e45b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6ce238e3c930b34e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ee5c5c705fd230f0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4082f7445b26ec02": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4342f6781e5f7ae6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d1533af0ba91fe65": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.56bf958c9cffe74d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.134adfebb1647dd9": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.708671db80a4488d": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.da60055c650aca40": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1c2473a73b446831": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c52f00a32629e1e9": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.227b2e2f15a38631": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.74d34ed6f56db864": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.78418f1164be354f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.1328a1bb6e6de612": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.620a03e3a69afab4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.eeda8df730048aa8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.76bb8c84238a5455": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9cf8833a41eba5da": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1a93c20d40a9b7cb": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.23cddcc37e626b56": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bd574d8e3fd65da5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8e7458873470b883": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.762cbc141509548a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f944b3531ce2c9bd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8af944d37a6ab577": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e451b81ae4c49305": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2e63455da60d8986": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7ec95226f99e55fd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.af351f2b09936190": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.83f077660d44169d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0bf0432eac557859": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.921dc8914e731da9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ebd7f284e2dc69c7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b54cb5a3cacd910f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.961f585a6010b1b8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b7ca749ce43bfbbd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.12d111ab1cc069ba": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.52678dbf20e2f7a7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3b7a6e1b2e703b14": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0829d673c04a38a4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8a2d87f505335f44": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.54ed0cdc75a36c7d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.da273a5aa48ebca2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f0e95ac74abca264": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7636052e11540c12": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6b836e2bfec57a3b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.126d22b48a99246c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6d892a0146658251": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f051268fb2509c1f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.10a74af9b8664458": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0ba759a7d03ca7a3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2fbc1ab9c70bee93": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e4f76a7d4a5091cd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.66939e3a41035a78": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6284ca1e47e52027": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a704101c16cbfb4a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6baec092f81d5cfe": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.82186b73eec3f594": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d1d0fdceff5cf0a0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ce1f6ef7158ad4d7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.45a7e492a7b98440": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3466813de072fe61": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.828c2fd6440466df": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d010994c303532e6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dfbfcb49307cea4a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.959dbffe5651b5f9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e2487816fe7013e9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d5e4c670e59e14ea": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.85d35874f3a0276d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8c58238be49a189e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1aa25d1f20f4cfc1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c61843aba570edef": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f9a381599fcb5b6b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4ac5d84e32c82d54": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.7a27788ebb8524b7": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2266022ae955b412": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.75a68b9687aa0266": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e704eca4747457f0": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f1c4ddef4518854a": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c31c595649a0b21a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0e1e878248f4e325": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0839df82250874b8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4046f5ec22a06933": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cbf8a209a2f97cf9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6ece76851cc8fea4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d2e6453e9ccdab1b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f62a502d22930b91": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.38511880cb51f85e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cd7d8caf883be95d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bf19903c10c80771": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b946e03c60f07196": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4cfee15197b5adda": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.65f80704d3bc59f0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4b117a7118c24c99": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bf521e16c67af7de": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bc860c0b30fd162e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b12d7bfceb8d360f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.33085b334dbbf83f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.afdd44c4f45db1d1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.182e8006a250cf2b": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.ee2723b4cea2d143": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.85e56dec84919ab6": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.66b4fad2baaa187b": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.6f128a4b231f4fc5": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.c39fa14129b37a7a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1560ea95199ab2e6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6c9ba7bcfca6154f": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0d4c9ba4c7465d99": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.eba457b5b2779478": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.80738beeb05ddcf3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.164fc065fb46acfe": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.446713cdf622914d": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b8874fdfc28234a7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.99bbfc5a1aadcccd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.14866d573ff3784e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.137a5c92b6505dfd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.94361fdada60e44a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fb5758e763372950": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.95d88d1d338897cb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.832a704300ad5d00": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.40cea5708343abf9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.699295ca41898c86": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2c4d07511c6a1f6b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ea28661b35a37c7c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a9786e16e09b3916": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.173c4a0dc06e4ea8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fd9dc054700be7bf": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7ba50a0ee3f4c1d1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7eecd59ebe6a6912": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5c2b03165a01c56e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0b1869935c97bf7d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ce7514fe38dfe28d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.51d02b2fc493a991": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4af7b901fad6ac59": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8e96f1072d04a86f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a42c5bdaa11b9999": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8191cc85ce79361d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.907df5a001347a6b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5ca36a9de8e8ccf2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.38dadc4b16deca27": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4932fd6b19b42e53": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.77076ff12eaeee23": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e0032c3c829343ec": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.46d80d2dc0a022d3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.db0328d0fb3a5758": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9810163d276a8346": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4dec3ba22eb44a7a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.793a815ee6399f97": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fba9d27bf74d10b5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.55904ff4ebf8c3be": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.5c45a705bd4b7c48": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4d09d8f699ad8575": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e004d0823568820d": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0708336bfb81f3f9": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.055d9781b8bfb71f": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9d8707f4c1f4d6f1": [
+    "app/data/class-build-factory.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.304c31bd718618ce": [
+    "app/i18n/manual.json"
+  ],
+  "app.2fd62668a5e27264": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.4a69acb76162e072": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.28449a23a01b17e6": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.5b94a5874f4c66bd": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.97c4c98c4c9e947f": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.e848df948a70f70d": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.40463949072205cb": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.957fa2afa1cc3b02": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.2883c3e7b258d4e6": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.273d3e8983ac3a2b": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.45f8ccae481dc4ba": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5a68a5e37e9af677": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.66526791a890f561": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e17f6578931aa9fb": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.161c05ed0f2a64e2": [
+    "app/data/witch-doctor-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1854504e051a8091": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c54f59230a3ff326": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.69bc5b14e25f73bc": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6e81c027f57dab84": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e29c0e97af65f673": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.90119c53a4b65acc": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4f31c5cec8ad1c17": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fe61b670f2431c4c": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.87d99f1daf759a71": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cf3f42f76294fa15": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f83ca9fcb088e4d": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.8177d03b1f7107a7": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.5fdac90c87c31e73": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.8aa624add529f4df": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.e002eccdaf4615cb": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.c107d8855d636c62": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.cf78133e79c6c0bc": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.fa784e591dd61316": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.31783c644467ed93": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.7e618e25d3f638ae": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.100587977125c8c3": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.0f98e1e6753a890c": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ]
 }
