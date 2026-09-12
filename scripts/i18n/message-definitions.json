@@ -10632,6 +10632,1256 @@
     "source": "阿克汉天谴配置校验失败：{0}",
     "template": "阿克汉[[Powers/X1_Crusader_Condemn_name]]配置校验失败：{0}"
   },
+  "app.bf9a2cfcd20c263d": {
+    "source": "进场先开阿卡拉特勇士，并在冷却结束前补开。",
+    "template": "进场先开[[Powers/X1_Crusader_AkaratsChampion_name]]，并在冷却结束前补开。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.73a61c4c89918840": {
+    "source": "阿克汉四件套会让弓手攻击缩短变身冷却，常驻变身同时提供增伤、减伤和圣怒恢复。",
+    "template": "阿克汉四件套会让弓手攻击缩短变身冷却，常驻变身同时提供[[Site/damage-boost]]、[[Site/damage-reduction]]和圣怒恢复。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.15c46b4405e5d609": {
+    "source": "冷却转好就施放圣军之阵：弓手。",
+    "template": "冷却转好就施放[[Powers/x1_Crusader_Phalanx3_name]]：弓手。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.8da7219f48b84d83": {
+    "source": "卡萨的战盔和无情斗阵把弓手的持续时间、数量和冷却覆盖接起来。",
+    "template": "[[Items/P4_Unique_Helm_102]]和[[Items/P1_CruShield_norm_unique_02]]把弓手的持续时间、数量和冷却覆盖接起来。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.176c30d9fccf2043": {
+    "source": "审判标记",
+    "template": "[[Powers/X1_Crusader_Judgment_name]]标记",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d60affbae0f80aa7": {
+    "source": "不断把审判铺在精英和密集怪群上。",
+    "template": "不断把[[Powers/X1_Crusader_Judgment_name]]铺在精英和密集怪群上。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.35c652c36f79fb27": {
+    "source": "阿克汉二件套让审判获得所有符文；四件套只会让弓手对被审判目标触发天谴。",
+    "template": "阿克汉二件套让[[Powers/X1_Crusader_Judgment_name]]获得所有符文；四件套只会让弓手对被[[Powers/X1_Crusader_Judgment_name]]目标触发[[Powers/X1_Crusader_Condemn_name]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.3ac27b74e96d0fd0": {
+    "source": "维持资源",
+    "template": "维持资源",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.344e7f350170c8d1": {
+    "source": "用正义补圣怒，在精英爆发前开启势不可挡。",
+    "template": "用[[Powers/X1_Crusader_Justice_name]]补圣怒，在精英爆发前开启[[AttributeDescriptions/NameRune_D#X1_Crusader_LawsOfValor2]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.f4b465f311886257": {
+    "source": "生成技能维持克己守心，勇气律法的减耗又会通过船长套转成伤害和减伤。",
+    "template": "生成技能维持[[Items/Unique_Ring_Set_001_x1]][[Items/Unique_Ring_Set_002_x1]]，[[Powers/X1_Crusader_LawsOfValor2_name]]的减耗又会通过船长套转成伤害和[[Site/damage-reduction]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.bd446c602ba91dcd": {
+    "source": "保持弓手和审判覆盖，围绕首领移动而不是停在原地。",
+    "template": "保持弓手和[[Powers/X1_Crusader_Judgment_name]]覆盖，围绕首领移动而不是停在原地。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b5c41c38a5bc80cb": {
+    "source": "困者、侍从与受罚者负责把持续的宠物触发伤害转成首领阶段的稳定输出。",
+    "template": "[[Items/Unique_Gem_002_x1]]、侍从与[[Items/Unique_Gem_018_x1]]负责把持续的宠物触发伤害转成首领阶段的稳定输出。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7bb497a35093e9e1": {
+    "source": "开局加速",
+    "template": "开局加速",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.bf941e63660e39d4": {
+    "source": "开启阿卡拉特勇士与希望律法，长距离用战马冲锋。",
+    "template": "开启[[Powers/X1_Crusader_AkaratsChampion_name]]与[[Powers/X1_Crusader_LawsOfHope2_name]]，长距离用[[Powers/X1_Crusader_SteedCharge_name]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.85a37b5a34ee5403": {
+    "source": "低层大秘境优先缩短转场，弓手负责触发天谴而不是让角色站桩清每只白怪。",
+    "template": "低层[[NephalemRift/TieredRift]]优先缩短转场，弓手负责触发[[Powers/X1_Crusader_Condemn_name]]而不是让角色站桩清每只白怪。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.f9c210ef4859c3b8": {
+    "source": "铺审判",
+    "template": "铺[[Powers/X1_Crusader_Judgment_name]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.72e6b3d3d3ad5153": {
+    "source": "移动中连续施放审判，再补召弓手。",
+    "template": "移动中连续施放[[Powers/X1_Crusader_Judgment_name]]，再补召弓手。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.dbb87b68010b1142": {
+    "source": "审判会同时触发控制、困者和弓手的天谴条件。",
+    "template": "[[Powers/X1_Crusader_Judgment_name]]会同时触发控制、[[Items/Unique_Gem_002_x1]]和弓手的[[Powers/X1_Crusader_Condemn_name]]条件。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.93893b8044176733": {
+    "source": "追随爆炸",
+    "template": "追随爆炸",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.730472e2366c5bbc": {
+    "source": "让弓手攻击标记目标，必要时手动补天谴。",
+    "template": "让弓手攻击标记目标，必要时手动补[[Powers/X1_Crusader_Condemn_name]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.bf68ea749861eeda": {
+    "source": "低层大秘境仍保留宠物组件，重点是大范围覆盖而不是等待完整首领叠层。",
+    "template": "低层[[NephalemRift/TieredRift]]仍保留宠物组件，重点是大范围覆盖而不是等待完整首领叠层。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.ca2c03e881fc2ca5": {
+    "source": "精英死亡后立即继续骑马或用希望律法穿怪。",
+    "template": "精英死亡后立即继续骑马或用[[Powers/X1_Crusader_LawsOfHope2_name]]穿怪。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.16ddfe678019d45c": {
+    "source": "寅剑和梅塞施密特的击杀冷却要转化成下一组变身和移动技能。",
+    "template": "[[Items/Unique_Sword_1H_113_x1]]和梅塞施密特的击杀冷却要转化成下一组变身和移动技能。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.70e7f997f31f1383": {
+    "source": "开启阿卡拉特勇士与希望律法，保持不间断。",
+    "template": "开启[[Powers/X1_Crusader_AkaratsChampion_name]]与[[Powers/X1_Crusader_LawsOfHope2_name]]，保持不间断。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.54ed659787e64ef3": {
+    "source": "T16用金币链覆盖坚韧后，可以把变身符文和技能栏全部服务于连续清图。",
+    "template": "T16用金币链覆盖坚韧后，可以把变身符文和技能栏全部服务于连续清图。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.34a68bc238fd74a2": {
+    "source": "遇到怪群直接施放天谴：无情爆发。",
+    "template": "遇到怪群直接施放[[Powers/X1_Crusader_Condemn_name]]：无情爆发。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.2679a5a0e573c07c": {
+    "source": "T16不等待弓手触发，把弗莱德之怒和预言之刃放到身上后由角色即时清场。",
+    "template": "T16不等待弓手触发，把[[Items/P61_CruShield_norm_unique_01]]和[[Items/P61_Unique_Sword_2H_007_x1]]放到身上后由角色即时清场。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.05c31cfeb82bf6db": {
+    "source": "召唤刷新",
+    "template": "召唤刷新",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b47fae7cc1f0922b": {
+    "source": "冷却转好就补施圣军之阵：弓手。",
+    "template": "冷却转好就补施[[Powers/x1_Crusader_Phalanx3_name]]：弓手。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.534a0d13e0e8d792": {
+    "source": "即使不再依赖弓手输出，阿克汉四件套仍用弓手攻击刷新变身。",
+    "template": "即使不再依赖弓手输出，阿克汉四件套仍用弓手攻击刷新变身。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.5110d6bc08303c60": {
+    "source": "金币转场",
+    "template": "金币转场",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.ae9aedc9c352d5c2": {
+    "source": "用挑衅恐惧、希望律法和战马穿图，并沿路拾金。",
+    "template": "用[[Powers/X1_Crusader_Provoke_name]]恐惧、[[Powers/X1_Crusader_LawsOfHope2_name]]和战马穿图，并沿路拾金。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b6452695a8ec36b8": {
+    "source": "囤宝者、贪婪之戒与金织带共同提供移速、拾取范围和护甲。",
+    "template": "[[Items/Unique_Gem_014_x1]]、[[Items/Unique_Ring_108_x1]]与[[Items/Unique_Belt_010_x1]]共同提供移速、拾取范围和护甲。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b7dd99a847021e9f": {
+    "source": "审判标记 → 圣军弓手触发天谴 → 变身常驻",
+    "template": "[[Powers/X1_Crusader_Judgment_name]]标记 → 圣军弓手触发[[Powers/X1_Crusader_Condemn_name]] → 变身常驻",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.8f1e1736d5584cf6": {
+    "source": "以卡萨战盔、无情斗阵和宠物攻速维持弓手火力；大秘境冲层让弓手触发天谴，T16则把同一套发动机改成角色自施天谴。",
+    "template": "以卡萨战盔、[[Items/P1_CruShield_norm_unique_02]]和宠物攻速维持弓手火力；[[NephalemRift/TieredRift]][[Site/push]]让弓手触发[[Powers/X1_Crusader_Condemn_name]]，T16则把同一套发动机改成角色自施[[Powers/X1_Crusader_Condemn_name]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.21126ca64cfdb0f8": {
+    "source": "被审判的敌人被推移后承受更多伤害，冲层由审判全符文触发。",
+    "template": "被[[Powers/X1_Crusader_Judgment_name]]的敌人被推移后承受更多伤害，[[Site/push]]由[[Powers/X1_Crusader_Judgment_name]]全符文触发。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.41a844cc3898fc4d": {
+    "source": "与船长腿甲组成套装，把冷却和减耗转为攻防。",
+    "template": "与船长腿甲组成套装，把冷却和减耗转为攻防。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.a3f02803b93f0815": {
+    "source": "与船长腰带组成套装，提供冷却、减耗和坚韧转换。",
+    "template": "与船长腰带组成套装，提供冷却、减耗和坚韧转换。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.0909496985be0633": {
+    "source": "阿克汉套装部件，配皇家华戒让卡萨头盔和船长两件同时成立。",
+    "template": "阿克汉套装部件，配[[Items/Unique_Ring_107_x1]]让卡萨头盔和船长两件同时成立。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.44a8ebaed32cd155": {
+    "source": "天谴初始爆炸命中至少两个目标时，会在目标位置额外触发两次天谴。",
+    "template": "[[Powers/X1_Crusader_Condemn_name]]初始爆炸命中至少两个目标时，会在目标位置额外触发两次[[Powers/X1_Crusader_Condemn_name]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.8f78492beb014b49": {
+    "source": "移除天谴冷却并把天谴改为圣怒消耗技能；T16主动清场时穿戴。",
+    "template": "移除[[Powers/X1_Crusader_Condemn_name]]冷却并把[[Powers/X1_Crusader_Condemn_name]]改为圣怒消耗技能；T16主动清场时穿戴。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.072a47c0a3e7d622": {
+    "source": "5秒未受伤后降低资源消耗，服务T16连续自施天谴。",
+    "template": "5秒未受伤后降低资源消耗，服务T16连续自施[[Powers/X1_Crusader_Condemn_name]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.37a364dee7c8acd5": {
+    "source": "破坏可破坏物后提高移动速度，T16和悬赏赶路用。",
+    "template": "破坏可破坏物后提高移动速度，T16和悬赏赶路用。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.ddb89d46e713f067": {
+    "source": "提供稳定的神圣元素与精英伤，低层速刷不需要等待全能法戒周期。",
+    "template": "提供稳定的神圣元素与精英伤，低层[[Site/speed-farming]]不需要等待[[Items/P2_Unique_Ring_04]]周期。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.dcfdd165fff47eaa": {
+    "source": "挑衅恐惧敌人后提供移速，填补战马和寅剑之间的移动空档。",
+    "template": "[[Powers/X1_Crusader_Provoke_name]]恐惧敌人后提供移速，填补战马和[[Items/Unique_Sword_1H_113_x1]]之间的移动空档。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.cf65fb1ffa50d4a4": {
+    "source": "冲层生成圣怒并维持克己守心；远程剑气不会破坏弓手站位。",
+    "template": "[[Site/push]]生成圣怒并维持[[Items/Unique_Ring_Set_001_x1]][[Items/Unique_Ring_Set_002_x1]]；远程剑气不会破坏弓手站位。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e5826abba91213ee": {
+    "source": "阿克汉二件套赋予所有符文，标记目标后弓手才会触发天谴。",
+    "template": "阿克汉二件套赋予所有符文，标记目标后弓手才会触发[[Powers/X1_Crusader_Condemn_name]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d792075e51cfeae4": {
+    "source": "冲层降低圣怒消耗并提高弓手攻击频率。",
+    "template": "[[Site/push]]降低圣怒消耗并提高弓手攻击频率。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.34f54752f162e403": {
+    "source": "速刷提高转场速度并穿过怪群。",
+    "template": "[[Site/speed-farming]]提高转场速度并穿过怪群。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.08ab2e78d1d0fc2a": {
+    "source": "持续召唤弓手；攻速、数量和冷却是本套的三条主轴。",
+    "template": "持续召唤弓手；攻速、数量和冷却是本套的三条主轴。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.c98a8f8ccebe4b78": {
+    "source": "冲层由弓手触发，T16改为角色手动爆炸清场。",
+    "template": "[[Site/push]]由弓手触发，T16改为角色手动爆炸清场。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.678ee45fe27bc010": {
+    "source": "阿克汉的常驻攻防与圣怒恢复开关。",
+    "template": "阿克汉的常驻攻防与圣怒恢复开关。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7311d2e8dcb999a8": {
+    "source": "低层大秘境和T16的长距离转场。",
+    "template": "低层[[NephalemRift/TieredRift]]和T16的长距离转场。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.608992e0d0955561": {
+    "source": "速刷补圣怒并触发瑞秋戒恐惧移速。",
+    "template": "[[Site/speed-farming]]补圣怒并触发[[Items/Unique_Ring_104_x1]]恐惧移速。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.ccb5c635a6b5c4e8": {
+    "source": "T16穿过怪群时补碰撞免疫与短时防御。",
+    "template": "T16穿过怪群时补碰撞免疫与短时防御。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.6cf24e723017b053": {
+    "source": "双手剑与圣教军盾同时装备时的必要被动。",
+    "template": "双手剑与[[Items/CrusaderShield_000]]同时装备时的必要被动。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.34cbd14db33b1a38": {
+    "source": "提高圣军之阵伤害并缩短弓手与战马冷却。",
+    "template": "提高[[Powers/x1_Crusader_Phalanx3_name]]伤害并缩短弓手与战马冷却。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.47f159407e1642d5": {
+    "source": "延长律法覆盖，减少资源和移动循环空档。",
+    "template": "延长律法覆盖，减少资源和移动循环空档。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.8abf6b997a98dd23": {
+    "source": "由镶嵌宝石提高力量和坚韧。",
+    "template": "由镶嵌宝石提高力量和坚韧。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.925d82caa2a0ade4": {
+    "source": "T16金币链覆盖后可替换的容错被动。",
+    "template": "T16金币链覆盖后可替换的容错被动。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.44c31c862abec541": {
+    "source": "移除天谴冷却并提高天谴伤害。",
+    "template": "移除[[Powers/X1_Crusader_Condemn_name]]冷却并提高[[Powers/X1_Crusader_Condemn_name]]伤害。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.0e17e289503b6443": {
+    "source": "冲层把盾牌放入魔方，T16则穿在副手。",
+    "template": "[[Site/push]]把盾牌放入魔方，T16则穿在副手。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7977840a109247fb": {
+    "source": "弓手攻速直接提高触发天谴的频率。",
+    "template": "弓手攻速直接提高触发[[Powers/X1_Crusader_Condemn_name]]的频率。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.47ebaf24bc8cd4d3": {
+    "source": "同时维持阿克汉六件和船长三件。",
+    "template": "同时维持阿克汉六件和船长三件。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.61754db8c0850ba3": {
+    "source": "第一幕或第四幕悬赏宝箱。",
+    "template": "第一幕或第四幕悬赏宝箱。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.819cf5d862940cc4": {
+    "source": "拾取金币后按金币数量获得护甲。",
+    "template": "拾取金币后按金币数量获得护甲。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.a149501e1d9244ce": {
+    "source": "只在T16、蓝门和悬赏等掉金币内容使用。",
+    "template": "只在T16、蓝门和悬赏等掉金币内容使用。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e3e12668c0769079": {
+    "source": "低层和T16精英连续死亡时刷新战马与变身。",
+    "template": "低层和T16精英连续死亡时刷新战马与变身。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.6b9065e8acfd37f7": {
+    "source": "击杀敌人缩短一个技能的冷却。",
+    "template": "击杀敌人缩短一个技能的冷却。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.71dd841ae0dc2967": {
+    "source": "第39赛季速刷槽用普通击杀压缩变身和战马空档。",
+    "template": "第39赛季[[Site/speed-farming]]槽用普通击杀压缩变身和战马空档。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7e0b6fff1059894e": {
+    "source": "大秘境冲层优先处理精英和首领。",
+    "template": "[[NephalemRift/TieredRift]][[Site/push]]优先处理精英和首领。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.827c1dfe0e902508": {
+    "source": "弓手触发链",
+    "template": "弓手触发链",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e2c8a616b3469a1a": {
+    "source": "审判是触发条件，圣军弓手是执行者，天谴是结算结果。",
+    "template": "[[Powers/X1_Crusader_Judgment_name]]是触发条件，圣军弓手是执行者，[[Powers/X1_Crusader_Condemn_name]]是结算结果。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.0d6a13d79b272b02": {
+    "source": "标记目标",
+    "template": "标记目标"
+  },
+  "app.4d035efbe83b60fb": {
+    "source": "攻击标记目标",
+    "template": "攻击标记目标",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.224ba0ee728afa7c": {
+    "source": "触发范围爆炸",
+    "template": "触发范围爆炸",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.1b2e6329a19f7a80": {
+    "source": "放大宠物触发",
+    "template": "放大宠物触发",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.057478b54d4c41fb": {
+    "source": "变身冷却链",
+    "template": "变身冷却链",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.dd7c2b84b2c4c543": {
+    "source": "卡萨战盔、弓手和宠物攻速共同让阿卡拉特勇士保持常驻。",
+    "template": "卡萨战盔、弓手和宠物攻速共同让[[Powers/X1_Crusader_AkaratsChampion_name]]保持常驻。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.06a8ea15f0950b56": {
+    "source": "压缩弓手冷却",
+    "template": "压缩弓手冷却",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.a254d9aa5058fa16": {
+    "source": "提高攻击频率",
+    "template": "提高攻击频率",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.6c2f9254ff05e40b": {
+    "source": "提供攻防和资源",
+    "template": "提供攻防和资源",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.ae234b6dc2dedba2": {
+    "source": "金币速刷链",
+    "template": "金币[[Site/speed-farming]]链",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.81aff1a6283bf153": {
+    "source": "掉金币内容才同时使用金币护甲、金币宝石和拾取戒指。",
+    "template": "掉金币内容才同时使用金币护甲、金币宝石和拾取戒指。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.2239f3606ae7348b": {
+    "source": "制造金币和移速",
+    "template": "制造金币和移速",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.a7de9802bde2b66b": {
+    "source": "冲层以审判标记为先，让弓手触发天谴；角色保持移动，用正义、律法和船长套维持圣怒。",
+    "template": "[[Site/push]]以[[Powers/X1_Crusader_Judgment_name]]标记为先，让弓手触发[[Powers/X1_Crusader_Condemn_name]]；角色保持移动，用[[Powers/X1_Crusader_Justice_name]]、律法和船长套维持圣怒。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.0b27a3843ea6aa77": {
+    "source": "低层大秘境保留弓手发动机；T16、蓝门和悬赏换成自施天谴、金织带和击杀冷却链。",
+    "template": "低层[[NephalemRift/TieredRift]]保留弓手发动机；T16、蓝门和悬赏换成自施[[Powers/X1_Crusader_Condemn_name]]、[[Items/Unique_Belt_010_x1]]和击杀冷却链。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d64590d70f750e46": {
+    "source": "先做卡萨战盔、无情斗阵、弗莱德之怒、皇家华戒与船长两件，再补宠物攻速和受罚者。",
+    "template": "先做卡萨战盔、[[Items/P1_CruShield_norm_unique_02]]、[[Items/P61_CruShield_norm_unique_01]]、[[Items/Unique_Ring_107_x1]]与船长两件，再补宠物攻速和[[Items/Unique_Gem_018_x1]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.bfdac34833b569e1": {
+    "source": "高巅峰优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；速刷才转钻石与拾取。",
+    "template": "[[Site/high-paragon]]优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；[[Site/speed-farming]]才转钻石与拾取。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.714bca012917b20c": {
+    "source": "圣军之阵/天谴技能伤",
+    "template": "[[Powers/x1_Crusader_Phalanx3_name]]/[[Powers/X1_Crusader_Condemn_name]]技能伤",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.daf586df90681999": {
+    "source": "70万–90万生命",
+    "template": "[[Number/70/wan]]–[[Number/90/wan]]生命",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.8b0dc8e7064f0402": {
+    "source": "先知化身覆盖",
+    "template": "[[AttributeDescriptions/NameRune_D#X1_Crusader_AkaratsChampion]]覆盖",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.8eda67d3cf00399f": {
+    "source": "弓手持续时间",
+    "template": "弓手持续时间",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.032ee2406d81e81b": {
+    "source": "受罚者首领叠层",
+    "template": "[[Items/Unique_Gem_018_x1]]首领叠层",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.2cbdbec3a459c0bf": {
+    "source": "高特效无情斗阵",
+    "template": "高特效[[Items/P1_CruShield_norm_unique_02]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.acd39a1b95c2ae3b": {
+    "source": "低巅峰冲层使用卡萨战盔、阿克汉五件、船长两件、皇家华戒、双盾逻辑和塔斯克；红宝石提供主属性与护甲，受罚者负责首领。",
+    "template": "[[Site/low-paragon]][[Site/push]]使用卡萨战盔、阿克汉五件、船长两件、[[Items/Unique_Ring_107_x1]]、双盾逻辑和塔斯克；红宝石提供主属性与护甲，[[Items/Unique_Gem_018_x1]]负责首领。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d18bb7309d32ec09": {
+    "source": "高巅峰仍保留弓手触发天谴的核心配置，变化集中在巅峰、传奇宝石等级、远古特效、冷却和1.78攻速；不虚构一套不必要的换装。",
+    "template": "[[Site/high-paragon]]仍保留弓手触发[[Powers/X1_Crusader_Condemn_name]]的核心配置，变化集中在[[Site/paragon]]、传奇宝石等级、远古特效、冷却和1.78攻速；不虚构一套不必要的换装。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.2c5e6b57a2558197": {
+    "source": "变身不断档",
+    "template": "变身不断档",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.246d432a57e8e706": {
+    "source": "装备力量洗范围伤",
+    "template": "装备力量洗范围伤",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7998b64e39bfab13": {
+    "source": "弓手高攻速",
+    "template": "弓手高攻速",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.6f56df297f1ccc27": {
+    "source": "无情斗阵与卡萨高特效",
+    "template": "[[Items/P1_CruShield_norm_unique_02]]与卡萨高特效",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.cb511f2ff72a1ef5": {
+    "source": "低巅峰低层大秘境",
+    "template": "[[Site/low-paragon]]低层[[NephalemRift/TieredRift]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.761943895d98a5c3": {
+    "source": "低层大秘境仍会等待弓手触发天谴，所以保留卡萨、塔斯克和无情斗阵；换希望律法、战马、寅剑与梅斧压缩转场，不使用大秘境不会触发的金币链。",
+    "template": "低层[[NephalemRift/TieredRift]]仍会等待弓手触发[[Powers/X1_Crusader_Condemn_name]]，所以保留卡萨、塔斯克和[[Items/P1_CruShield_norm_unique_02]]；换[[Powers/X1_Crusader_LawsOfHope2_name]]、战马、[[Items/Unique_Sword_1H_113_x1]]与[[Items/P66_Unique_Axe_2H_011]]压缩转场，不使用[[NephalemRift/TieredRift]]不会触发的金币链。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.c815c2b68eed38ae": {
+    "source": "天谴技能伤",
+    "template": "[[Powers/X1_Crusader_Condemn_name]]技能伤",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.c05aea86078afa0f": {
+    "source": "连续骑马",
+    "template": "连续骑马",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.52f958c9a33f21ea": {
+    "source": "精英击杀触发寅剑",
+    "template": "精英击杀触发[[Items/Unique_Sword_1H_113_x1]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.697bf18ae9088b00": {
+    "source": "不等待首领叠层",
+    "template": "不等待首领叠层",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.a910faf88982fce9": {
+    "source": "T16、蓝门与悬赏掉金币且伤害门槛较低，去掉弓手专用头盔和护腕，穿傲慢之冠、沃兹克和弗莱德之怒，改为角色自施天谴；囤宝者、贪婪之戒和金织带建立金币防线。",
+    "template": "T16、蓝门与悬赏掉金币且伤害门槛较低，去掉弓手专用头盔和护腕，穿[[Items/Unique_Helm_103_x1]]、[[Items/Unique_Bracer_101_x1]]和[[Items/P61_CruShield_norm_unique_01]]，改为角色自施[[Powers/X1_Crusader_Condemn_name]]；[[Items/Unique_Gem_014_x1]]、[[Items/Unique_Ring_108_x1]]和[[Items/Unique_Belt_010_x1]]建立金币防线。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.17424c71ae61d700": {
+    "source": "伤害溢出后优先转场",
+    "template": "伤害溢出后优先转场",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.4199b9a4283bc182": {
+    "source": "速刷先到上限；冲层缺少专用位移时也能改善走位。",
+    "template": "[[Site/speed-farming]]先到上限；[[Site/push]]缺少专用位移时也能改善走位。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.c9251f9b0a3b50cc": {
+    "source": "同时提供弓手/天谴伤害与护甲。",
+    "template": "同时提供弓手/[[Powers/X1_Crusader_Condemn_name]]伤害与护甲。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.9faef79c4e5b3c87": {
+    "source": "被精英技能击杀时临时投入",
+    "template": "被精英技能击杀时临时投入",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d13106c07a5fe27f": {
+    "source": "低巅峰先保证有时间完成审判和补召唤。",
+    "template": "[[Site/low-paragon]]先保证有时间完成[[Powers/X1_Crusader_Judgment_name]]和补召唤。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.26496c417e736864": {
+    "source": "最大圣怒",
+    "template": "最大圣怒",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d7d226bc7dfaaa0e": {
+    "source": "阿卡拉特、正义和律法足以支撑循环。",
+    "template": "阿卡拉特、[[Powers/X1_Crusader_Justice_name]]和律法足以支撑循环。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b85bd8f3aff8e126": {
+    "source": "弓手、阿卡拉特勇士、律法和战马都依赖冷却覆盖。",
+    "template": "弓手、[[Powers/X1_Crusader_AkaratsChampion_name]]、律法和战马都依赖冷却覆盖。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.f4649e77e0e29483": {
+    "source": "天谴爆炸和宠物触发都受双暴收益影响。",
+    "template": "[[Powers/X1_Crusader_Condemn_name]]爆炸和宠物触发都受双暴收益影响。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e26fe69ad66515ca": {
+    "source": "补足与装备暴伤的比例。",
+    "template": "补足与装备暴伤的比例。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.bf305e5cde291b8f": {
+    "source": "第四点满并配合装备接近1.78",
+    "template": "第四点满并配合装备接近1.78",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.a4669ebd9706ec63": {
+    "source": "18帧弓手断点需要巅峰、武器词缀、律法和魔女共同完成。",
+    "template": "18帧弓手断点需要[[Site/paragon]]、武器词缀、律法和[[Pets/HirelingEnchantress]]共同完成。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.40015bc4486e1024": {
+    "source": "力量已经提供护甲，先补全抗。",
+    "template": "力量已经提供护甲，先补全抗。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.2a83726aea2ab856": {
+    "source": "扩大先知化身和船长减伤后的有效生命。",
+    "template": "扩大[[AttributeDescriptions/NameRune_D#X1_Crusader_AkaratsChampion]]和船长[[Site/damage-reduction]]后的有效生命。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e796fe6598de2ab6": {
+    "source": "仅作审判治疗之外的续航补充。",
+    "template": "仅作[[Powers/X1_Crusader_Judgment_name]][[Powers/Templar_Heal_110_name]]之外的续航补充。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.1438d372c57b88c3": {
+    "source": "速刷优先，冲层后置",
+    "template": "[[Site/speed-farming]]优先，[[Site/push]]后置",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e0625532eaf17491": {
+    "source": "只在T16/蓝门/悬赏金币链中是核心效率属性。",
+    "template": "只在T16/蓝门/悬赏金币链中是核心效率属性。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.3eaa50330fccd067": {
+    "source": "冲层优先点满",
+    "template": "[[Site/push]]优先点满",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b615132a3b969c2d": {
+    "source": "降低审判、天谴和律法的圣怒压力，并转化为船长防御。",
+    "template": "降低[[Powers/X1_Crusader_Judgment_name]]、[[Powers/X1_Crusader_Condemn_name]]和律法的圣怒压力，并转化为船长防御。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.0c67876d9d67f6f5": {
+    "source": "弓手和天谴触发频率高，适合持续恢复。",
+    "template": "弓手和[[Powers/X1_Crusader_Condemn_name]]触发频率高，适合持续恢复。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.9ce6cf1e0549a25a": {
+    "source": "弓手触发的天谴不依赖范围伤，不能挤掉冷却和减耗。",
+    "template": "弓手触发的[[Powers/X1_Crusader_Condemn_name]]不依赖范围伤，不能挤掉冷却和减耗。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.9c5e350cdf733ee3": {
+    "source": "巅峰800后继续提供伤害和护甲。",
+    "template": "[[Site/paragon]]800后继续提供伤害和护甲。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.4905269e9edd4f37": {
+    "source": "冲层无法承受当前层精英技能",
+    "template": "[[Site/push]]无法承受当前层精英技能",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7fc591f7e2f3b319": {
+    "source": "补到能稳定维持斯奎特或弓手站位，再回到力量。",
+    "template": "补到能稳定维持斯奎特或弓手站位，再回到力量。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d5ebe4ac8e0d7835": {
+    "source": "攻速/冷却词缀",
+    "template": "攻速/冷却词缀",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.098347945a86e0da": {
+    "source": "高巅峰冲层",
+    "template": "[[Site/high-paragon]][[Site/push]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.64ff3d8809832366": {
+    "source": "优先完成1.78攻速与足够冷却，不为虚假的固定CDR阈值牺牲更高伤害。",
+    "template": "优先完成1.78攻速与足够冷却，不为虚假的固定CDR阈值牺牲更高伤害。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.1b5ff26aa6492f4b": {
+    "source": "阿克汉、船长、卡萨、无情斗阵、弗莱德和皇家华戒",
+    "template": "阿克汉、船长、卡萨、[[Items/P1_CruShield_norm_unique_02]]、弗莱德和[[Items/Unique_Ring_107_x1]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.2146dbb72ba95979": {
+    "source": "确认五件阿克汉+两件船长与弓手触发链同时成立。",
+    "template": "确认五件阿克汉+两件船长与弓手触发链同时成立。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.df0dcf8b909a1604": {
+    "source": "冷却、攻速、侍从与受罚者",
+    "template": "冷却、攻速、侍从与[[Items/Unique_Gem_018_x1]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.f784e8e75d271dcd": {
+    "source": "先让变身不断档，再围绕审判标记和弓手攻击处理精英。",
+    "template": "先让变身不断档，再围绕[[Powers/X1_Crusader_Judgment_name]]标记和弓手攻击处理精英。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.82071e6c2ee9d536": {
+    "source": "1.78攻速、钻石、范围伤与金币链",
+    "template": "1.78攻速、钻石、范围伤与金币链",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.9d66e56dbaca4261": {
+    "source": "冲层装备逐步把力量让给终局词缀；T16再切钻石、金织带和拾取属性。",
+    "template": "[[Site/push]]装备逐步把力量让给终局词缀；T16再切钻石、[[Items/Unique_Belt_010_x1]]和拾取属性。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.45ce06007c45e020": {
+    "source": "阿克汉五件、船长两件与卡萨战盔",
+    "template": "阿克汉五件、船长两件与卡萨战盔",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.cbcbda2a1019489a": {
+    "source": "卡萨压缩圣军之阵冷却，阿克汉四件让弓手攻击刷新阿卡拉特勇士并触发被审判目标的天谴；皇家华戒和船长套把冷却/减耗转成攻防。",
+    "template": "卡萨压缩[[Powers/x1_Crusader_Phalanx3_name]]冷却，阿克汉四件让弓手攻击刷新[[Powers/X1_Crusader_AkaratsChampion_name]]并触发被[[Powers/X1_Crusader_Judgment_name]]目标的[[Powers/X1_Crusader_Condemn_name]]；[[Items/Unique_Ring_107_x1]]和船长套把冷却/减耗转成攻防。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e03c64bdbed97a24": {
+    "source": "审判是弓手触发天谴的条件，弓手是阿克汉四件套的执行者；不能换成只会自施天谴的T16技能栏。",
+    "template": "[[Powers/X1_Crusader_Judgment_name]]是弓手触发[[Powers/X1_Crusader_Condemn_name]]的条件，弓手是阿克汉四件套的执行者；不能换成只会自施[[Powers/X1_Crusader_Condemn_name]]的T16技能栏。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.c417fb2efdbc558c": {
+    "source": "宠物攻速直接提高弓手触发频率，并帮助靠弓手攻击刷新变身。",
+    "template": "宠物攻速直接提高弓手触发频率，并帮助靠弓手攻击刷新变身。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.eb3f4644726cdde5": {
+    "source": "无情斗阵与弗莱德之怒",
+    "template": "[[Items/P1_CruShield_norm_unique_02]]与[[Items/P61_CruShield_norm_unique_01]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.982c3df198d7724f": {
+    "source": "冲层穿无情斗阵、魔方放弗莱德；T16反过来穿弗莱德并把无情斗阵移出主循环，因为角色自施天谴更快。",
+    "template": "[[Site/push]]穿[[Items/P1_CruShield_norm_unique_02]]、魔方放弗莱德；T16反过来穿弗莱德并把[[Items/P1_CruShield_norm_unique_02]]移出主循环，因为角色自施[[Powers/X1_Crusader_Condemn_name]]更快。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b0c08291c7798bda": {
+    "source": "穿戴弗莱德之怒",
+    "template": "穿戴[[Items/P61_CruShield_norm_unique_01]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.b52fc3bbfe51700d": {
+    "source": "T16、蓝门与悬赏需要手动天谴",
+    "template": "T16、蓝门与悬赏需要手动[[Powers/X1_Crusader_Condemn_name]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e79fd00e2a3c5b64": {
+    "source": "即时无冷却天谴",
+    "template": "即时无冷却[[Powers/X1_Crusader_Condemn_name]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.9409e547b9c0d476": {
+    "source": "失去弓手数量翻倍",
+    "template": "失去弓手数量翻倍",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.0a6a475d7358c766": {
+    "source": "穿戴无情斗阵",
+    "template": "穿戴[[Items/P1_CruShield_norm_unique_02]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.4aeb4963738b33a6": {
+    "source": "大秘境冲层或低层大秘境依赖弓手",
+    "template": "[[NephalemRift/TieredRift]][[Site/push]]或低层[[NephalemRift/TieredRift]]依赖弓手",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.eab2e97549b45ca8": {
+    "source": "弓手数量翻倍、触发频率更高",
+    "template": "弓手数量翻倍、触发频率更高",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.27863a84acd5b96a": {
+    "source": "角色不能直接使用弗莱德盾牌特效",
+    "template": "角色不能直接使用弗莱德盾牌特效",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.e223e307b1faa1a5": {
+    "source": "冲层用焚炉处理精英和首领；低层与T16把第四槽给梅塞施密特，用普通击杀压缩变身和战马冷却。",
+    "template": "[[Site/push]]用[[Items/Unique_Mace_2H_103_x1]]处理精英和首领；低层与T16把第四槽给梅塞施密特，用普通击杀压缩变身和战马冷却。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.996db02265552b6c": {
+    "source": "低层大秘境、T16、蓝门与悬赏精英/白怪连续死亡",
+    "template": "低层[[NephalemRift/TieredRift]]、T16、蓝门与悬赏精英/白怪连续死亡",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.f65acd510cb860a7": {
+    "source": "击杀就能缩短技能冷却",
+    "template": "击杀就能缩短技能冷却",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.eb6cd30f30c8ccac": {
+    "source": "失去冲层的精英伤",
+    "template": "失去[[Site/push]]的精英伤",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.c71d8da71123ad69": {
+    "source": "大秘境冲层首领和精英处理速度不足",
+    "template": "[[NephalemRift/TieredRift]][[Site/push]]首领和精英处理速度不足",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.5c75ca4dc6b6a64b": {
+    "source": "稳定精英伤",
+    "template": "稳定精英伤",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.87305b818ded174a": {
+    "source": "失去击杀冷却",
+    "template": "失去击杀冷却",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7a06590f37df596a": {
+    "source": "速刷装备分支",
+    "template": "[[Site/speed-farming]]装备分支",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.53705d671b836adc": {
+    "source": "低层大秘境仍用弓手和审判，保留卡萨/塔斯克/无情斗阵；T16伤害溢出后换傲慢之冠、沃兹克、弗莱德和金币链。",
+    "template": "低层[[NephalemRift/TieredRift]]仍用弓手和[[Powers/X1_Crusader_Judgment_name]]，保留卡萨/塔斯克/[[Items/P1_CruShield_norm_unique_02]]；T16伤害溢出后换[[Items/Unique_Helm_103_x1]]、[[Items/Unique_Bracer_101_x1]]、弗莱德和金币链。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.6497aaf43d54b37d": {
+    "source": "傲慢之冠 + 金织带",
+    "template": "[[Items/Unique_Helm_103_x1]] + [[Items/Unique_Belt_010_x1]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.0afb2ca78e4713f5": {
+    "source": "高巅峰T16、蓝门与悬赏",
+    "template": "[[Site/high-paragon]]T16、蓝门与悬赏",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.bc0813aeb5e0fac0": {
+    "source": "降低天谴消耗并用金币获得坚韧",
+    "template": "降低[[Powers/X1_Crusader_Condemn_name]]消耗并用金币获得坚韧",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.9777255a0ed1193e": {
+    "source": "不适合不掉金币的大秘境",
+    "template": "不适合不掉金币的[[NephalemRift/TieredRift]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.36e3cb9b46044a45": {
+    "source": "T16和悬赏地图有可破坏物",
+    "template": "T16和悬赏地图有可破坏物",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.11fdef78a24e8995": {
+    "source": "破坏物触发移动速度",
+    "template": "破坏物触发移动速度",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.6be1d3b3ace9dd48": {
+    "source": "失去冲层力士护腕乘区",
+    "template": "失去[[Site/push]][[Items/Unique_Bracer_007_x1]][[Site/multiplier]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.2904525cdaa4f407": {
+    "source": "冲层用困者、侍从和受罚者；低层大秘境把受罚者换强者；T16把侍从换囤宝者，并让金织带与贪婪之戒生效。",
+    "template": "[[Site/push]]用[[Items/Unique_Gem_002_x1]]、侍从和[[Items/Unique_Gem_018_x1]]；低层[[NephalemRift/TieredRift]]把[[Items/Unique_Gem_018_x1]]换强者；T16把侍从换[[Items/Unique_Gem_014_x1]]，并让[[Items/Unique_Belt_010_x1]]与[[Items/Unique_Ring_108_x1]]生效。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.c41814dc3984d5b4": {
+    "source": "低层大秘境速刷",
+    "template": "低层[[NephalemRift/TieredRift]][[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.f53b42f097f1996b": {
+    "source": "首领叠层不如受罚者",
+    "template": "首领叠层不如[[Items/Unique_Gem_018_x1]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.cd18839d5f522efc": {
+    "source": "金币、移速并启动金织带",
+    "template": "金币、移速并启动[[Items/Unique_Belt_010_x1]]",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.69e3df394ebf053c": {
+    "source": "1.78攻速目标",
+    "template": "1.78攻速目标",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.d1566357619010ed": {
+    "source": "没有新的固定冷却断点；优先在武器、两件装备、巅峰、勇气律法和魔女攻速之间完成18帧弓手目标，再用剩余位置补暴击、冷却和元素伤。",
+    "template": "没有新的固定冷却断点；优先在武器、两件装备、[[Site/paragon]]、[[Powers/X1_Crusader_LawsOfValor2_name]]和[[Pets/HirelingEnchantress]]攻速之间完成18帧弓手目标，再用剩余位置补暴击、冷却和元素伤。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.8f844c9dcfc4e223": {
+    "source": "魔女的攻速和冷却增益最贴合弓手；冲层带不死圣物与复仇者护腕，T16再带贪婪之戒延伸金币拾取。",
+    "template": "[[Pets/HirelingEnchantress]]的攻速和冷却增益最贴合弓手；[[Site/push]]带不死圣物与[[Items/Unique_Bracer_106_x1]]，T16再带[[Items/Unique_Ring_108_x1]]延伸金币拾取。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.6939f0a6c6269c55": {
+    "source": "阿克汉圣军配置校验失败：{0}",
+    "template": "阿克汉圣军配置校验失败：{0}",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
   "app.08448e54d4eee8e6": {
     "source": "跑马天拳配置校验失败：{0}",
     "template": "跑马天拳配置校验失败：{0}"
@@ -15046,10 +16296,6 @@
   "app.5f6faf8c1035a728": {
     "source": "自动附加爆裂掌",
     "template": "自动附加[[Powers/Monk_ExplodingPalm_name]]"
-  },
-  "app.0d6a13d79b272b02": {
-    "source": "标记目标",
-    "template": "标记目标"
   },
   "app.80408e826ec55d7c": {
     "source": "触发引爆",
@@ -29226,13 +30472,13 @@
     "source": "技能符文",
     "template": "技能符文"
   },
-  "app.b43b3c54524fa3a1": {
-    "source": "卡奈魔方 · 萃取",
-    "template": "[[Kanais_Cube/header_title]] · 萃取"
-  },
   "app.0b8efa5a3bf10441": {
     "source": "03",
     "template": "03"
+  },
+  "app.b43b3c54524fa3a1": {
+    "source": "卡奈魔方 · 萃取",
+    "template": "[[Kanais_Cube/header_title]] · 萃取"
   },
   "app.361f1205099b031c": {
     "source": "随从 ·",
@@ -29279,10 +30525,6 @@
   "app.7123dab2fc0439d1": {
     "source": "表格随从配装",
     "template": "表格随从配装"
-  },
-  "app.420a31f1a4275702": {
-    "source": "· 推荐",
-    "template": "· 推荐"
   },
   "app.410bcae20d3db386": {
     "source": "↓ 导出当前 PNG",
@@ -29901,21 +31143,40 @@
     "source": "T16改自施无情爆发天谴，寅剑、麦剑和金币链负责连续转场；不保留弓手双盾组件。；高巅峰仍先满足冷却和1.78攻速断点，再把剩余词缀转给范围伤、神圣元素与远古特效。",
     "template": "T16改自施无情爆发[[Powers/X1_Crusader_Condemn_name]]，[[Items/Unique_Sword_1H_113_x1]]、麦剑和金币链负责连续转场；不保留弓手双盾组件。；[[Site/high-paragon]]仍先满足冷却和1.78攻速断点，再把剩余词缀转给范围伤、神圣元素与远古特效。"
   },
-  "app.f1e62afa161b9a88": {
-    "source": "保持安全距离，让弓手围绕被审判的精英持续输出。；优先升级圣教军盾拿无情斗阵，再做卡萨头盔。",
-    "template": "保持安全距离，让弓手围绕被[[Powers/X1_Crusader_Judgment_name]]的精英持续输出。；优先升级[[Items/CrusaderShield_000]]拿[[Items/P1_CruShield_norm_unique_02]]，再做卡萨头盔。"
+  "app.f2a6fb66ad7f3550": {
+    "source": "黄装升级：70级副手，必须选对底材",
+    "template": "黄装升级：70级副手，必须选对底材",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
   },
-  "app.564f0d85e8d5ec95": {
-    "source": "保持安全距离，让弓手围绕被审判的精英持续输出。；宠物攻速、物理元素与范围伤决定上限。",
-    "template": "保持安全距离，让弓手围绕被[[Powers/X1_Crusader_Judgment_name]]的精英持续输出。；宠物攻速、物理元素与范围伤决定上限。"
+  "app.33921954f95b9a32": {
+    "source": "冲层以审判标记为先，让弓手触发天谴；角色保持移动，用正义、律法和船长套维持圣怒。；先做卡萨战盔、无情斗阵、弗莱德之怒、皇家华戒与船长两件，再补宠物攻速和受罚者。",
+    "template": "[[Site/push]]以[[Powers/X1_Crusader_Judgment_name]]标记为先，让弓手触发[[Powers/X1_Crusader_Condemn_name]]；角色保持移动，用[[Powers/X1_Crusader_Justice_name]]、律法和船长套维持圣怒。；先做卡萨战盔、[[Items/P1_CruShield_norm_unique_02]]、[[Items/P61_CruShield_norm_unique_01]]、[[Items/Unique_Ring_107_x1]]与船长两件，再补宠物攻速和[[Items/Unique_Gem_018_x1]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
   },
-  "app.d0a2bef985885b72": {
-    "source": "战马转场，弓手边走边清怪。；优先升级圣教军盾拿无情斗阵，再做卡萨头盔。",
-    "template": "战马转场，弓手边走边清怪。；优先升级[[Items/CrusaderShield_000]]拿[[Items/P1_CruShield_norm_unique_02]]，再做卡萨头盔。"
+  "app.0ff4bba8e43b3af2": {
+    "source": "冲层以审判标记为先，让弓手触发天谴；角色保持移动，用正义、律法和船长套维持圣怒。；高巅峰优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；速刷才转钻石与拾取。",
+    "template": "[[Site/push]]以[[Powers/X1_Crusader_Judgment_name]]标记为先，让弓手触发[[Powers/X1_Crusader_Condemn_name]]；角色保持移动，用[[Powers/X1_Crusader_Justice_name]]、律法和船长套维持圣怒。；[[Site/high-paragon]]优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；[[Site/speed-farming]]才转钻石与拾取。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
   },
-  "app.2b374a8a95bd451f": {
-    "source": "战马转场，弓手边走边清怪。；宠物攻速、物理元素与范围伤决定上限。",
-    "template": "战马转场，弓手边走边清怪。；宠物攻速、物理元素与范围伤决定上限。"
+  "app.1cda1ab19ac082f6": {
+    "source": "低层大秘境保留弓手发动机；T16、蓝门和悬赏换成自施天谴、金织带和击杀冷却链。；先做卡萨战盔、无情斗阵、弗莱德之怒、皇家华戒与船长两件，再补宠物攻速和受罚者。",
+    "template": "低层[[NephalemRift/TieredRift]]保留弓手发动机；T16、蓝门和悬赏换成自施[[Powers/X1_Crusader_Condemn_name]]、[[Items/Unique_Belt_010_x1]]和击杀冷却链。；先做卡萨战盔、[[Items/P1_CruShield_norm_unique_02]]、[[Items/P61_CruShield_norm_unique_01]]、[[Items/Unique_Ring_107_x1]]与船长两件，再补宠物攻速和[[Items/Unique_Gem_018_x1]]。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
+  },
+  "app.7bec06ba83a0aeeb": {
+    "source": "低层大秘境保留弓手发动机；T16、蓝门和悬赏换成自施天谴、金织带和击杀冷却链。；高巅峰优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；速刷才转钻石与拾取。",
+    "template": "低层[[NephalemRift/TieredRift]]保留弓手发动机；T16、蓝门和悬赏换成自施[[Powers/X1_Crusader_Condemn_name]]、[[Items/Unique_Belt_010_x1]]和击杀冷却链。；[[Site/high-paragon]]优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；[[Site/speed-farming]]才转钻石与拾取。",
+    "manual": {
+      "enUS": "Akkhan Phalanx guide note"
+    }
   },
   "app.4d97cdd2ea0cdff0": {
     "source": "惩罚伤害",

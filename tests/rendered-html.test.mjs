@@ -149,8 +149,8 @@ test("renders dedicated farming builds with purpose-specific guidance", async ()
 });
 
 test("keeps shared-configuration builds from receiving unreviewed variant swaps", async () => {
-  const [akkhanPhalanx, godMonk, guideTypes, page] = await Promise.all([
-    render("/builds/akkhan-phalanx").then((response) => response.text()),
+  const [invokerThorns, godMonk, guideTypes, page] = await Promise.all([
+    render("/builds/invoker-thorns").then((response) => response.text()),
     render("/builds/god-monk").then((response) => response.text()),
     readFile(new URL("../app/data/build-guides.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -159,9 +159,31 @@ test("keeps shared-configuration builds from receiving unreviewed variant swaps"
   assert.match(guideTypes, /hasExplicitRuntimeVariants/);
   assert.match(guideTypes, /documented-shared/);
   assert.match(page, /resolveBuildVariantProfile/);
-  assert.match(akkhanPhalanx, /配置差异待实装/);
-  assert.doesNotMatch(akkhanPhalanx, /variant-goldwrap|variant-ingeom/);
+  assert.match(invokerThorns, /配置差异待实装/);
+  assert.doesNotMatch(invokerThorns, /variant-goldwrap|variant-ingeom/);
   assert.doesNotMatch(godMonk, /配置差异待实装/);
+});
+
+test("renders the reviewed Akkhan Phalanx scenarios with pet and self-cast branches", async () => {
+  const [html, crusaderData] = await Promise.all([
+    render("/builds/akkhan-phalanx").then((response) => response.text()),
+    readFile(new URL("../app/data/crusader-builds.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /阿克汉圣军/);
+  assert.match(html, /已逐项校对/);
+  assert.match(html, /低巅峰 &lt; 2000/);
+  assert.match(html, /T16 \/ 速刷/);
+  assert.match(html, /巅峰加点/);
+  assert.match(html, /固定与替换/);
+  assert.doesNotMatch(html, /配置差异待实装/);
+  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.match(crusaderData, new RegExp(`id: "${scenario}"`));
+  }
+  for (const runtimeChoice of ["AKKHAN_PHALANX_CONFIGURATION_BASE", "AKKHAN_PHALANX_SOURCES", "kassar-helm", "tasker", "unrelenting", "frydehr", "goldwrap-power", "messerschmidt", "boon-of-the-hoarder"]) {
+    assert.match(crusaderData, new RegExp(runtimeChoice));
+  }
+  assert.match(crusaderData, /validateReviewedBuildGuide\(AKKHAN_PHALANX_REVIEWED_GUIDE\)/);
 });
 
 test("renders the reviewed Akkhan Condemn scenarios as separate push and T16 loadouts", async () => {

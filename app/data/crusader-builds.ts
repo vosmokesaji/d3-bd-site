@@ -938,6 +938,234 @@ const AKKHAN_CONDEMN_REVIEWED_GUIDE: BuildGuide = {
 const AKKHAN_CONDEMN_VALIDATION_ERRORS = validateReviewedBuildGuide(AKKHAN_CONDEMN_REVIEWED_GUIDE);
 if (AKKHAN_CONDEMN_VALIDATION_ERRORS.length > 0) throw new Error(`阿克汉天谴配置校验失败：${AKKHAN_CONDEMN_VALIDATION_ERRORS.join("；")}`);
 
+const AKKHAN_PHALANX_SOURCES = {
+  overview: "https://www.icy-veins.com/d3/crusader-akkhan-condemn-build",
+  skills: "https://www.icy-veins.com/d3/akkhan-condemn-crusader-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/akkhan-condemn-crusader-bis-gear-gems-paragon-points",
+  greaterRiftSpeed: "https://www.icy-veins.com/d3/akkhan-condemn-crusader-speed-farming-build",
+  t16Speed: "https://www.icy-veins.com/d3/akkhan-condemn-crusader-nephalem-rift-speed-farming-build",
+};
+
+const AKKHAN_PHALANX_PUSH_ROTATION = [
+  { title: "维持变身", action: "进场先开阿卡拉特勇士，并在冷却结束前补开。", reason: "阿克汉四件套会让弓手攻击缩短变身冷却，常驻变身同时提供增伤、减伤和圣怒恢复。" },
+  { title: "召唤弓手", action: "冷却转好就施放圣军之阵：弓手。", reason: "卡萨的战盔和无情斗阵把弓手的持续时间、数量和冷却覆盖接起来。" },
+  { title: "审判标记", action: "不断把审判铺在精英和密集怪群上。", reason: "阿克汉二件套让审判获得所有符文；四件套只会让弓手对被审判目标触发天谴。" },
+  { title: "维持资源", action: "用正义补圣怒，在精英爆发前开启势不可挡。", reason: "生成技能维持克己守心，勇气律法的减耗又会通过船长套转成伤害和减伤。" },
+  { title: "处理首领", action: "保持弓手和审判覆盖，围绕首领移动而不是停在原地。", reason: "困者、侍从与受罚者负责把持续的宠物触发伤害转成首领阶段的稳定输出。" },
+];
+
+const AKKHAN_PHALANX_SPEED_ROTATION = [
+  { title: "开局加速", action: "开启阿卡拉特勇士与希望律法，长距离用战马冲锋。", reason: "低层大秘境优先缩短转场，弓手负责触发天谴而不是让角色站桩清每只白怪。" },
+  { title: "铺审判", action: "移动中连续施放审判，再补召弓手。", reason: "审判会同时触发控制、困者和弓手的天谴条件。" },
+  { title: "追随爆炸", action: "让弓手攻击标记目标，必要时手动补天谴。", reason: "低层大秘境仍保留宠物组件，重点是大范围覆盖而不是等待完整首领叠层。" },
+  { title: "精英后转场", action: "精英死亡后立即继续骑马或用希望律法穿怪。", reason: "寅剑和梅塞施密特的击杀冷却要转化成下一组变身和移动技能。" },
+];
+
+const AKKHAN_PHALANX_T16_ROTATION = [
+  { title: "开局变身", action: "开启阿卡拉特勇士与希望律法，保持不间断。", reason: "T16用金币链覆盖坚韧后，可以把变身符文和技能栏全部服务于连续清图。" },
+  { title: "主动天谴", action: "遇到怪群直接施放天谴：无情爆发。", reason: "T16不等待弓手触发，把弗莱德之怒和预言之刃放到身上后由角色即时清场。" },
+  { title: "召唤刷新", action: "冷却转好就补施圣军之阵：弓手。", reason: "即使不再依赖弓手输出，阿克汉四件套仍用弓手攻击刷新变身。" },
+  { title: "金币转场", action: "用挑衅恐惧、希望律法和战马穿图，并沿路拾金。", reason: "囤宝者、贪婪之戒与金织带共同提供移速、拾取范围和护甲。" },
+];
+
+const AKKHAN_PHALANX_SEED = seeds.find((seed) => seed.id === "akkhan-phalanx")!;
+const AKKHAN_PHALANX_BASE_GUIDE = createClassGuide({
+  ...AKKHAN_PHALANX_SEED,
+  core: "审判标记 → 圣军弓手触发天谴 → 变身常驻",
+  summary: "以卡萨战盔、无情斗阵和宠物攻速维持弓手火力；大秘境冲层让弓手触发天谴，T16则把同一套发动机改成角色自施天谴。",
+  gear: [
+    ...AKKHAN_PHALANX_SEED.gear,
+    legendary("kassar-helm", "头部", "卡萨的战盔", "warhelm-of-kassar-p4_unique_helm_102.png", "显著降低圣军之阵冷却，保证弓手持续在场。", { skill: "圣军之阵" }),
+    legendary("strongarm", "腕部", "力士护腕", "strongarm-bracers-unique_bracer_007_x1.png", "被审判的敌人被推移后承受更多伤害，冲层由审判全符文触发。", { element: "物理" }),
+    legendary("crimson-belt", "腰部", "克里森船长的丝带", "captain-crimsons-silk-girdle.png", "与船长腿甲组成套装，把冷却和减耗转为攻防。", { quality: "set" }),
+    legendary("crimson-pants", "腿部", "克里森船长的推裤", "captain-crimsons-thrust.png", "与船长腰带组成套装，提供冷却、减耗和坚韧转换。", { quality: "set" }),
+    legendary("akkhan-talisman", "颈部", "阿克汉护符", "talisman-of-akkhan-p43_akkhanset_amulet.png", "阿克汉套装部件，配皇家华戒让卡萨头盔和船长两件同时成立。", { quality: "set", element: "物理" }),
+    jewelry("focus", "trapped"),
+    jewelry("restraint", "stricken"),
+    legendary("blade-prophecy", "主手", "预言之刃", "blade-of-prophecy-p61_unique_sword_2h_007_x1.png", "天谴初始爆炸命中至少两个目标时，会在目标位置额外触发两次天谴。", { base: "双手剑" }),
+    legendary("frydehr", "副手", "弗莱德之怒", "frydehrs-wrath-p61_crushield_norm_unique_01.png", "移除天谴冷却并把天谴改为圣怒消耗技能；T16主动清场时穿戴。"),
+    legendary("prides-fall", "头部", "傲慢之冠", "prides-fall-unique_helm_103_x1.png", "5秒未受伤后降低资源消耗，服务T16连续自施天谴。"),
+    legendary("warzechian", "腕部", "沃兹克护腕", "warzechian-armguards-unique_bracer_101_x1.png", "破坏可破坏物后提高移动速度，T16和悬赏赶路用。"),
+    legendary("akkhan-avarice", "手指", "贪婪之戒", "avarice-band-unique_ring_108_x1.png", "拾取金币后扩大拾取范围，连接囤宝者与金织带。", { gem: "hoarder" }),
+    legendary("akkhan-soj", "手指", "乔丹之石", "stone-of-jordan-p69_unique_ring_019.png", "提供稳定的神圣元素与精英伤，低层速刷不需要等待全能法戒周期。", { gem: "powerful" }),
+    legendary("akkhan-rechel", "手指", "瑞秋的行窃之戒", "rechels-ring-of-larceny-unique_ring_104_x1.png", "挑衅恐惧敌人后提供移速，填补战马和寅剑之间的移动空档。", { gem: "powerful" }),
+  ],
+  skills: [
+    skill("justice", "正义", "正义之剑", "冲层生成圣怒并维持克己守心；远程剑气不会破坏弓手站位。"),
+    skill("judgment", "审判", "全符文", "阿克汉二件套赋予所有符文，标记目标后弓手才会触发天谴。"),
+    skill("laws-of-valor", "勇气律法", "势不可挡", "冲层降低圣怒消耗并提高弓手攻击频率。"),
+    skill("laws-of-hope", "希望律法", "天使之翼", "速刷提高转场速度并穿过怪群。"),
+    skill("phalanx", "圣军之阵", "弓手", "持续召唤弓手；攻速、数量和冷却是本套的三条主轴。"),
+    skill("condemn", "天谴", "无情爆发", "冲层由弓手触发，T16改为角色手动爆炸清场。"),
+    skill("akarats-champion", "阿卡拉特勇士", "先知化身", "阿克汉的常驻攻防与圣怒恢复开关。"),
+    skill("steed-charge", "战马冲锋", "耐力", "低层大秘境和T16的长距离转场。"),
+    skill("provoke", "挑衅", "惊慌失措", "速刷补圣怒并触发瑞秋戒恐惧移速。"),
+    skill("iron-skin", "钢铁之肤", "闪光之肤", "T16穿过怪群时补碰撞免疫与短时防御。"),
+  ],
+  passives: [
+    passive("heavenly-strength", "天堂之力", "双手剑与圣教军盾同时装备时的必要被动。"),
+    passive("lord-commander", "统御者", "提高圣军之阵伤害并缩短弓手与战马冷却。"),
+    passive("long-arm-of-the-law", "律法无边", "延长律法覆盖，减少资源和移动循环空档。"),
+    passive("finery", "宝石之力", "由镶嵌宝石提高力量和坚韧。"),
+    passive("indestructible", "坚不可摧", "T16金币链覆盖后可替换的容错被动。"),
+  ],
+  powers: [
+    power("frydehr-power", "武器", "弗莱德之怒", "frydehrs-wrath-p61_crushield_norm_unique_01.png", "移除天谴冷却并提高天谴伤害。", "冲层把盾牌放入魔方，T16则穿在副手。"),
+    power("tasker", "防具", "塔斯克与西奥", "tasker-and-theo-unique_gloves_003_x1.png", "提高宠物攻击速度。", "弓手攻速直接提高触发天谴的频率。"),
+    power("royal-grandeur", "首饰", "皇家华戒", "ring-of-royal-grandeur-unique_ring_107_x1.png", "套装需求件数减少1。", "同时维持阿克汉六件和船长三件。", "第一幕或第四幕悬赏宝箱。"),
+    power("goldwrap-power", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币数量获得护甲。", "只在T16、蓝门和悬赏等掉金币内容使用。"),
+    power("ingeom", "武器", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "低层和T16精英连续死亡时刷新战马与变身。"),
+    power("messerschmidt", "第4槽", "梅塞施密特的劫掠者", "messerschmidts-reaver-p66_unique_axe_2h_011.png", "击杀敌人缩短一个技能的冷却。", "第39赛季速刷槽用普通击杀压缩变身和战马空档。"),
+    power("furnace", "第4槽", "焚炉", "the-furnace-unique_mace_2h_103_x1.png", "提高精英伤害。", "大秘境冲层优先处理精英和首领。"),
+  ],
+  links: [
+    { title: "弓手触发链", category: "damage", conclusion: "审判是触发条件，圣军弓手是执行者，天谴是结算结果。", steps: [["judgment", "审判全符文", "标记目标"], ["phalanx", "圣军弓手", "攻击标记目标"], ["condemn", "天谴", "触发范围爆炸"], ["enforcer", "侍从宝石", "放大宠物触发"]] },
+    { title: "变身冷却链", category: "defense", conclusion: "卡萨战盔、弓手和宠物攻速共同让阿卡拉特勇士保持常驻。", steps: [["kassar-helm", "卡萨战盔", "压缩弓手冷却"], ["tasker", "塔斯克与西奥", "提高攻击频率"], ["akarats-champion", "阿卡拉特勇士", "提供攻防和资源"]] },
+    { title: "金币速刷链", category: "movement", conclusion: "掉金币内容才同时使用金币护甲、金币宝石和拾取戒指。", steps: [["boon-of-the-hoarder", "囤宝者", "制造金币和移速"], ["akkhan-avarice", "贪婪之戒", "扩大拾取范围"], ["goldwrap-power", "金织带", "拾金叠护甲"], ["ingeom", "寅剑", "精英后刷新冷却"]] },
+  ],
+  rotation: AKKHAN_PHALANX_PUSH_ROTATION,
+  pushNote: "冲层以审判标记为先，让弓手触发天谴；角色保持移动，用正义、律法和船长套维持圣怒。",
+  speedNote: "低层大秘境保留弓手发动机；T16、蓝门和悬赏换成自施天谴、金织带和击杀冷却链。",
+  lowNote: "先做卡萨战盔、无情斗阵、弗莱德之怒、皇家华戒与船长两件，再补宠物攻速和受罚者。",
+  highNote: "高巅峰优先满足冷却和1.78攻速，再把装备力量换成范围伤、元素伤和更高特效；速刷才转钻石与拾取。",
+});
+
+const AKKHAN_PHALANX_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "kassar-helm", shoulders: "akkhan-shoulders", chest: "akkhan-chest", gloves: "akkhan-gloves",
+    bracers: "strongarm", belt: "crimson-belt", pants: "crimson-pants", boots: "akkhan-boots",
+    amulet: "akkhan-talisman", ring1: "focus", ring2: "restraint", weapon: "blade-prophecy", offhand: "unrelenting",
+  },
+  skills: [
+    { id: "justice", rune: "正义之剑" }, { id: "judgment" }, { id: "laws-of-valor", rune: "势不可挡" },
+    { id: "phalanx", rune: "弓手" }, { id: "condemn", rune: "无情爆发" }, { id: "akarats-champion", rune: "先知化身" },
+  ],
+  passives: ["heavenly-strength", "lord-commander", "long-arm-of-the-law", "finery"],
+  powers: { weapon: "frydehr-power", armor: "tasker", jewelry: "royal-grandeur", season: "furnace" },
+  legendaryGems: { control: "bane-of-the-trapped", pet: "enforcer", boss: "bane-of-the-stricken" },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"), weapon: ["flawless-royal-emerald"] },
+  follower: { id: "enchantress", items: ["不死圣物", "复仇者护腕"], skills: ["冷却增强", "攻速增强"] },
+  statPriorities: {
+    global: ["冷却缩减", "攻击速度至1.78", "物理元素伤", "圣军之阵/天谴技能伤"],
+    survival: ["全元素抗性", "70万–90万生命", "先知化身覆盖"],
+    endgame: ["弓手持续时间", "受罚者首领叠层", "高特效无情斗阵"],
+  },
+  rotation: AKKHAN_PHALANX_PUSH_ROTATION,
+};
+
+const AKKHAN_PHALANX_SCENARIOS: BuildScenario[] = [
+  {
+    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
+    reason: "低巅峰冲层使用卡萨战盔、阿克汉五件、船长两件、皇家华戒、双盾逻辑和塔斯克；红宝石提供主属性与护甲，受罚者负责首领。",
+    sourceRefs: [AKKHAN_PHALANX_SOURCES.overview, AKKHAN_PHALANX_SOURCES.skills, AKKHAN_PHALANX_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "高巅峰仍保留弓手触发天谴的核心配置，变化集中在巅峰、传奇宝石等级、远古特效、冷却和1.78攻速；不虚构一套不必要的换装。",
+    patch: {
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      statPriorities: { global: ["冷却缩减", "攻击速度至1.78", "物理元素伤", "范围伤害"], survival: ["全元素抗性", "70万–90万生命", "变身不断档"], endgame: ["装备力量洗范围伤", "弓手高攻速", "无情斗阵与卡萨高特效"] },
+    },
+    sourceRefs: [AKKHAN_PHALANX_SOURCES.skills, AKKHAN_PHALANX_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "speed-low", label: "低巅峰低层大秘境", content: "greater-rift-speed", paragonBand: "low", applicability: "supported",
+    reason: "低层大秘境仍会等待弓手触发天谴，所以保留卡萨、塔斯克和无情斗阵；换希望律法、战马、寅剑与梅斧压缩转场，不使用大秘境不会触发的金币链。",
+    patch: {
+      gear: { ring1: "akkhan-soj", ring2: "coe" },
+      skills: [{ id: "steed-charge", rune: "耐力" }, { id: "judgment" }, { id: "laws-of-hope", rune: "天使之翼" }, { id: "phalanx", rune: "弓手" }, { id: "condemn", rune: "无情爆发" }, { id: "akarats-champion", rune: "先知化身" }],
+      powers: { weapon: "ingeom", season: "messerschmidt" },
+      legendaryGems: { control: "bane-of-the-trapped", pet: "enforcer", boss: "bane-of-the-powerful" },
+      follower: { items: ["不死圣物", "复仇者护腕"], skills: ["冷却增强", "攻速增强"] },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "攻击速度至1.78", "天谴技能伤"], survival: ["全元素抗性", "力量", "体能"], endgame: ["连续骑马", "精英击杀触发寅剑", "不等待首领叠层"] },
+      rotation: AKKHAN_PHALANX_SPEED_ROTATION,
+    },
+    sourceRefs: [AKKHAN_PHALANX_SOURCES.greaterRiftSpeed, AKKHAN_PHALANX_SOURCES.gear], reviewedAt: "2026-09-12",
+  },
+  {
+    id: "speed-high", label: "高巅峰 T16 / 蓝门 / 悬赏", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
+    reason: "T16、蓝门与悬赏掉金币且伤害门槛较低，去掉弓手专用头盔和护腕，穿傲慢之冠、沃兹克和弗莱德之怒，改为角色自施天谴；囤宝者、贪婪之戒和金织带建立金币防线。",
+    patch: {
+      gear: { head: "prides-fall", bracers: "warzechian", ring1: "akkhan-soj", ring2: "akkhan-avarice", offhand: "frydehr" },
+      skills: [{ id: "provoke", rune: "惊慌失措" }, { id: "condemn", rune: "无情爆发" }, { id: "laws-of-hope", rune: "天使之翼" }, { id: "phalanx", rune: "弓手" }, { id: "iron-skin", rune: "闪光之肤" }, { id: "akarats-champion", rune: "先知化身" }],
+      passives: ["heavenly-strength", "indestructible", "long-arm-of-the-law", "finery"],
+      powers: { weapon: "ingeom", armor: "goldwrap-power", season: "messerschmidt" },
+      legendaryGems: { control: "bane-of-the-trapped", pet: "bane-of-the-powerful", boss: "boon-of-the-hoarder" },
+      normalGems: { armor: Array(5).fill("flawless-royal-diamond") },
+      follower: { items: ["贪婪之戒", "复仇者护腕", "不死圣物"], skills: ["冷却增强", "攻速增强"] },
+      statPriorities: { global: ["25%移速上限", "冷却缩减", "拾取范围", "天谴技能伤"], survival: ["金币链覆盖", "全元素抗性"], endgame: ["连续战马", "破坏物移速", "伤害溢出后优先转场"] },
+      rotation: AKKHAN_PHALANX_T16_ROTATION,
+    },
+    sourceRefs: [AKKHAN_PHALANX_SOURCES.t16Speed, AKKHAN_PHALANX_SOURCES.greaterRiftSpeed], reviewedAt: "2026-09-12",
+  },
+];
+
+const AKKHAN_PHALANX_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "速刷先到上限；冲层缺少专用位移时也能改善走位。" },
+      { stat: "力量", target: "其余点数", reason: "同时提供弓手/天谴伤害与护甲。" },
+      { stat: "体能", target: "被精英技能击杀时临时投入", reason: "低巅峰先保证有时间完成审判和补召唤。" },
+      { stat: "最大圣怒", target: "0点", reason: "阿卡拉特、正义和律法足以支撑循环。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "弓手、阿卡拉特勇士、律法和战马都依赖冷却覆盖。" },
+      { stat: "暴击伤害", target: "第二点满", reason: "天谴爆炸和宠物触发都受双暴收益影响。" },
+      { stat: "暴击几率", target: "第三点满", reason: "补足与装备暴伤的比例。" },
+      { stat: "攻击速度", target: "第四点满并配合装备接近1.78", reason: "18帧弓手断点需要巅峰、武器词缀、律法和魔女共同完成。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量已经提供护甲，先补全抗。" },
+      { stat: "生命%", target: "第二点满", reason: "扩大先知化身和船长减伤后的有效生命。" },
+      { stat: "护甲", target: "第三点满", reason: "补充力量提供的护甲。" },
+      { stat: "生命恢复", target: "最后点满", reason: "仅作审判治疗之外的续航补充。" },
+    ],
+    utility: [
+      { stat: "金币拾取范围", target: "速刷优先，冲层后置", reason: "只在T16/蓝门/悬赏金币链中是核心效率属性。" },
+      { stat: "能量消耗降低", target: "冲层优先点满", reason: "降低审判、天谴和律法的圣怒压力，并转化为船长防御。" },
+      { stat: "击中回复生命", target: "第三点满", reason: "弓手和天谴触发频率高，适合持续恢复。" },
+      { stat: "范围伤害", target: "最后点满", reason: "弓手触发的天谴不依赖范围伤，不能挤掉冷却和减耗。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认", reason: "巅峰800后继续提供伤害和护甲。" },
+    { priority: "体能", when: "冲层无法承受当前层精英技能", reason: "补到能稳定维持斯奎特或弓手站位，再回到力量。" },
+    { priority: "攻速/冷却词缀", when: "高巅峰冲层", reason: "优先完成1.78攻速与足够冷却，不为虚假的固定CDR阈值牺牲更高伤害。" },
+  ],
+  checkpoints: [
+    { label: "刚成型", target: "阿克汉、船长、卡萨、无情斗阵、弗莱德和皇家华戒", action: "确认五件阿克汉+两件船长与弓手触发链同时成立。" },
+    { label: "巅峰800", target: "冷却、攻速、侍从与受罚者", action: "先让变身不断档，再围绕审判标记和弓手攻击处理精英。" },
+    { label: "巅峰2000+", target: "1.78攻速、钻石、范围伤与金币链", action: "冲层装备逐步把力量让给终局词缀；T16再切钻石、金织带和拾取属性。" },
+  ],
+};
+
+const AKKHAN_PHALANX_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "akkhan-phalanx-core", targetType: "gear", targetId: "kassar-helm", label: "阿克汉五件、船长两件与卡萨战盔", status: "locked", reason: "卡萨压缩圣军之阵冷却，阿克汉四件让弓手攻击刷新阿卡拉特勇士并触发被审判目标的天谴；皇家华戒和船长套把冷却/减耗转成攻防。" },
+  { key: "judgment-bowmen", targetType: "skill", targetId: "judgment", label: "审判 + 圣军弓手", status: "locked", reason: "审判是弓手触发天谴的条件，弓手是阿克汉四件套的执行者；不能换成只会自施天谴的T16技能栏。" },
+  { key: "pet-attack-speed", targetType: "power", targetId: "tasker", label: "塔斯克与西奥", status: "locked", reason: "宠物攻速直接提高弓手触发频率，并帮助靠弓手攻击刷新变身。" },
+  { key: "shield-position", targetType: "gear", targetId: "unrelenting", label: "无情斗阵与弗莱德之怒", status: "conditional", reason: "冲层穿无情斗阵、魔方放弗莱德；T16反过来穿弗莱德并把无情斗阵移出主循环，因为角色自施天谴更快。", alternatives: [{ id: "frydehr", label: "穿戴弗莱德之怒", when: "T16、蓝门与悬赏需要手动天谴", gain: "即时无冷却天谴", cost: "失去弓手数量翻倍", scenarios: ["speed-high"] }, { id: "unrelenting", label: "穿戴无情斗阵", when: "大秘境冲层或低层大秘境依赖弓手", gain: "弓手数量翻倍、触发频率更高", cost: "角色不能直接使用弗莱德盾牌特效", scenarios: ["push-low", "push-high", "speed-low"] }] },
+  { key: "season-slot", targetType: "power", targetId: "furnace", label: "第39赛季第四槽", status: "conditional", reason: "冲层用焚炉处理精英和首领；低层与T16把第四槽给梅塞施密特，用普通击杀压缩变身和战马冷却。", alternatives: [{ id: "messerschmidt", label: "梅塞施密特的劫掠者", when: "低层大秘境、T16、蓝门与悬赏精英/白怪连续死亡", gain: "击杀就能缩短技能冷却", cost: "失去冲层的精英伤", scenarios: ["speed-low", "speed-high"] }, { id: "furnace", label: "焚炉", when: "大秘境冲层首领和精英处理速度不足", gain: "稳定精英伤", cost: "失去击杀冷却", scenarios: ["push-low", "push-high"] }] },
+  { key: "speed-gear", targetType: "gear", targetId: "strongarm", label: "速刷装备分支", status: "conditional", reason: "低层大秘境仍用弓手和审判，保留卡萨/塔斯克/无情斗阵；T16伤害溢出后换傲慢之冠、沃兹克、弗莱德和金币链。", alternatives: [{ id: "prides-fall", label: "傲慢之冠 + 金织带", when: "高巅峰T16、蓝门与悬赏", gain: "降低天谴消耗并用金币获得坚韧", cost: "不适合不掉金币的大秘境", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-high"] }, { id: "warzechian", label: "沃兹克护腕", when: "T16和悬赏地图有可破坏物", gain: "破坏物触发移动速度", cost: "失去冲层力士护腕乘区", scenarios: ["speed-high"] }] },
+  { key: "legendary-gems", targetType: "legendary-gem", targetId: "enforcer", label: "传奇宝石", status: "conditional", reason: "冲层用困者、侍从和受罚者；低层大秘境把受罚者换强者；T16把侍从换囤宝者，并让金织带与贪婪之戒生效。", alternatives: [{ id: "bane-of-the-powerful", label: "强者之灾", when: "低层大秘境速刷", gain: "精英后稳定增伤减伤", cost: "首领叠层不如受罚者", scenarios: ["speed-low"] }, { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "T16、蓝门与悬赏", gain: "金币、移速并启动金织带", cost: "大秘境不掉金币", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-high"] }] },
+  { key: "attack-speed-breakpoint", targetType: "gear", targetId: "blade-prophecy", label: "1.78攻速目标", status: "flexible", reason: "没有新的固定冷却断点；优先在武器、两件装备、巅峰、勇气律法和魔女攻速之间完成18帧弓手目标，再用剩余位置补暴击、冷却和元素伤。" },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从", status: "flexible", reason: "魔女的攻速和冷却增益最贴合弓手；冲层带不死圣物与复仇者护腕，T16再带贪婪之戒延伸金币拾取。" },
+];
+
+const AKKHAN_PHALANX_REVIEWED_GUIDE: BuildGuide = {
+  ...AKKHAN_PHALANX_BASE_GUIDE,
+  configurationBase: AKKHAN_PHALANX_CONFIGURATION_BASE,
+  defaultMode: "push",
+  defaultScenarioId: "push-low",
+  scenarios: AKKHAN_PHALANX_SCENARIOS,
+  paragonGuide: AKKHAN_PHALANX_PARAGON,
+  choicePolicies: AKKHAN_PHALANX_CHOICE_POLICIES,
+  reviewStatus: "fully-reviewed",
+  variantCompleteness: "complete",
+};
+
+const AKKHAN_PHALANX_VALIDATION_ERRORS = validateReviewedBuildGuide(AKKHAN_PHALANX_REVIEWED_GUIDE);
+if (AKKHAN_PHALANX_VALIDATION_ERRORS.length > 0) throw new Error(`阿克汉圣军配置校验失败：${AKKHAN_PHALANX_VALIDATION_ERRORS.join("；")}`);
+
 const PONY_REVIEWED_GUIDE: BuildGuide = {
   ...createClassGuide(ponySeed),
   configurationBase: PONY_CONFIGURATION_BASE,
@@ -961,5 +1189,6 @@ export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
   [VALOR_FURY_REVIEWED_GUIDE.id]: VALOR_FURY_REVIEWED_GUIDE,
   [VALOR_FIST_REVIEWED_GUIDE.id]: VALOR_FIST_REVIEWED_GUIDE,
   [AKKHAN_CONDEMN_REVIEWED_GUIDE.id]: AKKHAN_CONDEMN_REVIEWED_GUIDE,
+  [AKKHAN_PHALANX_REVIEWED_GUIDE.id]: AKKHAN_PHALANX_REVIEWED_GUIDE,
   [PONY_REVIEWED_GUIDE.id]: PONY_REVIEWED_GUIDE,
 };

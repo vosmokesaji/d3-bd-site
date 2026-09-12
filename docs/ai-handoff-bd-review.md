@@ -1,6 +1,6 @@
 # BD 逐套校对 AI 交接手册
 
-更新日期：2026-08-29
+更新日期：2026-09-12
 
 这是一份可独立使用的续作说明。接手者应以本文件记录的状态为起点，不依赖此前对话记忆。当前目标不是一次性批量补齐 51 套 BD，而是按照清单逐套研究、实现、验证、记录和提交，确保页面上的场景变化来自真实配置，而不是只改变说明文字。
 
@@ -36,12 +36,12 @@ npm test
 
 | 状态 | 数量 | BD |
 | --- | ---: | --- |
-| 已完整校对 | 25 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
+| 已完整校对 | 26 | `tragoul-nova`、`wastes-rend`、`pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx`、`god-hungering`、`god-monk`、`lod-nova`、`inarius-nova`、`rathma-aotd`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion`、`tal-meteor`、`lod-meteor`、`firebird-eb`、`delsere-twister`、`vyr-archon`、`typhon-hydra`、`lod-orb`、`mundunugu-barrage`、`raekor-boulder`、`ik-hota`、`lod-hota` |
 | 部分实装 | 0 | 无 |
-| 尚未逐套校对 | 26 | 见路线图第 9 节清单 |
-| 仍需完成 | 26 | 26 套草稿 |
+| 尚未逐套校对 | 25 | 见路线图第 9 节清单 |
+| 仍需完成 | 25 | 25 套草稿 |
 
-当前工作游标：路线图清单第 17 项 `akkhan-phalanx`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
+当前工作游标：路线图清单第 18 项 `invoker-thorns`。用户已明确切到“下一个职业”，因此野蛮人剩余 `earth-leapquake`、`h90-frenzy`、`ik-charge` 暂时保留待校对，不标记完成。
 
 死灵法师 7 套已全部完成（含此前已完成的 `tragoul-nova`）。
 
@@ -51,11 +51,11 @@ npm test
 
 野蛮人 `raekor-boulder`、`ik-hota`、`lod-hota` 已完成。
 
-圣教军 `pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn` 已完成。
+圣教军 `pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx` 已完成。
 
 建议后续顺序：
 
-1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `akkhan-phalanx`）；之后依次处理 `invoker-thorns`、`roland-sweep`、`seeker-hammer`、`lod-bombardment`。
+1. 继续按照 `docs/bd-content-and-ui-roadmap.md` 第 9 节的当前职业推进（下一套 `invoker-thorns`）；之后依次处理 `roland-sweep`、`seeker-hammer`、`lod-bombardment`。
 
 已完成的基础设施：
 
@@ -64,7 +64,7 @@ npm test
 - `components/items/DiabloItemFrame.tsx` 是装备框统一底层组件。
 - 随从装备盘、空槽、技能区和多视口布局已经完成。
 - 全站字号/行高 token 与关键视觉回归已经完成。
-- 最近一次完整验证为构建后执行的 `node --test tests/*.test.mjs`，42 项全部通过。
+- 最近一次完整验证为构建后执行的 `npm test`，64 项全部通过。
 
 已知部分实装的真实含义：
 
@@ -342,7 +342,7 @@ npm run dev -- --port 3003
 
 `npm test` 从 25 项增至 31 项；六条死灵法师路由视觉检查无错误、图片资源全部有效。
 
-## 6.4 下一套：蒙嘟噜魂弹
+## 6.4 已完成：蒙嘟噜魂弹
 
 目标 ID：`mundunugu-barrage`
 
@@ -367,12 +367,24 @@ npm run dev -- --port 3003
 - 第 39 赛季第四魔方槽的适用边界。
 - 随从在冲层与速刷中的装备区别。
 
-预期结果：
+交付结果：
 
 - 目标 guide 通过 `validateReviewedBuildGuide`。
 - 路由切换展示真实配置差异。
-- `reviewStatus` 为 `fully-reviewed`。
-- 剩余 46 套更新为 45 套；下一工作游标更新为路线图第 7 项 `tal-meteor`。
+- `reviewStatus` 已为 `fully-reviewed`，并已纳入完成台账。
+- 本轮完成后总体剩余 25 套；下一工作游标为 `invoker-thorns`。
+
+## 6.5 已完成：阿克汉圣军
+
+目标 ID：`akkhan-phalanx`（2026-09-12 完成）
+
+以第 39 赛季 NS、补丁 2.7.8 和第四魔方槽为基准，按 Icy Veins 当前阿克汉天谴/圣军资料拆成四个真实场景：
+
+- 冲层：卡萨战盔、阿克汉五件、船长两件、皇家华戒、无情斗阵与弗莱德之怒双盾逻辑，圣军弓手负责触发天谴；高巅峰补冷却、1.78 攻速、范围伤与元素伤。
+- 低层大秘境速刷：保留弓手触发链，使用希望律法、战马、寅剑与梅塞施密特压缩转场，不套用只适合掉金币内容的金币链。
+- T16/蓝门/悬赏：穿弗莱德之怒与傲慢之冠、沃兹克，角色自施天谴，使用金织带、贪婪之戒、囤宝者和击杀冷却链。
+
+已补齐四场景的装备、技能、被动、魔方、传奇/普通宝石、随从、循环、800 点前后与高巅峰指导，以及固定/条件替换策略。`validateReviewedBuildGuide(AKKHAN_PHALANX_REVIEWED_GUIDE)` 通过；`npm test` 64 项全部通过；路由测试确认宠物触发和 T16 自施天谴分支均为真实运行时配置。下一套为 `invoker-thorns`。
 
 ## 7. 做完后如何记录
 
@@ -484,7 +496,8 @@ git log -1 --stat
 | 8 | `raekor-boulder` | 已校对 | `feat(bd): 完成蕾蔻巨石多场景校对` | 双矛/斯古拉冲层、寅剑/梅斧冷却、复仇者/沃兹克与金币链速刷、分支来源 | 仅回归维护 |
 | 9 | `ik-hota` | 已校对 | `feat(bd): 完成不朽先祖锤多场景校对` | 不朽双常驻、审判之锤/先民护腕/悔恨、金币链与寅剑速刷、分支来源 | 仅回归维护 |
 | 10 | `lod-hota` | 已校对 | `feat(bd): 完成梦遗先祖锤多场景校对` | 梦遗远古门槛、黄道/卡修斯主动防线、金币链速刷与不推荐边界、分支来源 | 仅回归维护 |
-| 16 | `akkhan-condemn` | 已校对 | `feat(bd): 完成阿克汉天谴多场景校对` | 双盾弓手冲层、自施天谴金币链速刷、冷却/攻速阈值与来源 | 下一套 `akkhan-phalanx` |
+| 16 | `akkhan-condemn` | 已校对 | `feat(bd): 完成阿克汉天谴多场景校对` | 双盾弓手冲层、自施天谴金币链速刷、冷却/攻速阈值与来源 | 仅回归维护 |
+| 17 | `akkhan-phalanx` | 已校对 | `feat(bd): 完成阿克汉圣军多场景校对` | 弓手触发天谴、低层弓手速刷、T16 自施天谴金币链、1.78 攻速与来源 | 下一套 `invoker-thorns` |
 
 其余顺序以 `docs/bd-content-and-ui-roadmap.md` 第 9 节为准。每完成一项，都要更新本台账；不要只修改路线图中的勾选框。
 
@@ -501,4 +514,4 @@ git log -1 --stat
 - 禁止顺手重构无关页面、重生成物品索引或替换静态素材。
 - 禁止覆盖用户未提交的改动，或使用 `git reset --hard`、`git checkout --` 等破坏性命令。
 
-接手者的第一个具体任务是：继续当前职业圣教军，从 `app/data/crusader-builds.ts` 的 `valor-fury` 开始，先研究并列出大秘境冲层、低层大秘境、T16/蓝门/悬赏与高低巅峰的逐项真实差异，并明确每个分支的来源链接。研究结论落入数据和文档后，才进入完整实现；野蛮人剩余三套之后再回补。
+接手者的第一个具体任务是：继续当前职业圣教军，从 `app/data/crusader-builds.ts` 的 `invoker-thorns` 开始，先研究并列出大秘境冲层、低层大秘境、T16/蓝门/悬赏与高低巅峰的逐项真实差异，并明确每个分支的来源链接。研究结论落入数据和文档后，才进入完整实现；野蛮人剩余三套之后再回补。
