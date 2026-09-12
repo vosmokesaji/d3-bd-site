@@ -664,6 +664,11 @@ test("restores legendary gems and renders class-specific armor gems and stat loo
   assert.match(wizard, /class="value">\+1000<\/b>[\s\S]*?智力/);
 });
 
+test("keeps all chest and pants sockets when a high-Paragon scenario switches armor gems", async () => {
+  const html = await render("/builds/ue-multishot?mode=push&paragon=high").then((response) => response.text());
+  assert.ok((html.match(/gem-190\.png/g) ?? []).length >= 7);
+});
+
 test("keeps the paperdoll on Blizzard's exact pixel slot geometry", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 
