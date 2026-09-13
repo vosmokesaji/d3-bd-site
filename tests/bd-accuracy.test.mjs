@@ -9,20 +9,21 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.equal(report.schemaValid, 51);
   assert.equal(report.semanticValid, 51);
   assert.equal(report.evidenceValid, 32);
-  assert.equal(report.genericPlaceholders, 23);
+  assert.equal(report.genericPlaceholders, 22);
   assert.equal(report.batchDerived, 7);
   assert.equal(report.publishable, 0);
-  assert.equal(report.evidenceStatuses.unverified, 42);
-  assert.equal(report.evidenceStatuses["source-checked"], 8);
+  assert.equal(report.evidenceStatuses.unverified, 41);
+  assert.equal(report.evidenceStatuses["source-checked"], 9);
   assert.equal(report.evidenceStatuses["cross-checked"], 1);
-  assert.equal(report.applicability.unverified, 123);
-  assert.equal(report.applicability.supported, 81);
-  assert.equal(report.applicability.viable, 2);
-  assert.equal(report.content["nephalem-rift-t16"], 2);
-  assert.equal(report.structuredSources, 6);
-  assert.equal(report.evidenceClaims, 10);
-  assert.equal(report.crossCheckedClaims, 5);
-  assert.equal(report.unresolvedClaims, 5);
+  assert.equal(report.applicability.unverified, 119);
+  assert.equal(report.applicability.supported, 82);
+  assert.equal(report.applicability.viable, 4);
+  assert.equal(report.content["nephalem-rift-t16"], 3);
+  assert.equal(report.content.bounty, 1);
+  assert.equal(report.structuredSources, 12);
+  assert.equal(report.evidenceClaims, 24);
+  assert.equal(report.crossCheckedClaims, 9);
+  assert.equal(report.unresolvedClaims, 15);
   assert.equal(report.sourceDomains["icy-veins.com"] > 0, true);
   assert.equal(report.builds.every((build) => build.publishBlockers.length > 0), true);
 
@@ -32,6 +33,17 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.equal(tragoul.evidenceClaimCount, 10);
   assert.deepEqual(tragoul.evidenceErrors, []);
   assert.deepEqual(tragoul.scenarios.filter((scenario) => scenario.content === "greater-rift-speed").map((scenario) => scenario.id), ["gr-speed-low", "gr-speed-high"]);
+
+  const bombardment = report.builds.find((build) => build.id === "lod-bombardment");
+  assert.equal(bombardment.scenarioCount, 3);
+  assert.equal(bombardment.structuredSourceCount, 6);
+  assert.equal(bombardment.evidenceClaimCount, 14);
+  assert.deepEqual(bombardment.validationErrors, []);
+  assert.deepEqual(bombardment.semanticErrors, []);
+  assert.deepEqual(bombardment.evidenceErrors, []);
+  assert.deepEqual(bombardment.scenarios.map((scenario) => scenario.id), ["gr-push", "t16-rift", "bounty"]);
+  assert.deepEqual(bombardment.scenarios.filter((scenario) => scenario.content === "greater-rift-speed"), []);
+  assert.equal(bombardment.scenarios.find((scenario) => scenario.id === "t16-rift").diffCount, bombardment.scenarios.find((scenario) => scenario.id === "bounty").diffCount);
 });
 
 test("generic placeholders cannot reintroduce fatal LoD, thorns, or main-stat defaults", async () => {
@@ -57,6 +69,8 @@ test("build detail derives activity choices from the guide scenarios", async () 
   assert.match(page, /guide\.structuredSources\?\.find/);
   assert.match(page, /const gear: Gear\[\] = activeConfiguration\s*\?/);
   assert.match(page, /const rotation = activeConfiguration\?\.rotation \?\?/);
+  assert.match(page, /resolveBuildScenarioConfiguration\(activeGuide, activeScenario\)/);
+  assert.match(page, /activeScenario\?\.paragonBand === "any"/);
 });
 
 test("Trag'Oul separates GR speed from T16 and keeps unresolved variants non-recommended", async () => {
@@ -69,4 +83,30 @@ test("Trag'Oul separates GR speed from T16 and keeps unresolved variants non-rec
   assert.match(page, /legendaryGems: \{ damage: "boon-of-the-hoarder", boss: "bane-of-the-powerful" \}/);
   assert.match(page, /powers: \{ armor: "steuarts-greaves", jewelry: "squirts" \}/);
   assert.match(page, /defaultScenarioId: "push-high"/);
+});
+
+test("LoD Bombardment exposes only evidenced activities and legal weapon packages", async () => {
+  const source = await import("node:fs/promises").then(({ readFile }) => readFile("app/data/crusader-builds.ts", "utf8"));
+
+  const start = source.indexOf("const LOD_BOMBARDMENT_URLS");
+  const end = source.indexOf("const ROLAND_SOURCES", start);
+  const reviewed = source.slice(start, end);
+  assert.match(reviewed, /id: "gr-push"[\s\S]*?content: "greater-rift-push"[\s\S]*?paragonBand: "any"/);
+  assert.match(reviewed, /id: "t16-rift"[\s\S]*?content: "nephalem-rift-t16"[\s\S]*?paragonBand: "any"/);
+  assert.match(reviewed, /id: "bounty"[\s\S]*?content: "bounty"[\s\S]*?sameAsScenarioId: "t16-rift"/);
+  assert.doesNotMatch(reviewed, /content: "greater-rift-speed"/);
+  assert.doesNotMatch(reviewed, /id: "(?:push|speed)-(?:low|high)"/);
+  assert.match(reviewed, /weapon: "pig-sticker", offhand: "akarat-awakening"/);
+  assert.match(reviewed, /weapon: "messerschmidt-gear"/);
+  assert.match(reviewed, /passives: \["heavenly-strength", "iron-maiden", "lord-commander", "finery"\]/);
+  assert.match(reviewed, /legendaryGems: \{ engine: "lod", thorns: "boyarskys-chip", boss: "bane-of-the-stricken" \}/);
+  assert.match(reviewed, /weapon: \["flawless-royal-topaz"\]/);
+});
+
+test("configured gem labels reflect socket effects instead of a global color label", async () => {
+  const page = await import("node:fs/promises").then(({ readFile }) => readFile("app/page.tsx", "utf8"));
+
+  assert.match(page, /id === "flawless-royal-topaz"[\s\S]*?label: "无瑕皇家黄宝石：荆棘伤害"/);
+  assert.match(page, /id === "flawless-royal-diamond" && gear\.slot === "头部"[\s\S]*?label: "无瑕皇家白宝石：冷却缩减"/);
+  assert.match(page, /gear\.slot === "胸部" \|\| gear\.slot === "腿部"[\s\S]*?label: "无瑕皇家白宝石：全元素抗性"/);
 });

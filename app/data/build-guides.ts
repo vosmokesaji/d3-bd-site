@@ -3,7 +3,7 @@ export type BuildParagon = "low" | "high";
 export type BuildPurpose = "greater-rift" | "nephalem-rift" | "echoing-nightmare" | "cosmetic-farm";
 export type BuildVariantKey = `${BuildMode}-${BuildParagon}`;
 export type BuildContent = "greater-rift-push" | "greater-rift-speed" | "nephalem-rift-t16" | "visions-of-enmity" | "bounty" | "echoing-nightmare" | "goblin-or-cosmetic-farm" | "nephalem-rift" | "cosmetic-farm";
-export type ParagonBand = "pre-800" | "low" | "high";
+export type ParagonBand = "pre-800" | "low" | "high" | "any";
 export type BuildReviewStatus = "draft" | "partial" | "scenario-reviewed" | "fully-reviewed";
 export type BuildEvidenceStatus = "unverified" | "source-checked" | "cross-checked" | "switch-tested" | "published";
 export type BuildPlatformStatus = "switch-verified" | "console-sourced" | "pc-derived" | "platform-risk";
@@ -135,6 +135,7 @@ export type GuideGear = {
   affixes: string[];
   acquisition: string[];
   warning?: string;
+  hands?: 1 | 2;
   gem?: { name: string; image: string };
 };
 
@@ -246,6 +247,19 @@ export function resolveBuildConfiguration(base: BuildConfiguration, patch: Build
   };
 }
 
+export function resolveBuildScenarioConfiguration(guide: BuildGuide, scenario: BuildScenario): BuildConfiguration | undefined {
+  if (!guide.configurationBase) return undefined;
+  if (!scenario.sameAsScenarioId) return resolveBuildConfiguration(guide.configurationBase, scenario.patch);
+  const visited = new Set([scenario.id]);
+  let shared = guide.scenarios?.find((candidate) => candidate.id === scenario.sameAsScenarioId);
+  while (shared?.sameAsScenarioId) {
+    if (visited.has(shared.id)) return undefined;
+    visited.add(shared.id);
+    shared = guide.scenarios?.find((candidate) => candidate.id === shared?.sameAsScenarioId);
+  }
+  return shared ? resolveBuildConfiguration(guide.configurationBase, shared.patch) : undefined;
+}
+
 function flatConfiguration(configuration: BuildConfiguration) {
   return {
     gear: configuration.gear,
@@ -291,8 +305,12 @@ export function validateReviewedBuildGuide(guide: BuildGuide): string[] {
     if (!scenario.reviewedAt || scenario.sourceRefs.length === 0) errors.push(`${scenario.id} 缺少校对日期或来源`);
     if (scenario.sameAsScenarioId && (!scenarioIds.includes(scenario.sameAsScenarioId) || scenario.sameAsScenarioId === scenario.id)) errors.push(`${scenario.id}:SHARED_CONFIGURATION_TARGET_INVALID`);
     if (scenario.sameAsScenarioId && scenario.patch) errors.push(`${scenario.id}:SHARED_CONFIGURATION_WITH_PATCH`);
+    const configuration = resolveBuildScenarioConfiguration(guide, scenario);
+    if (!configuration) {
+      errors.push(`${scenario.id}:SHARED_CONFIGURATION_CYCLE_OR_MISSING`);
+      continue;
+    }
     if (!["supported", "recommended", "viable"].includes(scenario.applicability)) continue;
-    const configuration = resolveBuildConfiguration(guide.configurationBase, scenario.patch);
     if (new Set(Object.values(configuration.gear)).size !== Object.values(configuration.gear).length) errors.push(`${scenario.id} 存在重复装备`);
     if (new Set(configuration.skills.map((skill) => skill.id)).size !== configuration.skills.length) errors.push(`${scenario.id} 存在重复技能`);
     if (new Set(configuration.passives).size !== configuration.passives.length) errors.push(`${scenario.id} 存在重复被动`);
@@ -324,7 +342,18 @@ export function validateBuildSemantics(guide: BuildGuide): string[] {
   const errors: string[] = [];
   const configurations = guide.scenarios
     .filter((scenario) => scenario.applicability !== "not-applicable")
-    .map((scenario) => [scenario.id, resolveBuildConfiguration(guide.configurationBase!, scenario.patch)] as const);
+    .flatMap((scenario) => {
+      const configuration = resolveBuildScenarioConfiguration(guide, scenario);
+      return configuration ? [[scenario.id, configuration] as const] : [];
+    });
+
+  for (const [scenarioId, configuration] of configurations) {
+    const weaponId = configuration.gear.weapon;
+    const equippedWeapon = guide.gear.find((item) => item.id === weaponId);
+    if (equippedWeapon?.hands === 2 && configuration.gear.offhand && !configuration.passives.includes("heavenly-strength")) {
+      errors.push(`${scenarioId}:TWO_HANDED_WITH_OFFHAND_REQUIRES_HEAVENLY_STRENGTH`);
+    }
+  }
 
   if (guide.id.startsWith("lod-")) {
     for (const [scenarioId, configuration] of configurations) {

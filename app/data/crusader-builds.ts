@@ -1,5 +1,5 @@
 import { createClassGuide, createGenericReviewedGuide, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
-import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type ParagonGuide } from "./build-guides";
+import { validateBuildEvidence, validateBuildSemantics, validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type BuildSource, type EvidenceClaim, type ParagonGuide } from "./build-guides";
 
 const valor: GearSeed[] = [
   setGear("valor-head", "头部", "勇气冠冕", "crown-of-valor-p67_unique_helm_set_01.png", "勇气壁垒部件；天堂之拳叠层，同时强化天堂之怒。", "天堂之拳"),
@@ -44,8 +44,8 @@ const commonPassives = [
   passive("indestructible", "坚不可摧", "致命伤害时保命，给主机操作留下重建循环的时间。"),
 ];
 
-const weapon = (id: string, name: string, file: string, effect: string, base = "连枷") => legendary(id, "主手", name, file, effect, { base });
-const shield = (id: string, name: string, file: string, effect: string) => legendary(id, "副手", name, file, effect, { base: "圣教军盾", warning: "黄装升级必须使用“圣教军盾”，普通盾牌不会进入同一传奇池。" });
+const weapon = (id: string, name: string, file: string, effect: string, base = "连枷", extra: Partial<GearSeed> = {}) => legendary(id, "主手", name, file, effect, { base, hands: base.includes("双手") ? 2 : 1, ...extra });
+const shield = (id: string, name: string, file: string, effect: string, extra: Partial<GearSeed> = {}) => legendary(id, "副手", name, file, effect, { base: "圣教军盾", warning: "黄装升级必须使用“圣教军盾”，普通盾牌不会进入同一传奇池。", ...extra });
 
 const seeds: ClassGuideSeed[] = [
   {
@@ -105,12 +105,74 @@ const seeds: ClassGuideSeed[] = [
     rotation: [{ title: "落剑进场", action: "瞄准精英与最多怪物落地。", reason: "建立减伤与忠贞回忆层数。" }, { title: "开启变身", action: "落地后开启阿卡拉特勇士。", reason: "提高坚韧与回怒。" }, { title: "持续锤击", action: "站在怪群中心连续施放祝福之锤。", reason: "旋转路径需要覆盖敌人。" }, { title: "补充资源", action: "圣怒下降时使用挑衅和律法。", reason: "保持黄道触发与锤击不停。" }, { title: "重跳刷新", action: "减伤或忠贞层数接近结束时重新落剑。", reason: "输出与生存都依赖落剑。" }], pushNote: "每次落剑尽量命中最多敌人，随后原地覆盖祝福锤。", speedNote: "落剑连续跨越地图，低层不等待元素周期。", lowNote: "乔安娜武器、盾牌和锤击裤是最先补齐的三件。", highNote: "神圣元素、范围伤与冷却缩减提高高层稳定性。", source: "https://www.icy-veins.com/d3/crusader-blessed-hammer-build-with-seeker-of-the-light-set",
   },
   {
-    classKey: "crusader", id: "lod-bombardment", name: "梦遗轰击", set: "梦之遗礼", core: "荆棘叠加 → 尖刺桶火炮轰击", summary: "不激活任何套装，以远古散件、荆棘和人世无常把火炮轰击变成周期性范围爆发。", difficulty: "高装备门槛 · 周期爆发", follower: "圣殿骑士", followerReason: "治疗和保命帮助角色在轰击冷却间隔内拉怪。", element: "物理", coreSkill: "火炮轰击",
-    gear: [legendary("leoric", "头部", "李奥瑞克的王冠", "leorics-crown-unique_helm_002_p1.png", "放大钻石冷却缩减，加快轰击循环。"), legendary("skeleton-king", "肩部", "骷髅王的肩铠", "pauldrons-of-the-skeleton-king-unique_shoulder_103_x1.png", "提供一次额外保命机会，远古版本计入梦遗。"), legendary("heart-iron", "胸部", "钢铁之心", "heart-of-iron-p4_unique_chest_018.png", "体能转化为荆棘。"), legendary("stone-gauntlets", "手部", "岩石护手", "stone-gauntlets-p66_unique_gloves_007.png", "受击提高护甲但降低移速；阿卡拉特勇士抵消负面。"), legendary("sanguinary", "腕部", "嗜血护腕", "sanguinary-vambraces-unique_bracer_105_x1.png", "被击中时有机会按荆棘造成范围伤害。", { element: "物理" }), legendary("trove", "腰部", "宝藏腰带", "belt-of-the-trove-p610_unique_belt_008.png", "定期自动火炮轰击。"), legendary("blackthorne-pants", "腿部", "黑棘的战袍裤", "blackthornes-jousting-mail-unique_pants_013_x1.png", "可滚物理元素的散件槽；只穿一件不会激活套装。", { warning: "梦遗允许穿套装品质单件，但绝不能激活任何两件套效果。" }), legendary("illusory", "脚部", "虚幻长靴", "illusory-boots-unique_boots_103_x1.png", "允许穿过敌人，方便把怪群拉成轰击区域。"), jewelry("squirt", "lod"), jewelry("coe", "stricken"), legendary("justice-lantern", "手指", "正义灯笼", "justice-lantern-p4_unique_ring_03.png", "格挡几率转减伤。", { gem: "trapped" }), weapon("mortal-drama", "人世无常", "the-mortal-drama-p610_unique_flail_2h_101.png", "火炮轰击落点数量翻倍。", "双手连枷"), shield("votoyias", "沃·托亚之刺", "votoyias-spiker-unique_shield_104_x1.png", "被挑衅敌人承受双倍荆棘伤害。")],
-    skills: [skill("bombardment", "火炮轰击", "尖刺桶", "主要爆发，把荆棘转成范围伤害。"), skill("akarats-champion", "阿卡拉特勇士", "先知化身", "提供护甲并免疫岩石护手减速。"), skill("iron-skin", "钢铁之肤", "反伤之肤", "轰击前临时提高荆棘。"), skill("provoke", "挑衅", "蓄势待发", "让敌人触发沃·托亚双倍荆棘。"), skill("steed-charge", "战马冲锋", "马不停蹄", "拉怪和调整轰击位置。"), skill("laws-of-justice", "正义律法", "坚不可摧", "冷却间隔内提高坚韧。")], passives: [passive("iron-maiden", "铁处女", "直接提高荆棘。"), passive("lord-commander", "统御者", "缩短火炮轰击和战马冷却。"), passive("finery", "宝石之力", "宝石提高力量。"), passive("indestructible", "坚不可摧", "致命伤害保命。")],
-    powers: [power("swiftmount", "武器", "迅捷连枷", "swiftmount-unique_flail_1h_103_x1.png", "延长战马冲锋。", "轰击冷却期间持续拉怪与转场。"), power("aquila", "防具", "天鹰胸甲", "aquila-cuirass-p4_unique_chest_012.png", "高圣怒减伤。", "构筑几乎不消耗圣怒，能稳定常驻。"), power("justice-lantern", "首饰", "正义灯笼", "justice-lantern-p4_unique_ring_03.png", "格挡转减伤。", "与盾牌格挡共同构成常驻坚韧。"), power("belt-trove", "第4槽", "宝藏腰带", "belt-of-the-trove-p610_unique_belt_008.png", "定期自动轰击。", "第39赛季可将高特效放魔方并穿戴高词缀替代腰带。")],
-    links: [{ title: "荆棘转轰击", category: "damage", conclusion: "轰击伤害来自荆棘，不追武器白字与双暴。", steps: [["heart-iron", "钢铁之心", "体能转荆棘"], ["iron-skin", "反伤之肤", "临时提高荆棘"], ["bombardment", "尖刺桶", "按荆棘结算"], ["mortal-drama", "人世无常", "落点翻倍"]] }, { title: "挑衅双倍", category: "damage", conclusion: "每次物理爆发前必须先让目标处于挑衅状态。", steps: [["provoke", "挑衅", "标记敌人"], ["votoyias", "沃·托亚之刺", "双倍荆棘"], ["coe", "全能物理", "元素窗口"]] }, { title: "冷却间隔生存", category: "defense", conclusion: "战马拉怪、天鹰和岩石护手让角色安全等到下一轮。", steps: [["steed-charge", "战马", "拉怪转场"], ["aquila", "天鹰", "高资源减伤"], ["stone-gauntlets", "岩石护手", "受击叠护甲"], ["akarats-champion", "变身", "抵消减速"]] }],
-    rotation: [{ title: "检查梦遗", action: "确认没有激活任何两件套。", reason: "套装奖励会关闭梦遗效果。" }, { title: "骑马拉怪", action: "把精英和杂兵聚到开阔区域。", reason: "轰击需要集中落点。" }, { title: "挑衅标记", action: "物理周期前挑衅精英。", reason: "沃·托亚让其承受双倍荆棘。" }, { title: "开启反伤", action: "开启钢铁之肤与变身。", reason: "提高荆棘并抵消岩石护手。" }, { title: "物理轰击", action: "释放尖刺桶火炮轰击。", reason: "梦遗、人世无常和全能在此叠加。" }], pushNote: "拉高密度后把挑衅、反伤之肤与轰击压进物理周期。", speedNote: "依靠自动轰击和战马清场，减少等待。", lowNote: "梦遗等级和每件远古散件数量比太古品质更重要。", highNote: "体能、荆棘、物理元素和冷却是最终属性轴。", source: "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set",
+    classKey: "crusader", id: "lod-bombardment", name: "梦遗轰击", set: "梦之遗礼", core: "移动聚怪 → 反伤之肤 → 物理周期尖刺桶", summary: "不激活任何套装奖励，以梦之遗礼、荆棘、人世无常和宝藏腰带制造周期性轰击；当前证据支持单人 GR 冲层，以及 T16 小秘境/悬赏速刷，不支持强行补出 GR 速刷。", difficulty: "高装备门槛 · 高冷却要求 · 周期爆发", follower: "魔女", followerReason: "当前冲层总览推荐魔女；复仇者护腕与时光流韵可通过随从发散，主机端仍需实机验证技能选择。", element: "物理", coreSkill: "火炮轰击",
+    gear: [
+      legendary("leoric", "头部", "李奥瑞克的王冠", "leorics-crown-unique_helm_002_p1.png", "放大头部钻石的冷却缩减，是压缩轰击循环的关键来源。", { affixes: ["力量", "体能", "荆棘伤害（次要）", "镶孔"] }),
+      legendary("invoker-burden", "肩部", "唤魔师的重负", "burden-of-the-invoker-unique_shoulder_set_12_x1.png", "单穿提供适合荆棘轰击的词缀位；不得与第二件唤魔师组成套装奖励。", { quality: "set", affixes: ["力量", "冷却缩减", "火炮轰击伤害", "范围伤害", "荆棘伤害（次要）"], warning: "梦之遗礼允许单穿绿色物品，但任何已激活的套装奖励都会关闭梦遗效果。" }),
+      legendary("aquila-gear", "胸部", "天鹰胸甲", "aquila-cuirass-p4_unique_chest_012.png", "构筑不消耗圣怒时维持高资源减伤。", { affixes: ["力量", "3个镶孔", "火炮轰击伤害", "体能", "荆棘伤害（次要）"] }),
+      legendary("stone-gauntlets", "手部", "岩石护手", "stone-gauntlets-p66_unique_gloves_007.png", "受击叠加护甲；阿卡拉特勇士覆盖时抵消控制类副作用。", { affixes: ["力量", "冷却缩减", "范围伤害", "体能", "荆棘伤害（次要）"] }),
+      legendary("strongarm", "腕部", "力士护腕", "strongarm-bracers-unique_bracer_007_x1.png", "天谴的聚能强吸触发击退易伤，并把怪群压进轰击范围。", { affixes: ["物理技能伤害", "力量", "体能", "击中回复生命", "荆棘伤害（次要）"] }),
+      legendary("trove", "腰部", "宝藏腰带", "belt-of-the-trove-p610_unique_belt_008.png", "按内部冷却自动施放继承尖刺桶符文的火炮轰击。", { affixes: ["力量", "体能", "全元素抗性", "生命%", "荆棘伤害（次要）"] }),
+      legendary("blackthorne-pants", "腿部", "黑棘的战袍裤", "blackthornes-jousting-mail-unique_pants_013_x1.png", "可提供物理元素伤的单件绿色裤子。", { quality: "set", affixes: ["物理技能伤害", "力量", "体能", "全元素抗性", "2个镶孔", "荆棘伤害（次要）"], warning: "不要再穿第二件黑棘；激活两件套会关闭梦之遗礼。" }),
+      legendary("illusory", "脚部", "虚幻长靴", "illusory-boots-unique_boots_103_x1.png", "允许穿过敌人，持续移动并整理密度。", { affixes: ["力量", "体能", "全元素抗性", "护甲", "荆棘伤害（次要）"], warning: "Icy 装备表列虚幻长靴，但其速刷正文又称冲层原本使用攀冰者；此槽尚待第二来源与实机消歧。" }),
+      legendary("hellfire", "颈部", "地狱火护符", "amulet-0.png", "额外获得一个协同被动；优先镶孔、物理与荆棘。", { affixes: ["镶孔", "物理技能伤害", "冷却缩减", "范围伤害", "力量", "荆棘伤害（次要）"], method: ["击杀钥匙守护者并使用炼狱装置", "珠宝匠反复制作", "先确认被动与镶孔，再追远古正确词缀"] }),
+      legendary("lod-soj", "手指", "乔丹之石", "stone-of-jordan-p69_unique_ring_019.png", "提供物理元素和精英伤，并统一装备上的最高元素伤。", { affixes: ["镶孔", "物理技能伤害", "精英伤害", "冷却缩减", "荆棘伤害（次要）"] }),
+      legendary("justice-lantern", "手指", "正义灯笼", "justice-lantern-p4_unique_ring_03.png", "按格挡几率提供伤害减免。", { affixes: ["镶孔", "冷却缩减", "范围伤害", "力量", "荆棘伤害（次要）"] }),
+      weapon("pig-sticker", "杀猪刀", "pig-sticker-unique_dagger_007_x1.png", "快速单手匕首与额外词缀位适合冷却、攻速、范围伤和击回。", "匕首", { affixes: ["镶孔（拉玛兰迪）", "冷却缩减", "范围伤害", "攻击速度", "力量", "击中回复生命"], warning: "荆棘不读取武器白字；可把武器伤害词缀洗成击中回复生命。" }),
+      shield("akarat-awakening", "阿卡拉特的顿悟", "akarats-awakening-unique_crushield_104_x1.png", "格挡时缩短技能冷却，帮助阿卡拉特勇士、钢铁之肤和轰击周转。", { affixes: ["力量", "火炮轰击伤害", "冷却缩减", "范围伤害", "荆棘伤害（次要）"] }),
+      legendary("squirts", "颈部", "斯奎特的项链", "squirts-necklace-p66_unique_amulet_010.png", "护盾塔期间提供高爆发，但受击会失去层数。", { affixes: ["镶孔", "物理技能伤害", "冷却缩减", "范围伤害", "荆棘伤害（次要）"], warning: "当前来源只把它列为护盾塔爆发备选，不是默认项链。" }),
+      legendary("eye-etlich", "颈部", "艾利奇之眼", "eye-of-etlich-unique_amulet_014_x1.png", "远程减伤备选，牺牲地狱火额外被动。", { affixes: ["镶孔", "物理技能伤害", "冷却缩减", "力量", "荆棘伤害（次要）"] }),
+      legendary("lod-coe", "手指", "全能法戒", "convention-of-elements-p2_unique_ring_04.png", "物理周期放大手动与自动火炮轰击。", { affixes: ["镶孔", "冷却缩减", "范围伤害", "力量", "荆棘伤害（次要）"] }),
+      legendary("lod-unity", "手指", "团结", "unity-unique_ring_010_x1.png", "角色和不死随从各戴一枚时分摊伤害。", { affixes: ["镶孔", "精英伤害", "冷却缩减", "范围伤害", "荆棘伤害（次要）"], warning: "只有随从佩戴团结与不死饰品时才是减伤方案。" }),
+      legendary("gloves-worship", "手部", "礼赞手套", "gloves-of-worship-unique_gloves_103_x1.png", "延长祭坛效果，适合普通小秘境和悬赏。", { affixes: ["力量", "冷却缩减", "范围伤害", "体能", "荆棘伤害（次要）"], method: ["第二幕/第四幕悬赏宝箱", "优先保留远古正确词缀版本", "不能靠普通世界掉落稳定获取"] }),
+      legendary("warzechian", "腕部", "沃兹克臂甲", "warzechian-armguards-unique_bracer_101_x1.png", "破坏物后提高移速，碾压难度连续转场。", { affixes: ["物理技能伤害", "力量", "体能", "全元素抗性", "荆棘伤害（次要）"] }),
+      weapon("messerschmidt-gear", "梅塞施密特的劫掠者", "messerschmidts-reaver-p66_unique_axe_2h_011.png", "击杀敌人缩短技能冷却，普通小秘境和悬赏连续击杀时收益稳定。", "双手斧", { affixes: ["镶孔（拉玛兰迪）", "冷却缩减", "范围伤害", "攻击速度", "力量", "击中回复生命"], warning: "与盾牌同时穿戴时必须选择天堂之力；没有该被动就不能成立。" }),
+    ],
+    skills: [
+      skill("punish", "惩罚", "迅捷", "冲层生成技能；提高格挡并快速叠受罚者与击中回复。"),
+      skill("bombardment", "火炮轰击", "尖刺桶", "主要爆发，把荆棘数值转成物理范围伤害。"),
+      skill("condemn", "天谴", "聚能强吸", "不负责伤害，用于聚怪并触发力士护腕。"),
+      skill("iron-skin", "钢铁之肤", "反伤之肤", "物理周期轰击前开启，临时放大荆棘。"),
+      skill("laws-of-justice", "正义律法", "凋零之力", "详细技能正文推荐的冲层防御律法；与页面快捷栏的盾闪存在冲突。"),
+      skill("shield-glare", "盾闪", "神圣裁决", "Icy 快捷栏展示的替代技能，但详细正文改为正义律法；未消歧前不作为默认。"),
+      skill("akarats-champion", "阿卡拉特勇士", "先知化身", "标准冲层的增伤、护甲和保命核心。"),
+      skill("provoke", "挑衅", "抱头鼠窜", "普通小秘境/悬赏触发恐惧，再由瑞秋戒提供移速。"),
+      skill("steed-charge", "战马冲锋", "马不停蹄", "速刷跨越空图与悬赏长路径。"),
+      skill("laws-of-hope", "希望律法", "天使之翼", "速刷移速并移除怪物碰撞。"),
+    ],
+    passives: [
+      passive("fervor", "热忱", "标准冲层即使攻速收益有限，也用15%冷却缩减支撑循环。"),
+      passive("iron-maiden", "铁处女", "直接提高荆棘伤害。"),
+      passive("lord-commander", "统御者", "缩短火炮轰击与战马冷却。"),
+      passive("finery", "宝石之力", "按镶嵌宝石数量提高力量。"),
+      passive("heavenly-strength", "天堂之力", "速刷穿双手梅塞施密特并保留盾牌时必须使用。"),
+      passive("hold-your-ground", "坚守阵地", "地狱火可提供的格挡与坚韧备选。"),
+      passive("long-arm-of-the-law", "律法无边", "地狱火可提供的律法覆盖备选。"),
+      passive("indestructible", "坚不可摧", "地狱火可提供的额外保命备选。"),
+    ],
+    powers: [
+      power("mortal-drama-power", "武器", "人世无常", "the-mortal-drama-p610_unique_flail_2h_101.png", "使火炮轰击的落点数量翻倍。", "冲层与速刷都固定在魔方武器槽；不再错误穿戴为主手。"),
+      power("hexing-pants", "防具", "杨先生的妖法裤", "hexing-pants-of-mr-yan-unique_pants_101_x1.png", "移动时增伤，站定时减伤。", "冲层持续绕怪移动，提醒玩家不要原地等待轰击。"),
+      power("coe-power", "首饰", "全能法戒", "convention-of-elements-p2_unique_ring_04.png", "物理周期提供元素爆发。", "穿正义灯笼时萃取全能；若穿全能则把较差的正义灯笼萃取。"),
+      power("furnace", "第4槽", "焚炉", "the-furnace-unique_mace_2h_103_x1.png", "提高精英伤害。", "第39赛季冲层第四槽，缩短精英与秘境首领战。"),
+      power("heart-iron-power", "防具", "钢铁之心", "heart-of-iron-p4_unique_chest_018.png", "把体能的一部分转为荆棘。", "不喜欢移动触发妖法裤时可换，但来源明确说明伤害更低。"),
+      power("goldwrap-power-lod", "防具", "金织带", "goldwrap-unique_belt_010_x1.png", "拾取金币后按金币量提高护甲。", "只在会掉金币的 T16 小秘境和悬赏中使用。"),
+      power("rechel-power", "首饰", "瑞秋的行窃之戒", "rechels-ring-of-larceny-unique_ring_104_x1.png", "恐惧敌人后获得大幅移速。", "与挑衅的抱头鼠窜连接，填补战马空档。"),
+      power("ingeom-power", "第4槽", "寅剑", "ingeom-unique_sword_1h_113_x1.png", "击杀精英后大幅缩短技能冷却。", "第39赛季速刷可与穿戴的梅塞施密特并用。"),
+      power("belt-trove-power", "防具", "宝藏腰带", "belt-of-the-trove-p610_unique_belt_008.png", "按冷却自动施放火炮轰击。", "速刷可在它与金织带之间穿戴高词缀者、萃取另一件。"),
+    ],
+    links: [
+      { title: "梦遗荆棘轰击", category: "damage", conclusion: "梦遗、博雅斯基、尖刺桶与人世无常缺一不可；双暴和武器白字不是主成长线。", steps: [["legacy-of-dreams", "梦之遗礼", "无套装奖励时按传奇/远古件放大"], ["iron-skin", "反伤之肤", "物理窗前提高荆棘"], ["bombardment", "尖刺桶", "按荆棘结算"], ["mortal-drama-power", "人世无常", "落点翻倍"]] },
+      { title: "聚怪物理窗", category: "damage", conclusion: "移动整理密度，聚能强吸触发力士，再把反伤之肤和轰击压进物理周期。", steps: [["condemn", "聚能强吸", "拉紧怪群"], ["strongarm", "力士护腕", "击退易伤"], ["coe-power", "全能物理", "等待元素窗"], ["bombardment", "手动轰击", "集中爆发"]] },
+      { title: "金币速刷链", category: "movement", conclusion: "这条链只用于普通小秘境和悬赏；大秘境不掉金币，不能照搬。", steps: [["provoke", "抱头鼠窜", "恐惧周围敌人"], ["rechel-power", "瑞秋戒", "获得移速"], ["goldwrap-power-lod", "金织带", "拾金叠护甲"], ["ingeom-power", "寅剑", "精英击杀缩冷却"]] },
+    ],
+    rotation: [
+      { title: "检查发动机", action: "确认梦之遗礼已装备且没有激活任何套装奖励。", reason: "任意套装奖励都会关闭梦遗乘区；正确传奇件与宝石等级优先于太古外框。" },
+      { title: "持续移动聚怪", action: "绕怪移动，用聚能强吸把敌人拉到身边。", reason: "维持妖法裤增益并触发力士护腕。" },
+      { title: "维持变身", action: "阿卡拉特勇士冷却结束即开启，危险阶段主动使用正义律法。", reason: "先知化身覆盖岩石护手副作用并提供保命。" },
+      { title: "对齐自动轰击", action: "换层后重新观察宝藏腰带内部冷却，必要时在全能周期末用药水校准。", reason: "自动轰击与物理周期错位会损失主要爆发。" },
+      { title: "物理周期爆发", action: "物理周期前开启反伤之肤，再手动施放尖刺桶火炮轰击。", reason: "荆棘、人世无常、全能法戒和力士护腕在此重叠。" },
+    ], pushNote: "单人 GR 冲层是主用途；移动聚怪并把反伤之肤、手动轰击与宝藏腰带自动轰击压进物理周期。", speedNote: "当前精确速刷页只支持普通小秘境与悬赏；用梅塞施密特、战马、瑞秋戒、金币链和寅剑换取转场。", lowNote: "这不是刚满70级或开荒首选：先升级梦遗、收集正确传奇与远古件，并把冷却提高到可维持循环。", highNote: "只有约5000+巅峰、全装备冷却且能承受坚韧损失时，先知化身才有证据切换集结号令；红宝石换白宝石由实际坚韧决定，不以2000巅峰硬切。", source: "https://www.icy-veins.com/d3/crusader-legacy-of-dreams-bombardment-build",
   },
 ];
 
@@ -1363,6 +1425,210 @@ const INVOKER_THORNS_REVIEWED_GUIDE: BuildGuide = {
 const INVOKER_THORNS_VALIDATION_ERRORS = validateReviewedBuildGuide(INVOKER_THORNS_REVIEWED_GUIDE);
 if (INVOKER_THORNS_VALIDATION_ERRORS.length > 0) throw new Error(`唤魔荆棘配置校验失败：${INVOKER_THORNS_VALIDATION_ERRORS.join("；")}`);
 
+const LOD_BOMBARDMENT_URLS = {
+  overview: "https://www.icy-veins.com/d3/crusader-legacy-of-dreams-bombardment-build",
+  skills: "https://www.icy-veins.com/d3/lod-bombardment-crusader-skills-and-runes",
+  gear: "https://www.icy-veins.com/d3/lod-bombardment-crusader-bis-gear-gems-paragon-points",
+  speed: "https://www.icy-veins.com/d3/lod-bombardment-crusader-speed-farming-build",
+  d3guides: "https://www.d3guides.de/de/build/kreuzritter-ohne-set-bombardement",
+  season: "https://www.d3guides.de/de/seasons/39",
+} as const;
+
+const LOD_BOMBARDMENT_SOURCES: BuildSource[] = [
+  { id: "icy-lod-bombardment-overview", url: LOD_BOMBARDMENT_URLS.overview, title: "Crusader Legacy of Dreams Bombardment Build", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-23", accessedAt: "2026-09-13", season: "39", patch: "2.7.8", platform: "pc", content: ["greater-rift-push"], snapshot: "用途、快捷配装、三颗传奇宝石与第39赛季第四槽。" },
+  { id: "icy-lod-bombardment-skills", url: LOD_BOMBARDMENT_URLS.skills, title: "LoD Bombardment Crusader Skills and Runes", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-23", accessedAt: "2026-09-13", season: "39", patch: "2.7.8", platform: "pc", content: ["greater-rift-push"], snapshot: "详细技能、循环、61%+冷却与5000+巅峰条件；快捷栏和正文的第5技能冲突。" },
+  { id: "icy-lod-bombardment-gear", url: LOD_BOMBARDMENT_URLS.gear, title: "LoD Bombardment Crusader BiS Gear, Gems, and Paragon Points", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-23", accessedAt: "2026-09-13", season: "39", patch: "2.7.8", platform: "pc", content: ["greater-rift-push"], snapshot: "冲层装备、词缀、宝石与魔方；正文残留“骷髅法师”复制错误。" },
+  { id: "icy-lod-bombardment-speed", url: LOD_BOMBARDMENT_URLS.speed, title: "LoD Bombardment Crusader Speed Farming Variation", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-23", accessedAt: "2026-09-13", season: "39", patch: "2.7.8", platform: "pc", content: ["nephalem-rift-t16", "bounty"], snapshot: "明确限定普通小秘境/最高折磨并强调悬赏；未给出GR速刷配置。" },
+  { id: "d3guides-lod-bombardment", url: LOD_BOMBARDMENT_URLS.d3guides, title: "Ohne Set Bombardement — Kreuzritter", publisher: "d3guides.de", author: "eRnstl", updatedAt: "2026-09-04", accessedAt: "2026-09-13", season: "39", platform: "pc", content: ["greater-rift-push", "nephalem-rift-t16"], snapshot: "S39 B档，提供GR冲层与T16变体；第三颗传奇宝石、武器组、技能和普通宝石与Icy存在明显差异。" },
+  { id: "d3guides-season-39", url: LOD_BOMBARDMENT_URLS.season, title: "Saison 39: Schatten der Nephalem", publisher: "d3guides.de", accessedAt: "2026-09-13", season: "39", platform: "cross-platform", snapshot: "确认第39赛季仍在进行、主题为暗影克隆与第四魔方槽。" },
+];
+
+const LOD_BOMBARDMENT_PUSH_ROTATION = [
+  { title: "检查发动机", action: "确认梦之遗礼已装备且没有激活任何套装奖励。", reason: "任意套装奖励都会关闭梦遗乘区；正确传奇件与宝石等级优先于太古外框。" },
+  { title: "持续移动聚怪", action: "绕怪移动，用聚能强吸把敌人拉到身边。", reason: "维持妖法裤增益并触发力士护腕。" },
+  { title: "维持变身", action: "阿卡拉特勇士冷却结束即开启，危险阶段主动使用正义律法。", reason: "先知化身覆盖岩石护手副作用并提供保命。" },
+  { title: "对齐自动轰击", action: "换层后重新观察宝藏腰带内部冷却，必要时在全能周期末用药水校准。", reason: "自动轰击与物理周期错位会损失主要爆发。" },
+  { title: "物理周期爆发", action: "物理周期前开启反伤之肤，再手动施放尖刺桶火炮轰击。", reason: "荆棘、人世无常、全能法戒和力士护腕在此重叠。" },
+];
+
+const LOD_BOMBARDMENT_SPEED_ROTATION = [
+  { title: "恐惧起速", action: "接近怪群时使用挑衅的抱头鼠窜。", reason: "触发瑞秋戒的移速，衔接下一段战马。" },
+  { title: "战马转场", action: "用战马冲锋跨越空图，只在高密度或精英处停留。", reason: "这套速刷的优势是悬赏长路径与普通小秘境转场。" },
+  { title: "拉紧怪群", action: "短按聚能强吸后立即施放尖刺桶。", reason: "低难度不等待完整元素周期，但仍要让落点覆盖目标。" },
+  { title: "连续击杀", action: "精英死亡后立刻向下一组移动。", reason: "穿戴梅塞施密特与第四槽寅剑都依赖击杀来压缩冷却。" },
+  { title: "保持金币链", action: "拾取金币并让随从贪婪之戒扩大范围。", reason: "囤宝者和金织带只在会掉金币的普通内容中提供移速与坚韧。" },
+];
+
+const LOD_BOMBARDMENT_SEED = seeds.find((seed) => seed.id === "lod-bombardment")!;
+const LOD_BOMBARDMENT_BASE_GUIDE = createClassGuide({
+  ...LOD_BOMBARDMENT_SEED,
+  rotation: LOD_BOMBARDMENT_PUSH_ROTATION,
+  source: LOD_BOMBARDMENT_URLS.overview,
+  purpose: "greater-rift",
+  supportedContent: ["单人GR冲层", "T16普通小秘境", "悬赏"],
+  defaultMode: "push",
+  modeLabels: { push: "单人GR冲层", speed: "T16 / 悬赏" },
+});
+
+const LOD_BOMBARDMENT_CONFIGURATION_BASE: BuildConfiguration = {
+  gear: {
+    head: "leoric", shoulders: "invoker-burden", chest: "aquila-gear", gloves: "stone-gauntlets", bracers: "strongarm",
+    belt: "trove", pants: "blackthorne-pants", boots: "illusory", amulet: "hellfire", ring1: "lod-soj", ring2: "justice-lantern",
+    weapon: "pig-sticker", offhand: "akarat-awakening",
+  },
+  skills: [
+    { id: "punish", rune: "迅捷" }, { id: "bombardment", rune: "尖刺桶" }, { id: "condemn", rune: "聚能强吸" },
+    { id: "iron-skin", rune: "反伤之肤" }, { id: "laws-of-justice", rune: "凋零之力" }, { id: "akarats-champion", rune: "先知化身" },
+  ],
+  passives: ["fervor", "iron-maiden", "lord-commander", "finery"],
+  powers: { weapon: "mortal-drama-power", armor: "hexing-pants", jewelry: "coe-power", season: "furnace" },
+  legendaryGems: { engine: "lod", thorns: "boyarskys-chip", boss: "bane-of-the-stricken" },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"), weapon: ["flawless-royal-topaz"] },
+  follower: { id: "enchantress", items: ["烟熏香炉", "复仇者护腕", "时光流韵"], skills: ["预言谐奏", "心智集中", "能量护甲"] },
+  statPriorities: {
+    global: ["冷却缩减至少61%，理想约65%", "物理元素伤", "荆棘伤害", "范围伤害", "攻击速度"],
+    survival: ["全元素抗性", "生命%", "护甲", "体能按实战补足"],
+    endgame: ["不堆双暴", "武器伤害洗成击中回复", "宝藏腰带与全能周期对齐", "远古正确词缀优先"],
+  },
+  rotation: LOD_BOMBARDMENT_PUSH_ROTATION,
+};
+
+const LOD_BOMBARDMENT_SPEED_PATCH: NonNullable<BuildScenario["patch"]> = {
+  gear: { gloves: "gloves-worship", bracers: "warzechian", weapon: "messerschmidt-gear" },
+  skills: [
+    { id: "provoke", rune: "抱头鼠窜" }, { id: "bombardment", rune: "尖刺桶" }, { id: "condemn", rune: "聚能强吸" },
+    { id: "steed-charge", rune: "马不停蹄" }, { id: "laws-of-hope", rune: "天使之翼" }, { id: "akarats-champion", rune: "集结号令" },
+  ],
+  passives: ["heavenly-strength", "iron-maiden", "lord-commander", "finery"],
+  powers: { weapon: "mortal-drama-power", armor: "goldwrap-power-lod", jewelry: "rechel-power", season: "ingeom-power" },
+  legendaryGems: { engine: "lod", thorns: "boyarskys-chip", boss: "boon-of-the-hoarder" },
+  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-ruby"), weapon: ["flawless-royal-topaz"] },
+  follower: { id: "enchantress", items: ["烟熏香炉", "复仇者护腕", "时光流韵", "贪婪之戒"], skills: ["预言谐奏", "心智集中", "能量护甲"] },
+  statPriorities: {
+    global: ["装备+巅峰移速合计25%", "冷却缩减", "物理元素伤", "荆棘伤害", "拾取范围"],
+    survival: ["金币触发金织带护甲", "全元素抗性", "阿卡拉特勇士覆盖"],
+    endgame: ["连续击杀维持梅塞施密特与寅剑", "不等待全能周期", "不要带入大秘境"],
+  },
+  rotation: LOD_BOMBARDMENT_SPEED_ROTATION,
+};
+
+const LOD_BOMBARDMENT_SCENARIOS: BuildScenario[] = [
+  {
+    id: "gr-push", label: "单人 GR 冲层 · 标准", content: "greater-rift-push", paragonBand: "any", applicability: "supported",
+    reason: "当前总览明确把这套定义为单人GR推进构筑；没有人为拆分2000巅峰上下，红/白宝石和5000+集结号令都改为条件策略。",
+    unchangedReason: "基础配置就是单人GR冲层标准版。", configurationId: "lod-bombardment-gr-push",
+    sourceRefs: [LOD_BOMBARDMENT_URLS.overview, LOD_BOMBARDMENT_URLS.skills, LOD_BOMBARDMENT_URLS.gear, LOD_BOMBARDMENT_URLS.d3guides],
+    sourceIds: ["icy-lod-bombardment-overview", "icy-lod-bombardment-skills", "icy-lod-bombardment-gear", "d3guides-lod-bombardment"], reviewedAt: "2026-09-13",
+  },
+  {
+    id: "t16-rift", label: "T16 普通小秘境 · 可用非最优", content: "nephalem-rift-t16", paragonBand: "any", applicability: "viable",
+    reason: "Icy只称其能胜任最高折磨普通小秘境，并未声称是最佳方案；装备、技能、宝石与魔方均按专门速刷页切换。",
+    patch: LOD_BOMBARDMENT_SPEED_PATCH, configurationId: "lod-bombardment-t16-bounty",
+    sourceRefs: [LOD_BOMBARDMENT_URLS.speed, LOD_BOMBARDMENT_URLS.d3guides], sourceIds: ["icy-lod-bombardment-speed", "d3guides-lod-bombardment"], reviewedAt: "2026-09-13",
+  },
+  {
+    id: "bounty", label: "悬赏 · 适合长距离转场", content: "bounty", paragonBand: "any", applicability: "viable",
+    reason: "Icy明确指出梅塞施密特提供的自由移动使该分支尤其适合悬赏；其配置与T16相同，因此显式复用，不伪造差异。",
+    sameAsScenarioId: "t16-rift", configurationId: "lod-bombardment-t16-bounty",
+    sourceRefs: [LOD_BOMBARDMENT_URLS.speed], sourceIds: ["icy-lod-bombardment-speed"], reviewedAt: "2026-09-13",
+  },
+];
+
+const LOD_BOMBARDMENT_PARAGON: ParagonGuide = {
+  pre800: {
+    core: [
+      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "超过25%的基础移速不再由核心巅峰继续提高。" },
+      { stat: "力量", target: "默认投入", reason: "提高护甲和荆棘相关伤害；生存不足再转体能。" },
+      { stat: "体能", target: "被秒或无法维持聚怪时补", reason: "由实际坚韧决定，不按固定巅峰数字切换。" },
+      { stat: "最大圣怒", target: "0点", reason: "标准版本没有消耗技能，最大资源没有实战收益。" },
+    ],
+    offense: [
+      { stat: "冷却缩减", target: "优先点满", reason: "轰击、钢铁之肤与阿卡拉特勇士都依赖冷却。" },
+      { stat: "攻击速度", target: "第二", reason: "加快惩罚、受罚者叠层和击中回复。" },
+      { stat: "暴击几率", target: "不为它牺牲荆棘/冷却", reason: "荆棘不能暴击。" },
+      { stat: "暴击伤害", target: "最后", reason: "荆棘不能暴击。" },
+    ],
+    defense: [
+      { stat: "全元素抗性", target: "优先点满", reason: "力量角色已有护甲，先补全抗。" },
+      { stat: "生命%", target: "第二", reason: "提高聚怪时的有效生命。" },
+      { stat: "护甲", target: "第三", reason: "补充近身物理防线。" },
+      { stat: "生命恢复", target: "最后", reason: "作为击中回复之外的续航。" },
+    ],
+    utility: [
+      { stat: "范围伤害", target: "优先", reason: "提高密度战中的火炮覆盖收益。" },
+      { stat: "击中回复生命", target: "第二", reason: "惩罚高速命中提供稳定回复。" },
+      { stat: "生命之球拾取范围", target: "第三", reason: "改善主机拾取与续航。" },
+      { stat: "能量消耗降低", target: "最后", reason: "标准版本无消耗技能。" },
+    ],
+  },
+  post800: [
+    { priority: "力量", when: "默认", reason: "持续提高伤害和护甲。" },
+    { priority: "体能", when: "聚怪时被秒或必须过早交防御技能", reason: "先达到能执行完整物理循环的坚韧，再回力量。" },
+    { priority: "全装备冷却与约65%目标", when: "准备冲更高层", reason: "先满足循环，再考虑范围伤和次要荆棘。" },
+  ],
+  checkpoints: [
+    { label: "不建议开荒", target: "梦遗等级、正确传奇件与远古数量", action: "刚满70级先用套装构筑刷资源；梦遗未升级、正确散件不足时不要硬转。" },
+    { label: "可开始冲层", target: "梦遗、博雅斯基、受罚者、杀猪刀/顿悟盾与61%+冷却", action: "确认没有套装奖励，武器黄宝石，并能把手动轰击稳定压进物理周期。" },
+    { label: "坚韧转换", target: "红宝石或白宝石", action: "能活着完成聚怪与爆发就保红宝石；坚韧成为推进瓶颈再逐颗换白宝石，不看2000巅峰硬阈值。" },
+    { label: "5000+条件", target: "全装备冷却且可承受先知化身损失", action: "满足两项条件后才试集结号令，让每个物理周期释放两次轰击；否则保留先知化身。" },
+  ],
+};
+
+const LOD_BOMBARDMENT_CHOICE_POLICIES: BuildChoicePolicy[] = [
+  { key: "lod-engine", targetType: "legendary-gem", targetId: "lod", label: "梦之遗礼 + 无套装奖励", status: "locked", reason: "这是整套增伤与减伤发动机；单件绿色物品可穿，但任何已激活的套装奖励都会关闭梦遗。" },
+  { key: "bombardment-gems", targetType: "legendary-gem", targetId: "boyarskys-chip", label: "博雅斯基 + 梦遗", status: "locked", reason: "Icy与d3guides都保留两颗核心宝石；冲层第三颗当前采用Icy的受罚者，d3guides的困者差异保持未解决。" },
+  { key: "push-weapon-package", targetType: "gear", targetId: "pig-sticker", label: "杀猪刀 + 阿卡拉特顿悟", status: "locked", reason: "Icy当前冲层表明确穿戴单手杀猪刀与顿悟盾，人世无常进入魔方；已移除旧数据中缺少天堂之力却穿双手人世无常+盾牌的不可能组合。" },
+  { key: "fifth-skill-conflict", targetType: "skill", targetId: "laws-of-justice", label: "冲层第5技能（来源冲突）", status: "conditional", reason: "Icy快捷栏显示盾闪/神圣裁决，详细循环和技能正文却两次推荐正义律法/凋零之力；当前选择更详细的正文结论，发布前需第二来源或实机消歧。", alternatives: [{ id: "shield-glare", label: "盾闪 · 神圣裁决", when: "第二来源或实机证明快捷栏才是当前配置", gain: "致盲与易伤", cost: "失去凋零之力的递增减伤", scenarios: ["gr-push"] }] },
+  { key: "armor-gems", targetType: "normal-gem", targetId: "flawless-royal-ruby", label: "防具红宝石 / 白宝石", status: "conditional", reason: "Icy把红宝石标为伤害、白宝石标为坚韧，没有给出2000巅峰切线；应按是否能完成聚怪和物理爆发逐颗切换。", alternatives: [{ id: "flawless-royal-diamond", label: "无瑕皇家白宝石", when: "实际坚韧已成为推进瓶颈", gain: "提高全元素抗性", cost: "失去力量带来的伤害与护甲", scenarios: ["gr-push"] }] },
+  { key: "high-paragon-rune", targetType: "skill", targetId: "akarats-champion", label: "5000+集结号令条件", status: "conditional", reason: "Icy给出的明确门槛是5000+巅峰并且装备冷却完全投入，不是项目旧模板的2000；条件不足保留先知化身。", alternatives: [{ id: "rally", label: "集结号令", when: "5000+巅峰、装备冷却齐全且能承受坚韧损失", gain: "每个物理周期可尝试两次轰击", cost: "失去先知化身的额外防御与保命", scenarios: ["gr-push"] }] },
+  { key: "amulet-choice", targetType: "gear", targetId: "hellfire", label: "项链选择", status: "conditional", reason: "地狱火是当前默认；斯奎特只用于护盾塔爆发，艾利奇用于远程减伤，不能把斯奎特硬锁为所有场景默认。", alternatives: [{ id: "squirts", label: "斯奎特的项链", when: "护盾塔期间能稳定保层", gain: "短时高爆发", cost: "受击掉层且失去额外被动", scenarios: ["gr-push"] }, { id: "eye-etlich", label: "艾利奇之眼", when: "远程伤害是主要死亡来源", gain: "远程减伤", cost: "失去地狱火额外被动", scenarios: ["gr-push"] }] },
+  { key: "speed-package", targetType: "gear", targetId: "messerschmidt-gear", label: "T16 / 悬赏速刷包", status: "locked", reason: "梅塞施密特+盾牌必须同时带天堂之力；礼赞手套、沃兹克、战马、希望律法、瑞秋、金织带、囤宝者与第39赛季寅剑只属于掉金币的普通内容。" },
+  { key: "activity-boundary", targetType: "legendary-gem", targetId: "boon-of-the-hoarder", label: "不创建GR速刷场景", status: "locked", reason: "当前精确速刷页只写普通小秘境与悬赏；没有证据时不把金币链改名成GR速刷，也不强行凑第四个象限。" },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "魔女", status: "flexible", reason: "Icy总览推荐魔女；T16让随从携带复仇者护腕、时光流韵与贪婪之戒发散，Switch上的技能与物品可用性仍需实机核对。" },
+];
+
+const LOD_BOMBARDMENT_EVIDENCE_CLAIMS: EvidenceClaim[] = [
+  { id: "activity-gr-push", category: "applicability", path: "scenarios.gr-push", conclusion: "单人GR冲层是主用途。", sourceIds: ["icy-lod-bombardment-overview", "d3guides-lod-bombardment"], status: "cross-checked" },
+  { id: "activity-t16", category: "applicability", path: "scenarios.t16-rift", conclusion: "T16普通小秘境可用，但不是最佳承诺。", sourceIds: ["icy-lod-bombardment-speed", "d3guides-lod-bombardment"], status: "cross-checked" },
+  { id: "activity-bounty", category: "applicability", path: "scenarios.bounty", conclusion: "梅塞施密特分支尤其适合悬赏长距离转场。", sourceIds: ["icy-lod-bombardment-speed"], status: "single-source" },
+  { id: "activity-no-gr-speed", category: "applicability", path: "scenarios", conclusion: "不创建GR速刷场景；当前速刷专页只覆盖普通小秘境与悬赏。", sourceIds: ["icy-lod-bombardment-speed"], status: "single-source" },
+  { id: "core-lod-boyarsky", category: "legendary-gems", path: "configurationBase.legendaryGems.engine,configurationBase.legendaryGems.thorns", conclusion: "梦遗与博雅斯基是两颗固定核心宝石。", sourceIds: ["icy-lod-bombardment-gear", "d3guides-lod-bombardment"], status: "cross-checked" },
+  { id: "push-third-gem", category: "legendary-gems", path: "configurationBase.legendaryGems.boss", conclusion: "当前冲层采用Icy的受罚者；d3guides使用困者，差异未消解。", sourceIds: ["icy-lod-bombardment-gear", "d3guides-lod-bombardment"], status: "unverified", conflictNote: "Icy：受罚者；d3guides：困者。" },
+  { id: "weapon-topaz", category: "normal-gems", path: "configurationBase.normalGems.weapon", conclusion: "荆棘武器使用无瑕皇家黄宝石，不使用暴击伤害绿宝石。", sourceIds: ["icy-lod-bombardment-gear", "d3guides-lod-bombardment"], status: "cross-checked" },
+  { id: "armor-gem-trigger", category: "normal-gems", path: "choicePolicies.armor-gems", conclusion: "红转白由实战坚韧触发，不存在2000巅峰硬切证据。", sourceIds: ["icy-lod-bombardment-gear", "d3guides-lod-bombardment"], status: "unverified", conflictNote: "Icy列红=伤害、白=坚韧；d3guides直接全白，且说明文本疑似通用模板。" },
+  { id: "push-weapon-conflict", category: "gear", path: "configurationBase.gear.weapon,configurationBase.gear.offhand", conclusion: "Icy使用杀猪刀+顿悟盾；d3guides使用寅剑+无形之墙，未交叉一致。", sourceIds: ["icy-lod-bombardment-gear", "d3guides-lod-bombardment"], status: "unverified", conflictNote: "保留Icy的构筑专页方案，并阻断旧版人世无常直接穿戴。" },
+  { id: "push-cube-core", category: "powers", path: "configurationBase.powers", conclusion: "人世无常与全能法戒获两站共同支持；防具槽与第四槽不同。", sourceIds: ["icy-lod-bombardment-gear", "d3guides-lod-bombardment"], status: "unverified", conflictNote: "Icy：妖法裤+焚炉；d3guides：岩石护手+梅塞施密特。" },
+  { id: "push-skill-conflict", category: "skills", path: "configurationBase.skills", conclusion: "Icy自身快捷栏与详细正文冲突，d3guides又给出第三套技能；完整技能栏未交叉确认。", sourceIds: ["icy-lod-bombardment-overview", "icy-lod-bombardment-skills", "d3guides-lod-bombardment"], status: "unverified", conflictNote: "Icy快捷栏：盾闪；Icy详细正文：正义律法；d3guides：希望律法+战马。" },
+  { id: "high-paragon-rally", category: "paragon", path: "choicePolicies.high-paragon-rune", conclusion: "集结号令只在5000+巅峰、装备冷却齐全且可承受坚韧损失时考虑。", sourceIds: ["icy-lod-bombardment-skills"], status: "single-source" },
+  { id: "source-quality-copy-error", category: "stats", path: "structuredSources.icy-lod-bombardment-gear", conclusion: "Icy装备页残留骷髅法师技能伤字样，不能把整页当作无冲突真值。", sourceIds: ["icy-lod-bombardment-gear"], status: "unverified", conflictNote: "与圣教军轰击主题明显不符，按字段级证据采用，其余需交叉核对。" },
+  { id: "switch-runtime", category: "platform", path: "platformStatus", conclusion: "Nintendo Switch技能映射、宝藏腰带校准手感与随从发散尚未实机验证。", sourceIds: [], status: "unverified", conflictNote: "现有来源均为PC/跨平台网页资料。" },
+];
+
+const LOD_BOMBARDMENT_REVIEWED_GUIDE: BuildGuide = {
+  ...LOD_BOMBARDMENT_BASE_GUIDE,
+  configurationBase: LOD_BOMBARDMENT_CONFIGURATION_BASE,
+  defaultMode: "push",
+  defaultScenarioId: "gr-push",
+  scenarios: LOD_BOMBARDMENT_SCENARIOS,
+  paragonGuide: LOD_BOMBARDMENT_PARAGON,
+  choicePolicies: LOD_BOMBARDMENT_CHOICE_POLICIES,
+  reviewStatus: "scenario-reviewed",
+  variantCompleteness: "complete",
+  evidenceStatus: "source-checked",
+  platformStatus: "platform-risk",
+  dataProvenance: "hand-authored",
+  evidenceNote: "已完成第39赛季PC资料的字段级校对并移除伪造的低/高巅峰与GR速刷场景；Icy内部技能/鞋子冲突、第二来源差异和Nintendo Switch实机验证仍未关闭，因此不能标记为发布级。",
+  structuredSources: LOD_BOMBARDMENT_SOURCES,
+  evidenceClaims: LOD_BOMBARDMENT_EVIDENCE_CLAIMS,
+};
+
+const LOD_BOMBARDMENT_VALIDATION_ERRORS = [
+  ...validateReviewedBuildGuide(LOD_BOMBARDMENT_REVIEWED_GUIDE),
+  ...validateBuildSemantics(LOD_BOMBARDMENT_REVIEWED_GUIDE),
+  ...validateBuildEvidence(LOD_BOMBARDMENT_REVIEWED_GUIDE),
+];
+if (LOD_BOMBARDMENT_VALIDATION_ERRORS.length > 0) throw new Error(`梦遗轰击配置校验失败：${[...new Set(LOD_BOMBARDMENT_VALIDATION_ERRORS)].join("；")}`);
+
 const ROLAND_SOURCES = {
   overview: "https://www.icy-veins.com/d3/crusader-rolands-sweep-attack-build",
   skills: "https://www.icy-veins.com/d3/rolands-sweep-attack-crusader-skills-and-runes",
@@ -1485,6 +1751,7 @@ export const CRUSADER_BUILDS: Record<string, BuildGuide> = {
   [AKKHAN_CONDEMN_REVIEWED_GUIDE.id]: AKKHAN_CONDEMN_REVIEWED_GUIDE,
   [AKKHAN_PHALANX_REVIEWED_GUIDE.id]: AKKHAN_PHALANX_REVIEWED_GUIDE,
   [INVOKER_THORNS_REVIEWED_GUIDE.id]: INVOKER_THORNS_REVIEWED_GUIDE,
+  [LOD_BOMBARDMENT_REVIEWED_GUIDE.id]: LOD_BOMBARDMENT_REVIEWED_GUIDE,
   [ROLAND_REVIEWED_GUIDE.id]: ROLAND_REVIEWED_GUIDE,
   [PONY_REVIEWED_GUIDE.id]: PONY_REVIEWED_GUIDE,
 };

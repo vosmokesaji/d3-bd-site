@@ -15,7 +15,7 @@ import {
 import { NECROMANCER_BUILDS, type NecromancerGuide } from "./data/necromancer-builds";
 import {
   diffBuildConfigurations,
-  resolveBuildConfiguration,
+  resolveBuildScenarioConfiguration,
   validateReviewedBuildGuide,
   type BuildChoicePolicy,
   type BuildConfiguration,
@@ -1367,7 +1367,20 @@ function guideSockets(gear: Gear, classId: ClassId, normalGems?: BuildConfigurat
       : gear.slot === "腿部" ? normalGems?.armor?.slice(0, 2)
         : gear.slot === "主手" || gear.slot === "副手" ? normalGems?.weapon?.slice(0, 1)
           : undefined;
-  const configured = configuredIds?.flatMap((id) => CONFIGURATION_NORMAL_GEMS[id] ? [CONFIGURATION_NORMAL_GEMS[id]] : []);
+  const configured = configuredIds?.flatMap((id) => {
+    const gem = CONFIGURATION_NORMAL_GEMS[id];
+    if (!gem) return [];
+    if (id === "flawless-royal-topaz" && (gear.slot === "主手" || gear.slot === "副手")) {
+      return [{ ...gem, label: "无瑕皇家黄宝石：荆棘伤害" }];
+    }
+    if (id === "flawless-royal-diamond" && gear.slot === "头部") {
+      return [{ ...gem, label: "无瑕皇家白宝石：冷却缩减" }];
+    }
+    if (id === "flawless-royal-diamond" && (gear.slot === "胸部" || gear.slot === "腿部")) {
+      return [{ ...gem, label: "无瑕皇家白宝石：全元素抗性" }];
+    }
+    return [gem];
+  });
   if (configured?.length) return configured;
   if (gear.slot === "头部") return [{ image: "/d3/flawless-royal-amethyst.png", label: "无瑕皇家紫宝石：生命%" }];
   if (gear.slot === "胸部") return Array.from({ length: 3 }, () => CLASS_ARMOR_GEM[classId]);
@@ -1504,6 +1517,9 @@ const SET_FAMILY_PATTERNS: { pattern: RegExp; name: string; royalEligible: boole
 ];
 
 function buildSetFamilies(guide: UnifiedBuildGuide, gear: Gear[]): SetFamily[] {
+  // LoD only works while no set bonus is active. Its individual ancient set-quality
+  // items must never be grouped into a fictional "Dream Legacy" set family.
+  if (guide.set === "梦之遗礼") return [];
   const groups = new Map<string, SetFamily>();
   gear.filter((item) => item.quality === "set").forEach((item) => {
     const known = SET_FAMILY_PATTERNS.find(({ pattern }) => pattern.test(`${item.id} ${item.name}`));
@@ -1970,7 +1986,7 @@ function BuildReviewPanel({
       <div className="build-review-grid">
         <article className="scenario-diff-card">
           <h3>{t("app.43164224cdd9336d")}</h3>
-          {visibleDiffs.length === 0 ? <p className="review-baseline">{t("app.8b6adc116f14b167")}</p> : (
+          {visibleDiffs.length === 0 ? <p className="review-baseline">{tr(scenario.unchangedReason ?? scenario.reason)}</p> : (
             <dl>{visibleDiffs.map((diff) => <div key={`${diff.category}-${diff.key}`}><dt>{tr(CONFIGURATION_CATEGORY_LABELS[diff.category])}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(diff.key)}</dt><dd><del>{tr(buildConfigurationValue(guide, diff.before))}</del><span>{t("app.161660030aa6c9e3")}</span><strong>{tr(buildConfigurationValue(guide, diff.after))}</strong></dd></div>)}</dl>
           )}
           {diffs.some((diff) => diff.category === "statPriorities") && <p className="review-change-note">{t("app.cb4677555161737e")}</p>}
@@ -2086,7 +2102,7 @@ function BuildCommandDeck({
         </section>
 
         <section className="command-deck-section command-paragon" aria-label={tr("巅峰加点摘要")}>
-          <div className="command-deck-heading"><span>{t("app.f665170eeebffc3a")}</span><small>{tr(paragon === "low" ? "低巅峰优先级" : "800 点后投入")}</small></div>
+          <div className="command-deck-heading"><span>{t("app.f665170eeebffc3a")}</span><small>{scenario?.paragonBand === "any" ? t("app.d50332d7ae526253") : tr(paragon === "low" ? "低巅峰优先级" : "800 点后投入")}</small></div>
           <div className="command-paragon-grid">
             {paragonGroups.map(([key, label]) => {
               const entry = paragonPriorities?.[key]?.[0];
@@ -2137,7 +2153,7 @@ function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Parago
     ?? activeGuide.scenarios?.find((scenario) => scenario.id === activeGuide.defaultScenarioId)
     ?? activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`)
     ?? activeGuide.scenarios?.[0];
-  const activeConfiguration = activeGuide.configurationBase && activeScenario ? resolveBuildConfiguration(activeGuide.configurationBase, activeScenario.patch) : undefined;
+  const activeConfiguration = activeScenario ? resolveBuildScenarioConfiguration(activeGuide, activeScenario) : undefined;
   const gemIds = Object.values(activeConfiguration?.legendaryGems ?? {});
   let jewelryIndex = 0;
   const gear: Gear[] = activeConfiguration
@@ -2145,7 +2161,11 @@ function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Parago
       const item = activeGuide.gear.find((candidate) => candidate.id === id);
       if (!item) return [];
       const gemId = item.slot === "颈部" || item.slot === "手指" ? gemIds[jewelryIndex++] : undefined;
-      return [{ ...item, gem: gemId ? CONFIGURATION_LEGENDARY_GEMS[gemId] ?? item.gem : item.gem, affixes: normalizeGuideAffixes(item as Gear, classId, mode, paragon) } as Gear];
+      return [{
+        ...item,
+        gem: gemId ? CONFIGURATION_LEGENDARY_GEMS[gemId] ?? item.gem : item.gem,
+        affixes: activeScenario?.paragonBand === "any" ? item.affixes : normalizeGuideAffixes(item as Gear, classId, mode, paragon),
+      } as Gear];
     }) : activeGuide.resolveGear?.(mode, paragon) ?? resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant);
   const labels: Record<string, string> = { weapon: "武器", armor: "防具", jewelry: "首饰", season: "第4槽" };
   const powers = activeConfiguration
@@ -2330,7 +2350,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
         <div className="breadcrumbs">{entity(hero, "name")} <span>{t("app.7bb37df5cb369f18")}</span>{" "}{t("app.e0cf133297fe62b6")}{" "}<span>{t("app.7bb37df5cb369f18")}</span> {tr(guide.core)}</div>
         <div className="hero-content">
           <div><div className="eyebrow"><span>{tr(season.platformLabel)}{" "}{t("app.fd3a43ef425af872")}</span><b>{t("app.8dce33b49f31396a")}{" "}{tr(season.patch)}</b></div><h1>{entity(guide, "name")}</h1><p>{tr(guide.summary)}</p></div>
-          <div className="build-rating" aria-label={tr("BD定位")}><span><b>{tr(catalogEntry?.role === "冲层" ? "S" : "A")}</b> {tr(catalogEntry?.purpose ?? "单人强度")}</span><span><b>{tr(catalogEntry?.difficulty ?? "中")}</b>{" "}{t("app.9b949463c1e0f0d7")}</span><span><b>{t("app.f038053bedb1b9ed")}</b>{" "}{t("app.1bbf3970dd9a8deb")}</span></div>
+          <div className="build-rating" aria-label={tr("BD定位")}><span><b>{tr(activeScenario ? applicabilityPresentation(activeScenario.applicability) : "待验证")}</b> {tr(catalogEntry?.purpose ?? "单人强度")}</span><span><b>{tr(catalogEntry?.difficulty ?? "中")}</b>{" "}{t("app.9b949463c1e0f0d7")}</span><span><b>{activeGuide.platformStatus === "switch-verified" ? tr("已验证") : tr("待验证")}</b>{" "}{t("app.1bbf3970dd9a8deb")}</span></div>
         </div>
       </section>
 

@@ -13,7 +13,7 @@ const bundle = await build({
       export { WITCH_DOCTOR_BUILDS } from './app/data/witch-doctor-builds';
       export { WIZARD_BUILDS } from './app/data/wizard-builds';
       export { TRAGOUL_GUIDE } from './app/page';
-      export { validateReviewedBuildGuide, validateBuildSemantics, validateBuildEvidence, resolveBuildConfiguration, diffBuildConfigurations } from './app/data/build-guides';
+      export { validateReviewedBuildGuide, validateBuildSemantics, validateBuildEvidence, resolveBuildConfiguration, resolveBuildScenarioConfiguration, diffBuildConfigurations } from './app/data/build-guides';
     `,
     resolveDir: process.cwd(),
     loader: "tsx",
@@ -59,7 +59,7 @@ const builds = guides.map((guide) => {
   ];
   const base = guide.configurationBase;
   const scenarios = (guide.scenarios ?? []).map((scenario) => {
-    const configuration = base ? data.resolveBuildConfiguration(base, scenario.patch) : undefined;
+    const configuration = base ? data.resolveBuildScenarioConfiguration(guide, scenario) : undefined;
     return {
       id: scenario.id,
       applicability: scenario.applicability,
@@ -78,10 +78,6 @@ const builds = guides.map((guide) => {
     dataProvenance: guide.dataProvenance ?? "hand-authored",
     variantCompleteness: guide.variantCompleteness ?? null,
     scenarioCount: scenarios.length,
-    structuredSourceCount: guide.structuredSources?.length ?? 0,
-    evidenceClaimCount: guide.evidenceClaims?.length ?? 0,
-    crossCheckedClaimCount: guide.evidenceClaims?.filter((claim) => claim.status === "cross-checked" || claim.status === "switch-tested").length ?? 0,
-    unresolvedClaimCount: guide.evidenceClaims?.filter((claim) => claim.status === "unverified" || claim.status === "single-source").length ?? 0,
     paragon: Boolean(guide.paragonGuide),
     choicePolicyCount: guide.choicePolicies?.length ?? 0,
     structuredSourceCount: guide.structuredSources?.length ?? 0,
@@ -108,10 +104,6 @@ const report = {
   publishable: builds.filter((build) => build.publishable).length,
   genericPlaceholders: builds.filter((build) => build.dataProvenance === "generic-placeholder").length,
   batchDerived: builds.filter((build) => build.dataProvenance === "batch-derived").length,
-  structuredSources: builds.reduce((total, build) => total + build.structuredSourceCount, 0),
-  evidenceClaims: builds.reduce((total, build) => total + build.evidenceClaimCount, 0),
-  crossCheckedClaims: builds.reduce((total, build) => total + build.crossCheckedClaimCount, 0),
-  unresolvedClaims: builds.reduce((total, build) => total + build.unresolvedClaimCount, 0),
   structuredSources: builds.reduce((sum, build) => sum + build.structuredSourceCount, 0),
   evidenceClaims: builds.reduce((sum, build) => sum + build.evidenceClaimCount, 0),
   crossCheckedClaims: builds.reduce((sum, build) => sum + build.crossCheckedClaimCount, 0),
@@ -131,4 +123,4 @@ if (process.argv.includes("--write")) {
   await writeFile("docs/bd-review-audit.json", `${JSON.stringify(report, null, 2)}\n`);
 }
 console.log(JSON.stringify(report, null, 2));
-if (report.total !== 51 || report.schemaValid !== 51 || report.semanticValid !== 51 || report.genericPlaceholders !== 23 || report.batchDerived !== 7) process.exitCode = 1;
+if (report.total !== 51 || report.schemaValid !== 51 || report.semanticValid !== 51 || report.genericPlaceholders !== 22 || report.batchDerived !== 7) process.exitCode = 1;

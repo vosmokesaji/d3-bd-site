@@ -18,6 +18,8 @@ export type GearSeed = {
   base?: string;
   method?: string[];
   warning?: string;
+  hands?: 1 | 2;
+  affixes?: string[];
   gem?: GemKey;
 };
 
@@ -178,9 +180,10 @@ function makeGear(seed: GearSeed, guide: ClassGuideSeed): GuideGear {
     image: itemFile(seed.file),
     quality: seed.quality ?? "legendary",
     effect: seed.effect,
-    affixes: affixesFor(seed, guide),
+    affixes: seed.affixes ?? affixesFor(seed, guide),
     acquisition: acquisitionFor(seed),
     warning: seed.warning,
+    hands: seed.hands,
     gem: seed.gem ? GEMS[seed.gem] : undefined,
   };
 }
@@ -285,7 +288,7 @@ const genericReviewedSources: Record<string, string> = {
   "h90-frenzy": "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build",
   "ik-charge": "https://www.icy-veins.com/d3/barbarian-furious-charge-build-with-immortal-king-and-raekor",
   "seeker-hammer": "https://www.icy-veins.com/d3/crusader-blessed-hammer-build-with-seeker-of-the-light-set",
-  "lod-bombardment": "https://www.icy-veins.com/d3/crusader-bombardment-build-with-legacy-of-dreams-set",
+  "lod-bombardment": "https://www.icy-veins.com/d3/crusader-legacy-of-dreams-bombardment-build",
 };
 
 export function createGenericReviewedGuide(guide: BuildGuide, source = genericReviewedSources[guide.id] ?? guide.source): BuildGuide {

@@ -188,6 +188,21 @@ test("renders the reviewed Invoker Thorns scenarios with thorns and gold-speed b
   assert.match(crusaderData, /validateReviewedBuildGuide\(INVOKER_THORNS_REVIEWED_GUIDE\)/);
 });
 
+test("renders LoD Bombardment without fictional set links or unsupported scenario claims", async () => {
+  const html = await render("/builds/lod-bombardment").then((response) => response.text());
+
+  assert.match(html, /梦遗轰击/);
+  assert.match(html, /单人 GR 冲层 · 标准/);
+  assert.match(html, /T16 普通奈非天秘境 · 可用非最优/);
+  assert.match(html, /悬赏 · 适合长距离转场/);
+  assert.match(html, /基础配置就是单人GR冲层标准版/);
+  assert.match(html, /待验证<\/b>.*NS适配/);
+  assert.doesNotMatch(html, /梦之遗礼 · 套装部件联动/);
+  assert.doesNotMatch(html, /2 件当前装备共同组成套装效果/);
+  assert.doesNotMatch(html, /大秘境速刷/);
+  assert.doesNotMatch(html, /这是四套配置的低巅峰冲层基线/);
+});
+
 test("renders the reviewed Roland Sweep scenarios with density and gold-speed branches", async () => {
   const [html, crusaderData] = await Promise.all([
     render("/builds/roland-sweep").then((response) => response.text()),

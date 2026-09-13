@@ -125,6 +125,7 @@
   "app.05b01178e99e6fa1": [
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
@@ -191,6 +192,7 @@
   "app.e5bd9509a4f5fc2f": [
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
@@ -243,6 +245,7 @@
   "app.17b43214c45c789d": [
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
@@ -695,6 +698,7 @@
   ],
   "app.8647c16338db3df7": [
     "app/data/barbarian-builds.ts",
+    "app/data/crusader-builds.ts",
     "app/data/followers.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
@@ -706,6 +710,7 @@
   ],
   "app.fa7f5d4a85f55648": [
     "app/data/barbarian-builds.ts",
+    "app/data/crusader-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
@@ -1160,6 +1165,7 @@
   ],
   "app.9130507e9f57adaa": [
     "app/data/barbarian-builds.ts",
+    "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
   "app.629e2fdef1af1760": [
@@ -2958,7 +2964,6 @@
   ],
   "app.62bbd903f61b9c8f": [
     "app/data/barbarian-builds.ts",
-    "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "evaluated data factories",
     "app/i18n/manual.json"
@@ -3928,6 +3933,7 @@
   ],
   "app.c6174f48b2ce182a": [
     "app/data/barbarian-builds.ts",
+    "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
   "app.1f3a8a1d775582f6": [
@@ -4291,6 +4297,7 @@
   ],
   "app.16a11e143c8e9117": [
     "app/data/barbarian-builds.ts",
+    "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
   "app.ab5134b0d20c7f3b": [
@@ -4493,7 +4500,6 @@
   ],
   "app.a4a1a5434a80e33a": [
     "app/data/barbarian-builds.ts",
-    "app/data/crusader-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "evaluated data factories"
   ],
@@ -4509,7 +4515,6 @@
   ],
   "app.c71e2d3d6e8dbda1": [
     "app/data/barbarian-builds.ts",
-    "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/monk-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -4912,6 +4917,7 @@
   ],
   "app.aadc66ef1ce24bec": [
     "app/data/barbarian-builds.ts",
+    "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
   "app.b9f7d3c8ea07b560": [
@@ -5975,6 +5981,59 @@
   "app.b9a50794d25cb763": [
     "app/data/build-guides.ts"
   ],
+  "app.2fd62668a5e27264": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.4a69acb76162e072": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.28449a23a01b17e6": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.2409e883cbc1a3df": [
+    "app/data/build-guides.ts",
+    "app/data/class-build-factory.ts",
+    "app/data/demon-hunter-builds.ts",
+    "app/data/monk-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.d789646eda8f0379": [
+    "app/data/build-guides.ts",
+    "app/data/class-build-factory.ts",
+    "app/data/necromancer-builds.ts",
+    "app/data/witch-doctor-builds.ts",
+    "app/data/wizard-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.5b94a5874f4c66bd": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.97c4c98c4c9e947f": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.e848df948a70f70d": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.40463949072205cb": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.957fa2afa1cc3b02": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.2883c3e7b258d4e6": [
+    "app/data/build-guides.ts",
+    "app/i18n/manual.json"
+  ],
   "app.7b2c9f8005d8b6fc": [
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
@@ -6064,23 +6123,6 @@
     "app/data/class-build-factory.ts",
     "evaluated data factories"
   ],
-  "app.2409e883cbc1a3df": [
-    "app/data/build-guides.ts",
-    "app/data/class-build-factory.ts",
-    "app/data/demon-hunter-builds.ts",
-    "app/data/monk-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.d789646eda8f0379": [
-    "app/data/build-guides.ts",
-    "app/data/class-build-factory.ts",
-    "app/data/necromancer-builds.ts",
-    "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
   "app.2da3587cc44dcdd7": [
     "app/data/class-build-factory.ts"
   ],
@@ -6151,6 +6193,166 @@
   "app.1cd5edb71b1751cc": [
     "app/data/class-build-factory.ts",
     "evaluated data factories"
+  ],
+  "app.7362d8b21ac30608": [
+    "app/data/class-build-factory.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.c8e5589c9a499eaa": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "app/data/demon-hunter-builds.ts",
+    "app/data/monk-builds.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.c81995fafdc22cd7": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "app/data/followers.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.16af4fcf82c23c9a": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "app/data/monk-builds.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.bd01642faa631fcf": [
+    "app/data/class-build-factory.ts",
+    "components/build/BuildTableView.tsx",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.da60055c650aca40": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6c9ba7bcfca6154f": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5c45a705bd4b7c48": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.445905122e87b990": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "app/data/witch-doctor-builds.ts",
+    "app/data/wizard-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.1a93c20d40a9b7cb": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.af351f2b09936190": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0bf0432eac557859": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.446713cdf622914d": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.844b8cc8dff7c1d8": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.4d09d8f699ad8575": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e004d0823568820d": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.72e8dac3e2eb206c": [
+    "app/data/class-build-factory.ts",
+    "app/data/witch-doctor-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.06930bed53298a14": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.0708336bfb81f3f9": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.055d9781b8bfb71f": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.69d91e35dccfa576": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories"
+  ],
+  "app.273d3e8983ac3a2b": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9d8707f4c1f4d6f1": [
+    "app/data/class-build-factory.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.45f8ccae481dc4ba": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5a68a5e37e9af677": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.95aa5fdc8016fdf4": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx"
+  ],
+  "app.66526791a890f561": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.97288c416b079003": [
+    "app/data/class-build-factory.ts",
+    "app/data/crusader-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.e17f6578931aa9fb": [
+    "app/data/class-build-factory.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.6184427c263a70f6": [
     "app/data/crusader-builds.ts",
@@ -6374,6 +6576,10 @@
     "evaluated data factories"
   ],
   "app.6746bbc97a28c18e": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.e54550a82a667a4a": [
     "app/data/crusader-builds.ts",
     "app/i18n/manual.json"
   ],
@@ -7379,8 +7585,7 @@
     "app/data/crusader-builds.ts"
   ],
   "app.a20b53c64971bd2f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "app/data/crusader-builds.ts"
   ],
   "app.67371a4243a5e792": [
     "app/data/crusader-builds.ts",
@@ -8380,54 +8585,74 @@
     "app/data/site-catalog.ts",
     "evaluated data factories"
   ],
-  "app.55f2cf17948f618d": [
+  "app.5d2808fee01f589d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3db9bfc80b220ad9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0112bef736753bc7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.77564fef72e900ad": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.24af1f6c6f72f4e7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.80083411deebbdc2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.47656c648d6e9441": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e095e7d97d69ec1d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e7292d42f1048751": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.f0c1c34ddd5705e0": [
+  "app.0706407ac1fda493": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.03db422cdc52e1d9": [
+  "app.ae9f34805fc9ef97": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.e7d307d21581fbd1": [
+  "app.410e8a18f280416d": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.4185f487c5197dd2": [
+  "app.bd9fc4083b9c02ad": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.ceb76704cb96e424": [
+  "app.576eb6eb8b794841": [
     "app/data/crusader-builds.ts",
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.bd1f5b1ca5f1a367": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.17383ebc81daf361": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b633b275e79296cf": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.54c3c6897840249a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.92d98b64e6ea5c91": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.ae3dedf171ab0afa": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.3488b5cb33772f31": [
     "app/data/crusader-builds.ts",
@@ -8436,101 +8661,406 @@
     "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
-  "app.9ff8c1f41545137f": [
+  "app.7f4e84750f640f89": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d36689cdc53fdf4b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9ad0bde7b936122f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ef38d67d7af843ab": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.325743adb884e57e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.29f92e8c6f4c1758": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6d0dcf433a37adbc": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2de59f82f959545c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f68e50ab12375f7": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.e61e821ea74232e8": [
+  "app.2ffcd24364c88454": [
     "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4228f50c0dce50bc": [
+    "app/data/crusader-builds.ts",
+    "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.0369ebbc19dbe494": [
+  "app.8a6920825cac2acc": [
     "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4d8488b40cf68e0d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c366255b04661feb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.99e9b3a53223308c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.039e2b6bebeb89f5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.34e7d60984035296": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e0fe8350a2d62c1a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.51adb522c89368f8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6632f669a37eac46": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e5da94173a926a87": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a66c6a1dc0171b2e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7904fa9657654b75": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a03ba73a325ca458": [
+    "app/data/crusader-builds.ts",
+    "app/data/followers.ts",
     "evaluated data factories"
   ],
-  "app.c2f5a657c22561fb": [
+  "app.641645a3c3bb73f6": [
     "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7ad4b56ff864ba2d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.604bb36ce6405825": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c5f10a2d1b3e520a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dd9e776f643840de": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d64331fc7f5d00b2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fc4cf460e40d196d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a915232dc62f8271": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.38933c7f2f46237f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9b304cb44bf21d9b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2cba1af5fee01839": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6756f21cb3846ebd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.06643d245745a3c2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.19753395cf8f0c72": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6d094c52eed10919": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.84917b19429d8e4c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.abc3875d8486dcaf": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fe75e13baed82554": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5e97592d8b5cd9bd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.006a897d7cab6a15": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e5438843f730ea8a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ef7b0ce9661ef57c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.713450d3dc31b60b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.db23aedfedb64493": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b5635f23d66842f4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
+  ],
+  "app.138b9e54426ab2bf": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ae775278db1207b3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8dcb63a2406170fd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f2732858ccca4150": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e2113a3e918262d8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "public/d3/library/skills.json",
+    "app/i18n/manual.json"
+  ],
+  "app.d8774cc46ed05576": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.99c72b51c2b3d83f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.052eaa5f11d9ec0f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c5aa3dca050ae1e8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b92cbff1d9d7c56f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.814445499eab0c17": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.72652e9dbc3df724": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b8c60f48c30a714f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.33408babfd65b17b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2c76e3e9f79f5026": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.04615b4c09e4c9bb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3964212644f1b2c1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c16e9d579f1fc64d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.43ff576176b52844": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e3eed87405938af2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.927a01a01edce3e7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.469432870a6042b4": [
+    "app/data/crusader-builds.ts",
+    "app/data/monk-builds.ts",
+    "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.4e6a29c159f5b183": [
+  "app.9fbe4f06ed2805e5": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.dd373272f0043c47": [
+  "app.d11b4f91ebac399f": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.70b7e18fe94f23e0": [
+  "app.a1bb71683e726320": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.27a22479c432aab9": [
+  "app.d3a09e8c0906f486": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.1a5f41cf0bf8c901": [
+  "app.cb1bedddf7ba88c7": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.19fcae9e6b0094a1": [
+  "app.4af2d7ecbe473004": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.3d654e769f1228ad": [
+  "app.ebe371c5823bd7f7": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.d5a20defc909294f": [
+  "app.e422929d9f23e63f": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.28daa1c4f7c7459f": [
+  "app.0ada88a0b93bcf90": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.f547e19461537ce5": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.a002772068ee8b8f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.024856924e1d7b76": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.40a2c475d34152d0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b9ae883e3c55c8f6": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.823d8b62f3244041": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.65718ef24964db56": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b27f42ade67c8f8f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.5e298c5111efc770": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.97c4d7738dc4fd7c": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.fb1185ed70f21bfc": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.b87ddeca4dfb3c64": [
     "app/data/crusader-builds.ts",
@@ -8540,124 +9070,171 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.3028c0ba8d230644": [
+  "app.78f343944f72a649": [
     "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.219f1ad3019bc19e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bfb63bfe33897c4f": [
+    "app/data/crusader-builds.ts",
+    "app/data/monk-builds.ts",
     "evaluated data factories"
   ],
-  "app.a0c6c4493e15eb6e": [
+  "app.f1c5daf7cc24f016": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.6fe9957fd03702ef": [
-    "app/data/crusader-builds.ts",
-    "app/data/witch-doctor-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.1e873806cabc0adb": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.fa1eb40c3f703c0e": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.f97a4d3df4673f46": [
+  "app.cba36792078dc44c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c1747370d44db28a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d024242408278849": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ae234b6dc2dedba2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a0bd7b257d4cfe11": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.61a4f4547bd39aa6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a84dc5d821a3229b": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.94feee702ceb6b9c": [
+  "app.acc04e852851c4de": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5afed2da970702ec": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.643b07d030e89d50": [
+  "app.8eefe4858d1405fe": [
+    "app/data/crusader-builds.ts",
+    "app/data/monk-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.31db4cecc5309c51": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b8a268c134397df8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a0f9ec3ce34d0c8b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dca296c5ca4e60ea": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fb72ffd63a6dd96d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ce2b23374a43920e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f0bcbe02e830fa67": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.c42480bf5a2b0c63": [
+  "app.4f1bbffc7e25a2f3": [
     "app/data/crusader-builds.ts",
-    "app/data/necromancer-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8fa99e1ee23252b3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1ffc75c78b3d35e5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f0d068f16c281845": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bbc5d4b149cc08c1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.00116039d841e4de": [
+    "app/data/crusader-builds.ts",
+    "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.4ba7c75320fad487": [
+  "app.2b8eb948d09daf60": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.07ab5055c88e31d5": [
+  "app.df83ec6a2b9685af": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.1a1752e6df1bd837": [
+  "app.907446a7cb3f6cbb": [
     "app/data/crusader-builds.ts",
-    "app/data/demon-hunter-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.cec77b32a7c6c52f": [
+  "app.2050d9ee358eaa5b": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.103a1f08fe8e3424": [
+  "app.c8435a8bc510b8ff": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.1be1399a24854422": [
+  "app.1e1df8d63e128325": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.46ae1cb55252c792": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.98b3d0f4f81a5891": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.98f03164849cc52f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.092b550b993b7ace": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.03225e2a1a9128f0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.795a1e9fcdabd02e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.305d3d367a7805cb": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.72740d8be463bb66": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.54f767bbf4c92cce": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.ce9b613be75937b5": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.935fdbe4c5a3313a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.2e13af271f2e2acc": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.01a25dbc80b83053": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.55fed74d24566aec": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.a38fb766208c6e88": [
     "app/data/crusader-builds.ts",
@@ -8692,18 +9269,8 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.6f68e50ab12375f7": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
   "app.83c65ff11c68bb4e": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.469432870a6042b4": [
-    "app/data/crusader-builds.ts",
-    "app/data/monk-builds.ts",
-    "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.45cee66e98c2bc63": [
@@ -8754,17 +9321,6 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.db23aedfedb64493": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b5635f23d66842f4": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "public/d3/library/skills.json",
-    "app/i18n/manual.json"
-  ],
   "app.2d6d461cc276cdb9": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
@@ -8786,12 +9342,6 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.e2113a3e918262d8": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "public/d3/library/skills.json",
-    "app/i18n/manual.json"
-  ],
   "app.eac2cd49eb3654dd": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
@@ -8799,11 +9349,6 @@
   "app.5b9dcd67c3751261": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
-  ],
-  "app.052eaa5f11d9ec0f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
   ],
   "app.ac6b00631904e3c2": [
     "app/data/crusader-builds.ts",
@@ -8898,10 +9443,6 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.a84dc5d821a3229b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
   "app.42a2d0b49fa2107f": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
@@ -8939,10 +9480,6 @@
     "evaluated data factories"
   ],
   "app.4fc9954936148f4e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.5afed2da970702ec": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
@@ -9289,32 +9826,12 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.97288c416b079003": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
   "app.5df8cf73e80239df": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
   "app.2f0a28ccda6397e8": [
     "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.c8e5589c9a499eaa": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "app/data/demon-hunter-builds.ts",
-    "app/data/monk-builds.ts",
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.16af4fcf82c23c9a": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "app/data/monk-builds.ts",
-    "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.c0c253c2710b4e91": [
@@ -9380,12 +9897,6 @@
   "app.aa15b57db0514c2d": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
-  ],
-  "app.95aa5fdc8016fdf4": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx"
   ],
   "app.40d3f1328299711a": [
     "app/data/crusader-builds.ts",
@@ -9475,11 +9986,6 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.844b8cc8dff7c1d8": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
   "app.776ab9d947138cdd": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
@@ -9489,11 +9995,6 @@
     "evaluated data factories"
   ],
   "app.0055900bcea96989": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.06930bed53298a14": [
-    "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
@@ -10118,11 +10619,6 @@
     "app/data/crusader-builds.ts",
     "evaluated data factories"
   ],
-  "app.a03ba73a325ca458": [
-    "app/data/crusader-builds.ts",
-    "app/data/followers.ts",
-    "evaluated data factories"
-  ],
   "app.9fb46f9a31a7040b": [
     "app/data/crusader-builds.ts",
     "evaluated data factories"
@@ -10148,11 +10644,6 @@
     "evaluated data factories"
   ],
   "app.6df7be38aafabfcf": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.fe75e13baed82554": [
     "app/data/crusader-builds.ts",
     "evaluated data factories",
     "app/i18n/manual.json"
@@ -10582,10 +11073,6 @@
   ],
   "app.82adfc985f0cde89": [
     "app/data/crusader-builds.ts"
-  ],
-  "app.f0bcbe02e830fa67": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories"
   ],
   "app.009cd2d55c134e47": [
     "app/data/crusader-builds.ts",
@@ -11581,11 +12068,6 @@
     "evaluated data factories",
     "app/i18n/manual.json"
   ],
-  "app.ae234b6dc2dedba2": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
   "app.81aff1a6283bf153": [
     "app/data/crusader-builds.ts",
     "evaluated data factories",
@@ -12054,6 +12536,1713 @@
     "app/i18n/manual.json"
   ],
   "app.6939f0a6c6269c55": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.e2a391f18da0d0de": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.853420308d985152": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.463c7d667d308d8e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1d492c9e990e79ad": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.469a4876526efc02": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9abef41b9d24ae9e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8e316ea84df8c991": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a69e377d0c4b6c61": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0f87c394012befa1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b7d51b8562da5e04": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6870d810c1b4715b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4ca5090aa2aefbee": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5d5748f8432990b1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.94625d774086a294": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.ec3afb4672c47c78": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.674d57c788d051c6": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.def1b91285f3db1c": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.5b3f21779601780a": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.a88e62071b1127f7": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.34d4e0649f9602a2": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.db692abe8549506a": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.b6ca52d122d90004": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.0eef13268fb6340d": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.ee3a26061fb50582": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.cf7948bfaf8faa54": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.ba2eeb12b6a46f11": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.4f56b4041c0ae4f4": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.81ae592479183031": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6657ad827b1d07dc": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0ff6d6d5aaccd255": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d9154c89b2bfcadc": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.778524353be42c29": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f9d8378dceffc23": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ecdcb587ddac4945": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.838dfb59f32ab52e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.391aa9b897c33d68": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.9540ea8641db33d3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2248c7d6294564ce": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4361ea0224f712d1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.84ee07d5ddc91bc0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8ad9f44ada84a638": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.667b623734d65b7d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a11c851399f15ee0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.09d75d2c94e0dae0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f4f558612b975e06": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f6e0fcb1a4671001": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b41329fe629f03c1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cac086b1af394972": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.be79813b5b3ff78d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.42536561c2d86661": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5063e943960d6d8b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9f98d77057db7a07": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e4226da5b918fc9e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f3bba7e78785b73": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.77dec7f5843c8351": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f4df3820102bb74e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7996438f4fc452a2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.572e3cbed2620f25": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d536d0e1b36b90a6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9ceb930ee411c8f7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ab3034b242bfcb74": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b45721e16c9c0502": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.befe3e408089a87c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b4f848d6a9c5939f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7db3993bf2d564b2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d549a5b59044e6f5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.82381eae2196a038": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d56be7930799e45b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6ce238e3c930b34e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ee5c5c705fd230f0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4082f7445b26ec02": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4342f6781e5f7ae6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d1533af0ba91fe65": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.56bf958c9cffe74d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.134adfebb1647dd9": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.708671db80a4488d": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.1c2473a73b446831": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c52f00a32629e1e9": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.227b2e2f15a38631": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.74d34ed6f56db864": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.78418f1164be354f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.18a64a271bc2fa8d": [
+    "app/data/crusader-builds.ts",
+    "app/data/wizard-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.1328a1bb6e6de612": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.620a03e3a69afab4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.eeda8df730048aa8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.76bb8c84238a5455": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9cf8833a41eba5da": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.23cddcc37e626b56": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bd574d8e3fd65da5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8e7458873470b883": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.762cbc141509548a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f944b3531ce2c9bd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8af944d37a6ab577": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e451b81ae4c49305": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2e63455da60d8986": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7ec95226f99e55fd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.83f077660d44169d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.921dc8914e731da9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ebd7f284e2dc69c7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b54cb5a3cacd910f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.961f585a6010b1b8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.82fec4a0e86f4690": [
+    "app/data/crusader-builds.ts",
+    "app/data/witch-doctor-builds.ts",
+    "app/data/wizard-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.b7ca749ce43bfbbd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.12d111ab1cc069ba": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.52678dbf20e2f7a7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3b7a6e1b2e703b14": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0829d673c04a38a4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8a2d87f505335f44": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.54ed0cdc75a36c7d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.da273a5aa48ebca2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f0e95ac74abca264": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7636052e11540c12": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6b836e2bfec57a3b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.126d22b48a99246c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6d892a0146658251": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f051268fb2509c1f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.10a74af9b8664458": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0ba759a7d03ca7a3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2fbc1ab9c70bee93": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e4f76a7d4a5091cd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.66939e3a41035a78": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6284ca1e47e52027": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a704101c16cbfb4a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6baec092f81d5cfe": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.82186b73eec3f594": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d1d0fdceff5cf0a0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ce1f6ef7158ad4d7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.45a7e492a7b98440": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3466813de072fe61": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.828c2fd6440466df": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d010994c303532e6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dfbfcb49307cea4a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.959dbffe5651b5f9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e2487816fe7013e9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d5e4c670e59e14ea": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.85d35874f3a0276d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8c58238be49a189e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.411bb122dd62aec9": [
+    "app/data/crusader-builds.ts",
+    "app/data/site-catalog.ts",
+    "evaluated data factories"
+  ],
+  "app.1aa25d1f20f4cfc1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c61843aba570edef": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f9a381599fcb5b6b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4ac5d84e32c82d54": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.7ddfbb55ba6eede7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0b776dfdc11e761d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ec52d48812706d6b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f1cac088f44e9d69": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2db5a3dbaff604c8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fda86e070b1330f4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d068ed13557af28d": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.4891c465c5581de2": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.de3016e2728e6ff2": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.47dcfb48dea8d68f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.8e3102c453b777f9": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.d7d538aae45dfe69": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.28ecb9068c6bcad1": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.24f1091d576e33a8": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.e03da74d76764422": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.e391f38c2555464e": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.1e49c054371ceff2": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.73a1aeb7e2f4e90f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.b221adc0d272fd49": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a0473e53a51f93c5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.73b493b62fb703e3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.573a2abd36c17843": [
+    "app/data/crusader-builds.ts",
+    "app/data/followers.ts",
+    "evaluated data factories"
+  ],
+  "app.93b01fc12c749bcb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9525cf271750433a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ee530188ca77ecfa": [
+    "app/data/crusader-builds.ts",
+    "app/data/witch-doctor-builds.ts",
+    "app/data/wizard-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.500f5cd0b6347185": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.05989ae563f5d19d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3090379ba85412b7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.da1b6a7d51ab3609": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.435af8d398c4a301": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ba72e71c1df8132c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a8d6b8d82448ad53": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f87f3d193fef5304": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.b21fcb4acec0a29b": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.7049fdcd8eeab421": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.8751f60e9639374f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.8a327002dc262d7e": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.8cedb93e5e4a3a52": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.a3a6e0e859d13891": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.21d4ca84e9334223": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c736cbb9b78ee973": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.59232a7e918509d5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fc2cf7a6f4397e1f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.74e07cf611466bbb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ff0f2bd5be9ecbbf": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2d83aa6d54579894": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d1e7148ce3002274": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.51791f17056ac9a6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c3f96ab1f2cfab9c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fdf12fb5daafc2f7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ba1afa34495fadc5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b989a7740a3cf5c4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3701b5033bc1206c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.35d2191051f8f6d7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.366960ecd89bf2b5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5629a9688d36db73": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.330c8b08c63c6f55": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f21636d5bd170236": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3ca6cc6323e319df": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3411f587ed15eeac": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9b7bc1d004e3a914": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d26d8b732a9fd894": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c0cd464f604d9339": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4e6ba2298487ef61": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.71df77a9bdc2c662": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2ffb089b5dad5432": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3c5a4f4422eee5ff": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3f2a662562995423": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7dc5bbd69544a972": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a337a63b0d3ac398": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bd0e425606fe90b3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.83763f94910d55f2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.69bd6afcd4fa14e7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.84da4d1bf04d6c2a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.97d113b5de39e302": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e8fe0a935c76ecfb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9b821476aa746e32": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9107ba4728508986": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.57fb72b126255b6c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5bc2cdd62601dd75": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4c0cbc85a02edd3a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a4e0a5d5b411ceee": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4a2ad83975d16de4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7d461d772447cb5a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5c0155d1dbc1fceb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.76f0a112cc9ad577": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dbbf43166f55043b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.344e339d2d6b8708": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c0b6966f78d01c25": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a3c197b9f2333ffb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e06c526915305477": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.82e007103bce7eed": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1b2336fe65087d6a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.961323b18210ac69": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.152e32849711715a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cb869d671a8a71c8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7582882dd4faffc7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5d2cf41c88a4c4fe": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8ff7b2a835b50fdf": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a864afaf9ca6d0c3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.156e0ddc95b0982a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b57fe5046980d716": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.34db468e2ae2133d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.af0ff4d2ef3933a6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.45ceba1256110bb6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a39cd1c7fe518fce": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.884e899bc4db5421": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.01facb3fc8b585ff": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f88ef54d2b295f0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c6b79a550c2b8c74": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b40033c45003178a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.39c2a98ab799160e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.426a410a780cd6a1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.25fd564a1a0586b5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.249ffbeac9ed04d7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b610c0e04d1e0cc5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6c308a19396d3495": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d2f49541795e8e1b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5bf3c7f698d3c98c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1dd8da144791e41b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.080d0ec660f78b51": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c8be4aa823a8bae8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.92c755923b8128df": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f44a7b16d05c2b18": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b2488687983cd2cb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d364a47a374b6dab": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.469ee259119dc475": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.50f0bf360b0f4a3c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.856ad4a21a6cbb23": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.78dfc6ee6663ca2f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9e2be0ff54bed93b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.217657df99552991": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6001e2d52a403d28": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.95ffdd5353a86146": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2e3a27de4d648900": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e727de7123fe2cf2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.797566866f561f29": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.21530f8e81bda9b5": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.c31c595649a0b21a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0e1e878248f4e325": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0839df82250874b8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4046f5ec22a06933": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cbf8a209a2f97cf9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6ece76851cc8fea4": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d2e6453e9ccdab1b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f62a502d22930b91": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.38511880cb51f85e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cd7d8caf883be95d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bf19903c10c80771": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b946e03c60f07196": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4cfee15197b5adda": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.65f80704d3bc59f0": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4b117a7118c24c99": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bf521e16c67af7de": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bc860c0b30fd162e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b12d7bfceb8d360f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.33085b334dbbf83f": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.afdd44c4f45db1d1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.182e8006a250cf2b": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.0f6a012a7280ea97": [
+    "app/data/crusader-builds.ts",
+    "app/data/demon-hunter-builds.ts",
+    "app/data/necromancer-builds.ts",
+    "components/build/BuildTableView.tsx",
+    "evaluated data factories"
+  ],
+  "app.ee2723b4cea2d143": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.85e56dec84919ab6": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.66b4fad2baaa187b": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.6f128a4b231f4fc5": [
+    "app/data/crusader-builds.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.c39fa14129b37a7a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1560ea95199ab2e6": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0d4c9ba4c7465d99": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.eba457b5b2779478": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.80738beeb05ddcf3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.164fc065fb46acfe": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b8874fdfc28234a7": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.99bbfc5a1aadcccd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.14866d573ff3784e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.137a5c92b6505dfd": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.94361fdada60e44a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fb5758e763372950": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.95d88d1d338897cb": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.832a704300ad5d00": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.40cea5708343abf9": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.699295ca41898c86": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2c4d07511c6a1f6b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ea28661b35a37c7c": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a9786e16e09b3916": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.173c4a0dc06e4ea8": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fd9dc054700be7bf": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7ba50a0ee3f4c1d1": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7eecd59ebe6a6912": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5c2b03165a01c56e": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0b1869935c97bf7d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ce7514fe38dfe28d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.51d02b2fc493a991": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4af7b901fad6ac59": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8e96f1072d04a86f": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a42c5bdaa11b9999": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8191cc85ce79361d": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.907df5a001347a6b": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5ca36a9de8e8ccf2": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.38dadc4b16deca27": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4932fd6b19b42e53": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.77076ff12eaeee23": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e0032c3c829343ec": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.46d80d2dc0a022d3": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.db0328d0fb3a5758": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9810163d276a8346": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4dec3ba22eb44a7a": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.793a815ee6399f97": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fba9d27bf74d10b5": [
+    "app/data/crusader-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.55904ff4ebf8c3be": [
     "app/data/crusader-builds.ts",
     "app/i18n/manual.json"
   ],
@@ -14036,6 +16225,10 @@
     "app/data/demon-hunter-builds.ts",
     "evaluated data factories"
   ],
+  "app.1a1752e6df1bd837": [
+    "app/data/demon-hunter-builds.ts",
+    "evaluated data factories"
+  ],
   "app.d2b5cd5c4bedb107": [
     "app/data/demon-hunter-builds.ts",
     "evaluated data factories"
@@ -14193,13 +16386,6 @@
     "app/data/demon-hunter-builds.ts",
     "app/data/followers.ts",
     "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.0f6a012a7280ea97": [
-    "app/data/crusader-builds.ts",
-    "app/data/demon-hunter-builds.ts",
-    "app/data/necromancer-builds.ts",
-    "components/build/BuildTableView.tsx",
     "evaluated data factories"
   ],
   "app.9d5bf953a0b98b80": [
@@ -14555,10 +16741,6 @@
     "app/data/followers.ts",
     "evaluated data factories"
   ],
-  "app.573a2abd36c17843": [
-    "app/data/followers.ts",
-    "evaluated data factories"
-  ],
   "app.1295344fbd74e97e": [
     "app/data/followers.ts",
     "components/items/DiabloItemFrame.tsx",
@@ -14656,13 +16838,6 @@
   "app.9b949a5c73ff8c60": [
     "app/data/followers.ts",
     "evaluated data factories"
-  ],
-  "app.c81995fafdc22cd7": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "app/data/followers.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
   ],
   "app.eaf086f666cfdd93": [
     "app/data/followers.ts",
@@ -16572,10 +18747,6 @@
     "app/data/monk-builds.ts",
     "evaluated data factories"
   ],
-  "app.bfb63bfe33897c4f": [
-    "app/data/monk-builds.ts",
-    "evaluated data factories"
-  ],
   "app.f3cf638cb23c2255": [
     "app/data/monk-builds.ts",
     "evaluated data factories"
@@ -17198,10 +19369,6 @@
     "evaluated data factories"
   ],
   "app.28dd5aee8677af64": [
-    "app/data/monk-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.8eefe4858d1405fe": [
     "app/data/monk-builds.ts",
     "evaluated data factories"
   ],
@@ -18386,10 +20553,6 @@
     "evaluated data factories"
   ],
   "app.adac71275bca95bb": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.4228f50c0dce50bc": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
@@ -21665,6 +23828,10 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.c42480bf5a2b0c63": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
   "app.2e3016feff533ce2": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -21734,7 +23901,6 @@
   ],
   "app.67bb6510297fd8e8": [
     "app/data/site-catalog.ts",
-    "app/page.tsx",
     "evaluated data factories",
     "app/i18n/manual.json"
   ],
@@ -21898,11 +24064,6 @@
     "evaluated data factories"
   ],
   "app.5d6bfd37e302bed3": [
-    "app/data/site-catalog.ts",
-    "evaluated data factories"
-  ],
-  "app.411bb122dd62aec9": [
-    "app/data/crusader-builds.ts",
     "app/data/site-catalog.ts",
     "evaluated data factories"
   ],
@@ -23838,6 +25999,10 @@
     "app/data/witch-doctor-builds.ts",
     "evaluated data factories"
   ],
+  "app.6fe9957fd03702ef": [
+    "app/data/witch-doctor-builds.ts",
+    "evaluated data factories"
+  ],
   "app.2a394a6b20c63d0b": [
     "app/data/witch-doctor-builds.ts",
     "evaluated data factories"
@@ -25209,11 +27374,6 @@
     "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
-  "app.ee530188ca77ecfa": [
-    "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
   "app.5a2c24336c455042": [
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
@@ -25290,13 +27450,6 @@
     "app/data/witch-doctor-builds.ts",
     "evaluated data factories"
   ],
-  "app.445905122e87b990": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
   "app.c8cd8511511cce8b": [
     "app/data/witch-doctor-builds.ts",
     "evaluated data factories"
@@ -25324,12 +27477,6 @@
     "evaluated data factories"
   ],
   "app.c142d22137e713a8": [
-    "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.82fec4a0e86f4690": [
-    "app/data/crusader-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "evaluated data factories"
@@ -25431,11 +27578,6 @@
     "evaluated data factories"
   ],
   "app.ebcf08e13b69b8af": [
-    "app/data/witch-doctor-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.72e8dac3e2eb206c": [
-    "app/data/class-build-factory.ts",
     "app/data/witch-doctor-builds.ts",
     "evaluated data factories"
   ],
@@ -25568,6 +27710,11 @@
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "evaluated data factories"
+  ],
+  "app.161c05ed0f2a64e2": [
+    "app/data/witch-doctor-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.3c966e5a2314d088": [
     "app/data/witch-doctor-builds.ts",
@@ -26125,6 +28272,10 @@
     "evaluated data factories"
   ],
   "app.eb496d82488e6ebd": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.ceb76704cb96e424": [
     "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
@@ -26732,11 +28883,6 @@
     "evaluated data factories"
   ],
   "app.186b600b9f929c67": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.18a64a271bc2fa8d": [
-    "app/data/crusader-builds.ts",
     "app/data/wizard-builds.ts",
     "evaluated data factories"
   ],
@@ -27746,6 +29892,51 @@
   "app.48086f6ec0c7518a": [
     "app/data/wizard-builds.ts"
   ],
+  "app.1854504e051a8091": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c54f59230a3ff326": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.69bc5b14e25f73bc": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6e81c027f57dab84": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e29c0e97af65f673": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.90119c53a4b65acc": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4f31c5cec8ad1c17": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fe61b670f2431c4c": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.87d99f1daf759a71": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
   "app.6b2fa34556e28d07": [
     "app/data/wizard-builds.ts",
     "evaluated data factories"
@@ -27824,6 +30015,11 @@
   "app.f98b9560f2b58d0d": [
     "app/data/wizard-builds.ts",
     "evaluated data factories"
+  ],
+  "app.cf3f42f76294fa15": [
+    "app/data/wizard-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.0a77568ecfd61363": [
     "app/layout.tsx",
@@ -28315,6 +30511,16 @@
     "app/page.tsx",
     "evaluated data factories"
   ],
+  "app.0a5efbe7c7bd4a47": [
+    "app/page.tsx",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dbdd1312acbcde27": [
+    "app/page.tsx",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
   "app.27bf107e03fd1ab2": [
     "app/page.tsx",
     "evaluated data factories"
@@ -28647,6 +30853,38 @@
     "app/page.tsx",
     "evaluated data factories"
   ],
+  "app.999d1bf2c7cd759c": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.e08c7ad1c1036b58": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.e49362fb8fac47ae": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.4b10b01bcd65bb7c": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.42763fc1894fd93c": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.12d1a249e16fc7c9": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.164a304c27e59504": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.a9b62575f44e9b4e": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.a4accb8265c99876": [
     "app/page.tsx",
     "app/i18n/manual.json"
@@ -28708,6 +30946,14 @@
   ],
   "app.a88160b302cb49fe": [
     "app/page.tsx"
+  ],
+  "app.6f83ca9fcb088e4d": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.8177d03b1f7107a7": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.7311197a001d838b": [
     "app/page.tsx"
@@ -28952,13 +31198,20 @@
   "app.38e0c30d0aa8f543": [
     "app/page.tsx"
   ],
-  "app.7362d8b21ac30608": [
-    "app/data/class-build-factory.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
   "app.30e1196888bd941f": [
     "app/page.tsx"
+  ],
+  "app.e765966689064d31": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.7dae15ac9ebf829c": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2aa110fc0a3cbc89": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.587181de19a10bf7": [
     "app/page.tsx"
@@ -29113,6 +31366,66 @@
   "app.072fb64714663632": [
     "app/page.tsx"
   ],
+  "app.775d8bd086478ae3": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.62e1564208cc2e7e": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.50146da16a1fe7ce": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.510ccb8fce8bdaa2": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.0578f4a56524c583": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.c8a75a57ca7c1fc3": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.77c5d99c22dd8eef": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.1a77046ca163291a": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.ca97112167315bc9": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.0d3df9e14653e4a1": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.95e0b522d6a21125": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.eba20531c1fb6e82": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.97a0828cc5a1e826": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.a827834ee35bf991": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.e047cc68bf570ae6": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.293b5582d9ed79b3": [
     "app/page.tsx"
   ],
@@ -29155,14 +31468,114 @@
   "app.ec14fc0efdbaefb1": [
     "app/page.tsx"
   ],
+  "app.b304784862f619b5": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2d10e559c054fd6e": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.5dc09206d05622a2": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.925dda01c1669bd7": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.2c2423c2c9424e95": [
     "app/page.tsx"
+  ],
+  "app.80fa5aaf6701a9e7": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.8b0efed222a606ad": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.be77608156c06dbf": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.ae0d9b3cc93a56f5": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2b44272ad309dede": [
+    "app/page.tsx"
+  ],
+  "app.a3c1b541534ac496": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.6e1a01f0f1fd89a8": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2ef44bb2128f3a85": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.8235d5047cea33a1": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.f8c90e3970f11250": [
     "app/page.tsx"
   ],
-  "app.2b44272ad309dede": [
-    "app/page.tsx"
+  "app.778ff0a74ce05ee0": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.a7642f931d5e7927": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.d2c90a053c969eaf": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.a8e3165d7ee607d7": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.eea0410880faeac9": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.f25a8310e7ba7ecb": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.42ddfc13216e369a": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.a779e25da62fc635": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.c9fd7a992cff7360": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.3d5f89d0a286dcb0": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.eb8f4a3860e04943": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.58e3d17bcc8cc75b": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.eef0f12af0485089": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.05a5c13315d6051e": [
     "app/page.tsx"
@@ -29221,6 +31634,26 @@
   "app.f6b79a4686fab656": [
     "app/page.tsx"
   ],
+  "app.0cd082a956f881df": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2b5943cc07748490": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.f4dcdb072cfda6d3": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2d693e3109a0ed66": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.acb3bbce762eec89": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.449d665e54cbd121": [
     "app/page.tsx"
   ],
@@ -29230,6 +31663,10 @@
   "app.318842eb74d445f3": [
     "app/page.tsx"
   ],
+  "app.a483033c56c0a2a9": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.a5675177bf8e3997": [
     "app/page.tsx"
   ],
@@ -29238,6 +31675,10 @@
   ],
   "app.53c63492e30503ec": [
     "app/page.tsx"
+  ],
+  "app.06b2c1a2e588a0cb": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.53cd25f2b8018cad": [
     "app/page.tsx"
@@ -29260,8 +31701,9 @@
   "app.68954ac110594e49": [
     "app/page.tsx"
   ],
-  "app.00116039d841e4de": [
-    "app/page.tsx"
+  "app.2dc10b5be4130fb7": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.938d758c46d4d8c8": [
     "app/page.tsx"
@@ -29272,11 +31714,55 @@
   "app.76f9edde7f6e2659": [
     "app/page.tsx"
   ],
+  "app.16d9bb2b1b792343": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.ba0c2d11cd5eb2e8": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.052688ee1d6c8aff": [
     "app/page.tsx"
   ],
   "app.948e4755062a9079": [
     "app/page.tsx"
+  ],
+  "app.adeddc5ed0503e91": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.482d0d4ae33bebb1": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2a1c28cf65663390": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.6f6cbc90d42e190a": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.05628c3bb8dddb42": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.7896008b181de7a0": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.11adf5c6dcc9e298": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.9f42501a4ba0730c": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.4dcae755d3941393": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.7467fc251d589f95": [
     "app/page.tsx"
@@ -29333,6 +31819,10 @@
   "app.5b865715f9c3ecfd": [
     "app/page.tsx"
   ],
+  "app.7e464da9ef9f0bbc": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.37ecc094d4cfc4e7": [
     "app/page.tsx"
   ],
@@ -29360,6 +31850,58 @@
   "app.18e162d08e1e65dd": [
     "app/page.tsx"
   ],
+  "app.8aa624add529f4df": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.e002eccdaf4615cb": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.c107d8855d636c62": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.cf78133e79c6c0bc": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.fa784e591dd61316": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.31783c644467ed93": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.7e618e25d3f638ae": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.1452deafc6d96546": [
+    "app/page.tsx",
+    "components/build/BuildTableView.tsx"
+  ],
+  "app.1a5ce6e250b073e1": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.0d09b174612b72ee": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.ddd09a5b606e4803": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.2746d995801b1cc8": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.76a2e875d985af84": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.7c24c764d037c578": [
     "app/page.tsx"
   ],
@@ -29379,9 +31921,6 @@
   "app.43164224cdd9336d": [
     "app/page.tsx"
   ],
-  "app.8b6adc116f14b167": [
-    "app/page.tsx"
-  ],
   "app.161660030aa6c9e3": [
     "app/page.tsx"
   ],
@@ -29393,6 +31932,18 @@
   ],
   "app.0b0f97cd8f4035ad": [
     "app/page.tsx"
+  ],
+  "app.5ad89686d9899f67": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.ffeb9dbdc0673693": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.60e90613de504839": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.f665170eeebffc3a": [
     "app/page.tsx"
@@ -29462,13 +32013,13 @@
   "app.81244cfe750fe126": [
     "app/page.tsx"
   ],
+  "app.d50332d7ae526253": [
+    "app/page.tsx"
+  ],
   "app.c7eb2c47ef2ea685": [
     "app/page.tsx"
   ],
   "app.99761a8588a4965a": [
-    "app/page.tsx"
-  ],
-  "app.d50332d7ae526253": [
     "app/page.tsx"
   ],
   "app.48fd671de37c2964": [
@@ -29541,8 +32092,9 @@
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
-  "app.f038053bedb1b9ed": [
-    "app/page.tsx"
+  "app.0a1b6f1b57f5198e": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.1bbf3970dd9a8deb": [
     "app/page.tsx",
@@ -29565,6 +32117,10 @@
   "app.80a0b2822379c152": [
     "app/page.tsx"
   ],
+  "app.100587977125c8c3": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.05b36669c4ad9a73": [
     "app/page.tsx",
     "app/i18n/manual.json"
@@ -29580,6 +32136,10 @@
   "app.6a65eb35e78a7d58": [
     "app/page.tsx"
   ],
+  "app.0f98e1e6753a890c": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
   "app.0eea2588203eefb7": [
     "app/page.tsx"
   ],
@@ -29591,10 +32151,6 @@
   ],
   "app.b5fc414c78a72603": [
     "app/page.tsx"
-  ],
-  "app.1452deafc6d96546": [
-    "app/page.tsx",
-    "components/build/BuildTableView.tsx"
   ],
   "app.e825877d1b36f9d9": [
     "app/page.tsx"
@@ -29617,12 +32173,6 @@
     "app/page.tsx"
   ],
   "app.6d14b3e1cb49ce6c": [
-    "app/page.tsx"
-  ],
-  "app.c79cdcdc78ec713a": [
-    "app/page.tsx"
-  ],
-  "app.3c30f0b14cd2a735": [
     "app/page.tsx"
   ],
   "app.c7cb53a63234a64d": [
@@ -29813,6 +32363,9 @@
   "app.8de0b3c47f112c59": [
     "app/page.tsx"
   ],
+  "app.f038053bedb1b9ed": [
+    "app/page.tsx"
+  ],
   "app.e0cf12d2507b853a": [
     "app/page.tsx"
   ],
@@ -29835,6 +32388,12 @@
     "app/page.tsx"
   ],
   "app.373e3e47c36b6ee8": [
+    "app/page.tsx"
+  ],
+  "app.c79cdcdc78ec713a": [
+    "app/page.tsx"
+  ],
+  "app.3c30f0b14cd2a735": [
     "app/page.tsx"
   ],
   "app.60a57e9e59976d37": [
@@ -29963,12 +32522,6 @@
   ],
   "app.f5276534dcfe2507": [
     "components/build/BuildTableView.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.bd01642faa631fcf": [
-    "app/data/class-build-factory.ts",
-    "components/build/BuildTableView.tsx",
-    "evaluated data factories",
     "app/i18n/manual.json"
   ],
   "app.7521e8c77256ca49": [
@@ -30287,10 +32840,6 @@
   "app.b0917c177731c1aa": [
     "evaluated data factories"
   ],
-  "app.69d91e35dccfa576": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories"
-  ],
   "app.2c4539618903ee0c": [
     "evaluated data factories"
   ],
@@ -30572,6 +33121,26 @@
   "app.d723da3b80d00e8e": [
     "evaluated data factories"
   ],
+  "app.7a27788ebb8524b7": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2266022ae955b412": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.75a68b9687aa0266": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e704eca4747457f0": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f1c4ddef4518854a": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
   "app.bc2392214ba03e35": [
     "evaluated data factories"
   ],
@@ -30602,29 +33171,44 @@
   "app.347bf90e1e80696e": [
     "evaluated data factories"
   ],
-  "app.e7292d42f1048751": [
-    "evaluated data factories"
-  ],
-  "app.93c999dd15456cde": [
-    "evaluated data factories"
-  ],
-  "app.3bf9f413313f02ef": [
-    "evaluated data factories"
-  ],
   "app.c0e68a25ed06f24c": [
     "evaluated data factories"
   ],
-  "app.7d494197118a18af": [
-    "evaluated data factories"
+  "app.a2ab1d4765168c3f": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.77881587bbaed135": [
-    "evaluated data factories"
+  "app.bd729ca416fd25ee": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.9417255c6482a3d6": [
-    "evaluated data factories"
+  "app.a45212fa71e4335c": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.392b31a61017b97a": [
-    "evaluated data factories"
+  "app.8cc9b3e89f0b2679": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.37d4dff505fe06f8": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ba74aa6d6baaaf05": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bd285cd4b9fec9f9": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.aec1e2febc9ea73d": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.adf54ce3519ed68c": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.f0a7efdb1a001bc6": [
     "evaluated data factories"
@@ -30727,6 +33311,12 @@
     "evaluated data factories"
   ],
   "app.d5b457ae663af74f": [
+    "evaluated data factories"
+  ],
+  "app.93c999dd15456cde": [
+    "evaluated data factories"
+  ],
+  "app.3bf9f413313f02ef": [
     "evaluated data factories"
   ],
   "app.577e0cd479168ee8": [
@@ -47905,1586 +50495,10 @@
   "app.bf14973fee38b827": [
     "app/i18n/manual.json"
   ],
-  "app.e2a391f18da0d0de": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.853420308d985152": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.463c7d667d308d8e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.1d492c9e990e79ad": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.469a4876526efc02": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.9abef41b9d24ae9e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8e316ea84df8c991": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.a69e377d0c4b6c61": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0f87c394012befa1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b7d51b8562da5e04": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6870d810c1b4715b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4ca5090aa2aefbee": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.5d5748f8432990b1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.94625d774086a294": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.ec3afb4672c47c78": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.674d57c788d051c6": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.def1b91285f3db1c": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.5b3f21779601780a": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.a88e62071b1127f7": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.34d4e0649f9602a2": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.db692abe8549506a": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.b6ca52d122d90004": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.0eef13268fb6340d": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.ee3a26061fb50582": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.cf7948bfaf8faa54": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.ba2eeb12b6a46f11": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.4f56b4041c0ae4f4": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.81ae592479183031": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6657ad827b1d07dc": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0ff6d6d5aaccd255": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d9154c89b2bfcadc": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.778524353be42c29": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6f9d8378dceffc23": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.ecdcb587ddac4945": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.838dfb59f32ab52e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.391aa9b897c33d68": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.9540ea8641db33d3": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.dd9e776f643840de": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.2248c7d6294564ce": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4361ea0224f712d1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.84ee07d5ddc91bc0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8ad9f44ada84a638": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.667b623734d65b7d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.a11c851399f15ee0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.09d75d2c94e0dae0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f4f558612b975e06": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f6e0fcb1a4671001": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b41329fe629f03c1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.cac086b1af394972": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.be79813b5b3ff78d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.42536561c2d86661": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.5063e943960d6d8b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.9f98d77057db7a07": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e4226da5b918fc9e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6f3bba7e78785b73": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.77dec7f5843c8351": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f4df3820102bb74e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.7996438f4fc452a2": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.572e3cbed2620f25": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d536d0e1b36b90a6": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.9ceb930ee411c8f7": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.ab3034b242bfcb74": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b45721e16c9c0502": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.befe3e408089a87c": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b4f848d6a9c5939f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.7db3993bf2d564b2": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d549a5b59044e6f5": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.82381eae2196a038": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d56be7930799e45b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6ce238e3c930b34e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.ee5c5c705fd230f0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4082f7445b26ec02": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4342f6781e5f7ae6": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d1533af0ba91fe65": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.56bf958c9cffe74d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.134adfebb1647dd9": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.708671db80a4488d": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.da60055c650aca40": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.1c2473a73b446831": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.c52f00a32629e1e9": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.227b2e2f15a38631": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.74d34ed6f56db864": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.78418f1164be354f": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.1328a1bb6e6de612": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.620a03e3a69afab4": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.eeda8df730048aa8": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.76bb8c84238a5455": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.9cf8833a41eba5da": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.1a93c20d40a9b7cb": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.23cddcc37e626b56": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.bd574d8e3fd65da5": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8e7458873470b883": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.762cbc141509548a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f944b3531ce2c9bd": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8af944d37a6ab577": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e451b81ae4c49305": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.2e63455da60d8986": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.7ec95226f99e55fd": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.af351f2b09936190": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.83f077660d44169d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0bf0432eac557859": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.921dc8914e731da9": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.ebd7f284e2dc69c7": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b54cb5a3cacd910f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.961f585a6010b1b8": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b7ca749ce43bfbbd": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.12d111ab1cc069ba": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.52678dbf20e2f7a7": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.3b7a6e1b2e703b14": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0829d673c04a38a4": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8a2d87f505335f44": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.54ed0cdc75a36c7d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.da273a5aa48ebca2": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f0e95ac74abca264": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.7636052e11540c12": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6b836e2bfec57a3b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.126d22b48a99246c": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6d892a0146658251": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f051268fb2509c1f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.10a74af9b8664458": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0ba759a7d03ca7a3": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.2fbc1ab9c70bee93": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e4f76a7d4a5091cd": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.66939e3a41035a78": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6284ca1e47e52027": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.a704101c16cbfb4a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6baec092f81d5cfe": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.82186b73eec3f594": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d1d0fdceff5cf0a0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.ce1f6ef7158ad4d7": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.45a7e492a7b98440": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.3466813de072fe61": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.828c2fd6440466df": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d010994c303532e6": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.dfbfcb49307cea4a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.959dbffe5651b5f9": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e2487816fe7013e9": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d5e4c670e59e14ea": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.85d35874f3a0276d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8c58238be49a189e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.1aa25d1f20f4cfc1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.c61843aba570edef": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f9a381599fcb5b6b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4ac5d84e32c82d54": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.7a27788ebb8524b7": [
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.2266022ae955b412": [
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.75a68b9687aa0266": [
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e704eca4747457f0": [
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f1c4ddef4518854a": [
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.c31c595649a0b21a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0e1e878248f4e325": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0839df82250874b8": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4046f5ec22a06933": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.cbf8a209a2f97cf9": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6ece76851cc8fea4": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.d2e6453e9ccdab1b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.f62a502d22930b91": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.38511880cb51f85e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.cd7d8caf883be95d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.bf19903c10c80771": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b946e03c60f07196": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4cfee15197b5adda": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.65f80704d3bc59f0": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4b117a7118c24c99": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.bf521e16c67af7de": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.bc860c0b30fd162e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b12d7bfceb8d360f": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.33085b334dbbf83f": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.afdd44c4f45db1d1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.182e8006a250cf2b": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.ee2723b4cea2d143": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.85e56dec84919ab6": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.66b4fad2baaa187b": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.6f128a4b231f4fc5": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.c39fa14129b37a7a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.1560ea95199ab2e6": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6c9ba7bcfca6154f": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0d4c9ba4c7465d99": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.eba457b5b2779478": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.80738beeb05ddcf3": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.164fc065fb46acfe": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.446713cdf622914d": [
-    "app/data/class-build-factory.ts",
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.b8874fdfc28234a7": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.99bbfc5a1aadcccd": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.14866d573ff3784e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.137a5c92b6505dfd": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.94361fdada60e44a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.fb5758e763372950": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.95d88d1d338897cb": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.832a704300ad5d00": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.40cea5708343abf9": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.699295ca41898c86": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.2c4d07511c6a1f6b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.ea28661b35a37c7c": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.a9786e16e09b3916": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.173c4a0dc06e4ea8": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.fd9dc054700be7bf": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.7ba50a0ee3f4c1d1": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.7eecd59ebe6a6912": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.5c2b03165a01c56e": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0b1869935c97bf7d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.ce7514fe38dfe28d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.51d02b2fc493a991": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4af7b901fad6ac59": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8e96f1072d04a86f": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.a42c5bdaa11b9999": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.8191cc85ce79361d": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.907df5a001347a6b": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.5ca36a9de8e8ccf2": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.38dadc4b16deca27": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4932fd6b19b42e53": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.77076ff12eaeee23": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e0032c3c829343ec": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.46d80d2dc0a022d3": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.db0328d0fb3a5758": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.9810163d276a8346": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4dec3ba22eb44a7a": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.793a815ee6399f97": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.fba9d27bf74d10b5": [
-    "app/data/crusader-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.55904ff4ebf8c3be": [
-    "app/data/crusader-builds.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.5c45a705bd4b7c48": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4d09d8f699ad8575": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e004d0823568820d": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.0708336bfb81f3f9": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.055d9781b8bfb71f": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.9d8707f4c1f4d6f1": [
-    "app/data/class-build-factory.ts",
-    "app/i18n/manual.json"
-  ],
   "app.304c31bd718618ce": [
     "app/i18n/manual.json"
   ],
-  "app.2fd62668a5e27264": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.4a69acb76162e072": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.28449a23a01b17e6": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.5b94a5874f4c66bd": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.97c4c98c4c9e947f": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.e848df948a70f70d": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.40463949072205cb": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.957fa2afa1cc3b02": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.2883c3e7b258d4e6": [
-    "app/data/build-guides.ts",
-    "app/i18n/manual.json"
-  ],
-  "app.273d3e8983ac3a2b": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.45f8ccae481dc4ba": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.5a68a5e37e9af677": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.66526791a890f561": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e17f6578931aa9fb": [
-    "app/data/class-build-factory.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.161c05ed0f2a64e2": [
-    "app/data/witch-doctor-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.1854504e051a8091": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.c54f59230a3ff326": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.69bc5b14e25f73bc": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6e81c027f57dab84": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.e29c0e97af65f673": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.90119c53a4b65acc": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.4f31c5cec8ad1c17": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.fe61b670f2431c4c": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.87d99f1daf759a71": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.cf3f42f76294fa15": [
-    "app/data/wizard-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.6f83ca9fcb088e4d": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.8177d03b1f7107a7": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
   "app.5fdac90c87c31e73": [
-    "app/i18n/manual.json"
-  ],
-  "app.8aa624add529f4df": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.e002eccdaf4615cb": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.c107d8855d636c62": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.cf78133e79c6c0bc": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.fa784e591dd61316": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.31783c644467ed93": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.7e618e25d3f638ae": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.100587977125c8c3": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.0f98e1e6753a890c": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.0a5efbe7c7bd4a47": [
-    "app/page.tsx",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.dbdd1312acbcde27": [
-    "app/page.tsx",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
-  "app.999d1bf2c7cd759c": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.e08c7ad1c1036b58": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.e49362fb8fac47ae": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.4b10b01bcd65bb7c": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.42763fc1894fd93c": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.12d1a249e16fc7c9": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.164a304c27e59504": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.a9b62575f44e9b4e": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.775d8bd086478ae3": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.62e1564208cc2e7e": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.50146da16a1fe7ce": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.510ccb8fce8bdaa2": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.0578f4a56524c583": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.c8a75a57ca7c1fc3": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.77c5d99c22dd8eef": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.1a77046ca163291a": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.ca97112167315bc9": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.0d3df9e14653e4a1": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.95e0b522d6a21125": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.eba20531c1fb6e82": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.97a0828cc5a1e826": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.a827834ee35bf991": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.e047cc68bf570ae6": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.b304784862f619b5": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2d10e559c054fd6e": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.5dc09206d05622a2": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.925dda01c1669bd7": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.80fa5aaf6701a9e7": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.8b0efed222a606ad": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.be77608156c06dbf": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.ae0d9b3cc93a56f5": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.a3c1b541534ac496": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.6e1a01f0f1fd89a8": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2ef44bb2128f3a85": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.8235d5047cea33a1": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.778ff0a74ce05ee0": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.a7642f931d5e7927": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.d2c90a053c969eaf": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.a8e3165d7ee607d7": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.eea0410880faeac9": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.f25a8310e7ba7ecb": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.42ddfc13216e369a": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.a779e25da62fc635": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.c9fd7a992cff7360": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.3d5f89d0a286dcb0": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.eb8f4a3860e04943": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.58e3d17bcc8cc75b": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.eef0f12af0485089": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.0cd082a956f881df": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2b5943cc07748490": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.f4dcdb072cfda6d3": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2d693e3109a0ed66": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.acb3bbce762eec89": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.a483033c56c0a2a9": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.06b2c1a2e588a0cb": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2dc10b5be4130fb7": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.16d9bb2b1b792343": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.ba0c2d11cd5eb2e8": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.adeddc5ed0503e91": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.482d0d4ae33bebb1": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2a1c28cf65663390": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.6f6cbc90d42e190a": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.05628c3bb8dddb42": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.7896008b181de7a0": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.11adf5c6dcc9e298": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.9f42501a4ba0730c": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.4dcae755d3941393": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.7e464da9ef9f0bbc": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.1a5ce6e250b073e1": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.0d09b174612b72ee": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.ddd09a5b606e4803": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2746d995801b1cc8": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.76a2e875d985af84": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.5ad89686d9899f67": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.ffeb9dbdc0673693": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.60e90613de504839": [
-    "app/page.tsx",
     "app/i18n/manual.json"
   ]
 }

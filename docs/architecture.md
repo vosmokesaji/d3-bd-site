@@ -104,8 +104,11 @@ app/
 - `gear`：装备、词缀优先级、获取方式、避坑和镶嵌。
 - `skills` / `passives`：技能、符文、被动与构筑逻辑。
 - `powers`：卡奈魔方槽位、原特效、简述和获取方式。
-- `variants`：冲层、速刷、低巅峰、高巅峰四类配置说明。
-- `variantProfiles`：四种用途×巅峰组合的显式装备、宝石、威能、词缀和手法差异。
+- `configurationBase + scenarios`：按真实 Activity 建立完整基底与场景 patch；场景数量不固定，可表达冲层、GR 速刷、T16、悬赏或不适用。
+- `sameAsScenarioId / configurationId`：两个用途确实使用同一配置时显式复用，避免空 patch 和假差异。
+- `variants / variantProfiles`：旧冲层、速刷、低/高巅峰兼容层；逐套校对完成后由动态场景替代，不能作为证据来源。
+- `paragonGuide / choicePolicies`：800 点前顺序、800 点后投入和基于可观察条件的替换；不再假定 2000 巅峰是全站通用断点。
+- `structuredSources / evidenceClaims`：来源元数据与结论级溯源，发布状态与结构是否可解析分开计算。
 - `seasonId`：构筑对应的赛季/平台/补丁资料版本。
 - `links`：BD 因果链节点。
 - `rotation`：操作步骤、动作和“为什么这样操作”。
@@ -126,7 +129,7 @@ app/
 - 三名随从的装备与技能对比。
 - 根据构筑数据展示实战手法及原因。
 
-塔格奥死亡新星使用 `configurationBase + scenario.patch` 解析装备、技能、被动、魔方、宝石、随从和循环，只保留按 Activity 选择联动图的 `resolveRows`。场景配置优先于旧 `resolveGear`、`resolvePowers`、`resolveRotation` 兼容函数，避免新场景按钮被旧四格逻辑覆盖。其余构筑仍由 `completeBuildGuide()` 生成四份过渡期 `variantProfiles`；未经逐套校对的构筑标记为 `documented-shared`，页面保持共享配置并显示提示，不再自动伪造装备差异。目标场景模型和逐套迁移顺序见 [BD 内容与界面重构路线](./bd-content-and-ui-roadmap.md)。
+塔格奥死亡新星与梦遗轰击使用 `configurationBase + scenario.patch` 解析装备、技能、被动、魔方、宝石、随从和循环，只保留按 Activity 选择联动图的 `resolveRows`。`resolveBuildScenarioConfiguration()` 会继续解析 `sameAsScenarioId`，梦遗轰击的悬赏因此真实复用 T16 配置。场景配置优先于旧 `resolveGear`、`resolvePowers`、`resolveRotation` 兼容函数，避免新场景按钮被旧四格逻辑覆盖；`paragonBand: any` 保留人工词缀，不经过旧低/高巅峰改写器。其余构筑仍由 `completeBuildGuide()` 生成过渡期 `variantProfiles`；未经逐套校对的构筑标记为 `documented-shared`，页面保持共享配置并显示提示，不再自动伪造装备差异。目标场景模型和逐套迁移顺序见 [BD 内容与界面重构路线](./bd-content-and-ui-roadmap.md)。
 
 ### 5.3 物品资料复用
 
