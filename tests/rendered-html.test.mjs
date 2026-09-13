@@ -278,9 +278,11 @@ test("validates reviewed scenarios and renders Trag'Oul guidance from complete d
   for (const helper of ["resolveBuildConfiguration", "diffBuildConfigurations", "validateReviewedBuildGuide"]) {
     assert.match(guideTypes, new RegExp(`export function ${helper}`));
   }
-  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
-    assert.match(page, new RegExp(`id: "${scenario}"`));
+  const tragoulScenarios = page.slice(page.indexOf("const TRAGOUL_SCENARIOS"), page.indexOf("const TRAGOUL_EVIDENCE_CLAIMS"));
+  for (const scenario of ["gr-push", "gr-speed", "t16-rift"]) {
+    assert.match(tragoulScenarios, new RegExp(`id: "${scenario}"`));
   }
+  assert.doesNotMatch(tragoulScenarios, /id: "(?:push|speed)-(?:low|high)"/);
   assert.match(page, /reviewStatus: "fully-reviewed"/);
   assert.match(page, /TRAGOUL_VALIDATION_ERRORS/);
   assert.match(html, /场景评审/);
@@ -951,7 +953,7 @@ test("centralizes switchable season presets, asset roots, and versioned client s
 });
 
 test("BD table route restores URL configuration and renders export controls without duplicate detail panels", async () => {
-  const response = await render("/builds/tragoul-nova?fromClass=necromancer&mode=speed&paragon=high&view=table");
+  const response = await render("/builds/tragoul-nova?fromClass=necromancer&scenario=t16-rift&view=table");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /aria-label="BD 表格视图"/);

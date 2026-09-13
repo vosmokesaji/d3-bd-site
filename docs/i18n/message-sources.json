@@ -322,7 +322,6 @@
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
     "app/data/necromancer-builds.ts",
-    "app/page.tsx",
     "evaluated data factories"
   ],
   "app.256f0bd51ad921fc": [
@@ -12575,7 +12574,6 @@
   ],
   "app.c41814dc3984d5b4": [
     "app/data/crusader-builds.ts",
-    "app/page.tsx",
     "evaluated data factories",
     "app/i18n/manual.json"
   ],
@@ -31413,9 +31411,10 @@
     "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.71d427cb8b57678d": [
+  "app.51f21ad18a04e7df": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.e6dd653aabdc3ada": [
     "app/page.tsx",
@@ -31453,13 +31452,15 @@
     "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.f67c636cff19bf0c": [
+  "app.336649af0b21892c": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.88dbfeb8e41de063": [
+  "app.c603a9ef7bda4507": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.a957d06b57b6b6e5": [
     "app/page.tsx",
@@ -31533,25 +31534,28 @@
     "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.99babfcd65bb7c94": [
+  "app.adecc1de9d4a879f": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.24c38eeb5ad29f39": [
     "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.98daf142b8b6e05a": [
+  "app.06bc4925c4d8bfa5": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.d36c439bd960b3e7": [
     "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.17273dce393fcf9e": [
+  "app.a083df9c478d04b3": [
     "app/page.tsx",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.065cf1af710edf86": [
     "app/page.tsx",
@@ -32829,14 +32833,6 @@
   "app.ec14fc0efdbaefb1": [
     "app/page.tsx"
   ],
-  "app.b304784862f619b5": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2d10e559c054fd6e": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
   "app.5dc09206d05622a2": [
     "app/page.tsx",
     "app/i18n/manual.json"
@@ -32845,37 +32841,22 @@
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
-  "app.2c2423c2c9424e95": [
-    "app/page.tsx"
-  ],
-  "app.80fa5aaf6701a9e7": [
+  "app.73c38608a782ae44": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
-  "app.8b0efed222a606ad": [
+  "app.bb892a92cefaa576": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
-  "app.be77608156c06dbf": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.ae0d9b3cc93a56f5": [
+  "app.9474d6986fac1d05": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
   "app.2b44272ad309dede": [
     "app/page.tsx"
   ],
-  "app.a3c1b541534ac496": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.6e1a01f0f1fd89a8": [
-    "app/page.tsx",
-    "app/i18n/manual.json"
-  ],
-  "app.2ef44bb2128f3a85": [
+  "app.18e24549071f893f": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
@@ -32914,11 +32895,11 @@
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
-  "app.a779e25da62fc635": [
+  "app.b8cf8751147196af": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
-  "app.c9fd7a992cff7360": [
+  "app.7188267b45a8a176": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
@@ -32965,14 +32946,17 @@
   "app.006c9c3a8088dae7": [
     "app/page.tsx"
   ],
-  "app.a7f460ffe9754977": [
-    "app/page.tsx"
+  "app.56dbb004d437a169": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
-  "app.12cb381a3c4fb6f5": [
-    "app/page.tsx"
+  "app.e91f96b59cd3eace": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
-  "app.9a54b85167339d84": [
-    "app/page.tsx"
+  "app.248caa66a94a9efe": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.4b676e9874fbb0a0": [
     "app/page.tsx"
@@ -33018,13 +33002,14 @@
   "app.449d665e54cbd121": [
     "app/page.tsx"
   ],
-  "app.0cfd50873fc1cedc": [
-    "app/page.tsx"
+  "app.84121fb0efc7f888": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.318842eb74d445f3": [
     "app/page.tsx"
   ],
-  "app.a483033c56c0a2a9": [
+  "app.643cf9efa7872dd6": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
@@ -33037,7 +33022,7 @@
   "app.53c63492e30503ec": [
     "app/page.tsx"
   ],
-  "app.06b2c1a2e588a0cb": [
+  "app.dbdf27d041c3b8be": [
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
@@ -33050,8 +33035,9 @@
   "app.70886aaf6e60e1ba": [
     "app/page.tsx"
   ],
-  "app.8bd0ef57d489ea65": [
-    "app/page.tsx"
+  "app.a6f3bc361375df9d": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.8257404febd944c4": [
     "app/page.tsx"
@@ -33088,6 +33074,10 @@
   ],
   "app.948e4755062a9079": [
     "app/page.tsx"
+  ],
+  "app.9f34adbc5122540e": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.adeddc5ed0503e91": [
     "app/page.tsx",
@@ -33162,23 +33152,37 @@
   "app.c11aec568cd2b04f": [
     "app/page.tsx"
   ],
-  "app.7230f7bf44b03871": [
-    "app/page.tsx"
+  "app.8111f33d4750209b": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
-  "app.7e0197b9f7a89584": [
-    "app/page.tsx"
+  "app.775648f4602525eb": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
-  "app.d52378432e5d7a81": [
-    "app/page.tsx"
+  "app.b7fdb29d58d916e9": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
-  "app.812fc68077c99359": [
-    "app/page.tsx"
+  "app.8c7815b02ca6602e": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
-  "app.05eadc40a0ea2cd9": [
-    "app/page.tsx"
+  "app.df0c18a0707ad3ab": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
-  "app.5b865715f9c3ecfd": [
-    "app/page.tsx"
+  "app.0fee3e7cd36a9aaa": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.9858c22841473b4e": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
+  ],
+  "app.e29215da7ed1db19": [
+    "app/page.tsx",
+    "app/i18n/manual.json"
   ],
   "app.7e464da9ef9f0bbc": [
     "app/page.tsx",
@@ -51854,6 +51858,45 @@
     "app/i18n/manual.json"
   ],
   "app.5fdac90c87c31e73": [
+    "app/i18n/manual.json"
+  ],
+  "app.b304784862f619b5": [
+    "app/i18n/manual.json"
+  ],
+  "app.2d10e559c054fd6e": [
+    "app/i18n/manual.json"
+  ],
+  "app.80fa5aaf6701a9e7": [
+    "app/i18n/manual.json"
+  ],
+  "app.8b0efed222a606ad": [
+    "app/i18n/manual.json"
+  ],
+  "app.be77608156c06dbf": [
+    "app/i18n/manual.json"
+  ],
+  "app.ae0d9b3cc93a56f5": [
+    "app/i18n/manual.json"
+  ],
+  "app.a3c1b541534ac496": [
+    "app/i18n/manual.json"
+  ],
+  "app.6e1a01f0f1fd89a8": [
+    "app/i18n/manual.json"
+  ],
+  "app.2ef44bb2128f3a85": [
+    "app/i18n/manual.json"
+  ],
+  "app.a779e25da62fc635": [
+    "app/i18n/manual.json"
+  ],
+  "app.c9fd7a992cff7360": [
+    "app/i18n/manual.json"
+  ],
+  "app.a483033c56c0a2a9": [
+    "app/i18n/manual.json"
+  ],
+  "app.06b2c1a2e588a0cb": [
     "app/i18n/manual.json"
   ]
 }

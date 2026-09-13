@@ -15,10 +15,10 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.equal(report.evidenceStatuses.unverified, 40);
   assert.equal(report.evidenceStatuses["source-checked"], 10);
   assert.equal(report.evidenceStatuses["cross-checked"], 1);
-  assert.equal(report.applicability.unverified, 115);
+  assert.equal(report.applicability.unverified, 113);
   assert.equal(report.applicability.supported, 83);
-  assert.equal(report.applicability.viable, 5);
-  assert.equal(report.content["nephalem-rift-t16"], 4);
+  assert.equal(report.applicability.viable, 4);
+  assert.equal(report.content["nephalem-rift-t16"], 3);
   assert.equal(report.content.bounty, 1);
   assert.equal(report.structuredSources, 21);
   assert.equal(report.evidenceClaims, 38);
@@ -28,11 +28,11 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.equal(report.builds.every((build) => build.publishBlockers.length > 0), true);
 
   const tragoul = report.builds.find((build) => build.id === "tragoul-nova");
-  assert.equal(tragoul.scenarioCount, 6);
+  assert.equal(tragoul.scenarioCount, 3);
   assert.equal(tragoul.structuredSourceCount, 6);
   assert.equal(tragoul.evidenceClaimCount, 10);
   assert.deepEqual(tragoul.evidenceErrors, []);
-  assert.deepEqual(tragoul.scenarios.filter((scenario) => scenario.content === "greater-rift-speed").map((scenario) => scenario.id), ["gr-speed-low", "gr-speed-high"]);
+  assert.deepEqual(tragoul.scenarios.map((scenario) => scenario.id), ["gr-push", "gr-speed", "t16-rift"]);
 
   const bombardment = report.builds.find((build) => build.id === "lod-bombardment");
   assert.equal(bombardment.scenarioCount, 3);
@@ -83,16 +83,21 @@ test("build detail derives activity choices from the guide scenarios", async () 
   assert.match(page, /activeScenario\?\.paragonBand === "any"/);
 });
 
-test("Trag'Oul separates GR speed from T16 and keeps unresolved variants non-recommended", async () => {
+test("Trag'Oul exposes real activities without duplicating high and low Paragon scenarios", async () => {
   const page = await import("node:fs/promises").then(({ readFile }) => readFile("app/page.tsx", "utf8"));
 
-  assert.match(page, /id: "gr-speed-low"[\s\S]*?content: "greater-rift-speed"[\s\S]*?applicability: "viable"/);
-  assert.match(page, /id: "gr-speed-high"[\s\S]*?content: "greater-rift-speed"[\s\S]*?applicability: "viable"/);
-  assert.match(page, /id: "speed-low"[\s\S]*?content: "nephalem-rift-t16"[\s\S]*?applicability: "unverified"/);
-  assert.match(page, /id: "speed-high"[\s\S]*?content: "nephalem-rift-t16"[\s\S]*?applicability: "unverified"/);
+  const start = page.indexOf("const TRAGOUL_SCENARIOS");
+  const end = page.indexOf("const TRAGOUL_EVIDENCE_CLAIMS", start);
+  const scenarios = page.slice(start, end);
+  assert.match(scenarios, /id: "gr-push"[\s\S]*?content: "greater-rift-push"[\s\S]*?paragonBand: "any"[\s\S]*?applicability: "supported"/);
+  assert.match(scenarios, /id: "gr-speed"[\s\S]*?content: "greater-rift-speed"[\s\S]*?paragonBand: "any"[\s\S]*?applicability: "viable"/);
+  assert.match(scenarios, /id: "t16-rift"[\s\S]*?content: "nephalem-rift-t16"[\s\S]*?paragonBand: "any"[\s\S]*?applicability: "unverified"/);
+  assert.doesNotMatch(scenarios, /id: "(?:push|speed)-(?:low|high)"/);
+  assert.doesNotMatch(scenarios, /gr-speed-(?:low|high)/);
   assert.match(page, /legendaryGems: \{ damage: "boon-of-the-hoarder", boss: "bane-of-the-powerful" \}/);
   assert.match(page, /powers: \{ armor: "steuarts-greaves", jewelry: "squirts" \}/);
-  assert.match(page, /defaultScenarioId: "push-high"/);
+  assert.match(page, /defaultScenarioId: "gr-push"/);
+  assert.match(page, /换装后仍能稳定完成目标层/);
 });
 
 test("LoD Bombardment exposes only evidenced activities and legal weapon packages", async () => {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T08:13:29.697Z",
+  "generatedAt": "2026-09-13T12:42:08.489Z",
   "season": "S39 / 2.7.8",
   "total": 51,
   "fullyReviewed": 21,
@@ -20,25 +20,25 @@
   },
   "applicability": {
     "supported": 83,
-    "unverified": 115,
-    "viable": 5
+    "unverified": 113,
+    "viable": 4
   },
   "content": {
     "bounty": 1,
     "cosmetic-farm": 2,
-    "greater-rift-push": 96,
-    "greater-rift-speed": 28,
+    "greater-rift-push": 95,
+    "greater-rift-speed": 27,
     "nephalem-rift": 72,
-    "nephalem-rift-t16": 4
+    "nephalem-rift-t16": 3
   },
   "sourceDomains": {
     "606soft.com": 2,
     "9game.cn": 2,
     "bbs.d.163.com": 4,
     "bbs.nga.cn": 2,
-    "d3guides.de": 9,
+    "d3guides.de": 7,
     "diablofans.com": 2,
-    "icy-veins.com": 259,
+    "icy-veins.com": 254,
     "m.3dmgame.com": 1,
     "maxroll.gg": 25,
     "ol.3dmgame.com": 1
@@ -2857,7 +2857,7 @@
       "platformStatus": "pc-derived",
       "dataProvenance": "hand-authored",
       "variantCompleteness": "complete",
-      "scenarioCount": 6,
+      "scenarioCount": 3,
       "paragon": true,
       "choicePolicyCount": 9,
       "structuredSourceCount": 6,
@@ -2869,28 +2869,15 @@
       "evidenceErrors": [],
       "publishBlockers": [
         "evidence:STATUS_SOURCE-CHECKED",
-        "applicability:push-low:UNVERIFIED",
-        "applicability:speed-low:UNVERIFIED",
-        "applicability:speed-high:UNVERIFIED"
+        "applicability:t16-rift:UNVERIFIED"
       ],
       "publishable": false,
       "scenarios": [
         {
-          "id": "push-low",
-          "applicability": "unverified",
-          "content": "greater-rift-push",
-          "diffCount": 0,
-          "sourceRefs": [
-            "https://www.icy-veins.com/d3/necromancer-death-nova-build-with-trag-oul",
-            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points",
-            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-greater-rift-speed-farming-build"
-          ]
-        },
-        {
-          "id": "push-high",
+          "id": "gr-push",
           "applicability": "supported",
           "content": "greater-rift-push",
-          "diffCount": 6,
+          "diffCount": 2,
           "sourceRefs": [
             "https://www.icy-veins.com/d3/necromancer-death-nova-build-with-trag-oul",
             "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points",
@@ -2898,37 +2885,17 @@
           ]
         },
         {
-          "id": "gr-speed-low",
+          "id": "gr-speed",
           "applicability": "viable",
           "content": "greater-rift-speed",
-          "diffCount": 8,
-          "sourceRefs": [
-            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-greater-rift-speed-farming-build",
-            "https://www.d3guides.de/de/build/totenbeschwoerer-tragouls-avatar-todesnova"
-          ]
-        },
-        {
-          "id": "gr-speed-high",
-          "applicability": "viable",
-          "content": "greater-rift-speed",
-          "diffCount": 13,
-          "sourceRefs": [
-            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-greater-rift-speed-farming-build",
-            "https://www.d3guides.de/de/build/totenbeschwoerer-tragouls-avatar-todesnova"
-          ]
-        },
-        {
-          "id": "speed-low",
-          "applicability": "unverified",
-          "content": "nephalem-rift-t16",
           "diffCount": 10,
           "sourceRefs": [
-            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-nephalem-rift-speed-farming-build",
+            "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-greater-rift-speed-farming-build",
             "https://www.d3guides.de/de/build/totenbeschwoerer-tragouls-avatar-todesnova"
           ]
         },
         {
-          "id": "speed-high",
+          "id": "t16-rift",
           "applicability": "unverified",
           "content": "nephalem-rift-t16",
           "diffCount": 17,

@@ -143,7 +143,7 @@ const GEAR: Record<string, Gear> = {
     slot: "肩部",
     image: "/d3/tragoul-shoulders.png",
     quality: "set",
-    effect: "高巅峰速刷使用第六件塔格奥，释放腰带与护腕槽位。",
+    effect: "T16 金币链方案使用第六件塔格奥，释放腰带与护腕槽位。",
     affixes: ["范围伤害", "智力", "体能", "生命%"],
     acquisition: ["血岩碎片：赌护肩，成本低", "重复套装转换", "不要单独重铸，先凑齐六件套"],
   },
@@ -163,8 +163,8 @@ const GEAR: Record<string, Gear> = {
     slot: "手部",
     image: "/d3/tragoul-gloves.png",
     quality: "set",
-    effect: "同时承担双暴与攻速；高巅峰时可把智力替换成范围伤害。",
-    affixes: ["暴击几率", "暴击伤害", "攻击速度", "智力 → 高巅峰换范围伤"],
+    effect: "同时承担双暴与攻速；装备基础属性充足且生存稳定后可把智力替换成范围伤害。",
+    affixes: ["暴击几率", "暴击伤害", "攻击速度", "智力；满足生存条件后换范围伤"],
     acquisition: ["血岩碎片：优先赌手套", "重复套装转换", "双暴+攻速难成型，先保留三攻词缀"],
   },
   "tragoul-pants": {
@@ -215,10 +215,10 @@ const GEAR: Record<string, Gear> = {
     slot: "腕部",
     image: "/d3/guardian-bracers.png",
     quality: "set",
-    effect: "低巅峰用守护者三件效果翻倍装备上的智力与体能。",
+    effect: "装备与卡德山尚未成型时，用守护者三件效果翻倍装备上的智力与体能。",
     affixes: ["物理技能伤害", "暴击几率", "智力", "体能"],
     acquisition: ["悬赏宝箱获取设计图", "铁匠锻造护腕", "和守护者腰带一起穿"],
-    warning: "约2000巅峰后逐渐被奥吉德替代。",
+    warning: "换奥吉德后仍能稳定完成目标层，才说明可以放弃这组生存过渡。",
   },
   "guardian-belt": {
     id: "guardian-belt",
@@ -226,7 +226,7 @@ const GEAR: Record<string, Gear> = {
     slot: "腰部",
     image: "/d3/guardian-belt.png",
     quality: "set",
-    effect: "低巅峰生存与主属性放大器，和护腕组成守护者三件效果。",
+    effect: "成长阶段的生存与主属性放大器，和护腕组成守护者三件效果。",
     affixes: ["智力", "体能", "生命%", "护甲"],
     acquisition: ["悬赏宝箱获取设计图", "铁匠锻造腰带", "设计图未掉落前持续完成悬赏"],
     warning: "不要拿普通腰带做黄装升级，它是锻造套装。",
@@ -1604,13 +1604,13 @@ const TRAGOUL_STRUCTURED_SOURCES: BuildSource[] = [
 
 const TRAGOUL_CONFIGURATION_BASE: BuildConfiguration = {
   gear: {
-    head: "tragoul-helm", shoulders: "mantle-channeling", chest: "tragoul-chest", gloves: "tragoul-gloves",
-    bracers: "guardian-bracers", belt: "guardian-belt", pants: "tragoul-pants", boots: "tragoul-boots",
+    head: "tragoul-helm", shoulders: "aughild-shoulders", chest: "tragoul-chest", gloves: "tragoul-gloves",
+    bracers: "aughild-bracers", belt: "dayntee", pants: "tragoul-pants", boots: "tragoul-boots",
     amulet: "haunted-visions", ring1: "krysbin", ring2: "coe", weapon: "funerary-pick", offhand: "iron-rose",
   },
   skills: SKILLS.map((skill) => ({ id: skill.id, rune: skill.rune })),
   passives: PASSIVES.map((passive) => passive.id),
-  powers: { weapon: "bloodtide-blade", armor: "dayntee", jewelry: "royal-grandeur", season: "scythe-cycle" },
+  powers: { weapon: "bloodtide-blade", armor: "mantle-channeling", jewelry: "royal-grandeur", season: "scythe-cycle" },
   legendaryGems: { control: "bane-of-the-trapped", damage: "zei", boss: "bane-of-the-stricken" },
   normalGems: { head: ["flawless-royal-amethyst"], armor: Array(5).fill("flawless-royal-topaz"), weapon: ["flawless-royal-emerald"] },
   follower: {
@@ -1627,36 +1627,15 @@ const TRAGOUL_CONFIGURATION_BASE: BuildConfiguration = {
 
 const TRAGOUL_SCENARIOS: BuildScenario[] = [
   {
-    id: "push-low", label: "守护者过渡冲层（待验证）", content: "greater-rift-push", paragonBand: "low", applicability: "unverified",
-    reason: "守护者方案目前是项目从速刷成长建议外推到冲层的过渡配置；精确冲层页只明确给出奥吉德，暂不作为已确认推荐。",
-    sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear, TRAGOUL_SOURCES.grSpeed], sourceIds: ["icy-overview", "icy-gear"], configurationId: "tragoul-gr-push-guardian", reviewedAt: "2026-09-12",
-  },
-  {
-    id: "push-high", label: "奥吉德 GR 冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    id: "gr-push", label: "奥吉德 GR 冲层", content: "greater-rift-push", paragonBand: "any", applicability: "supported",
     reason: "两份当前 S39 来源都给出奥吉德肩腕、戴恩提腰带、导能披肩萃取的冲层骨架；Switch 操作仍待实测。",
-    patch: {
-      gear: { shoulders: "aughild-shoulders", bracers: "aughild-bracers", belt: "dayntee" },
-      powers: { armor: "mantle-channeling" },
-      statPriorities: { survival: ["生命值80万–90万", "护甲", "全元素抗性"], endgame: ["范围伤害≥120%", "攻击速度达到1.67档位", "移除装备上的多余智力"] },
-    },
+    patch: { statPriorities: { survival: ["生命值80万–90万", "护甲", "全元素抗性"], endgame: ["范围伤害≥120%", "攻击速度达到1.67档位", "满足生存条件后再移除装备智力"] } },
     sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-overview", "icy-gear", "d3guides-s39"], configurationId: "tragoul-gr-push-aughild", reviewedAt: "2026-09-12",
   },
   {
-    id: "gr-speed-low", label: "守护者 GR 速刷", content: "greater-rift-speed", paragonBand: "low", applicability: "viable",
-    reason: "Icy Veins 明确把守护者作为成长早期的 GR 速刷方案；保留全能法戒，用斯图亚特和强者之灾换取稳定转场与精英效率。",
+    id: "gr-speed", label: "GR 速刷", content: "greater-rift-speed", paragonBand: "any", applicability: "viable",
+    reason: "资料明确存在独立 GR 速刷变体；成型配置使用奥吉德与戴恩提，斯图亚特和强者之灾负责转场与精英效率，守护者只作为条件化过渡。",
     patch: {
-      powers: { armor: "steuarts-greaves" },
-      legendaryGems: { boss: "bane-of-the-powerful" },
-      normalGems: { head: ["flawless-royal-diamond"] },
-      rotation: TRAGOUL_GR_SPEED_ROTATION,
-    },
-    sourceRefs: [TRAGOUL_SOURCES.grSpeed, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-gr-speed", "d3guides-s39"], configurationId: "tragoul-gr-speed-guardian", reviewedAt: "2026-09-12",
-  },
-  {
-    id: "gr-speed-high", label: "奥吉德 GR 速刷", content: "greater-rift-speed", paragonBand: "high", applicability: "viable",
-    reason: "约 2000 巅峰且不再依赖守护者时，换奥吉德与戴恩提；斯图亚特、强者之灾和较低目标层级负责缩短单次用时。",
-    patch: {
-      gear: { shoulders: "aughild-shoulders", bracers: "aughild-bracers", belt: "dayntee" },
       powers: { armor: "steuarts-greaves" },
       legendaryGems: { boss: "bane-of-the-powerful" },
       normalGems: { head: ["flawless-royal-diamond"] },
@@ -1666,18 +1645,7 @@ const TRAGOUL_SCENARIOS: BuildScenario[] = [
     sourceRefs: [TRAGOUL_SOURCES.grSpeed, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-gr-speed", "d3guides-s39"], configurationId: "tragoul-gr-speed-aughild", reviewedAt: "2026-09-12",
   },
   {
-    id: "speed-low", label: "守护者 T16（证据冲突）", content: "nephalem-rift-t16", paragonBand: "low", applicability: "unverified",
-    reason: "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
-    patch: {
-      gear: { ring2: "briggs" }, powers: { armor: "steuarts-greaves" },
-      legendaryGems: { damage: "boon-of-the-hoarder", boss: "bane-of-the-powerful" },
-      normalGems: { head: ["flawless-royal-diamond"] },
-      rotation: TRAGOUL_T16_ROTATION,
-    },
-    sourceRefs: [TRAGOUL_SOURCES.t16, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-t16", "d3guides-s39"], configurationId: "tragoul-t16-guardian-unverified", reviewedAt: "2026-09-12",
-  },
-  {
-    id: "speed-high", label: "金币链 T16（证据冲突）", content: "nephalem-rift-t16", paragonBand: "high", applicability: "unverified",
+    id: "t16-rift", label: "T16 金币链（证据冲突）", content: "nephalem-rift-t16", paragonBand: "any", applicability: "unverified",
     reason: "Icy Veins 支持单人金织带、沃兹克和随从贪婪之戒，但与 d3guides.de 的 T16 变体不一致；完成 Switch 实测前不作为推荐。",
     patch: {
       gear: { shoulders: "tragoul-shoulders", bracers: "warzechian", belt: "goldwrap", ring2: "briggs" },
@@ -1696,7 +1664,7 @@ const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
   {
     id: "push-core-gear",
     category: "gear",
-    path: "scenarios.push-high.configuration.gear",
+    path: "scenarios.gr-push.configuration.gear",
     conclusion: "S39 冲层骨架为五件塔格奥、奥吉德肩腕、戴恩提、鬼灵面容、克里斯宾、全能法戒、葬镰与铁玫瑰。",
     sourceIds: ["icy-overview", "icy-gear", "d3guides-s39"],
     status: "cross-checked",
@@ -1704,7 +1672,7 @@ const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
   {
     id: "push-skills-conflict",
     category: "skills",
-    path: "scenarios.push-high.configuration.skills",
+    path: "scenarios.gr-push.configuration.skills",
     conclusion: "Icy Veins 的鲜血新星/白骨脱臼/脆弱光环/鲜血与白骨与 d3guides.de 当前符文表不一致。",
     sourceIds: ["icy-skills", "d3guides-s39"],
     status: "unverified",
@@ -1713,7 +1681,7 @@ const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
   {
     id: "push-cube",
     category: "powers",
-    path: "scenarios.push-high.configuration.powers",
+    path: "scenarios.gr-push.configuration.powers",
     conclusion: "冲层魔方为血潮利刃、导能披肩、皇家华戒与 S39 轮回镰刀。",
     sourceIds: ["icy-overview", "icy-gear", "d3guides-s39"],
     status: "cross-checked",
@@ -1721,7 +1689,7 @@ const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
   {
     id: "push-legendary-gems",
     category: "legendary-gems",
-    path: "scenarios.push-high.configuration.legendaryGems",
+    path: "scenarios.gr-push.configuration.legendaryGems",
     conclusion: "冲层传奇宝石为困者、贼神和受罚者。",
     sourceIds: ["icy-gear", "d3guides-s39"],
     status: "cross-checked",
@@ -1737,7 +1705,7 @@ const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
   {
     id: "gr-speed-applicability",
     category: "applicability",
-    path: "scenarios.gr-speed-low,scenarios.gr-speed-high",
+    path: "scenarios.gr-speed",
     conclusion: "塔格奥死亡新星存在独立 GR 速刷用途，但资料只称其表现合理，不能外推为同职业最快。",
     sourceIds: ["icy-gr-speed", "d3guides-s39"],
     status: "cross-checked",
@@ -1745,16 +1713,16 @@ const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
   {
     id: "gr-speed-configuration",
     category: "gear",
-    path: "scenarios.gr-speed-low.configuration,scenarios.gr-speed-high.configuration",
-    conclusion: "GR 速刷保留全能法戒，防具萃取改斯图亚特，受罚者改强者；守护者转奥吉德只由 Icy Veins 明确给出。",
+    path: "scenarios.gr-speed.configuration",
+    conclusion: "GR 速刷保留全能法戒，防具萃取改斯图亚特，受罚者改强者；守护者仅是装备与坚韧未成型时的过渡选择。",
     sourceIds: ["icy-gr-speed", "d3guides-s39"],
     status: "single-source",
-    conflictNote: "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 巅峰的守护者转奥吉德条件。",
+    conflictNote: "两站都支持斯图亚特与强者，但只有 Icy Veins 描述守护者转奥吉德；其巅峰数字只保留为来源背景，不作为产品硬断点。",
   },
   {
     id: "t16-applicability-conflict",
     category: "applicability",
-    path: "scenarios.speed-low,scenarios.speed-high",
+    path: "scenarios.t16-rift",
     conclusion: "两站都列出 T16 变体，但技能、戒指与金币链的具体配置没有一致到可发布程度。",
     sourceIds: ["icy-t16", "d3guides-s39"],
     status: "unverified",
@@ -1763,7 +1731,7 @@ const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
   {
     id: "t16-legendary-gems",
     category: "legendary-gems",
-    path: "scenarios.speed-low.configuration.legendaryGems,scenarios.speed-high.configuration.legendaryGems",
+    path: "scenarios.t16-rift.configuration.legendaryGems",
     conclusion: "T16 用困者、囤宝者和强者，不把囤宝者带进 GR。",
     sourceIds: ["icy-t16", "d3guides-s39"],
     status: "cross-checked",
@@ -1808,7 +1776,7 @@ const TRAGOUL_PARAGON: ParagonGuide = {
   post800: [
     { priority: "先补体能", when: "生命低于80万或推进层数时频繁猝死", reason: "把生命池补到80万–90万后再观察。" },
     { priority: "其余全部智力", when: "生命与减伤已经稳定", reason: "智力继续同时提高伤害与全抗。" },
-    { priority: "换奥吉德", when: "约2000巅峰且不再依赖守护者坚韧", reason: "高巅峰让装备主属性翻倍的边际收益下降。" },
+    { priority: "GR 速刷切回奥吉德", when: "换装后仍能稳定完成目标层，且精英击杀速度已成为主要瓶颈", reason: "以可观察的生存与效率结果替代固定巅峰数字；奥吉德提供精英增伤减伤。" },
   ],
   checkpoints: [
     { label: "生命池", target: "80万–90万", action: "不足时先从巅峰智力挪到体能。" },
@@ -1822,23 +1790,23 @@ const TRAGOUL_CHOICES: BuildChoicePolicy[] = [
   { key: "tragoul-six", targetType: "gear", targetId: "tragoul-six", label: "塔格奥六件效果", status: "locked", reason: "鲜血新星必须获得六件套的生命消耗技能倍率。" },
   { key: "core-skills", targetType: "skill", targetId: "siphon-blood,death-nova,simulacrum", label: "虹吸、新星与双分", status: "locked", reason: "三者分别负责触发、伤害与复制，不能替换。" },
   { key: "season-power", targetType: "power", targetId: "scythe-cycle", label: "S39 第四槽与骨甲联动", status: "conditional", reason: "轮回镰刀只有骨甲生效时才放大次要技能；T16 若改用吞噬就不能照搬该槽。", alternatives: [
-    { id: "scythe-cycle", label: "轮回镰刀", when: "技能栏保留骨甲", gain: "获得次要技能独立乘区", cost: "每次施放次要技能都会缩短骨甲持续时间", scenarios: ["push-low", "push-high", "gr-speed-low", "gr-speed-high"] },
+    { id: "scythe-cycle", label: "轮回镰刀", when: "技能栏保留骨甲", gain: "获得次要技能独立乘区", cost: "每次施放次要技能都会缩短骨甲持续时间", scenarios: ["gr-push", "gr-speed"] },
   ] },
-  { key: "shoulder-package", targetType: "gear", targetId: "shoulders", label: "肩腕腰套装包", status: "conditional", reason: "巅峰水平决定守护者主属性是否仍比奥吉德精英乘区更值。", alternatives: [
-    { id: "guardian-package", label: "导能披肩 + 守护者腕腰", when: "生命/坚韧未达标，或尚未能稳定完成目标层", gain: "翻倍装备智力和体能", cost: "放弃奥吉德精英增伤减伤", scenarios: ["push-low", "gr-speed-low", "speed-low"] },
-    { id: "aughild-package", label: "奥吉德肩腕 + 戴恩提", when: "约2000巅峰且换装后仍能稳定存活", gain: "精英增伤与精英减伤", cost: "失去守护者主属性翻倍", scenarios: ["push-high", "gr-speed-high"] },
-    { id: "gold-package", label: "塔格奥肩 + 沃兹克 + 金织带", when: "高巅峰单人T16且地图会掉金币", gain: "持续移速和金币护甲", cost: "离开小秘境后防御链失效", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-high"] },
+  { key: "shoulder-package", targetType: "gear", targetId: "shoulders", label: "肩腕腰套装包", status: "conditional", reason: "是否需要守护者应由装备属性、卡德山和目标层生存决定，不使用全站统一巅峰断点。", alternatives: [
+    { id: "guardian-package", label: "导能披肩 + 守护者腕腰", when: "GR 速刷奥吉德版无法稳定存活，且装备/卡德山仍未成型", gain: "翻倍装备智力和体能", cost: "放弃奥吉德精英增伤减伤", scenarios: ["gr-speed"] },
+    { id: "aughild-package", label: "奥吉德肩腕 + 戴恩提", when: "冲层，或 GR 速刷换装后仍能稳定完成目标层", gain: "精英增伤与精英减伤", cost: "失去守护者主属性翻倍", scenarios: ["gr-push", "gr-speed"] },
+    { id: "gold-package", label: "塔格奥肩 + 沃兹克 + 金织带", when: "仅限单人T16且地图会掉金币", gain: "持续移速和金币护甲", cost: "离开小秘境后防御链失效", incompatibleWith: ["greater-rift-push", "greater-rift-speed"], scenarios: ["t16-rift"] },
   ] },
   { key: "second-ring", targetType: "gear", targetId: "ring2", label: "第二枚戒指", status: "conditional", reason: "冲层需要元素爆发窗，小秘境更需要自动聚怪。", alternatives: [
-    { id: "coe", label: "全能法戒", when: "大秘境冲层或大秘境速刷", gain: "物理周期爆发", cost: "需要等待元素窗口", scenarios: ["push-low", "push-high", "gr-speed-low", "gr-speed-high"] },
-    { id: "briggs", label: "布里格斯之怒", when: "T16小秘境速刷", gain: "诅咒时自动聚怪", cost: "失去元素周期乘区", scenarios: ["speed-low", "speed-high"] },
+    { id: "coe", label: "全能法戒", when: "大秘境冲层或大秘境速刷", gain: "物理周期爆发", cost: "需要等待元素窗口", scenarios: ["gr-push", "gr-speed"] },
+    { id: "briggs", label: "布里格斯之怒", when: "T16小秘境速刷", gain: "诅咒时自动聚怪", cost: "失去元素周期乘区", scenarios: ["t16-rift"] },
   ] },
   { key: "gr-third-gem", targetType: "legendary-gem", targetId: "boss", label: "大秘境第三颗传奇宝石", status: "conditional", reason: "冲层的长首领战与速刷的精英节奏需要不同宝石。", alternatives: [
-    { id: "bane-of-the-stricken", label: "受罚者之灾", when: "大秘境冲层", gain: "持续叠加首领伤害", cost: "清图阶段收益较慢", scenarios: ["push-low", "push-high"] },
-    { id: "bane-of-the-powerful", label: "强者之灾", when: "低层大秘境速刷", gain: "击杀精英后的定时攻防增益", cost: "不擅长拖长的首领战", scenarios: ["gr-speed-low", "gr-speed-high"] },
+    { id: "bane-of-the-stricken", label: "受罚者之灾", when: "大秘境冲层", gain: "持续叠加首领伤害", cost: "清图阶段收益较慢", scenarios: ["gr-push"] },
+    { id: "bane-of-the-powerful", label: "强者之灾", when: "目标层首领战足够短的 GR 速刷", gain: "击杀精英后的定时攻防增益", cost: "不擅长拖长的首领战", scenarios: ["gr-speed"] },
   ] },
   { key: "t16-gems", targetType: "legendary-gem", targetId: "damage,boss", label: "T16 金币宝石组", status: "conditional", reason: "T16 会掉金币，大秘境完全不会；两类内容不能共用金币宝石。", alternatives: [
-    { id: "t16-hoarder-powerful", label: "囤宝者 + 强者", when: "仅限普通小秘境 T16", gain: "金币移速、金织带护甲与精英增益", cost: "牺牲贼神与受罚者的 GR 收益", incompatibleWith: ["greater-rift-push", "greater-rift-speed"], scenarios: ["speed-low", "speed-high"] },
+    { id: "t16-hoarder-powerful", label: "囤宝者 + 强者", when: "仅限普通小秘境 T16", gain: "金币移速、金织带护甲与精英增益", cost: "牺牲贼神与受罚者的 GR 收益", incompatibleWith: ["greater-rift-push", "greater-rift-speed"], scenarios: ["t16-rift"] },
   ] },
   { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "Icy Veins 推荐魔女的攻速与冷却；单人 T16 金币链还要求把贪婪之戒交给随从，当前随从面板尚未按场景切换。" },
 ];
@@ -1859,14 +1827,14 @@ export const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   variants: {
     push: { title: "大秘境冲层", note: "围绕物理元素周期集中爆发", changes: ["全能法戒提供物理窗口", "强控触发克里斯宾三倍档"] },
     speed: { title: "T16 / 速刷", note: "聚怪、金币与位移串成一条清图链", changes: ["布里格斯自动聚怪", "金织带与沃兹克负责生存和机动"] },
-    low: { title: "低巅峰 < 2000", note: "守护者过渡优先保证生存", changes: ["守护者翻倍装备智力与体能", "魔方戴恩提补充稳定减伤"] },
-    high: { title: "高巅峰 2000+", note: "奥吉德或速刷散件释放输出上限", changes: ["冲层换奥吉德", "速刷换金币链"] },
+    low: { title: "成长阶段", note: "按装备、卡德山和目标层生存选择过渡件", changes: ["GR 速刷站不住时使用守护者", "达到生命检查点后再追输出"] },
+    high: { title: "成型阶段", note: "换装后能稳定完成目标内容才算成型", changes: ["GR 使用奥吉德", "T16 金币链不得带进 GR"] },
   },
   links: [],
   rotation: TRAGOUL_PUSH_ROTATION,
   source: TRAGOUL_SOURCES.overview,
   configurationBase: TRAGOUL_CONFIGURATION_BASE,
-  defaultScenarioId: "push-high",
+  defaultScenarioId: "gr-push",
   scenarios: TRAGOUL_SCENARIOS,
   paragonGuide: TRAGOUL_PARAGON,
   choicePolicies: TRAGOUL_CHOICES,

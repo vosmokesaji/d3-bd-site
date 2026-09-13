@@ -33073,9 +33073,12 @@
     "source": "塔格奥之心",
     "template": "[[Items/P6_Necro_Set_2_Shoulders]]"
   },
-  "app.71d427cb8b57678d": {
-    "source": "高巅峰速刷使用第六件塔格奥，释放腰带与护腕槽位。",
-    "template": "[[Site/high-paragon]][[Site/speed-farming]]使用第六件[[ItemSets/P6_Necro_Set_2]]，释放腰带与护腕槽位。"
+  "app.51f21ad18a04e7df": {
+    "source": "T16 金币链方案使用第六件塔格奥，释放腰带与护腕槽位。",
+    "template": "T16 金币链方案使用第六件[[ItemSets/P6_Necro_Set_2]]，释放腰带与护腕槽位。",
+    "manual": {
+      "enUS": "The T16 gold-chain setup uses a sixth Trag'Oul piece, freeing the belt and bracer slots."
+    }
   },
   "app.e6dd653aabdc3ada": {
     "source": "血岩碎片：赌护肩，成本低",
@@ -33113,13 +33116,19 @@
     "source": "塔格奥之爪",
     "template": "[[Items/P6_Necro_Set_2_Gloves]]"
   },
-  "app.f67c636cff19bf0c": {
-    "source": "同时承担双暴与攻速；高巅峰时可把智力替换成范围伤害。",
-    "template": "同时承担双暴与攻速；[[Site/high-paragon]]时可把[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]替换成[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]。"
+  "app.336649af0b21892c": {
+    "source": "同时承担双暴与攻速；装备基础属性充足且生存稳定后可把智力替换成范围伤害。",
+    "template": "同时承担双暴与攻速；装备基础属性充足且生存稳定后可把[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]替换成[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]。",
+    "manual": {
+      "enUS": "Carries both Critical stats and Attack Speed. Replace Intelligence with Area Damage only after base stats and survival are secure."
+    }
   },
-  "app.88dbfeb8e41de063": {
-    "source": "智力 → 高巅峰换范围伤",
-    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]] → [[Site/high-paragon]]换范围伤"
+  "app.c603a9ef7bda4507": {
+    "source": "智力；满足生存条件后换范围伤",
+    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]；满足生存条件后换范围伤",
+    "manual": {
+      "enUS": "Intelligence; replace with Area Damage after meeting the survival requirement"
+    }
   },
   "app.a957d06b57b6b6e5": {
     "source": "血岩碎片：优先赌手套",
@@ -33193,25 +33202,34 @@
     "source": "守护者护腕",
     "template": "[[Items/P74_Unique_Bracer_010]]"
   },
-  "app.99babfcd65bb7c94": {
-    "source": "低巅峰用守护者三件效果翻倍装备上的智力与体能。",
-    "template": "[[Site/low-paragon]]用[[Powers/Templar_CheatDeath_Passive_name]]三件效果翻倍装备上的[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]与[[SkillsUI/ParagonBonusLabel_Vitality]]。"
+  "app.adecc1de9d4a879f": {
+    "source": "装备与卡德山尚未成型时，用守护者三件效果翻倍装备上的智力与体能。",
+    "template": "装备与卡德山尚未成型时，用[[Powers/Templar_CheatDeath_Passive_name]]三件效果翻倍装备上的[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]与[[SkillsUI/ParagonBonusLabel_Vitality]]。",
+    "manual": {
+      "enUS": "Use the Guardian three-piece bonus to double item Intelligence and Vitality while gear and augments are still incomplete."
+    }
   },
   "app.24c38eeb5ad29f39": {
     "source": "和守护者腰带一起穿",
     "template": "和[[Items/P74_Unique_Belt_013]]一起穿"
   },
-  "app.98daf142b8b6e05a": {
-    "source": "约2000巅峰后逐渐被奥吉德替代。",
-    "template": "约2000[[Site/paragon]]后逐渐被[[ItemSets/P66_Crafted Nightmare Set 002]]替代。"
+  "app.06bc4925c4d8bfa5": {
+    "source": "换奥吉德后仍能稳定完成目标层，才说明可以放弃这组生存过渡。",
+    "template": "换[[ItemSets/P66_Crafted Nightmare Set 002]]后仍能稳定完成目标层，才说明可以放弃这组生存过渡。",
+    "manual": {
+      "enUS": "Drop this survival bridge only when the Aughild setup can still clear the target tier consistently."
+    }
   },
   "app.d36c439bd960b3e7": {
     "source": "守护者腰带",
     "template": "[[Items/P74_Unique_Belt_013]]"
   },
-  "app.17273dce393fcf9e": {
-    "source": "低巅峰生存与主属性放大器，和护腕组成守护者三件效果。",
-    "template": "[[Site/low-paragon]]生存与主属性放大器，和护腕组成[[Powers/Templar_CheatDeath_Passive_name]]三件效果。"
+  "app.a083df9c478d04b3": {
+    "source": "成长阶段的生存与主属性放大器，和护腕组成守护者三件效果。",
+    "template": "成长阶段的生存与主属性放大器，和护腕组成[[Powers/Templar_CheatDeath_Passive_name]]三件效果。",
+    "manual": {
+      "enUS": "A progression-stage survival and main-stat multiplier that completes the Guardian three-piece bonus with the bracers."
+    }
   },
   "app.065cf1af710edf86": {
     "source": "设计图未掉落前持续完成悬赏",
@@ -34782,20 +34800,6 @@
     "source": "生命值80万–90万",
     "template": "生命值[[Number/80/wan]]–[[Number/90/wan]]"
   },
-  "app.b304784862f619b5": {
-    "source": "守护者过渡冲层（待验证）",
-    "template": "[[Powers/Templar_CheatDeath_Passive_name]]过渡[[Site/push]]（待验证）",
-    "manual": {
-      "enUS": "Guardian push transition (unverified)"
-    }
-  },
-  "app.2d10e559c054fd6e": {
-    "source": "守护者方案目前是项目从速刷成长建议外推到冲层的过渡配置；精确冲层页只明确给出奥吉德，暂不作为已确认推荐。",
-    "template": "[[Powers/Templar_CheatDeath_Passive_name]]方案目前是项目从[[Site/speed-farming]]成长建议外推到[[Site/push]]的过渡配置；精确[[Site/push]]页只明确给出[[ItemSets/P66_Crafted Nightmare Set 002]]，暂不作为已确认推荐。",
-    "manual": {
-      "enUS": "This Guardian transition is inferred from speed-farming progression advice; the exact push guide explicitly specifies only Aughild's, so this is not a confirmed recommendation."
-    }
-  },
   "app.5dc09206d05622a2": {
     "source": "奥吉德 GR 冲层",
     "template": "[[ItemSets/P66_Crafted Nightmare Set 002]] GR [[Site/push]]",
@@ -34810,61 +34814,36 @@
       "enUS": "Two current Season 39 sources agree on Aughild shoulders and bracers, Dayntee's Binding, and Mantle of Channeling in the cube for pushing; Switch controls remain untested."
     }
   },
-  "app.2c2423c2c9424e95": {
-    "source": "移除装备上的多余智力",
-    "template": "移除装备上的多余[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]"
-  },
-  "app.80fa5aaf6701a9e7": {
-    "source": "守护者 GR 速刷",
-    "template": "[[Powers/Templar_CheatDeath_Passive_name]] GR [[Site/speed-farming]]",
+  "app.73c38608a782ae44": {
+    "source": "满足生存条件后再移除装备智力",
+    "template": "满足生存条件后再移除装备[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]",
     "manual": {
-      "enUS": "Guardian Greater Rift speed farming"
+      "enUS": "Remove item Intelligence only after meeting the survival requirement"
     }
   },
-  "app.8b0efed222a606ad": {
-    "source": "Icy Veins 明确把守护者作为成长早期的 GR 速刷方案；保留全能法戒，用斯图亚特和强者之灾换取稳定转场与精英效率。",
-    "template": "Icy Veins 明确把[[Powers/Templar_CheatDeath_Passive_name]]作为成长早期的 GR [[Site/speed-farming]]方案；保留[[Items/P2_Unique_Ring_04]]，用斯图亚特和[[Items/Unique_Gem_001_x1]]换取稳定转场与精英效率。",
+  "app.bb892a92cefaa576": {
+    "source": "GR 速刷",
+    "template": "GR [[Site/speed-farming]]",
     "manual": {
-      "enUS": "Icy Veins explicitly uses Guardian's for early-progression Greater Rift speed farming; keep Convention of Elements and use Steuart's Greaves plus Bane of the Powerful for traversal and elite efficiency."
+      "enUS": "Greater Rift speed farming"
     }
   },
-  "app.be77608156c06dbf": {
-    "source": "奥吉德 GR 速刷",
-    "template": "[[ItemSets/P66_Crafted Nightmare Set 002]] GR [[Site/speed-farming]]",
+  "app.9474d6986fac1d05": {
+    "source": "资料明确存在独立 GR 速刷变体；成型配置使用奥吉德与戴恩提，斯图亚特和强者之灾负责转场与精英效率，守护者只作为条件化过渡。",
+    "template": "资料明确存在独立 GR [[Site/speed-farming]]变体；成型配置使用[[ItemSets/P66_Crafted Nightmare Set 002]]与[[Items/P61_Unique_Belt_01]]，斯图亚特和[[Items/Unique_Gem_001_x1]]负责转场与精英效率，[[Powers/Templar_CheatDeath_Passive_name]]只作为条件化过渡。",
     "manual": {
-      "enUS": "Aughild Greater Rift speed farming"
-    }
-  },
-  "app.ae0d9b3cc93a56f5": {
-    "source": "约 2000 巅峰且不再依赖守护者时，换奥吉德与戴恩提；斯图亚特、强者之灾和较低目标层级负责缩短单次用时。",
-    "template": "约 2000 [[Site/paragon]]且不再依赖[[Powers/Templar_CheatDeath_Passive_name]]时，换[[ItemSets/P66_Crafted Nightmare Set 002]]与[[Items/P61_Unique_Belt_01]]；斯图亚特、[[Items/Unique_Gem_001_x1]]和较低目标层级负责缩短单次用时。",
-    "manual": {
-      "enUS": "Around Paragon 2000, once Guardian's is no longer needed, switch to Aughild's and Dayntee's; Steuart's, Bane of the Powerful, and a lower target tier reduce clear times."
+      "enUS": "The references document a separate Greater Rift speed variant. Its mature setup uses Aughild and Dayntee, while Steuart's Greaves and Bane of the Powerful improve travel and elite kills; Guardian is only a conditional bridge."
     }
   },
   "app.2b44272ad309dede": {
     "source": "移动速度25%上限",
     "template": "移动速度25%上限"
   },
-  "app.a3c1b541534ac496": {
-    "source": "守护者 T16（证据冲突）",
-    "template": "[[Powers/Templar_CheatDeath_Passive_name]] T16（证据冲突）",
+  "app.18e24549071f893f": {
+    "source": "T16 金币链（证据冲突）",
+    "template": "T16 金币链（证据冲突）",
     "manual": {
-      "enUS": "Guardian T16 (conflicting evidence)"
-    }
-  },
-  "app.6e1a01f0f1fd89a8": {
-    "source": "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
-    "template": "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
-    "manual": {
-      "enUS": "Icy Veins' default T16 skill bar conflicts with its Season 39 fourth-slot explanation, while d3guides.de lists different skill changes; this setup is retained for research and is not recommended."
-    }
-  },
-  "app.2ef44bb2128f3a85": {
-    "source": "金币链 T16（证据冲突）",
-    "template": "金币链 T16（证据冲突）",
-    "manual": {
-      "enUS": "Gold-chain T16 (conflicting evidence)"
+      "enUS": "T16 gold chain (conflicting evidence)"
     }
   },
   "app.8235d5047cea33a1": {
@@ -34927,18 +34906,18 @@
       "enUS": "Trag'Oul Death Nova has a separate Greater Rift speed-farming use, but the sources only call it reasonably effective and do not establish it as the class's fastest option."
     }
   },
-  "app.a779e25da62fc635": {
-    "source": "GR 速刷保留全能法戒，防具萃取改斯图亚特，受罚者改强者；守护者转奥吉德只由 Icy Veins 明确给出。",
-    "template": "GR [[Site/speed-farming]]保留[[Items/P2_Unique_Ring_04]]，防具萃取改斯图亚特，[[Items/Unique_Gem_018_x1]]改强者；[[Powers/Templar_CheatDeath_Passive_name]]转[[ItemSets/P66_Crafted Nightmare Set 002]]只由 Icy Veins 明确给出。",
+  "app.b8cf8751147196af": {
+    "source": "GR 速刷保留全能法戒，防具萃取改斯图亚特，受罚者改强者；守护者仅是装备与坚韧未成型时的过渡选择。",
+    "template": "GR [[Site/speed-farming]]保留[[Items/P2_Unique_Ring_04]]，防具萃取改斯图亚特，[[Items/Unique_Gem_018_x1]]改强者；[[Powers/Templar_CheatDeath_Passive_name]]仅是装备与坚韧未成型时的过渡选择。",
     "manual": {
-      "enUS": "Greater Rift speed farming keeps Convention of Elements, cubes Steuart's Greaves, and replaces Stricken with Powerful; only Icy Veins explicitly describes switching from Guardian's to Aughild's."
+      "enUS": "The Greater Rift speed setup keeps Convention of Elements, changes the armor power to Steuart's Greaves, and replaces Bane of the Stricken with Bane of the Powerful. Guardian is only a bridge while gear and toughness are incomplete."
     }
   },
-  "app.c9fd7a992cff7360": {
-    "source": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 巅峰的守护者转奥吉德条件。",
-    "template": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 [[Site/paragon]]的[[Powers/Templar_CheatDeath_Passive_name]]转[[ItemSets/P66_Crafted Nightmare Set 002]]条件。",
+  "app.7188267b45a8a176": {
+    "source": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述守护者转奥吉德；其巅峰数字只保留为来源背景，不作为产品硬断点。",
+    "template": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述[[Powers/Templar_CheatDeath_Passive_name]]转[[ItemSets/P66_Crafted Nightmare Set 002]]；其[[Site/paragon]]数字只保留为来源背景，不作为产品硬断点。",
     "manual": {
-      "enUS": "Both sites support Steuart's Greaves and Bane of the Powerful, but only Icy Veins describes the Guardian-to-Aughild's switch near Paragon 2000."
+      "enUS": "Both sites support Steuart's Greaves and Bane of the Powerful, but only Icy Veins describes the Guardian-to-Aughild transition. Its Paragon number is source context, not a hard product breakpoint."
     }
   },
   "app.3d5f89d0a286dcb0": {
@@ -35005,17 +34984,26 @@
     "source": "把生命池补到80万–90万后再观察。",
     "template": "把生命池补到[[Number/80/wan]]–[[Number/90/wan]]后再观察。"
   },
-  "app.a7f460ffe9754977": {
-    "source": "换奥吉德",
-    "template": "换[[ItemSets/P66_Crafted Nightmare Set 002]]"
+  "app.56dbb004d437a169": {
+    "source": "GR 速刷切回奥吉德",
+    "template": "GR [[Site/speed-farming]]切回[[ItemSets/P66_Crafted Nightmare Set 002]]",
+    "manual": {
+      "enUS": "Return to Aughild for Greater Rift speed farming"
+    }
   },
-  "app.12cb381a3c4fb6f5": {
-    "source": "约2000巅峰且不再依赖守护者坚韧",
-    "template": "约2000[[Site/paragon]]且不再依赖[[Powers/Templar_CheatDeath_Passive_name]]坚韧"
+  "app.e91f96b59cd3eace": {
+    "source": "换装后仍能稳定完成目标层，且精英击杀速度已成为主要瓶颈",
+    "template": "换装后仍能稳定完成目标层，且精英击杀速度已成为主要瓶颈",
+    "manual": {
+      "enUS": "The replacement setup still clears the target tier consistently and elite kill speed has become the main bottleneck"
+    }
   },
-  "app.9a54b85167339d84": {
-    "source": "高巅峰让装备主属性翻倍的边际收益下降。",
-    "template": "[[Site/high-paragon]]让装备主属性翻倍的边际收益下降。"
+  "app.248caa66a94a9efe": {
+    "source": "以可观察的生存与效率结果替代固定巅峰数字；奥吉德提供精英增伤减伤。",
+    "template": "以可观察的生存与效率结果替代固定[[Site/paragon]]数字；[[ItemSets/P66_Crafted Nightmare Set 002]]提供精英[[Site/damage-boost]][[Site/damage-reduction]]。",
+    "manual": {
+      "enUS": "Use observable survival and efficiency results instead of a fixed Paragon number; Aughild adds damage against and protection from elites."
+    }
   },
   "app.4b676e9874fbb0a0": {
     "source": "80万–90万",
@@ -35084,19 +35072,22 @@
     "source": "肩腕腰套装包",
     "template": "肩腕腰套装包"
   },
-  "app.0cfd50873fc1cedc": {
-    "source": "巅峰水平决定守护者主属性是否仍比奥吉德精英乘区更值。",
-    "template": "[[Site/paragon]]水平决定[[Powers/Templar_CheatDeath_Passive_name]]主属性是否仍比[[ItemSets/P66_Crafted Nightmare Set 002]]精英[[Site/multiplier]]更值。"
+  "app.84121fb0efc7f888": {
+    "source": "是否需要守护者应由装备属性、卡德山和目标层生存决定，不使用全站统一巅峰断点。",
+    "template": "是否需要[[Powers/Templar_CheatDeath_Passive_name]]应由装备属性、卡德山和目标层生存决定，不使用全站统一[[Site/paragon]]断点。",
+    "manual": {
+      "enUS": "The need for Guardian should be determined by item stats, augments, and survival at the target tier, not a site-wide Paragon breakpoint."
+    }
   },
   "app.318842eb74d445f3": {
     "source": "导能披肩 + 守护者腕腰",
     "template": "[[Items/P4_Unique_Shoulder_103]] + [[Powers/Templar_CheatDeath_Passive_name]]腕腰"
   },
-  "app.a483033c56c0a2a9": {
-    "source": "生命/坚韧未达标，或尚未能稳定完成目标层",
-    "template": "生命/坚韧未达标，或尚未能稳定完成目标层",
+  "app.643cf9efa7872dd6": {
+    "source": "GR 速刷奥吉德版无法稳定存活，且装备/卡德山仍未成型",
+    "template": "GR [[Site/speed-farming]][[ItemSets/P66_Crafted Nightmare Set 002]]版无法稳定存活，且装备/卡德山仍未成型",
     "manual": {
-      "enUS": "When Life or toughness is insufficient, or the target tier is not yet stable"
+      "enUS": "The Aughild Greater Rift speed setup cannot survive consistently and gear or augments are still incomplete"
     }
   },
   "app.a5675177bf8e3997": {
@@ -35111,11 +35102,11 @@
     "source": "奥吉德肩腕 + 戴恩提",
     "template": "[[ItemSets/P66_Crafted Nightmare Set 002]]肩腕 + [[Items/P61_Unique_Belt_01]]"
   },
-  "app.06b2c1a2e588a0cb": {
-    "source": "约2000巅峰且换装后仍能稳定存活",
-    "template": "约2000[[Site/paragon]]且换装后仍能稳定存活",
+  "app.dbdf27d041c3b8be": {
+    "source": "冲层，或 GR 速刷换装后仍能稳定完成目标层",
+    "template": "[[Site/push]]，或 GR [[Site/speed-farming]]换装后仍能稳定完成目标层",
     "manual": {
-      "enUS": "Around Paragon 2000, if survivability remains stable after the swap"
+      "enUS": "For pushing, or when the Greater Rift speed setup still clears the target tier consistently after the swap"
     }
   },
   "app.53cd25f2b8018cad": {
@@ -35130,9 +35121,12 @@
     "source": "塔格奥肩 + 沃兹克 + 金织带",
     "template": "[[ItemSets/P6_Necro_Set_2]]肩 + [[Items/Unique_Bracer_101_x1]] + [[Items/Unique_Belt_010_x1]]"
   },
-  "app.8bd0ef57d489ea65": {
-    "source": "高巅峰单人T16且地图会掉金币",
-    "template": "[[Site/high-paragon]][[Site/solo]]T16且地图会掉金币"
+  "app.a6f3bc361375df9d": {
+    "source": "仅限单人T16且地图会掉金币",
+    "template": "仅限[[Site/solo]]T16且地图会掉金币",
+    "manual": {
+      "enUS": "Only for solo T16 content where monsters drop gold"
+    }
   },
   "app.8257404febd944c4": {
     "source": "持续移速和金币护甲",
@@ -35186,6 +35180,13 @@
   "app.948e4755062a9079": {
     "source": "清图阶段收益较慢",
     "template": "清图阶段收益较慢"
+  },
+  "app.9f34adbc5122540e": {
+    "source": "目标层首领战足够短的 GR 速刷",
+    "template": "目标层首领战足够短的 GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Greater Rift speed farming where the boss fight at the target tier is short enough"
+    }
   },
   "app.adeddc5ed0503e91": {
     "source": "击杀精英后的定时攻防增益",
@@ -35303,29 +35304,61 @@
     "source": "金织带与沃兹克负责生存和机动",
     "template": "[[Items/Unique_Belt_010_x1]]与[[Items/Unique_Bracer_101_x1]]负责生存和机动"
   },
-  "app.7230f7bf44b03871": {
-    "source": "守护者过渡优先保证生存",
-    "template": "[[Powers/Templar_CheatDeath_Passive_name]]过渡优先保证生存"
+  "app.8111f33d4750209b": {
+    "source": "成长阶段",
+    "template": "成长阶段",
+    "manual": {
+      "enUS": "Progression stage"
+    }
   },
-  "app.7e0197b9f7a89584": {
-    "source": "守护者翻倍装备智力与体能",
-    "template": "[[Powers/Templar_CheatDeath_Passive_name]]翻倍装备[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]与[[SkillsUI/ParagonBonusLabel_Vitality]]"
+  "app.775648f4602525eb": {
+    "source": "按装备、卡德山和目标层生存选择过渡件",
+    "template": "按装备、卡德山和目标层生存选择过渡件",
+    "manual": {
+      "enUS": "Choose bridge items based on gear, augments, and survival at the target tier"
+    }
   },
-  "app.d52378432e5d7a81": {
-    "source": "魔方戴恩提补充稳定减伤",
-    "template": "魔方[[Items/P61_Unique_Belt_01]]补充稳定[[Site/damage-reduction]]"
+  "app.b7fdb29d58d916e9": {
+    "source": "GR 速刷站不住时使用守护者",
+    "template": "GR [[Site/speed-farming]]站不住时使用[[Powers/Templar_CheatDeath_Passive_name]]",
+    "manual": {
+      "enUS": "Use Guardian when the Greater Rift speed setup cannot survive"
+    }
   },
-  "app.812fc68077c99359": {
-    "source": "奥吉德或速刷散件释放输出上限",
-    "template": "[[ItemSets/P66_Crafted Nightmare Set 002]]或[[Site/speed-farming]]散件释放输出上限"
+  "app.8c7815b02ca6602e": {
+    "source": "达到生命检查点后再追输出",
+    "template": "达到生命检查点后再追输出",
+    "manual": {
+      "enUS": "Pursue damage only after reaching the Life checkpoint"
+    }
   },
-  "app.05eadc40a0ea2cd9": {
-    "source": "冲层换奥吉德",
-    "template": "[[Site/push]]换[[ItemSets/P66_Crafted Nightmare Set 002]]"
+  "app.df0c18a0707ad3ab": {
+    "source": "成型阶段",
+    "template": "成型阶段",
+    "manual": {
+      "enUS": "Mature setup"
+    }
   },
-  "app.5b865715f9c3ecfd": {
-    "source": "速刷换金币链",
-    "template": "[[Site/speed-farming]]换金币链"
+  "app.0fee3e7cd36a9aaa": {
+    "source": "换装后能稳定完成目标内容才算成型",
+    "template": "换装后能稳定完成目标内容才算成型",
+    "manual": {
+      "enUS": "The setup is mature only when it consistently completes the target content after the swap"
+    }
+  },
+  "app.9858c22841473b4e": {
+    "source": "GR 使用奥吉德",
+    "template": "GR 使用[[ItemSets/P66_Crafted Nightmare Set 002]]",
+    "manual": {
+      "enUS": "Use Aughild in Greater Rifts"
+    }
+  },
+  "app.e29215da7ed1db19": {
+    "source": "T16 金币链不得带进 GR",
+    "template": "T16 金币链不得带进 GR",
+    "manual": {
+      "enUS": "Do not bring the T16 gold chain into Greater Rifts"
+    }
   },
   "app.7e464da9ef9f0bbc": {
     "source": "塔格奥已完成 Icy Veins 与 d3guides.de 的结论级对照：冲层装备/宝石/魔方一致，技能符文与 T16 细节存在冲突；Maxroll 当前页面无法稳定读取，Nintendo Switch 实测尚未完成。",
@@ -60479,6 +60512,97 @@
       "zhCN": "塔格奥是当前人工样板，但现有证据仍以单一 PC 攻略站为主；第二来源与 Nintendo Switch 实测尚未完成。",
       "zhTW": "塔格奧是目前人工樣板，但現有證據仍以單一 PC 攻略站為主；第二來源與 Nintendo Switch 實測尚未完成。",
       "enUS": "Trag'Oul is the current hand-authored reference, but its evidence still relies mainly on one PC guide site; a second source and Nintendo Switch testing are pending."
+    }
+  },
+  "app.b304784862f619b5": {
+    "source": "守护者过渡冲层（待验证）",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]]过渡[[Site/push]]（待验证）",
+    "manual": {
+      "enUS": "Guardian push transition (unverified)"
+    }
+  },
+  "app.2d10e559c054fd6e": {
+    "source": "守护者方案目前是项目从速刷成长建议外推到冲层的过渡配置；精确冲层页只明确给出奥吉德，暂不作为已确认推荐。",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]]方案目前是项目从[[Site/speed-farming]]成长建议外推到[[Site/push]]的过渡配置；精确[[Site/push]]页只明确给出[[ItemSets/P66_Crafted Nightmare Set 002]]，暂不作为已确认推荐。",
+    "manual": {
+      "enUS": "This Guardian transition is inferred from speed-farming progression advice; the exact push guide explicitly specifies only Aughild's, so this is not a confirmed recommendation."
+    }
+  },
+  "app.80fa5aaf6701a9e7": {
+    "source": "守护者 GR 速刷",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]] GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Guardian Greater Rift speed farming"
+    }
+  },
+  "app.8b0efed222a606ad": {
+    "source": "Icy Veins 明确把守护者作为成长早期的 GR 速刷方案；保留全能法戒，用斯图亚特和强者之灾换取稳定转场与精英效率。",
+    "template": "Icy Veins 明确把[[Powers/Templar_CheatDeath_Passive_name]]作为成长早期的 GR [[Site/speed-farming]]方案；保留[[Items/P2_Unique_Ring_04]]，用斯图亚特和[[Items/Unique_Gem_001_x1]]换取稳定转场与精英效率。",
+    "manual": {
+      "enUS": "Icy Veins explicitly uses Guardian's for early-progression Greater Rift speed farming; keep Convention of Elements and use Steuart's Greaves plus Bane of the Powerful for traversal and elite efficiency."
+    }
+  },
+  "app.be77608156c06dbf": {
+    "source": "奥吉德 GR 速刷",
+    "template": "[[ItemSets/P66_Crafted Nightmare Set 002]] GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Aughild Greater Rift speed farming"
+    }
+  },
+  "app.ae0d9b3cc93a56f5": {
+    "source": "约 2000 巅峰且不再依赖守护者时，换奥吉德与戴恩提；斯图亚特、强者之灾和较低目标层级负责缩短单次用时。",
+    "template": "约 2000 [[Site/paragon]]且不再依赖[[Powers/Templar_CheatDeath_Passive_name]]时，换[[ItemSets/P66_Crafted Nightmare Set 002]]与[[Items/P61_Unique_Belt_01]]；斯图亚特、[[Items/Unique_Gem_001_x1]]和较低目标层级负责缩短单次用时。",
+    "manual": {
+      "enUS": "Around Paragon 2000, once Guardian's is no longer needed, switch to Aughild's and Dayntee's; Steuart's, Bane of the Powerful, and a lower target tier reduce clear times."
+    }
+  },
+  "app.a3c1b541534ac496": {
+    "source": "守护者 T16（证据冲突）",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]] T16（证据冲突）",
+    "manual": {
+      "enUS": "Guardian T16 (conflicting evidence)"
+    }
+  },
+  "app.6e1a01f0f1fd89a8": {
+    "source": "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
+    "template": "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
+    "manual": {
+      "enUS": "Icy Veins' default T16 skill bar conflicts with its Season 39 fourth-slot explanation, while d3guides.de lists different skill changes; this setup is retained for research and is not recommended."
+    }
+  },
+  "app.2ef44bb2128f3a85": {
+    "source": "金币链 T16（证据冲突）",
+    "template": "金币链 T16（证据冲突）",
+    "manual": {
+      "enUS": "Gold-chain T16 (conflicting evidence)"
+    }
+  },
+  "app.a779e25da62fc635": {
+    "source": "GR 速刷保留全能法戒，防具萃取改斯图亚特，受罚者改强者；守护者转奥吉德只由 Icy Veins 明确给出。",
+    "template": "GR [[Site/speed-farming]]保留[[Items/P2_Unique_Ring_04]]，防具萃取改斯图亚特，[[Items/Unique_Gem_018_x1]]改强者；[[Powers/Templar_CheatDeath_Passive_name]]转[[ItemSets/P66_Crafted Nightmare Set 002]]只由 Icy Veins 明确给出。",
+    "manual": {
+      "enUS": "Greater Rift speed farming keeps Convention of Elements, cubes Steuart's Greaves, and replaces Stricken with Powerful; only Icy Veins explicitly describes switching from Guardian's to Aughild's."
+    }
+  },
+  "app.c9fd7a992cff7360": {
+    "source": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 巅峰的守护者转奥吉德条件。",
+    "template": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 [[Site/paragon]]的[[Powers/Templar_CheatDeath_Passive_name]]转[[ItemSets/P66_Crafted Nightmare Set 002]]条件。",
+    "manual": {
+      "enUS": "Both sites support Steuart's Greaves and Bane of the Powerful, but only Icy Veins describes the Guardian-to-Aughild's switch near Paragon 2000."
+    }
+  },
+  "app.a483033c56c0a2a9": {
+    "source": "生命/坚韧未达标，或尚未能稳定完成目标层",
+    "template": "生命/坚韧未达标，或尚未能稳定完成目标层",
+    "manual": {
+      "enUS": "When Life or toughness is insufficient, or the target tier is not yet stable"
+    }
+  },
+  "app.06b2c1a2e588a0cb": {
+    "source": "约2000巅峰且换装后仍能稳定存活",
+    "template": "约2000[[Site/paragon]]且换装后仍能稳定存活",
+    "manual": {
+      "enUS": "Around Paragon 2000, if survivability remains stable after the swap"
     }
   }
 }
