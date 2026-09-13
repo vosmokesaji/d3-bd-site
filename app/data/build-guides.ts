@@ -358,6 +358,10 @@ export function validateBuildEvidence(guide: BuildGuide): string[] {
   const errors: string[] = [];
   if (!guide.evidenceStatus) errors.push("缺少证据状态");
   if (!guide.platformStatus) errors.push("缺少平台状态");
+  const sources = guide.structuredSources ?? [];
+  const sourceIds = sources.map((source) => source.id);
+  const knownSourceIds = new Set(sourceIds);
+  if (new Set(sourceIds).size !== sourceIds.length) errors.push("STRUCTURED_SOURCE_ID_DUPLICATE");
   for (const scenario of guide.scenarios ?? []) {
     scenario.sourceRefs.forEach((source) => {
       try {
@@ -367,20 +371,47 @@ export function validateBuildEvidence(guide: BuildGuide): string[] {
         errors.push(`${scenario.id} 来源不是有效 URL`);
       }
     });
+    scenario.sourceIds?.forEach((id) => {
+      const source = sources.find((candidate) => candidate.id === id);
+      if (!source) {
+        errors.push(`${scenario.id}:UNKNOWN_SOURCE_ID:${id}`);
+        return;
+      }
+      if (!scenario.sourceRefs.includes(source.url)) errors.push(`${scenario.id}:SOURCE_ID_URL_NOT_IN_REFS:${id}`);
+      if (source.content?.length && !source.content.includes(scenario.content)) errors.push(`${scenario.id}:SOURCE_CONTENT_MISMATCH:${id}`);
+    });
   }
-  for (const source of guide.structuredSources ?? []) {
+  for (const source of sources) {
+    if (!source.title.trim()) errors.push(`${source.id}:SOURCE_TITLE_MISSING`);
+    if (!source.publisher.trim()) errors.push(`${source.id}:SOURCE_PUBLISHER_MISSING`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(source.accessedAt)) errors.push(`${source.id}:SOURCE_ACCESSED_DATE_INVALID`);
+    if (source.updatedAt && !/^\d{4}-\d{2}-\d{2}$/.test(source.updatedAt)) errors.push(`${source.id}:SOURCE_UPDATED_DATE_INVALID`);
     try {
       const url = new URL(source.url);
       if (url.protocol !== "https:") errors.push(`${source.id}:SOURCE_NOT_HTTPS`);
+      if (url.pathname === "/" || url.pathname === "") errors.push(`${source.id}:SOURCE_NOT_EXACT_PAGE`);
     } catch {
       errors.push(`${source.id}:SOURCE_URL_INVALID`);
+    }
+  }
+  const claimIds = (guide.evidenceClaims ?? []).map((claim) => claim.id);
+  if (new Set(claimIds).size !== claimIds.length) errors.push("EVIDENCE_CLAIM_ID_DUPLICATE");
+  for (const claim of guide.evidenceClaims ?? []) {
+    if (claim.sourceIds.length === 0 && claim.status !== "unverified") errors.push(`${claim.id}:CLAIM_WITHOUT_SOURCE`);
+    claim.sourceIds.filter((id) => !knownSourceIds.has(id)).forEach((id) => errors.push(`${claim.id}:UNKNOWN_SOURCE_ID:${id}`));
+    if (claim.status === "cross-checked") {
+      const publishers = new Set(claim.sourceIds.flatMap((id) => {
+        const source = sources.find((candidate) => candidate.id === id);
+        return source ? [source.publisher.trim().toLowerCase()] : [];
+      }));
+      if (publishers.size < 2) errors.push(`${claim.id}:CROSS_CHECK_REQUIRES_TWO_PUBLISHERS`);
     }
   }
   if (guide.evidenceStatus === "published" && guide.platformStatus !== "switch-verified") {
     errors.push("发布状态缺少 Nintendo Switch 实机验证");
   }
   if (guide.evidenceStatus === "published") {
-    const publishers = new Set((guide.structuredSources ?? []).map((source) => source.publisher));
+    const publishers = new Set(sources.map((source) => source.publisher));
     if (publishers.size < 2) errors.push("PUBLISHED_REQUIRES_TWO_PUBLISHERS");
     if (!(guide.evidenceClaims?.length)) errors.push("PUBLISHED_REQUIRES_CLAIM_EVIDENCE");
     if (guide.evidenceClaims?.some((claim) => claim.status === "unverified" || claim.status === "single-source")) errors.push("PUBLISHED_HAS_INCOMPLETE_CLAIMS");

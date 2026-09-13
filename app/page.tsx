@@ -19,8 +19,10 @@ import {
   validateReviewedBuildGuide,
   type BuildChoicePolicy,
   type BuildConfiguration,
+  type BuildSource,
   type BuildScenario,
   type BuildVariantProfile,
+  type EvidenceClaim,
   type ParagonGuide,
 } from "./data/build-guides";
 import { BARBARIAN_BUILDS } from "./data/barbarian-builds";
@@ -482,6 +484,13 @@ const CUBE_POWERS: Record<string, Omit<CubePower, "slot">> = {
     original: "拾取金币后，金币与生命球拾取范围提高1码，最多叠到30码。",
     summary: "把金币、进度球和金织带触发全部变成远距离自动拾取。",
   },
+  squirts: {
+    id: "squirts",
+    name: "斯奎特的项链",
+    image: "/d3/library/items/squirts-necklace-p66_unique_amulet_010.png",
+    original: "未受到伤害时逐层提高造成的伤害，同时也会提高受到的伤害。",
+    summary: "T16 伤害溢出前可用作单人增伤槽；受击会清掉层数。",
+  },
   "scythe-cycle": {
     id: "scythe-cycle",
     name: "轮回镰刀",
@@ -624,6 +633,21 @@ const SPEED_ROWS: FlowRow[] = [
       { id: "goldwrap", label: "金织带", detail: "金币数量转化护甲", kind: "gear", image: "/d3/goldwrap.png" },
       { id: "warzechian", label: "沃兹克护腕", detail: "破坏物体提高移速", kind: "gear", image: "/d3/warzechian.png" },
       { id: "rush", label: "全程赶路", detail: "只停下来触发新星", kind: "movement" },
+    ],
+  },
+];
+
+const GR_SPEED_ROWS: FlowRow[] = [
+  {
+    id: "gr-speed-movement",
+    category: "movement",
+    title: "大秘境转场",
+    nodes: [
+      { id: "blood-rush", label: "鲜血穿行", detail: "穿过空白区与危险地形", kind: "skill", image: "/d3/blood-rush.png" },
+      { id: "steuarts-greaves", label: "斯图亚特", detail: "位移后获得10秒移速", kind: "power", image: "/d3/steuarts-greaves.png" },
+      { id: "density", label: "寻找密集怪群", detail: "跳过零散小怪", kind: "effect" },
+      { id: "bloodtide-blade", label: "血潮利刃", detail: "25码内密度转化为伤害", kind: "power", image: "/d3/bloodtide-blade.png" },
+      { id: "powerful", label: "强者之灾", detail: "精英击杀后维持速刷攻防", kind: "gear", image: "/d3/library/items/bane-of-the-powerful-unique_gem_001_x1.png" },
     ],
   },
 ];
@@ -1159,7 +1183,7 @@ function LibraryRecordDetail({ category, id }: { category: string; id: string })
 type UnifiedBuildGuide = NecromancerGuide & {
   resolveGear?: (mode: Mode, paragon: Paragon) => Gear[];
   resolvePowers?: (mode: Mode, paragon: Paragon) => CubePower[];
-  resolveRows?: (mode: Mode) => FlowRow[];
+  resolveRows?: (mode: Mode, scenario?: BuildScenario) => FlowRow[];
   resolveRotation?: (mode: Mode) => NecromancerGuide["rotation"];
   originalEffects?: Record<string, string>;
 };
@@ -1431,8 +1455,8 @@ function equipmentStatRows(
   ];
 }
 
-function guideRows(guide: UnifiedBuildGuide, mode: Mode): FlowRow[] {
-  return (guide.resolveRows?.(mode) ?? guide.links.map((link, rowIndex) => ({
+function guideRows(guide: UnifiedBuildGuide, mode: Mode, scenario?: BuildScenario): FlowRow[] {
+  return (guide.resolveRows?.(mode, scenario) ?? guide.links.map((link, rowIndex) => ({
     id: `${guide.id}-link-${rowIndex}`,
     category: link.category === "defense" ? "defense" : link.category === "movement" ? "movement" : "damage",
     title: link.title,
@@ -1527,7 +1551,15 @@ const TRAGOUL_PUSH_ROTATION: NecromancerGuide["rotation"] = [
   { title: "虹吸到底", action: "面向精英或怪堆持续鲜血虹吸，让铁玫瑰与分身不断释放新星。", reason: "葬镰、铁玫瑰、血潮利刃和塔格奥六件同时放大这一步。" },
 ];
 
-const TRAGOUL_SPEED_ROTATION: NecromancerGuide["rotation"] = [
+const TRAGOUL_GR_SPEED_ROTATION: NecromancerGuide["rotation"] = [
+  { title: "叠生命再召分身", action: "先把塔格奥4件生命加成叠至300%，再召唤永久血魂双分。", reason: "分身继承召唤时的生命状态；跳过预热会同时损失伤害和坚韧。" },
+  { title: "位移找密度", action: "用鲜血穿行触发斯图亚特，跳过零散小怪，只在精英与密集怪群停留。", reason: "大秘境没有金币链，移动效率来自位移后的10秒提速。" },
+  { title: "骨甲开窗口", action: "贴近怪群叠满骨甲，并在全能法戒物理周期用白骨脱臼触发强控。", reason: "这套仍保留冲层的全能法戒与克里斯宾爆发窗。" },
+  { title: "虹吸清群", action: "面对密集怪群持续鲜血虹吸，让铁玫瑰与分身释放鲜血新星。", reason: "强者之灾替代受罚者，目标是快速处理精英而非长时间首领战。" },
+  { title: "首领超时就降层", action: "若秘境守卫超过1–2个物理周期仍未击杀，降低层数或改用冲层配置。", reason: "死亡新星单体弱；速刷层级应由稳定用时决定。" },
+];
+
+const TRAGOUL_T16_ROTATION: NecromancerGuide["rotation"] = [
   { title: "开局预热", action: "先叠满塔格奥4件生命，再召唤永久血魂双分。", reason: "否则后续新星与坚韧都会明显偏低。" },
   { title: "鲜血穿行", action: "连续位移寻找密集怪群，不为零散小怪停下。", reason: "血潮利刃需要25码内有足够敌人。" },
   { title: "自动聚怪", action: "脆弱光环经过怪群时，布里格斯会把敌人拖到身边。", reason: "聚得越紧，免费鲜血新星收益越高。" },
@@ -1539,8 +1571,19 @@ const TRAGOUL_SOURCES = {
   overview: "https://www.icy-veins.com/d3/necromancer-death-nova-build-with-trag-oul",
   skills: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-skills-and-runes",
   gear: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-bis-gear-gems-paragon-points",
-  speed: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-nephalem-rift-speed-farming-build",
+  grSpeed: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-greater-rift-speed-farming-build",
+  t16: "https://www.icy-veins.com/d3/trag-oul-death-nova-necromancer-nephalem-rift-speed-farming-build",
+  d3guides: "https://www.d3guides.de/de/build/totenbeschwoerer-tragouls-avatar-todesnova",
 };
+
+const TRAGOUL_STRUCTURED_SOURCES: BuildSource[] = [
+  { id: "icy-overview", url: TRAGOUL_SOURCES.overview, title: "Necromancer Death Nova Build With Trag'Oul", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-24", accessedAt: "2026-09-12", season: "39", patch: "2.7.8", platform: "pc", content: ["greater-rift-push", "greater-rift-speed", "nephalem-rift-t16"] },
+  { id: "icy-skills", url: TRAGOUL_SOURCES.skills, title: "Trag'Oul Death Nova Necromancer Skills and Runes", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-24", accessedAt: "2026-09-12", season: "39", patch: "2.7.8", platform: "pc", content: ["greater-rift-push"] },
+  { id: "icy-gear", url: TRAGOUL_SOURCES.gear, title: "Trag'Oul Death Nova Necromancer BiS Gear, Gems, and Paragon Points", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-24", accessedAt: "2026-09-12", season: "39", patch: "2.7.8", platform: "pc", content: ["greater-rift-push"] },
+  { id: "icy-gr-speed", url: TRAGOUL_SOURCES.grSpeed, title: "Trag'Oul Death Nova Greater Rift Speed Farming Variation", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-24", accessedAt: "2026-09-12", season: "39", patch: "2.7.8", platform: "pc", content: ["greater-rift-speed"] },
+  { id: "icy-t16", url: TRAGOUL_SOURCES.t16, title: "Trag'Oul Death Nova Nephalem Rift Speed Farming Variation", publisher: "Icy Veins", author: "Deadset", updatedAt: "2026-06-24", accessedAt: "2026-09-12", season: "39", patch: "2.7.8", platform: "pc", content: ["nephalem-rift-t16"] },
+  { id: "d3guides-s39", url: TRAGOUL_SOURCES.d3guides, title: "Trag'Ouls Avatar Todesnova — Totenbeschwörer", publisher: "d3guides.de", author: "eRnstl", updatedAt: "2026-08-23", accessedAt: "2026-09-12", season: "39", platform: "pc", content: ["greater-rift-push", "greater-rift-speed", "nephalem-rift-t16"] },
+];
 
 const TRAGOUL_CONFIGURATION_BASE: BuildConfiguration = {
   gear: {
@@ -1567,38 +1610,154 @@ const TRAGOUL_CONFIGURATION_BASE: BuildConfiguration = {
 
 const TRAGOUL_SCENARIOS: BuildScenario[] = [
   {
-    id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
-    reason: "守护者翻倍装备智力与体能，先补足低巅峰最缺的伤害和坚韧。", sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+    id: "push-low", label: "守护者过渡冲层（待验证）", content: "greater-rift-push", paragonBand: "low", applicability: "unverified",
+    reason: "守护者方案目前是项目从速刷成长建议外推到冲层的过渡配置；精确冲层页只明确给出奥吉德，暂不作为已确认推荐。",
+    sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear, TRAGOUL_SOURCES.grSpeed], sourceIds: ["icy-overview", "icy-gear"], configurationId: "tragoul-gr-push-guardian", reviewedAt: "2026-09-12",
   },
   {
-    id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
-    reason: "主属性由巅峰承担后，切换奥吉德与导能披肩萃取，提高精英战和范围伤害上限。",
+    id: "push-high", label: "奥吉德 GR 冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
+    reason: "两份当前 S39 来源都给出奥吉德肩腕、戴恩提腰带、导能披肩萃取的冲层骨架；Switch 操作仍待实测。",
     patch: {
       gear: { shoulders: "aughild-shoulders", bracers: "aughild-bracers", belt: "dayntee" },
       powers: { armor: "mantle-channeling" },
       statPriorities: { survival: ["生命值80万–90万", "护甲", "全元素抗性"], endgame: ["范围伤害≥120%", "攻击速度达到1.67档位", "移除装备上的多余智力"] },
     },
-    sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+    sourceRefs: [TRAGOUL_SOURCES.overview, TRAGOUL_SOURCES.gear, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-overview", "icy-gear", "d3guides-s39"], configurationId: "tragoul-gr-push-aughild", reviewedAt: "2026-09-12",
   },
   {
-    id: "speed-low", label: "低巅峰T16小秘境", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
-    reason: "保留守护者过渡，用布里格斯聚怪、斯图亚特提速和囤宝者金币链缩短单图时间。",
+    id: "gr-speed-low", label: "守护者 GR 速刷", content: "greater-rift-speed", paragonBand: "low", applicability: "viable",
+    reason: "Icy Veins 明确把守护者作为成长早期的 GR 速刷方案；保留全能法戒，用斯图亚特和强者之灾换取稳定转场与精英效率。",
+    patch: {
+      powers: { armor: "steuarts-greaves" },
+      legendaryGems: { boss: "bane-of-the-powerful" },
+      normalGems: { head: ["flawless-royal-diamond"] },
+      rotation: TRAGOUL_GR_SPEED_ROTATION,
+    },
+    sourceRefs: [TRAGOUL_SOURCES.grSpeed, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-gr-speed", "d3guides-s39"], configurationId: "tragoul-gr-speed-guardian", reviewedAt: "2026-09-12",
+  },
+  {
+    id: "gr-speed-high", label: "奥吉德 GR 速刷", content: "greater-rift-speed", paragonBand: "high", applicability: "viable",
+    reason: "约 2000 巅峰且不再依赖守护者时，换奥吉德与戴恩提；斯图亚特、强者之灾和较低目标层级负责缩短单次用时。",
+    patch: {
+      gear: { shoulders: "aughild-shoulders", bracers: "aughild-bracers", belt: "dayntee" },
+      powers: { armor: "steuarts-greaves" },
+      legendaryGems: { boss: "bane-of-the-powerful" },
+      normalGems: { head: ["flawless-royal-diamond"] },
+      statPriorities: { survival: ["生命值80万–90万", "护甲", "全元素抗性"], speed: ["移动速度25%上限", "攻击速度达到1.67档位", "范围伤害"] },
+      rotation: TRAGOUL_GR_SPEED_ROTATION,
+    },
+    sourceRefs: [TRAGOUL_SOURCES.grSpeed, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-gr-speed", "d3guides-s39"], configurationId: "tragoul-gr-speed-aughild", reviewedAt: "2026-09-12",
+  },
+  {
+    id: "speed-low", label: "守护者 T16（证据冲突）", content: "nephalem-rift-t16", paragonBand: "low", applicability: "unverified",
+    reason: "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
     patch: {
       gear: { ring2: "briggs" }, powers: { armor: "steuarts-greaves" },
-      legendaryGems: { boss: "boon-of-the-hoarder" }, rotation: TRAGOUL_SPEED_ROTATION,
+      legendaryGems: { damage: "boon-of-the-hoarder", boss: "bane-of-the-powerful" },
+      normalGems: { head: ["flawless-royal-diamond"] },
+      rotation: TRAGOUL_T16_ROTATION,
     },
-    sourceRefs: [TRAGOUL_SOURCES.speed, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+    sourceRefs: [TRAGOUL_SOURCES.t16, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-t16", "d3guides-s39"], configurationId: "tragoul-t16-guardian-unverified", reviewedAt: "2026-09-12",
   },
   {
-    id: "speed-high", label: "高巅峰T16小秘境", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
-    reason: "脱离守护者后穿回塔格奥肩，换金织带与沃兹克，并用贪婪之戒扩大金币拾取链。",
+    id: "speed-high", label: "金币链 T16（证据冲突）", content: "nephalem-rift-t16", paragonBand: "high", applicability: "unverified",
+    reason: "Icy Veins 支持单人金织带、沃兹克和随从贪婪之戒，但与 d3guides.de 的 T16 变体不一致；完成 Switch 实测前不作为推荐。",
     patch: {
       gear: { shoulders: "tragoul-shoulders", bracers: "warzechian", belt: "goldwrap", ring2: "briggs" },
-      powers: { armor: "steuarts-greaves", jewelry: "avarice-band" },
-      legendaryGems: { boss: "boon-of-the-hoarder" }, rotation: TRAGOUL_SPEED_ROTATION,
+      powers: { armor: "steuarts-greaves", jewelry: "squirts" },
+      legendaryGems: { damage: "boon-of-the-hoarder", boss: "bane-of-the-powerful" },
+      normalGems: { head: ["flawless-royal-diamond"] },
+      follower: { items: [...FOLLOWERS.enchantress.items.filter((item) => item.position !== "ring2").map((item) => item.name), "贪婪之戒"] },
+      rotation: TRAGOUL_T16_ROTATION,
       statPriorities: { survival: ["金币链启动前避免硬站", "护甲由金织带接管"], speed: ["移动速度25%上限", "拾取范围", "攻击速度达到1.67档位"] },
     },
-    sourceRefs: [TRAGOUL_SOURCES.speed, TRAGOUL_SOURCES.gear], reviewedAt: "2026-08-14",
+    sourceRefs: [TRAGOUL_SOURCES.t16, TRAGOUL_SOURCES.d3guides], sourceIds: ["icy-t16", "d3guides-s39"], configurationId: "tragoul-t16-gold-unverified", reviewedAt: "2026-09-12",
+  },
+];
+
+const TRAGOUL_EVIDENCE_CLAIMS: EvidenceClaim[] = [
+  {
+    id: "push-core-gear",
+    category: "gear",
+    path: "scenarios.push-high.configuration.gear",
+    conclusion: "S39 冲层骨架为五件塔格奥、奥吉德肩腕、戴恩提、鬼灵面容、克里斯宾、全能法戒、葬镰与铁玫瑰。",
+    sourceIds: ["icy-overview", "icy-gear", "d3guides-s39"],
+    status: "cross-checked",
+  },
+  {
+    id: "push-skills-conflict",
+    category: "skills",
+    path: "scenarios.push-high.configuration.skills",
+    conclusion: "Icy Veins 的鲜血新星/白骨脱臼/脆弱光环/鲜血与白骨与 d3guides.de 当前符文表不一致。",
+    sourceIds: ["icy-skills", "d3guides-s39"],
+    status: "unverified",
+    conflictNote: "两站的装备发动机一致，但多个技能符文不同；在游戏内逐项复核前不能把技能栏标为交叉核对。",
+  },
+  {
+    id: "push-cube",
+    category: "powers",
+    path: "scenarios.push-high.configuration.powers",
+    conclusion: "冲层魔方为血潮利刃、导能披肩、皇家华戒与 S39 轮回镰刀。",
+    sourceIds: ["icy-overview", "icy-gear", "d3guides-s39"],
+    status: "cross-checked",
+  },
+  {
+    id: "push-legendary-gems",
+    category: "legendary-gems",
+    path: "scenarios.push-high.configuration.legendaryGems",
+    conclusion: "冲层传奇宝石为困者、贼神和受罚者。",
+    sourceIds: ["icy-gear", "d3guides-s39"],
+    status: "cross-checked",
+  },
+  {
+    id: "push-stat-breakpoints",
+    category: "stats",
+    path: "paragonGuide.checkpoints",
+    conclusion: "80–90 万生命、1.67 攻速和 120% 以上范围伤是 Icy Veins 给出的冲层检查点。",
+    sourceIds: ["icy-gear"],
+    status: "single-source",
+  },
+  {
+    id: "gr-speed-applicability",
+    category: "applicability",
+    path: "scenarios.gr-speed-low,scenarios.gr-speed-high",
+    conclusion: "塔格奥死亡新星存在独立 GR 速刷用途，但资料只称其表现合理，不能外推为同职业最快。",
+    sourceIds: ["icy-gr-speed", "d3guides-s39"],
+    status: "cross-checked",
+  },
+  {
+    id: "gr-speed-configuration",
+    category: "gear",
+    path: "scenarios.gr-speed-low.configuration,scenarios.gr-speed-high.configuration",
+    conclusion: "GR 速刷保留全能法戒，防具萃取改斯图亚特，受罚者改强者；守护者转奥吉德只由 Icy Veins 明确给出。",
+    sourceIds: ["icy-gr-speed", "d3guides-s39"],
+    status: "single-source",
+    conflictNote: "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 巅峰的守护者转奥吉德条件。",
+  },
+  {
+    id: "t16-applicability-conflict",
+    category: "applicability",
+    path: "scenarios.speed-low,scenarios.speed-high",
+    conclusion: "两站都列出 T16 变体，但技能、戒指与金币链的具体配置没有一致到可发布程度。",
+    sourceIds: ["icy-t16", "d3guides-s39"],
+    status: "unverified",
+    conflictNote: "Icy Veins 的默认 T16 技能栏使用吞噬/死亡之力，同时 S39 第四槽段落要求骨甲/轮回镰刀；d3guides.de 又只声明符文、斯图亚特和宝石变化。",
+  },
+  {
+    id: "t16-legendary-gems",
+    category: "legendary-gems",
+    path: "scenarios.speed-low.configuration.legendaryGems,scenarios.speed-high.configuration.legendaryGems",
+    conclusion: "T16 用困者、囤宝者和强者，不把囤宝者带进 GR。",
+    sourceIds: ["icy-t16", "d3guides-s39"],
+    status: "cross-checked",
+  },
+  {
+    id: "switch-controls",
+    category: "platform",
+    path: "platformStatus",
+    conclusion: "当前所有精确构筑来源均为 PC 派生，尚未验证 Switch 自动锁定、虹吸朝向和鲜血穿行落点。",
+    sourceIds: [],
+    status: "unverified",
   },
 ];
 
@@ -1645,27 +1804,27 @@ const TRAGOUL_CHOICES: BuildChoicePolicy[] = [
   { key: "core-engine", targetType: "gear", targetId: "haunted-visions,funerary-pick,iron-rose", label: "鬼灵面容 + 葬镰 + 铁玫瑰", status: "locked", reason: "永久双分、虹吸增伤与免费新星共同组成发动机，缺任意一件都不是完整形态。" },
   { key: "tragoul-six", targetType: "gear", targetId: "tragoul-six", label: "塔格奥六件效果", status: "locked", reason: "鲜血新星必须获得六件套的生命消耗技能倍率。" },
   { key: "core-skills", targetType: "skill", targetId: "siphon-blood,death-nova,simulacrum", label: "虹吸、新星与双分", status: "locked", reason: "三者分别负责触发、伤害与复制，不能替换。" },
-  { key: "season-power", targetType: "power", targetId: "scythe-cycle", label: "轮回镰刀", status: "locked", reason: "赛季第四槽的核心次要技能乘区，必须保持骨甲生效。" },
+  { key: "season-power", targetType: "power", targetId: "scythe-cycle", label: "S39 第四槽与骨甲联动", status: "conditional", reason: "轮回镰刀只有骨甲生效时才放大次要技能；T16 若改用吞噬就不能照搬该槽。", alternatives: [
+    { id: "scythe-cycle", label: "轮回镰刀", when: "技能栏保留骨甲", gain: "获得次要技能独立乘区", cost: "每次施放次要技能都会缩短骨甲持续时间", scenarios: ["push-low", "push-high", "gr-speed-low", "gr-speed-high"] },
+  ] },
   { key: "shoulder-package", targetType: "gear", targetId: "shoulders", label: "肩腕腰套装包", status: "conditional", reason: "巅峰水平决定守护者主属性是否仍比奥吉德精英乘区更值。", alternatives: [
-    { id: "guardian-package", label: "导能披肩 + 守护者腕腰", when: "低巅峰或生命/坚韧未达标", gain: "翻倍装备智力和体能", cost: "放弃奥吉德精英增伤减伤", scenarios: ["push-low", "speed-low"] },
-    { id: "aughild-package", label: "奥吉德肩腕 + 戴恩提", when: "约2000巅峰后进行大秘境冲层", gain: "精英增伤与精英减伤", cost: "失去守护者主属性翻倍", scenarios: ["push-high"] },
+    { id: "guardian-package", label: "导能披肩 + 守护者腕腰", when: "生命/坚韧未达标，或尚未能稳定完成目标层", gain: "翻倍装备智力和体能", cost: "放弃奥吉德精英增伤减伤", scenarios: ["push-low", "gr-speed-low", "speed-low"] },
+    { id: "aughild-package", label: "奥吉德肩腕 + 戴恩提", when: "约2000巅峰且换装后仍能稳定存活", gain: "精英增伤与精英减伤", cost: "失去守护者主属性翻倍", scenarios: ["push-high", "gr-speed-high"] },
     { id: "gold-package", label: "塔格奥肩 + 沃兹克 + 金织带", when: "高巅峰单人T16且地图会掉金币", gain: "持续移速和金币护甲", cost: "离开小秘境后防御链失效", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-high"] },
   ] },
   { key: "second-ring", targetType: "gear", targetId: "ring2", label: "第二枚戒指", status: "conditional", reason: "冲层需要元素爆发窗，小秘境更需要自动聚怪。", alternatives: [
-    { id: "coe", label: "全能法戒", when: "大秘境冲层", gain: "物理周期爆发", cost: "需要等待元素窗口", scenarios: ["push-low", "push-high"] },
+    { id: "coe", label: "全能法戒", when: "大秘境冲层或大秘境速刷", gain: "物理周期爆发", cost: "需要等待元素窗口", scenarios: ["push-low", "push-high", "gr-speed-low", "gr-speed-high"] },
     { id: "briggs", label: "布里格斯之怒", when: "T16小秘境速刷", gain: "诅咒时自动聚怪", cost: "失去元素周期乘区", scenarios: ["speed-low", "speed-high"] },
   ] },
-  { key: "speed-gem", targetType: "legendary-gem", targetId: "boss", label: "第三颗传奇宝石", status: "conditional", reason: "首领战与金币速刷需要完全不同的收益。", alternatives: [
+  { key: "gr-third-gem", targetType: "legendary-gem", targetId: "boss", label: "大秘境第三颗传奇宝石", status: "conditional", reason: "冲层的长首领战与速刷的精英节奏需要不同宝石。", alternatives: [
     { id: "bane-of-the-stricken", label: "受罚者之灾", when: "大秘境冲层", gain: "持续叠加首领伤害", cost: "清图阶段收益较慢", scenarios: ["push-low", "push-high"] },
-    { id: "boon-of-the-hoarder", label: "囤宝者的恩惠", when: "T16小秘境", gain: "金币、移速与金织带护甲", cost: "大秘境完全不掉金币", incompatibleWith: ["greater-rift-push"], scenarios: ["speed-low", "speed-high"] },
+    { id: "bane-of-the-powerful", label: "强者之灾", when: "低层大秘境速刷", gain: "击杀精英后的定时攻防增益", cost: "不擅长拖长的首领战", scenarios: ["gr-speed-low", "gr-speed-high"] },
   ] },
-  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "成型首选魔女的攻速与冷却；开荒站不住时可暂用圣殿骑士治疗，但会损失输出循环收益。" },
+  { key: "t16-gems", targetType: "legendary-gem", targetId: "damage,boss", label: "T16 金币宝石组", status: "conditional", reason: "T16 会掉金币，大秘境完全不会；两类内容不能共用金币宝石。", alternatives: [
+    { id: "t16-hoarder-powerful", label: "囤宝者 + 强者", when: "仅限普通小秘境 T16", gain: "金币移速、金织带护甲与精英增益", cost: "牺牲贼神与受罚者的 GR 收益", incompatibleWith: ["greater-rift-push", "greater-rift-speed"], scenarios: ["speed-low", "speed-high"] },
+  ] },
+  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "Icy Veins 推荐魔女的攻速与冷却；单人 T16 金币链还要求把贪婪之戒交给随从，当前随从面板尚未按场景切换。" },
 ];
-
-function tragoulConfiguration(mode: Mode, paragon: Paragon) {
-  const scenario = TRAGOUL_SCENARIOS.find((candidate) => candidate.id === `${mode}-${paragon}`);
-  return resolveBuildConfiguration(TRAGOUL_CONFIGURATION_BASE, scenario?.patch);
-}
 
 export const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   id: "tragoul-nova",
@@ -1690,7 +1849,7 @@ export const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   rotation: TRAGOUL_PUSH_ROTATION,
   source: TRAGOUL_SOURCES.overview,
   configurationBase: TRAGOUL_CONFIGURATION_BASE,
-  defaultScenarioId: "push-low",
+  defaultScenarioId: "push-high",
   scenarios: TRAGOUL_SCENARIOS,
   paragonGuide: TRAGOUL_PARAGON,
   choicePolicies: TRAGOUL_CHOICES,
@@ -1699,19 +1858,11 @@ export const TRAGOUL_GUIDE: UnifiedBuildGuide = {
   evidenceStatus: "source-checked",
   platformStatus: "pc-derived",
   dataProvenance: "hand-authored",
-  evidenceNote: "塔格奥是当前人工样板，但现有证据仍以单一 PC 攻略站为主；第二来源与 Nintendo Switch 实测尚未完成。",
+  evidenceNote: "塔格奥已完成 Icy Veins 与 d3guides.de 的结论级对照：冲层装备/宝石/魔方一致，技能符文与 T16 细节存在冲突；Maxroll 当前页面无法稳定读取，Nintendo Switch 实测尚未完成。",
+  structuredSources: TRAGOUL_STRUCTURED_SOURCES,
+  evidenceClaims: TRAGOUL_EVIDENCE_CLAIMS,
   originalEffects: ORIGINAL_EFFECTS,
-  resolveGear: (mode, paragon) => {
-    const configuration = tragoulConfiguration(mode, paragon);
-    return SLOT_ORDER.map(([position]) => GEAR[configuration.gear[position]]);
-  },
-  resolvePowers: (mode, paragon) => {
-    const configuration = tragoulConfiguration(mode, paragon);
-    const labels: Record<string, string> = { weapon: "武器", armor: "防具", jewelry: "首饰", season: "第4槽" };
-    return Object.entries(configuration.powers).map(([slot, id]) => ({ ...CUBE_POWERS[id], slot: labels[slot] ?? slot }));
-  },
-  resolveRows: (mode) => [...BASE_ROWS, ...(mode === "push" ? [PUSH_ROW] : SPEED_ROWS)],
-  resolveRotation: (mode) => mode === "push" ? TRAGOUL_PUSH_ROTATION : TRAGOUL_SPEED_ROTATION,
+  resolveRows: (mode, scenario) => [...BASE_ROWS, ...(scenario?.content === "greater-rift-speed" ? GR_SPEED_ROWS : scenario?.content === "nephalem-rift-t16" ? SPEED_ROWS : mode === "push" ? [PUSH_ROW] : SPEED_ROWS)],
 };
 
 const TRAGOUL_VALIDATION_ERRORS = validateReviewedBuildGuide(TRAGOUL_GUIDE);
@@ -1773,6 +1924,18 @@ function evidencePresentation(guide: UnifiedBuildGuide) {
   return { status, label: labels[status], platformLabel: platformLabels[platform] };
 }
 
+function applicabilityPresentation(applicability: BuildScenario["applicability"]) {
+  const labels: Record<BuildScenario["applicability"], string> = {
+    recommended: "推荐",
+    viable: "可用，非最优",
+    supported: "有来源支持",
+    "not-recommended": "不推荐",
+    "not-applicable": "不适用",
+    unverified: "待验证",
+  };
+  return labels[applicability];
+}
+
 function BuildReviewPanel({
   guide,
   scenario,
@@ -1788,6 +1951,10 @@ function BuildReviewPanel({
   const groupedParagon = guide.paragonGuide?.pre800;
   const policies = guide.choicePolicies ?? [];
   const evidence = evidencePresentation(guide);
+  const structuredSources = scenario.sourceIds?.flatMap((sourceId) => {
+    const source = guide.structuredSources?.find((candidate) => candidate.id === sourceId);
+    return source ? [source] : [];
+  }) ?? [];
   const policyGroups = [
     { status: "locked", label: "必须固定" },
     { status: "conditional", label: "条件替换" },
@@ -1798,7 +1965,7 @@ function BuildReviewPanel({
       <header>
         <div><span>{t("app.6b32b8423e0a8ab7")}</span><h2>{tr(scenario.label)}</h2></div>
         <p>{tr(scenario.reason)}</p>
-        <b>{tr(evidence.label)}</b>
+        <b className={`applicability-${scenario.applicability}`}>{tr(applicabilityPresentation(scenario.applicability))} · {tr(evidence.label)}</b>
       </header>
       <div className="build-review-grid">
         <article className="scenario-diff-card">
@@ -1808,7 +1975,16 @@ function BuildReviewPanel({
           )}
           {diffs.some((diff) => diff.category === "statPriorities") && <p className="review-change-note">{t("app.cb4677555161737e")}</p>}
           {diffs.some((diff) => diff.category === "rotation") && <p className="review-change-note">{t("app.f0b57ebfe553f457")}</p>}
-          <div className="review-sources"><span>{t("app.0b0f97cd8f4035ad")}</span>{scenario.sourceRefs.filter(validSourceUrl).map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>{tr(sourceLabel(source, index))}</a>)}<small>{tr(scenario.reviewedAt)} · {tr(evidence.platformLabel)}</small></div>
+          <div className="review-sources">
+            <span>{t("app.0b0f97cd8f4035ad")}</span>
+            {structuredSources.length > 0 ? structuredSources.map((source) => (
+              <a href={source.url} target="_blank" rel="noreferrer" key={source.id}>
+                <strong>{tr(source.title)}</strong>
+                <small>{tr(source.publisher)}{source.author ? ` · ${tr(source.author)}` : ""} · {tr(source.season ? `S${source.season}` : source.patch ?? "版本未注明")} · {tr(source.platform)} · {tr(source.updatedAt ?? "更新时间未注明")}</small>
+              </a>
+            )) : scenario.sourceRefs.filter(validSourceUrl).map((source, index) => <a href={source} target="_blank" rel="noreferrer" key={source}>{tr(sourceLabel(source, index))}</a>)}
+            <small>{tr(`访问/复核 ${scenario.reviewedAt}`)} · {tr(evidence.platformLabel)}</small>
+          </div>
         </article>
 
         <article className="paragon-guide-card">
@@ -1958,26 +2134,26 @@ function resolveDetailData(guide: UnifiedBuildGuide, mode: Mode, paragon: Parago
   } as UnifiedBuildGuide;
   const activeVariant = resolveBuildVariantProfile(activeGuide, mode, paragon);
   const activeScenario = activeGuide.scenarios?.find((scenario) => scenario.id === scenarioId)
-    ?? activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`)
     ?? activeGuide.scenarios?.find((scenario) => scenario.id === activeGuide.defaultScenarioId)
+    ?? activeGuide.scenarios?.find((scenario) => scenario.id === `${mode}-${paragon}`)
     ?? activeGuide.scenarios?.[0];
   const activeConfiguration = activeGuide.configurationBase && activeScenario ? resolveBuildConfiguration(activeGuide.configurationBase, activeScenario.patch) : undefined;
   const gemIds = Object.values(activeConfiguration?.legendaryGems ?? {});
   let jewelryIndex = 0;
-  const gear: Gear[] = activeGuide.resolveGear?.(mode, paragon) ?? (activeConfiguration
+  const gear: Gear[] = activeConfiguration
     ? Object.values(activeConfiguration.gear).flatMap((id) => {
       const item = activeGuide.gear.find((candidate) => candidate.id === id);
       if (!item) return [];
       const gemId = item.slot === "颈部" || item.slot === "手指" ? gemIds[jewelryIndex++] : undefined;
       return [{ ...item, gem: gemId ? CONFIGURATION_LEGENDARY_GEMS[gemId] ?? item.gem : item.gem, affixes: normalizeGuideAffixes(item as Gear, classId, mode, paragon) } as Gear];
-    }) : resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant));
+    }) : activeGuide.resolveGear?.(mode, paragon) ?? resolveDefaultVariantGear(activeGuide, classId, mode, paragon, activeVariant);
   const labels: Record<string, string> = { weapon: "武器", armor: "防具", jewelry: "首饰", season: "第4槽" };
-  const powers = activeGuide.resolvePowers?.(mode, paragon) ?? (activeConfiguration
+  const powers = activeConfiguration
     ? Object.entries(activeConfiguration.powers).flatMap(([slot, id]) => {
       const selected = activeGuide.powers.find((candidate) => candidate.id === id);
       return selected ? [{ id: selected.id, slot: labels[slot] ?? selected.slot, name: selected.name, image: selected.image, original: selected.effect, summary: selected.logic }] : [];
-    }) : resolveDefaultVariantPowers(activeGuide, mode, paragon, activeVariant));
-  const rotation = activeGuide.resolveRotation?.(mode) ?? activeConfiguration?.rotation ?? activeGuide.rotation;
+    }) : activeGuide.resolvePowers?.(mode, paragon) ?? resolveDefaultVariantPowers(activeGuide, mode, paragon, activeVariant);
+  const rotation = activeConfiguration?.rotation ?? activeGuide.resolveRotation?.(mode) ?? activeGuide.rotation;
   const scenarioSkills = activeConfiguration?.skills.flatMap((configured) => {
     const skill = activeGuide.skills.find((candidate) => candidate.id === configured.id);
     return skill ? [{ ...skill, rune: configured.rune ?? skill.rune }] : [];
@@ -2039,8 +2215,9 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const requestedLoadout = searchParams.get("loadout");
   const initialMode: Mode = requestedMode === "speed" ? "speed" : requestedMode === "push" ? "push" : guide.defaultMode ?? "push";
   const initialParagon: Paragon = requestedParagon === "high" ? "high" : "low";
+  const hasLegacyVariantQuery = requestedMode === "speed" || requestedMode === "push" || requestedParagon === "high" || requestedParagon === "low";
   const initialScenario = guide.scenarios?.find((scenario) => scenario.id === requestedScenario)
-    ?? guide.scenarios?.find((scenario) => scenario.id === `${initialMode}-${initialParagon}`)
+    ?? (hasLegacyVariantQuery ? guide.scenarios?.find((scenario) => scenario.id === `${initialMode}-${initialParagon}`) : undefined)
     ?? guide.scenarios?.find((scenario) => scenario.id === guide.defaultScenarioId)
     ?? guide.scenarios?.[0];
   const initialLegacyState: { mode: Mode; paragon: Paragon } = initialScenario ? scenarioLegacyState(initialScenario) : { mode: initialMode, paragon: initialParagon };
@@ -2057,8 +2234,8 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
   const tableData = makeBuildTableData(guide, resolved, mode, paragon, season);
   const setFamilies = useMemo(() => buildSetFamilies(activeGuide, gear as Gear[]), [activeGuide, gear]);
   const rows = useMemo(
-    () => [...guideRows(activeGuide, mode), ...buildAutomaticSetRows(setFamilies, powers)],
-    [activeGuide, mode, setFamilies, powers],
+    () => [...guideRows(activeGuide, mode, activeScenario), ...buildAutomaticSetRows(setFamilies, powers)],
+    [activeGuide, activeScenario, mode, setFamilies, powers],
   );
   const [selectedGearId, setSelectedGearId] = useState(positions[0]?.gear.id ?? "");
   const [selectedPowerId, setSelectedPowerId] = useState(powers[0]?.id ?? "");
@@ -2160,7 +2337,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
       <section className="variant-bar" aria-label={tr("配置切换")}>
         <div className="variant-group" role="group" aria-label={tr("详情视图")}><button aria-pressed={detailView === "detail"} className={detailView === "detail" ? "active" : ""} onClick={() => setDetailView("detail")}>{t("app.e79643a0e65f2272")}</button><button aria-pressed={detailView === "table"} className={detailView === "table" ? "active" : ""} onClick={() => setDetailView("table")}>{t("app.59bc316ed88b4c70")}</button></div><div className="variant-divider" />
         {guide.loadouts && guide.loadouts.length > 1 && <><div className="variant-group"><span>{t("app.80a0b2822379c152")}</span>{guide.loadouts.map((loadout) => <button key={loadout.id} className={activeLoadout?.id === loadout.id ? "active" : ""} onClick={() => setLoadoutId(loadout.id)}>{tr(loadout.label)}</button>)}</div><div className="variant-divider" /></>}
-        {scenarioOptions.length > 0 ? <div className="variant-group scenario-options" role="group" aria-label={tr("适用场景")}><span>{t("app.05b36669c4ad9a73")}</span>{scenarioOptions.map((scenario) => <button key={scenario.id} aria-pressed={activeScenario?.id === scenario.id} className={`${activeScenario?.id === scenario.id ? "active" : ""} applicability-${scenario.applicability}`} onClick={() => selectScenario(scenario)}>{tr(scenario.label)}</button>)}</div> : <><div className="variant-group"><span>{t("app.05b36669c4ad9a73")}</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{tr(guide.modeLabels?.push ?? "大秘境冲层")}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{tr(guide.modeLabels?.speed ?? "T16 / 速刷")}</button></div><div className="variant-divider" /><div className="variant-group"><span>{t("app.724c4ca9ce4f003f")}</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>{t("app.72d8c9e002e9e369")}</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>{t("app.5d1eb39df9f0de0e")}</button></div></>}
+        {scenarioOptions.length > 0 ? <div className="variant-group scenario-options" role="group" aria-label={tr("适用场景")}><span>{t("app.05b36669c4ad9a73")}</span>{scenarioOptions.map((scenario) => <button key={scenario.id} aria-label={`${tr(scenario.label)} · ${tr(applicabilityPresentation(scenario.applicability))}`} aria-pressed={activeScenario?.id === scenario.id} className={`${activeScenario?.id === scenario.id ? "active" : ""} applicability-${scenario.applicability}`} onClick={() => selectScenario(scenario)}><strong>{tr(scenario.label)}</strong><small>{tr(applicabilityPresentation(scenario.applicability))}</small></button>)}</div> : <><div className="variant-group"><span>{t("app.05b36669c4ad9a73")}</span><button className={mode === "push" ? "active" : ""} onClick={() => setMode("push")}>{tr(guide.modeLabels?.push ?? "大秘境冲层")}</button><button className={mode === "speed" ? "active" : ""} onClick={() => setMode("speed")}>{tr(guide.modeLabels?.speed ?? "T16 / 速刷")}</button></div><div className="variant-divider" /><div className="variant-group"><span>{t("app.724c4ca9ce4f003f")}</span><button className={paragon === "low" ? "active" : ""} onClick={() => setParagon("low")}>{t("app.72d8c9e002e9e369")}</button><button className={paragon === "high" ? "active" : ""} onClick={() => setParagon("high")}>{t("app.5d1eb39df9f0de0e")}</button></div></>}
         <div className="variant-note"><strong>{tr(activeLoadout ? `${activeLoadout.title} · ` : "")}{tr(activeScenario?.label ?? activeVariant?.title ?? `${guide.variants[mode].title} · ${guide.variants[paragon].title}`)}</strong><span>{tr(activeLoadout?.summary ?? activeScenario?.reason ?? activeVariant?.differenceReason ?? `${guide.variants[mode].note}；${guide.variants[paragon].note}`)}</span></div>
       </section>
 
@@ -2183,7 +2360,7 @@ function UnifiedBuildDetail({ guide }: { guide: UnifiedBuildGuide }) {
           <div className="paperdoll-compact-stage">
           <div className="paperdoll" style={{ "--paperdoll-image": `url("${paperdollImage}")` } as CSSProperties}>
             <div className="paperdoll-lines" aria-hidden="true" />
-            <div className="paperdoll-profile"><span>{t("app.ebdb03777a32fcc0")}{" "}{entity(hero, "name")}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(seasonLabel(season))}</span><strong>{entity(guide, "name")}</strong><small>{tr(activeLoadout ? `${activeLoadout.label} · ` : "")}{tr(mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷"))}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(paragon === "low" ? "低巅峰配置" : "高巅峰配置")}</small></div>
+            <div className="paperdoll-profile"><span>{t("app.ebdb03777a32fcc0")}{" "}{entity(hero, "name")}{" "}{t("app.a137f17a19a09cbe")}{" "}{tr(seasonLabel(season))}</span><strong>{entity(guide, "name")}</strong><small>{tr(activeLoadout ? `${activeLoadout.label} · ` : "")}{tr(activeScenario?.label ?? (mode === "push" ? (guide.modeLabels?.push ?? "单人大秘境冲层") : (guide.modeLabels?.speed ?? "T16 / 大秘境速刷")))}{activeScenario ? ` · ${tr(applicabilityPresentation(activeScenario.applicability))}` : ""}</small></div>
             <div className="paperdoll-stats">
               <h3>{t("app.c7cb53a63234a64d")}{" "}<small>{t("app.c30646abe94323c2")}</small></h3>
               {statRows.map((stat) => (

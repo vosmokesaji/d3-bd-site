@@ -949,7 +949,8 @@ test("BD table route restores URL configuration and renders export controls with
   assert.match(html, /痞子/);
   assert.match(html, /圣殿骑士/);
   assert.match(html, /输出手法/);
-  assert.match(html, /高巅峰T16奈非天秘境/);
+  assert.match(html, /金币链 T16（证据冲突）/);
+  assert.match(html, /待验证/);
   assert.match(html, /以鲜血虹吸触发铁玫瑰的死亡新星/);
   assert.doesNotMatch(html, /让每一滴鲜血都成为一次爆炸/);
   assert.doesNotMatch(html, /class="workbench"/);

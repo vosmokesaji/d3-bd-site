@@ -29408,29 +29408,9 @@
     "source": "生命值80万–90万",
     "template": "生命值[[Number/80/wan]]–[[Number/90/wan]]"
   },
-  "app.05f5ef88aa957e16": {
-    "source": "守护者翻倍装备智力与体能，先补足低巅峰最缺的伤害和坚韧。",
-    "template": "[[Powers/Templar_CheatDeath_Passive_name]]翻倍装备[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]与[[SkillsUI/ParagonBonusLabel_Vitality]]，先补足[[Site/low-paragon]]最缺的伤害和坚韧。"
-  },
-  "app.105ac9ed124665fa": {
-    "source": "主属性由巅峰承担后，切换奥吉德与导能披肩萃取，提高精英战和范围伤害上限。",
-    "template": "主属性由[[Site/paragon]]承担后，切换[[ItemSets/P66_Crafted Nightmare Set 002]]与[[Items/P4_Unique_Shoulder_103]]萃取，提高精英战和[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]上限。"
-  },
   "app.2c2423c2c9424e95": {
     "source": "移除装备上的多余智力",
     "template": "移除装备上的多余[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]"
-  },
-  "app.705b017d00e98f6e": {
-    "source": "保留守护者过渡，用布里格斯聚怪、斯图亚特提速和囤宝者金币链缩短单图时间。",
-    "template": "保留[[Powers/Templar_CheatDeath_Passive_name]]过渡，用[[Items/P6_Unique_Ring_02]]聚怪、斯图亚特提速和[[Items/Unique_Gem_014_x1]]金币链缩短单图时间。"
-  },
-  "app.4076365fa918a003": {
-    "source": "高巅峰T16小秘境",
-    "template": "[[Site/high-paragon]]T16[[General/LootRunPortal]]"
-  },
-  "app.5256868668baa5b5": {
-    "source": "脱离守护者后穿回塔格奥肩，换金织带与沃兹克，并用贪婪之戒扩大金币拾取链。",
-    "template": "脱离[[Powers/Templar_CheatDeath_Passive_name]]后穿回[[ItemSets/P6_Necro_Set_2]]肩，换[[Items/Unique_Belt_010_x1]]与[[Items/Unique_Bracer_101_x1]]，并用[[Items/Unique_Ring_108_x1]]扩大金币拾取链。"
   },
   "app.f8c90e3970f11250": {
     "source": "金币链启动前避免硬站",
@@ -29516,10 +29496,6 @@
     "source": "三者分别负责触发、伤害与复制，不能替换。",
     "template": "三者分别负责触发、伤害与复制，不能替换。"
   },
-  "app.b5afa79c60a388dd": {
-    "source": "赛季第四槽的核心次要技能乘区，必须保持骨甲生效。",
-    "template": "赛季第四槽的核心次要技能[[Site/multiplier]]，必须保持[[Powers/P6_Necro_BoneArmor_name]]生效。"
-  },
   "app.449d665e54cbd121": {
     "source": "肩腕腰套装包",
     "template": "肩腕腰套装包"
@@ -29532,10 +29508,6 @@
     "source": "导能披肩 + 守护者腕腰",
     "template": "[[Items/P4_Unique_Shoulder_103]] + [[Powers/Templar_CheatDeath_Passive_name]]腕腰"
   },
-  "app.16bfd038a1b2d7a3": {
-    "source": "低巅峰或生命/坚韧未达标",
-    "template": "[[Site/low-paragon]]或生命/坚韧未达标"
-  },
   "app.a5675177bf8e3997": {
     "source": "翻倍装备智力和体能",
     "template": "翻倍装备[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]和[[SkillsUI/ParagonBonusLabel_Vitality]]"
@@ -29547,10 +29519,6 @@
   "app.53c63492e30503ec": {
     "source": "奥吉德肩腕 + 戴恩提",
     "template": "[[ItemSets/P66_Crafted Nightmare Set 002]]肩腕 + [[Items/P61_Unique_Belt_01]]"
-  },
-  "app.eec4cb053d2cdaa4": {
-    "source": "约2000巅峰后进行大秘境冲层",
-    "template": "约2000[[Site/paragon]]后进行[[NephalemRift/TieredRift]][[Site/push]]"
   },
   "app.53cd25f2b8018cad": {
     "source": "精英增伤与精英减伤",
@@ -29596,10 +29564,6 @@
     "source": "失去元素周期乘区",
     "template": "失去元素周期[[Site/multiplier]]"
   },
-  "app.add25dd2acf24abc": {
-    "source": "首领战与金币速刷需要完全不同的收益。",
-    "template": "首领战与金币[[Site/speed-farming]]需要完全不同的收益。"
-  },
   "app.052688ee1d6c8aff": {
     "source": "持续叠加首领伤害",
     "template": "持续叠加首领伤害"
@@ -29607,14 +29571,6 @@
   "app.948e4755062a9079": {
     "source": "清图阶段收益较慢",
     "template": "清图阶段收益较慢"
-  },
-  "app.ecafa1418f2dc4e5": {
-    "source": "金币、移速与金织带护甲",
-    "template": "金币、移速与[[Items/Unique_Belt_010_x1]]护甲"
-  },
-  "app.479a91b2deab9b3e": {
-    "source": "成型首选魔女的攻速与冷却；开荒站不住时可暂用圣殿骑士治疗，但会损失输出循环收益。",
-    "template": "成型首选[[Pets/HirelingEnchantress]]的攻速与冷却；开荒站不住时可暂用[[Pets/HirelingTemplar]][[Powers/Templar_Heal_110_name]]，但会损失输出循环收益。"
   },
   "app.7467fc251d589f95": {
     "source": "塔格奥 · 死亡新星",
@@ -56541,6 +56497,568 @@
       "zhCN": "当前配置尚未达到发布级验证，请把它作为研究中的参考，而不是已确认最优解。",
       "zhTW": "目前配置尚未達到發佈級驗證，請把它視為研究中的參考，而不是已確認的最佳解。",
       "enUS": "This setup has not passed publication-level verification. Treat it as a research reference, not a confirmed optimum."
+    }
+  },
+  "app.0a5efbe7c7bd4a47": {
+    "source": "未受到伤害时逐层提高造成的伤害，同时也会提高受到的伤害。",
+    "template": "未受到伤害时逐层提高造成的伤害，同时也会提高受到的伤害。",
+    "manual": {
+      "enUS": "While you avoid damage, each stack increases both damage dealt and damage taken."
+    }
+  },
+  "app.dbdd1312acbcde27": {
+    "source": "T16 伤害溢出前可用作单人增伤槽；受击会清掉层数。",
+    "template": "T16 伤害溢出前可用作[[Site/solo]][[Site/damage-boost]]槽；受击会清掉层数。",
+    "manual": {
+      "enUS": "Use this solo damage slot when T16 damage is not yet sufficient; taking damage removes its stacks."
+    }
+  },
+  "app.999d1bf2c7cd759c": {
+    "source": "大秘境转场",
+    "template": "[[NephalemRift/TieredRift]]转场",
+    "manual": {
+      "enUS": "Greater Rift traversal"
+    }
+  },
+  "app.e08c7ad1c1036b58": {
+    "source": "穿过空白区与危险地形",
+    "template": "穿过空白区与危险地形",
+    "manual": {
+      "enUS": "Cross empty areas and dangerous terrain"
+    }
+  },
+  "app.e49362fb8fac47ae": {
+    "source": "斯图亚特",
+    "template": "斯图亚特",
+    "manual": {
+      "enUS": "Steuart's Greaves"
+    }
+  },
+  "app.4b10b01bcd65bb7c": {
+    "source": "位移后获得10秒移速",
+    "template": "位移后获得10秒移速",
+    "manual": {
+      "enUS": "Gain movement speed for 10 seconds after teleporting"
+    }
+  },
+  "app.42763fc1894fd93c": {
+    "source": "寻找密集怪群",
+    "template": "寻找密集怪群",
+    "manual": {
+      "enUS": "Find dense monster packs"
+    }
+  },
+  "app.12d1a249e16fc7c9": {
+    "source": "跳过零散小怪",
+    "template": "跳过零散小怪",
+    "manual": {
+      "enUS": "Skip scattered trash monsters"
+    }
+  },
+  "app.164a304c27e59504": {
+    "source": "25码内密度转化为伤害",
+    "template": "[[Number/25/yard]]内密度转化为伤害",
+    "manual": {
+      "enUS": "Turn density within 25 yards into damage"
+    }
+  },
+  "app.a9b62575f44e9b4e": {
+    "source": "精英击杀后维持速刷攻防",
+    "template": "精英击杀后维持[[Site/speed-farming]]攻防",
+    "manual": {
+      "enUS": "Maintain speed-farming offense and defense after elite kills"
+    }
+  },
+  "app.775d8bd086478ae3": {
+    "source": "叠生命再召分身",
+    "template": "叠生命再召分身",
+    "manual": {
+      "enUS": "Stack Life before summoning Simulacrums"
+    }
+  },
+  "app.62e1564208cc2e7e": {
+    "source": "先把塔格奥4件生命加成叠至300%，再召唤永久血魂双分。",
+    "template": "先把[[ItemSets/P6_Necro_Set_2]]4件生命加成叠至300%，再召唤永久[[Powers/P6_Necro_Simulacrum_name]]。",
+    "manual": {
+      "enUS": "First stack the Trag'Oul four-piece Life bonus to 300%, then summon the permanent Blood and Bone Simulacrums."
+    }
+  },
+  "app.50146da16a1fe7ce": {
+    "source": "分身继承召唤时的生命状态；跳过预热会同时损失伤害和坚韧。",
+    "template": "分身继承召唤时的生命状态；跳过预热会同时损失伤害和坚韧。",
+    "manual": {
+      "enUS": "The Simulacrums inherit your Life state when summoned; skipping the setup costs both damage and toughness."
+    }
+  },
+  "app.510ccb8fce8bdaa2": {
+    "source": "位移找密度",
+    "template": "位移找密度",
+    "manual": {
+      "enUS": "Teleport to find density"
+    }
+  },
+  "app.0578f4a56524c583": {
+    "source": "用鲜血穿行触发斯图亚特，跳过零散小怪，只在精英与密集怪群停留。",
+    "template": "用[[Powers/P6_Necro_BloodRush_name]]触发斯图亚特，跳过零散小怪，只在精英与密集怪群停留。",
+    "manual": {
+      "enUS": "Trigger Steuart's Greaves with Blood Rush, skip scattered trash, and stop only for elites and dense packs."
+    }
+  },
+  "app.c8a75a57ca7c1fc3": {
+    "source": "大秘境没有金币链，移动效率来自位移后的10秒提速。",
+    "template": "[[NephalemRift/TieredRift]]没有金币链，移动效率来自位移后的10秒提速。",
+    "manual": {
+      "enUS": "Greater Rifts have no gold chain; mobility comes from the 10-second speed boost after teleporting."
+    }
+  },
+  "app.77c5d99c22dd8eef": {
+    "source": "骨甲开窗口",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]]开窗口",
+    "manual": {
+      "enUS": "Open the damage window with Bone Armor"
+    }
+  },
+  "app.1a77046ca163291a": {
+    "source": "贴近怪群叠满骨甲，并在全能法戒物理周期用白骨脱臼触发强控。",
+    "template": "贴近怪群叠满[[Powers/P6_Necro_BoneArmor_name]]，并在[[Items/P2_Unique_Ring_04]]物理周期用[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]触发[[Site/crowd-control]]。",
+    "manual": {
+      "enUS": "Stack Bone Armor in melee range, then use Dislocation for hard crowd control during Convention of Elements' Physical cycle."
+    }
+  },
+  "app.ca97112167315bc9": {
+    "source": "这套仍保留冲层的全能法戒与克里斯宾爆发窗。",
+    "template": "这套仍保留[[Site/push]]的[[Items/P2_Unique_Ring_04]]与[[Items/P6_Unique_Ring_03]]爆发窗。",
+    "manual": {
+      "enUS": "This setup retains the push build's Convention of Elements and Krysbin burst window."
+    }
+  },
+  "app.0d3df9e14653e4a1": {
+    "source": "虹吸清群",
+    "template": "虹吸清群",
+    "manual": {
+      "enUS": "Siphon down dense packs"
+    }
+  },
+  "app.95e0b522d6a21125": {
+    "source": "面对密集怪群持续鲜血虹吸，让铁玫瑰与分身释放鲜血新星。",
+    "template": "面对密集怪群持续[[Powers/P6_Necro_SiphonBlood_name]]，让[[Items/P74_Unique_Phylactery_04]]与分身释放[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]。",
+    "manual": {
+      "enUS": "Channel Siphon Blood into dense packs so Iron Rose and the Simulacrums cast Blood Nova."
+    }
+  },
+  "app.eba20531c1fb6e82": {
+    "source": "强者之灾替代受罚者，目标是快速处理精英而非长时间首领战。",
+    "template": "[[Items/Unique_Gem_001_x1]]替代[[Items/Unique_Gem_018_x1]]，目标是快速处理精英而非长时间首领战。",
+    "manual": {
+      "enUS": "Bane of the Powerful replaces Stricken to kill elites quickly instead of supporting a long Rift Guardian fight."
+    }
+  },
+  "app.97a0828cc5a1e826": {
+    "source": "首领超时就降层",
+    "template": "首领超时就降层",
+    "manual": {
+      "enUS": "Lower the tier when the boss takes too long"
+    }
+  },
+  "app.a827834ee35bf991": {
+    "source": "若秘境守卫超过1–2个物理周期仍未击杀，降低层数或改用冲层配置。",
+    "template": "若秘境守卫超过1–2个物理周期仍未击杀，降低层数或改用[[Site/push]]配置。",
+    "manual": {
+      "enUS": "If the Rift Guardian survives more than one or two Physical cycles, lower the tier or switch to the push setup."
+    }
+  },
+  "app.e047cc68bf570ae6": {
+    "source": "死亡新星单体弱；速刷层级应由稳定用时决定。",
+    "template": "[[Powers/P6_Necro_BloodNova_name]]单体弱；[[Site/speed-farming]]层级应由稳定用时决定。",
+    "manual": {
+      "enUS": "Death Nova has weak single-target damage; choose a speed tier by consistent clear time."
+    }
+  },
+  "app.b304784862f619b5": {
+    "source": "守护者过渡冲层（待验证）",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]]过渡[[Site/push]]（待验证）",
+    "manual": {
+      "enUS": "Guardian push transition (unverified)"
+    }
+  },
+  "app.2d10e559c054fd6e": {
+    "source": "守护者方案目前是项目从速刷成长建议外推到冲层的过渡配置；精确冲层页只明确给出奥吉德，暂不作为已确认推荐。",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]]方案目前是项目从[[Site/speed-farming]]成长建议外推到[[Site/push]]的过渡配置；精确[[Site/push]]页只明确给出[[ItemSets/P66_Crafted Nightmare Set 002]]，暂不作为已确认推荐。",
+    "manual": {
+      "enUS": "This Guardian transition is inferred from speed-farming progression advice; the exact push guide explicitly specifies only Aughild's, so this is not a confirmed recommendation."
+    }
+  },
+  "app.5dc09206d05622a2": {
+    "source": "奥吉德 GR 冲层",
+    "template": "[[ItemSets/P66_Crafted Nightmare Set 002]] GR [[Site/push]]",
+    "manual": {
+      "enUS": "Aughild Greater Rift push"
+    }
+  },
+  "app.925dda01c1669bd7": {
+    "source": "两份当前 S39 来源都给出奥吉德肩腕、戴恩提腰带、导能披肩萃取的冲层骨架；Switch 操作仍待实测。",
+    "template": "两份当前 S39 来源都给出[[ItemSets/P66_Crafted Nightmare Set 002]]肩腕、[[Items/P61_Unique_Belt_01]]、[[Items/P4_Unique_Shoulder_103]]萃取的[[Site/push]]骨架；Switch 操作仍待实测。",
+    "manual": {
+      "enUS": "Two current Season 39 sources agree on Aughild shoulders and bracers, Dayntee's Binding, and Mantle of Channeling in the cube for pushing; Switch controls remain untested."
+    }
+  },
+  "app.80fa5aaf6701a9e7": {
+    "source": "守护者 GR 速刷",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]] GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Guardian Greater Rift speed farming"
+    }
+  },
+  "app.8b0efed222a606ad": {
+    "source": "Icy Veins 明确把守护者作为成长早期的 GR 速刷方案；保留全能法戒，用斯图亚特和强者之灾换取稳定转场与精英效率。",
+    "template": "Icy Veins 明确把[[Powers/Templar_CheatDeath_Passive_name]]作为成长早期的 GR [[Site/speed-farming]]方案；保留[[Items/P2_Unique_Ring_04]]，用斯图亚特和[[Items/Unique_Gem_001_x1]]换取稳定转场与精英效率。",
+    "manual": {
+      "enUS": "Icy Veins explicitly uses Guardian's for early-progression Greater Rift speed farming; keep Convention of Elements and use Steuart's Greaves plus Bane of the Powerful for traversal and elite efficiency."
+    }
+  },
+  "app.be77608156c06dbf": {
+    "source": "奥吉德 GR 速刷",
+    "template": "[[ItemSets/P66_Crafted Nightmare Set 002]] GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Aughild Greater Rift speed farming"
+    }
+  },
+  "app.ae0d9b3cc93a56f5": {
+    "source": "约 2000 巅峰且不再依赖守护者时，换奥吉德与戴恩提；斯图亚特、强者之灾和较低目标层级负责缩短单次用时。",
+    "template": "约 2000 [[Site/paragon]]且不再依赖[[Powers/Templar_CheatDeath_Passive_name]]时，换[[ItemSets/P66_Crafted Nightmare Set 002]]与[[Items/P61_Unique_Belt_01]]；斯图亚特、[[Items/Unique_Gem_001_x1]]和较低目标层级负责缩短单次用时。",
+    "manual": {
+      "enUS": "Around Paragon 2000, once Guardian's is no longer needed, switch to Aughild's and Dayntee's; Steuart's, Bane of the Powerful, and a lower target tier reduce clear times."
+    }
+  },
+  "app.a3c1b541534ac496": {
+    "source": "守护者 T16（证据冲突）",
+    "template": "[[Powers/Templar_CheatDeath_Passive_name]] T16（证据冲突）",
+    "manual": {
+      "enUS": "Guardian T16 (conflicting evidence)"
+    }
+  },
+  "app.6e1a01f0f1fd89a8": {
+    "source": "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
+    "template": "Icy Veins 的默认 T16 技能栏与 S39 第四槽说明存在组合歧义，d3guides.de 又给出不同的技能变化；配置保留供研究，不作为推荐。",
+    "manual": {
+      "enUS": "Icy Veins' default T16 skill bar conflicts with its Season 39 fourth-slot explanation, while d3guides.de lists different skill changes; this setup is retained for research and is not recommended."
+    }
+  },
+  "app.2ef44bb2128f3a85": {
+    "source": "金币链 T16（证据冲突）",
+    "template": "金币链 T16（证据冲突）",
+    "manual": {
+      "enUS": "Gold-chain T16 (conflicting evidence)"
+    }
+  },
+  "app.8235d5047cea33a1": {
+    "source": "Icy Veins 支持单人金织带、沃兹克和随从贪婪之戒，但与 d3guides.de 的 T16 变体不一致；完成 Switch 实测前不作为推荐。",
+    "template": "Icy Veins 支持[[Site/solo]][[Items/Unique_Belt_010_x1]]、[[Items/Unique_Bracer_101_x1]]和随从[[Items/Unique_Ring_108_x1]]，但与 d3guides.de 的 T16 变体不一致；完成 Switch 实测前不作为推荐。",
+    "manual": {
+      "enUS": "Icy Veins supports solo Goldwrap, Warzechian Armguards, and Avarice Band on the follower, but this differs from the d3guides.de T16 variant; it is not recommended before Switch testing."
+    }
+  },
+  "app.778ff0a74ce05ee0": {
+    "source": "S39 冲层骨架为五件塔格奥、奥吉德肩腕、戴恩提、鬼灵面容、克里斯宾、全能法戒、葬镰与铁玫瑰。",
+    "template": "S39 [[Site/push]]骨架为五件[[ItemSets/P6_Necro_Set_2]]、[[ItemSets/P66_Crafted Nightmare Set 002]]肩腕、[[Items/P61_Unique_Belt_01]]、[[Items/P69_Unique_Amulet_02]]、[[Items/P6_Unique_Ring_03]]、[[Items/P2_Unique_Ring_04]]、[[Items/P74_Unique_Scythe1H_01]]与[[Items/P74_Unique_Phylactery_04]]。",
+    "manual": {
+      "enUS": "The Season 39 push core uses five Trag'Oul pieces, Aughild shoulders and bracers, Dayntee's Binding, Haunted Visions, Krysbin's Sentence, Convention of Elements, Funerary Pick, and Iron Rose."
+    }
+  },
+  "app.a7642f931d5e7927": {
+    "source": "Icy Veins 的鲜血新星/白骨脱臼/脆弱光环/鲜血与白骨与 d3guides.de 当前符文表不一致。",
+    "template": "Icy Veins 的[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]/[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]/[[AttributeDescriptions/NameRune_E#P6_Necro_Frailty]]/[[AttributeDescriptions/NameRune_D#P6_Necro_Simulacrum]]与 d3guides.de 当前符文表不一致。",
+    "manual": {
+      "enUS": "Icy Veins' Blood Nova, Dislocation, Frailty aura, and Blood and Bone setup differs from the current d3guides.de skill table."
+    }
+  },
+  "app.d2c90a053c969eaf": {
+    "source": "两站的装备发动机一致，但多个技能符文不同；在游戏内逐项复核前不能把技能栏标为交叉核对。",
+    "template": "两站的装备发动机一致，但多个技能符文不同；在游戏内逐项复核前不能把技能栏标为交叉核对。",
+    "manual": {
+      "enUS": "The two sites agree on the gear engine but differ on several skill runes; the skill bar cannot be marked cross-checked until each entry is verified in game."
+    }
+  },
+  "app.a8e3165d7ee607d7": {
+    "source": "冲层魔方为血潮利刃、导能披肩、皇家华戒与 S39 轮回镰刀。",
+    "template": "[[Site/push]]魔方为[[Items/P65_Unique_Scythe2H_02]]、[[Items/P4_Unique_Shoulder_103]]、[[Items/Unique_Ring_107_x1]]与 S39 [[Items/P61_Unique_Scythe1H_03]]。",
+    "manual": {
+      "enUS": "The push cube uses Bloodtide Blade, Mantle of Channeling, Ring of Royal Grandeur, and Scythe of the Cycle in Season 39."
+    }
+  },
+  "app.eea0410880faeac9": {
+    "source": "冲层传奇宝石为困者、贼神和受罚者。",
+    "template": "[[Site/push]]传奇宝石为[[Items/Unique_Gem_002_x1]]、贼神和[[Items/Unique_Gem_018_x1]]。",
+    "manual": {
+      "enUS": "The push legendary gems are Bane of the Trapped, Zei's Stone of Vengeance, and Bane of the Stricken."
+    }
+  },
+  "app.f25a8310e7ba7ecb": {
+    "source": "80–90 万生命、1.67 攻速和 120% 以上范围伤是 Icy Veins 给出的冲层检查点。",
+    "template": "80–90 万生命、1.67 攻速和 120% 以上范围伤是 Icy Veins 给出的[[Site/push]]检查点。",
+    "manual": {
+      "enUS": "Icy Veins lists 800,000–900,000 Life, 1.67 attacks per second, and at least 120% Area Damage as push checkpoints."
+    }
+  },
+  "app.42ddfc13216e369a": {
+    "source": "塔格奥死亡新星存在独立 GR 速刷用途，但资料只称其表现合理，不能外推为同职业最快。",
+    "template": "[[ItemSets/P6_Necro_Set_2]][[Powers/P6_Necro_BloodNova_name]]存在独立 GR [[Site/speed-farming]]用途，但资料只称其表现合理，不能外推为同职业最快。",
+    "manual": {
+      "enUS": "Trag'Oul Death Nova has a separate Greater Rift speed-farming use, but the sources only call it reasonably effective and do not establish it as the class's fastest option."
+    }
+  },
+  "app.a779e25da62fc635": {
+    "source": "GR 速刷保留全能法戒，防具萃取改斯图亚特，受罚者改强者；守护者转奥吉德只由 Icy Veins 明确给出。",
+    "template": "GR [[Site/speed-farming]]保留[[Items/P2_Unique_Ring_04]]，防具萃取改斯图亚特，[[Items/Unique_Gem_018_x1]]改强者；[[Powers/Templar_CheatDeath_Passive_name]]转[[ItemSets/P66_Crafted Nightmare Set 002]]只由 Icy Veins 明确给出。",
+    "manual": {
+      "enUS": "Greater Rift speed farming keeps Convention of Elements, cubes Steuart's Greaves, and replaces Stricken with Powerful; only Icy Veins explicitly describes switching from Guardian's to Aughild's."
+    }
+  },
+  "app.c9fd7a992cff7360": {
+    "source": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 巅峰的守护者转奥吉德条件。",
+    "template": "两站都支持斯图亚特与强者，但只有 Icy Veins 描述约 2000 [[Site/paragon]]的[[Powers/Templar_CheatDeath_Passive_name]]转[[ItemSets/P66_Crafted Nightmare Set 002]]条件。",
+    "manual": {
+      "enUS": "Both sites support Steuart's Greaves and Bane of the Powerful, but only Icy Veins describes the Guardian-to-Aughild's switch near Paragon 2000."
+    }
+  },
+  "app.3d5f89d0a286dcb0": {
+    "source": "两站都列出 T16 变体，但技能、戒指与金币链的具体配置没有一致到可发布程度。",
+    "template": "两站都列出 T16 变体，但技能、戒指与金币链的具体配置没有一致到可发布程度。",
+    "manual": {
+      "enUS": "Both sites list a T16 variant, but their skill, ring, and gold-chain details do not agree well enough for publication."
+    }
+  },
+  "app.eb8f4a3860e04943": {
+    "source": "Icy Veins 的默认 T16 技能栏使用吞噬/死亡之力，同时 S39 第四槽段落要求骨甲/轮回镰刀；d3guides.de 又只声明符文、斯图亚特和宝石变化。",
+    "template": "Icy Veins 的默认 T16 技能栏使用[[Powers/P6_Necro_Devour_name]]/[[Powers/P6_Necro_Passive_CorpseConsumptionIncreasesMovementSpeed_name]]，同时 S39 第四槽段落要求[[Powers/P6_Necro_BoneArmor_name]]/[[Items/P61_Unique_Scythe1H_03]]；d3guides.de 又只声明符文、斯图亚特和宝石变化。",
+    "manual": {
+      "enUS": "Icy Veins' default T16 skill bar uses Devour and Fueled by Death, while its Season 39 fourth-slot section requires Bone Armor and Scythe of the Cycle; d3guides.de only specifies rune, Steuart's, and gem changes."
+    }
+  },
+  "app.58e3d17bcc8cc75b": {
+    "source": "T16 用困者、囤宝者和强者，不把囤宝者带进 GR。",
+    "template": "T16 用[[Items/Unique_Gem_002_x1]]、[[Items/Unique_Gem_014_x1]]和强者，不把[[Items/Unique_Gem_014_x1]]带进 GR。",
+    "manual": {
+      "enUS": "T16 uses Bane of the Trapped, Boon of the Hoarder, and Bane of the Powerful; do not bring Hoarder into Greater Rifts."
+    }
+  },
+  "app.eef0f12af0485089": {
+    "source": "当前所有精确构筑来源均为 PC 派生，尚未验证 Switch 自动锁定、虹吸朝向和鲜血穿行落点。",
+    "template": "当前所有精确构筑来源均为 PC 派生，尚未验证 Switch 自动锁定、虹吸朝向和[[Powers/P6_Necro_BloodRush_name]]落点。",
+    "manual": {
+      "enUS": "All exact build sources are PC-derived; Switch auto-targeting, Siphon Blood direction, and Blood Rush placement remain unverified."
+    }
+  },
+  "app.0cd082a956f881df": {
+    "source": "S39 第四槽与骨甲联动",
+    "template": "S39 第四槽与[[Powers/P6_Necro_BoneArmor_name]]联动",
+    "manual": {
+      "enUS": "Season 39 fourth slot and Bone Armor"
+    }
+  },
+  "app.2b5943cc07748490": {
+    "source": "轮回镰刀只有骨甲生效时才放大次要技能；T16 若改用吞噬就不能照搬该槽。",
+    "template": "[[Items/P61_Unique_Scythe1H_03]]只有[[Powers/P6_Necro_BoneArmor_name]]生效时才放大次要技能；T16 若改用[[Powers/P6_Necro_Devour_name]]就不能照搬该槽。",
+    "manual": {
+      "enUS": "Scythe of the Cycle increases secondary-skill damage only while Bone Armor is active; a T16 bar using Devour cannot copy this slot unchanged."
+    }
+  },
+  "app.f4dcdb072cfda6d3": {
+    "source": "技能栏保留骨甲",
+    "template": "技能栏保留[[Powers/P6_Necro_BoneArmor_name]]",
+    "manual": {
+      "enUS": "When Bone Armor remains on the skill bar"
+    }
+  },
+  "app.2d693e3109a0ed66": {
+    "source": "获得次要技能独立乘区",
+    "template": "获得次要技能独立[[Site/multiplier]]",
+    "manual": {
+      "enUS": "Gain a separate multiplier for secondary skills"
+    }
+  },
+  "app.acb3bbce762eec89": {
+    "source": "每次施放次要技能都会缩短骨甲持续时间",
+    "template": "每次施放次要技能都会缩短[[Powers/P6_Necro_BoneArmor_name]]持续时间",
+    "manual": {
+      "enUS": "Each secondary-skill cast shortens Bone Armor's duration"
+    }
+  },
+  "app.a483033c56c0a2a9": {
+    "source": "生命/坚韧未达标，或尚未能稳定完成目标层",
+    "template": "生命/坚韧未达标，或尚未能稳定完成目标层",
+    "manual": {
+      "enUS": "When Life or toughness is insufficient, or the target tier is not yet stable"
+    }
+  },
+  "app.06b2c1a2e588a0cb": {
+    "source": "约2000巅峰且换装后仍能稳定存活",
+    "template": "约2000[[Site/paragon]]且换装后仍能稳定存活",
+    "manual": {
+      "enUS": "Around Paragon 2000, if survivability remains stable after the swap"
+    }
+  },
+  "app.2dc10b5be4130fb7": {
+    "source": "大秘境冲层或大秘境速刷",
+    "template": "[[NephalemRift/TieredRift]][[Site/push]]或[[NephalemRift/TieredRift]][[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Greater Rift pushing or speed farming"
+    }
+  },
+  "app.16d9bb2b1b792343": {
+    "source": "大秘境第三颗传奇宝石",
+    "template": "[[NephalemRift/TieredRift]]第三颗传奇宝石",
+    "manual": {
+      "enUS": "Third Greater Rift legendary gem"
+    }
+  },
+  "app.ba0c2d11cd5eb2e8": {
+    "source": "冲层的长首领战与速刷的精英节奏需要不同宝石。",
+    "template": "[[Site/push]]的长首领战与[[Site/speed-farming]]的精英节奏需要不同宝石。",
+    "manual": {
+      "enUS": "Long push boss fights and fast elite-kill pacing require different gems."
+    }
+  },
+  "app.adeddc5ed0503e91": {
+    "source": "击杀精英后的定时攻防增益",
+    "template": "击杀精英后的定时攻防增益",
+    "manual": {
+      "enUS": "Timed offense and defense after killing an elite"
+    }
+  },
+  "app.482d0d4ae33bebb1": {
+    "source": "不擅长拖长的首领战",
+    "template": "不擅长拖长的首领战",
+    "manual": {
+      "enUS": "Weak in extended boss fights"
+    }
+  },
+  "app.2a1c28cf65663390": {
+    "source": "T16 金币宝石组",
+    "template": "T16 金币宝石组",
+    "manual": {
+      "enUS": "T16 gold-gem setup"
+    }
+  },
+  "app.6f6cbc90d42e190a": {
+    "source": "T16 会掉金币，大秘境完全不会；两类内容不能共用金币宝石。",
+    "template": "T16 会掉金币，[[NephalemRift/TieredRift]]完全不会；两类内容不能共用金币宝石。",
+    "manual": {
+      "enUS": "T16 drops gold while Greater Rifts do not; these activities cannot share gold-dependent gems."
+    }
+  },
+  "app.05628c3bb8dddb42": {
+    "source": "囤宝者 + 强者",
+    "template": "[[Items/Unique_Gem_014_x1]] + 强者",
+    "manual": {
+      "enUS": "Hoarder + Powerful"
+    }
+  },
+  "app.7896008b181de7a0": {
+    "source": "仅限普通小秘境 T16",
+    "template": "仅限普通[[General/LootRunPortal]] T16",
+    "manual": {
+      "enUS": "T16 Nephalem Rifts only"
+    }
+  },
+  "app.11adf5c6dcc9e298": {
+    "source": "金币移速、金织带护甲与精英增益",
+    "template": "金币移速、[[Items/Unique_Belt_010_x1]]护甲与精英增益",
+    "manual": {
+      "enUS": "Gold movement speed, Goldwrap armor, and elite bonuses"
+    }
+  },
+  "app.9f42501a4ba0730c": {
+    "source": "牺牲贼神与受罚者的 GR 收益",
+    "template": "牺牲贼神与[[Items/Unique_Gem_018_x1]]的 GR 收益",
+    "manual": {
+      "enUS": "Lose Zei and Stricken's Greater Rift benefits"
+    }
+  },
+  "app.4dcae755d3941393": {
+    "source": "Icy Veins 推荐魔女的攻速与冷却；单人 T16 金币链还要求把贪婪之戒交给随从，当前随从面板尚未按场景切换。",
+    "template": "Icy Veins 推荐[[Pets/HirelingEnchantress]]的攻速与冷却；[[Site/solo]] T16 金币链还要求把[[Items/Unique_Ring_108_x1]]交给随从，当前随从面板尚未按场景切换。",
+    "manual": {
+      "enUS": "Icy Veins recommends the Enchantress for attack speed and cooldowns; the solo T16 gold chain also puts Avarice Band on the follower, but the follower panel does not yet switch by scenario."
+    }
+  },
+  "app.7e464da9ef9f0bbc": {
+    "source": "塔格奥已完成 Icy Veins 与 d3guides.de 的结论级对照：冲层装备/宝石/魔方一致，技能符文与 T16 细节存在冲突；Maxroll 当前页面无法稳定读取，Nintendo Switch 实测尚未完成。",
+    "template": "[[ItemSets/P6_Necro_Set_2]]已完成 Icy Veins 与 d3guides.de 的结论级对照：[[Site/push]]装备/宝石/魔方一致，技能符文与 T16 细节存在冲突；Maxroll 当前页面无法稳定读取，Nintendo Switch 实测尚未完成。",
+    "manual": {
+      "enUS": "Trag'Oul has been checked claim by claim against Icy Veins and d3guides.de: push gear, gems, and cube powers agree, while skill runes and T16 details conflict. The current Maxroll page could not be read reliably, and Nintendo Switch testing remains incomplete."
+    }
+  },
+  "app.1a5ce6e250b073e1": {
+    "source": "可用，非最优",
+    "template": "可用，非最优",
+    "manual": {
+      "zhCN": "可用，非最优",
+      "zhTW": "可用，非最佳",
+      "enUS": "Viable, not optimal"
+    }
+  },
+  "app.0d09b174612b72ee": {
+    "source": "有来源支持",
+    "template": "有来源支持",
+    "manual": {
+      "zhCN": "有来源支持",
+      "zhTW": "有來源支持",
+      "enUS": "Supported by sources"
+    }
+  },
+  "app.ddd09a5b606e4803": {
+    "source": "不推荐",
+    "template": "不推荐",
+    "manual": {
+      "zhCN": "不推荐",
+      "zhTW": "不推薦",
+      "enUS": "Not recommended"
+    }
+  },
+  "app.2746d995801b1cc8": {
+    "source": "不适用",
+    "template": "不适用",
+    "manual": {
+      "zhCN": "不适用",
+      "zhTW": "不適用",
+      "enUS": "Not applicable"
+    }
+  },
+  "app.76a2e875d985af84": {
+    "source": "待验证",
+    "template": "待验证",
+    "manual": {
+      "zhCN": "待验证",
+      "zhTW": "待驗證",
+      "enUS": "Unverified"
+    }
+  },
+  "app.5ad89686d9899f67": {
+    "source": "版本未注明",
+    "template": "版本未注明",
+    "manual": {
+      "zhCN": "版本未注明",
+      "zhTW": "版本未註明",
+      "enUS": "Version not specified"
+    }
+  },
+  "app.ffeb9dbdc0673693": {
+    "source": "更新时间未注明",
+    "template": "更新时间未注明",
+    "manual": {
+      "zhCN": "更新时间未注明",
+      "zhTW": "更新時間未註明",
+      "enUS": "Update date not specified"
+    }
+  },
+  "app.60e90613de504839": {
+    "source": "访问/复核 {0}",
+    "template": "访问/复核 {0}",
+    "manual": {
+      "zhCN": "访问/复核 {0}",
+      "zhTW": "存取/複核 {0}",
+      "enUS": "Accessed/reviewed {0}"
     }
   }
 }

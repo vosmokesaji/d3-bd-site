@@ -628,6 +628,28 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
   color: #c7956a;
 }
 
+.variant-group.scenario-options button {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+
+.variant-group.scenario-options button strong {
+  color: inherit;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.variant-group.scenario-options button small {
+  color: #777168;
+  font-size: 9px;
+  letter-spacing: .04em;
+}
+
+.variant-group.scenario-options button.active small {
+  color: #c19d67;
+}
+
 .variant-divider {
   width: 1px;
   height: 34px;
@@ -791,6 +813,13 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
   white-space: nowrap;
 }
 
+.build-review-panel > header > b.applicability-unverified,
+.build-review-panel > header > b.applicability-not-recommended {
+  border-color: #8a5e34;
+  border-style: dashed;
+  color: #d2a069;
+}
+
 .build-review-grid {
   display: grid;
   grid-template-columns: minmax(260px, .78fr) minmax(500px, 1.35fr) minmax(360px, 1fr);
@@ -822,8 +851,11 @@ a:hover .diablo-item-frame .diablo-item-frame-sheen,
 
 .review-sources { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #28241f; }
 .review-sources > span { width: 100%; }
-.review-sources a { color: #b88a50; font-size: 12px; }
-.review-sources small { margin-left: auto; color: #69645d; font-size: 11px; }
+.review-sources a { display: grid; gap: 3px; padding: 7px 9px; border: 1px solid #2f2a23; color: #b88a50; font-size: 12px; text-decoration: none; }
+.review-sources a:hover { border-color: #71502e; }
+.review-sources a strong { color: #c9ae7b; font-size: 12px; font-weight: 600; }
+.review-sources a small { color: #69645d; font-size: 10px; }
+.review-sources > small { margin-left: auto; color: #69645d; font-size: 11px; }
 
 .paragon-priority-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .paragon-priority-grid section { border: 1px solid #2f2a23; background: #121311; }
