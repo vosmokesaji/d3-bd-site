@@ -9,21 +9,21 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.equal(report.schemaValid, 51);
   assert.equal(report.semanticValid, 51);
   assert.equal(report.evidenceValid, 32);
-  assert.equal(report.genericPlaceholders, 22);
+  assert.equal(report.genericPlaceholders, 21);
   assert.equal(report.batchDerived, 7);
   assert.equal(report.publishable, 0);
-  assert.equal(report.evidenceStatuses.unverified, 41);
-  assert.equal(report.evidenceStatuses["source-checked"], 9);
+  assert.equal(report.evidenceStatuses.unverified, 40);
+  assert.equal(report.evidenceStatuses["source-checked"], 10);
   assert.equal(report.evidenceStatuses["cross-checked"], 1);
-  assert.equal(report.applicability.unverified, 119);
-  assert.equal(report.applicability.supported, 82);
-  assert.equal(report.applicability.viable, 4);
-  assert.equal(report.content["nephalem-rift-t16"], 3);
+  assert.equal(report.applicability.unverified, 115);
+  assert.equal(report.applicability.supported, 83);
+  assert.equal(report.applicability.viable, 5);
+  assert.equal(report.content["nephalem-rift-t16"], 4);
   assert.equal(report.content.bounty, 1);
-  assert.equal(report.structuredSources, 12);
-  assert.equal(report.evidenceClaims, 24);
-  assert.equal(report.crossCheckedClaims, 9);
-  assert.equal(report.unresolvedClaims, 15);
+  assert.equal(report.structuredSources, 21);
+  assert.equal(report.evidenceClaims, 38);
+  assert.equal(report.crossCheckedClaims, 15);
+  assert.equal(report.unresolvedClaims, 23);
   assert.equal(report.sourceDomains["icy-veins.com"] > 0, true);
   assert.equal(report.builds.every((build) => build.publishBlockers.length > 0), true);
 
@@ -44,6 +44,16 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.deepEqual(bombardment.scenarios.map((scenario) => scenario.id), ["gr-push", "t16-rift", "bounty"]);
   assert.deepEqual(bombardment.scenarios.filter((scenario) => scenario.content === "greater-rift-speed"), []);
   assert.equal(bombardment.scenarios.find((scenario) => scenario.id === "t16-rift").diffCount, bombardment.scenarios.find((scenario) => scenario.id === "bounty").diffCount);
+
+  const zuni = report.builds.find((build) => build.id === "zuni-darts");
+  assert.equal(zuni.scenarioCount, 2);
+  assert.equal(zuni.structuredSourceCount, 9);
+  assert.equal(zuni.evidenceClaimCount, 14);
+  assert.deepEqual(zuni.validationErrors, []);
+  assert.deepEqual(zuni.semanticErrors, []);
+  assert.deepEqual(zuni.evidenceErrors, []);
+  assert.deepEqual(zuni.scenarios.map((scenario) => scenario.id), ["gr-push", "t16-rift"]);
+  assert.deepEqual(zuni.scenarios.filter((scenario) => scenario.content === "greater-rift-speed"), []);
 });
 
 test("generic placeholders cannot reintroduce fatal LoD, thorns, or main-stat defaults", async () => {

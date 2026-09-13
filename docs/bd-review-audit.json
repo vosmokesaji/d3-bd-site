@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T07:27:55.848Z",
+  "generatedAt": "2026-09-13T08:13:29.697Z",
   "season": "S39 / 2.7.8",
   "total": 51,
   "fullyReviewed": 21,
@@ -7,36 +7,36 @@
   "semanticValid": 51,
   "evidenceValid": 32,
   "publishable": 0,
-  "genericPlaceholders": 22,
+  "genericPlaceholders": 21,
   "batchDerived": 7,
-  "structuredSources": 12,
-  "evidenceClaims": 24,
-  "crossCheckedClaims": 9,
-  "unresolvedClaims": 15,
+  "structuredSources": 21,
+  "evidenceClaims": 38,
+  "crossCheckedClaims": 15,
+  "unresolvedClaims": 23,
   "evidenceStatuses": {
     "cross-checked": 1,
-    "source-checked": 9,
-    "unverified": 41
+    "source-checked": 10,
+    "unverified": 40
   },
   "applicability": {
-    "supported": 82,
-    "unverified": 119,
-    "viable": 4
+    "supported": 83,
+    "unverified": 115,
+    "viable": 5
   },
   "content": {
     "bounty": 1,
     "cosmetic-farm": 2,
-    "greater-rift-push": 97,
-    "greater-rift-speed": 29,
-    "nephalem-rift": 73,
-    "nephalem-rift-t16": 3
+    "greater-rift-push": 96,
+    "greater-rift-speed": 28,
+    "nephalem-rift": 72,
+    "nephalem-rift-t16": 4
   },
   "sourceDomains": {
     "606soft.com": 2,
     "9game.cn": 2,
     "bbs.d.163.com": 4,
     "bbs.nga.cn": 2,
-    "d3guides.de": 7,
+    "d3guides.de": 9,
     "diablofans.com": 2,
     "icy-veins.com": 259,
     "m.3dmgame.com": 1,
@@ -3416,64 +3416,46 @@
     {
       "id": "zuni-darts",
       "name": "祖尼玛毒镖",
-      "reviewStatus": "draft",
-      "evidenceStatus": "unverified",
-      "platformStatus": "pc-derived",
-      "dataProvenance": "generic-placeholder",
-      "variantCompleteness": "documented-shared",
-      "scenarioCount": 4,
+      "reviewStatus": "scenario-reviewed",
+      "evidenceStatus": "source-checked",
+      "platformStatus": "platform-risk",
+      "dataProvenance": "hand-authored",
+      "variantCompleteness": "complete",
+      "scenarioCount": 2,
       "paragon": true,
-      "choicePolicyCount": 2,
-      "structuredSourceCount": 0,
-      "evidenceClaimCount": 0,
-      "crossCheckedClaimCount": 0,
-      "unresolvedClaimCount": 0,
+      "choicePolicyCount": 10,
+      "structuredSourceCount": 9,
+      "evidenceClaimCount": 14,
+      "crossCheckedClaimCount": 6,
+      "unresolvedClaimCount": 8,
       "validationErrors": [],
       "semanticErrors": [],
       "evidenceErrors": [],
       "publishBlockers": [
-        "evidence:STATUS_UNVERIFIED",
-        "applicability:push-low:UNVERIFIED",
-        "applicability:push-high:UNVERIFIED",
-        "applicability:speed-low:UNVERIFIED",
-        "applicability:speed-high:UNVERIFIED"
+        "evidence:STATUS_SOURCE-CHECKED"
       ],
       "publishable": false,
       "scenarios": [
         {
-          "id": "push-low",
-          "applicability": "unverified",
+          "id": "gr-push",
+          "applicability": "supported",
           "content": "greater-rift-push",
           "diffCount": 0,
           "sourceRefs": [
-            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
+            "https://www.icy-veins.com/d3/witch-doctor-zuni-carnevil-poison-dart-build",
+            "https://www.icy-veins.com/d3/zuni-carnevil-poison-dart-witch-doctor-skills-and-runes",
+            "https://www.icy-veins.com/d3/zuni-carnevil-poison-dart-witch-doctor-bis-gear-gems-paragon-points",
+            "https://www.d3guides.de/de/build/hexendoktor-zunimassas-schlupfwinkel-giftpfeil"
           ]
         },
         {
-          "id": "push-high",
-          "applicability": "unverified",
-          "content": "greater-rift-push",
-          "diffCount": 1,
+          "id": "t16-rift",
+          "applicability": "viable",
+          "content": "nephalem-rift-t16",
+          "diffCount": 20,
           "sourceRefs": [
-            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
-          ]
-        },
-        {
-          "id": "speed-low",
-          "applicability": "unverified",
-          "content": "greater-rift-speed",
-          "diffCount": 2,
-          "sourceRefs": [
-            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
-          ]
-        },
-        {
-          "id": "speed-high",
-          "applicability": "unverified",
-          "content": "nephalem-rift",
-          "diffCount": 3,
-          "sourceRefs": [
-            "https://www.icy-veins.com/d3/witch-doctor-zunimassa-poison-dart-build"
+            "https://www.icy-veins.com/d3/zuni-carnevil-poison-dart-witch-doctor-speed-farming-build",
+            "https://www.d3guides.de/de/build/hexendoktor-zunimassas-schlupfwinkel-giftpfeil"
           ]
         }
       ]

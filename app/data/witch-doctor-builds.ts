@@ -1,5 +1,6 @@
 import { createClassGuide, createGenericReviewedGuide, GEMS, itemFile, jewelry, legendary, passive, power, setGear, skill, type ClassGuideSeed, type GearSeed } from "./class-build-factory";
 import { validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type GuideGear, type GuidePower, type ParagonGuide } from "./build-guides";
+import { reviewZuniDartsGuide } from "./zuni-darts-reviewed";
 
 const mundunugu: GearSeed[] = [
   setGear("mund-head", "头部", "蒙嘟噜的头饰", "mundunugus-headdress-p68_unique_helm_set_04.png", "蒙嘟噜套部件；法力回复会提高魂灵弹幕伤害。", "魂灵弹幕"),
@@ -232,6 +233,7 @@ const MUNDUNUGU_POLICIES: BuildChoicePolicy[] = [
 
 function completeWitchDoctorGuide(seed: ClassGuideSeed): BuildGuide {
   const guide = createGenericReviewedGuide(createClassGuide(seed));
+  if (guide.id === "zuni-darts") return reviewZuniDartsGuide(guide);
   if (guide.id !== "mundunugu-barrage") return guide;
   for (const item of WITCH_DOCTOR_EXTRA_GEAR) {
     if (!guide.gear.some((existing) => existing.id === item.id)) guide.gear.push(item);

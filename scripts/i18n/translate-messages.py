@@ -8,6 +8,7 @@ from googletrans import Translator
 parser=argparse.ArgumentParser();parser.add_argument('--proxy');parser.add_argument('--limit',type=int);parser.add_argument('--cache',default='/tmp/d3-translation-cache.json');args=parser.parse_args()
 corpus=json.loads(pathlib.Path('scripts/i18n/message-definitions.json').read_text())
 official=json.loads(pathlib.Path('app/i18n/client-texts.json').read_text())
+existing=json.loads(pathlib.Path('app/i18n/enUS.json').read_text()) if pathlib.Path('app/i18n/enUS.json').exists() else {}
 cachepath=pathlib.Path(args.cache);cache=json.loads(cachepath.read_text()) if cachepath.exists() else {}
 protect=re.compile(r'\[\[[\s\S]+?\]\]|\{\d+\}|\d+(?:[.,]\d+)*(?:%)?')
 markers=re.compile(r'D\s*3\s*R\s*O\s*W\s*(\d+)\s*END\s*',re.I)
@@ -30,13 +31,13 @@ def unmask(text,refs):
 
 def save():
     cachepath.write_text(json.dumps(cache,ensure_ascii=False))
-    values={key:entry.get('manual',{}).get('enUS') or cache.get(cachekey(entry['template'])) for key,entry in corpus.items() if key not in official}
+    values={key:value for key,entry in corpus.items() if key not in official for value in [entry.get('manual',{}).get('enUS') or cache.get(cachekey(entry['template'])) or existing.get(key)] if value is not None}
     pathlib.Path('app/i18n/enUS.json').write_text(json.dumps(values,ensure_ascii=False,indent=2)+'\n')
 
 async def main():
     pending=[]
     for key,entry in corpus.items():
-        if key in official or entry.get('manual',{}).get('enUS'):continue
+        if key in official or entry.get('manual',{}).get('enUS') or (existing.get(key) and not re.search(r'[\u3400-\u9fff]',existing[key])):continue
         text=entry['template'];ck=cachekey(text)
         if ck in cache and not re.search(r'[\u3400-\u9fff]',mask(cache[ck])[0]):continue
         cache.pop(ck,None)
