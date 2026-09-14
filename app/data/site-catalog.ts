@@ -33,7 +33,7 @@ export const BUILD_CATALOG: BuildEntry[] = [
   { id: "ik-hota", classId: "barbarian", name: "不朽先祖锤", set: "不朽之王", core: "先祖之锤", image: "/d3/library/skills/barbarian-active-hammer-of-the-ancients.png", role: "通用", difficulty: "中", summary: "先祖与狂战之怒常驻，用怒气上限放大先祖之锤。", complete: true },
   { id: "lod-hota", classId: "barbarian", name: "梦遗先祖锤", set: "梦之遗礼", core: "先祖之锤", image: "/d3/library/skills/barbarian-active-hammer-of-the-ancients.png", role: "冲层", difficulty: "高", summary: "无套装传奇组合，依靠高质量远古散件获得上限。", complete: true },
   { id: "earth-leapquake", classId: "barbarian", name: "大地跃击", set: "大地之力", core: "跃击 / 地震", image: "/d3/library/skills/barbarian-active-earthquake.png", role: "通用", difficulty: "中", summary: "连续跃击触发地震与雪崩，兼顾位移、控制和伤害。", complete: true },
-  { id: "h90-frenzy", classId: "barbarian", name: "九十蛮狂乱", set: "九十蛮", core: "狂乱", image: "/d3/library/skills/barbarian-active-frenzy.png", role: "冲层", difficulty: "中", summary: "高攻速单体近战，围绕狂乱层数和战吼恐惧建立乘区。", complete: true },
+  { id: "h90-frenzy", classId: "barbarian", name: "九十蛮狂乱", set: "九十蛮", core: "狂乱", image: "/d3/library/skills/barbarian-active-frenzy.png", role: "通用", difficulty: "中", summary: "单体追杀型近战；冲层、GR速刷与T16需切换各自完整配装。", complete: true },
   { id: "ik-charge", classId: "barbarian", name: "不朽冲锋", set: "不朽之王 / 蕾蔻", core: "狂暴冲锋", image: "/d3/library/skills/barbarian-active-furious-charge.png", role: "速刷", difficulty: "中", summary: "用冲锋刷新自身并穿图，适合低层快速清场。", complete: true },
 
   { id: "valor-fist", classId: "crusader", name: "勇气天拳", set: "勇气壁垒", core: "天堂之拳", image: "/d3/library/skills/crusader-active-fist-of-the-heavens.png", role: "速刷", difficulty: "低", purpose: "小秘境", content: ["T16小秘境", "悬赏", "低层大秘境"], summary: "骑马期间自动落下天堂之拳，移动清场效率突出。" },

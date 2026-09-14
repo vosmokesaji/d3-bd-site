@@ -123,4 +123,4 @@ if (process.argv.includes("--write")) {
   await writeFile("docs/bd-review-audit.json", `${JSON.stringify(report, null, 2)}\n`);
 }
 console.log(JSON.stringify(report, null, 2));
-if (report.total !== 51 || report.schemaValid !== 51 || report.semanticValid !== 51 || report.genericPlaceholders !== 21 || report.batchDerived !== 7) process.exitCode = 1;
+if (report.total !== 51 || report.schemaValid !== 51 || report.semanticValid !== 51 || report.genericPlaceholders > 20 || report.batchDerived > 7) process.exitCode = 1;

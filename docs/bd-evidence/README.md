@@ -21,6 +21,7 @@
 | [梦遗死亡新星](./lod-nova.md) | `source-checked / platform-risk` | 2 | 7 | 15 | Icy 内部旧段落、第二来源整套冲突、Maxroll 正文未读取、Switch 未实测 |
 | [拉斯玛亡者大军](./rathma-aotd.md) | `source-checked / platform-risk` | 3 | 14 | 18 | 精确符文/宝石分歧、Icy 内部错误、Maxroll 正文未读取、Switch 未实测 |
 | [梦遗轰击](./lod-bombardment.md) | `source-checked / platform-risk` | 3 | 6 | 14 | 技能/装备/宝石冲突、Maxroll 正文未读取、Switch 未实测 |
+| [九十蛮狂乱](./h90-frenzy.md) | `source-checked / platform-risk` | 4 | 12 | 20 | Icy 内部用途/符文冲突、第二来源整套差异、地狱火成品图、Maxroll 自动访问被 robots 阻断、Switch 未实测 |
 
 ## 每套档案必填项
 

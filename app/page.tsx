@@ -1252,6 +1252,7 @@ const CONFIGURATION_LEGENDARY_GEMS: Record<string, { name: string; image: string
   lod: { name: "梦之遗礼", image: "/d3/library/items/legacy-of-dreams-unique_gem_023_x1.png" },
   "boon-of-the-hoarder": HOARDER_GEM,
   simplicity: { name: "至简之力", image: "/d3/library/items/simplicitys-strength-unique_gem_013_x1.png" },
+  "molten-wildebeest": { name: "火牛羚砂囊", image: "/d3/library/items/molten-wildebeests-gizzard-unique_gem_017_x1.png" },
   enforcer: { name: "侍从宝石", image: "/d3/library/items/enforcer-unique_gem_010_x1.png" },
   gogok: { name: "迅捷勾玉", image: "/d3/library/items/gogok-of-swiftness-unique_gem_008_x1.png" },
   "esoteric-alteration": { name: "转煞秘石", image: "/d3/library/items/esoteric-alteration-unique_gem_016_x1.png" },

@@ -1,5 +1,6 @@
 import { completeBuildGuide, validateReviewedBuildGuide, type BuildConfiguration, type BuildGuide, type BuildScenario, type GuideAbility, type GuideGear, type GuideLink, type GuidePower, type ParagonGuide } from "./build-guides";
 import { createGenericReviewedGuide } from "./class-build-factory";
+import { reviewH90FrenzyGuide } from "./h90-frenzy-reviewed";
 import { CURRENT_SEASON } from "./season-config";
 import { D3_ITEM_ROOT, D3_SKILL_ROOT } from "./assets";
 
@@ -1036,6 +1037,6 @@ export const BARBARIAN_BUILDS: Record<string, BuildGuide> = {
   [IK_HOTA_REVIEWED_GUIDE.id]: IK_HOTA_REVIEWED_GUIDE,
   [LOD_HOTA_REVIEWED_GUIDE.id]: LOD_HOTA_REVIEWED_GUIDE,
   [EARTH_GUIDE.id]: createGenericReviewedGuide(completeBuildGuide(EARTH_GUIDE, CURRENT_SEASON.seasonId)),
-  [FRENZY_GUIDE.id]: createGenericReviewedGuide(completeBuildGuide(FRENZY_GUIDE, CURRENT_SEASON.seasonId)),
+  [FRENZY_GUIDE.id]: reviewH90FrenzyGuide(completeBuildGuide(FRENZY_GUIDE, CURRENT_SEASON.seasonId)),
   [IK_CHARGE_GUIDE.id]: createGenericReviewedGuide(completeBuildGuide(IK_CHARGE_GUIDE, CURRENT_SEASON.seasonId)),
 };

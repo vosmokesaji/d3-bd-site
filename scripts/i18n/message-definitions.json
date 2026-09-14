@@ -18019,6 +18019,2064 @@
     "source": "守护者",
     "template": "[[Powers/Templar_CheatDeath_Passive_name]]"
   },
+  "app.b4b67e5a7a328819": {
+    "source": "主入口把九十蛮列为单人GR推进，并链接独立GR速刷与T16变体；导航标签本身只显示冲层，和子页面覆盖范围不一致。",
+    "template": "主入口把九十蛮列为[[Site/solo]]GR推进，并链接独立GR[[Site/speed-farming]]与T16变体；导航标签本身只显示[[Site/push]]，和子页面覆盖范围不一致。",
+    "manual": {
+      "enUS": "The main page labels HotNS for solo Greater Rift progression and links dedicated GR speed and T16 variants; its navigation tag shows only pushing, which conflicts with the child-page coverage."
+    }
+  },
+  "app.f605418269f80c23": {
+    "source": "冲层技能表为怒气冲天、无情突袭、老兵之诫、惊魂余音、血溅十方与癫狂；四被动为狂暴、狂战盛怒、布尔凯索和无情暴虐。",
+    "template": "[[Site/push]]技能表为[[AttributeDescriptions/NameRune_E#Barbarian_Frenzy]]、[[AttributeDescriptions/NameRune_E#Barbarian_FuriousCharge]]、[[AttributeDescriptions/NameRune_B#X1_Barbarian_WarCry_v2]]、[[AttributeDescriptions/NameRune_D#Barbarian_ThreateningShout]]、[[AttributeDescriptions/NameRune_E#Barbarian_BattleRage]]与癫狂；四被动为[[Powers/X1_Barbarian_Passive_Rampage_name]]、[[Powers/Barbarian_Passive_BerserkerRage_name]]、布尔凯索和[[Powers/Barbarian_Passive_Ruthless_name]]。",
+    "manual": {
+      "enUS": "The push skill bar uses Berserk, Merciless Assault, Veteran's Warning, Falter, Bloodshed, and Insanity; the passives are Rampage, Berserker Rage, Boon of Bul-Kathos, and Ruthless."
+    }
+  },
+  "app.ca230cfc3fa840bb": {
+    "source": "给出5九十蛮+2奥吉德、无尽之途、力量指环、宝石、巅峰与S39对剑+第四槽守誓者；护甲孔先红，只有坚韧阻碍推进时才换白，没有固定巅峰线。",
+    "template": "给出5九十蛮+2[[ItemSets/P66_Crafted Nightmare Set 002]]、[[ItemSets/Inferno Set 011_x1]]、[[Items/P61_Unique_Ring_05]]、宝石、[[Site/paragon]]与S39对剑+第四槽[[Items/P4_Unique_Mighty_1H_104]]；护甲孔先红，只有坚韧阻碍推进时才换白，没有固定[[Site/paragon]]线。",
+    "manual": {
+      "enUS": "Documents five HotNS pieces plus two Aughild pieces, Endless Walk, Band of Might, gems, Paragon, and the Season 39 paired blades with Oathkeeper in the fourth Cube slot. Armor sockets start with Rubies and switch to Diamonds only when toughness blocks progress, with no fixed Paragon threshold."
+    }
+  },
+  "app.177f5c6fbf3378dc": {
+    "source": "独立GR速刷页使用斯奎特、力量指环、全能、寅剑+守誓者、火牛羚砂囊和S39回荡狂怒，并要求追精英、忽略零散怪。技能速查表与正文对战吼符文不一致。",
+    "template": "独立GR[[Site/speed-farming]]页使用斯奎特、[[Items/P61_Unique_Ring_05]]、全能、[[Items/Unique_Sword_1H_113_x1]]+[[Items/P4_Unique_Mighty_1H_104]]、[[Items/Unique_Gem_017_x1_PTR]]和S39[[Items/P66_Unique_Mace_1H_001]]，并要求追精英、忽略零散怪。技能速查表与正文对[[Powers/X1_Barbarian_WarCry_v2_name]]符文不一致。",
+    "manual": {
+      "enUS": "The dedicated GR speed page uses Squirt's Necklace, Band of Might, Convention of Elements, In-geom plus Oathkeeper, Molten Wildebeest's Gizzard, and Echoing Fury in Season 39, while directing players to hunt elites and skip stragglers. Its skill summary and prose disagree on the War Cry rune."
+    }
+  },
+  "app.c29dba937fd37094": {
+    "source": "明确支持最高折磨的小秘境和悬赏；穿九十蛮肩与深渊挖掘裤、沃兹克、地狱火/时光、瑞秋、力量指环及寅剑+守誓者，魔方使用兵要、金织带/齐拉尼克、华戒和回荡狂怒。",
+    "template": "明确支持最高折磨的[[General/LootRunPortal]]和悬赏；穿九十蛮肩与[[Items/Unique_Pants_006_p1]]、[[Items/Unique_Bracer_101_x1]]、地狱火/时光、瑞秋、[[Items/P61_Unique_Ring_05]]及[[Items/Unique_Sword_1H_113_x1]]+[[Items/P4_Unique_Mighty_1H_104]]，魔方使用兵要、[[Items/Unique_Belt_010_x1]]/齐拉尼克、华戒和[[Items/P66_Unique_Mace_1H_001]]。",
+    "manual": {
+      "enUS": "Explicitly supports Nephalem Rifts and bounties through the highest Torment. It wears HotNS shoulders, Depth Diggers, Warzechian Armguards, Hellfire Amulet or The Flavor of Time, Rechel's Ring, Band of Might, and In-geom plus Oathkeeper; the Cube uses Bastion's Revered, Goldwrap or Chilanik's Chain, Ring of Royal Grandeur, and Echoing Fury."
+    }
+  },
+  "app.62b6be9607f3cbfb": {
+    "source": "S39页面提供冲层、速刷和T16三变体，能交叉确认用途，但具体技能、穿戴槽和第四魔方槽与Icy明显不同；其‘其余8孔全白’文字也与实际孔位数量不符。",
+    "template": "S39页面提供[[Site/push]]、[[Site/speed-farming]]和T16三变体，能交叉确认用途，但具体技能、穿戴槽和第四魔方槽与Icy明显不同；其‘其余8孔全白’文字也与实际孔位数量不符。",
+    "manual": {
+      "enUS": "The Season 39 page provides push, speed, and T16 variants, corroborating their uses, but its skills, worn slots, and fourth Cube slot differ substantially from Icy Veins. Its claim that the other eight sockets all use Diamonds also conflicts with the actual socket count."
+    }
+  },
+  "app.39be0148e4fffae5": {
+    "source": "官方确认第39赛季开放不受物品类型限制、但同类威能不能叠加的第四魔方槽。",
+    "template": "官方确认第39赛季开放不受物品类型限制、但同类威能不能叠加的第四魔方槽。",
+    "manual": {
+      "enUS": "The official source confirms that Season 39 adds a fourth Cube slot that accepts any item type but cannot stack duplicate powers."
+    }
+  },
+  "app.dd49531fa86cca89": {
+    "source": "官方套装页确认两件翻倍战吼并对恐惧、冰冻或眩晕目标增伤；四件按狂乱层数减伤；六件按层数提高狂乱伤害。",
+    "template": "官方套装页确认两件翻倍[[Powers/X1_Barbarian_WarCry_v2_name]]并对恐惧、冰冻或眩晕目标[[Site/damage-boost]]；四件按狂乱层数[[Site/damage-reduction]]；六件按层数提高狂乱伤害。",
+    "manual": {
+      "enUS": "The official set page confirms that the two-piece bonus doubles shouts and increases damage to feared, frozen, or stunned targets; the four-piece grants damage reduction per Frenzy stack; and the six-piece increases Frenzy damage per stack."
+    }
+  },
+  "app.eea4c64afca08dea": {
+    "source": "官方物品页确认狂乱可叠至10层，并按层数追加命中、向近距离目标连锁。",
+    "template": "官方物品页确认狂乱可叠至10层，并按层数追加命中、向近距离目标连锁。",
+    "manual": {
+      "enUS": "The official item page confirms that Frenzy can stack to 10 and adds one hit per stack, chaining to nearby targets."
+    }
+  },
+  "app.6bae590703c54cb4": {
+    "source": "官方物品页确认狂乱获得全部符文，并获得独立技能增伤。",
+    "template": "官方物品页确认狂乱获得全部符文，并获得独立技能[[Site/damage-boost]]。",
+    "manual": {
+      "enUS": "The official item page confirms that Frenzy gains every rune and a separate skill damage bonus."
+    }
+  },
+  "app.54385697984ef869": {
+    "source": "官方物品页确认主要技能攻击更快并造成更多伤害。",
+    "template": "官方物品页确认主要技能攻击更快并造成更多伤害。",
+    "manual": {
+      "enUS": "The official item page confirms that Primary skills attack faster and deal more damage."
+    }
+  },
+  "app.3984954cf3f8782c": {
+    "source": "官方物品页确认施放战吼后提供10秒移动速度；Icy将其列为更激进的T16魔方选项。",
+    "template": "官方物品页确认施放[[Powers/X1_Barbarian_WarCry_v2_name]]后提供10秒移动速度；Icy将其列为更激进的T16魔方选项。",
+    "manual": {
+      "enUS": "The official item page confirms a 10-second movement-speed bonus after War Cry; Icy Veins lists it as a more aggressive T16 Cube option."
+    }
+  },
+  "app.393609fa29306336": {
+    "source": "精英伤害减免",
+    "template": "精英伤害减免",
+    "manual": {
+      "enUS": "Damage reduction from elites"
+    }
+  },
+  "app.234481156ca50183": {
+    "source": "力量 / 高巅峰按需换范围伤",
+    "template": "力量 / [[Site/high-paragon]]按需换范围伤",
+    "manual": {
+      "enUS": "Strength / replace with Area Damage at high Paragon when appropriate"
+    }
+  },
+  "app.0bb42b1bd9fa1d80": {
+    "source": "体能 / 击中回复生命",
+    "template": "[[SkillsUI/ParagonBonusLabel_Vitality]] / 击中回复生命",
+    "manual": {
+      "enUS": "Vitality / Life per Hit"
+    }
+  },
+  "app.c71a556d43bddfe6": {
+    "source": "狂乱技能伤害",
+    "template": "狂乱技能伤害",
+    "manual": {
+      "enUS": "Frenzy skill damage"
+    }
+  },
+  "app.531791260f46a479": {
+    "source": "高白字伤害",
+    "template": "高白字伤害"
+  },
+  "app.7326e6e560059ecd": {
+    "source": "九十蛮狂乱缺少装备定义：{0}",
+    "template": "九十蛮狂乱缺少装备定义：{0}",
+    "manual": {
+      "enUS": "HotNS Frenzy is missing a gear definition: {0}"
+    }
+  },
+  "app.6089c734f73bc509": {
+    "source": "九十蛮套装肩甲；T16穿六件套中的第五件，并由皇家华戒补成六件。",
+    "template": "九十蛮套装肩甲；T16穿六件套中的第五件，并由[[Items/Unique_Ring_107_x1]]补成六件。",
+    "manual": {
+      "enUS": "HotNS set shoulders; the T16 setup wears this as its fifth set piece and completes the six-piece bonus with Ring of Royal Grandeur."
+    }
+  },
+  "app.93ebe90d81952d93": {
+    "source": "血岩碎片：赌博护肩",
+    "template": "血岩碎片：赌博护肩",
+    "manual": {
+      "enUS": "Blood Shards: gamble shoulders"
+    }
+  },
+  "app.ecf875592c8d9415": {
+    "source": "重复九十蛮护甲可用套装转换",
+    "template": "重复九十蛮护甲可用套装转换",
+    "manual": {
+      "enUS": "Convert duplicate HotNS armor pieces with the Cube"
+    }
+  },
+  "app.6ceaf33d96f28c04": {
+    "source": "只在脱下奥吉德肩的T16变体穿戴",
+    "template": "只在脱下[[ItemSets/P66_Crafted Nightmare Set 002]]肩的T16变体穿戴",
+    "manual": {
+      "enUS": "Wear only in the T16 variant after removing Aughild's shoulders"
+    }
+  },
+  "app.ae89f1daf01a7584": {
+    "source": "未受伤时叠加增伤；GR速刷用火牛羚护盾帮助保持层数。",
+    "template": "未受伤时叠加[[Site/damage-boost]]；GR[[Site/speed-farming]]用火牛羚护盾帮助保持层数。",
+    "manual": {
+      "enUS": "Stacks increased damage while uninjured; the GR speed setup uses Molten Wildebeest's shield to help preserve the stacks."
+    }
+  },
+  "app.cb0043ebfcb7296b": {
+    "source": "先保镶孔，再追双暴与冰伤",
+    "template": "先保镶孔，再追双暴与冰伤",
+    "manual": {
+      "enUS": "Keep the socket first, then pursue both Critical stats and Cold damage"
+    }
+  },
+  "app.12b7d9ebe595c6fd": {
+    "source": "没有火牛羚护盾或持续受伤时会掉层，不是无条件双倍伤害。",
+    "template": "没有火牛羚护盾或持续受伤时会掉层，不是无条件双倍伤害。",
+    "manual": {
+      "enUS": "Stacks fall off without Molten Wildebeest's shield or while taking sustained damage; this is not unconditional double damage."
+    }
+  },
+  "app.debab26a7bab48f4": {
+    "source": "GR速刷保留冰霜周期爆发，用于快速击杀精英。",
+    "template": "GR[[Site/speed-farming]]保留冰霜周期爆发，用于快速击杀精英。",
+    "manual": {
+      "enUS": "GR speed farming retains the Cold-cycle burst to kill elites quickly."
+    }
+  },
+  "app.790dddaf7cefcdf7": {
+    "source": "范围伤害 / 均伤",
+    "template": "[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]] / 均伤",
+    "manual": {
+      "enUS": "Area Damage / average damage"
+    }
+  },
+  "app.ac0062d41fc6189a": {
+    "source": "戒指池很大，先用正确特效版本",
+    "template": "戒指池很大，先用正确特效版本",
+    "manual": {
+      "enUS": "The ring pool is large; start with any copy that has the correct power"
+    }
+  },
+  "app.0bd684d43223231d": {
+    "source": "击杀精英后大幅缩短技能冷却，使冲锋和狂战之怒在速刷中高频可用。",
+    "template": "击杀精英后大幅缩短技能冷却，使[[Powers/Templar_ShieldCharge_name]]和[[Powers/Barbarian_WrathOfTheBerserker_name]]在[[Site/speed-farming]]中高频可用。",
+    "manual": {
+      "enUS": "Killing an elite greatly reduces skill cooldowns, making Furious Charge and Wrath of the Berserker frequently available during speed farming."
+    }
+  },
+  "app.2dc1a358d554dc9f": {
+    "source": "伤害% / 范围伤害",
+    "template": "伤害% / [[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]"
+  },
+  "app.e1150fc1134c5023": {
+    "source": "精英击杀不断档时才有完整收益",
+    "template": "精英击杀不断档时才有完整收益",
+    "manual": {
+      "enUS": "Provides full value only while elite kills remain continuous"
+    }
+  },
+  "app.d53b7ef669a4cca8": {
+    "source": "提高主要技能伤害与攻速，是狂乱速刷仍必须保留的武器乘区。",
+    "template": "提高主要技能伤害与攻速，是狂乱[[Site/speed-farming]]仍必须保留的武器[[Site/multiplier]]。",
+    "manual": {
+      "enUS": "Increases Primary-skill damage and attack speed, so this weapon multiplier remains mandatory for Frenzy speed farming."
+    }
+  },
+  "app.fa15daa2212bfb67": {
+    "source": "速刷穿戴；冲层S39改为第四魔方槽",
+    "template": "[[Site/speed-farming]]穿戴；[[Site/push]]S39改为第四魔方槽",
+    "manual": {
+      "enUS": "Wear for speed farming; move it to the fourth Cube slot for Season 39 pushing"
+    }
+  },
+  "app.60eae2fdc5381f6d": {
+    "source": "直接穿戴主要技能乘区，释放T16防具魔方槽给金织带或齐拉尼克。",
+    "template": "直接穿戴主要技能[[Site/multiplier]]，释放T16防具魔方槽给[[Items/Unique_Belt_010_x1]]或齐拉尼克。",
+    "manual": {
+      "enUS": "Wear the Primary-skill multiplier directly to free the T16 armor Cube slot for Goldwrap or Chilanik's Chain."
+    }
+  },
+  "app.0408a2c6fe3d0e70": {
+    "source": "血岩碎片：赌博裤子",
+    "template": "血岩碎片：赌博裤子",
+    "manual": {
+      "enUS": "Blood Shards: gamble pants"
+    }
+  },
+  "app.a081a76a23ba23b5": {
+    "source": "黄装升级：70级裤子",
+    "template": "黄装升级：70级裤子",
+    "manual": {
+      "enUS": "Upgrade Rare: level 70 pants"
+    }
+  },
+  "app.f2c4012d2e59a018": {
+    "source": "只在同时穿九十蛮肩并萃取皇家华戒时使用",
+    "template": "只在同时穿九十蛮肩并萃取[[Items/Unique_Ring_107_x1]]时使用",
+    "manual": {
+      "enUS": "Use only while also wearing HotNS shoulders and cubing Ring of Royal Grandeur"
+    }
+  },
+  "app.3d481d0a224a6a47": {
+    "source": "穿上后必须改穿九十蛮肩；不能沿用奥吉德肩，否则九十蛮六件会断。",
+    "template": "穿上后必须改穿九十蛮肩；不能沿用[[ItemSets/P66_Crafted Nightmare Set 002]]肩，否则九十蛮六件会断。",
+    "manual": {
+      "enUS": "Equipping these requires switching to HotNS shoulders; keeping Aughild's shoulders would break the HotNS six-piece bonus."
+    }
+  },
+  "app.deb496d1bbabe465": {
+    "source": "打碎可破坏物后短时加速，适合T16和悬赏连续赶路。",
+    "template": "打碎可破坏物后短时加速，适合T16和悬赏连续赶路。",
+    "manual": {
+      "enUS": "Breaking destructible objects grants a brief speed boost, useful for continuous travel in T16 and bounties."
+    }
+  },
+  "app.1dac2fe56139b9dc": {
+    "source": "对应狂乱元素伤害",
+    "template": "对应狂乱元素伤害",
+    "manual": {
+      "enUS": "Elemental damage matching the Frenzy rune"
+    }
+  },
+  "app.fe69c465cb317df5": {
+    "source": "血岩碎片：赌博护腕",
+    "template": "血岩碎片：赌博护腕",
+    "manual": {
+      "enUS": "Blood Shards: gamble bracers"
+    }
+  },
+  "app.ad96ec7516a00c53": {
+    "source": "单人速刷穿戴；组队可改复仇者护腕",
+    "template": "[[Site/solo]][[Site/speed-farming]]穿戴；组队可改[[Items/Unique_Bracer_106_x1]]",
+    "manual": {
+      "enUS": "Wear for solo speed farming; groups can switch to Nemesis Bracers"
+    }
+  },
+  "app.09d79f9f8da0b380": {
+    "source": "延长塔效果；Icy列为T16组队选择，本项目用它表示有明确来源的可展示替代。",
+    "template": "延长塔效果；Icy列为T16组队选择，本项目用它表示有明确来源的可展示替代。",
+    "manual": {
+      "enUS": "Doubles pylon duration. Icy Veins lists it for group T16; this project uses it as a displayable, explicitly sourced alternative."
+    }
+  },
+  "app.0ce42ed1623c22e6": {
+    "source": "单人最优通常是带合适被动的地狱火项链",
+    "template": "[[Site/solo]]最优通常是带合适被动的地狱火项链",
+    "manual": {
+      "enUS": "The usual solo optimum is a Hellfire Amulet with a suitable passive"
+    }
+  },
+  "app.8a720716989099de": {
+    "source": "这是来源明确的组队替代；单人理想项链为地狱火项链，待补齐准确物品图后再切换默认展示。",
+    "template": "这是来源明确的组队替代；[[Site/solo]]理想项链为地狱火项链，待补齐准确物品图后再切换默认展示。",
+    "manual": {
+      "enUS": "This is a sourced group alternative. The ideal solo amulet is Hellfire Amulet; switch the default display after an accurate finished-item image is available."
+    }
+  },
+  "app.67d123e347b6a790": {
+    "source": "恐惧敌人后获得短时移速；T16单人用武器恐惧命中副词缀触发。",
+    "template": "恐惧敌人后获得短时移速；T16[[Site/solo]]用武器恐惧命中副词缀触发。",
+    "manual": {
+      "enUS": "Fearing an enemy grants a brief movement-speed boost; solo T16 triggers it with a Fear on Hit weapon secondary."
+    }
+  },
+  "app.df068f9de6c90988": {
+    "source": "范围伤害 / 力量",
+    "template": "[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]] / 力量",
+    "manual": {
+      "enUS": "Area Damage / Strength"
+    }
+  },
+  "app.b3e89b7f30ac1b52": {
+    "source": "必须同时准备可靠的恐惧命中来源",
+    "template": "必须同时准备可靠的恐惧命中来源",
+    "manual": {
+      "enUS": "Requires a reliable Fear on Hit source"
+    }
+  },
+  "app.c45b0a1ac19acfba": {
+    "source": "眩晕或冰冻不会触发这枚戒指；武器需要恐惧命中副词缀。",
+    "template": "眩晕或冰冻不会触发这枚戒指；武器需要恐惧命中副词缀。",
+    "manual": {
+      "enUS": "Stun and Freeze do not trigger this ring; the weapon needs a Fear on Hit secondary."
+    }
+  },
+  "app.cab434e9b2fe3e11": {
+    "source": "怒气冲天",
+    "template": "[[AttributeDescriptions/NameRune_E#Barbarian_Frenzy]]"
+  },
+  "app.8721429510f1cc2e": {
+    "source": "主要伤害技能；无可争辩的勇士会同时赋予全部符文，当前符文只决定元素类型。",
+    "template": "主要伤害技能；[[Items/P68_Unique_BarbBelt_006]]会同时赋予全部符文，当前符文只决定元素类型。",
+    "manual": {
+      "enUS": "Main damage skill. The Undisputed Champion grants every rune at once, so the selected rune determines only the damage element."
+    }
+  },
+  "app.4be7de61c70f4977": {
+    "source": "冲层用来追精英并刷新力量指环；GR速刷可在寅剑稳定后换寒冰冲撞立即触发套装控制条件。",
+    "template": "[[Site/push]]用来追精英并刷新[[Items/P61_Unique_Ring_05]]；GR[[Site/speed-farming]]可在[[Items/Unique_Sword_1H_113_x1]]稳定后换[[AttributeDescriptions/NameRune_C#Barbarian_FuriousCharge]]立即触发套装控制条件。",
+    "manual": {
+      "enUS": "For pushing, it chases elites and refreshes Band of Might. GR speed farming can switch to Cold Rush after In-geom is stable to trigger the set's control condition immediately."
+    }
+  },
+  "app.16cd9a312313dc42": {
+    "source": "老兵之诫",
+    "template": "[[AttributeDescriptions/NameRune_B#X1_Barbarian_WarCry_v2]]"
+  },
+  "app.0176604a1d205eae": {
+    "source": "套装两件翻倍战吼效果；GR速刷正文改赦免，T16仍用老兵之诫。",
+    "template": "套装两件翻倍[[Powers/X1_Barbarian_WarCry_v2_name]]效果；GR[[Site/speed-farming]]正文改赦免，T16仍用[[AttributeDescriptions/NameRune_B#X1_Barbarian_WarCry_v2]]。",
+    "manual": {
+      "enUS": "The set's two-piece doubles War Cry. The GR speed prose switches to Impunity, while T16 keeps Veteran's Warning."
+    }
+  },
+  "app.10b0571e09322e1e": {
+    "source": "惊魂余音",
+    "template": "[[AttributeDescriptions/NameRune_D#Barbarian_ThreateningShout]]"
+  },
+  "app.c12dc61410ad1280": {
+    "source": "让目标承受更多伤害；T16为疾奔让位。",
+    "template": "让目标承受更多伤害；T16为[[Powers/Barbarian_Sprint_name]]让位。",
+    "manual": {
+      "enUS": "Makes targets take more damage; gives up its slot to Sprint in T16."
+    }
+  },
+  "app.b545598b8ecad94a": {
+    "source": "冲层与GR速刷把高攻速暴击转成怪群溅射；T16改凶残提高移速。",
+    "template": "[[Site/push]]与GR[[Site/speed-farming]]把高攻速暴击转成怪群溅射；T16改凶残提高移速。",
+    "manual": {
+      "enUS": "Push and GR speed setups convert rapid critical hits into splash damage; T16 uses Ferocity for movement speed."
+    }
+  },
+  "app.9bf901c36f119721": {
+    "source": "冲层留给精英与危险窗口；速刷借寅剑提高覆盖率。",
+    "template": "[[Site/push]]留给精英与危险窗口；[[Site/speed-farming]]借[[Items/Unique_Sword_1H_113_x1]]提高覆盖率。",
+    "manual": {
+      "enUS": "Save it for elites and dangerous windows while pushing; speed setups use In-geom to improve uptime."
+    }
+  },
+  "app.3264bb460c2f3f63": {
+    "source": "奔跑健将",
+    "template": "[[AttributeDescriptions/NameRune_A#Barbarian_Sprint]]"
+  },
+  "app.f5a892b6e6233fed": {
+    "source": "T16与悬赏替代威吓呐喊，跨越没有目标可冲锋的空地。",
+    "template": "T16与悬赏替代[[Powers/Barbarian_ThreateningShout_name]]，跨越没有目标可[[Powers/Templar_ShieldCharge_name]]的空地。",
+    "manual": {
+      "enUS": "Replaces Threatening Shout in T16 and bounties to cross open ground with no charge target."
+    }
+  },
+  "app.2735d62d281ba19e": {
+    "source": "连续击杀叠力量，密集战中同时提高伤害和护甲。",
+    "template": "连续击杀叠力量，密集战中同时提高伤害和护甲。",
+    "manual": {
+      "enUS": "Consecutive kills stack Strength, increasing both damage and Armor in dense fights."
+    }
+  },
+  "app.0be48224b5f0e8d2": {
+    "source": "狂乱是生成技能，怒气接近满值时获得稳定增伤。",
+    "template": "狂乱是生成技能，怒气接近满值时获得稳定[[Site/damage-boost]]。",
+    "manual": {
+      "enUS": "Frenzy is a generator, keeping Fury near maximum for a stable damage bonus."
+    }
+  },
+  "app.e9b66468c77d05ca": {
+    "source": "缩短狂战之怒冷却；三个场景都保留。",
+    "template": "缩短[[Powers/Barbarian_WrathOfTheBerserker_name]]冷却；三个场景都保留。",
+    "manual": {
+      "enUS": "Reduces Wrath of the Berserker's cooldown and remains in every configuration."
+    }
+  },
+  "app.5d89ca0d47ae0e35": {
+    "source": "冲层加快低生命精英和首领的收尾。",
+    "template": "[[Site/push]]加快低生命精英和首领的收尾。",
+    "manual": {
+      "enUS": "Speeds up finishing low-health elites and Rift Guardians while pushing."
+    }
+  },
+  "app.aa68fa934c5d1f4b": {
+    "source": "好斗勇者",
+    "template": "[[Powers/Barbarian_Passive_Brawler_name]]"
+  },
+  "app.83848174dfb5933d": {
+    "source": "GR速刷贴近多名敌人时提高伤害，取代首领向的无情暴虐。",
+    "template": "GR[[Site/speed-farming]]贴近多名敌人时提高伤害，取代首领向的[[Powers/Barbarian_Passive_Ruthless_name]]。",
+    "manual": {
+      "enUS": "Increases damage near multiple enemies during GR speed farming, replacing the boss-oriented Ruthless."
+    }
+  },
+  "app.c8e353fbbd9ad790": {
+    "source": "血肉铸就",
+    "template": "[[Powers/Barbarian_Passive_PoundOfFlesh_name]]"
+  },
+  "app.8725d4ae9b07f2b0": {
+    "source": "T16拾取生命球后提高移速，与扩大拾取范围的随从贪婪之戒配合。",
+    "template": "T16拾取生命球后提高移速，与扩大拾取范围的随从[[Items/Unique_Ring_108_x1]]配合。",
+    "manual": {
+      "enUS": "Picking up Health Globes increases movement speed in T16 and works with the follower's emanated Avarice Band pickup radius."
+    }
+  },
+  "app.67f3c0fc4ed04a87": {
+    "source": "击杀后叠加攻速和移动速度。",
+    "template": "击杀后叠加攻速和移动速度。",
+    "manual": {
+      "enUS": "Kills stack Attack Speed and movement speed."
+    }
+  },
+  "app.811f0ef7bbe33ef6": {
+    "source": "S39速刷第四槽；依赖连续击杀，首领和断怪时会掉层。",
+    "template": "S39[[Site/speed-farming]]第四槽；依赖连续击杀，首领和断怪时会掉层。",
+    "manual": {
+      "enUS": "Season 39 speed-farming fourth slot; it depends on continuous kills and loses stacks on bosses or between packs."
+    }
+  },
+  "app.c5ff0993317fe707": {
+    "source": "黄装升级：70级单手锤后萃取",
+    "template": "黄装升级：70级单手锤后萃取",
+    "manual": {
+      "enUS": "Upgrade a level 70 Rare one-handed mace, then extract the power"
+    }
+  },
+  "app.0ccf9d8924973ec4": {
+    "source": "只在会掉金币的T16与悬赏中，配合囤宝者和随从贪婪之戒形成防线。",
+    "template": "只在会掉金币的T16与悬赏中，配合[[Items/Unique_Gem_014_x1]]和随从[[Items/Unique_Ring_108_x1]]形成防线。",
+    "manual": {
+      "enUS": "Use only in gold-dropping T16 and bounties, combining it with Boon of the Hoarder and the follower's Avarice Band for defense."
+    }
+  },
+  "app.fe8e19997798f9b0": {
+    "source": "血岩碎片赌博腰带或黄装升级70级腰带",
+    "template": "血岩碎片赌博腰带或黄装升级70级腰带",
+    "manual": {
+      "enUS": "Gamble belts with Blood Shards or upgrade level 70 Rare belts"
+    }
+  },
+  "app.a2e8aa378371f37b": {
+    "source": "齐拉尼克之链",
+    "template": "[[Items/Unique_BarbBelt_101_x1]]"
+  },
+  "app.78b1f9e6f0204cfe": {
+    "source": "施放战吼后提供10秒移动速度。",
+    "template": "施放[[Powers/X1_Barbarian_WarCry_v2_name]]后提供10秒移动速度。",
+    "manual": {
+      "enUS": "Grants movement speed for 10 seconds after War Cry."
+    }
+  },
+  "app.64fed71a334c88b1": {
+    "source": "伤害和生存已溢出时替代金织带；每10秒重放战吼维持。",
+    "template": "伤害和生存已溢出时替代[[Items/Unique_Belt_010_x1]]；每10秒重放[[Powers/X1_Barbarian_WarCry_v2_name]]维持。",
+    "manual": {
+      "enUS": "Replace Goldwrap only when damage and toughness greatly exceed requirements; recast War Cry every 10 seconds to maintain it."
+    }
+  },
+  "app.e1f67f0685aa17e4": {
+    "source": "血岩碎片赌博重型腰带或黄装升级70级重型腰带",
+    "template": "血岩碎片赌博重型腰带或黄装升级70级重型腰带",
+    "manual": {
+      "enUS": "Gamble Mighty Belts with Blood Shards or upgrade level 70 Rare Mighty Belts"
+    }
+  },
+  "app.35850abb9b09fbe4": {
+    "source": "开启三吼",
+    "template": "开启三吼",
+    "manual": {
+      "enUS": "Activate the three shouts"
+    }
+  },
+  "app.6b03ec191fa7a0cb": {
+    "source": "先维持战吼、威吓呐喊和战斗怒火。",
+    "template": "先维持[[Powers/X1_Barbarian_WarCry_v2_name]]、[[Powers/Barbarian_ThreateningShout_name]]和[[Powers/Barbarian_BattleRage_name]]。",
+    "manual": {
+      "enUS": "First maintain War Cry, Threatening Shout, and Battle Rage."
+    }
+  },
+  "app.0540cb6d7817f3a1": {
+    "source": "九十蛮两件翻倍战吼，威吓与战斗怒火也是输出条件。",
+    "template": "九十蛮两件翻倍[[Powers/X1_Barbarian_WarCry_v2_name]]，威吓与[[Powers/Barbarian_BattleRage_name]]也是输出条件。",
+    "manual": {
+      "enUS": "The HotNS two-piece doubles shouts, while Threatening Shout and Battle Rage are also damage conditions."
+    }
+  },
+  "app.b934002c831c1272": {
+    "source": "冲锋控敌",
+    "template": "[[Powers/Templar_ShieldCharge_name]]控敌",
+    "manual": {
+      "enUS": "Charge and control"
+    }
+  },
+  "app.884b8c29f71853f6": {
+    "source": "冲向精英并确保力量指环减伤已刷新。",
+    "template": "冲向精英并确保[[Items/P61_Unique_Ring_05]][[Site/damage-reduction]]已刷新。",
+    "manual": {
+      "enUS": "Charge to the elite and confirm that Band of Might's damage reduction is refreshed."
+    }
+  },
+  "app.bb6795be65bd47c4": {
+    "source": "冲锋既是位移与减伤开关，也用眩晕/冰冻条件启动套装两件增伤。",
+    "template": "[[Powers/Templar_ShieldCharge_name]]既是位移与[[Site/damage-reduction]]开关，也用眩晕/冰冻条件启动套装两件[[Site/damage-boost]]。",
+    "manual": {
+      "enUS": "Charge is both mobility and a defensive switch, and its Stun or Freeze condition activates the set's two-piece damage bonus."
+    }
+  },
+  "app.17f0f8a14f1771ce": {
+    "source": "优先持续攻击同一高生命目标，把狂乱叠至10层。",
+    "template": "优先持续攻击同一高生命目标，把狂乱叠至10层。",
+    "manual": {
+      "enUS": "Continuously attack one high-health target first to build Frenzy to 10 stacks."
+    }
+  },
+  "app.db42bd153a3141e2": {
+    "source": "套装四件、六件与兵要护符都按狂乱层数工作。",
+    "template": "套装四件、六件与[[Items/P68_Unique_Mighty_2H_004]]都按狂乱层数工作。",
+    "manual": {
+      "enUS": "The set's four-piece and six-piece bonuses and Bastion's Revered all scale with Frenzy stacks."
+    }
+  },
+  "app.367f07ec13704c59": {
+    "source": "精英爆发",
+    "template": "精英爆发",
+    "manual": {
+      "enUS": "Elite burst"
+    }
+  },
+  "app.2d7faa3b914dd4d2": {
+    "source": "在危险精英或需要快速收尾时开启狂战之怒。",
+    "template": "在危险精英或需要快速收尾时开启[[Powers/Barbarian_WrathOfTheBerserker_name]]。",
+    "manual": {
+      "enUS": "Activate Wrath of the Berserker against dangerous elites or when a quick finish is needed."
+    }
+  },
+  "app.05a719ec2bb58624": {
+    "source": "冲层无法永久覆盖狂战，不能把它当常驻状态。",
+    "template": "[[Site/push]]无法永久覆盖狂战，不能把它当常驻状态。",
+    "manual": {
+      "enUS": "The push setup cannot maintain permanent Wrath of the Berserker, so do not treat it as always active."
+    }
+  },
+  "app.4da56eb3b636ad90": {
+    "source": "舍弃散怪",
+    "template": "舍弃散怪",
+    "manual": {
+      "enUS": "Skip stragglers"
+    }
+  },
+  "app.f8e2243adfa6b4c9": {
+    "source": "精英死亡后用冲锋转场，不为零散杂兵停留。",
+    "template": "精英死亡后用[[Powers/Templar_ShieldCharge_name]]转场，不为零散杂兵停留。",
+    "manual": {
+      "enUS": "After an elite dies, use Charge to move on instead of stopping for scattered trash."
+    }
+  },
+  "app.5f6120b56f862eba": {
+    "source": "这套以单体追杀为强项，错误清图会浪费大秘境计时。",
+    "template": "这套以单体追杀为强项，错误清图会浪费[[NephalemRift/TieredRift]]计时。",
+    "manual": {
+      "enUS": "This build excels at single-target assassination; trying to full-clear wastes Greater Rift time."
+    }
+  },
+  "app.e795bb116d6ce239": {
+    "source": "先杀首组精英",
+    "template": "先杀首组精英",
+    "manual": {
+      "enUS": "Kill the first elite pack"
+    }
+  },
+  "app.8cf1addbf4d61416": {
+    "source": "开场用无情突袭保证冲锋循环，尽快击杀第一组精英启动寅剑。",
+    "template": "开场用[[AttributeDescriptions/NameRune_E#Barbarian_FuriousCharge]]保证[[Powers/Templar_ShieldCharge_name]]循环，尽快击杀第一组精英启动[[Items/Unique_Sword_1H_113_x1]]。",
+    "manual": {
+      "enUS": "Start with Merciless Assault to sustain Charge, then kill the first elite pack quickly to activate In-geom."
+    }
+  },
+  "app.7efca09c4211abd2": {
+    "source": "没有寅剑时直接用寒冰冲撞可能造成冲锋断档。",
+    "template": "没有[[Items/Unique_Sword_1H_113_x1]]时直接用[[AttributeDescriptions/NameRune_C#Barbarian_FuriousCharge]]可能造成[[Powers/Templar_ShieldCharge_name]]断档。",
+    "manual": {
+      "enUS": "Using Cold Rush before In-geom is active can leave Charge unavailable."
+    }
+  },
+  "app.4b971bd302a58025": {
+    "source": "维持三吼",
+    "template": "维持三吼",
+    "manual": {
+      "enUS": "Maintain all three shouts"
+    }
+  },
+  "app.db2aa358942fd2a5": {
+    "source": "战吼、威吓呐喊和战斗怒火接近结束就补。",
+    "template": "[[Powers/X1_Barbarian_WarCry_v2_name]]、[[Powers/Barbarian_ThreateningShout_name]]和[[Powers/Barbarian_BattleRage_name]]接近结束就补。",
+    "manual": {
+      "enUS": "Refresh War Cry, Threatening Shout, and Battle Rage as they approach expiration."
+    }
+  },
+  "app.ad81cadc2114a993": {
+    "source": "速刷仍依赖完整战吼增益，不是只换移速装备。",
+    "template": "[[Site/speed-farming]]仍依赖完整[[Powers/X1_Barbarian_WarCry_v2_name]]增益，不是只换移速装备。",
+    "manual": {
+      "enUS": "Speed farming still depends on the full shout package, not merely movement-speed gear."
+    }
+  },
+  "app.2341a46104559edb": {
+    "source": "冲锋触发",
+    "template": "[[Powers/Templar_ShieldCharge_name]]触发",
+    "manual": {
+      "enUS": "Charge trigger"
+    }
+  },
+  "app.aaff9e1c594714ea": {
+    "source": "寅剑稳定后用寒冰冲撞穿到精英身边。",
+    "template": "[[Items/Unique_Sword_1H_113_x1]]稳定后用[[AttributeDescriptions/NameRune_C#Barbarian_FuriousCharge]]穿到精英身边。",
+    "manual": {
+      "enUS": "Once In-geom is stable, use Cold Rush to move through enemies and reach the elite."
+    }
+  },
+  "app.c9e55c41ecfeecfa": {
+    "source": "冰冻会立即启动九十蛮两件控制目标增伤。",
+    "template": "冰冻会立即启动九十蛮两件控制目标[[Site/damage-boost]]。",
+    "manual": {
+      "enUS": "The Freeze immediately activates the HotNS two-piece damage bonus against controlled targets."
+    }
+  },
+  "app.d8c0a34d77577372": {
+    "source": "斯奎特追杀",
+    "template": "斯奎特追杀",
+    "manual": {
+      "enUS": "Assassinate with Squirt's"
+    }
+  },
+  "app.9f9eb4d49b6cbb6b": {
+    "source": "火牛羚护盾存在时贴住精英快速狂乱，忽略零散怪。",
+    "template": "火牛羚护盾存在时贴住精英快速狂乱，忽略零散怪。",
+    "manual": {
+      "enUS": "While Molten Wildebeest's shield is active, stay on the elite and attack rapidly with Frenzy, ignoring stragglers."
+    }
+  },
+  "app.79d18f0b9fb29c26": {
+    "source": "护盾帮助保持斯奎特层数，玩法仍是精英连杀。",
+    "template": "护盾帮助保持斯奎特层数，玩法仍是精英连杀。",
+    "manual": {
+      "enUS": "The shield helps preserve Squirt's stacks; the playstyle remains a chain of elite kills."
+    }
+  },
+  "app.3509c665fad683ad": {
+    "source": "击杀续档",
+    "template": "击杀续档",
+    "manual": {
+      "enUS": "Extend the kill chain"
+    }
+  },
+  "app.fdbf481dcd7ff78e": {
+    "source": "在寅剑和回荡狂怒结束前找到下一组精英。",
+    "template": "在[[Items/Unique_Sword_1H_113_x1]]和[[Items/P66_Unique_Mace_1H_001]]结束前找到下一组精英。",
+    "manual": {
+      "enUS": "Find the next elite pack before In-geom and Echoing Fury expire."
+    }
+  },
+  "app.a57f1e1fdd86e327": {
+    "source": "两条速刷威能都依赖连续击杀，断档后速度会显著下降。",
+    "template": "两条[[Site/speed-farming]]威能都依赖连续击杀，断档后速度会显著下降。",
+    "manual": {
+      "enUS": "Both speed powers depend on continuous kills, and performance drops sharply when the chain breaks."
+    }
+  },
+  "app.cb8cf343f0e15511": {
+    "source": "开启移速",
+    "template": "开启移速",
+    "manual": {
+      "enUS": "Activate movement speed"
+    }
+  },
+  "app.2413b8f03701431a": {
+    "source": "维持疾奔、战斗怒火和战吼。",
+    "template": "维持[[Powers/Barbarian_Sprint_name]]、[[Powers/Barbarian_BattleRage_name]]和[[Powers/X1_Barbarian_WarCry_v2_name]]。",
+    "manual": {
+      "enUS": "Maintain Sprint, Battle Rage, and War Cry."
+    }
+  },
+  "app.c01061371b1b65e5": {
+    "source": "疾奔与凶残负责常驻移速；战吼若改齐拉尼克还需每10秒刷新。",
+    "template": "[[Powers/Barbarian_Sprint_name]]与凶残负责常驻移速；[[Powers/X1_Barbarian_WarCry_v2_name]]若改齐拉尼克还需每10秒刷新。",
+    "manual": {
+      "enUS": "Sprint and Ferocity provide sustained movement speed; with Chilanik's Chain, War Cry must also be refreshed every 10 seconds."
+    }
+  },
+  "app.677fbf9904a1412b": {
+    "source": "恐惧触发",
+    "template": "恐惧触发",
+    "manual": {
+      "enUS": "Fear trigger"
+    }
+  },
+  "app.acb3ec9c718a14bf": {
+    "source": "用带恐惧命中副词缀的武器攻击沿路目标。",
+    "template": "用带恐惧命中副词缀的武器攻击沿路目标。",
+    "manual": {
+      "enUS": "Attack targets along the route with a weapon that has a Fear on Hit secondary."
+    }
+  },
+  "app.cff752312ce3f966": {
+    "source": "瑞秋只认恐惧，不会被狂乱自带的眩晕或冰冻替代。",
+    "template": "瑞秋只认恐惧，不会被狂乱自带的眩晕或冰冻替代。",
+    "manual": {
+      "enUS": "Rechel's Ring requires Fear; Frenzy's built-in Stun or Freeze cannot substitute for it."
+    }
+  },
+  "app.81db3a1524246878": {
+    "source": "精英优先",
+    "template": "精英优先",
+    "manual": {
+      "enUS": "Prioritize elites"
+    }
+  },
+  "app.9326d1f2600b11d5": {
+    "source": "冲锋越过杂兵并快速击杀精英。",
+    "template": "[[Powers/Templar_ShieldCharge_name]]越过杂兵并快速击杀精英。",
+    "manual": {
+      "enUS": "Charge past trash and kill elites quickly."
+    }
+  },
+  "app.a50f253ea09acc7a": {
+    "source": "寅剑和回荡狂怒启动后，后续冲锋与狂战覆盖才稳定。",
+    "template": "[[Items/Unique_Sword_1H_113_x1]]和[[Items/P66_Unique_Mace_1H_001]]启动后，后续[[Powers/Templar_ShieldCharge_name]]与狂战覆盖才稳定。",
+    "manual": {
+      "enUS": "Once In-geom and Echoing Fury activate, subsequent Charge and Wrath uptime become stable."
+    }
+  },
+  "app.fe7e83a9c7fce3ce": {
+    "source": "金币防线",
+    "template": "金币防线",
+    "manual": {
+      "enUS": "Gold-based defense"
+    }
+  },
+  "app.922f7434d465a548": {
+    "source": "保持拾取金币，让囤宝者、随从贪婪之戒和金织带连续生效。",
+    "template": "保持拾取金币，让[[Items/Unique_Gem_014_x1]]、随从[[Items/Unique_Ring_108_x1]]和[[Items/Unique_Belt_010_x1]]连续生效。",
+    "manual": {
+      "enUS": "Keep collecting gold so Boon of the Hoarder, the follower's Avarice Band, and Goldwrap remain active."
+    }
+  },
+  "app.acdca011de398abb": {
+    "source": "这条防线只在会掉金币的内容成立，大秘境不能使用。",
+    "template": "这条防线只在会掉金币的内容成立，[[NephalemRift/TieredRift]]不能使用。",
+    "manual": {
+      "enUS": "This defensive chain works only in content that drops gold and cannot be used in Greater Rifts."
+    }
+  },
+  "app.76e15cd4a720753c": {
+    "source": "空图疾奔",
+    "template": "空图[[Powers/Barbarian_Sprint_name]]",
+    "manual": {
+      "enUS": "Sprint through empty areas"
+    }
+  },
+  "app.dbd9f79605c48cc0": {
+    "source": "没有目标可冲锋时，用奔跑健将连接下一处事件或精英。",
+    "template": "没有目标可[[Powers/Templar_ShieldCharge_name]]时，用[[AttributeDescriptions/NameRune_A#Barbarian_Sprint]]连接下一处事件或精英。",
+    "manual": {
+      "enUS": "When there is no target to Charge, use Marathon to reach the next objective or elite."
+    }
+  },
+  "app.cedf7db21d235045": {
+    "source": "这是悬赏比GR更需要的长距离转场工具。",
+    "template": "这是悬赏比GR更需要的长距离转场工具。",
+    "manual": {
+      "enUS": "This long-distance movement tool matters more in bounties than in Greater Rifts."
+    }
+  },
+  "app.8a25a45f679dfd9a": {
+    "source": "夜幕遮蔽",
+    "template": "夜幕遮蔽",
+    "manual": {
+      "enUS": "Night's Veil"
+    }
+  },
+  "app.2acce4e670449185": {
+    "source": "解剖学",
+    "template": "[[Powers/Scoundrel_Anatomy_name]]学",
+    "manual": {
+      "enUS": "Anatomy"
+    }
+  },
+  "app.6a34a61c625ce1cb": {
+    "source": "暴击几率与暴击伤害",
+    "template": "[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]与[[SkillsUI/ParagonBonusLabel_Crit_Damage_Percent]]",
+    "manual": {
+      "enUS": "Critical Hit Chance and Critical Hit Damage"
+    }
+  },
+  "app.7fcdc3e2f3123ad5": {
+    "source": "力量指环刷新",
+    "template": "[[Items/P61_Unique_Ring_05]]刷新",
+    "manual": {
+      "enUS": "Band of Might refresh"
+    }
+  },
+  "app.1c39d5a63e39203c": {
+    "source": "狂乱10层",
+    "template": "狂乱10层",
+    "manual": {
+      "enUS": "10 Frenzy stacks"
+    }
+  },
+  "app.13a6fb3d2e59dd74": {
+    "source": "武器控制命中副词缀",
+    "template": "武器控制命中副词缀",
+    "manual": {
+      "enUS": "Crowd-control-on-hit weapon secondary"
+    }
+  },
+  "app.2e4d053bd191f07b": {
+    "source": "单人 GR 冲层",
+    "template": "[[Site/solo]] GR [[Site/push]]"
+  },
+  "app.2e2f7a1b8af1dd15": {
+    "source": "Icy有完整S39冲层方案；d3guides也支持该用途，但其技能与第四槽属于另一套方案。当前不混拼，采用Icy的5+2、无尽之途、对剑和第四槽守誓者闭环。",
+    "template": "Icy有完整S39[[Site/push]]方案；d3guides也支持该用途，但其技能与第四槽属于另一套方案。当前不混拼，采用Icy的5+2、[[ItemSets/Inferno Set 011_x1]]、对剑和第四槽[[Items/P4_Unique_Mighty_1H_104]]闭环。",
+    "manual": {
+      "enUS": "Icy Veins provides a complete Season 39 push setup. d3guides also supports this use but its skills and fourth Cube slot belong to another setup. This configuration does not mix them and uses Icy's five-plus-two armor, Endless Walk, paired blades, and fourth-slot Oathkeeper package."
+    }
+  },
+  "app.0aab2415988732dd": {
+    "source": "基础配置就是当前选定的S39单人GR冲层方案。",
+    "template": "基础配置就是当前选定的S39[[Site/solo]]GR[[Site/push]]方案。",
+    "manual": {
+      "enUS": "The base configuration is the selected Season 39 solo Greater Rift push setup."
+    }
+  },
+  "app.bb892a92cefaa576": {
+    "source": "GR 速刷",
+    "template": "GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Greater Rift speed farming"
+    }
+  },
+  "app.97184ebe448ad387": {
+    "source": "Icy有当前版本独立GR速刷页，d3guides也列出速刷变体；它不是把冲层装备原样复制，而是改斯奎特、全能、寅剑+守誓者、火牛羚和回荡狂怒。",
+    "template": "Icy有当前版本独立GR[[Site/speed-farming]]页，d3guides也列出[[Site/speed-farming]]变体；它不是把[[Site/push]]装备原样复制，而是改斯奎特、全能、[[Items/Unique_Sword_1H_113_x1]]+[[Items/P4_Unique_Mighty_1H_104]]、火牛羚和[[Items/P66_Unique_Mace_1H_001]]。",
+    "manual": {
+      "enUS": "Icy Veins has a dedicated current-version GR speed page, and d3guides also lists a speed variant. It does not copy the push gear unchanged: it switches to Squirt's Necklace, Convention of Elements, In-geom plus Oathkeeper, Molten Wildebeest's Gizzard, and Echoing Fury."
+    }
+  },
+  "app.2b829465adc5a077": {
+    "source": "寒冰冲撞",
+    "template": "[[AttributeDescriptions/NameRune_C#Barbarian_FuriousCharge]]"
+  },
+  "app.d479b9de4d5dc2c0": {
+    "source": "赦免",
+    "template": "[[AttributeDescriptions/NameRune_C#X1_Barbarian_WarCry_v2]]"
+  },
+  "app.223a13c1a8398f6d": {
+    "source": "集中心智",
+    "template": "[[Powers/Enchantress_FocusedMind_name]]"
+  },
+  "app.7c717fe56228e23e": {
+    "source": "能量护盾",
+    "template": "能量护盾"
+  },
+  "app.33faca04b02085fa": {
+    "source": "首组精英启动寅剑",
+    "template": "首组精英启动[[Items/Unique_Sword_1H_113_x1]]",
+    "manual": {
+      "enUS": "Activate In-geom with the first elite pack"
+    }
+  },
+  "app.016ace624bdf008f": {
+    "source": "火牛羚护盾保护斯奎特",
+    "template": "火牛羚护盾保护斯奎特",
+    "manual": {
+      "enUS": "Use Molten Wildebeest's shield to protect Squirt's stacks"
+    }
+  },
+  "app.0c00c0d9e59fb725": {
+    "source": "回荡狂怒连续击杀",
+    "template": "[[Items/P66_Unique_Mace_1H_001]]连续击杀",
+    "manual": {
+      "enUS": "Maintain Echoing Fury through consecutive kills"
+    }
+  },
+  "app.1dc2e8cf6f226145": {
+    "source": "T16 小秘境",
+    "template": "T16 [[General/LootRunPortal]]"
+  },
+  "app.e8aeb3385a835122": {
+    "source": "Icy和d3guides都提供T16变体；当前按Icy的单人路线穿九十蛮肩、深渊挖掘裤、沃兹克、瑞秋、力量指环与寅剑+守誓者，金币链由魔方金织带和随从贪婪之戒完成。",
+    "template": "Icy和d3guides都提供T16变体；当前按Icy的[[Site/solo]]路线穿九十蛮肩、[[Items/Unique_Pants_006_p1]]、[[Items/Unique_Bracer_101_x1]]、瑞秋、[[Items/P61_Unique_Ring_05]]与[[Items/Unique_Sword_1H_113_x1]]+[[Items/P4_Unique_Mighty_1H_104]]，金币链由魔方[[Items/Unique_Belt_010_x1]]和随从[[Items/Unique_Ring_108_x1]]完成。",
+    "manual": {
+      "enUS": "Both Icy Veins and d3guides provide a T16 variant. The current setup follows Icy's solo route with HotNS shoulders, Depth Diggers, Warzechian Armguards, Rechel's Ring, Band of Might, and In-geom plus Oathkeeper; cubed Goldwrap and the follower's Avarice Band complete the gold chain."
+    }
+  },
+  "app.19408cc2db05d4ae": {
+    "source": "无情先锋",
+    "template": "[[AttributeDescriptions/NameRune_C#Barbarian_Frenzy]]"
+  },
+  "app.97b3739f89ebed8e": {
+    "source": "武器恐惧命中触发瑞秋",
+    "template": "武器恐惧命中触发瑞秋",
+    "manual": {
+      "enUS": "Trigger Rechel's Ring with Fear on Hit on a weapon"
+    }
+  },
+  "app.f1af104932709b3f": {
+    "source": "精英连杀保持寅剑与回荡狂怒",
+    "template": "精英连杀保持[[Items/Unique_Sword_1H_113_x1]]与[[Items/P66_Unique_Mace_1H_001]]",
+    "manual": {
+      "enUS": "Chain elite kills to maintain In-geom and Echoing Fury"
+    }
+  },
+  "app.963dc0d47ad16749": {
+    "source": "Icy明确说明同一普通难度变体可用于最高折磨悬赏；装备与T16相同，但单体追杀和寅剑依赖使它不是全职业最优悬赏选择。",
+    "template": "Icy明确说明同一普通难度变体可用于最高折磨悬赏；装备与T16相同，但单体追杀和[[Items/Unique_Sword_1H_113_x1]]依赖使它不是全职业最优悬赏选择。",
+    "manual": {
+      "enUS": "Icy Veins explicitly says the same normal-difficulty variant works for bounties through the highest Torment. It shares the T16 gear, but single-target hunting and dependence on In-geom keep it from being the best bounty option across all classes."
+    }
+  },
+  "app.c031f11fb78acad5": {
+    "source": "达到角色基础上限后停止投入。",
+    "template": "达到角色基础上限后停止投入。"
+  },
+  "app.aed64f13fdcb78cb": {
+    "source": "同时提高伤害与护甲。",
+    "template": "同时提高伤害与护甲。",
+    "manual": {
+      "enUS": "Increases both damage and Armor."
+    }
+  },
+  "app.a92b916d2ecd58dd": {
+    "source": "按实际生存补",
+    "template": "按实际生存补"
+  },
+  "app.0202ed8d350ea5de": {
+    "source": "坚韧不足时可以补，但没有固定巅峰分界。",
+    "template": "坚韧不足时可以补，但没有固定[[Site/paragon]]分界。",
+    "manual": {
+      "enUS": "Add some when toughness is insufficient, but there is no fixed Paragon threshold."
+    }
+  },
+  "app.c39de2a242383dcc": {
+    "source": "最大怒气",
+    "template": "最大怒气",
+    "manual": {
+      "enUS": "Maximum Fury"
+    }
+  },
+  "app.fc50a99caae0cddc": {
+    "source": "跳过",
+    "template": "跳过",
+    "manual": {
+      "enUS": "Skip"
+    }
+  },
+  "app.88a740ef46da2252": {
+    "source": "狂乱是生成技能，构筑不按最大怒气增伤。",
+    "template": "狂乱是生成技能，构筑不按最大怒气[[Site/damage-boost]]。",
+    "manual": {
+      "enUS": "Frenzy is a generator, and the build does not scale damage from Maximum Fury."
+    }
+  },
+  "app.34901b109cce7a28": {
+    "source": "缩短狂战之怒并帮助速刷技能周转。",
+    "template": "缩短[[Powers/Barbarian_WrathOfTheBerserker_name]]并帮助[[Site/speed-farming]]技能周转。",
+    "manual": {
+      "enUS": "Reduces Wrath of the Berserker's cooldown and helps speed-farming skills cycle."
+    }
+  },
+  "app.bf63efaad721fabf": {
+    "source": "提高单体输出和血溅十方触发。",
+    "template": "提高单体输出和[[AttributeDescriptions/NameRune_E#Barbarian_BattleRage]]触发。",
+    "manual": {
+      "enUS": "Improves single-target damage and Bloodshed triggers."
+    }
+  },
+  "app.f95478447a1ab994": {
+    "source": "装备、狂乱层数与守誓者已提供大量攻速。",
+    "template": "装备、狂乱层数与[[Items/P4_Unique_Mighty_1H_104]]已提供大量攻速。",
+    "manual": {
+      "enUS": "Gear, Frenzy stacks, and Oathkeeper already provide substantial Attack Speed."
+    }
+  },
+  "app.b282e8939f78e083": {
+    "source": "力量职业天然护甲高，更缺全抗。",
+    "template": "力量职业天然护甲高，更缺全抗。",
+    "manual": {
+      "enUS": "Strength classes naturally have high Armor and need All Resistance more."
+    }
+  },
+  "app.50949f8b372b43de": {
+    "source": "提高有效生命。",
+    "template": "提高有效生命。",
+    "manual": {
+      "enUS": "Increases effective Life."
+    }
+  },
+  "app.6b240c6f306547ce": {
+    "source": "继续补充物理减伤。",
+    "template": "继续补充物理[[Site/damage-reduction]]。",
+    "manual": {
+      "enUS": "Further improves physical mitigation."
+    }
+  },
+  "app.c356ef37dd516922": {
+    "source": "作为持续恢复补充。",
+    "template": "作为持续恢复补充。"
+  },
+  "app.535411d6bba5f16e": {
+    "source": "狂乱高攻速能把击回转成稳定恢复。",
+    "template": "狂乱高攻速能把击回转成稳定恢复。",
+    "manual": {
+      "enUS": "Frenzy's high Attack Speed turns Life per Hit into steady recovery."
+    }
+  },
+  "app.a04d3cbe75212bf0": {
+    "source": "改善兵要护符连锁后的怪群处理。",
+    "template": "改善[[Items/P68_Unique_Mighty_2H_004]]连锁后的怪群处理。",
+    "manual": {
+      "enUS": "Improves pack clearing after Bastion's Revered chains the attacks."
+    }
+  },
+  "app.c8ad0b964d94ac9d": {
+    "source": "速刷帮助生命球与金币链覆盖。",
+    "template": "[[Site/speed-farming]]帮助生命球与金币链覆盖。",
+    "manual": {
+      "enUS": "Helps Health Globe and gold-chain coverage during speed farming."
+    }
+  },
+  "app.5c16370f8b6adaa8": {
+    "source": "主伤害技能不消耗怒气。",
+    "template": "主伤害技能不消耗怒气。",
+    "manual": {
+      "enUS": "The main damage skill does not spend Fury."
+    }
+  },
+  "app.fc5ad0e38c566f55": {
+    "source": "当前层数能稳定执行完整循环",
+    "template": "当前层数能稳定执行完整循环",
+    "manual": {
+      "enUS": "The full rotation is stable at the current tier"
+    }
+  },
+  "app.5e80e45f8f574a5b": {
+    "source": "继续提高伤害和护甲。",
+    "template": "继续提高伤害和护甲。",
+    "manual": {
+      "enUS": "Continue increasing damage and Armor."
+    }
+  },
+  "app.46c88937d591f9d6": {
+    "source": "力量指环已刷新仍会被常见伤害击杀",
+    "template": "[[Items/P61_Unique_Ring_05]]已刷新仍会被常见伤害击杀",
+    "manual": {
+      "enUS": "Common damage still kills you while Band of Might is active"
+    }
+  },
+  "app.e0d542f77ab11f1e": {
+    "source": "只补到能稳定追杀精英，再回力量。",
+    "template": "只补到能稳定追杀精英，再回力量。",
+    "manual": {
+      "enUS": "Add only enough to hunt elites reliably, then return to Strength."
+    }
+  },
+  "app.9ad4b961e8c051ea": {
+    "source": "装备功能词缀",
+    "template": "装备功能词缀"
+  },
+  "app.f4bb30a228e63efb": {
+    "source": "正确装备与生存已经成型",
+    "template": "正确装备与生存已经成型",
+    "manual": {
+      "enUS": "The correct gear and survivability are established"
+    }
+  },
+  "app.0d854ca2466d92b4": {
+    "source": "手套力量可按实际成长让给范围伤；冷却、双暴和元素伤按场景优化，不由2000巅峰自动触发。",
+    "template": "手套力量可按实际成长让给范围伤；冷却、双暴和元素伤按场景优化，不由2000[[Site/paragon]]自动触发。",
+    "manual": {
+      "enUS": "Strength on gloves can give way to Area Damage as progression allows. Optimize cooldown, both Critical stats, and elemental damage by scenario rather than switching automatically at 2,000 Paragon."
+    }
+  },
+  "app.01f4cd00bd12c948": {
+    "source": "狂乱层数",
+    "template": "狂乱层数",
+    "manual": {
+      "enUS": "Frenzy stacks"
+    }
+  },
+  "app.910218f28f3966ba": {
+    "source": "10层",
+    "template": "10层",
+    "manual": {
+      "enUS": "10 stacks"
+    }
+  },
+  "app.b0d2aeaf88820b0c": {
+    "source": "先在高生命目标上叠满；频繁换怪会同时损失攻速、伤害和减伤。",
+    "template": "先在高生命目标上叠满；频繁换怪会同时损失攻速、伤害和[[Site/damage-reduction]]。",
+    "manual": {
+      "enUS": "Build to maximum on a high-health target first; frequent target swaps lose Attack Speed, damage, and damage reduction together."
+    }
+  },
+  "app.5d320c73e3d200f6": {
+    "source": "减伤无空窗",
+    "template": "[[Site/damage-reduction]]无空窗",
+    "manual": {
+      "enUS": "No gap in damage reduction"
+    }
+  },
+  "app.7396874b8bb690c6": {
+    "source": "用狂暴冲锋定时刷新；不要只把它当赶路技能。",
+    "template": "用[[Powers/Barbarian_FuriousCharge_name]]定时刷新；不要只把它当赶路技能。",
+    "manual": {
+      "enUS": "Refresh it regularly with Furious Charge; do not treat Charge only as a travel skill."
+    }
+  },
+  "app.5e61c7b895e01c97": {
+    "source": "护甲宝石",
+    "template": "护甲宝石",
+    "manual": {
+      "enUS": "Armor-slot gems"
+    }
+  },
+  "app.ffb635db4449725d": {
+    "source": "红宝石起步",
+    "template": "红宝石起步",
+    "manual": {
+      "enUS": "Start with Rubies"
+    }
+  },
+  "app.715138843f24685b": {
+    "source": "只有缺坚韧已经阻碍推进时才把胸腿换白宝石；来源明确说没有固定断点。",
+    "template": "只有缺坚韧已经阻碍推进时才把胸腿换白宝石；来源明确说没有固定断点。",
+    "manual": {
+      "enUS": "Switch chest and pants to Diamonds only when insufficient toughness blocks progression; the source explicitly states that there is no fixed breakpoint."
+    }
+  },
+  "app.4974e253c03b9b4e": {
+    "source": "速刷门槛",
+    "template": "[[Site/speed-farming]]门槛",
+    "manual": {
+      "enUS": "Speed-farming threshold"
+    }
+  },
+  "app.44226d9e3049ef1e": {
+    "source": "首组精英能快速击杀",
+    "template": "首组精英能快速击杀",
+    "manual": {
+      "enUS": "The first elite pack dies quickly"
+    }
+  },
+  "app.8ca0020473eaa805": {
+    "source": "寅剑和回荡狂怒无法稳定连锁时降低GR层数或回到冲层方案。",
+    "template": "[[Items/Unique_Sword_1H_113_x1]]和[[Items/P66_Unique_Mace_1H_001]]无法稳定连锁时降低GR层数或回到[[Site/push]]方案。",
+    "manual": {
+      "enUS": "Lower the Greater Rift tier or return to the push setup when In-geom and Echoing Fury cannot chain reliably."
+    }
+  },
+  "app.f974a41f24213541": {
+    "source": "瑞秋触发",
+    "template": "瑞秋触发",
+    "manual": {
+      "enUS": "Rechel's Ring trigger"
+    }
+  },
+  "app.fddbf46cca55703e": {
+    "source": "武器有恐惧命中",
+    "template": "武器有恐惧命中",
+    "manual": {
+      "enUS": "The weapon has Fear on Hit"
+    }
+  },
+  "app.ea95cec0d1a65b57": {
+    "source": "没有恐惧副词缀时先别按瑞秋移速规划路线。",
+    "template": "没有恐惧副词缀时先别按瑞秋移速规划路线。",
+    "manual": {
+      "enUS": "Do not plan routes around Rechel's movement speed until the weapon has a Fear secondary."
+    }
+  },
+  "app.79466eaa49decd0b": {
+    "source": "狂乱三件发动机",
+    "template": "狂乱三件发动机",
+    "manual": {
+      "enUS": "Frenzy engine package"
+    }
+  },
+  "app.b07a66b9b96374c0": {
+    "source": "九十蛮、无可争辩的勇士、兵要护符和守誓者共同把狂乱层数、全部符文、连锁与主要技能乘区接通；不是只凑六件套即可。",
+    "template": "九十蛮、[[Items/P68_Unique_BarbBelt_006]]、[[Items/P68_Unique_Mighty_2H_004]]和[[Items/P4_Unique_Mighty_1H_104]]共同把狂乱层数、全部符文、连锁与主要技能[[Site/multiplier]]接通；不是只凑六件套即可。",
+    "manual": {
+      "enUS": "HotNS, The Undisputed Champion, Bastion's Revered, and Oathkeeper connect Frenzy stacks, all runes, chaining, and the Primary-skill multiplier. Merely completing the six-piece set is not enough."
+    }
+  },
+  "app.8a87c3b9537f693f": {
+    "source": "S39冲层武器包",
+    "template": "S39[[Site/push]]武器包",
+    "manual": {
+      "enUS": "Season 39 push weapon package"
+    }
+  },
+  "app.177bcc8265cf93b0": {
+    "source": "本赛季利用第四槽穿伊斯特凡对剑并萃取守誓者；非赛季的碧蓝怒火+守誓者不是当前默认。",
+    "template": "本赛季利用第四槽穿伊斯特凡对剑并萃取[[Items/P4_Unique_Mighty_1H_104]]；非赛季的[[Items/P3_Unique_Sword_1H_012]]+[[Items/P4_Unique_Mighty_1H_104]]不是当前默认。",
+    "manual": {
+      "enUS": "This season uses the fourth slot to wear Istvan's Paired Blades and cube Oathkeeper. The non-seasonal Azurewrath plus Oathkeeper setup is not the current default."
+    }
+  },
+  "app.1e93d658f82fd45f": {
+    "source": "GR速刷完整替换包",
+    "template": "GR[[Site/speed-farming]]完整替换包",
+    "manual": {
+      "enUS": "Complete GR speed replacement package"
+    }
+  },
+  "app.5c5f37f1ba7f54cd": {
+    "source": "只有目标层能快速连杀精英时，才同时换斯奎特、全能、寅剑+守誓者、火牛羚和回荡狂怒。",
+    "template": "只有目标层能快速连杀精英时，才同时换斯奎特、全能、[[Items/Unique_Sword_1H_113_x1]]+[[Items/P4_Unique_Mighty_1H_104]]、火牛羚和[[Items/P66_Unique_Mace_1H_001]]。",
+    "manual": {
+      "enUS": "Switch together to Squirt's Necklace, Convention of Elements, In-geom plus Oathkeeper, Molten Wildebeest's Gizzard, and Echoing Fury only when elites at the target tier die quickly enough to chain kills."
+    }
+  },
+  "app.69fd0c061172f02f": {
+    "source": "寅剑斯奎特速刷包",
+    "template": "[[Items/Unique_Sword_1H_113_x1]]斯奎特[[Site/speed-farming]]包",
+    "manual": {
+      "enUS": "In-geom and Squirt's speed package"
+    }
+  },
+  "app.87a66b01aa7a0e55": {
+    "source": "首组精英能快速击杀并维持寅剑",
+    "template": "首组精英能快速击杀并维持[[Items/Unique_Sword_1H_113_x1]]",
+    "manual": {
+      "enUS": "The first elite pack dies quickly enough to maintain In-geom"
+    }
+  },
+  "app.06a03005e1b91088": {
+    "source": "更高机动、狂战覆盖与精英周转",
+    "template": "更高机动、狂战覆盖与精英周转",
+    "manual": {
+      "enUS": "More mobility, Wrath uptime, and elite-to-elite speed"
+    }
+  },
+  "app.b1ca8bd853d0342e": {
+    "source": "失去无尽之途、对剑攻防和受罚者首领成长",
+    "template": "失去[[ItemSets/Inferno Set 011_x1]]、对剑攻防和[[Items/Unique_Gem_018_x1]]首领成长",
+    "manual": {
+      "enUS": "Loses Endless Walk, the paired blades' offense and defense, and Bane of the Stricken's boss scaling"
+    }
+  },
+  "app.79d7e30764303551": {
+    "source": "GR速刷冲锋符文",
+    "template": "GR[[Site/speed-farming]][[Powers/Templar_ShieldCharge_name]]符文",
+    "manual": {
+      "enUS": "GR speed Charge rune"
+    }
+  },
+  "app.6be7382e481597dc": {
+    "source": "寒冰冲撞能立刻触发套装两件控制条件，但依赖寅剑保障冷却；启动不稳时改回无情突袭。",
+    "template": "[[AttributeDescriptions/NameRune_C#Barbarian_FuriousCharge]]能立刻触发套装两件控制条件，但依赖[[Items/Unique_Sword_1H_113_x1]]保障冷却；启动不稳时改回[[AttributeDescriptions/NameRune_E#Barbarian_FuriousCharge]]。",
+    "manual": {
+      "enUS": "Cold Rush immediately satisfies the set's two-piece control condition but depends on In-geom for cooldowns. Switch back to Merciless Assault when startup is unreliable."
+    }
+  },
+  "app.8d812c349d364e6a": {
+    "source": "寅剑会断档或精英密度不稳定",
+    "template": "[[Items/Unique_Sword_1H_113_x1]]会断档或精英密度不稳定",
+    "manual": {
+      "enUS": "In-geom drops or elite density is inconsistent"
+    }
+  },
+  "app.75be079fc28ad429": {
+    "source": "命中足够目标时自行重置冲锋",
+    "template": "命中足够目标时自行重置[[Powers/Templar_ShieldCharge_name]]",
+    "manual": {
+      "enUS": "Resets Charge by hitting enough targets"
+    }
+  },
+  "app.4512263ce26ba2d4": {
+    "source": "失去寒冰冲撞的即时冻结触发",
+    "template": "失去[[AttributeDescriptions/NameRune_C#Barbarian_FuriousCharge]]的即时冻结触发",
+    "manual": {
+      "enUS": "Loses Cold Rush's immediate Freeze trigger"
+    }
+  },
+  "app.9f597245d2623c22": {
+    "source": "胸腿红白宝石",
+    "template": "胸腿红白宝石",
+    "manual": {
+      "enUS": "Ruby versus Diamond armor gems"
+    }
+  },
+  "app.2c93f2aa3308ef5f": {
+    "source": "默认红宝石；只有坚韧不足已经阻碍推进时才换白宝石。来源明确没有具体巅峰断点。",
+    "template": "默认红宝石；只有坚韧不足已经阻碍推进时才换白宝石。来源明确没有具体[[Site/paragon]]断点。",
+    "manual": {
+      "enUS": "Use Rubies by default and switch to Diamonds only when insufficient toughness blocks progress. The source explicitly gives no Paragon breakpoint."
+    }
+  },
+  "app.476296fa4b8e5b9f": {
+    "source": "力量指环循环正确但仍因坚韧不足无法推进",
+    "template": "[[Items/P61_Unique_Ring_05]]循环正确但仍因坚韧不足无法推进",
+    "manual": {
+      "enUS": "Band of Might is maintained correctly but insufficient toughness still blocks progress"
+    }
+  },
+  "app.65d101f9ee9cb756": {
+    "source": "失去力量、伤害与部分护甲",
+    "template": "失去力量、伤害与部分护甲",
+    "manual": {
+      "enUS": "Loses Strength, damage, and some Armor"
+    }
+  },
+  "app.da6b7b6176f75647": {
+    "source": "T16套装槽重排",
+    "template": "T16套装槽重排",
+    "manual": {
+      "enUS": "T16 set-slot rearrangement"
+    }
+  },
+  "app.dc814f5dafbd547b": {
+    "source": "T16把深渊挖掘裤穿在身上并补九十蛮肩，才能释放防具魔方槽；只换裤子会断六件套。",
+    "template": "T16把[[Items/Unique_Pants_006_p1]]穿在身上并补九十蛮肩，才能释放防具魔方槽；只换裤子会断六件套。",
+    "manual": {
+      "enUS": "T16 wears Depth Diggers and adds HotNS shoulders to free the armor Cube slot. Replacing only the pants would break the six-piece bonus."
+    }
+  },
+  "app.8a7879400b29e189": {
+    "source": "T16金币防线",
+    "template": "T16金币防线",
+    "manual": {
+      "enUS": "T16 gold-based defense"
+    }
+  },
+  "app.3c48e9397838a81f": {
+    "source": "金织带只在会掉金币的T16和悬赏工作；伤害与生存明显溢出后才可换齐拉尼克追求移速。",
+    "template": "[[Items/Unique_Belt_010_x1]]只在会掉金币的T16和悬赏工作；伤害与生存明显溢出后才可换齐拉尼克追求移速。",
+    "manual": {
+      "enUS": "Goldwrap works only in gold-dropping T16 and bounties. Switch to Chilanik's Chain for speed only after damage and toughness clearly exceed requirements."
+    }
+  },
+  "app.1d4bba2d8f3ee8e5": {
+    "source": "T16/悬赏无需金织带也不会死亡，并能每10秒重放战吼",
+    "template": "T16/悬赏无需[[Items/Unique_Belt_010_x1]]也不会死亡，并能每10秒重放[[Powers/X1_Barbarian_WarCry_v2_name]]",
+    "manual": {
+      "enUS": "T16 or bounties remain safe without Goldwrap, and War Cry can be recast every 10 seconds"
+    }
+  },
+  "app.6d9ad4e704e129b6": {
+    "source": "稳定的队伍移动速度",
+    "template": "稳定的队伍移动速度",
+    "manual": {
+      "enUS": "Consistent party movement speed"
+    }
+  },
+  "app.5a5c8dde6201a3cc": {
+    "source": "失去金币护甲，容错显著下降",
+    "template": "失去金币护甲，容错显著下降",
+    "manual": {
+      "enUS": "Loses gold-based Armor and substantially reduces safety"
+    }
+  },
+  "app.39dd5966f9a8ea03": {
+    "source": "瑞秋恐惧触发",
+    "template": "瑞秋恐惧触发",
+    "manual": {
+      "enUS": "Rechel's Fear trigger"
+    }
+  },
+  "app.b3f7b7280e60f601": {
+    "source": "瑞秋要求恐惧；九十蛮的冰冻和眩晕不能替代。T16武器必须有恐惧命中副词缀。",
+    "template": "瑞秋要求恐惧；九十蛮的冰冻和眩晕不能替代。T16武器必须有恐惧命中副词缀。",
+    "manual": {
+      "enUS": "Rechel's Ring requires Fear; HotNS Freeze and Stun effects cannot substitute. The T16 weapon must have a Fear on Hit secondary."
+    }
+  },
+  "app.8bb8d6e4ed8f2059": {
+    "source": "T16项链展示边界",
+    "template": "T16项链展示边界",
+    "manual": {
+      "enUS": "T16 amulet display limitation"
+    }
+  },
+  "app.4dfc1c1b2412abdc": {
+    "source": "Icy单人推荐合适被动的地狱火项链、组队推荐时光流韵。当前资源库缺准确地狱火成品图，因此展示有来源的时光流韵并显式保留这项差异。",
+    "template": "Icy[[Site/solo]]推荐合适被动的地狱火项链、组队推荐[[Items/P66_Unique_Amulet_001]]。当前资源库缺准确地狱火成品图，因此展示有来源的[[Items/P66_Unique_Amulet_001]]并显式保留这项差异。",
+    "manual": {
+      "enUS": "Icy Veins recommends a Hellfire Amulet with a suitable passive for solo play and The Flavor of Time for groups. The current asset library lacks an accurate finished Hellfire Amulet image, so the UI shows the sourced Flavor of Time option and explicitly preserves this difference."
+    }
+  },
+  "app.a07a29e5193b25a4": {
+    "source": "按用途切随从",
+    "template": "按用途切随从",
+    "manual": {
+      "enUS": "Switch followers by activity"
+    }
+  },
+  "app.459bef9111dc3e0c": {
+    "source": "单人冲层用盗贼暴击窗口；GR速刷和T16用魔女的冷却与综合增益。",
+    "template": "[[Site/solo]][[Site/push]]用[[Pets/HirelingScoundrel]]暴击窗口；GR[[Site/speed-farming]]和T16用[[Pets/HirelingEnchantress]]的冷却与综合增益。",
+    "manual": {
+      "enUS": "Use the Scoundrel's Critical Hit window for solo pushing and the Enchantress's cooldown and general buffs for GR speed and T16."
+    }
+  },
+  "app.3970a4f94812cbd4": {
+    "source": "GR速刷、T16或悬赏",
+    "template": "GR[[Site/speed-farming]]、T16或悬赏",
+    "manual": {
+      "enUS": "GR speed farming, T16, or bounties"
+    }
+  },
+  "app.9c17e492446a7685": {
+    "source": "冷却缩减与综合攻防辅助",
+    "template": "[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]]与综合攻防辅助",
+    "manual": {
+      "enUS": "Cooldown Reduction and general offensive and defensive support"
+    }
+  },
+  "app.65ab8efcb3cf1936": {
+    "source": "失去盗贼的暴击爆发窗口",
+    "template": "失去[[Pets/HirelingScoundrel]]的暴击爆发窗口",
+    "manual": {
+      "enUS": "Loses the Scoundrel's Critical Hit burst window"
+    }
+  },
+  "app.65e02e859f64c5c8": {
+    "source": "四个用途都有证据，不按巅峰复制",
+    "template": "四个用途都有证据，不按[[Site/paragon]]复制",
+    "manual": {
+      "enUS": "Four evidenced activities without Paragon duplication"
+    }
+  },
+  "app.da635c67e5da6c44": {
+    "source": "H90是‘不要武断删速刷’的反例：当前有GR冲层、GR速刷、T16和悬赏证据；四个按钮来自用途差异，不是低/高巅峰凑数。蓝门仍未单独开放。",
+    "template": "H90是‘不要武断删[[Site/speed-farming]]’的反例：当前有GR[[Site/push]]、GR[[Site/speed-farming]]、T16和悬赏证据；四个按钮来自用途差异，不是低/[[Site/high-paragon]]凑数。蓝门仍未单独开放。",
+    "manual": {
+      "enUS": "HotNS is a counterexample to removing speed variants too aggressively: current evidence supports GR pushing, GR speed farming, T16, and bounties. The four buttons represent real activity differences, not low/high-Paragon filler. Visions remain unavailable as a separate activity."
+    }
+  },
+  "app.e4fcbb70c9000802": {
+    "source": "九十蛮狂乱有GR冲层、GR速刷和T16方案；悬赏可复用T16方案。",
+    "template": "九十蛮狂乱有GR[[Site/push]]、GR[[Site/speed-farming]]和T16方案；悬赏可复用T16方案。",
+    "manual": {
+      "enUS": "HotNS Frenzy has GR push, GR speed, and T16 setups; bounties can reuse the T16 configuration."
+    }
+  },
+  "app.6c7f8d4782a64f4e": {
+    "source": "Icy主导航只给H90标冲层，但同站当前版本维护独立GR速刷与T16/悬赏页面；用途判断以具体子页为准。",
+    "template": "Icy主导航只给H90标[[Site/push]]，但同站当前版本维护独立GR[[Site/speed-farming]]与T16/悬赏页面；用途判断以具体子页为准。",
+    "manual": {
+      "enUS": "Icy's main navigation tags HotNS only for pushing, but the same site maintains current dedicated GR speed and T16 or bounty pages. Activity judgments follow the specific child pages."
+    }
+  },
+  "app.a2280141bcd8ddb9": {
+    "source": "没有把T16方案自动外推为蓝门方案。",
+    "template": "没有把T16方案自动外推为蓝门方案。",
+    "manual": {
+      "enUS": "The T16 setup is not automatically extended to Visions of Enmity."
+    }
+  },
+  "app.d2258f77ceaa6bc0": {
+    "source": "两个来源都没有单独验证蓝门机制与配置。",
+    "template": "两个来源都没有单独验证蓝门机制与配置。",
+    "manual": {
+      "enUS": "Neither source independently verifies the mechanics and configuration for Visions of Enmity."
+    }
+  },
+  "app.bc3f3b3ef214783d": {
+    "source": "套装两件、四件、六件分别建立战吼/控制目标、按层减伤和按层狂乱增伤。",
+    "template": "套装两件、四件、六件分别建立[[Powers/X1_Barbarian_WarCry_v2_name]]/控制目标、按层[[Site/damage-reduction]]和按层狂乱[[Site/damage-boost]]。",
+    "manual": {
+      "enUS": "The two-, four-, and six-piece set bonuses respectively establish shout and controlled-target effects, damage reduction per stack, and Frenzy damage per stack."
+    }
+  },
+  "app.470aca4bd7109f39": {
+    "source": "兵要护符把狂乱上限提高到10层，并按层追加命中和近距离连锁。",
+    "template": "[[Items/P68_Unique_Mighty_2H_004]]把狂乱上限提高到10层，并按层追加命中和近距离连锁。",
+    "manual": {
+      "enUS": "Bastion's Revered raises Frenzy's cap to 10 stacks, adding hits per stack and chaining to nearby targets."
+    }
+  },
+  "app.b6f6348c7d953f62": {
+    "source": "无可争辩的勇士提供全部狂乱符文与技能增伤，因此所选符文主要决定元素。",
+    "template": "[[Items/P68_Unique_BarbBelt_006]]提供全部狂乱符文与技能[[Site/damage-boost]]，因此所选符文主要决定元素。",
+    "manual": {
+      "enUS": "The Undisputed Champion grants all Frenzy runes and skill damage, so the selected rune primarily determines the element."
+    }
+  },
+  "app.c72c528dc1320f92": {
+    "source": "守誓者的主要技能增伤与攻速必须在三个场景保留；冲层萃取，速刷穿戴。",
+    "template": "[[Items/P4_Unique_Mighty_1H_104]]的主要技能[[Site/damage-boost]]与攻速必须在三个场景保留；[[Site/push]]萃取，[[Site/speed-farming]]穿戴。",
+    "manual": {
+      "enUS": "Oathkeeper's Primary-skill damage and Attack Speed must remain in all three distinct configurations: cube it for pushing and wear it for speed farming."
+    }
+  },
+  "app.33aaa0c0b765613d": {
+    "source": "S39冲层采用5九十蛮+2奥吉德、无尽之途、力量指环和伊斯特凡对剑。",
+    "template": "S39[[Site/push]]采用5九十蛮+2[[ItemSets/P66_Crafted Nightmare Set 002]]、[[ItemSets/Inferno Set 011_x1]]、[[Items/P61_Unique_Ring_05]]和伊斯特凡对剑。",
+    "manual": {
+      "enUS": "Season 39 pushing uses five HotNS pieces, two Aughild pieces, Endless Walk, Band of Might, and Istvan's Paired Blades."
+    }
+  },
+  "app.f3448cd88107ddfe": {
+    "source": "d3guides穿奥吉德胸+九十蛮肩，并使用碧蓝怒火+守誓者；当前采用Icy的S39第四槽专用配置，不混拼。",
+    "template": "d3guides穿[[ItemSets/P66_Crafted Nightmare Set 002]]胸+九十蛮肩，并使用[[Items/P3_Unique_Sword_1H_012]]+[[Items/P4_Unique_Mighty_1H_104]]；当前采用Icy的S39第四槽专用配置，不混拼。",
+    "manual": {
+      "enUS": "d3guides wears Aughild's chest with HotNS shoulders and uses Azurewrath plus Oathkeeper. The current setup uses Icy's Season 39 fourth-slot configuration without mixing the two."
+    }
+  },
+  "app.0a554292799eae20": {
+    "source": "冲层采用怒气冲天、无情突袭、老兵之诫、惊魂余音、血溅十方和癫狂。",
+    "template": "[[Site/push]]采用[[AttributeDescriptions/NameRune_E#Barbarian_Frenzy]]、[[AttributeDescriptions/NameRune_E#Barbarian_FuriousCharge]]、[[AttributeDescriptions/NameRune_B#X1_Barbarian_WarCry_v2]]、[[AttributeDescriptions/NameRune_D#Barbarian_ThreateningShout]]、[[AttributeDescriptions/NameRune_E#Barbarian_BattleRage]]和癫狂。",
+    "manual": {
+      "enUS": "The push setup uses Berserk, Merciless Assault, Veteran's Warning, Falter, Bloodshed, and Insanity."
+    }
+  },
+  "app.fde342636bced23a": {
+    "source": "d3guides的四个主动符文不同；当前采用Icy完整技能表。项目旧版狂人、顽抗战吼和恫吓不是Icy当前冲层符文。",
+    "template": "d3guides的四个主动符文不同；当前采用Icy完整技能表。项目旧版狂人、[[AttributeDescriptions/NameRune_C#X1_Barbarian_WarCry_v2]]和恫吓不是Icy当前[[Site/push]]符文。",
+    "manual": {
+      "enUS": "Four active runes differ on d3guides, so the current setup uses Icy's complete skill bar. The project's old Maniac, Impunity, and Intimidate choices are not Icy's current push runes."
+    }
+  },
+  "app.2c038b6fcb80ae26": {
+    "source": "冲层四被动为狂暴、狂战盛怒、布尔凯索的庇佑和无情暴虐。",
+    "template": "[[Site/push]]四被动为[[Powers/X1_Barbarian_Passive_Rampage_name]]、[[Powers/Barbarian_Passive_BerserkerRage_name]]、[[Powers/Barbarian_Passive_BoonOfBulKathos_name]]和[[Powers/Barbarian_Passive_Ruthless_name]]。",
+    "manual": {
+      "enUS": "The push passives are Rampage, Berserker Rage, Boon of Bul-Kathos, and Ruthless."
+    }
+  },
+  "app.851ec1e203d36685": {
+    "source": "S39冲层四槽为兵要护符、深渊挖掘裤、皇家华戒和守誓者。",
+    "template": "S39[[Site/push]]四槽为[[Items/P68_Unique_Mighty_2H_004]]、[[Items/Unique_Pants_006_p1]]、[[Items/Unique_Ring_107_x1]]和[[Items/P4_Unique_Mighty_1H_104]]。",
+    "manual": {
+      "enUS": "The Season 39 push Cube uses Bastion's Revered, Depth Diggers, Ring of Royal Grandeur, and Oathkeeper."
+    }
+  },
+  "app.585d4cd9f60b973e": {
+    "source": "前三槽双源一致；d3guides第四槽为全能法戒，Icy的S39对剑方案第四槽为守誓者。",
+    "template": "前三槽双源一致；d3guides第四槽为[[Items/P2_Unique_Ring_04]]，Icy的S39对剑方案第四槽为[[Items/P4_Unique_Mighty_1H_104]]。",
+    "manual": {
+      "enUS": "The first three slots agree across both sources. d3guides uses Convention of Elements in the fourth slot, while Icy's Season 39 paired-blades setup uses Oathkeeper."
+    }
+  },
+  "app.ec9ca8d1e1178686": {
+    "source": "冲层使用困者、至简和受罚者。",
+    "template": "[[Site/push]]使用[[Items/Unique_Gem_002_x1]]、至简和[[Items/Unique_Gem_018_x1]]。",
+    "manual": {
+      "enUS": "The push setup uses Bane of the Trapped, Simplicity's Strength, and Bane of the Stricken."
+    }
+  },
+  "app.655c60ab976e898b": {
+    "source": "GR速刷是独立装备包：斯奎特、全能、寅剑+守誓者、火牛羚和S39回荡狂怒。",
+    "template": "GR[[Site/speed-farming]]是独立装备包：斯奎特、全能、[[Items/Unique_Sword_1H_113_x1]]+[[Items/P4_Unique_Mighty_1H_104]]、火牛羚和S39[[Items/P66_Unique_Mace_1H_001]]。",
+    "manual": {
+      "enUS": "GR speed farming is a separate package: Squirt's Necklace, Convention of Elements, In-geom plus Oathkeeper, Molten Wildebeest's Gizzard, and Season 39 Echoing Fury."
+    }
+  },
+  "app.247426a8c0e48bc6": {
+    "source": "两站支持用途，但d3guides只列相对变更且与Icy具体配装不同；当前精确字段来自Icy。",
+    "template": "两站支持用途，但d3guides只列相对变更且与Icy具体配装不同；当前精确字段来自Icy。",
+    "manual": {
+      "enUS": "Both sites support the activity, but d3guides lists only relative changes and differs from Icy's exact loadout. The current exact fields come from Icy Veins."
+    }
+  },
+  "app.2ba2da4aadfece60": {
+    "source": "GR速刷采用赦免战吼。",
+    "template": "GR[[Site/speed-farming]]采用赦免[[Powers/X1_Barbarian_WarCry_v2_name]]。",
+    "manual": {
+      "enUS": "The GR speed setup uses War Cry with Impunity."
+    }
+  },
+  "app.9575007a94bd14b6": {
+    "source": "Icy同页顶部速查表显示老兵之诫，正文逐条说明却写赦免；当前按更具体的适配正文，保留页内冲突。",
+    "template": "Icy同页顶部速查表显示[[AttributeDescriptions/NameRune_B#X1_Barbarian_WarCry_v2]]，正文逐条说明却写赦免；当前按更具体的适配正文，保留页内冲突。",
+    "manual": {
+      "enUS": "Icy's quick-reference table shows Veteran's Warning, while the detailed adaptation prose says Impunity. The current setup follows the more specific prose and records the internal conflict."
+    }
+  },
+  "app.e5bd920c44fe7f76": {
+    "source": "T16采用九十蛮肩、深渊挖掘裤、沃兹克、瑞秋、力量指环、寅剑+守誓者与金币链。",
+    "template": "T16采用九十蛮肩、[[Items/Unique_Pants_006_p1]]、[[Items/Unique_Bracer_101_x1]]、瑞秋、[[Items/P61_Unique_Ring_05]]、[[Items/Unique_Sword_1H_113_x1]]+[[Items/P4_Unique_Mighty_1H_104]]与金币链。",
+    "manual": {
+      "enUS": "T16 uses HotNS shoulders, Depth Diggers, Warzechian Armguards, Rechel's Ring, Band of Might, In-geom plus Oathkeeper, and the gold chain."
+    }
+  },
+  "app.82f9030a10f2bf7d": {
+    "source": "两个来源支持T16，但d3guides的技能与魔方差异很大；当前具体字段来自Icy。",
+    "template": "两个来源支持T16，但d3guides的技能与魔方差异很大；当前具体字段来自Icy。",
+    "manual": {
+      "enUS": "Both sources support T16, but d3guides differs greatly in skills and Cube powers. The current exact fields come from Icy Veins."
+    }
+  },
+  "app.f06f55100c9cb434": {
+    "source": "Icy明确说同一普通难度方案可用于最高折磨悬赏。",
+    "template": "Icy明确说同一普通难度方案可用于最高折磨悬赏。",
+    "manual": {
+      "enUS": "Icy Veins explicitly says the same normal-difficulty setup works for bounties through the highest Torment."
+    }
+  },
+  "app.4aaf7f93c4c52443": {
+    "source": "默认头白、护甲红、双武器绿；坚韧阻碍推进时护甲才改白。",
+    "template": "默认头白、护甲红、双武器绿；坚韧阻碍推进时护甲才改白。",
+    "manual": {
+      "enUS": "Use a Diamond in the helm, Rubies in armor, and Emeralds in both weapons by default; change armor to Diamonds only when toughness blocks progression."
+    }
+  },
+  "app.80f0d993290ec500": {
+    "source": "Icy明确红宝石起步且无具体换白断点；d3guides直接写护甲白并出现‘其余8孔’数量矛盾，因此不采用自动全白。",
+    "template": "Icy明确红宝石起步且无具体换白断点；d3guides直接写护甲白并出现‘其余8孔’数量矛盾，因此不采用自动全白。",
+    "manual": {
+      "enUS": "Icy explicitly starts with Rubies and gives no fixed Diamond breakpoint. d3guides directly prescribes Diamonds and contains an inconsistent 'other eight sockets' count, so automatic all-Diamond armor is rejected."
+    }
+  },
+  "app.3a7736fb20496e93": {
+    "source": "核心先移速再力量并按需体能；进攻先冷却；防御先全抗；功能先击回。",
+    "template": "核心先移速再力量并按需[[SkillsUI/ParagonBonusLabel_Vitality]]；进攻先冷却；防御先全抗；功能先击回。",
+    "manual": {
+      "enUS": "Core prioritizes Movement Speed, then Strength and optional Vitality; Offense starts with Cooldown Reduction; Defense with All Resistance; Utility with Life per Hit."
+    }
+  },
+  "app.ee0c51fdb88cb5bc": {
+    "source": "没有证据支持2000巅峰自动换装备或全身白宝石；选择取决于用途、坚韧与词缀瓶颈。",
+    "template": "没有证据支持2000[[Site/paragon]]自动换装备或全身白宝石；选择取决于用途、坚韧与词缀瓶颈。",
+    "manual": {
+      "enUS": "No evidence supports automatically changing gear or all armor gems at 2,000 Paragon. Choices depend on activity, toughness, and affix bottlenecks."
+    }
+  },
+  "app.90e27ea7634f9319": {
+    "source": "来源没有给固定2000巅峰线；Icy只说成长后在坚韧阻碍推进时换白。",
+    "template": "来源没有给固定2000[[Site/paragon]]线；Icy只说成长后在坚韧阻碍推进时换白。",
+    "manual": {
+      "enUS": "The sources provide no fixed 2,000-Paragon threshold. Icy only says to switch to Diamonds later when toughness impedes progression."
+    }
+  },
+  "app.9521cdeff6bcbbb9": {
+    "source": "单人GR冲层用盗贼，GR速刷和T16用魔女。",
+    "template": "[[Site/solo]]GR[[Site/push]]用[[Pets/HirelingScoundrel]]，GR[[Site/speed-farming]]和T16用[[Pets/HirelingEnchantress]]。",
+    "manual": {
+      "enUS": "Use the Scoundrel for solo GR pushing and the Enchantress for GR speed farming and T16."
+    }
+  },
+  "app.45d6acfebeec0988": {
+    "source": "Nintendo Switch的狂乱锁敌、冲锋落点、恐惧命中与随从发散尚未实测。",
+    "template": "Nintendo Switch的狂乱锁敌、[[Powers/Templar_ShieldCharge_name]]落点、恐惧命中与随从发散尚未实测。",
+    "manual": {
+      "enUS": "Frenzy target locking, Charge placement, Fear on Hit, and follower Emanate behavior remain untested on Nintendo Switch."
+    }
+  },
+  "app.e1176200e43da5fd": {
+    "source": "精确构筑来源均为PC页面；官方物品机制跨平台不等于主机操控已验证。",
+    "template": "精确构筑来源均为PC页面；官方物品机制跨平台不等于主机操控已验证。",
+    "manual": {
+      "enUS": "All exact build sources are PC pages. Cross-platform official item mechanics do not constitute verified console controls."
+    }
+  },
+  "app.d3367609755e5050": {
+    "source": "九十蛮5件 + 奥吉德2件",
+    "template": "九十蛮5件 + [[ItemSets/P66_Crafted Nightmare Set 002]]2件",
+    "manual": {
+      "enUS": "5 HotNS pieces + 2 Aughild pieces"
+    }
+  },
+  "app.eb255500ece324a4": {
+    "source": "狂乱叠至10层 → 控制目标触发两件 → 精英追杀",
+    "template": "狂乱叠至10层 → 控制目标触发两件 → 精英追杀",
+    "manual": {
+      "enUS": "Build Frenzy to 10 stacks → control targets for the two-piece bonus → hunt elites"
+    }
+  },
+  "app.31be57e03f41fe94": {
+    "source": "H90不是‘只适合冲层’：当前资料有独立GR速刷和T16/悬赏方案，但每种用途都要换完整装备包。红宝石换白宝石按坚韧瓶颈，不按2000巅峰自动切。",
+    "template": "H90不是‘只适合[[Site/push]]’：当前资料有独立GR[[Site/speed-farming]]和T16/悬赏方案，但每种用途都要换完整装备包。红宝石换白宝石按坚韧瓶颈，不按2000[[Site/paragon]]自动切。",
+    "manual": {
+      "enUS": "HotNS is not push-only: current sources provide dedicated GR speed and T16 or bounty setups, but each activity requires a complete gear package. Switch Rubies to Diamonds based on a toughness bottleneck, not automatically at 2,000 Paragon."
+    }
+  },
+  "app.542fa7229d6aac08": {
+    "source": "中等 · 单体锁敌、冲锋续防与击杀链",
+    "template": "中等 · 单体锁敌、[[Powers/Templar_ShieldCharge_name]]续防与击杀链",
+    "manual": {
+      "enUS": "Medium · target locking, Charge-based defense, and kill chains"
+    }
+  },
+  "app.7685fff35f184dc3": {
+    "source": "单人GR冲层用盗贼制造暴击窗口；GR速刷、T16和悬赏改魔女补冷却与综合增益。",
+    "template": "[[Site/solo]]GR[[Site/push]]用[[Pets/HirelingScoundrel]]制造暴击窗口；GR[[Site/speed-farming]]、T16和悬赏改[[Pets/HirelingEnchantress]]补冷却与综合增益。",
+    "manual": {
+      "enUS": "Use the Scoundrel for Critical Hit windows in solo GR pushing; switch to the Enchantress for cooldown and general buffs in GR speed farming, T16, and bounties."
+    }
+  },
+  "app.188f9cc8b9ff1c20": {
+    "source": "5+2、无尽之途和S39对剑，追精英并保住力量指环。",
+    "template": "5+2、[[ItemSets/Inferno Set 011_x1]]和S39对剑，追精英并保住[[Items/P61_Unique_Ring_05]]。",
+    "manual": {
+      "enUS": "Use the five-plus-two armor setup, Endless Walk, and the Season 39 paired blades while hunting elites and maintaining Band of Might."
+    }
+  },
+  "app.5d6768083d61e2a3": {
+    "source": "对剑 + 第四槽守誓者",
+    "template": "对剑 + 第四槽[[Items/P4_Unique_Mighty_1H_104]]",
+    "manual": {
+      "enUS": "Paired blades + Oathkeeper in the fourth Cube slot"
+    }
+  },
+  "app.ac68f54620784cbe": {
+    "source": "困者、至简、受罚者",
+    "template": "[[Items/Unique_Gem_002_x1]]、至简、[[Items/Unique_Gem_018_x1]]",
+    "manual": {
+      "enUS": "Bane of the Trapped, Simplicity's Strength, and Bane of the Stricken"
+    }
+  },
+  "app.e66c401128c36181": {
+    "source": "盗贼暴击窗口",
+    "template": "[[Pets/HirelingScoundrel]]暴击窗口",
+    "manual": {
+      "enUS": "Scoundrel Critical Hit window"
+    }
+  },
+  "app.3e42ccd7c0fd4da4": {
+    "source": "GR速刷 / T16 / 悬赏",
+    "template": "GR[[Site/speed-farming]] / T16 / 悬赏",
+    "manual": {
+      "enUS": "GR speed farming / T16 / bounties"
+    }
+  },
+  "app.0ec3b0f229a6c834": {
+    "source": "三种速度用途有来源，但GR速刷与普通难度不是同一套。",
+    "template": "三种速度用途有来源，但GR[[Site/speed-farming]]与普通难度不是同一套。",
+    "manual": {
+      "enUS": "All three speed activities have sources, but GR speed farming and normal-difficulty farming do not use the same setup."
+    }
+  },
+  "app.b96e59adf03e0268": {
+    "source": "GR：斯奎特 + 寅剑 + 火牛羚",
+    "template": "GR：斯奎特 + [[Items/Unique_Sword_1H_113_x1]] + 火牛羚",
+    "manual": {
+      "enUS": "GR: Squirt's Necklace + In-geom + Molten Wildebeest's Gizzard"
+    }
+  },
+  "app.16f5411c6bbee39e": {
+    "source": "T16：穿深渊裤 + 沃兹克 + 金币链",
+    "template": "T16：穿深渊裤 + [[Items/Unique_Bracer_101_x1]] + 金币链",
+    "manual": {
+      "enUS": "T16: worn Depth Diggers + Warzechian Armguards + gold chain"
+    }
+  },
+  "app.0a6b1bc7ad153591": {
+    "source": "悬赏真实复用T16配置",
+    "template": "悬赏真实复用T16配置",
+    "manual": {
+      "enUS": "Bounties genuinely reuse the T16 configuration"
+    }
+  },
+  "app.887d151d1ccd2f87": {
+    "source": "装备成型阶段",
+    "template": "装备成型阶段",
+    "manual": {
+      "enUS": "Gearing stage"
+    }
+  },
+  "app.14a9559104b07839": {
+    "source": "先凑狂乱发动机和力量指环，默认胸腿红宝石。",
+    "template": "先凑狂乱发动机和[[Items/P61_Unique_Ring_05]]，默认胸腿红宝石。",
+    "manual": {
+      "enUS": "Complete the Frenzy engine and Band of Might first, with Rubies in chest and pants by default."
+    }
+  },
+  "app.6c829b3c9055733c": {
+    "source": "九十蛮、勇士腰带、兵要、守誓者优先",
+    "template": "九十蛮、勇士腰带、兵要、[[Items/P4_Unique_Mighty_1H_104]]优先",
+    "manual": {
+      "enUS": "Prioritize HotNS, The Undisputed Champion, Bastion's Revered, and Oathkeeper"
+    }
+  },
+  "app.0b342ea83833faa0": {
+    "source": "普通正确特效优于错误远古",
+    "template": "普通正确特效优于错误远古",
+    "manual": {
+      "enUS": "A regular item with the correct power beats an incorrect Ancient"
+    }
+  },
+  "app.a641ddb4e8681ae9": {
+    "source": "生存不足才按需补体能",
+    "template": "生存不足才按需补[[SkillsUI/ParagonBonusLabel_Vitality]]",
+    "manual": {
+      "enUS": "Add Vitality only as survivability requires"
+    }
+  },
+  "app.293a2ad3a04a1adc": {
+    "source": "实战优化阶段",
+    "template": "实战优化阶段",
+    "manual": {
+      "enUS": "Practical optimization stage"
+    }
+  },
+  "app.1cd01d1db372c64d": {
+    "source": "没有2000巅峰硬线；宝石、词缀和场景按瓶颈切换。",
+    "template": "没有2000[[Site/paragon]]硬线；宝石、词缀和场景按瓶颈切换。",
+    "manual": {
+      "enUS": "There is no hard 2,000-Paragon threshold; switch gems, affixes, and activities according to observed bottlenecks."
+    }
+  },
+  "app.a3828c417e9a9450": {
+    "source": "坚韧阻碍推进才把护甲红换白",
+    "template": "坚韧阻碍推进才把护甲红换白",
+    "manual": {
+      "enUS": "Change armor Rubies to Diamonds only when toughness blocks progression"
+    }
+  },
+  "app.92d12e612991e88c": {
+    "source": "手套力量可按需换范围伤",
+    "template": "手套力量可按需换范围伤",
+    "manual": {
+      "enUS": "Strength on gloves can be replaced with Area Damage when appropriate"
+    }
+  },
+  "app.3c594043b4c41a35": {
+    "source": "速刷门槛看精英连杀，不看巅峰标签",
+    "template": "[[Site/speed-farming]]门槛看精英连杀，不看[[Site/paragon]]标签",
+    "manual": {
+      "enUS": "Judge the speed threshold by chained elite kills, not a Paragon label"
+    }
+  },
+  "app.b58f2f269e9bd80a": {
+    "source": "狂乱10层发动机",
+    "template": "狂乱10层发动机",
+    "manual": {
+      "enUS": "10-stack Frenzy engine"
+    }
+  },
+  "app.12d9899dec402578": {
+    "source": "九十蛮、无可争辩的勇士、兵要护符和守誓者共同工作；少一件都会同时损失层数、全符文、连锁或主要技能乘区。",
+    "template": "九十蛮、[[Items/P68_Unique_BarbBelt_006]]、[[Items/P68_Unique_Mighty_2H_004]]和[[Items/P4_Unique_Mighty_1H_104]]共同工作；少一件都会同时损失层数、全符文、连锁或主要技能[[Site/multiplier]]。",
+    "manual": {
+      "enUS": "HotNS, The Undisputed Champion, Bastion's Revered, and Oathkeeper work together. Missing one loses stacks, all runes, chaining, or the Primary-skill multiplier."
+    }
+  },
+  "app.4b08a91260c1aae3": {
+    "source": "持续攻击叠层",
+    "template": "持续攻击叠层",
+    "manual": {
+      "enUS": "Attack continuously to build stacks"
+    }
+  },
+  "app.810693e68142438b": {
+    "source": "全部符文与技能增伤",
+    "template": "全部符文与技能[[Site/damage-boost]]",
+    "manual": {
+      "enUS": "All runes and skill damage"
+    }
+  },
+  "app.e99e01dbf4da5be0": {
+    "source": "上限10层并连锁",
+    "template": "上限10层并连锁",
+    "manual": {
+      "enUS": "Raises the cap to 10 and chains attacks"
+    }
+  },
+  "app.6d97e3d4232d61b5": {
+    "source": "主要技能攻速与增伤",
+    "template": "主要技能攻速与[[Site/damage-boost]]",
+    "manual": {
+      "enUS": "Primary-skill Attack Speed and damage"
+    }
+  },
+  "app.e98daea1b41cd177": {
+    "source": "控制与力量指环",
+    "template": "控制与[[Items/P61_Unique_Ring_05]]",
+    "manual": {
+      "enUS": "Crowd control and Band of Might"
+    }
+  },
+  "app.013b972eb71c6776": {
+    "source": "冲锋既刷新力量指环，也让冰冻或眩晕目标吃到九十蛮两件增伤；狂乱层数再提供四件减伤。",
+    "template": "[[Powers/Templar_ShieldCharge_name]]既刷新[[Items/P61_Unique_Ring_05]]，也让冰冻或眩晕目标吃到九十蛮两件[[Site/damage-boost]]；狂乱层数再提供四件[[Site/damage-reduction]]。",
+    "manual": {
+      "enUS": "Charge refreshes Band of Might and lets frozen or stunned targets take the HotNS two-piece damage bonus; Frenzy stacks then provide the four-piece damage reduction."
+    }
+  },
+  "app.d67a476ba3e92586": {
+    "source": "位移并触发控制",
+    "template": "位移并触发控制",
+    "manual": {
+      "enUS": "Move and apply crowd control"
+    }
+  },
+  "app.875817005ba20288": {
+    "source": "刷新核心减伤",
+    "template": "刷新核心[[Site/damage-reduction]]",
+    "manual": {
+      "enUS": "Refresh core damage reduction"
+    }
+  },
+  "app.19cf3358448c9958": {
+    "source": "九十蛮2/4件",
+    "template": "九十蛮2/4件",
+    "manual": {
+      "enUS": "HotNS 2-piece / 4-piece"
+    }
+  },
+  "app.a956ed46daec725f": {
+    "source": "控制目标增伤、按层减伤",
+    "template": "控制目标[[Site/damage-boost]]、按层[[Site/damage-reduction]]",
+    "manual": {
+      "enUS": "Damage to controlled targets and reduction per stack"
+    }
+  },
+  "app.2a017419430a64b4": {
+    "source": "维持攻防上限",
+    "template": "维持攻防上限",
+    "manual": {
+      "enUS": "Maintain peak offense and defense"
+    }
+  },
+  "app.a380778d6c9d56b2": {
+    "source": "T16金币与移速链",
+    "template": "T16金币与移速链",
+    "manual": {
+      "enUS": "T16 gold and movement-speed chain"
+    }
+  },
+  "app.dad8c400a514e92b": {
+    "source": "T16不是冲层装备换一颗囤宝者：要同时穿深渊裤、补九十蛮肩、换速刷首饰武器、技能、被动和四个魔方槽。",
+    "template": "T16不是[[Site/push]]装备换一颗[[Items/Unique_Gem_014_x1]]：要同时穿深渊裤、补九十蛮肩、换[[Site/speed-farming]]首饰武器、技能、被动和四个魔方槽。",
+    "manual": {
+      "enUS": "T16 is not the push setup with one Boon of the Hoarder swap. It must also wear Depth Diggers, add HotNS shoulders, and replace speed jewelry, weapons, skills, passives, and all four Cube slots."
+    }
+  },
+  "app.e1ffba8b3c4b9394": {
+    "source": "金币与移速",
+    "template": "金币与移速",
+    "manual": {
+      "enUS": "Gold and movement speed"
+    }
+  },
+  "app.04e311908d01e69c": {
+    "source": "金币转护甲",
+    "template": "金币转护甲",
+    "manual": {
+      "enUS": "Convert gold pickups into Armor"
+    }
+  },
+  "app.bf8caf79b40549c3": {
+    "source": "瑞秋",
+    "template": "瑞秋",
+    "manual": {
+      "enUS": "Rechel's Ring"
+    }
+  },
+  "app.382312f7e54ee331": {
+    "source": "恐惧命中转移速",
+    "template": "恐惧命中转移速",
+    "manual": {
+      "enUS": "Convert Fear on Hit into movement speed"
+    }
+  },
+  "app.9191a6d352b6644a": {
+    "source": "GR速刷",
+    "template": "GR[[Site/speed-farming]]"
+  },
+  "app.2becb9ec6e275e02": {
+    "source": "GR / T16 / 悬赏速刷",
+    "template": "GR / T16 / 悬赏[[Site/speed-farming]]",
+    "manual": {
+      "enUS": "GR / T16 / bounty speed farming"
+    }
+  },
+  "app.7996c489bb149c23": {
+    "source": "S39穿伊斯特凡对剑，第四魔方槽保留守誓者；不与d3guides的非同套字段混拼。",
+    "template": "S39穿伊斯特凡对剑，第四魔方槽保留[[Items/P4_Unique_Mighty_1H_104]]；不与d3guides的非同套字段混拼。",
+    "manual": {
+      "enUS": "Season 39 wears Istvan's Paired Blades and keeps Oathkeeper in the fourth Cube slot, without mixing in mismatched d3guides fields."
+    }
+  },
+  "app.7a0673cba07009a8": {
+    "source": "GR速刷和T16是两套真实配置；悬赏与T16共用，不创建假差异。",
+    "template": "GR[[Site/speed-farming]]和T16是两套真实配置；悬赏与T16共用，不创建假差异。",
+    "manual": {
+      "enUS": "GR speed farming and T16 use two real configurations; bounties share the T16 setup without invented differences."
+    }
+  },
+  "app.7622b35ce622d1b5": {
+    "source": "默认胸腿红宝石；优先狂乱发动机与力量指环，不按巅峰复制配置。",
+    "template": "默认胸腿红宝石；优先狂乱发动机与[[Items/P61_Unique_Ring_05]]，不按[[Site/paragon]]复制配置。",
+    "manual": {
+      "enUS": "Use Rubies in chest and pants by default. Prioritize the Frenzy engine and Band of Might instead of duplicating configurations by Paragon."
+    }
+  },
+  "app.f4818527f2f5a756": {
+    "source": "坚韧开始阻碍推进时才换白宝石；来源明确没有固定巅峰断点。",
+    "template": "坚韧开始阻碍推进时才换白宝石；来源明确没有固定[[Site/paragon]]断点。",
+    "manual": {
+      "enUS": "Switch to Diamonds only when toughness starts blocking progression; the source explicitly gives no fixed Paragon breakpoint."
+    }
+  },
+  "app.65a7c10becb824da": {
+    "source": "已按S39/2.7.8逐字段校对：修正项目旧版三个错误冲层符文，删除高/低巅峰四份复制，落地GR冲层、GR速刷、T16与悬赏真实配置，并把护甲红转白改成坚韧条件。Icy导航与子页、GR速刷战吼符文存在内部冲突；d3guides配装差异较大，Maxroll正文不可取证，Nintendo Switch仍待实机。",
+    "template": "已按S39/2.7.8逐字段校对：修正项目旧版三个错误[[Site/push]]符文，删除高/[[Site/low-paragon]]四份复制，落地GR[[Site/push]]、GR[[Site/speed-farming]]、T16与悬赏真实配置，并把护甲红转白改成坚韧条件。Icy导航与子页、GR[[Site/speed-farming]][[Powers/X1_Barbarian_WarCry_v2_name]]符文存在内部冲突；d3guides配装差异较大，Maxroll正文不可取证，Nintendo Switch仍待实机。",
+    "manual": {
+      "enUS": "Field-level reviewed for Season 39 and patch 2.7.8: corrected three wrong push runes from the old project, removed four low/high-Paragon duplicates, implemented real GR push, GR speed, T16, and bounty configurations, and made the armor Ruby-to-Diamond change conditional on toughness. Icy's navigation conflicts with its child pages and its GR speed War Cry rune is internally inconsistent; d3guides differs substantially, Maxroll's article body cannot be evidenced, and Nintendo Switch testing remains outstanding."
+    }
+  },
+  "app.55eaf25af23349ef": {
+    "source": "九十蛮狂乱配置校验失败：{0}",
+    "template": "九十蛮狂乱配置校验失败：{0}",
+    "manual": {
+      "enUS": "HotNS Frenzy configuration validation failed: {0}"
+    }
+  },
   "app.961ee1b0399228f3": {
     "source": "页面将构筑标为单人、速刷、顶级，并给出物理鲜血新星的完整入口；没有独立T16配置页。",
     "template": "页面将构筑标为[[Site/solo]]、[[Site/speed-farming]]、顶级，并给出物理[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]的完整入口；没有独立T16配置页。",
@@ -18123,13 +20181,6 @@
       "enUS": "Shoulders cannot roll Death Nova skill damage"
     }
   },
-  "app.393609fa29306336": {
-    "source": "精英伤害减免",
-    "template": "精英伤害减免",
-    "manual": {
-      "enUS": "Damage reduction from elites"
-    }
-  },
   "app.d1b82e53b8aa48b0": {
     "source": "智力 / 体能",
     "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]] / [[SkillsUI/ParagonBonusLabel_Vitality]]"
@@ -18140,10 +20191,6 @@
     "manual": {
       "enUS": "Wear only this Blackthorne piece; Legacy of Dreams stops working as soon as any set bonus becomes active."
     }
-  },
-  "app.531791260f46a479": {
-    "source": "高白字伤害",
-    "template": "高白字伤害"
   },
   "app.ec001d397aef1b5f": {
     "source": "梦遗新星缺少装备定义：{0}",
@@ -18445,13 +20492,6 @@
     "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]职业通常更缺护甲。",
     "manual": {
       "enUS": "Intelligence classes usually need Armor more than resistances."
-    }
-  },
-  "app.50949f8b372b43de": {
-    "source": "提高有效生命。",
-    "template": "提高有效生命。",
-    "manual": {
-      "enUS": "Increases effective Life."
     }
   },
   "app.e17beb303609dbb1": {
@@ -26034,10 +28074,6 @@
     "source": "官方物品页将轮回镰刀限定为骨甲期间提高次要技能伤害；亡者大军不属于次要技能。",
     "template": "官方物品页将[[Items/P61_Unique_Scythe1H_03]]限定为[[Powers/P6_Necro_BoneArmor_name]]期间提高次要技能伤害；[[Powers/P6_Necro_SkeleBomb_name]]不属于次要技能。"
   },
-  "app.2dc1a358d554dc9f": {
-    "source": "伤害% / 范围伤害",
-    "template": "伤害% / [[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]"
-  },
   "app.28fedd71abb96584": {
     "source": "最大精魂 / 资源消耗降低",
     "template": "[[HeroDetails/MaxEssence]] / [[SkillsUI/ParagonBonusLabel_Resource_Cost_Reduction_Percent_All]]"
@@ -26366,14 +28402,6 @@
     "source": "这套T16机动链不要求角色拆掉克里森套装去穿金织带。",
     "template": "这套T16机动链不要求角色拆掉克里森套装去穿[[Items/Unique_Belt_010_x1]]。"
   },
-  "app.223a13c1a8398f6d": {
-    "source": "集中心智",
-    "template": "[[Powers/Enchantress_FocusedMind_name]]"
-  },
-  "app.7c717fe56228e23e": {
-    "source": "能量护盾",
-    "template": "能量护盾"
-  },
   "app.3f8acca0585d7743": {
     "source": "号令骸骨约1.6 APS断点",
     "template": "[[Powers/P6_Necro_CommandSkeletons_name]]约1.6 APS断点"
@@ -26390,10 +28418,6 @@
     "source": "至少一条击中回复生命",
     "template": "至少一条击中回复生命"
   },
-  "app.2e4d053bd191f07b": {
-    "source": "单人 GR 冲层",
-    "template": "[[Site/solo]] GR [[Site/push]]"
-  },
   "app.2a884fd66cb0eb14": {
     "source": "Icy与d3guides都支持GR冲层；当前采用d3guides这套字段内部自洽的衰老+塔格奥蚀牙配置，避免Icy第四槽轮回镰刀不增幅亡者大军的问题。",
     "template": "Icy与d3guides都支持GR[[Site/push]]；当前采用d3guides这套字段内部自洽的[[Powers/P6_Necro_Decrepify_name]]+[[ItemSets/P6_Necro_Set_2]]蚀牙配置，避免Icy第四槽[[Items/P61_Unique_Scythe1H_03]]不增幅[[Powers/P6_Necro_SkeleBomb_name]]的问题。"
@@ -26401,13 +28425,6 @@
   "app.f9f849cdef410c7c": {
     "source": "基础配置就是当前选定的完整单人GR冲层方案。",
     "template": "基础配置就是当前选定的完整[[Site/solo]]GR[[Site/push]]方案。"
-  },
-  "app.bb892a92cefaa576": {
-    "source": "GR 速刷",
-    "template": "GR [[Site/speed-farming]]",
-    "manual": {
-      "enUS": "Greater Rift speed farming"
-    }
   },
   "app.319c760cc88cc123": {
     "source": "两个来源都明确支持GR速刷；当前采用d3guides完整的鲜血奔行+精魂魄身+莱莲娜组合，不沿用Icy无效的轮回镰刀第四槽。",
@@ -26441,17 +28458,9 @@
     "source": "连续击杀刷新亡者大军",
     "template": "连续击杀刷新[[Powers/P6_Necro_SkeleBomb_name]]"
   },
-  "app.c031f11fb78acad5": {
-    "source": "达到角色基础上限后停止投入。",
-    "template": "达到角色基础上限后停止投入。"
-  },
   "app.73ee93d3cf8a8911": {
     "source": "提高伤害和全元素抗性。",
     "template": "提高伤害和全元素抗性。"
-  },
-  "app.a92b916d2ecd58dd": {
-    "source": "按实际生存补",
-    "template": "按实际生存补"
   },
   "app.90d766ce575cbecf": {
     "source": "Icy允许在偏脆时投入体能，不给固定巅峰线。",
@@ -26481,10 +28490,6 @@
     "source": "智力本身已提供全抗。",
     "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]本身已提供全抗。"
   },
-  "app.c356ef37dd516922": {
-    "source": "作为持续恢复补充。",
-    "template": "作为持续恢复补充。"
-  },
   "app.b442346680e95cf7": {
     "source": "亡者大军打密集怪群时受益。",
     "template": "[[Powers/P6_Necro_SkeleBomb_name]]打密集怪群时受益。"
@@ -26512,10 +28517,6 @@
   "app.987fb3ada48d0539": {
     "source": "只补到能稳定执行循环，再回到智力。",
     "template": "只补到能稳定执行循环，再回到[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]。"
-  },
-  "app.9ad4b961e8c051ea": {
-    "source": "装备功能词缀",
-    "template": "装备功能词缀"
   },
   "app.08f681a52696e67d": {
     "source": "已有正确装备与生存基础",
@@ -26972,10 +28973,6 @@
     "source": "移动清怪",
     "template": "移动清怪"
   },
-  "app.9191a6d352b6644a": {
-    "source": "GR速刷",
-    "template": "GR[[Site/speed-farming]]"
-  },
   "app.5b158dde302616e7": {
     "source": "采用衰老+塔格奥蚀牙的完整冲层闭环；不使用Icy当前无效的轮回镰刀第四槽。",
     "template": "采用[[Powers/P6_Necro_Decrepify_name]]+[[ItemSets/P6_Necro_Set_2]]蚀牙的完整[[Site/push]]闭环；不使用Icy当前无效的[[Items/P61_Unique_Scythe1H_03]]第四槽。"
@@ -27216,9 +29213,12 @@
     "source": "连续跃击触发地震与雪崩，兼顾位移、控制和伤害。",
     "template": "连续[[Powers/Barbarian_Leap_name]]触发[[Powers/Barbarian_Earthquake_name]]与雪崩，兼顾位移、控制和伤害。"
   },
-  "app.e4a4adf156d0338f": {
-    "source": "高攻速单体近战，围绕狂乱层数和战吼恐惧建立乘区。",
-    "template": "高攻速单体近战，围绕狂乱层数和[[Powers/X1_Barbarian_WarCry_v2_name]]恐惧建立[[Site/multiplier]]。"
+  "app.775907ce48ddd69b": {
+    "source": "单体追杀型近战；冲层、GR速刷与T16需切换各自完整配装。",
+    "template": "单体追杀型近战；[[Site/push]]、GR[[Site/speed-farming]]与T16需切换各自完整配装。",
+    "manual": {
+      "enUS": "Single-target melee assassin; pushing, GR speed farming, and T16 each require a complete loadout switch."
+    }
   },
   "app.68b696095640ee7f": {
     "source": "不朽之王 / 蕾蔻",
@@ -34011,13 +36011,6 @@
       "enUS": "Fetish Army Damage: shoulders, chest, and off-hand"
     }
   },
-  "app.6a34a61c625ce1cb": {
-    "source": "暴击几率与暴击伤害",
-    "template": "[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]与[[SkillsUI/ParagonBonusLabel_Crit_Damage_Percent]]",
-    "manual": {
-      "enUS": "Critical Hit Chance and Critical Hit Damage"
-    }
-  },
   "app.3541b3a567f88af7": {
     "source": "智力职业优先护甲",
     "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]职业优先护甲",
@@ -36357,6 +38350,10 @@
   "app.53eab3dc4b36a928": {
     "source": "无瑕皇家绿宝石：敏捷",
     "template": "[[Items/x1_Emerald_10]]：[[SkillsUI/ParagonBonusLabel_DexterityMonk]]"
+  },
+  "app.e8562e31c21adcf8": {
+    "source": "火牛羚砂囊",
+    "template": "[[Items/Unique_Gem_017_x1_PTR]]"
   },
   "app.5af0dc1ad9274a86": {
     "source": "转煞秘石",

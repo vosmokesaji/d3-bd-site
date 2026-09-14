@@ -9,21 +9,21 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.equal(report.schemaValid, 51);
   assert.equal(report.semanticValid, 51);
   assert.equal(report.evidenceValid, 34);
-  assert.equal(report.genericPlaceholders, 21);
+  assert.equal(report.genericPlaceholders, 20);
   assert.equal(report.batchDerived, 7);
   assert.equal(report.publishable, 0);
-  assert.equal(report.evidenceStatuses.unverified, 38);
-  assert.equal(report.evidenceStatuses["source-checked"], 12);
+  assert.equal(report.evidenceStatuses.unverified, 37);
+  assert.equal(report.evidenceStatuses["source-checked"], 13);
   assert.equal(report.evidenceStatuses["cross-checked"], 1);
-  assert.equal(report.applicability.unverified, 113);
-  assert.equal(report.applicability.supported, 78);
-  assert.equal(report.applicability.viable, 6);
-  assert.equal(report.content["nephalem-rift-t16"], 4);
-  assert.equal(report.content.bounty, 1);
-  assert.equal(report.structuredSources, 42);
-  assert.equal(report.evidenceClaims, 71);
-  assert.equal(report.crossCheckedClaims, 29);
-  assert.equal(report.unresolvedClaims, 42);
+  assert.equal(report.applicability.unverified, 109);
+  assert.equal(report.applicability.supported, 81);
+  assert.equal(report.applicability.viable, 7);
+  assert.equal(report.content["nephalem-rift-t16"], 5);
+  assert.equal(report.content.bounty, 2);
+  assert.equal(report.structuredSources, 54);
+  assert.equal(report.evidenceClaims, 91);
+  assert.equal(report.crossCheckedClaims, 36);
+  assert.equal(report.unresolvedClaims, 55);
   assert.equal(report.sourceDomains["icy-veins.com"] > 0, true);
   assert.equal(report.builds.every((build) => build.publishBlockers.length > 0), true);
 
@@ -75,6 +75,32 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.deepEqual(zuni.evidenceErrors, []);
   assert.deepEqual(zuni.scenarios.map((scenario) => scenario.id), ["gr-push", "t16-rift"]);
   assert.deepEqual(zuni.scenarios.filter((scenario) => scenario.content === "greater-rift-speed"), []);
+
+  const h90 = report.builds.find((build) => build.id === "h90-frenzy");
+  assert.equal(h90.scenarioCount, 4);
+  assert.equal(h90.structuredSourceCount, 12);
+  assert.equal(h90.evidenceClaimCount, 20);
+  assert.deepEqual(h90.validationErrors, []);
+  assert.deepEqual(h90.semanticErrors, []);
+  assert.deepEqual(h90.evidenceErrors, []);
+  assert.deepEqual(h90.scenarios.map((scenario) => scenario.id), ["gr-push", "gr-speed", "t16-rift", "bounty"]);
+  assert.deepEqual(h90.scenarios.map((scenario) => scenario.applicability), ["supported", "supported", "supported", "viable"]);
+  assert.equal(h90.scenarios.find((scenario) => scenario.id === "t16-rift").diffCount, h90.scenarios.find((scenario) => scenario.id === "bounty").diffCount);
+});
+
+test("HotNS Frenzy uses activity packages and conditional armor gems instead of Paragon copies", async () => {
+  const source = await import("node:fs/promises").then(({ readFile }) => readFile("app/data/h90-frenzy-reviewed.ts", "utf8"));
+
+  assert.match(source, /id: "gr-push"[\s\S]*?content: "greater-rift-push"[\s\S]*?paragonBand: "any"/);
+  assert.match(source, /id: "gr-speed"[\s\S]*?content: "greater-rift-speed"[\s\S]*?paragonBand: "any"/);
+  assert.match(source, /id: "t16-rift"[\s\S]*?content: "nephalem-rift-t16"[\s\S]*?paragonBand: "any"/);
+  assert.match(source, /id: "bounty"[\s\S]*?content: "bounty"[\s\S]*?sameAsScenarioId: "t16-rift"/);
+  assert.doesNotMatch(source, /id: "(?:push|speed)-(?:low|high)"/);
+  assert.match(source, /armor: Array\(5\)\.fill\("flawless-royal-ruby"\)/);
+  assert.match(source, /只有坚韧不足已经阻碍推进时才换白宝石/);
+  assert.match(source, /weapon: \["flawless-royal-emerald", "flawless-royal-emerald"\]/);
+  assert.match(source, /gear: \{ amulet: "squirts", ring1: "band-of-might", ring2: "coe", weapon: "ingeom", offhand: "oathkeeper-worn" \}/);
+  assert.match(source, /gear: \{ shoulders: "savages-shoulders", bracers: "warzechian", pants: "depth-diggers-worn"/);
 });
 
 test("generic placeholders cannot reintroduce fatal LoD, thorns, or main-stat defaults", async () => {

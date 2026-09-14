@@ -1,49 +1,49 @@
 {
-  "generatedAt": "2026-09-14T00:41:37.503Z",
+  "generatedAt": "2026-09-14T15:08:54.796Z",
   "season": "S39 / 2.7.8",
   "total": 51,
-  "fullyReviewed": 21,
+  "fullyReviewed": 22,
   "schemaValid": 51,
   "semanticValid": 51,
   "evidenceValid": 34,
   "publishable": 0,
-  "genericPlaceholders": 21,
+  "genericPlaceholders": 20,
   "batchDerived": 7,
-  "structuredSources": 42,
-  "evidenceClaims": 71,
-  "crossCheckedClaims": 29,
-  "unresolvedClaims": 42,
+  "structuredSources": 54,
+  "evidenceClaims": 91,
+  "crossCheckedClaims": 36,
+  "unresolvedClaims": 55,
   "evidenceStatuses": {
     "cross-checked": 1,
-    "source-checked": 12,
-    "unverified": 38
+    "source-checked": 13,
+    "unverified": 37
   },
   "applicability": {
-    "supported": 78,
-    "unverified": 113,
-    "viable": 6
+    "supported": 81,
+    "unverified": 109,
+    "viable": 7
   },
   "content": {
-    "bounty": 1,
+    "bounty": 2,
     "cosmetic-farm": 2,
-    "greater-rift-push": 93,
+    "greater-rift-push": 92,
     "greater-rift-speed": 29,
-    "nephalem-rift": 68,
-    "nephalem-rift-t16": 4
+    "nephalem-rift": 67,
+    "nephalem-rift-t16": 5
   },
   "sourceDomains": {
     "606soft.com": 2,
     "9game.cn": 2,
     "bbs.d.163.com": 4,
     "bbs.nga.cn": 2,
-    "d3guides.de": 12,
+    "d3guides.de": 15,
     "diablofans.com": 2,
-    "icy-veins.com": 257,
+    "icy-veins.com": 259,
     "m.3dmgame.com": 1,
     "maxroll.gg": 20,
-    "news.blizzard.com": 2,
+    "news.blizzard.com": 5,
     "ol.3dmgame.com": 1,
-    "us.diablo3.blizzard.com": 3
+    "us.diablo3.blizzard.com": 14
   },
   "builds": [
     {
@@ -658,64 +658,79 @@
     {
       "id": "h90-frenzy",
       "name": "九十蛮狂乱",
-      "reviewStatus": "draft",
-      "evidenceStatus": "unverified",
-      "platformStatus": "pc-derived",
-      "dataProvenance": "generic-placeholder",
-      "variantCompleteness": "documented-shared",
+      "reviewStatus": "fully-reviewed",
+      "evidenceStatus": "source-checked",
+      "platformStatus": "platform-risk",
+      "dataProvenance": "hand-authored",
+      "variantCompleteness": "complete",
       "scenarioCount": 4,
       "paragon": true,
-      "choicePolicyCount": 2,
-      "structuredSourceCount": 0,
-      "evidenceClaimCount": 0,
-      "crossCheckedClaimCount": 0,
-      "unresolvedClaimCount": 0,
+      "choicePolicyCount": 11,
+      "structuredSourceCount": 12,
+      "evidenceClaimCount": 20,
+      "crossCheckedClaimCount": 7,
+      "unresolvedClaimCount": 13,
       "validationErrors": [],
       "semanticErrors": [],
       "evidenceErrors": [],
       "publishBlockers": [
-        "evidence:STATUS_UNVERIFIED",
-        "applicability:push-low:UNVERIFIED",
-        "applicability:push-high:UNVERIFIED",
-        "applicability:speed-low:UNVERIFIED",
-        "applicability:speed-high:UNVERIFIED"
+        "evidence:STATUS_SOURCE-CHECKED"
       ],
       "publishable": false,
       "scenarios": [
         {
-          "id": "push-low",
-          "applicability": "unverified",
+          "id": "gr-push",
+          "applicability": "supported",
           "content": "greater-rift-push",
           "diffCount": 0,
           "sourceRefs": [
-            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
+            "https://www.icy-veins.com/d3/barbarian-frenzy-build-with-the-horde-of-the-ninety-savages-set",
+            "https://www.icy-veins.com/d3/frenzy-hotns-barbarian-skills-and-runes",
+            "https://www.icy-veins.com/d3/frenzy-hotns-barbarian-bis-gear-gems-paragon-points",
+            "https://www.d3guides.de/de/build/barbar-horde-der-neunzig-wilden-raserei",
+            "https://us.diablo3.blizzard.com/en-us/item/markings-of-savages-P68_Unique_Chest_Set_05",
+            "https://us.diablo3.blizzard.com/en-us/item/bastions-revered-P68_Unique_Mighty_2H_004",
+            "https://us.diablo3.blizzard.com/en-us/item/the-undisputed-champion-P68_Unique_BarbBelt_006",
+            "https://us.diablo3.blizzard.com/en-us/item/oathkeeper-P4_Unique_Mighty_1H_104",
+            "https://news.blizzard.com/en-gb/article/24287549/season-39-shades-of-the-nephalem-now-live"
           ]
         },
         {
-          "id": "push-high",
-          "applicability": "unverified",
-          "content": "greater-rift-push",
-          "diffCount": 1,
-          "sourceRefs": [
-            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
-          ]
-        },
-        {
-          "id": "speed-low",
-          "applicability": "unverified",
+          "id": "gr-speed",
+          "applicability": "supported",
           "content": "greater-rift-speed",
-          "diffCount": 2,
+          "diffCount": 20,
           "sourceRefs": [
-            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
+            "https://www.icy-veins.com/d3/frenzy-hotns-barbarian-greater-rift-speed-farming-build",
+            "https://www.d3guides.de/de/build/barbar-horde-der-neunzig-wilden-raserei",
+            "https://us.diablo3.blizzard.com/en-us/item/markings-of-savages-P68_Unique_Chest_Set_05",
+            "https://us.diablo3.blizzard.com/en-us/item/oathkeeper-P4_Unique_Mighty_1H_104",
+            "https://news.blizzard.com/en-gb/article/24287549/season-39-shades-of-the-nephalem-now-live"
           ]
         },
         {
-          "id": "speed-high",
-          "applicability": "unverified",
-          "content": "nephalem-rift",
-          "diffCount": 3,
+          "id": "t16-rift",
+          "applicability": "supported",
+          "content": "nephalem-rift-t16",
+          "diffCount": 25,
           "sourceRefs": [
-            "https://www.icy-veins.com/d3/barbarian-h90-frenzy-build"
+            "https://www.icy-veins.com/d3/frenzy-hotns-barbarian-nephalem-rift-speed-farming-build",
+            "https://www.d3guides.de/de/build/barbar-horde-der-neunzig-wilden-raserei",
+            "https://us.diablo3.blizzard.com/en-us/item/markings-of-savages-P68_Unique_Chest_Set_05",
+            "https://us.diablo3.blizzard.com/en-us/item/bastions-revered-P68_Unique_Mighty_2H_004",
+            "https://us.diablo3.blizzard.com/en-us/item/the-undisputed-champion-P68_Unique_BarbBelt_006",
+            "https://us.diablo3.blizzard.com/en-us/item/oathkeeper-P4_Unique_Mighty_1H_104",
+            "https://news.blizzard.com/en-gb/article/24287549/season-39-shades-of-the-nephalem-now-live"
+          ]
+        },
+        {
+          "id": "bounty",
+          "applicability": "viable",
+          "content": "bounty",
+          "diffCount": 25,
+          "sourceRefs": [
+            "https://www.icy-veins.com/d3/frenzy-hotns-barbarian-nephalem-rift-speed-farming-build",
+            "https://us.diablo3.blizzard.com/en-us/item/chilaniks-chain-Unique_BarbBelt_101_x1"
           ]
         }
       ]

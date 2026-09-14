@@ -203,6 +203,24 @@ test("renders LoD Bombardment without fictional set links or unsupported scenari
   assert.doesNotMatch(html, /这是四套配置的低巅峰冲层基线/);
 });
 
+test("renders HotNS Frenzy with real activity boundaries and conditional Diamond guidance", async () => {
+  const html = await render("/builds/h90-frenzy?scenario=gr-speed").then((response) => response.text());
+
+  assert.match(html, /九十蛮狂乱/);
+  assertShowsEvidenceStatus(html);
+  assert.match(html, /单人 GR 冲层/);
+  assert.match(html, /GR 速刷/);
+  assert.match(html, /T16 奈非天秘境/);
+  assert.match(html, /悬赏/);
+  assert.match(html, /火牛羚砂囊/);
+  assert.match(html, /寅剑/);
+  assert.match(html, /斯奎特/);
+  assert.match(html, /来源明确没有具体巅峰断点/);
+  assert.doesNotMatch(html, /低巅峰 &lt; 2000/);
+  assert.doesNotMatch(html, /高巅峰 2000\+/);
+  assert.doesNotMatch(html, /scenario=visions-of-enmity/);
+});
+
 test("renders the reviewed Roland Sweep scenarios with density and gold-speed branches", async () => {
   const [html, crusaderData] = await Promise.all([
     render("/builds/roland-sweep").then((response) => response.text()),
