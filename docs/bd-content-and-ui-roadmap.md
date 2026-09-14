@@ -23,8 +23,8 @@ AI 接手续作时先阅读 [BD 逐套校对 AI 交接手册](./ai-handoff-bd-re
 
 项目有 51 套 BD。当前自动化结果是结构有效 51/51、语义有效 51/51，但发布级验证 0/51。结构通过只说明对象能解析、引用 ID 存在，不说明配置适合该玩法或 Nintendo Switch。
 
-- 41 套为 `unverified`，9 套为 `source-checked`，1 套为 `cross-checked`，0 套为 `published`。
-- 22 套是 `generic-placeholder`，7 套是 `batch-derived`；梦遗轰击已迁为手工来源级配置，两类剩余数据已经降级并在 UI 标明未验证。
+- 39 套为 `unverified`，11 套为 `source-checked`，1 套为 `cross-checked`，0 套为 `published`。
+- 21 套是 `generic-placeholder`，7 套是 `batch-derived`；梦遗轰击、祖尼玛毒镖与梦遗新星等已迁为手工来源级配置，剩余批量数据已经降级并在 UI 标明未验证。
 - 通用工厂中的四套 LoD 缺梦之遗礼、梦遗轰击武器绿宝石、跨职业力量巅峰与统一五钻石规则已经修复或移除，并由语义测试防回归。
 - 旧 `reviewStatus: "fully-reviewed"` 和下文勾选台账属于历史结构口径，不再表示内容准确。
 - 当前执行顺序、验收门和逐套状态以 [BD 准确性整改执行任务](./bd-accuracy-execution-tasks.md) 为准。
@@ -311,12 +311,12 @@ type ParagonGuide = {
 
 本节的勾选只表示旧流程曾录入 `configurationBase + scenarios` 等结构，不表示通过当前证据门。所有“已完成”记录均需按 G0–G5 重新审核，不能用于页面发布状态。
 
-- [x] `tragoul-nova` 塔格奥死亡新星：旧四场景结构已迁移；当前六场景证据试点进行中，不能视为发布级完成。
+- [x] `tragoul-nova` 塔格奥死亡新星：旧四场景结构已迁移；当前收敛为 GR 冲层、GR 速刷、T16 研究三场景，不能视为发布级完成。
 - [x] `wastes-rend` 荒原旋风痛割：四场景、巅峰、固定/替换策略与运行时切换已完成。
 - [x] `pony-fist-farm` 跑马天拳：四场景、巅峰、固定/替换策略与回归测试已完成。
 - [x] `god-hungering` 恐惧冰吞：四场景、巅峰、固定/替换策略与回归测试已完成。
 - [x] `god-monk` 上帝僧：两套配装迁入四场景、巅峰、固定/替换策略与回归测试已完成。
-- [x] `lod-nova` 梦遗死亡新星、`inarius-nova` 伊纳瑞斯死亡新星：新星系四场景已完成。
+- [x] `lod-nova` 梦遗死亡新星：已重新收敛为两个 GR 场景并完成来源级迁移；`inarius-nova` 仍只有旧四场景结构，需按证据门重审。
 - [x] `pestilence-lance` 瘟疫尸枪、`lod-corpse-explosion` 梦遗尸爆：瘟疫/尸爆系四场景已完成。
 - [x] `rathma-aotd` 拉斯玛亡者大军、`masquerade-spear` 狂欢节骨矛：拉斯玛/狂欢节系四场景已完成。
 - [x] `tal-meteor` 塔拉夏陨石、`lod-meteor` 梦遗陨石、`firebird-eb` 火鸟爆炸冲击、`delsere-twister` 德尔西尼旋风、`vyr-archon` 维尔御法者、`typhon-hydra` 提丰多头蛇、`lod-orb` 梦遗冰封球：魔法师 7 套四场景已完成。
@@ -405,9 +405,9 @@ type ParagonGuide = {
 | 31 | 武僧 | 梦遗敲钟 | `lod-wol` | 已校对 | 远古门槛和宠物乘区 |
 | 32 | 武僧 | 乌莲娜爆裂掌 | `uliana-palm` | 已校对 | 传播、引爆和聚怪配置 |
 | 33 | 武僧 | 千飓疾风击 | `raiment-dash` | 已校对 | 伤害型与赶路型边界 |
-| 34 | 死灵法师 | 梦遗死亡新星 | `lod-nova` | 已校对 | 梦遗散件、轮回镰刀/寅剑第4槽 |
+| 34 | 死灵法师 | 梦遗死亡新星 | `lod-nova` | 来源级实现完成 | 两个GR场景；白宝石、鲜血灌注、合法护肩词缀和条件化成长已纠正，完整配装冲突与Switch实测待关闭 |
 | 35 | 死灵法师 | 伊纳瑞斯死亡新星 | `inarius-nova` | 已校对 | 骨甲旋风、轮回镰刀/寅剑 |
-| 36 | 死灵法师 | 拉斯玛亡者大军 | `rathma-aotd` | 已校对 | 蚀牙第4槽、仆从冷却引擎 |
+| 36 | 死灵法师 | 拉斯玛亡者大军 | `rathma-aotd` | 用户优先校对中 | 核验真实用途、仆从冷却引擎与第四槽，清理旧四象限和金币链 |
 | 37 | 死灵法师 | 狂欢节骨矛 | `masquerade-spear` | 已校对 | 影魂钩、齿状骨刺速刷符文 |
 | 38 | 死灵法师 | 瘟疫尸枪 | `pestilence-lance` | 已校对 | 梅塞施密特、寅剑+失落时光速刷 |
 | 39 | 死灵法师 | 梦遗尸爆 | `lod-corpse-explosion` | 已校对 | 影魂钩+充盈之魂、金织带金币链 |

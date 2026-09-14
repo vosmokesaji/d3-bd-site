@@ -428,25 +428,33 @@ test("renders the reviewed god-monk scenarios as real infinite-dash loadouts", a
   assert.doesNotMatch(monkData, /powerSets: \{/);
 });
 
-test("renders the reviewed lod-nova scenarios as real three-nova loadouts", async () => {
-  const [html, necData, page] = await Promise.all([
+test("renders LoD Nova as evidence-scoped GR loadouts without forced Paragon copies", async () => {
+  const [html, necData, reviewedData, page] = await Promise.all([
     render("/builds/lod-nova").then((response) => response.text()),
     readFile(new URL("../app/data/necromancer-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/lod-nova-reviewed.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /单人 GR 推进 · 物理新星/);
+  assert.match(html, /低层 GR 速刷 · 保守版/);
   assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
-  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
-    assert.match(necData, new RegExp(`id: "${scenario}"`));
+  for (const scenario of ["gr-progression", "gr-speed"]) {
+    assert.match(reviewedData, new RegExp(`id: "${scenario}"`));
   }
-  for (const runtimeChoice of ["ingeom", "nemesis-bracers", "steuarts-greaves", "avarice-band", "goldwrap", "bane-of-the-powerful", "boon-of-the-hoarder"]) {
-    assert.match(necData, new RegExp(runtimeChoice));
+  assert.doesNotMatch(reviewedData, /id: "(?:push|speed)-(?:low|high)"/);
+  assert.doesNotMatch(reviewedData, /content: "(?:nephalem-rift-t16|visions-of-enmity|bounty)"/);
+  for (const runtimeChoice of ["flawless-royal-diamond", "bane-of-the-powerful", "鲜血灌注", "haunted-visions-power"]) {
+    assert.match(reviewedData, new RegExp(runtimeChoice));
   }
-  assert.match(necData, /validateReviewedBuildGuide/);
+  for (const removedShortcut of ["ingeom", "nemesis-bracers", "steuarts-greaves", "avarice-band", "goldwrap", "boon-of-the-hoarder"]) {
+    assert.doesNotMatch(reviewedData, new RegExp(`id: "${removedShortcut}"`));
+  }
+  assert.match(necData, /reviewLodNovaGuide/);
+  assert.match(reviewedData, /validateBuildEvidence\(reviewed\)/);
   assert.match(page, /lod: \{ name: "梦之遗礼"/);
 });
 
@@ -966,7 +974,7 @@ test("BD table route restores URL configuration and renders export controls with
   assert.match(html, /痞子/);
   assert.match(html, /圣殿骑士/);
   assert.match(html, /输出手法/);
-  assert.match(html, /金币链 T16（证据冲突）/);
+  assert.match(html, /T16 金币链（证据冲突）/);
   assert.match(html, /待验证/);
   assert.match(html, /以鲜血虹吸触发铁玫瑰的死亡新星/);
   assert.doesNotMatch(html, /让每一滴鲜血都成为一次爆炸/);

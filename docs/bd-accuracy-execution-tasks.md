@@ -131,11 +131,13 @@
 
 验收：`sameAsScenarioId` 已能解析目标配置并检查无效目标、自引用、循环和共用场景带 patch；梦遗轰击的悬赏与 T16 以同一 `configurationId` 通过回归测试，不制造空 patch 或假差异。
 
-### B08 条件化成长建议 — `TODO`
+### B08 条件化成长建议 — `DOING`
 
 用可观察条件替代固定 `<2000 / 2000+` 全局轴；保留 800 前四类巅峰顺序。
 
 验收：成长建议包含触发条件、观察方法、变化、收益、代价和证据。
+
+当前进展：塔格奥死亡新星与梦遗死亡新星已经删除固定 2000 巅峰切线，改用生存、目标层完成度、首领耗时、装备品质和词缀条件；其余 BD 仍待逐套迁移。
 
 ## 5. 工作包 C：G1 自动化与 UI
 
@@ -185,6 +187,17 @@
 | D05 | `firebird-eb` 火鸟爆炸冲击 | PC/主机分叉、火鸟气旋候选 | TODO |
 
 试点统一验收：精确双源、冲突记录、核心字段 100% 覆盖、自动化全通过、页面 QA 完成。Switch 实机无法由当前开发环境代替时，任务只可到 `cross-checked`，实机项标记 `BLOCKED` 并给出最小验证清单。
+
+### 用户指定的近期校对优先级
+
+在继续原顺序前，先按以下队列执行；完成第三项后恢复原任务顺序：
+
+| 优先级 | BD | 当前状态 | 下一动作 |
+| ---: | --- | --- | --- |
+| 1 | `tragoul-nova` 塔格奥死亡新星 | `source-checked`；三用途与条件化成长已落地 | 等待 Maxroll 摘录、冲突裁决和 Switch 实测，不阻挡下一项 |
+| 2 | `lod-nova` 梦遗死亡新星 | `source-checked`；两种 GR 用途、字段证据和条件化成长已落地 | 完成页面 QA 后保留来源冲突与 Switch 阻塞 |
+| 3 | `rathma-aotd` 拉斯玛亡者大军 | `DOING` | 立即执行精确来源核验、用途拆分和旧四象限清理 |
+| 后续 | 原执行顺序 | `TODO` | 从 D04 九十蛮狂乱继续 |
 
 ## 7. 工作包 E：G3 S39 新手路径
 
@@ -236,7 +249,7 @@
 | 圣教军 | `pony-fist-farm`、`valor-fist`、`valor-fury`、`akkhan-condemn`、`akkhan-phalanx`、`invoker-thorns` | TODO |
 | 猎魔人 | `god-hungering` | TODO |
 | 武僧 | `god-monk` | TODO |
-| 死灵 | `lod-nova`、`inarius-nova`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion` | TODO |
+| 死灵 | `lod-nova` 已完成来源级迁移；`inarius-nova`、`masquerade-spear`、`pestilence-lance`、`lod-corpse-explosion` | `lod-nova` SOURCE-CHECKED；其余 TODO |
 | 巫医 | `mundunugu-barrage` | TODO |
 
 塔格奥与拉斯玛已进入前序批次。非通用指纹只表示实现方式不同，不能跳过来源和 Switch 复核。
@@ -270,9 +283,10 @@
 ## 11. 当前执行游标
 
 - 当前工作包：B — G1 数据与证据模型。
-- 当前任务：D04 九十蛮狂乱来源核验与用途拆分。
-- 已完成游标：D03 已完成来源级代码迁移、两用途建模、当前官方“最近10只鬼娃”裁决、智力宝石和攻速条件策略，以及桌面、移动端和英文界面浏览器验收；D01—D03 的来源冲突与 Switch 实测作为显式阻塞保留，不阻挡继续校对其他 BD。
-- 当前已知外部阻塞：Nintendo Switch 实机操作需要设备侧验证；Maxroll 塔格奥、梦遗轰击与祖尼玛毒镖正文在当前自动访问中均无法稳定读取。
+- 当前任务：用户优先队列第 3 项 `rathma-aotd` 拉斯玛亡者大军来源核验与用途拆分。
+- 已完成游标：塔格奥已收敛为 GR 冲层、GR 速刷、T16 研究三场景；梦遗新星已收敛为单人 GR 推进和低层 GR 速刷两场景，删除四象限、T16 金币链、头部紫宝石、非法护肩技能伤和固定 2000 切线。
+- 优先队列结束后的恢复点：D04 九十蛮狂乱。
+- 当前已知外部阻塞：Nintendo Switch 实机操作需要设备侧验证；Maxroll 塔格奥、梦遗轰击、祖尼玛毒镖与梦遗新星正文在当前自动访问中均无法稳定读取。
 
 ## 12. 2026-09-12 执行记录
 
@@ -322,4 +336,13 @@
 - 2026-09-13 完成桌面 1280 px、移动端 390×844 与英文界面浏览器验收：只显示两个用途，T16 切换后 URL、装备、技能、被动和宝石同步；简中/英文均无横向溢出，英文无中文漏译或待翻译占位，最新页面无控制台错误。
 - 浏览器验收发现英文移动端评审头部被长状态文字撑宽，已将窄屏评审头部改为单列并允许状态换行；复验 `clientWidth = scrollWidth = 390`。
 - `npm run typecheck`、构建和 74 / 74 项全量测试通过；审计确认 D03 的 Schema、Semantics、Evidence 与 Presentation 均无错误，发布仍被 `source-checked` 证据等级阻止。
-- 当前 51 套仍是 0 套 `published`；40 套 `unverified`、10 套 `source-checked`、1 套 `cross-checked`。21 套仍为通用工厂占位，D03 已迁出该集合。
+- 当前 51 套仍是 0 套 `published`；39 套 `unverified`、11 套 `source-checked`、1 套 `cross-checked`。21 套仍为通用工厂占位。
+
+## 15. 2026-09-13 梦遗死亡新星优先校对记录
+
+- 建立 [梦遗死亡新星证据档案](./bd-evidence/lod-nova.md)，登记 Icy 三个精确页面、d3guides 完整构筑、S39 页面和 Blizzard 梦遗/铁玫瑰机制页；未读取的 Maxroll 只保留为候选。
+- 删除 `push-low / push-high / speed-low / speed-high` 四象限，改为 `gr-progression` 与 `gr-speed` 两个 `paragonBand: any` 场景；两者均保守标记 `viable`。
+- 不再创建 T16、蓝门和悬赏按钮。d3guides 的 T16 属于毒新星完整方案，与 Icy 物理方案差异过大，在没有完整裁决前不混拼。
+- 修正头部白宝石、鲜血灌注、护肩非法死亡新星伤、进攻/功能巅峰顺序；普通传奇可启动，远古逐件翻倍，不再写“全远古准入”或 2000 巅峰自动切线。
+- 旧寅剑、复仇者、斯图亚特、金织带、贪婪与囤宝者速刷包已从本 BD 运行时数据移除；低层 GR 只做来源明确的受罚者换强者。
+- 当前 7 个结构化来源、15 条结论证据，其中 5 条跨发布者核对，10 条仍为单源或冲突；Schema、Semantics、Evidence 校验均无错误。

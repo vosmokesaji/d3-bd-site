@@ -1,6 +1,7 @@
 import { completeBuildGuide, validateReviewedBuildGuide, type BuildChoicePolicy, type BuildConfiguration, type BuildGuide, type BuildScenario, type GuideAbility, type GuideGear, type GuidePower, type ParagonGuide } from "./build-guides";
 import { CURRENT_SEASON } from "./season-config";
 import { D3_ITEM_ROOT, D3_SKILL_ROOT } from "./assets";
+import { reviewLodNovaGuide } from "./lod-nova-reviewed";
 
 export type NecromancerGuide = BuildGuide;
 
@@ -84,8 +85,8 @@ const commonNovaGear = {
 };
 
 const lodNovaGear: GuideGear[] = [
-  legendary("leoric-crown", "头部", "李奥瑞克的王冠", IMG.leoric, "把头部钻石的冷却缩减效果翻倍，帮助骨甲与鲜血穿行周转。", ["死亡新星伤害", "暴击几率", "智力", "镶孔"], ["血岩碎片赌博头盔", "黄装升级：70级头盔", "前期普通传奇即可，后期必须远古" ]),
-  legendary("mantle-channeling", "肩部", "导能披肩", IMG.channeling, "引导鲜血虹吸时同时获得增伤与减伤。", ["死亡新星伤害", "范围伤害", "智力", "体能"], ["血岩碎片赌博护肩", "黄装升级：70级护肩", "远古版本优先保留正确技能伤" ]),
+  legendary("leoric-crown", "头部", "李奥瑞克的王冠", IMG.leoric, "放大头部白宝石的冷却缩减，帮助骨甲与鲜血穿行周转。", ["智力", "暴击几率", "死亡新星伤害", "镶孔"], ["血岩碎片赌博头盔", "黄装升级：70级头盔", "普通传奇也能启动梦遗；远古版本会获得更高宝石倍率" ]),
+  legendary("mantle-channeling", "肩部", "导能披肩", IMG.channeling, "引导鲜血虹吸时同时获得增伤与减伤。", ["智力", "冷却缩减", "体能", "范围伤害 / 生命%"], ["血岩碎片赌博护肩", "黄装升级：70级护肩", "护肩不能洗出死亡新星技能伤" ]),
   legendary("aquila", "胸部", "天鹰胸甲", IMG.aquila, "魂能接近满值时减伤50%；虹吸免费触发新星，能稳定保持满魂能。", ["3个镶孔", "智力", "体能", "护甲"], ["血岩碎片赌博胸甲", "黄装升级：70级胸甲", "先要特效，后追远古" ]),
   legendary("stone-gauntlets", "手部", "岩石护手", IMG.stone, "受击叠加护甲，攀冰者抵消其减速与定身副作用。", ["暴击几率", "暴击伤害", "范围伤害", "智力"], ["必须用野蛮人或圣教军掉落/赌博", "再放仓库转给死灵法师", "无法靠死灵角色黄装升级稳定获得"], "力量职业专属掉落池；只用死灵刷会一直刷不到。"),
   legendary("krelm-bracers", "腕部", "克雷姆的强力护腕", IMG.krelm, "免疫击退和眩晕，避免虹吸引导被打断。", ["物理技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "只穿护腕，不要再穿同套腰带"], "梦遗不能激活任何套装奖励；不要同时穿克雷姆腰带。"),
@@ -93,9 +94,6 @@ const lodNovaGear: GuideGear[] = [
   setGear("blackthorne-pants", "腿部", "黑荆棘锁甲马裤", IMG.blackthorne, "黑荆棘战甲", ["物理技能伤害", "2个镶孔", "智力", "体能"], "裤子能提供稀有的物理元素伤，单穿不会破坏梦遗。"),
   legendary("ice-climbers", "脚部", "攀冰者", IMG.climbers, "免疫冰冻和定身，并消除岩石护手叠层带来的行动惩罚。", ["死亡新星伤害", "智力", "体能", "护甲"], ["血岩碎片赌博靴子", "黄装升级：70级靴子", "与岩石护手成对收集" ]),
   commonNovaGear.haunted(gems.trapped), commonNovaGear.coe(gems.stricken), commonNovaGear.krysbin(gems.lod), commonNovaGear.funerary(), commonNovaGear.ironRose(),
-  legendary("nemesis-bracers", "腕部", "复仇者护腕", `${A}nemesis-bracers-Unique_Bracer_106_x1.png`, "点击祭坛会召唤一名精英，速刷时提高精英密度与击杀收益。", ["物理技能伤害", "暴击几率", "智力", "体能"], ["血岩碎片赌博护腕", "黄装升级：70级护腕", "只在速刷时替换克雷姆护腕"]),
-  legendary("steuarts-greaves", "脚部", "斯图亚特的胫甲", `${A}steuarts-greaves-P6_Necro_Unique_Boots_21.png`, "鲜血穿行后提高移速，速刷时缩短跑图时间。", ["死亡新星伤害", "智力", "体能", "护甲"], ["血岩碎片赌博靴子", "黄装升级：70级靴子", "与冰行者互换"]),
-  legendary("avarice-band", "手指", "贪婪之戒", `${A}avarice-band-Unique_Ring_108_x1.png`, "拾取金币后扩大拾取范围，连接囤宝者与金织带的金币链。", ["镶孔", "暴击几率", "暴击伤害", "范围伤害"], ["第三幕/第四幕悬赏宝箱", "世界掉落", "速刷时替换全能法戒"]),
 ];
 
 const inariusSet = [
@@ -230,128 +228,6 @@ function defaultVariants(build: string): NecromancerGuide["variants"] {
     high: { title: "高巅峰 2000+", note: "主属性由巅峰补足，装备词缀转向范围伤、攻速与冷却。", changes: ["手套/肩部的智力可换范围伤", "胸裤黄宝石逐步换红宝石补护甲", "开始要求全身远古、卡德山与高特效" ] },
   };
 }
-
-const LOD_NOVA_SOURCES = {
-  overview: "https://www.icy-veins.com/d3/necromancer-blood-nova-build-with-lod",
-  gear: "https://www.icy-veins.com/d3/lod-blood-nova-necromancer-bis-gear-gems-paragon-points",
-  maxroll: "https://maxroll.gg/d3/guides/lod-death-nova-necromancer-guide",
-  speed: "https://www.icy-veins.com/d3/lod-blood-nova-necromancer-speed-farming-build",
-};
-
-const LOD_NOVA_PUSH_ROTATION = [
-  { title: "召唤永久双分", action: "进图先开血魂双分，死亡前无需重放。", reason: "鬼灵面容让两个分身永久存在并复制死亡新星。" },
-  { title: "聚到25码", action: "用鲜血穿行寻找大怪群，贴身拉成一团。", reason: "血潮利刃按25码内敌人数提供乘区。" },
-  { title: "叠满骨甲", action: "命中足够敌人后保持骨甲层数和持续时间。", reason: "骨甲同时提供减伤、轮回镰刀增伤与眩晕。" },
-  { title: "物理窗强控", action: "全能法戒转物理时用白骨脱臼眩晕。", reason: "强控会把克里斯宾提高到三倍档。" },
-  { title: "持续虹吸", action: "对精英持续虹吸直到物理窗结束，再移动重组怪群。", reason: "铁玫瑰、葬镰、分身、血潮与梦遗同时在此步结算。" },
-];
-
-const LOD_NOVA_SPEED_ROTATION = [
-  { title: "召唤双分", action: "进图先开血魂双分。", reason: "分身永久复制新星，跑图不需要反复重放。" },
-  { title: "穿行找图", action: "鲜血穿行快速扫图，沿路聚拢怪群。", reason: "斯图亚特胫甲在穿行后提供移速。" },
-  { title: "贴身新星", action: "遇到密集怪群直接站定虹吸。", reason: "不等待元素周期，靠血潮与铁玫瑰清屏。" },
-  { title: "拾取金币", action: "沿路拾取金币，保持贪婪与金织带链。", reason: "T16金币链提供移速与近乎无限护甲。" },
-  { title: "精英转场", action: "击杀精英后利用寅剑冷却立即转场。", reason: "击杀重置冷却，下一段穿行无空档。" },
-];
-
-const LOD_NOVA_CONFIGURATION_BASE: BuildConfiguration = {
-  gear: {
-    head: "leoric-crown", shoulders: "mantle-channeling", chest: "aquila", gloves: "stone-gauntlets",
-    bracers: "krelm-bracers", belt: "witching-hour", pants: "blackthorne-pants", boots: "ice-climbers",
-    amulet: "haunted-visions", ring1: "krysbin", ring2: "coe", weapon: "funerary-pick", offhand: "iron-rose",
-  },
-  skills: [
-    { id: "siphon-blood", rune: "力量转移" }, { id: "death-nova", rune: "鲜血新星" }, { id: "simulacrum", rune: "鲜血与白骨" },
-    { id: "blood-rush", rune: "强韧" }, { id: "bone-armor", rune: "白骨脱臼" }, { id: "frailty", rune: "脆弱光环" },
-  ],
-  passives: ["swift-harvesting", "eternal-torment", "spreading-malediction", "stand-alone"],
-  powers: { weapon: "bloodtide-blade", armor: "dayntee", jewelry: "wisdom-kalan", season: "scythe-cycle" },
-  legendaryGems: { control: "bane-of-the-trapped", channeling: "lod", boss: "bane-of-the-stricken" },
-  normalGems: { head: ["flawless-royal-amethyst"], armor: Array(5).fill("flawless-royal-topaz"), weapon: ["flawless-royal-emerald"] },
-  follower: { id: "scoundrel", items: ["不死圣物"], skills: ["暴击增益", "攻速"] },
-  statPriorities: { global: ["死亡新星技能伤", "物理元素伤", "双暴", "范围伤害", "攻速1.67档位"], survival: ["生命%", "护甲", "全元素抗性"] },
-  rotation: LOD_NOVA_PUSH_ROTATION,
-};
-
-const LOD_NOVA_SCENARIOS: BuildScenario[] = [
-  { id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
-    reason: "梦遗散件冲层要求全身远古与99级梦遗；低巅峰保留紫宝石生命与体能词缀，戒指可先用团结补生存。",
-    sourceRefs: [LOD_NOVA_SOURCES.overview, LOD_NOVA_SOURCES.gear], reviewedAt: "2026-08-17" },
-  { id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
-    reason: "高巅峰由巅峰承担主属性后，词缀转向范围伤、攻速档位与护甲，头可换安达利尔面容补物理元素伤。",
-    patch: { statPriorities: { global: ["死亡新星技能伤", "物理元素伤", "范围伤害≥120%", "攻速1.83档位"], survival: ["生命%", "护甲", "全元素抗性"], endgame: ["词缀洗智力换范围伤", "安头补物理元素伤"] } },
-    sourceRefs: [LOD_NOVA_SOURCES.overview, LOD_NOVA_SOURCES.gear], reviewedAt: "2026-08-17" },
-  { id: "speed-low", label: "低巅峰 T16 速刷", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
-    reason: "T16速刷把第4槽换成寅剑缩短冷却，护腕换复仇者提高精英密度，鞋换斯图亚特胫甲补移速；宝石用困者/梦遗/强者。",
-    patch: {
-      gear: { bracers: "nemesis-bracers", boots: "steuarts-greaves" },
-      powers: { season: "ingeom" },
-      legendaryGems: { boss: "bane-of-the-powerful" },
-      follower: { id: "enchantress", items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
-      statPriorities: { global: ["25%移速上限", "死亡新星技能伤", "物理元素伤", "范围伤害"], survival: ["生命%", "护甲"] },
-      rotation: LOD_NOVA_SPEED_ROTATION,
-    },
-    sourceRefs: [LOD_NOVA_SOURCES.speed, LOD_NOVA_SOURCES.maxroll], reviewedAt: "2026-08-17" },
-  { id: "speed-high", label: "高巅峰 T16 极速", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
-    reason: "高巅峰T16伤害溢出后，宝石换囤宝者并萃取金织带与贪婪之戒组成金币链，移速与拾取最大化。",
-    patch: {
-      gear: { bracers: "nemesis-bracers", boots: "steuarts-greaves", ring2: "avarice-band" },
-      powers: { armor: "goldwrap", jewelry: "avarice-band", season: "ingeom" },
-      legendaryGems: { boss: "boon-of-the-hoarder" },
-      follower: { id: "enchantress", items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
-      statPriorities: { global: ["25%移速上限", "拾取范围", "死亡新星技能伤", "物理元素伤"], survival: ["金币链覆盖", "护甲由金织带接管"], endgame: ["词缀优先移速与拾取"] },
-      rotation: LOD_NOVA_SPEED_ROTATION,
-    },
-    sourceRefs: [LOD_NOVA_SOURCES.speed, LOD_NOVA_SOURCES.maxroll], reviewedAt: "2026-08-17" },
-];
-
-const LOD_NOVA_PARAGON: ParagonGuide = {
-  pre800: {
-    core: [
-      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先补到上限，不把超过上限的点浪费在这里。" },
-      { stat: "智力", target: "其余点数", reason: "同时提高伤害和全抗，是低巅峰最稳定的收益。" },
-      { stat: "体能", target: "按需补到生命检查点", reason: "冲层站不住时先达到生命池。" },
-      { stat: "最大精魂", target: "0点", reason: "铁玫瑰免费触发新星，这套不依赖精魂上限。" },
-    ],
-    offense: [
-      { stat: "攻击速度", target: "优先点满", reason: "提高虹吸与铁玫瑰触发频率，冲向1.67档位。" },
-      { stat: "暴击伤害", target: "随后点满", reason: "与装备暴击几率共同放大新星。" },
-      { stat: "暴击几率", target: "第三点满", reason: "保持暴击乘区稳定。" },
-      { stat: "冷却缩减", target: "最后点满", reason: "主要服务骨甲与位移，优先级低于前三项。" },
-    ],
-    defense: [
-      { stat: "护甲", target: "优先点满", reason: "智力职业天然全抗高，更缺护甲。" },
-      { stat: "生命%", target: "随后点满", reason: "放大有效生命。" },
-      { stat: "全元素抗性", target: "第三点满", reason: "补齐元素坚韧。" },
-      { stat: "每秒生命恢复", target: "最后点满", reason: "作为持续引导时的恢复补充。" },
-    ],
-    utility: [
-      { stat: "范围伤害", target: "优先点满", reason: "分身新星吃范围伤，是高密度重要乘区。" },
-      { stat: "击中恢复生命", target: "随后点满", reason: "提高持续引导时的恢复。" },
-      { stat: "能量消耗降低", target: "第三点满", reason: "收益有限但高于拾取。" },
-      { stat: "金币拾取范围", target: "最后点满", reason: "主要服务T16速刷。" },
-    ],
-  },
-  post800: [
-    { priority: "先补体能", when: "生命低于目标或频繁猝死", reason: "把生命池补到能稳定承受当前层数。" },
-    { priority: "其余全部智力", when: "生命与减伤已经稳定", reason: "智力继续同时提高伤害与全抗。" },
-  ],
-  checkpoints: [
-    { label: "生命池", target: "按层数50万–90万", action: "不足时先从巅峰智力挪到体能。" },
-    { label: "攻击速度", target: "面板1.67档", action: "未达档位时优先保留手套和首饰攻速。" },
-    { label: "范围伤害", target: "冲层≥120%", action: "高巅峰从肩、手、戒指、武器补足。" },
-  ],
-};
-
-const LOD_NOVA_CHOICES: BuildChoicePolicy[] = [
-  { key: "lod-discipline", targetType: "legendary-gem", targetId: "lod", label: "梦之遗礼与全身散件纪律", status: "locked", reason: "梦遗宝石要求不激活任何套装奖励；黑荆棘裤只能穿一件，绝不能与第二件黑荆棘同穿，否则整套失效。" },
-  { key: "nova-engine", targetType: "gear", targetId: "haunted-visions", label: "鬼灵面容 + 葬镰 + 铁玫瑰", status: "locked", reason: "永久双分、虹吸增伤与免费新星共同组成三重新星发动机，缺任意一件都不是完整形态。" },
-  { key: "season-power", targetType: "power", targetId: "scythe-cycle", label: "第39赛季第四槽", status: "conditional", reason: "冲层用轮回镰刀放大多重次要技能乘区，速刷用寅剑缩短冷却。", alternatives: [{ id: "ingeom", label: "寅剑", when: "T16小秘境速刷", gain: "击杀精英后大幅缩短冷却", cost: "失去轮回镰刀的次要技能乘区", scenarios: ["speed-low", "speed-high"] }] },
-  { key: "second-ring", targetType: "gear", targetId: "coe", label: "第二枚戒指", status: "conditional", reason: "冲层需要元素爆发窗，速刷需要金币拾取。", alternatives: [{ id: "avarice-band", label: "贪婪之戒", when: "高巅峰T16金币链", gain: "拾取范围扩大", cost: "失去全能法戒的元素窗口", scenarios: ["speed-high"] }] },
-  { key: "armor-cube", targetType: "power", targetId: "dayntee", label: "防具萃取", status: "conditional", reason: "冲层用戴恩提减伤；速刷用斯图亚特补移速，高巅峰金币链可用金织带。", alternatives: [{ id: "steuarts-greaves", label: "斯图亚特的胫甲", when: "T16速刷", gain: "鲜血穿行后移速", cost: "失去戴恩提减伤", scenarios: ["speed-low", "speed-high"] }, { id: "goldwrap", label: "金织带", when: "高巅峰T16金币链", gain: "金币护甲近乎无限", cost: "离开金币内容后失效", scenarios: ["speed-high"] }] },
-  { key: "bracer-slot", targetType: "gear", targetId: "krelm-bracers", label: "护腕槽", status: "conditional", reason: "默认克雷姆防打断；速刷换复仇者提高精英密度。", alternatives: [{ id: "nemesis-bracers", label: "复仇者护腕", when: "T16速刷", gain: "开祭坛召唤精英", cost: "失去防击退眩晕", scenarios: ["speed-low", "speed-high"] }] },
-  { key: "follower", targetType: "follower", targetId: "scoundrel", label: "随从选择", status: "flexible", reason: "盗贼提供暴击窗口配合物理周期；低巅峰站不住时可换圣殿骑士治疗，速刷可换魔女攻速。" },
-];
 
 const INARIUS_NOVA_SOURCES = {
   overview: "https://www.icy-veins.com/d3/necromancer-blood-nova-build-with-inarius",
@@ -958,9 +834,9 @@ const MASQUERADE_CHOICES: BuildChoicePolicy[] = [
 ];
 
 export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
-  "lod-nova": {
-    id: "lod-nova", name: "梦遗死亡新星", set: "梦之遗礼 · 远古散件", core: "鲜血虹吸 → 铁玫瑰 → 三重鲜血新星",
-    summary: "不激活任何套装奖励，让每件远古传奇都被梦之遗礼放大；装备上限高于套装版本，但没有全远古前不建议强行转型。",
+  "lod-nova": reviewLodNovaGuide({
+    id: "lod-nova", name: "梦遗死亡新星", set: "梦之遗礼 · 无套装散件", core: "鲜血虹吸 → 铁玫瑰 → 血魂双分鲜血新星",
+    summary: "不激活任何套装奖励，以梦之遗礼放大每件传奇；普通传奇即可启动，远古或太古会让对应部位获得双倍宝石收益。",
     difficulty: "中 · 需要贴身聚怪与物理周期", follower: "盗贼", followerReason: "盗贼的暴击窗口最适合物理周期爆发；坚韧不足时可以先用圣殿骑士。",
     gear: lodNovaGear, skills: novaSkills, passives: novaPassives, powers: commonNovaPowers,
     variants: {
@@ -981,14 +857,7 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
       { title: "持续虹吸", action: "对精英持续虹吸直到物理窗结束，再移动重组怪群。", reason: "铁玫瑰、葬镰、分身、血潮与梦遗同时在此步结算。" },
     ],
     source: "https://www.icy-veins.com/d3/necromancer-blood-nova-build-with-lod",
-    configurationBase: LOD_NOVA_CONFIGURATION_BASE,
-    defaultScenarioId: "push-low",
-    scenarios: LOD_NOVA_SCENARIOS,
-    paragonGuide: LOD_NOVA_PARAGON,
-    choicePolicies: LOD_NOVA_CHOICES,
-    reviewStatus: "fully-reviewed",
-    variantCompleteness: "complete",
-  },
+  }),
 
   "inarius-nova": {
     id: "inarius-nova", name: "伊纳瑞斯死亡新星", set: "伊纳瑞斯的恩泽", core: "骨甲旋风易伤 → 铁玫瑰鲜血新星",

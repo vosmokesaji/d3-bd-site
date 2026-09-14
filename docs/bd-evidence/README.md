@@ -17,7 +17,8 @@
 
 | BD | 状态 | 场景 | 结构化来源 | 证据结论 | 发布阻塞 |
 | --- | --- | ---: | ---: | ---: | --- |
-| [塔格奥死亡新星](./tragoul-nova.md) | `source-checked / pc-derived` | 6 | 6 | 10 | 技能/T16 冲突、Maxroll 正文未读取、Switch 未实测 |
+| [塔格奥死亡新星](./tragoul-nova.md) | `source-checked / pc-derived` | 3 | 6 | 10 | 技能/T16 冲突、Maxroll 正文未读取、Switch 未实测 |
+| [梦遗死亡新星](./lod-nova.md) | `source-checked / platform-risk` | 2 | 7 | 15 | Icy 内部旧段落、第二来源整套冲突、Maxroll 正文未读取、Switch 未实测 |
 | [梦遗轰击](./lod-bombardment.md) | `source-checked / platform-risk` | 3 | 6 | 14 | 技能/装备/宝石冲突、Maxroll 正文未读取、Switch 未实测 |
 
 ## 每套档案必填项

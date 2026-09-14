@@ -38,16 +38,16 @@ npm test
 | --- | ---: | --- |
 | `published` | 0 | 尚无 BD 同时通过双源、语义、结论覆盖与 Switch 实机门槛 |
 | `cross-checked` | 1 | `mundunugu-barrage`，仍待 Switch 实测 |
-| `source-checked` | 10 | 塔格奥、梦遗轰击与祖尼玛毒镖已有结论级证据但仍有冲突；7 套批量魔法师仍待第二来源与用途拆分 |
-| `unverified` | 40 | 包含 21 套通用工厂占位数据及缺少显式证据状态的旧手写数据 |
+| `source-checked` | 11 | 塔格奥、梦遗轰击、祖尼玛毒镖与梦遗新星已有结论级证据但仍有冲突；7 套批量魔法师仍待第二来源与用途拆分 |
+| `unverified` | 39 | 包含 21 套通用工厂占位数据及缺少显式证据状态的旧手写数据 |
 
-当前工作游标：D04 九十蛮狂乱来源核验与用途拆分。结构有效 51/51、现有语义规则有效 51/51、发布级验证 0/51；D01—D03 已完成来源级代码迁移与页面 QA，分别保留来源冲突和 Switch 实测阻塞，不再强行补齐固定四象限。
+当前工作游标：用户优先队列第 3 项 `rathma-aotd` 拉斯玛亡者大军；完成后回到 D04 九十蛮狂乱。结构有效 51/51、现有语义规则有效 51/51、发布级验证 0/51；塔格奥和梦遗新星已经删除固定高低巅峰复制，来源冲突与 Switch 实测作为显式阻塞保留。
 
 旧流程曾为死灵 7 套、魔法师 7 套及若干野蛮人、圣教军和巫医条目录入完整场景结构，但这些记录现在只能视为“已有待审数据”，不能写成内容完成。具体历史覆盖范围保留在后文日志，用于定位代码。
 
 建议后续动作：
 
-1. 执行 D04 九十蛮狂乱的精确来源核验与用途拆分；D01—D03 等待可读的独立来源与 Switch 实测时保持当前证据状态。
+1. 先执行用户指定的 `rathma-aotd` 精确来源核验与用途拆分；完成后恢复 D04 九十蛮狂乱。已有来源级 BD 等待可读的独立来源与 Switch 实测时保持当前证据状态。
 2. 任一 BD 必须经过精确来源、第二来源、用途判定、语义校验和 Switch 实机记录后才能升为 `published`。
 
 已完成的基础设施：
@@ -97,7 +97,7 @@ dcf5e20 feat(bd): 完成塔格奥多场景配置校对
 | 圣教军与 D02 梦遗轰击 | `app/data/crusader-builds.ts` |
 | 巫医入口与 D03 祖尼玛毒镖 | `app/data/witch-doctor-builds.ts` 与 `app/data/zuni-darts-reviewed.ts` |
 | 武僧与部分实装样板 | `app/data/monk-builds.ts` |
-| 死灵法师完整参考实现 | `app/data/necromancer-builds.ts` 与 `app/page.tsx` 中塔格奥数据 |
+| 死灵法师完整参考实现 | `app/data/necromancer-builds.ts`、`app/data/lod-nova-reviewed.ts` 与 `app/page.tsx` 中塔格奥数据 |
 | 其他职业数据 | `app/data/*-builds.ts` |
 | 通用 BD 详情运行时 | `app/page.tsx` |
 | 通用装备框 | `components/items/DiabloItemFrame.tsx` |
@@ -492,15 +492,15 @@ git log -1 --stat
 
 | 顺序 | BD | 状态 | 完成提交 | 已完成 | 剩余/下一步 |
 | ---: | --- | --- | --- | --- | --- |
-| 1 | `tragoul-nova` | `source-checked / pc-derived` | `dcf5e20` 后已重审 | 六场景、结构化来源、10 条结论证据、GR/T16 分离 | 技能与 T16 冲突裁决、Maxroll 人工摘录、Switch 实测 |
+| 1 | `tragoul-nova` | `source-checked / pc-derived` | `48b53b0` | 三场景、结构化来源、10 条结论证据、GR/T16 分离、无固定巅峰复制 | 技能与 T16 冲突裁决、Maxroll 人工摘录、Switch 实测 |
 | D02 | `lod-bombardment` | `source-checked / platform-risk` | `feat(bd): 校正梦遗轰击用途与证据` | 三场景、6 个结构化来源、14 条结论证据、双手/副手语义规则、条件化成长、桌面/移动 QA | 技能/装备/宝石冲突、Maxroll 正文、Switch 实测 |
 | 2 | `wastes-rend` | 已校对 | `37a6c42` | 四场景与通用详情页全类别切换 | 仅回归维护 |
 | 3 | `pony-fist-farm` | 已校对 | `feat(bd): 完成跑马天拳多场景校对` | 四场景、巅峰、策略、校验与金币链建模 | 仅回归维护 |
 | 4 | `god-hungering` | 已校对 | `feat(bd): 完成恐惧冰吞多场景校对` | 四场景、巅峰、策略、校验与杨弓/盾枪武器建模 | 仅回归维护 |
 | 5 | `god-monk` | 已校对 | `feat(bd): 完成上帝僧多场景校对` | 两套配装迁入四场景、loadouts 移除 | 仅回归维护 |
-| 34 | `lod-nova` | 已校对 | `feat(bd): 完成死灵法师新星系多场景校对` | 梦遗散件、轮回镰刀/寅剑第4槽 | 仅回归维护 |
+| 34 | `lod-nova` | `source-checked / platform-risk` | 本轮待提交 | 两个GR场景、7个结构化来源、15条结论证据；修正白宝石、鲜血灌注、护肩词缀与巅峰顺序 | Maxroll正文、Icy旧文裁决、完整配装冲突、Switch实测与页面QA |
 | 35 | `inarius-nova` | 已校对 | `feat(bd): 完成死灵法师新星系多场景校对` | 伊纳瑞斯骨甲旋风、轮回镰刀/寅剑 | 仅回归维护 |
-| 36 | `rathma-aotd` | 已校对 | `feat(bd): 完成拉斯玛亡者大军与狂欢节骨矛多场景校对` | 蚀牙第4槽、仆从冷却引擎、金币链 | 仅回归维护 |
+| 36 | `rathma-aotd` | 用户优先队列 `DOING` | 旧结构提交待复审 | 旧蚀牙第4槽与仆从冷却数据仅作待审输入 | 立即核验真实用途并删除无证据四象限/金币链 |
 | 37 | `masquerade-spear` | 已校对 | `feat(bd): 完成拉斯玛亡者大军与狂欢节骨矛多场景校对` | 影魂钩、齿状骨刺速刷符文 | 仅回归维护 |
 | 38 | `pestilence-lance` | 已校对 | `feat(bd): 完成瘟疫尸枪与梦遗尸爆多场景校对` | 梅塞施密特、寅剑+失落时光速刷 | 仅回归维护 |
 | 39 | `lod-corpse-explosion` | 已校对 | `feat(bd): 完成瘟疫尸枪与梦遗尸爆多场景校对` | 影魂钩+充盈之魂、金织带金币链 | 仅回归维护 |

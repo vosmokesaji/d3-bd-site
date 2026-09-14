@@ -18019,6 +18019,1361 @@
     "source": "守护者",
     "template": "[[Powers/Templar_CheatDeath_Passive_name]]"
   },
+  "app.961ee1b0399228f3": {
+    "source": "页面将构筑标为单人、速刷、顶级，并给出物理鲜血新星的完整入口；没有独立T16配置页。",
+    "template": "页面将构筑标为[[Site/solo]]、[[Site/speed-farming]]、顶级，并给出物理[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]的完整入口；没有独立T16配置页。",
+    "manual": {
+      "enUS": "The page tags the build for solo play, speed farming, and top-tier use, and provides the complete Physical Blood Nova setup; it has no separate T16 configuration page."
+    }
+  },
+  "app.f75e44df542be7ea": {
+    "source": "给出力量转移、鲜血新星、鲜血与白骨、鲜血灌注、白骨脱臼、脆弱光环及四个被动；正文仍残留亡者领域旧描述。",
+    "template": "给出[[AttributeDescriptions/NameRune_D#P6_Necro_SiphonBlood]]、[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]、[[AttributeDescriptions/NameRune_D#P6_Necro_Simulacrum]]、[[AttributeDescriptions/NameRune_A#P6_Necro_BloodRush]]、[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]、[[AttributeDescriptions/NameRune_E#P6_Necro_Frailty]]及四个被动；正文仍残留[[Powers/P6_Necro_LandOfTheDead_name]]旧描述。",
+    "manual": {
+      "enUS": "Lists Power Shift, Blood Nova, Blood and Bone, Transfusion, Dislocation, Aura of Frailty, and four passives; the prose still contains an outdated Land of the Dead description."
+    }
+  },
+  "app.91059f25732316d1": {
+    "source": "装备、词缀、宝石、巅峰、随从与四魔方槽；明确高层用受罚者、低层可换强者，头部使用白宝石。",
+    "template": "装备、词缀、宝石、[[Site/paragon]]、随从与四魔方槽；明确高层用[[Items/Unique_Gem_018_x1]]、低层可换强者，头部使用白宝石。",
+    "manual": {
+      "enUS": "Covers gear, affixes, gems, Paragon, follower, and all four Kanai's Cube slots; explicitly uses Bane of the Stricken at high tiers, allows Bane of the Powerful at lower tiers, and uses a Diamond in the helm."
+    }
+  },
+  "app.87a26e0af06427d7": {
+    "source": "S39构筑列出GR冲层、速刷和T16，但采用毒新星、团结、斯图亚特等另一套完整方案，不能与Icy物理方案混拼。",
+    "template": "S39构筑列出GR[[Site/push]]、[[Site/speed-farming]]和T16，但采用毒新星、[[Items/Unique_Ring_010_x1]]、斯图亚特等另一套完整方案，不能与Icy物理方案混拼。",
+    "manual": {
+      "enUS": "The Season 39 build lists Greater Rift pushing, speed farming, and T16, but uses a separate complete setup with Poison Nova, Unity, and Steuart's Greaves; it must not be mixed with Icy's Physical setup."
+    }
+  },
+  "app.c9929dd332c8f387": {
+    "source": "确认第39赛季开放第四魔方槽。",
+    "template": "确认第39赛季开放第四魔方槽。",
+    "manual": {
+      "enUS": "Confirms that Season 39 enables a fourth Kanai's Cube slot."
+    }
+  },
+  "app.9b4360c0d911de40": {
+    "source": "官方物品页确认没有激活套装奖励时，每件传奇提供增伤和减伤。",
+    "template": "官方物品页确认没有激活套装奖励时，每件传奇提供[[Site/damage-boost]]和[[Site/damage-reduction]]。",
+    "manual": {
+      "enUS": "The official item page confirms that each Legendary grants damage and damage reduction while no set bonus is active."
+    }
+  },
+  "app.d836526fde708f55": {
+    "source": "官方物品页确认鲜血虹吸100%触发免费鲜血新星，并按累计失去生命叠加新星伤害。",
+    "template": "官方物品页确认[[Powers/P6_Necro_SiphonBlood_name]]100%触发免费[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]，并按累计失去生命叠加新星伤害。",
+    "manual": {
+      "enUS": "The official item page confirms that Siphon Blood has a 100% chance to trigger a free Blood Nova and increases Nova damage based on cumulative Life lost."
+    }
+  },
+  "app.ac76f4a71d7d3a17": {
+    "source": "放大头部白宝石的冷却缩减，帮助骨甲、鲜血穿行与手动新星周转。",
+    "template": "放大头部白宝石的[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]]，帮助[[Powers/P6_Necro_BoneArmor_name]]、[[Powers/P6_Necro_BloodRush_name]]与手动新星周转。",
+    "manual": {
+      "enUS": "Amplifies the cooldown reduction from the helm Diamond, helping Bone Armor, Blood Rush, and manually cast Novas cycle faster."
+    }
+  },
+  "app.a596597c46b39fb3": {
+    "source": "死亡新星伤害",
+    "template": "[[Powers/P6_Necro_BloodNova_name]]伤害"
+  },
+  "app.9dccf3081246725a": {
+    "source": "血岩碎片赌博头盔",
+    "template": "血岩碎片赌博头盔"
+  },
+  "app.898aa937f431cd1d": {
+    "source": "黄装升级：70级头盔",
+    "template": "黄装升级：70级头盔"
+  },
+  "app.434ac5c1b5f52b08": {
+    "source": "普通传奇也能启动；远古版本只是在该部位获得更高梦遗倍率",
+    "template": "普通传奇也能启动；远古版本只是在该部位获得更高梦遗倍率",
+    "manual": {
+      "enUS": "A regular Legendary activates it; an Ancient version only grants a higher Legacy of Dreams multiplier for that slot"
+    }
+  },
+  "app.d83fc68e281b113b": {
+    "source": "引导鲜血虹吸时同时提供增伤与减伤。",
+    "template": "引导[[Powers/P6_Necro_SiphonBlood_name]]时同时提供[[Site/damage-boost]]与[[Site/damage-reduction]]。",
+    "manual": {
+      "enUS": "Provides both damage and damage reduction while channeling Siphon Blood."
+    }
+  },
+  "app.1c927166e5dccbf6": {
+    "source": "范围伤害 / 生命%",
+    "template": "[[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]] / 生命%",
+    "manual": {
+      "enUS": "Area Damage / Life %"
+    }
+  },
+  "app.afddee5851a5623c": {
+    "source": "血岩碎片赌博护肩",
+    "template": "血岩碎片赌博护肩"
+  },
+  "app.9c0cdb251148a4a4": {
+    "source": "黄装升级：70级护肩",
+    "template": "黄装升级：70级护肩"
+  },
+  "app.8b1310609bf56846": {
+    "source": "护肩不能洗出死亡新星技能伤",
+    "template": "护肩不能洗出[[Powers/P6_Necro_BloodNova_name]]技能伤",
+    "manual": {
+      "enUS": "Shoulders cannot roll Death Nova skill damage"
+    }
+  },
+  "app.393609fa29306336": {
+    "source": "精英伤害减免",
+    "template": "精英伤害减免",
+    "manual": {
+      "enUS": "Damage reduction from elites"
+    }
+  },
+  "app.d1b82e53b8aa48b0": {
+    "source": "智力 / 体能",
+    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]] / [[SkillsUI/ParagonBonusLabel_Vitality]]"
+  },
+  "app.2074744435278da4": {
+    "source": "只穿这一件黑荆棘；一旦激活任何套装奖励，梦之遗礼立即失效。",
+    "template": "只穿这一件黑荆棘；一旦激活任何套装奖励，[[Items/Unique_Gem_023_x1]]立即失效。",
+    "manual": {
+      "enUS": "Wear only this Blackthorne piece; Legacy of Dreams stops working as soon as any set bonus becomes active."
+    }
+  },
+  "app.531791260f46a479": {
+    "source": "高白字伤害",
+    "template": "高白字伤害"
+  },
+  "app.ec001d397aef1b5f": {
+    "source": "梦遗新星缺少装备定义：{0}",
+    "template": "梦遗新星缺少装备定义：{0}",
+    "manual": {
+      "enUS": "Legacy of Dreams Nova is missing a gear definition: {0}"
+    }
+  },
+  "app.fedb04d347366703": {
+    "source": "鲜血灌注",
+    "template": "[[AttributeDescriptions/NameRune_A#P6_Necro_BloodRush]]"
+  },
+  "app.9d1d8d35b05a4a99": {
+    "source": "移动、穿怪并回复生命；本配置不用强韧符文，也不借此虚构速刷移速套件。",
+    "template": "移动、穿怪并回复生命；本配置不用强韧符文，也不借此虚构[[Site/speed-farming]]移速套件。",
+    "manual": {
+      "enUS": "Reposition, move through enemies, and recover Life; this setup does not use the Potency rune or use it to invent a speed-farming movement package."
+    }
+  },
+  "app.70a3f8e95966e87d": {
+    "source": "梦遗新星缺少鬼灵面容定义",
+    "template": "梦遗新星缺少[[Items/P69_Unique_Amulet_02]]定义",
+    "manual": {
+      "enUS": "Legacy of Dreams Nova is missing the Haunted Visions definition"
+    }
+  },
+  "app.29008b5fdf605de6": {
+    "source": "鬼灵面容",
+    "template": "[[Items/P69_Unique_Amulet_02]]"
+  },
+  "app.9ea49bc5cc4452e5": {
+    "source": "让血魂双分永久存在，并复制死亡新星。",
+    "template": "让[[Powers/P6_Necro_Simulacrum_name]]永久存在，并复制[[Powers/P6_Necro_BloodNova_name]]。",
+    "manual": {
+      "enUS": "Makes Simulacrum permanent and causes the duplicates to copy Death Nova."
+    }
+  },
+  "app.b01c37294c038bf7": {
+    "source": "当卡兰之睿的穿戴词缀更好时，两条项链可交换穿戴与萃取；两项威能必须同时保留。",
+    "template": "当[[Items/P6_Unique_Amulet_03]]的穿戴词缀更好时，两条项链可交换穿戴与萃取；两项威能必须同时保留。",
+    "manual": {
+      "enUS": "Haunted Visions and Wisdom of Kalan may swap worn and cubed positions when Wisdom of Kalan has better wearable affixes; both powers must remain active."
+    }
+  },
+  "app.3c9b889416ad1c6c": {
+    "source": "黄装升级：70级项链，或世界掉落",
+    "template": "黄装升级：70级项链，或世界掉落",
+    "manual": {
+      "enUS": "Upgrade a level 70 rare amulet, or obtain it as a world drop"
+    }
+  },
+  "app.d8e1b7298702c9f4": {
+    "source": "先建立骨甲",
+    "template": "先建立[[Powers/P6_Necro_BoneArmor_name]]",
+    "manual": {
+      "enUS": "Establish Bone Armor first"
+    }
+  },
+  "app.cb082740319b4247": {
+    "source": "进图寻找威胁较低的怪群，用白骨脱臼尽量命中多个目标。",
+    "template": "进图寻找威胁较低的怪群，用[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]尽量命中多个目标。",
+    "manual": {
+      "enUS": "Find a low-threat pack on entry and hit as many targets as possible with Dislocation."
+    }
+  },
+  "app.4cf761bb0e57a2e1": {
+    "source": "先拿到骨甲减伤，并启动第39赛季轮回镰刀的次要技能增伤。",
+    "template": "先拿到[[Powers/P6_Necro_BoneArmor_name]][[Site/damage-reduction]]，并启动第39赛季[[Items/P61_Unique_Scythe1H_03]]的次要技能[[Site/damage-boost]]。",
+    "manual": {
+      "enUS": "Secure Bone Armor's damage reduction first and activate Scythe of the Cycle's Season 39 Secondary-skill damage bonus."
+    }
+  },
+  "app.fdc3dfe4d0e15603": {
+    "source": "开启永久双分",
+    "template": "开启永久双分",
+    "manual": {
+      "enUS": "Activate permanent Simulacrum"
+    }
+  },
+  "app.b8241093edfdc0b3": {
+    "source": "确认安全后施放鲜血与白骨；死亡或换装后重新检查。",
+    "template": "确认安全后施放[[AttributeDescriptions/NameRune_D#P6_Necro_Simulacrum]]；死亡或换装后重新检查。",
+    "manual": {
+      "enUS": "Cast Blood and Bone once safe; recheck it after dying or changing gear."
+    }
+  },
+  "app.cd2b1c6f78ba663e": {
+    "source": "鬼灵面容让两个分身常驻并复制死亡新星。",
+    "template": "[[Items/P69_Unique_Amulet_02]]让两个分身常驻并复制[[Powers/P6_Necro_BloodNova_name]]。",
+    "manual": {
+      "enUS": "Haunted Visions keeps both duplicates active permanently and makes them copy Death Nova."
+    }
+  },
+  "app.fd19752fde7f699b": {
+    "source": "贴身聚集密度",
+    "template": "贴身聚集密度",
+    "manual": {
+      "enUS": "Group enemies at close range"
+    }
+  },
+  "app.c6ef60461dbbf62e": {
+    "source": "用鲜血穿行调整位置，把精英和小怪留在新星半径内。",
+    "template": "用[[Powers/P6_Necro_BloodRush_name]]调整位置，把精英和小怪留在新星半径内。",
+    "manual": {
+      "enUS": "Use Blood Rush to reposition and keep elites and trash inside the Nova radius."
+    }
+  },
+  "app.e3a6a3458cad3f32": {
+    "source": "血潮利刃按25码内敌人数放大新星，零散目标会损失主要密度收益。",
+    "template": "[[Items/P65_Unique_Scythe2H_02]]按[[Number/25/yard]]内敌人数放大新星，零散目标会损失主要密度收益。",
+    "manual": {
+      "enUS": "Bloodtide Blade scales Nova damage with enemies within 25 yards, so scattered targets lose the build's primary density benefit."
+    }
+  },
+  "app.f8761b6c7d998d9e": {
+    "source": "全能法戒进入物理周期时刷新白骨脱臼，再对核心目标持续虹吸并按需手动新星。",
+    "template": "[[Items/P2_Unique_Ring_04]]进入物理周期时刷新[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]，再对核心目标持续虹吸并按需手动新星。",
+    "manual": {
+      "enUS": "As Convention of Elements enters its Physical cycle, refresh Dislocation, then channel Siphon Blood on priority targets and cast Death Nova manually as needed."
+    }
+  },
+  "app.e6e929b02694610e": {
+    "source": "鲜血新星是物理伤害；强控同时提高克里斯宾收益。",
+    "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]是物理伤害；[[Site/crowd-control]]同时提高[[Items/P6_Unique_Ring_03]]收益。",
+    "manual": {
+      "enUS": "Blood Nova deals Physical damage, while hard crowd control also increases Krysbin's Sentence damage."
+    }
+  },
+  "app.89ebb2c53130c5ad": {
+    "source": "检查三条防线",
+    "template": "检查三条防线",
+    "manual": {
+      "enUS": "Check all three defensive layers"
+    }
+  },
+  "app.383b40493a29f289": {
+    "source": "骨甲层数、诅咒目标或高魂能任一断开时先重建，不要原地硬引导。",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]]层数、诅咒目标或高魂能任一断开时先重建，不要原地硬引导。",
+    "manual": {
+      "enUS": "If Bone Armor stacks, cursed targets, or high Essence drops, rebuild that layer before standing still to channel."
+    }
+  },
+  "app.86956fe6410deff1": {
+    "source": "骨甲、戴恩提和天鹰分别依赖自己的运行条件。",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]]、[[Items/P61_Unique_Belt_01]]和天鹰分别依赖自己的运行条件。",
+    "manual": {
+      "enUS": "Bone Armor, Dayntee's Binding, and Aquila Cuirass each depend on their own operating condition."
+    }
+  },
+  "app.c7f78b1d0f0a63d9": {
+    "source": "力量转移",
+    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_SiphonBlood]]"
+  },
+  "app.c4537a2245804d85": {
+    "source": "鲜血新星",
+    "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]"
+  },
+  "app.cbd048335968b35b": {
+    "source": "鲜血与白骨",
+    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_Simulacrum]]"
+  },
+  "app.d1baa3b517d2b14a": {
+    "source": "白骨脱臼",
+    "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]"
+  },
+  "app.c356f9d273952725": {
+    "source": "脆弱光环",
+    "template": "[[AttributeDescriptions/NameRune_E#P6_Necro_Frailty]]"
+  },
+  "app.b6910eec2ff951eb": {
+    "source": "死亡新星技能伤",
+    "template": "[[Powers/P6_Necro_BloodNova_name]]技能伤"
+  },
+  "app.2d92afc27f612216": {
+    "source": "暴击伤害与暴击几率",
+    "template": "[[SkillsUI/ParagonBonusLabel_Crit_Damage_Percent]]与[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]",
+    "manual": {
+      "enUS": "Critical Hit Damage and Critical Hit Chance"
+    }
+  },
+  "app.23b1bf30877b02aa": {
+    "source": "拾取范围副词缀",
+    "template": "拾取范围副词缀",
+    "manual": {
+      "enUS": "Pickup Radius secondary affixes"
+    }
+  },
+  "app.f804c538f41177e8": {
+    "source": "骨甲与诅咒覆盖",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]]与诅咒覆盖",
+    "manual": {
+      "enUS": "Bone Armor and curse coverage"
+    }
+  },
+  "app.f579090823f08ebc": {
+    "source": "保持高魂能触发天鹰",
+    "template": "保持高魂能触发天鹰",
+    "manual": {
+      "enUS": "Maintain high Essence to keep Aquila Cuirass active"
+    }
+  },
+  "app.26a038dcd7572e42": {
+    "source": "单人 GR 推进 · 物理新星",
+    "template": "[[Site/solo]] GR 推进 · 物理新星",
+    "manual": {
+      "enUS": "Solo Greater Rift progression · Physical Nova"
+    }
+  },
+  "app.5743cdef6eb2c9e6": {
+    "source": "Icy明确用‘高层推进’解释受罚者，并推荐盗贼用于单人GR推进；但页面标签没有把这套列为gr-pushing，且第二来源使用另一套毒新星配置，因此只标为可用推进方案，不宣传为当前最佳冲层。",
+    "template": "Icy明确用‘高层推进’解释[[Items/Unique_Gem_018_x1]]，并推荐[[Pets/HirelingScoundrel]]用于[[Site/solo]]GR推进；但页面标签没有把这套列为gr-pushing，且第二来源使用另一套毒新星配置，因此只标为可用推进方案，不宣传为当前最佳[[Site/push]]。",
+    "manual": {
+      "enUS": "Icy explicitly explains Bane of the Stricken in terms of high-tier progression and recommends the Scoundrel for solo Greater Rift progression. However, the page lacks a gr-pushing tag and the second source uses a different Poison Nova setup, so this is labeled only as a viable progression option rather than a current top pushing build."
+    }
+  },
+  "app.ff6aedaf4d1c5628": {
+    "source": "基础配置就是Icy的物理鲜血新星单人GR推进方案。",
+    "template": "基础配置就是Icy的物理[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]][[Site/solo]]GR推进方案。",
+    "manual": {
+      "enUS": "The base configuration is Icy's Physical Blood Nova setup for solo Greater Rift progression."
+    }
+  },
+  "app.cedc41c3d7573efa": {
+    "source": "低层 GR 速刷 · 保守版",
+    "template": "低层 GR [[Site/speed-farming]] · 保守版",
+    "manual": {
+      "enUS": "Low-tier Greater Rift speed farming · Conservative variant"
+    }
+  },
+  "app.d770f7657fc68a7b": {
+    "source": "Icy将整套标为速刷，并明确低层可把受罚者换成强者；没有可靠依据支持旧版寅剑、复仇者、金织带和贪婪之戒整包，因此这里只做一颗宝石替换。",
+    "template": "Icy将整套标为[[Site/speed-farming]]，并明确低层可把[[Items/Unique_Gem_018_x1]]换成强者；没有可靠依据支持旧版[[Items/Unique_Sword_1H_113_x1]]、[[Items/Unique_Bracer_106_x1]]、[[Items/Unique_Belt_010_x1]]和[[Items/Unique_Ring_108_x1]]整包，因此这里只做一颗宝石替换。",
+    "manual": {
+      "enUS": "Icy tags the build for speed farming and explicitly allows Bane of the Stricken to be replaced by Bane of the Powerful at lower tiers. There is no reliable support for the old package of In-geom, Nemesis Bracers, Goldwrap, and Avarice Band, so this variant changes only one gem."
+    }
+  },
+  "app.8564a4739b07b5d9": {
+    "source": "达到基础上限后停止投入。",
+    "template": "达到基础上限后停止投入。",
+    "manual": {
+      "enUS": "Stop investing after reaching the base cap."
+    }
+  },
+  "app.2cdf61664fd50589": {
+    "source": "提供伤害与全抗。",
+    "template": "提供伤害与全抗。",
+    "manual": {
+      "enUS": "Provides damage and All Resistance."
+    }
+  },
+  "app.6b4d029d348bf3d0": {
+    "source": "只有实际生存不足时优先补。",
+    "template": "只有实际生存不足时优先补。",
+    "manual": {
+      "enUS": "Prioritize it only when actual survivability is insufficient."
+    }
+  },
+  "app.ee44bfdab9daec56": {
+    "source": "最大精魂",
+    "template": "[[HeroDetails/MaxEssence]]"
+  },
+  "app.2700702f3b10bbc4": {
+    "source": "Icy当前顺序把它放在核心页最后。",
+    "template": "Icy当前顺序把它放在核心页最后。",
+    "manual": {
+      "enUS": "Icy's current order places it last in the Core category."
+    }
+  },
+  "app.60427cf3cb036bb3": {
+    "source": "Icy当前巅峰顺序第一。",
+    "template": "Icy当前[[Site/paragon]]顺序第一。",
+    "manual": {
+      "enUS": "Icy's current Paragon order places it first."
+    }
+  },
+  "app.0e47c578f5f3ce2b": {
+    "source": "与暴击伤害配套。",
+    "template": "与[[SkillsUI/ParagonBonusLabel_Crit_Damage_Percent]]配套。",
+    "manual": {
+      "enUS": "Pairs with Critical Hit Damage."
+    }
+  },
+  "app.f2faca5f90f17d5f": {
+    "source": "改善骨甲、位移和手动技能周转。",
+    "template": "改善[[Powers/P6_Necro_BoneArmor_name]]、位移和手动技能周转。",
+    "manual": {
+      "enUS": "Improves the cycling of Bone Armor, movement, and manually cast skills."
+    }
+  },
+  "app.3c252441f105b1f5": {
+    "source": "构筑仍重视攻速，但当前巅峰表不把它排第一。",
+    "template": "构筑仍重视攻速，但当前[[Site/paragon]]表不把它排第一。",
+    "manual": {
+      "enUS": "The build still values Attack Speed, but the current Paragon table does not rank it first."
+    }
+  },
+  "app.8df649a79f87e7c0": {
+    "source": "智力职业通常更缺护甲。",
+    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]职业通常更缺护甲。",
+    "manual": {
+      "enUS": "Intelligence classes usually need Armor more than resistances."
+    }
+  },
+  "app.50949f8b372b43de": {
+    "source": "提高有效生命。",
+    "template": "提高有效生命。",
+    "manual": {
+      "enUS": "Increases effective Life."
+    }
+  },
+  "app.e17beb303609dbb1": {
+    "source": "智力已提供大量全抗。",
+    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]已提供大量全抗。",
+    "manual": {
+      "enUS": "Intelligence already provides substantial All Resistance."
+    }
+  },
+  "app.2384453b2275bb0c": {
+    "source": "只作为持续引导的补充。",
+    "template": "只作为持续引导的补充。",
+    "manual": {
+      "enUS": "Use only as supplemental sustain during continuous channeling."
+    }
+  },
+  "app.aca49587acf894b5": {
+    "source": "持续虹吸提供稳定触发。",
+    "template": "持续虹吸提供稳定触发。",
+    "manual": {
+      "enUS": "Continuous Siphon Blood provides reliable triggers."
+    }
+  },
+  "app.e56d537fa3b480fd": {
+    "source": "密集怪群中的新星受益。",
+    "template": "密集怪群中的新星受益。",
+    "manual": {
+      "enUS": "Novas benefit in dense enemy packs."
+    }
+  },
+  "app.55d01a7a4c74dde4": {
+    "source": "手动新星仍会使用魂能。",
+    "template": "手动新星仍会使用魂能。",
+    "manual": {
+      "enUS": "Manually cast Novas still consume Essence."
+    }
+  },
+  "app.fdbcece02c3131b6": {
+    "source": "巅峰表虽排最后，装备副词缀仍可扩大脆弱光环覆盖。",
+    "template": "[[Site/paragon]]表虽排最后，装备副词缀仍可扩大[[AttributeDescriptions/NameRune_E#P6_Necro_Frailty]]覆盖。",
+    "manual": {
+      "enUS": "Although it is last in the Paragon table, Pickup Radius secondary affixes can still extend Aura of Frailty's coverage."
+    }
+  },
+  "app.dc45a86ec5da1155": {
+    "source": "当前层数能稳定承伤并维持骨甲、诅咒和天鹰",
+    "template": "当前层数能稳定承伤并维持[[Powers/P6_Necro_BoneArmor_name]]、诅咒和天鹰",
+    "manual": {
+      "enUS": "Can survive the current tier consistently while maintaining Bone Armor, curses, and Aquila Cuirass"
+    }
+  },
+  "app.5afd7bd9e10f5a49": {
+    "source": "继续提高伤害与全抗。",
+    "template": "继续提高伤害与全抗。",
+    "manual": {
+      "enUS": "Continue increasing damage and All Resistance."
+    }
+  },
+  "app.778bb3779a93d928": {
+    "source": "被同层常见技能击杀，导致无法完成物理窗口",
+    "template": "被同层常见技能击杀，导致无法完成物理窗口",
+    "manual": {
+      "enUS": "Common attacks at the same tier kill you before the Physical damage window can be completed"
+    }
+  },
+  "app.df944ec205123f70": {
+    "source": "只补到能完整执行循环，再回到智力。",
+    "template": "只补到能完整执行循环，再回到[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]。",
+    "manual": {
+      "enUS": "Add only enough to execute the full rotation, then return to Intelligence."
+    }
+  },
+  "app.fd63c6e5a4560c1e": {
+    "source": "装备词缀替换",
+    "template": "装备词缀替换",
+    "manual": {
+      "enUS": "Gear affix replacement"
+    }
+  },
+  "app.7e42c7b947bb182d": {
+    "source": "对应部位已有远古、正确特效，且生存与冷却实测达标",
+    "template": "对应部位已有远古、正确特效，且生存与冷却实测达标",
+    "manual": {
+      "enUS": "The slot already has an Ancient item with the correct power, and tested survivability and cooldowns meet the requirement"
+    }
+  },
+  "app.cd078be62e69ac5e": {
+    "source": "是否把智力让给范围伤或冷却由装备质量和实战瓶颈决定，不由2000巅峰自动触发。",
+    "template": "是否把[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]让给范围伤或冷却由装备质量和实战瓶颈决定，不由2000[[Site/paragon]]自动触发。",
+    "manual": {
+      "enUS": "Whether to replace Intelligence with Area Damage or Cooldown Reduction depends on gear quality and observed bottlenecks, not an automatic 2,000-Paragon trigger."
+    }
+  },
+  "app.0bab9cefb3086159": {
+    "source": "梦遗纪律",
+    "template": "梦遗纪律",
+    "manual": {
+      "enUS": "Legacy of Dreams discipline"
+    }
+  },
+  "app.e8b46d8b10999d6f": {
+    "source": "没有任何已激活套装奖励",
+    "template": "没有任何已激活套装奖励",
+    "manual": {
+      "enUS": "No set bonus is active"
+    }
+  },
+  "app.6099c9782baac091": {
+    "source": "逐件检查绿色装备；黑荆棘裤只能单穿。",
+    "template": "逐件检查绿色装备；黑荆棘裤只能单穿。",
+    "manual": {
+      "enUS": "Check every green item; the Blackthorne pants must be the only piece from that set."
+    }
+  },
+  "app.5a0d47438ef5faed": {
+    "source": "发动机",
+    "template": "发动机",
+    "manual": {
+      "enUS": "Build engine"
+    }
+  },
+  "app.18e1673bc04688c7": {
+    "source": "葬镰、铁玫瑰、鬼灵面容与梦之遗礼齐全",
+    "template": "[[Items/P74_Unique_Scythe1H_01]]、[[Items/P74_Unique_Phylactery_04]]、[[Items/P69_Unique_Amulet_02]]与[[Items/Unique_Gem_023_x1]]齐全",
+    "manual": {
+      "enUS": "Funerary Pick, Iron Rose, Haunted Visions, and Legacy of Dreams are all equipped"
+    }
+  },
+  "app.e0acf45386b6cb29": {
+    "source": "核心威能优先于远古品质；普通传奇缺口不要为了远古而空着。",
+    "template": "核心威能优先于远古品质；普通传奇缺口不要为了远古而空着。",
+    "manual": {
+      "enUS": "Core powers take priority over Ancient quality; do not leave a regular Legendary slot empty just to wait for an Ancient."
+    }
+  },
+  "app.755802ce06f9e12d": {
+    "source": "远古成长",
+    "template": "远古成长",
+    "manual": {
+      "enUS": "Ancient-item progression"
+    }
+  },
+  "app.b940187c055c73ad": {
+    "source": "逐件获得正确词缀的远古或太古",
+    "template": "逐件获得正确词缀的远古或太古",
+    "manual": {
+      "enUS": "Acquire correctly rolled Ancient or Primal items one slot at a time"
+    }
+  },
+  "app.40c0170b7f1ba292": {
+    "source": "远古只让该部位梦遗收益翻倍，不存在‘未全远古就完全不能玩’或固定巅峰切换线。",
+    "template": "远古只让该部位梦遗收益翻倍，不存在‘未全远古就完全不能玩’或固定[[Site/paragon]]切换线。",
+    "manual": {
+      "enUS": "Ancient quality only doubles the Legacy of Dreams benefit for that slot; the build is not unplayable before every item is Ancient, and there is no fixed Paragon switch point."
+    }
+  },
+  "app.26841cee4c89c56c": {
+    "source": "速刷资格",
+    "template": "[[Site/speed-farming]]资格",
+    "manual": {
+      "enUS": "Speed-farming eligibility"
+    }
+  },
+  "app.65b138c40b8d08b9": {
+    "source": "目标低层的精英与首领不再形成长时间单体瓶颈",
+    "template": "目标低层的精英与首领不再形成长时间单体瓶颈",
+    "manual": {
+      "enUS": "Elites and the Rift Guardian at the target lower tier no longer create a prolonged single-target bottleneck"
+    }
+  },
+  "app.381a86836763c84f": {
+    "source": "此时才把受罚者换成强者；如果首领明显拖时就切回推进方案或降低层数。",
+    "template": "此时才把[[Items/Unique_Gem_018_x1]]换成强者；如果首领明显拖时就切回推进方案或降低层数。",
+    "manual": {
+      "enUS": "Only then replace Bane of the Stricken with Bane of the Powerful; if the boss clearly takes too long, return to the progression setup or lower the tier."
+    }
+  },
+  "app.71ba94524a98b5bb": {
+    "source": "梦之遗礼纪律",
+    "template": "[[Items/Unique_Gem_023_x1]]纪律",
+    "manual": {
+      "enUS": "Legacy of Dreams rules"
+    }
+  },
+  "app.d06704bbb3c32d91": {
+    "source": "必须没有任何已激活套装奖励；传奇物品即可获得收益，远古或太古只会让对应部位的宝石收益翻倍。",
+    "template": "必须没有任何已激活套装奖励；传奇物品即可获得收益，远古或太古只会让对应部位的宝石收益翻倍。",
+    "manual": {
+      "enUS": "No set bonus may be active. Regular Legendary items already gain the benefit; Ancient or Primal quality only doubles the gem's benefit for that slot."
+    }
+  },
+  "app.e1602ac9e6a5ac3f": {
+    "source": "葬镰 + 铁玫瑰 + 鬼灵面容",
+    "template": "[[Items/P74_Unique_Scythe1H_01]] + [[Items/P74_Unique_Phylactery_04]] + [[Items/P69_Unique_Amulet_02]]"
+  },
+  "app.f0925a6d805010a3": {
+    "source": "鲜血虹吸、免费鲜血新星和永久双分共同组成物理新星发动机；不要把第二来源的毒新星符文单独混进来。",
+    "template": "[[Powers/P6_Necro_SiphonBlood_name]]、免费[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]和永久双分共同组成物理新星发动机；不要把第二来源的毒新星符文单独混进来。",
+    "manual": {
+      "enUS": "Siphon Blood, free Blood Novas, and permanent Simulacrum form the Physical Nova engine; do not splice in the Poison Nova rune from the second source."
+    }
+  },
+  "app.96883fe1c35e4dfa": {
+    "source": "远古是逐件成长，不是准入门槛",
+    "template": "远古是逐件成长，不是准入门槛",
+    "manual": {
+      "enUS": "Ancients are incremental upgrades, not an entry requirement"
+    }
+  },
+  "app.bc5db693d8216f1c": {
+    "source": "普通传奇已提供梦遗收益，远古或太古将该件收益翻倍；先保正确威能和词缀，再逐件升级。",
+    "template": "普通传奇已提供梦遗收益，远古或太古将该件收益翻倍；先保正确威能和词缀，再逐件升级。",
+    "manual": {
+      "enUS": "Regular Legendaries already gain the Legacy of Dreams benefit, while Ancient or Primal quality doubles it for that item. Preserve the correct powers and affixes first, then upgrade slot by slot."
+    }
+  },
+  "app.523edd7240067f37": {
+    "source": "远古 / 太古同名件",
+    "template": "远古 / 太古同名件",
+    "manual": {
+      "enUS": "Ancient / Primal version of the same item"
+    }
+  },
+  "app.4072783f0165eca7": {
+    "source": "特效和关键词缀不低于当前装备",
+    "template": "特效和关键词缀不低于当前装备",
+    "manual": {
+      "enUS": "Its power and key affixes are no worse than the current item"
+    }
+  },
+  "app.36c92069d4c8a9a1": {
+    "source": "该部位获得双倍梦遗增伤与减伤",
+    "template": "该部位获得双倍梦遗[[Site/damage-boost]]与[[Site/damage-reduction]]",
+    "manual": {
+      "enUS": "That slot gains double the Legacy of Dreams damage and damage-reduction benefit"
+    }
+  },
+  "app.1db03980071f2379": {
+    "source": "不能为了远古品质丢失关键威能或合法词缀",
+    "template": "不能为了远古品质丢失关键威能或合法词缀",
+    "manual": {
+      "enUS": "Do not lose a core power or valid affixes merely to equip an Ancient item"
+    }
+  },
+  "app.ca1093b804541716": {
+    "source": "鬼灵面容 / 卡兰之睿穿萃互换",
+    "template": "[[Items/P69_Unique_Amulet_02]] / [[Items/P6_Unique_Amulet_03]]穿萃互换",
+    "manual": {
+      "enUS": "Swap worn and cubed positions for Haunted Visions / Wisdom of Kalan"
+    }
+  },
+  "app.f110ad09562b87dc": {
+    "source": "穿戴两条项链中词缀更好的一条，另一条进入首饰魔方槽；两项威能必须同时存在。",
+    "template": "穿戴两条项链中词缀更好的一条，另一条进入首饰魔方槽；两项威能必须同时存在。",
+    "manual": {
+      "enUS": "Wear whichever amulet has better affixes and put the other in the jewelry Cube slot; both powers must remain active."
+    }
+  },
+  "app.658d5a3f7ad5bda3": {
+    "source": "萃取鬼灵面容",
+    "template": "萃取[[Items/P69_Unique_Amulet_02]]",
+    "manual": {
+      "enUS": "Cube Haunted Visions"
+    }
+  },
+  "app.af74c5dedfcb0641": {
+    "source": "卡兰之睿的镶孔、双暴、物理伤等穿戴词缀明显更好",
+    "template": "[[Items/P6_Unique_Amulet_03]]的镶孔、双暴、物理伤等穿戴词缀明显更好",
+    "manual": {
+      "enUS": "Wisdom of Kalan has clearly better wearable affixes such as a socket, both Critical stats, and Physical damage"
+    }
+  },
+  "app.6d3a7fb766177d3b": {
+    "source": "保留更好的项链词缀",
+    "template": "保留更好的项链词缀",
+    "manual": {
+      "enUS": "Keep the better amulet affixes"
+    }
+  },
+  "app.1ec817dc3eb4ad1d": {
+    "source": "失去当前鬼灵面容穿戴词缀，且必须确认永久双分威能仍在",
+    "template": "失去当前[[Items/P69_Unique_Amulet_02]]穿戴词缀，且必须确认永久双分威能仍在",
+    "manual": {
+      "enUS": "Lose the current Haunted Visions wearable affixes and must confirm that the permanent Simulacrum power remains active"
+    }
+  },
+  "app.6fde34e7d92d102d": {
+    "source": "受罚者 / 强者",
+    "template": "[[Items/Unique_Gem_018_x1]] / 强者",
+    "manual": {
+      "enUS": "Bane of the Stricken / Bane of the Powerful"
+    }
+  },
+  "app.2187ed1c307b93e3": {
+    "source": "高层推进固定受罚者处理长时间首领；只有低层精英击杀连续且首领不再拖时时才换强者。",
+    "template": "高层推进固定[[Items/Unique_Gem_018_x1]]处理长时间首领；只有低层精英击杀连续且首领不再拖时时才换强者。",
+    "manual": {
+      "enUS": "Keep Bane of the Stricken for high-tier progression and long boss fights; switch to Bane of the Powerful only when lower-tier elite kills flow continuously and the boss no longer takes too long."
+    }
+  },
+  "app.31531df2e8d5be17": {
+    "source": "低层GR中精英击杀连续，守关者不需要长时间叠层",
+    "template": "低层GR中精英击杀连续，守关者不需要长时间叠层",
+    "manual": {
+      "enUS": "Elite kills are continuous in lower Greater Rifts and the Rift Guardian does not require prolonged stacking"
+    }
+  },
+  "app.0afb2aed05c6dc8e": {
+    "source": "击杀精英后立即获得通用增伤",
+    "template": "击杀精英后立即获得通用[[Site/damage-boost]]",
+    "manual": {
+      "enUS": "Gain immediate general damage after killing an elite pack"
+    }
+  },
+  "app.c499b500a76ca9aa": {
+    "source": "失去长时间单体叠层能力",
+    "template": "失去长时间单体叠层能力",
+    "manual": {
+      "enUS": "Lose the ability to stack damage during prolonged single-target fights"
+    }
+  },
+  "app.deef9a2b59749d73": {
+    "source": "头部白宝石",
+    "template": "头部白宝石",
+    "manual": {
+      "enUS": "Diamond in the helm"
+    }
+  },
+  "app.a4dae9fce5ef710c": {
+    "source": "Icy当前装备页明确使用白宝石获取冷却缩减；旧项目写成紫宝石属于错误，不是高低巅峰分支。",
+    "template": "Icy当前装备页明确使用白宝石获取[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]]；旧项目写成紫宝石属于错误，不是高[[Site/low-paragon]]分支。",
+    "manual": {
+      "enUS": "Icy's current gear page explicitly uses a Diamond for cooldown reduction. The old project's Amethyst was an error, not a low-versus-high-Paragon branch."
+    }
+  },
+  "app.ebb12f3b545631b5": {
+    "source": "只开放GR推进与低层GR速刷",
+    "template": "只开放GR推进与低层GR[[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Expose only Greater Rift progression and lower-tier Greater Rift speed farming"
+    }
+  },
+  "app.0e22795967712c86": {
+    "source": "第二来源虽列出T16，但它采用毒新星、团结、斯图亚特和另一组技能魔方；没有可交叉核对的精确T16配置前，不把旧金币链强行拼回物理方案，也不外推蓝门或悬赏。",
+    "template": "第二来源虽列出T16，但它采用毒新星、[[Items/Unique_Ring_010_x1]]、斯图亚特和另一组技能魔方；没有可交叉核对的精确T16配置前，不把旧金币链强行拼回物理方案，也不外推蓝门或悬赏。",
+    "manual": {
+      "enUS": "The second source lists T16, but uses Poison Nova, Unity, Steuart's Greaves, and a different skill and Cube package. Until an exact T16 configuration can be cross-checked, do not splice the old gold chain into the Physical setup or extrapolate it to Visions or bounties."
+    }
+  },
+  "app.e2f1d4481affd4c2": {
+    "source": "单人GR使用盗贼",
+    "template": "[[Site/solo]]GR使用[[Pets/HirelingScoundrel]]",
+    "manual": {
+      "enUS": "Use the Scoundrel for solo Greater Rifts"
+    }
+  },
+  "app.f66d5340116b95ee": {
+    "source": "Icy明确推荐盗贼用于单人GR推进的暴击窗口；随从具体装备、技能与Nintendo Switch发散表现仍需实机核对。",
+    "template": "Icy明确推荐[[Pets/HirelingScoundrel]]用于[[Site/solo]]GR推进的暴击窗口；随从具体装备、技能与Nintendo Switch发散表现仍需实机核对。",
+    "manual": {
+      "enUS": "Icy explicitly recommends the Scoundrel for Critical Hit windows in solo Greater Rift progression; the exact follower gear, skills, and Nintendo Switch behavior still require in-game verification."
+    }
+  },
+  "app.7e3ab04f37dfcd41": {
+    "source": "物理LoD新星可用于单人GR推进，但不宣传为已证明的当前最强冲层方案。",
+    "template": "物理LoD新星可用于[[Site/solo]]GR推进，但不宣传为已证明的当前最强[[Site/push]]方案。",
+    "manual": {
+      "enUS": "Physical LoD Nova is viable for solo Greater Rift progression, but is not presented as a proven current top pushing build."
+    }
+  },
+  "app.dc879e1b11805928": {
+    "source": "Icy正文明确高层与单人GR推进，但页面没有gr-pushing标签；d3guides有GR push，却采用另一套毒新星配置。",
+    "template": "Icy正文明确高层与[[Site/solo]]GR推进，但页面没有gr-pushing标签；d3guides有GR push，却采用另一套毒新星配置。",
+    "manual": {
+      "enUS": "Icy's prose explicitly discusses high-tier and solo Greater Rift progression, but the page has no gr-pushing tag; d3guides lists Greater Rift pushing but uses a different Poison Nova setup."
+    }
+  },
+  "app.e55ccb4dafa8b485": {
+    "source": "低层GR可保留物理主配置并把受罚者换成强者。",
+    "template": "低层GR可保留物理主配置并把[[Items/Unique_Gem_018_x1]]换成强者。",
+    "manual": {
+      "enUS": "Lower Greater Rifts can retain the main Physical setup while replacing Bane of the Stricken with Bane of the Powerful."
+    }
+  },
+  "app.35459c44544a8151": {
+    "source": "两站都支持速刷用途，但完整速刷配装不同；当前只采用Icy明确写出的单颗宝石替换。",
+    "template": "两站都支持[[Site/speed-farming]]用途，但完整[[Site/speed-farming]]配装不同；当前只采用Icy明确写出的单颗宝石替换。",
+    "manual": {
+      "enUS": "Both sites support speed farming, but their complete speed setups differ; the current variant adopts only the single gem replacement explicitly documented by Icy."
+    }
+  },
+  "app.742e191cd077ca5c": {
+    "source": "本轮不创建T16、蓝门或悬赏按钮。",
+    "template": "本轮不创建T16、蓝门或悬赏按钮。",
+    "manual": {
+      "enUS": "This review does not create T16, Vision, or bounty buttons."
+    }
+  },
+  "app.53c27c0e869babb3": {
+    "source": "d3guides存在T16变体，但与Icy物理主配置差异过大；Maxroll正文未能读取，暂时无法裁决。",
+    "template": "d3guides存在T16变体，但与Icy物理主配置差异过大；Maxroll正文未能读取，暂时无法裁决。",
+    "manual": {
+      "enUS": "d3guides has a T16 variant, but it differs too substantially from Icy's main Physical setup; Maxroll's article body could not be accessed, so the conflict cannot yet be resolved."
+    }
+  },
+  "app.f57297d8025d0085": {
+    "source": "梦之遗礼要求没有激活套装奖励；普通传奇有效，远古或太古使对应部位收益翻倍。",
+    "template": "[[Items/Unique_Gem_023_x1]]要求没有激活套装奖励；普通传奇有效，远古或太古使对应部位收益翻倍。",
+    "manual": {
+      "enUS": "Legacy of Dreams requires that no set bonus be active. Regular Legendaries work, while Ancient or Primal items double the benefit for their slot."
+    }
+  },
+  "app.4cacea4f2973d28c": {
+    "source": "葬镰、铁玫瑰、鬼灵面容与梦之遗礼是两套资料共同保留的核心。",
+    "template": "[[Items/P74_Unique_Scythe1H_01]]、[[Items/P74_Unique_Phylactery_04]]、[[Items/P69_Unique_Amulet_02]]与[[Items/Unique_Gem_023_x1]]是两套资料共同保留的核心。",
+    "manual": {
+      "enUS": "Funerary Pick, Iron Rose, Haunted Visions, and Legacy of Dreams are the shared core retained by both sources."
+    }
+  },
+  "app.386439d910632ab1": {
+    "source": "当前采用Icy的克雷姆、攀冰者和全能法戒物理方案。",
+    "template": "当前采用Icy的克雷姆、[[Items/Unique_Boots_008_x1]]和[[Items/P2_Unique_Ring_04]]物理方案。",
+    "manual": {
+      "enUS": "The current build uses Icy's Physical setup with Krelm's Buff Bracers, Ice Climbers, and Convention of Elements."
+    }
+  },
+  "app.e1b67bd182edf1a6": {
+    "source": "d3guides改用古帕萨、斯图亚特、团结与毒新星；不把两套完整配置混拼。",
+    "template": "d3guides改用古帕萨、斯图亚特、[[Items/Unique_Ring_010_x1]]与毒新星；不把两套完整配置混拼。",
+    "manual": {
+      "enUS": "d3guides instead uses Ancient Parthan Defenders, Steuart's Greaves, Unity, and Poison Nova; the two complete setups are not mixed."
+    }
+  },
+  "app.c047911bfdef2f65": {
+    "source": "当前采用Icy的物理鲜血新星、力量转移、鲜血灌注、白骨脱臼与脆弱光环。",
+    "template": "当前采用Icy的物理[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]、[[AttributeDescriptions/NameRune_D#P6_Necro_SiphonBlood]]、[[AttributeDescriptions/NameRune_A#P6_Necro_BloodRush]]、[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]与[[AttributeDescriptions/NameRune_E#P6_Necro_Frailty]]。",
+    "manual": {
+      "enUS": "The current setup uses Icy's Physical Blood Nova, Power Shift, Transfusion, Dislocation, and Aura of Frailty."
+    }
+  },
+  "app.c71ec719f1c90383": {
+    "source": "d3guides采用毒新星和不同符文；Icy技能页自身还残留亡者领域旧段落，因此只以当前技能表为准。",
+    "template": "d3guides采用毒新星和不同符文；Icy技能页自身还残留[[Powers/P6_Necro_LandOfTheDead_name]]旧段落，因此只以当前技能表为准。",
+    "manual": {
+      "enUS": "d3guides uses Poison Nova and different runes, while Icy's own skill page still contains an outdated Land of the Dead paragraph; therefore only the current skill table is treated as authoritative."
+    }
+  },
+  "app.c15ecfc30cc579bc": {
+    "source": "当前采用迅捷收割、无尽折磨、咒怨之力和孤魂死灵。",
+    "template": "当前采用[[Powers/P6_Necro_Passive_BuilderAttackSpeed_name]]、[[Powers/P6_Necro_Passive_EternalTorment_name]]、[[Powers/P6_Necro_Passive_CurseDamageBonus_name]]和[[Powers/P6_Necro_Passive_StandAlone_name]]。",
+    "manual": {
+      "enUS": "The current setup uses Swift Harvesting, Eternal Torment, Spreading Malediction, and Stand Alone."
+    }
+  },
+  "app.32b5c28e2c7745d0": {
+    "source": "第二来源用绝命效忠替代无尽折磨。",
+    "template": "第二来源用[[Powers/P6_Necro_Passive_CheatDeath_name]]替代[[Powers/P6_Necro_Passive_EternalTorment_name]]。",
+    "manual": {
+      "enUS": "The second source replaces Eternal Torment with Final Service."
+    }
+  },
+  "app.5443c301764ec7a8": {
+    "source": "血潮利刃、戴恩提和轮回镰刀双源一致；首饰槽当前采用Icy的卡兰之睿。",
+    "template": "[[Items/P65_Unique_Scythe2H_02]]、[[Items/P61_Unique_Belt_01]]和[[Items/P61_Unique_Scythe1H_03]]双源一致；首饰槽当前采用Icy的[[Items/P6_Unique_Amulet_03]]。",
+    "manual": {
+      "enUS": "Bloodtide Blade, Dayntee's Binding, and Scythe of the Cycle agree across both sources; the jewelry slot currently follows Icy with Wisdom of Kalan."
+    }
+  },
+  "app.0b1c4e0e276d1ce3": {
+    "source": "d3guides首饰槽使用全能法戒；只有三个槽位交叉一致，不能把四槽整体标为已核对。",
+    "template": "d3guides首饰槽使用[[Items/P2_Unique_Ring_04]]；只有三个槽位交叉一致，不能把四槽整体标为已核对。",
+    "manual": {
+      "enUS": "d3guides uses Convention of Elements in the jewelry slot. Only three slots agree across sources, so the entire four-slot Cube setup cannot be marked as cross-checked."
+    }
+  },
+  "app.2b88ae1657a151ce": {
+    "source": "困者、受罚者和梦之遗礼是推进基础三宝石。",
+    "template": "[[Items/Unique_Gem_002_x1]]、[[Items/Unique_Gem_018_x1]]和[[Items/Unique_Gem_023_x1]]是推进基础三宝石。",
+    "manual": {
+      "enUS": "Bane of the Trapped, Bane of the Stricken, and Legacy of Dreams are the three base progression gems."
+    }
+  },
+  "app.4fc62906e527175d": {
+    "source": "当前物理方案使用头部白、护甲黄、武器绿。",
+    "template": "当前物理方案使用头部白、护甲黄、武器绿。",
+    "manual": {
+      "enUS": "The current Physical setup uses a Diamond in the helm, Topazes in armor, and an Emerald in the weapon."
+    }
+  },
+  "app.2750aff256daf473": {
+    "source": "d3guides表格写头部紫、护甲黄、武器绿，但同页又说其余七孔全黄，存在页内矛盾；本配置按Icy当前表格。",
+    "template": "d3guides表格写头部紫、护甲黄、武器绿，但同页又说其余七孔全黄，存在页内矛盾；本配置按Icy当前表格。",
+    "manual": {
+      "enUS": "The d3guides table lists an Amethyst in the helm, Topazes in armor, and an Emerald in the weapon, but the same page also says all seven remaining sockets use Topaz. Because of this internal conflict, this build follows Icy's current table."
+    }
+  },
+  "app.83899569bfe30f89": {
+    "source": "进攻巅峰顺序为暴伤、暴击、冷却、攻速；功能顺序为击回、范围伤、减耗、拾取。",
+    "template": "进攻[[Site/paragon]]顺序为暴伤、暴击、冷却、攻速；功能顺序为击回、范围伤、减耗、拾取。",
+    "manual": {
+      "enUS": "Offense Paragon order is Critical Hit Damage, Critical Hit Chance, Cooldown Reduction, then Attack Speed; Utility order is Life on Hit, Area Damage, Resource Cost Reduction, then Pickup Radius."
+    }
+  },
+  "app.f26e3750e021b42a": {
+    "source": "没有证据支持2000巅峰自动切宝石、装备或整套T16金币链。",
+    "template": "没有证据支持2000[[Site/paragon]]自动切宝石、装备或整套T16金币链。",
+    "manual": {
+      "enUS": "No evidence supports automatically changing gems, gear, or an entire T16 gold-chain package at 2,000 Paragon."
+    }
+  },
+  "app.62cfea85387dd414": {
+    "source": "两份资料都按用途、品质和实战条件描述选择，没有给2000巅峰硬线；这是对缺失证据的保守裁决。",
+    "template": "两份资料都按用途、品质和实战条件描述选择，没有给2000[[Site/paragon]]硬线；这是对缺失证据的保守裁决。",
+    "manual": {
+      "enUS": "Both sources describe choices by use case, item quality, and observed performance, with no hard 2,000-Paragon threshold; this is a conservative ruling based on the absence of evidence."
+    }
+  },
+  "app.5814b2c3f7d32eb4": {
+    "source": "Icy推荐盗贼用于单人GR推进；具体随从装备和技能尚未逐项校对。",
+    "template": "Icy推荐[[Pets/HirelingScoundrel]]用于[[Site/solo]]GR推进；具体随从装备和技能尚未逐项校对。",
+    "manual": {
+      "enUS": "Icy recommends the Scoundrel for solo Greater Rift progression; the exact follower gear and skills have not yet been reviewed item by item."
+    }
+  },
+  "app.6f0ee772a346dfa6": {
+    "source": "Nintendo Switch的虹吸朝向、手动新星、鲜血穿行落点和随从发散尚未实测。",
+    "template": "Nintendo Switch的虹吸朝向、手动新星、[[Powers/P6_Necro_BloodRush_name]]落点和随从发散尚未实测。",
+    "manual": {
+      "enUS": "Siphon Blood targeting, manual Nova casting, Blood Rush placement, and follower behavior have not yet been tested on Nintendo Switch."
+    }
+  },
+  "app.c69122c90548a5b5": {
+    "source": "当前精确构筑来源均为PC页面；官方物品机制跨平台，但不等于主机手感验证。",
+    "template": "当前精确构筑来源均为PC页面；官方物品机制跨平台，但不等于主机手感验证。",
+    "manual": {
+      "enUS": "The current exact build sources are PC pages. Official item mechanics apply across platforms, but that does not constitute validation of console controls or feel."
+    }
+  },
+  "app.021bc7473a5272c5": {
+    "source": "梦之遗礼 · 无套装散件",
+    "template": "[[Items/Unique_Gem_023_x1]] · 无套装散件",
+    "manual": {
+      "enUS": "Legacy of Dreams · No-set Legendary build"
+    }
+  },
+  "app.b13f5624fae4f930": {
+    "source": "鲜血虹吸 → 铁玫瑰 → 双分复制物理鲜血新星",
+    "template": "[[Powers/P6_Necro_SiphonBlood_name]] → [[Items/P74_Unique_Phylactery_04]] → 双分复制物理[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]",
+    "manual": {
+      "enUS": "Siphon Blood → Iron Rose → Simulacrum duplicates copy Physical Blood Nova"
+    }
+  },
+  "app.0b79bfcd70dde9c5": {
+    "source": "普通传奇即可启动梦之遗礼；远古或太古只会把对应部位的宝石收益翻倍。当前只开放有证据的单人GR推进和低层GR速刷，不再按2000巅峰复制配置。",
+    "template": "普通传奇即可启动[[Items/Unique_Gem_023_x1]]；远古或太古只会把对应部位的宝石收益翻倍。当前只开放有证据的[[Site/solo]]GR推进和低层GR[[Site/speed-farming]]，不再按2000[[Site/paragon]]复制配置。",
+    "manual": {
+      "enUS": "Regular Legendaries activate Legacy of Dreams; Ancient or Primal quality only doubles the gem benefit for that slot. Only evidence-backed solo Greater Rift progression and lower-tier Greater Rift speed farming are exposed, with no duplicated 2,000-Paragon configurations."
+    }
+  },
+  "app.9bdf525b96b64d64": {
+    "source": "中高 · 贴身聚怪、骨甲与物理周期",
+    "template": "中高 · 贴身聚怪、[[Powers/P6_Necro_BoneArmor_name]]与物理周期",
+    "manual": {
+      "enUS": "Medium-high · Close-range grouping, Bone Armor, and Physical cycle timing"
+    }
+  },
+  "app.2389bc70501e8c81": {
+    "source": "Icy推荐盗贼用于单人GR推进的暴击窗口；具体装备与Switch发散表现仍待实测。",
+    "template": "Icy推荐[[Pets/HirelingScoundrel]]用于[[Site/solo]]GR推进的暴击窗口；具体装备与Switch发散表现仍待实测。",
+    "manual": {
+      "enUS": "Icy recommends the Scoundrel for Critical Hit windows in solo Greater Rift progression; exact gear and Switch behavior still require in-game testing."
+    }
+  },
+  "app.041f2aa41e7ad206": {
+    "source": "单人 GR 推进",
+    "template": "[[Site/solo]] GR 推进",
+    "manual": {
+      "enUS": "Solo Greater Rift progression"
+    }
+  },
+  "app.a70bbb72c475db5f": {
+    "source": "保留受罚者处理长时间首领，并按物理周期完成强控爆发。",
+    "template": "保留[[Items/Unique_Gem_018_x1]]处理长时间首领，并按物理周期完成[[Site/crowd-control]]爆发。",
+    "manual": {
+      "enUS": "Keep Bane of the Stricken for long boss fights and execute hard-control burst during the Physical cycle."
+    }
+  },
+  "app.8b3a69165a376aa2": {
+    "source": "受罚者之灾固定",
+    "template": "[[Items/Unique_Gem_018_x1]]固定",
+    "manual": {
+      "enUS": "Bane of the Stricken is fixed"
+    }
+  },
+  "app.4a786f8ad82436d2": {
+    "source": "保持骨甲、诅咒与天鹰三条防线",
+    "template": "保持[[Powers/P6_Necro_BoneArmor_name]]、诅咒与天鹰三条防线",
+    "manual": {
+      "enUS": "Maintain all three defensive layers: Bone Armor, curses, and Aquila Cuirass"
+    }
+  },
+  "app.318b938a782fd010": {
+    "source": "不与毒新星第二方案混拼",
+    "template": "不与毒新星第二方案混拼",
+    "manual": {
+      "enUS": "Do not mix it with the second Poison Nova setup"
+    }
+  },
+  "app.ecd30c08b809ffcc": {
+    "source": "低层 GR 速刷",
+    "template": "低层 GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Lower-tier Greater Rift speed farming"
+    }
+  },
+  "app.ad7c898684936641": {
+    "source": "只采用资料明确写出的受罚者换强者，不虚构T16金币链。",
+    "template": "只采用资料明确写出的[[Items/Unique_Gem_018_x1]]换强者，不虚构T16金币链。",
+    "manual": {
+      "enUS": "Use only the documented swap from Bane of the Stricken to Bane of the Powerful; do not invent a T16 gold chain."
+    }
+  },
+  "app.8be46cc702dbc5c1": {
+    "source": "受罚者换强者之灾",
+    "template": "[[Items/Unique_Gem_018_x1]]换[[Items/Unique_Gem_001_x1]]"
+  },
+  "app.8108876f308e88d4": {
+    "source": "精英和首领不再拖时才使用",
+    "template": "精英和首领不再拖时才使用",
+    "manual": {
+      "enUS": "Use only when elites and the Rift Guardian no longer slow the run"
+    }
+  },
+  "app.e3b908813b104acc": {
+    "source": "没有金币链，也不等同于T16或悬赏",
+    "template": "没有金币链，也不等同于T16或悬赏",
+    "manual": {
+      "enUS": "Has no gold chain and is not equivalent to T16 or bounty farming"
+    }
+  },
+  "app.05e2fd10440fc156": {
+    "source": "未全远古阶段",
+    "template": "未全远古阶段",
+    "manual": {
+      "enUS": "Before full Ancient gear"
+    }
+  },
+  "app.93dda4e9fdec8379": {
+    "source": "普通传奇已有梦遗收益；先凑发动机和正确特效。",
+    "template": "普通传奇已有梦遗收益；先凑发动机和正确特效。",
+    "manual": {
+      "enUS": "Regular Legendaries already receive the Legacy of Dreams benefit; assemble the build engine and correct powers first."
+    }
+  },
+  "app.43c836683e6c6510": {
+    "source": "葬镰、铁玫瑰、鬼灵面容优先",
+    "template": "[[Items/P74_Unique_Scythe1H_01]]、[[Items/P74_Unique_Phylactery_04]]、[[Items/P69_Unique_Amulet_02]]优先",
+    "manual": {
+      "enUS": "Prioritize Funerary Pick, Iron Rose, and Haunted Visions"
+    }
+  },
+  "app.1f1b7a9786931fa2": {
+    "source": "正确普通传奇优于错误远古",
+    "template": "正确普通传奇优于错误远古",
+    "manual": {
+      "enUS": "A correct regular Legendary is better than the wrong Ancient"
+    }
+  },
+  "app.e123b6f0d956f5d3": {
+    "source": "逐件替换远古，不设固定巅峰门槛",
+    "template": "逐件替换远古，不设固定[[Site/paragon]]门槛",
+    "manual": {
+      "enUS": "Upgrade to Ancients slot by slot without a fixed Paragon threshold"
+    }
+  },
+  "app.93481884fda30006": {
+    "source": "高成长阶段",
+    "template": "高成长阶段",
+    "manual": {
+      "enUS": "Advanced progression stage"
+    }
+  },
+  "app.6f836bda90ca6b4a": {
+    "source": "远古率、卡德山和词缀质量提高后，再按实战瓶颈优化。",
+    "template": "远古率、卡德山和词缀质量提高后，再按实战瓶颈优化。",
+    "manual": {
+      "enUS": "After improving Ancient coverage, augments, and affix quality, optimize around observed bottlenecks."
+    }
+  },
+  "app.c89c4af0eff9fedd": {
+    "source": "生存达标后才考虑智力换范围伤或冷却",
+    "template": "生存达标后才考虑[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]换范围伤或冷却",
+    "manual": {
+      "enUS": "Consider replacing Intelligence with Area Damage or Cooldown Reduction only after survivability is sufficient"
+    }
+  },
+  "app.c944fd14d5e7e500": {
+    "source": "头部仍是白宝石，不自动改钻石甲",
+    "template": "头部仍是白宝石，不自动改钻石甲",
+    "manual": {
+      "enUS": "The helm still uses a Diamond; do not automatically change armor gems to Diamonds"
+    }
+  },
+  "app.aaa466bee67adaa2": {
+    "source": "首领拖时就继续使用受罚者",
+    "template": "首领拖时就继续使用[[Items/Unique_Gem_018_x1]]",
+    "manual": {
+      "enUS": "Continue using Bane of the Stricken when the boss takes too long"
+    }
+  },
+  "app.55aa8772170f27d4": {
+    "source": "物理新星发动机",
+    "template": "物理新星发动机",
+    "manual": {
+      "enUS": "Physical Nova engine"
+    }
+  },
+  "app.f9f0103ec689edc8": {
+    "source": "持续鲜血虹吸触发铁玫瑰的免费鲜血新星；永久双分复制次要技能，全部围绕物理元素周期结算。",
+    "template": "持续[[Powers/P6_Necro_SiphonBlood_name]]触发[[Items/P74_Unique_Phylactery_04]]的免费[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]；永久双分复制次要技能，全部围绕物理元素周期结算。",
+    "manual": {
+      "enUS": "Continuously channel Siphon Blood to trigger Iron Rose's free Blood Novas. Permanent Simulacrum duplicates copy the Secondary skill, and all damage is aligned with the Physical elemental cycle."
+    }
+  },
+  "app.5d5b72f5b550bf2b": {
+    "source": "鲜血虹吸",
+    "template": "[[Powers/P6_Necro_SiphonBlood_name]]"
+  },
+  "app.e9c06f5c0313a50c": {
+    "source": "铁玫瑰",
+    "template": "[[Items/P74_Unique_Phylactery_04]]"
+  },
+  "app.3e5b9dce971f7da6": {
+    "source": "100%触发免费鲜血新星",
+    "template": "100%触发免费[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]",
+    "manual": {
+      "enUS": "100% chance to trigger a free Blood Nova"
+    }
+  },
+  "app.5d10fe24315efe64": {
+    "source": "两个分身复制次要技能",
+    "template": "两个分身复制次要技能",
+    "manual": {
+      "enUS": "Two duplicates copy Secondary skills"
+    }
+  },
+  "app.7a52d49aa7ee9a38": {
+    "source": "双分永久存在",
+    "template": "双分永久存在",
+    "manual": {
+      "enUS": "Simulacrum remains active permanently"
+    }
+  },
+  "app.dca56bdcc9b0bb3a": {
+    "source": "梦遗装备纪律",
+    "template": "梦遗装备纪律",
+    "manual": {
+      "enUS": "Legacy of Dreams gearing rules"
+    }
+  },
+  "app.1d62c3d6f22cecd9": {
+    "source": "普通传奇能启动，远古逐件翻倍；真正的硬条件是不能激活任何套装奖励。",
+    "template": "普通传奇能启动，远古逐件翻倍；真正的硬条件是不能激活任何套装奖励。",
+    "manual": {
+      "enUS": "Regular Legendaries activate the gem and Ancients double the benefit slot by slot; the true hard requirement is that no set bonus may be active."
+    }
+  },
+  "app.45217141b66b9aa7": {
+    "source": "按每件传奇计算",
+    "template": "按每件传奇计算",
+    "manual": {
+      "enUS": "Calculated per Legendary item"
+    }
+  },
+  "app.f60bc152041ae5b7": {
+    "source": "黑荆棘裤",
+    "template": "黑荆棘裤",
+    "manual": {
+      "enUS": "Blackthorne's Jousting Mail"
+    }
+  },
+  "app.f01bba1fe0fa9e3e": {
+    "source": "只能单穿一件",
+    "template": "只能单穿一件",
+    "manual": {
+      "enUS": "Wear only one piece"
+    }
+  },
+  "app.3766e7448015bf60": {
+    "source": "普通传奇",
+    "template": "普通传奇",
+    "manual": {
+      "enUS": "Regular Legendary"
+    }
+  },
+  "app.5e1d7ef9f76aa55c": {
+    "source": "已有基础收益",
+    "template": "已有基础收益",
+    "manual": {
+      "enUS": "Already grants the base benefit"
+    }
+  },
+  "app.2a80a5e6f8a68fec": {
+    "source": "远古 / 太古",
+    "template": "远古 / 太古",
+    "manual": {
+      "enUS": "Ancient / Primal"
+    }
+  },
+  "app.6306d5db0bf75393": {
+    "source": "对应部位收益翻倍",
+    "template": "对应部位收益翻倍",
+    "manual": {
+      "enUS": "Doubles the benefit for that slot"
+    }
+  },
+  "app.33ae2309d4274322": {
+    "source": "三条条件防线",
+    "template": "三条条件防线",
+    "manual": {
+      "enUS": "Three conditional defensive layers"
+    }
+  },
+  "app.da7cbf3b97000351": {
+    "source": "骨甲、受诅咒目标和高魂能任一断开都会显著变脆；这些是运行条件，不是巅峰自动补偿。",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]]、受诅咒目标和高魂能任一断开都会显著变脆；这些是运行条件，不是[[Site/paragon]]自动补偿。",
+    "manual": {
+      "enUS": "Losing Bone Armor, cursed targets, or high Essence sharply reduces toughness. These are operating conditions, not weaknesses automatically offset by Paragon."
+    }
+  },
+  "app.951ca2842bb1980d": {
+    "source": "骨甲",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]]"
+  },
+  "app.b99068994581af6e": {
+    "source": "层数与轮回镰刀",
+    "template": "层数与[[Items/P61_Unique_Scythe1H_03]]",
+    "manual": {
+      "enUS": "Stacks and Scythe of the Cycle"
+    }
+  },
+  "app.26eadc79d605f680": {
+    "source": "维持受诅咒目标",
+    "template": "维持受诅咒目标",
+    "manual": {
+      "enUS": "Maintain cursed targets"
+    }
+  },
+  "app.e8f252a4b250aafb": {
+    "source": "戴恩提",
+    "template": "[[Items/P61_Unique_Belt_01]]"
+  },
+  "app.88d9b734232a849a": {
+    "source": "诅咒存在时减伤",
+    "template": "诅咒存在时[[Site/damage-reduction]]",
+    "manual": {
+      "enUS": "Damage reduction while a curse is active"
+    }
+  },
+  "app.73a6b414e65aed58": {
+    "source": "保持高魂能",
+    "template": "保持高魂能",
+    "manual": {
+      "enUS": "Maintain high Essence"
+    }
+  },
+  "app.7cf98189da60ff57": {
+    "source": "单人GR推进",
+    "template": "[[Site/solo]]GR推进",
+    "manual": {
+      "enUS": "Solo Greater Rift progression"
+    }
+  },
+  "app.5d0301933bd9d667": {
+    "source": "低层GR速刷",
+    "template": "低层GR[[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Lower-tier Greater Rift speed farming"
+    }
+  },
+  "app.0ddabd23a244fc91": {
+    "source": "这是一套可用于单人GR推进的物理新星方案；第二来源的毒新星配装不同，不能混拼。",
+    "template": "这是一套可用于[[Site/solo]]GR推进的物理新星方案；第二来源的毒新星配装不同，不能混拼。",
+    "manual": {
+      "enUS": "This Physical Nova setup is viable for solo Greater Rift progression. The second source uses a different Poison Nova loadout and must not be mixed into it."
+    }
+  },
+  "app.f8cb044b9b9a564a": {
+    "source": "低层GR只把受罚者换成强者；T16、蓝门、悬赏和金币链暂不开放。",
+    "template": "低层GR只把[[Items/Unique_Gem_018_x1]]换成强者；T16、蓝门、悬赏和金币链暂不开放。",
+    "manual": {
+      "enUS": "For lower Greater Rifts, only replace Bane of the Stricken with Bane of the Powerful. T16, Visions, bounties, and the gold chain remain unavailable."
+    }
+  },
+  "app.0b750ce26be8ac8e": {
+    "source": "普通传奇即可生效；优先完整发动机和正确威能，再逐件追远古。",
+    "template": "普通传奇即可生效；优先完整发动机和正确威能，再逐件追远古。",
+    "manual": {
+      "enUS": "Regular Legendaries already work. Complete the build engine and correct powers first, then pursue Ancients slot by slot."
+    }
+  },
+  "app.d16c247a04e1ea5c": {
+    "source": "按生存、冷却与首领耗时调整词缀和宝石，没有2000巅峰自动切线。",
+    "template": "按生存、冷却与首领耗时调整词缀和宝石，没有2000[[Site/paragon]]自动切线。",
+    "manual": {
+      "enUS": "Adjust affixes and gems according to survivability, cooldowns, and boss kill time; there is no automatic switch at 2,000 Paragon."
+    }
+  },
+  "app.5365b91ec3d58fbd": {
+    "source": "已按S39/2.7.8字段级校对，修正头部宝石、鲜血穿行符文、护肩非法技能伤、巅峰顺序和全远古准入误导；删除无来源的高低巅峰复制与T16金币链。Icy内部旧段落、第二来源完整配装冲突、Maxroll正文缺失和Nintendo Switch实测仍未关闭。",
+    "template": "已按S39/2.7.8字段级校对，修正头部宝石、[[Powers/P6_Necro_BloodRush_name]]符文、护肩非法技能伤、[[Site/paragon]]顺序和全远古准入误导；删除无来源的高[[Site/low-paragon]]复制与T16金币链。Icy内部旧段落、第二来源完整配装冲突、Maxroll正文缺失和Nintendo Switch实测仍未关闭。",
+    "manual": {
+      "enUS": "Field-level reviewed for Season 39 / patch 2.7.8. Corrected the helm gem, Blood Rush rune, illegal shoulder skill damage, Paragon order, and misleading full-Ancient requirement; removed unsupported low/high-Paragon duplicates and the T16 gold chain. Icy's outdated internal paragraph, the second source's conflicting full setup, inaccessible Maxroll article body, and Nintendo Switch testing remain unresolved."
+    }
+  },
+  "app.17f657720e599693": {
+    "source": "梦遗死亡新星配置校验失败：{0}",
+    "template": "梦遗[[Powers/P6_Necro_BloodNova_name]]配置校验失败：{0}",
+    "manual": {
+      "enUS": "Legacy of Dreams Death Nova configuration validation failed: {0}"
+    }
+  },
   "app.805a4871d8fde5c8": {
     "source": "正义法令",
     "template": "[[Items/P67_Unique_Helm_Set_02]]"
@@ -20981,10 +22336,6 @@
     "source": "未凑齐前不要分解重复件",
     "template": "未凑齐前不要分解重复件"
   },
-  "app.29008b5fdf605de6": {
-    "source": "鬼灵面容",
-    "template": "[[Items/P69_Unique_Amulet_02]]"
-  },
   "app.44bc0b01b07f0c49": {
     "source": "让血魂双分永久存在，并复制死亡新星；没有它就没有完整的三重新星。",
     "template": "让[[Powers/P6_Necro_Simulacrum_name]]永久存在，并复制[[Powers/P6_Necro_BloodNova_name]]；没有它就没有完整的三重新星。"
@@ -21037,10 +22388,6 @@
     "source": "鲜血虹吸连接更多目标并让受影响目标承受巨额增伤，单体时加成翻倍。",
     "template": "[[Powers/P6_Necro_SiphonBlood_name]]连接更多目标并让受影响目标承受巨额[[Site/damage-boost]]，单体时加成翻倍。"
   },
-  "app.531791260f46a479": {
-    "source": "高白字伤害",
-    "template": "高白字伤害"
-  },
   "app.2ff15ae123ed62b8": {
     "source": "黄装升级：必须是70级单手镰刀",
     "template": "黄装升级：必须是70级单手镰刀"
@@ -21057,10 +22404,6 @@
     "source": "不是双手镰刀，也不是普通单手武器。",
     "template": "不是双手镰刀，也不是普通单手武器。"
   },
-  "app.e9c06f5c0313a50c": {
-    "source": "铁玫瑰",
-    "template": "[[Items/P74_Unique_Phylactery_04]]"
-  },
   "app.09a9148eab7072a4": {
     "source": "鲜血虹吸必定触发免费鲜血新星，并按损失生命继续叠加新星伤害。",
     "template": "[[Powers/P6_Necro_SiphonBlood_name]]必定触发免费[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]，并按损失生命继续叠加新星伤害。"
@@ -21068,10 +22411,6 @@
   "app.eeef3f04068ca8ad": {
     "source": "高伤害范围",
     "template": "高伤害范围"
-  },
-  "app.a596597c46b39fb3": {
-    "source": "死亡新星伤害",
-    "template": "[[Powers/P6_Necro_BloodNova_name]]伤害"
   },
   "app.cba326a90d55aecb": {
     "source": "黄装升级：必须使用70级死灵法器",
@@ -21089,37 +22428,23 @@
     "source": "普通盾牌、法球和箭袋都不会升级出铁玫瑰。",
     "template": "普通盾牌、法球和箭袋都不会升级出[[Items/P74_Unique_Phylactery_04]]。"
   },
-  "app.8364c92ccbb5f55d": {
-    "source": "把头部钻石的冷却缩减效果翻倍，帮助骨甲与鲜血穿行周转。",
-    "template": "把头部钻石的[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]]效果翻倍，帮助[[Powers/P6_Necro_BoneArmor_name]]与[[Powers/P6_Necro_BloodRush_name]]周转。"
+  "app.8f28b480f96889a9": {
+    "source": "放大头部白宝石的冷却缩减，帮助骨甲与鲜血穿行周转。",
+    "template": "放大头部白宝石的[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]]，帮助[[Powers/P6_Necro_BoneArmor_name]]与[[Powers/P6_Necro_BloodRush_name]]周转。",
+    "manual": {
+      "enUS": "Amplifies the cooldown reduction from the helm Diamond, helping Bone Armor and Blood Rush cycle faster."
+    }
   },
-  "app.9dccf3081246725a": {
-    "source": "血岩碎片赌博头盔",
-    "template": "血岩碎片赌博头盔"
-  },
-  "app.898aa937f431cd1d": {
-    "source": "黄装升级：70级头盔",
-    "template": "黄装升级：70级头盔"
-  },
-  "app.5ce894f155bdcb96": {
-    "source": "前期普通传奇即可，后期必须远古",
-    "template": "前期普通传奇即可，后期必须远古"
+  "app.4c680452d6828669": {
+    "source": "普通传奇也能启动梦遗；远古版本会获得更高宝石倍率",
+    "template": "普通传奇也能启动梦遗；远古版本会获得更高宝石倍率",
+    "manual": {
+      "enUS": "A regular Legendary activates Legacy of Dreams; an Ancient version receives a higher gem multiplier"
+    }
   },
   "app.adc37b2a9341b759": {
     "source": "引导鲜血虹吸时同时获得增伤与减伤。",
     "template": "引导[[Powers/P6_Necro_SiphonBlood_name]]时同时获得[[Site/damage-boost]]与[[Site/damage-reduction]]。"
-  },
-  "app.afddee5851a5623c": {
-    "source": "血岩碎片赌博护肩",
-    "template": "血岩碎片赌博护肩"
-  },
-  "app.9c0cdb251148a4a4": {
-    "source": "黄装升级：70级护肩",
-    "template": "黄装升级：70级护肩"
-  },
-  "app.afa95c0e6d14a5e0": {
-    "source": "远古版本优先保留正确技能伤",
-    "template": "远古版本优先保留正确技能伤"
   },
   "app.d9135fb36ef0922d": {
     "source": "魂能接近满值时减伤50%；虹吸免费触发新星，能稳定保持满魂能。",
@@ -21213,41 +22538,6 @@
     "source": "与岩石护手成对收集",
     "template": "与[[Items/P66_Unique_Gloves_007]]成对收集"
   },
-  "app.8a9d081f0dbb82f1": {
-    "source": "点击祭坛会召唤一名精英，速刷时提高精英密度与击杀收益。",
-    "template": "点击祭坛会召唤一名精英，[[Site/speed-farming]]时提高精英密度与击杀收益。"
-  },
-  "app.c2ee40650895cdc7": {
-    "source": "只在速刷时替换克雷姆护腕",
-    "template": "只在[[Site/speed-farming]]时替换克雷姆护腕"
-  },
-  "app.4e6342d1ce4c8f9d": {
-    "source": "斯图亚特的胫甲",
-    "template": "[[Items/P6_Necro_Unique_Boots_21]]"
-  },
-  "app.23900a1e0d2af59d": {
-    "source": "鲜血穿行后提高移速，速刷时缩短跑图时间。",
-    "template": "[[Powers/P6_Necro_BloodRush_name]]后提高移速，[[Site/speed-farming]]时缩短跑图时间。"
-  },
-  "app.d8261b3dfa6886a8": {
-    "source": "与冰行者互换",
-    "template": "与冰行者互换"
-  },
-  "app.26eec7d6a062cacc": {
-    "source": "拾取金币后扩大拾取范围，连接囤宝者与金织带的金币链。",
-    "template": "拾取金币后扩大拾取范围，连接[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Belt_010_x1]]的金币链。"
-  },
-  "app.4c5ea11c1253048b": {
-    "source": "第三幕/第四幕悬赏宝箱",
-    "template": "第三幕/第四幕悬赏宝箱"
-  },
-  "app.4bd0a3243b83bcd5": {
-    "source": "速刷时替换全能法戒",
-    "template": "[[Site/speed-farming]]时替换[[Items/P2_Unique_Ring_04]]",
-    "manual": {
-      "enUS": "Replace [[Items/P2_Unique_Ring_04]] for speed farming."
-    }
-  },
   "app.85e44bbd67c89351": {
     "source": "伊纳瑞斯的体悟",
     "template": "[[Items/P6_Necro_Set_3_Helm]]"
@@ -21332,6 +22622,18 @@
     "source": "点击祭坛会召唤一名精英，速刷时提高精英密度。",
     "template": "点击祭坛会召唤一名精英，[[Site/speed-farming]]时提高精英密度。"
   },
+  "app.c2ee40650895cdc7": {
+    "source": "只在速刷时替换克雷姆护腕",
+    "template": "只在[[Site/speed-farming]]时替换克雷姆护腕"
+  },
+  "app.4e6342d1ce4c8f9d": {
+    "source": "斯图亚特的胫甲",
+    "template": "[[Items/P6_Necro_Unique_Boots_21]]"
+  },
+  "app.23900a1e0d2af59d": {
+    "source": "鲜血穿行后提高移速，速刷时缩短跑图时间。",
+    "template": "[[Powers/P6_Necro_BloodRush_name]]后提高移速，[[Site/speed-farming]]时缩短跑图时间。"
+  },
   "app.ea043316fd8846d3": {
     "source": "与伊纳瑞斯鞋互换",
     "template": "与伊纳瑞斯鞋互换"
@@ -21339,6 +22641,17 @@
   "app.3f794766dad23a13": {
     "source": "拾取金币后扩大拾取范围，连接金币链。",
     "template": "拾取金币后扩大拾取范围，连接金币链。"
+  },
+  "app.4c5ea11c1253048b": {
+    "source": "第三幕/第四幕悬赏宝箱",
+    "template": "第三幕/第四幕悬赏宝箱"
+  },
+  "app.4bd0a3243b83bcd5": {
+    "source": "速刷时替换全能法戒",
+    "template": "[[Site/speed-farming]]时替换[[Items/P2_Unique_Ring_04]]",
+    "manual": {
+      "enUS": "Replace [[Items/P2_Unique_Ring_04]] for speed farming."
+    }
   },
   "app.6d370edb933f73ff": {
     "source": "拉斯玛的颅盔",
@@ -21866,13 +23179,13 @@
     "source": "速刷时替换克雷姆",
     "template": "[[Site/speed-farming]]时替换克雷姆"
   },
-  "app.5d5b72f5b550bf2b": {
-    "source": "鲜血虹吸",
-    "template": "[[Powers/P6_Necro_SiphonBlood_name]]"
+  "app.d8261b3dfa6886a8": {
+    "source": "与冰行者互换",
+    "template": "与冰行者互换"
   },
-  "app.c7f78b1d0f0a63d9": {
-    "source": "力量转移",
-    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_SiphonBlood]]"
+  "app.26eec7d6a062cacc": {
+    "source": "拾取金币后扩大拾取范围，连接囤宝者与金织带的金币链。",
+    "template": "拾取金币后扩大拾取范围，连接[[Items/Unique_Gem_014_x1]]与[[Items/Unique_Belt_010_x1]]的金币链。"
   },
   "app.d5518101f0beb54a": {
     "source": "持续引导来触发铁玫瑰；每层力量转移继续放大全部技能。",
@@ -21882,10 +23195,6 @@
     "source": "死亡新星",
     "template": "[[Powers/P6_Necro_BloodNova_name]]"
   },
-  "app.c4537a2245804d85": {
-    "source": "鲜血新星",
-    "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]"
-  },
   "app.f63dcc1fff82fd91": {
     "source": "免费触发的物理次要技能，是唯一主伤害来源。",
     "template": "免费触发的物理次要技能，是唯一主伤害来源。"
@@ -21893,10 +23202,6 @@
   "app.a96604744e9e0952": {
     "source": "血魂双分",
     "template": "[[Powers/P6_Necro_Simulacrum_name]]"
-  },
-  "app.cbd048335968b35b": {
-    "source": "鲜血与白骨",
-    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_Simulacrum]]"
   },
   "app.55b05b7c97955328": {
     "source": "两个永久分身复制死亡新星，把一次虹吸扩展为三重新星。",
@@ -21914,14 +23219,6 @@
     "source": "进场、跳图和脱离危险；速刷时负责触发移速威能。",
     "template": "进场、跳图和脱离危险；[[Site/speed-farming]]时负责触发移速威能。"
   },
-  "app.951ca2842bb1980d": {
-    "source": "骨甲",
-    "template": "[[Powers/P6_Necro_BoneArmor_name]]"
-  },
-  "app.d1baa3b517d2b14a": {
-    "source": "白骨脱臼",
-    "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]"
-  },
   "app.b8ad588ec61125f0": {
     "source": "减伤、眩晕和轮回镰刀触发器；必须持续刷新。",
     "template": "[[Site/damage-reduction]]、眩晕和[[Items/P61_Unique_Scythe1H_03]]触发器；必须持续刷新。"
@@ -21929,10 +23226,6 @@
   "app.34dd51fd4277cc9d": {
     "source": "脆弱",
     "template": "[[Powers/P6_Necro_Frailty_name]]"
-  },
-  "app.c356f9d273952725": {
-    "source": "脆弱光环",
-    "template": "[[AttributeDescriptions/NameRune_E#P6_Necro_Frailty]]"
   },
   "app.31c15c3a785785ed": {
     "source": "自动诅咒近身怪，联动戴恩提、咒怨之力与克里斯宾。",
@@ -22110,402 +23403,6 @@
     "source": "开始要求全身远古、卡德山与高特效",
     "template": "开始要求全身远古、卡德山与高特效"
   },
-  "app.d31cf076d726a028": {
-    "source": "召唤永久双分",
-    "template": "召唤永久双分"
-  },
-  "app.19756340537b2d39": {
-    "source": "进图先开血魂双分，死亡前无需重放。",
-    "template": "进图先开[[Powers/P6_Necro_Simulacrum_name]]，死亡前无需重放。"
-  },
-  "app.2069f7d8f10b23c6": {
-    "source": "鬼灵面容让两个分身永久存在并复制死亡新星。",
-    "template": "[[Items/P69_Unique_Amulet_02]]让两个分身永久存在并复制[[Powers/P6_Necro_BloodNova_name]]。"
-  },
-  "app.135480b0cac322e1": {
-    "source": "聚到25码",
-    "template": "聚到[[Number/25/yard]]"
-  },
-  "app.60acee27f467a4d6": {
-    "source": "用鲜血穿行寻找大怪群，贴身拉成一团。",
-    "template": "用[[Powers/P6_Necro_BloodRush_name]]寻找大怪群，贴身拉成一团。"
-  },
-  "app.0d8a9f915ec4a2d0": {
-    "source": "血潮利刃按25码内敌人数提供乘区。",
-    "template": "[[Items/P65_Unique_Scythe2H_02]]按[[Number/25/yard]]内敌人数提供[[Site/multiplier]]。"
-  },
-  "app.457bd8f03020bbe2": {
-    "source": "叠满骨甲",
-    "template": "叠满[[Powers/P6_Necro_BoneArmor_name]]"
-  },
-  "app.960209530c60e302": {
-    "source": "命中足够敌人后保持骨甲层数和持续时间。",
-    "template": "命中足够敌人后保持[[Powers/P6_Necro_BoneArmor_name]]层数和持续时间。"
-  },
-  "app.be4ff6ea12260cc0": {
-    "source": "骨甲同时提供减伤、轮回镰刀增伤与眩晕。",
-    "template": "[[Powers/P6_Necro_BoneArmor_name]]同时提供[[Site/damage-reduction]]、[[Items/P61_Unique_Scythe1H_03]][[Site/damage-boost]]与眩晕。"
-  },
-  "app.18b0418813b5d138": {
-    "source": "物理窗强控",
-    "template": "物理窗[[Site/crowd-control]]"
-  },
-  "app.c43b6d560ed06937": {
-    "source": "全能法戒转物理时用白骨脱臼眩晕。",
-    "template": "[[Items/P2_Unique_Ring_04]]转物理时用[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]眩晕。"
-  },
-  "app.c02c92edab04e3ee": {
-    "source": "强控会把克里斯宾提高到三倍档。",
-    "template": "[[Site/crowd-control]]会把[[Items/P6_Unique_Ring_03]]提高到三倍档。"
-  },
-  "app.d324184c26636e5f": {
-    "source": "持续虹吸",
-    "template": "持续虹吸"
-  },
-  "app.03d70809decb39f5": {
-    "source": "对精英持续虹吸直到物理窗结束，再移动重组怪群。",
-    "template": "对精英持续虹吸直到物理窗结束，再移动重组怪群。"
-  },
-  "app.b8b1d70102b6d9b8": {
-    "source": "铁玫瑰、葬镰、分身、血潮与梦遗同时在此步结算。",
-    "template": "[[Items/P74_Unique_Phylactery_04]]、[[Items/P74_Unique_Scythe1H_01]]、分身、血潮与梦遗同时在此步结算。"
-  },
-  "app.b5fb36e1200c4c31": {
-    "source": "召唤双分",
-    "template": "召唤双分"
-  },
-  "app.ce0729cacd9d70bb": {
-    "source": "进图先开血魂双分。",
-    "template": "进图先开[[Powers/P6_Necro_Simulacrum_name]]。"
-  },
-  "app.c92fdd9b3e5ab595": {
-    "source": "分身永久复制新星，跑图不需要反复重放。",
-    "template": "分身永久复制新星，跑图不需要反复重放。"
-  },
-  "app.f949138a4542f6d7": {
-    "source": "穿行找图",
-    "template": "穿行找图"
-  },
-  "app.8e4b5b64a6044471": {
-    "source": "鲜血穿行快速扫图，沿路聚拢怪群。",
-    "template": "[[Powers/P6_Necro_BloodRush_name]]快速扫图，沿路聚拢怪群。"
-  },
-  "app.052ae04f48c7d840": {
-    "source": "斯图亚特胫甲在穿行后提供移速。",
-    "template": "斯图亚特胫甲在穿行后提供移速。"
-  },
-  "app.937aaa92f8ba9054": {
-    "source": "贴身新星",
-    "template": "贴身新星"
-  },
-  "app.41e4692306718c5a": {
-    "source": "遇到密集怪群直接站定虹吸。",
-    "template": "遇到密集怪群直接站定虹吸。"
-  },
-  "app.1f8046bb8fa113e0": {
-    "source": "不等待元素周期，靠血潮与铁玫瑰清屏。",
-    "template": "不等待元素周期，靠血潮与[[Items/P74_Unique_Phylactery_04]]清屏。"
-  },
-  "app.50d8f8f31f82a609": {
-    "source": "沿路拾取金币，保持贪婪与金织带链。",
-    "template": "沿路拾取金币，保持贪婪与[[Items/Unique_Belt_010_x1]]链。"
-  },
-  "app.6c294073efa0098d": {
-    "source": "T16金币链提供移速与近乎无限护甲。",
-    "template": "T16金币链提供移速与近乎无限护甲。"
-  },
-  "app.71d42787cb2e4795": {
-    "source": "精英转场",
-    "template": "精英转场"
-  },
-  "app.43e14b34111cc2bb": {
-    "source": "击杀精英后利用寅剑冷却立即转场。",
-    "template": "击杀精英后利用[[Items/Unique_Sword_1H_113_x1]]冷却立即转场。"
-  },
-  "app.a68400c8463c6d2b": {
-    "source": "击杀重置冷却，下一段穿行无空档。",
-    "template": "击杀重置冷却，下一段穿行无空档。"
-  },
-  "app.a0c10f2ef0abd759": {
-    "source": "强韧",
-    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_BloodRush]]"
-  },
-  "app.b6910eec2ff951eb": {
-    "source": "死亡新星技能伤",
-    "template": "[[Powers/P6_Necro_BloodNova_name]]技能伤"
-  },
-  "app.ba591be280390649": {
-    "source": "攻速1.67档位",
-    "template": "攻速1.67档位"
-  },
-  "app.6be1786cf74f24d3": {
-    "source": "梦遗散件冲层要求全身远古与99级梦遗；低巅峰保留紫宝石生命与体能词缀，戒指可先用团结补生存。",
-    "template": "梦遗散件[[Site/push]]要求全身远古与99级梦遗；[[Site/low-paragon]]保留紫宝石生命与[[SkillsUI/ParagonBonusLabel_Vitality]]词缀，戒指可先用[[Items/Unique_Ring_010_x1]]补生存。"
-  },
-  "app.9aa8d6a648f4430c": {
-    "source": "高巅峰由巅峰承担主属性后，词缀转向范围伤、攻速档位与护甲，头可换安达利尔面容补物理元素伤。",
-    "template": "[[Site/high-paragon]]由[[Site/paragon]]承担主属性后，词缀转向范围伤、攻速档位与护甲，头可换安达利尔面容补物理元素伤。"
-  },
-  "app.fa93434e154bc8c7": {
-    "source": "攻速1.83档位",
-    "template": "攻速1.83档位"
-  },
-  "app.65db8fe4b073fd4f": {
-    "source": "词缀洗智力换范围伤",
-    "template": "词缀洗[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]换范围伤"
-  },
-  "app.18120b01c8219617": {
-    "source": "安头补物理元素伤",
-    "template": "安头补物理元素伤"
-  },
-  "app.fcac0f9353ec1e67": {
-    "source": "低巅峰 T16 速刷",
-    "template": "[[Site/low-paragon]] T16 [[Site/speed-farming]]"
-  },
-  "app.e8a1dfd25d4699ae": {
-    "source": "T16速刷把第4槽换成寅剑缩短冷却，护腕换复仇者提高精英密度，鞋换斯图亚特胫甲补移速；宝石用困者/梦遗/强者。",
-    "template": "T16[[Site/speed-farming]]把第4槽换成[[Items/Unique_Sword_1H_113_x1]]缩短冷却，护腕换[[Items/Unique_Bracer_106_x1]]提高精英密度，鞋换斯图亚特胫甲补移速；宝石用[[Items/Unique_Gem_002_x1]]/梦遗/强者。"
-  },
-  "app.f427bb4329ee60be": {
-    "source": "高巅峰 T16 极速",
-    "template": "[[Site/high-paragon]] T16 极速"
-  },
-  "app.7ba7759f9e78cfeb": {
-    "source": "高巅峰T16伤害溢出后，宝石换囤宝者并萃取金织带与贪婪之戒组成金币链，移速与拾取最大化。",
-    "template": "[[Site/high-paragon]]T16伤害溢出后，宝石换[[Items/Unique_Gem_014_x1]]并萃取[[Items/Unique_Belt_010_x1]]与[[Items/Unique_Ring_108_x1]]组成金币链，移速与拾取最大化。"
-  },
-  "app.935b463fae80d045": {
-    "source": "护甲由金织带接管",
-    "template": "护甲由[[Items/Unique_Belt_010_x1]]接管"
-  },
-  "app.fa24c9f9498a6151": {
-    "source": "词缀优先移速与拾取",
-    "template": "词缀优先移速与拾取"
-  },
-  "app.7d3b3ffd93984249": {
-    "source": "先补到上限，不把超过上限的点浪费在这里。",
-    "template": "先补到上限，不把超过上限的点浪费在这里。"
-  },
-  "app.cc4ae8c0f52b1224": {
-    "source": "同时提高伤害和全抗，是低巅峰最稳定的收益。",
-    "template": "同时提高伤害和全抗，是[[Site/low-paragon]]最稳定的收益。"
-  },
-  "app.2a5cb20ecdda0452": {
-    "source": "按需补到生命检查点",
-    "template": "按需补到生命检查点"
-  },
-  "app.6b9cfb5d7dcb03bd": {
-    "source": "冲层站不住时先达到生命池。",
-    "template": "[[Site/push]]站不住时先达到生命池。"
-  },
-  "app.ee44bfdab9daec56": {
-    "source": "最大精魂",
-    "template": "[[HeroDetails/MaxEssence]]"
-  },
-  "app.efe73da52538867e": {
-    "source": "铁玫瑰免费触发新星，这套不依赖精魂上限。",
-    "template": "[[Items/P74_Unique_Phylactery_04]]免费触发新星，这套不依赖[[HeroDetails/MaxEssence]]。"
-  },
-  "app.8bcffdcc6952fbb8": {
-    "source": "提高虹吸与铁玫瑰触发频率，冲向1.67档位。",
-    "template": "提高虹吸与[[Items/P74_Unique_Phylactery_04]]触发频率，冲向1.67档位。"
-  },
-  "app.5a52a8a42ccfb287": {
-    "source": "随后点满",
-    "template": "随后点满"
-  },
-  "app.c0e2746ce479cfe4": {
-    "source": "与装备暴击几率共同放大新星。",
-    "template": "与装备[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]共同放大新星。"
-  },
-  "app.05cf9516efc15e56": {
-    "source": "保持暴击乘区稳定。",
-    "template": "保持暴击[[Site/multiplier]]稳定。"
-  },
-  "app.22e66e6bcccc472e": {
-    "source": "主要服务骨甲与位移，优先级低于前三项。",
-    "template": "主要服务[[Powers/P6_Necro_BoneArmor_name]]与位移，优先级低于前三项。"
-  },
-  "app.a75362c4101b248e": {
-    "source": "智力职业天然全抗高，更缺护甲。",
-    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]职业天然全抗高，更缺护甲。"
-  },
-  "app.19d4809441bef1ef": {
-    "source": "放大有效生命。",
-    "template": "放大有效生命。"
-  },
-  "app.354bfd34983d0af3": {
-    "source": "补齐元素坚韧。",
-    "template": "补齐元素坚韧。"
-  },
-  "app.c8b60342c46cf305": {
-    "source": "每秒生命恢复",
-    "template": "每秒生命恢复"
-  },
-  "app.ce5063d20c734071": {
-    "source": "作为持续引导时的恢复补充。",
-    "template": "作为持续引导时的恢复补充。"
-  },
-  "app.06d8eb80b9721611": {
-    "source": "分身新星吃范围伤，是高密度重要乘区。",
-    "template": "分身新星吃范围伤，是高密度重要[[Site/multiplier]]。"
-  },
-  "app.a4104dd2374d4e22": {
-    "source": "击中恢复生命",
-    "template": "击中恢复生命"
-  },
-  "app.36111307928221f6": {
-    "source": "提高持续引导时的恢复。",
-    "template": "提高持续引导时的恢复。"
-  },
-  "app.9ad552979628d639": {
-    "source": "收益有限但高于拾取。",
-    "template": "收益有限但高于拾取。"
-  },
-  "app.68e9caeac66ea6ae": {
-    "source": "主要服务T16速刷。",
-    "template": "主要服务T16[[Site/speed-farming]]。"
-  },
-  "app.ac4b19ff8b6be0ec": {
-    "source": "先补体能",
-    "template": "先补[[SkillsUI/ParagonBonusLabel_Vitality]]"
-  },
-  "app.2ec5d6e1cfa8342f": {
-    "source": "生命低于目标或频繁猝死",
-    "template": "生命低于目标或频繁猝死"
-  },
-  "app.140a15ba526a4aad": {
-    "source": "把生命池补到能稳定承受当前层数。",
-    "template": "把生命池补到能稳定承受当前层数。"
-  },
-  "app.7758ffc7f4b10f8f": {
-    "source": "其余全部智力",
-    "template": "其余全部[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]"
-  },
-  "app.d7a6ec5446c2d74d": {
-    "source": "生命与减伤已经稳定",
-    "template": "生命与[[Site/damage-reduction]]已经稳定"
-  },
-  "app.21b2f8c0c34a52cf": {
-    "source": "智力继续同时提高伤害与全抗。",
-    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]继续同时提高伤害与全抗。"
-  },
-  "app.ae0976886cded61d": {
-    "source": "生命池",
-    "template": "生命池"
-  },
-  "app.277d2b2c39702c4d": {
-    "source": "按层数50万–90万",
-    "template": "按层数[[Number/50/wan]]–[[Number/90/wan]]"
-  },
-  "app.b89ae683ec64f2a5": {
-    "source": "不足时先从巅峰智力挪到体能。",
-    "template": "不足时先从[[Site/paragon]][[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]挪到[[SkillsUI/ParagonBonusLabel_Vitality]]。"
-  },
-  "app.fcd2d82acfc47b5a": {
-    "source": "面板1.67档",
-    "template": "面板1.67档"
-  },
-  "app.b62e4b64f69da466": {
-    "source": "未达档位时优先保留手套和首饰攻速。",
-    "template": "未达档位时优先保留手套和首饰攻速。"
-  },
-  "app.6a2acdfdcc725fd0": {
-    "source": "冲层≥120%",
-    "template": "[[Site/push]]≥120%"
-  },
-  "app.a64344eb20c05978": {
-    "source": "高巅峰从肩、手、戒指、武器补足。",
-    "template": "[[Site/high-paragon]]从肩、手、戒指、武器补足。"
-  },
-  "app.638c3ce14c12eeff": {
-    "source": "梦之遗礼与全身散件纪律",
-    "template": "[[Items/Unique_Gem_023_x1]]与全身散件纪律"
-  },
-  "app.e7a6066f18586417": {
-    "source": "梦遗宝石要求不激活任何套装奖励；黑荆棘裤只能穿一件，绝不能与第二件黑荆棘同穿，否则整套失效。",
-    "template": "梦遗宝石要求不激活任何套装奖励；黑荆棘裤只能穿一件，绝不能与第二件黑荆棘同穿，否则整套失效。"
-  },
-  "app.0ab3c4cdb038deec": {
-    "source": "鬼灵面容 + 葬镰 + 铁玫瑰",
-    "template": "[[Items/P69_Unique_Amulet_02]] + [[Items/P74_Unique_Scythe1H_01]] + [[Items/P74_Unique_Phylactery_04]]"
-  },
-  "app.e0774d9672f0bd1e": {
-    "source": "永久双分、虹吸增伤与免费新星共同组成三重新星发动机，缺任意一件都不是完整形态。",
-    "template": "永久双分、虹吸[[Site/damage-boost]]与免费新星共同组成三重新星发动机，缺任意一件都不是完整形态。"
-  },
-  "app.54ba4fb5a28c7f3e": {
-    "source": "冲层用轮回镰刀放大多重次要技能乘区，速刷用寅剑缩短冷却。",
-    "template": "[[Site/push]]用[[Items/P61_Unique_Scythe1H_03]]放大多重次要技能[[Site/multiplier]]，[[Site/speed-farming]]用[[Items/Unique_Sword_1H_113_x1]]缩短冷却。"
-  },
-  "app.8f657f05230c6f48": {
-    "source": "T16小秘境速刷",
-    "template": "T16[[General/LootRunPortal]][[Site/speed-farming]]"
-  },
-  "app.77225fa2c38a14da": {
-    "source": "失去轮回镰刀的次要技能乘区",
-    "template": "失去[[Items/P61_Unique_Scythe1H_03]]的次要技能[[Site/multiplier]]"
-  },
-  "app.ad1fac8aae42011f": {
-    "source": "第二枚戒指",
-    "template": "第二枚戒指"
-  },
-  "app.931127181deb4faa": {
-    "source": "冲层需要元素爆发窗，速刷需要金币拾取。",
-    "template": "[[Site/push]]需要元素爆发窗，[[Site/speed-farming]]需要金币拾取。"
-  },
-  "app.01d7e1e614e23cd5": {
-    "source": "高巅峰T16金币链",
-    "template": "[[Site/high-paragon]]T16金币链"
-  },
-  "app.f695e8fc81490099": {
-    "source": "拾取范围扩大",
-    "template": "拾取范围扩大"
-  },
-  "app.8206d501c318aaa0": {
-    "source": "失去全能法戒的元素窗口",
-    "template": "失去[[Items/P2_Unique_Ring_04]]的元素窗口"
-  },
-  "app.15b310880fd44551": {
-    "source": "冲层用戴恩提减伤；速刷用斯图亚特补移速，高巅峰金币链可用金织带。",
-    "template": "[[Site/push]]用[[Items/P61_Unique_Belt_01]][[Site/damage-reduction]]；[[Site/speed-farming]]用斯图亚特补移速，[[Site/high-paragon]]金币链可用[[Items/Unique_Belt_010_x1]]。"
-  },
-  "app.67a5c39816f44ab6": {
-    "source": "T16速刷",
-    "template": "T16[[Site/speed-farming]]"
-  },
-  "app.2e02df2727d17665": {
-    "source": "鲜血穿行后移速",
-    "template": "[[Powers/P6_Necro_BloodRush_name]]后移速"
-  },
-  "app.ca18eea83eac83ac": {
-    "source": "失去戴恩提减伤",
-    "template": "失去[[Items/P61_Unique_Belt_01]][[Site/damage-reduction]]"
-  },
-  "app.e78e24a8243819ab": {
-    "source": "金币护甲近乎无限",
-    "template": "金币护甲近乎无限"
-  },
-  "app.84a65a9e69b9502d": {
-    "source": "离开金币内容后失效",
-    "template": "离开金币内容后失效"
-  },
-  "app.806ad0ee32600527": {
-    "source": "默认克雷姆防打断；速刷换复仇者提高精英密度。",
-    "template": "默认克雷姆防打断；[[Site/speed-farming]]换[[Items/Unique_Bracer_106_x1]]提高精英密度。"
-  },
-  "app.a79f75bebb7ae90c": {
-    "source": "开祭坛召唤精英",
-    "template": "开祭坛召唤精英"
-  },
-  "app.14d8e223c7c96a2b": {
-    "source": "失去防击退眩晕",
-    "template": "失去防击退眩晕"
-  },
-  "app.f7fb5f76e5f02314": {
-    "source": "盗贼提供暴击窗口配合物理周期；低巅峰站不住时可换圣殿骑士治疗，速刷可换魔女攻速。",
-    "template": "[[Pets/HirelingScoundrel]]提供暴击窗口配合物理周期；[[Site/low-paragon]]站不住时可换[[Pets/HirelingTemplar]][[Powers/Templar_Heal_110_name]]，[[Site/speed-farming]]可换[[Pets/HirelingEnchantress]]攻速。"
-  },
   "app.14b98112dc9c2149": {
     "source": "开双分",
     "template": "开双分"
@@ -22570,6 +23467,10 @@
     "source": "分身永久复制新星。",
     "template": "分身永久复制新星。"
   },
+  "app.f949138a4542f6d7": {
+    "source": "穿行找图",
+    "template": "穿行找图"
+  },
   "app.8d967171cbc3ab9a": {
     "source": "鲜血穿行快速扫图，聚拢怪群。",
     "template": "[[Powers/P6_Necro_BloodRush_name]]快速扫图，聚拢怪群。"
@@ -22598,9 +23499,25 @@
     "source": "T16金币链提供移速与护甲。",
     "template": "T16金币链提供移速与护甲。"
   },
+  "app.71d42787cb2e4795": {
+    "source": "精英转场",
+    "template": "精英转场"
+  },
+  "app.43e14b34111cc2bb": {
+    "source": "击杀精英后利用寅剑冷却立即转场。",
+    "template": "击杀精英后利用[[Items/Unique_Sword_1H_113_x1]]冷却立即转场。"
+  },
   "app.ffe45f543619d39d": {
     "source": "击杀重置冷却，下一段跑图无空档。",
     "template": "击杀重置冷却，下一段跑图无空档。"
+  },
+  "app.a0c10f2ef0abd759": {
+    "source": "强韧",
+    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_BloodRush]]"
+  },
+  "app.ba591be280390649": {
+    "source": "攻速1.67档位",
+    "template": "攻速1.67档位"
   },
   "app.83ee7eb55464dfe3": {
     "source": "伊纳瑞斯六件比梦遗更亲民，低巅峰保留紫宝石生命与体能词缀，护腕克雷姆防打断、腰带但提减伤。",
@@ -22610,13 +23527,41 @@
     "source": "高巅峰由巅峰承担主属性后，词缀转向范围伤、攻速档位与护甲，骨甲旋风覆盖成为操作检查点。",
     "template": "[[Site/high-paragon]]由[[Site/paragon]]承担主属性后，词缀转向范围伤、攻速档位与护甲，[[Powers/P6_Necro_BoneArmor_name]]旋风覆盖成为操作检查点。"
   },
+  "app.fa93434e154bc8c7": {
+    "source": "攻速1.83档位",
+    "template": "攻速1.83档位"
+  },
+  "app.65db8fe4b073fd4f": {
+    "source": "词缀洗智力换范围伤",
+    "template": "词缀洗[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]换范围伤"
+  },
   "app.f56f72da2f365026": {
     "source": "骨甲旋风覆盖优先",
     "template": "[[Powers/P6_Necro_BoneArmor_name]]旋风覆盖优先"
   },
+  "app.fcac0f9353ec1e67": {
+    "source": "低巅峰 T16 速刷",
+    "template": "[[Site/low-paragon]] T16 [[Site/speed-farming]]"
+  },
   "app.0ab8816e87028470": {
     "source": "T16速刷把第4槽换成寅剑缩短冷却，护腕换复仇者提高精英密度，鞋换斯图亚特胫甲补移速；宝石用困者/贼神/强者。",
     "template": "T16[[Site/speed-farming]]把第4槽换成[[Items/Unique_Sword_1H_113_x1]]缩短冷却，护腕换[[Items/Unique_Bracer_106_x1]]提高精英密度，鞋换斯图亚特胫甲补移速；宝石用[[Items/Unique_Gem_002_x1]]/贼神/强者。"
+  },
+  "app.f427bb4329ee60be": {
+    "source": "高巅峰 T16 极速",
+    "template": "[[Site/high-paragon]] T16 极速"
+  },
+  "app.7ba7759f9e78cfeb": {
+    "source": "高巅峰T16伤害溢出后，宝石换囤宝者并萃取金织带与贪婪之戒组成金币链，移速与拾取最大化。",
+    "template": "[[Site/high-paragon]]T16伤害溢出后，宝石换[[Items/Unique_Gem_014_x1]]并萃取[[Items/Unique_Belt_010_x1]]与[[Items/Unique_Ring_108_x1]]组成金币链，移速与拾取最大化。"
+  },
+  "app.935b463fae80d045": {
+    "source": "护甲由金织带接管",
+    "template": "护甲由[[Items/Unique_Belt_010_x1]]接管"
+  },
+  "app.fa24c9f9498a6151": {
+    "source": "词缀优先移速与拾取",
+    "template": "词缀优先移速与拾取"
   },
   "app.414f281db66f9d69": {
     "source": "先补到上限。",
@@ -22626,6 +23571,10 @@
     "source": "同时提高伤害和全抗。",
     "template": "同时提高伤害和全抗。"
   },
+  "app.2a5cb20ecdda0452": {
+    "source": "按需补到生命检查点",
+    "template": "按需补到生命检查点"
+  },
   "app.c2aea7eff72dafd2": {
     "source": "冲层站不住时先补容错。",
     "template": "[[Site/push]]站不住时先补容错。"
@@ -22634,9 +23583,21 @@
     "source": "铁玫瑰免费触发新星，不依赖精魂上限。",
     "template": "[[Items/P74_Unique_Phylactery_04]]免费触发新星，不依赖[[HeroDetails/MaxEssence]]。"
   },
+  "app.8bcffdcc6952fbb8": {
+    "source": "提高虹吸与铁玫瑰触发频率，冲向1.67档位。",
+    "template": "提高虹吸与[[Items/P74_Unique_Phylactery_04]]触发频率，冲向1.67档位。"
+  },
+  "app.5a52a8a42ccfb287": {
+    "source": "随后点满",
+    "template": "随后点满"
+  },
   "app.668f8473cd967433": {
     "source": "与暴击几率共同放大新星。",
     "template": "与[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]共同放大新星。"
+  },
+  "app.05cf9516efc15e56": {
+    "source": "保持暴击乘区稳定。",
+    "template": "保持暴击[[Site/multiplier]]稳定。"
   },
   "app.dc2079d711ae7cc2": {
     "source": "主要服务骨甲与位移。",
@@ -22646,6 +23607,18 @@
     "source": "智力职业更缺护甲。",
     "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]职业更缺护甲。"
   },
+  "app.19d4809441bef1ef": {
+    "source": "放大有效生命。",
+    "template": "放大有效生命。"
+  },
+  "app.354bfd34983d0af3": {
+    "source": "补齐元素坚韧。",
+    "template": "补齐元素坚韧。"
+  },
+  "app.c8b60342c46cf305": {
+    "source": "每秒生命恢复",
+    "template": "每秒生命恢复"
+  },
   "app.55ba58a2f783958c": {
     "source": "持续引导时的恢复补充。",
     "template": "持续引导时的恢复补充。"
@@ -22653,6 +23626,10 @@
   "app.2fbccf9666846fd9": {
     "source": "分身新星吃范围伤，高密度重要乘区。",
     "template": "分身新星吃范围伤，高密度重要[[Site/multiplier]]。"
+  },
+  "app.a4104dd2374d4e22": {
+    "source": "击中恢复生命",
+    "template": "击中恢复生命"
   },
   "app.c2458d341408d41c": {
     "source": "提高引导恢复。",
@@ -22666,6 +23643,22 @@
     "source": "服务T16速刷。",
     "template": "服务T16[[Site/speed-farming]]。"
   },
+  "app.ac4b19ff8b6be0ec": {
+    "source": "先补体能",
+    "template": "先补[[SkillsUI/ParagonBonusLabel_Vitality]]"
+  },
+  "app.2ec5d6e1cfa8342f": {
+    "source": "生命低于目标或频繁猝死",
+    "template": "生命低于目标或频繁猝死"
+  },
+  "app.140a15ba526a4aad": {
+    "source": "把生命池补到能稳定承受当前层数。",
+    "template": "把生命池补到能稳定承受当前层数。"
+  },
+  "app.7758ffc7f4b10f8f": {
+    "source": "其余全部智力",
+    "template": "其余全部[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]"
+  },
   "app.18a0ba3ca5cd3e27": {
     "source": "生命与减伤稳定",
     "template": "生命与[[Site/damage-reduction]]稳定"
@@ -22674,13 +23667,29 @@
     "source": "智力继续提高伤害与全抗。",
     "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]继续提高伤害与全抗。"
   },
+  "app.ae0976886cded61d": {
+    "source": "生命池",
+    "template": "生命池"
+  },
+  "app.277d2b2c39702c4d": {
+    "source": "按层数50万–90万",
+    "template": "按层数[[Number/50/wan]]–[[Number/90/wan]]"
+  },
   "app.cd2f947dadc84f50": {
     "source": "不足时从巅峰智力挪到体能。",
     "template": "不足时从[[Site/paragon]][[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]挪到[[SkillsUI/ParagonBonusLabel_Vitality]]。"
   },
+  "app.fcd2d82acfc47b5a": {
+    "source": "面板1.67档",
+    "template": "面板1.67档"
+  },
   "app.f99bec00a5973558": {
     "source": "未达档位时保留手套首饰攻速。",
     "template": "未达档位时保留手套首饰攻速。"
+  },
+  "app.6a2acdfdcc725fd0": {
+    "source": "冲层≥120%",
+    "template": "[[Site/push]]≥120%"
   },
   "app.385d68bc96f1088c": {
     "source": "高巅峰从肩手戒指补足。",
@@ -22694,6 +23703,10 @@
     "source": "骨甲旋风命中目标后六件套放大死亡新星，站得离旋风太远会直接丢失核心乘区。",
     "template": "[[Powers/P6_Necro_BoneArmor_name]]旋风命中目标后六件套放大[[Powers/P6_Necro_BloodNova_name]]，站得离旋风太远会直接丢失核心[[Site/multiplier]]。"
   },
+  "app.0ab3c4cdb038deec": {
+    "source": "鬼灵面容 + 葬镰 + 铁玫瑰",
+    "template": "[[Items/P69_Unique_Amulet_02]] + [[Items/P74_Unique_Scythe1H_01]] + [[Items/P74_Unique_Phylactery_04]]"
+  },
   "app.ff843fbfd1b65b2a": {
     "source": "永久双分、虹吸增伤与免费新星共同组成发动机，缺任意一件都不是完整形态。",
     "template": "永久双分、虹吸[[Site/damage-boost]]与免费新星共同组成发动机，缺任意一件都不是完整形态。"
@@ -22701,6 +23714,10 @@
   "app.cdd037a4d0268048": {
     "source": "冲层用轮回镰刀，速刷用寅剑缩短冷却。",
     "template": "[[Site/push]]用[[Items/P61_Unique_Scythe1H_03]]，[[Site/speed-farming]]用[[Items/Unique_Sword_1H_113_x1]]缩短冷却。"
+  },
+  "app.8f657f05230c6f48": {
+    "source": "T16小秘境速刷",
+    "template": "T16[[General/LootRunPortal]][[Site/speed-farming]]"
   },
   "app.65b1fb9d22329468": {
     "source": "击杀精英后缩短冷却",
@@ -22710,13 +23727,45 @@
     "source": "失去轮回镰刀乘区",
     "template": "失去[[Items/P61_Unique_Scythe1H_03]][[Site/multiplier]]"
   },
+  "app.806ad0ee32600527": {
+    "source": "默认克雷姆防打断；速刷换复仇者提高精英密度。",
+    "template": "默认克雷姆防打断；[[Site/speed-farming]]换[[Items/Unique_Bracer_106_x1]]提高精英密度。"
+  },
+  "app.67a5c39816f44ab6": {
+    "source": "T16速刷",
+    "template": "T16[[Site/speed-farming]]"
+  },
+  "app.a79f75bebb7ae90c": {
+    "source": "开祭坛召唤精英",
+    "template": "开祭坛召唤精英"
+  },
+  "app.14d8e223c7c96a2b": {
+    "source": "失去防击退眩晕",
+    "template": "失去防击退眩晕"
+  },
   "app.8e237f15bb2e725c": {
     "source": "冲层用导能披肩提供引导攻防；速刷用斯图亚特补移速，高巅峰金币链可用金织带。",
     "template": "[[Site/push]]用[[Items/P4_Unique_Shoulder_103]]提供引导攻防；[[Site/speed-farming]]用斯图亚特补移速，[[Site/high-paragon]]金币链可用[[Items/Unique_Belt_010_x1]]。"
   },
+  "app.2e02df2727d17665": {
+    "source": "鲜血穿行后移速",
+    "template": "[[Powers/P6_Necro_BloodRush_name]]后移速"
+  },
   "app.5e606c472ed2250f": {
     "source": "失去导能披肩引导增伤减伤",
     "template": "失去[[Items/P4_Unique_Shoulder_103]]引导[[Site/damage-boost]][[Site/damage-reduction]]"
+  },
+  "app.01d7e1e614e23cd5": {
+    "source": "高巅峰T16金币链",
+    "template": "[[Site/high-paragon]]T16金币链"
+  },
+  "app.e78e24a8243819ab": {
+    "source": "金币护甲近乎无限",
+    "template": "金币护甲近乎无限"
+  },
+  "app.84a65a9e69b9502d": {
+    "source": "离开金币内容后失效",
+    "template": "离开金币内容后失效"
   },
   "app.e3ef2abfa8f6423e": {
     "source": "盗贼提供暴击窗口；低巅峰可换圣殿骑士治疗，速刷可换魔女攻速。",
@@ -22993,9 +24042,17 @@
     "source": "需要技能栏换成衰老",
     "template": "需要技能栏换成衰老"
   },
+  "app.ad1fac8aae42011f": {
+    "source": "第二枚戒指",
+    "template": "第二枚戒指"
+  },
   "app.bdc6b1665edfa11a": {
     "source": "冲层需要元素爆发窗，速刷需要金币拾取或生存。",
     "template": "[[Site/push]]需要元素爆发窗，[[Site/speed-farming]]需要金币拾取或生存。"
+  },
+  "app.f695e8fc81490099": {
+    "source": "拾取范围扩大",
+    "template": "拾取范围扩大"
   },
   "app.ced208dbeb235db8": {
     "source": "失去全能法戒元素窗口",
@@ -23213,6 +24270,10 @@
     "source": "达标后冲更高档位。",
     "template": "达标后冲更高档位。"
   },
+  "app.638c3ce14c12eeff": {
+    "source": "梦之遗礼与全身散件纪律",
+    "template": "[[Items/Unique_Gem_023_x1]]与全身散件纪律"
+  },
   "app.99bf898607344eac": {
     "source": "梦遗宝石要求不激活任何套装奖励；黑荆棘裤只能穿一件，否则整套失效。",
     "template": "梦遗宝石要求不激活任何套装奖励；黑荆棘裤只能穿一件，否则整套失效。"
@@ -23240,6 +24301,10 @@
   "app.0e3f1d1ac8df5538": {
     "source": "冲层用但提减伤；速刷换金织带组成金币链。",
     "template": "[[Site/push]]用但提[[Site/damage-reduction]]；[[Site/speed-farming]]换[[Items/Unique_Belt_010_x1]]组成金币链。"
+  },
+  "app.931127181deb4faa": {
+    "source": "冲层需要元素爆发窗，速刷需要金币拾取。",
+    "template": "[[Site/push]]需要元素爆发窗，[[Site/speed-farming]]需要金币拾取。"
   },
   "app.2fe8b0567b83601f": {
     "source": "复生满编",
@@ -23688,19 +24753,21 @@
   },
   "app.c0cb314a3bcc3711": {
     "source": "梦遗死亡新星",
-    "template": "梦遗[[Powers/P6_Necro_BloodNova_name]]"
+    "template": "梦遗[[Powers/P6_Necro_BloodNova_name]]",
+    "manual": {
+      "enUS": "Legacy of Dreams Death Nova"
+    }
   },
-  "app.330c875bdbcf38d1": {
-    "source": "梦之遗礼 · 远古散件",
-    "template": "[[Items/Unique_Gem_023_x1]] · 远古散件"
+  "app.5dca9c060fc3036e": {
+    "source": "鲜血虹吸 → 铁玫瑰 → 血魂双分鲜血新星",
+    "template": "[[Powers/P6_Necro_SiphonBlood_name]] → [[Items/P74_Unique_Phylactery_04]] → [[Powers/P6_Necro_Simulacrum_name]][[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]"
   },
-  "app.c3b16f1057b9c3d2": {
-    "source": "鲜血虹吸 → 铁玫瑰 → 三重鲜血新星",
-    "template": "[[Powers/P6_Necro_SiphonBlood_name]] → [[Items/P74_Unique_Phylactery_04]] → 三重[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]"
-  },
-  "app.21e5bbba6f651afd": {
-    "source": "不激活任何套装奖励，让每件远古传奇都被梦之遗礼放大；装备上限高于套装版本，但没有全远古前不建议强行转型。",
-    "template": "不激活任何套装奖励，让每件远古传奇都被[[Items/Unique_Gem_023_x1]]放大；装备上限高于套装版本，但没有全远古前不建议强行转型。"
+  "app.f5509961ac7e3fff": {
+    "source": "不激活任何套装奖励，以梦之遗礼放大每件传奇；普通传奇即可启动，远古或太古会让对应部位获得双倍宝石收益。",
+    "template": "不激活任何套装奖励，以[[Items/Unique_Gem_023_x1]]放大每件传奇；普通传奇即可启动，远古或太古会让对应部位获得双倍宝石收益。",
+    "manual": {
+      "enUS": "Keep all set bonuses inactive so Legacy of Dreams can amplify each Legendary. Regular Legendaries activate it, while Ancient or Primal quality doubles the gem benefit for that slot."
+    }
   },
   "app.d8d907f3607da032": {
     "source": "中 · 需要贴身聚怪与物理周期",
@@ -23822,6 +24889,66 @@
     "source": "物理周期内先眩晕再虹吸；骨甲时长被轮回镰刀消耗，所以每轮都要刷新。",
     "template": "物理周期内先眩晕再虹吸；[[Powers/P6_Necro_BoneArmor_name]]时长被[[Items/P61_Unique_Scythe1H_03]]消耗，所以每轮都要刷新。"
   },
+  "app.d31cf076d726a028": {
+    "source": "召唤永久双分",
+    "template": "召唤永久双分"
+  },
+  "app.19756340537b2d39": {
+    "source": "进图先开血魂双分，死亡前无需重放。",
+    "template": "进图先开[[Powers/P6_Necro_Simulacrum_name]]，死亡前无需重放。"
+  },
+  "app.2069f7d8f10b23c6": {
+    "source": "鬼灵面容让两个分身永久存在并复制死亡新星。",
+    "template": "[[Items/P69_Unique_Amulet_02]]让两个分身永久存在并复制[[Powers/P6_Necro_BloodNova_name]]。"
+  },
+  "app.135480b0cac322e1": {
+    "source": "聚到25码",
+    "template": "聚到[[Number/25/yard]]"
+  },
+  "app.60acee27f467a4d6": {
+    "source": "用鲜血穿行寻找大怪群，贴身拉成一团。",
+    "template": "用[[Powers/P6_Necro_BloodRush_name]]寻找大怪群，贴身拉成一团。"
+  },
+  "app.0d8a9f915ec4a2d0": {
+    "source": "血潮利刃按25码内敌人数提供乘区。",
+    "template": "[[Items/P65_Unique_Scythe2H_02]]按[[Number/25/yard]]内敌人数提供[[Site/multiplier]]。"
+  },
+  "app.457bd8f03020bbe2": {
+    "source": "叠满骨甲",
+    "template": "叠满[[Powers/P6_Necro_BoneArmor_name]]"
+  },
+  "app.960209530c60e302": {
+    "source": "命中足够敌人后保持骨甲层数和持续时间。",
+    "template": "命中足够敌人后保持[[Powers/P6_Necro_BoneArmor_name]]层数和持续时间。"
+  },
+  "app.be4ff6ea12260cc0": {
+    "source": "骨甲同时提供减伤、轮回镰刀增伤与眩晕。",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]]同时提供[[Site/damage-reduction]]、[[Items/P61_Unique_Scythe1H_03]][[Site/damage-boost]]与眩晕。"
+  },
+  "app.18b0418813b5d138": {
+    "source": "物理窗强控",
+    "template": "物理窗[[Site/crowd-control]]"
+  },
+  "app.c43b6d560ed06937": {
+    "source": "全能法戒转物理时用白骨脱臼眩晕。",
+    "template": "[[Items/P2_Unique_Ring_04]]转物理时用[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]眩晕。"
+  },
+  "app.c02c92edab04e3ee": {
+    "source": "强控会把克里斯宾提高到三倍档。",
+    "template": "[[Site/crowd-control]]会把[[Items/P6_Unique_Ring_03]]提高到三倍档。"
+  },
+  "app.d324184c26636e5f": {
+    "source": "持续虹吸",
+    "template": "持续虹吸"
+  },
+  "app.03d70809decb39f5": {
+    "source": "对精英持续虹吸直到物理窗结束，再移动重组怪群。",
+    "template": "对精英持续虹吸直到物理窗结束，再移动重组怪群。"
+  },
+  "app.b8b1d70102b6d9b8": {
+    "source": "铁玫瑰、葬镰、分身、血潮与梦遗同时在此步结算。",
+    "template": "[[Items/P74_Unique_Phylactery_04]]、[[Items/P74_Unique_Scythe1H_01]]、分身、血潮与梦遗同时在此步结算。"
+  },
   "app.7130441ee51ae0dd": {
     "source": "伊纳瑞斯死亡新星",
     "template": "伊纳瑞斯[[Powers/P6_Necro_BloodNova_name]]"
@@ -23941,10 +25068,6 @@
   "app.df42bbf97cfdd331": {
     "source": "自动诅咒",
     "template": "自动诅咒"
-  },
-  "app.e8f252a4b250aafb": {
-    "source": "戴恩提",
-    "template": "[[Items/P61_Unique_Belt_01]]"
   },
   "app.bfc9e93fcbf00248": {
     "source": "最高50%减伤",
@@ -24410,10 +25533,6 @@
     "source": "防具槽可换斯图亚特胫甲",
     "template": "防具槽可换斯图亚特胫甲"
   },
-  "app.8be46cc702dbc5c1": {
-    "source": "受罚者换强者之灾",
-    "template": "[[Items/Unique_Gem_018_x1]]换[[Items/Unique_Gem_001_x1]]"
-  },
   "app.e7d5967b6480e676": {
     "source": "先穿完整六件狂欢节，资源与坚韧优先。",
     "template": "先穿完整六件狂欢节，资源与坚韧优先。"
@@ -24776,6 +25895,10 @@
   "app.762dc4ac38ffb18b": {
     "source": "梦遗尸爆",
     "template": "梦遗[[Powers/P6_Necro_CorpseExplosion_name]]"
+  },
+  "app.330c875bdbcf38d1": {
+    "source": "梦之遗礼 · 远古散件",
+    "template": "[[Items/Unique_Gem_023_x1]] · 远古散件"
   },
   "app.2075a4c79478edad": {
     "source": "亡者领域冻结 → 尸爆连锁 → 乔斯顿余波",
@@ -25364,9 +26487,19 @@
     "source": "鲜血虹吸经铁玫瑰免费触发死亡新星，当前完整交互原型。",
     "template": "[[Powers/P6_Necro_SiphonBlood_name]]经[[Items/P74_Unique_Phylactery_04]]免费触发[[Powers/P6_Necro_BloodNova_name]]，当前完整交互原型。"
   },
-  "app.34a46ac821d2f244": {
-    "source": "保留新星发动机，改用高质量远古散件获得梦遗乘区。",
-    "template": "保留新星发动机，改用高质量远古散件获得梦遗[[Site/multiplier]]。"
+  "app.0220dcfb4c7b75d4": {
+    "source": "物理鲜血新星",
+    "template": "物理[[AttributeDescriptions/NameRune_C#P6_Necro_BloodNova]]",
+    "manual": {
+      "enUS": "Physical Blood Nova"
+    }
+  },
+  "app.63be6157742a1d77": {
+    "source": "普通传奇即可启动，远古逐件提高梦遗收益；当前只开放有证据的GR用途。",
+    "template": "普通传奇即可启动，远古逐件提高梦遗收益；当前只开放有证据的GR用途。",
+    "manual": {
+      "enUS": "Regular Legendaries activate the build, and Ancients improve the Legacy of Dreams benefit slot by slot. Only evidence-backed Greater Rift uses are currently available."
+    }
   },
   "app.45f69fbd46c3b1d0": {
     "source": "骨甲 / 死亡新星",
@@ -32196,13 +33329,6 @@
       "enUS": "Works with Critical Hit Chance on gear to increase dart damage."
     }
   },
-  "app.0e47c578f5f3ce2b": {
-    "source": "与暴击伤害配套。",
-    "template": "与[[SkillsUI/ParagonBonusLabel_Crit_Damage_Percent]]配套。",
-    "manual": {
-      "enUS": "Pairs with Critical Hit Damage."
-    }
-  },
   "app.a0a7dc2e6ffa1fb1": {
     "source": "不如攻速和双暴直接，主要改善灵魂行走与巫毒狂舞。",
     "template": "不如攻速和双暴直接，主要改善[[Powers/Witchdoctor_SpiritWalk_name]]与[[Powers/Witchdoctor_BigBadVoodoo_name]]。",
@@ -34948,6 +36074,14 @@
       "enUS": "All exact build sources are PC-derived; Switch auto-targeting, Siphon Blood direction, and Blood Rush placement remain unverified."
     }
   },
+  "app.7d3b3ffd93984249": {
+    "source": "先补到上限，不把超过上限的点浪费在这里。",
+    "template": "先补到上限，不把超过上限的点浪费在这里。"
+  },
+  "app.cc4ae8c0f52b1224": {
+    "source": "同时提高伤害和全抗，是低巅峰最稳定的收益。",
+    "template": "同时提高伤害和全抗，是[[Site/low-paragon]]最稳定的收益。"
+  },
   "app.05a5c13315d6051e": {
     "source": "按需补到80万–90万生命",
     "template": "按需补到[[Number/80/wan]]–[[Number/90/wan]]生命"
@@ -34956,13 +36090,33 @@
     "source": "冲层站不住时先达到生命池检查点。",
     "template": "[[Site/push]]站不住时先达到生命池检查点。"
   },
+  "app.efe73da52538867e": {
+    "source": "铁玫瑰免费触发新星，这套不依赖精魂上限。",
+    "template": "[[Items/P74_Unique_Phylactery_04]]免费触发新星，这套不依赖[[HeroDetails/MaxEssence]]。"
+  },
   "app.107c89da82bcde5e": {
     "source": "提高鲜血虹吸与铁玫瑰触发频率。",
     "template": "提高[[Powers/P6_Necro_SiphonBlood_name]]与[[Items/P74_Unique_Phylactery_04]]触发频率。"
   },
+  "app.c0e2746ce479cfe4": {
+    "source": "与装备暴击几率共同放大新星。",
+    "template": "与装备[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]共同放大新星。"
+  },
+  "app.22e66e6bcccc472e": {
+    "source": "主要服务骨甲与位移，优先级低于前三项。",
+    "template": "主要服务[[Powers/P6_Necro_BoneArmor_name]]与位移，优先级低于前三项。"
+  },
+  "app.a75362c4101b248e": {
+    "source": "智力职业天然全抗高，更缺护甲。",
+    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]职业天然全抗高，更缺护甲。"
+  },
   "app.9ab2ecc3a5be5252": {
     "source": "放大塔格奥生命池。",
     "template": "放大[[ItemSets/P6_Necro_Set_2]]生命池。"
+  },
+  "app.ce5063d20c734071": {
+    "source": "作为持续引导时的恢复补充。",
+    "template": "作为持续引导时的恢复补充。"
   },
   "app.a50371f04151bb64": {
     "source": "分身新星可以触发，是高密度怪群的重要乘区。",
@@ -34976,6 +36130,10 @@
     "source": "收益有限，但仍高于拾取范围。",
     "template": "收益有限，但仍高于拾取范围。"
   },
+  "app.68e9caeac66ea6ae": {
+    "source": "主要服务T16速刷。",
+    "template": "主要服务T16[[Site/speed-farming]]。"
+  },
   "app.3cace647c6e5959d": {
     "source": "生命低于80万或推进层数时频繁猝死",
     "template": "生命低于[[Number/80/wan]]或推进层数时频繁猝死"
@@ -34983,6 +36141,14 @@
   "app.006c9c3a8088dae7": {
     "source": "把生命池补到80万–90万后再观察。",
     "template": "把生命池补到[[Number/80/wan]]–[[Number/90/wan]]后再观察。"
+  },
+  "app.d7a6ec5446c2d74d": {
+    "source": "生命与减伤已经稳定",
+    "template": "生命与[[Site/damage-reduction]]已经稳定"
+  },
+  "app.21b2f8c0c34a52cf": {
+    "source": "智力继续同时提高伤害与全抗。",
+    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]继续同时提高伤害与全抗。"
   },
   "app.56dbb004d437a169": {
     "source": "GR 速刷切回奥吉德",
@@ -35009,9 +36175,17 @@
     "source": "80万–90万",
     "template": "[[Number/80/wan]]–[[Number/90/wan]]"
   },
+  "app.b89ae683ec64f2a5": {
+    "source": "不足时先从巅峰智力挪到体能。",
+    "template": "不足时先从[[Site/paragon]][[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]挪到[[SkillsUI/ParagonBonusLabel_Vitality]]。"
+  },
   "app.a5219e37f62b2afd": {
     "source": "角色面板1.67",
     "template": "角色面板1.67"
+  },
+  "app.b62e4b64f69da466": {
+    "source": "未达档位时优先保留手套和首饰攻速。",
+    "template": "未达档位时优先保留手套和首饰攻速。"
   },
   "app.e08f2f95e349eff1": {
     "source": "高巅峰从肩、手、戒指、武器和副手补足。",
@@ -37811,25 +38985,61 @@
     "source": "重复的黑荆棘战甲部件用魔盒“套装转换”",
     "template": "重复的黑荆棘战甲部件用魔盒“套装转换”"
   },
-  "app.cb9bb2fcd0d8f6c8": {
-    "source": "围绕死亡新星核心联动打完整爆发窗",
-    "template": "围绕[[Powers/P6_Necro_BloodNova_name]]核心联动打完整爆发窗"
+  "app.149870f4b883d18a": {
+    "source": "单人 GR 推进 · 未全远古阶段",
+    "template": "[[Site/solo]] GR 推进 · 未全远古阶段",
+    "manual": {
+      "enUS": "Solo Greater Rift progression · Before full Ancient gear"
+    }
   },
-  "app.e97a880a4932867c": {
-    "source": "保留元素周期、受罚者和所有独立乘区。；梦遗未满级、远古不足时明显弱于塔格奥。",
-    "template": "保留元素周期、[[Items/Unique_Gem_018_x1]]和所有独立[[Site/multiplier]]。；梦遗未满级、远古不足时明显弱于[[ItemSets/P6_Necro_Set_2]]。"
+  "app.edecb3b49b03c3d6": {
+    "source": "保留受罚者处理长时间首领，并按物理周期完成强控爆发。；普通传奇已有梦遗收益；先凑发动机和正确特效。",
+    "template": "保留[[Items/Unique_Gem_018_x1]]处理长时间首领，并按物理周期完成[[Site/crowd-control]]爆发。；普通传奇已有梦遗收益；先凑发动机和正确特效。",
+    "manual": {
+      "enUS": "Keep Bane of the Stricken for long boss fights and execute hard-control burst during the Physical cycle. Regular Legendaries already receive the Legacy of Dreams benefit; assemble the build engine and correct powers first."
+    }
   },
-  "app.a8630a6e73581852": {
-    "source": "保留元素周期、受罚者和所有独立乘区。；全远古散件把梦遗乘区发挥到上限。",
-    "template": "保留元素周期、[[Items/Unique_Gem_018_x1]]和所有独立[[Site/multiplier]]。；全远古散件把梦遗[[Site/multiplier]]发挥到上限。"
+  "app.3375196f1620653e": {
+    "source": "单人 GR 推进 · 高成长阶段",
+    "template": "[[Site/solo]] GR 推进 · 高成长阶段",
+    "manual": {
+      "enUS": "Solo Greater Rift progression · Advanced progression stage"
+    }
   },
-  "app.3186144b0ac214ff": {
-    "source": "伤害溢出后换机动、自动拾取和短冷却。；梦遗未满级、远古不足时明显弱于塔格奥。",
-    "template": "伤害溢出后换机动、自动拾取和短冷却。；梦遗未满级、远古不足时明显弱于[[ItemSets/P6_Necro_Set_2]]。"
+  "app.53ad2ed2d8418e1a": {
+    "source": "保留受罚者处理长时间首领，并按物理周期完成强控爆发。；远古率、卡德山和词缀质量提高后，再按实战瓶颈优化。",
+    "template": "保留[[Items/Unique_Gem_018_x1]]处理长时间首领，并按物理周期完成[[Site/crowd-control]]爆发。；远古率、卡德山和词缀质量提高后，再按实战瓶颈优化。",
+    "manual": {
+      "enUS": "Keep Bane of the Stricken for long boss fights and execute hard-control burst during the Physical cycle. After improving Ancient coverage, augments, and affix quality, optimize around observed bottlenecks."
+    }
   },
-  "app.61ba36c789034b64": {
-    "source": "伤害溢出后换机动、自动拾取和短冷却。；全远古散件把梦遗乘区发挥到上限。",
-    "template": "伤害溢出后换机动、自动拾取和短冷却。；全远古散件把梦遗[[Site/multiplier]]发挥到上限。"
+  "app.6234e46bc02d66c1": {
+    "source": "低层 GR 速刷 · 未全远古阶段",
+    "template": "低层 GR [[Site/speed-farming]] · 未全远古阶段",
+    "manual": {
+      "enUS": "Lower-tier Greater Rift speed farming · Before full Ancient gear"
+    }
+  },
+  "app.2ec5e1e38d992108": {
+    "source": "只采用资料明确写出的受罚者换强者，不虚构T16金币链。；普通传奇已有梦遗收益；先凑发动机和正确特效。",
+    "template": "只采用资料明确写出的[[Items/Unique_Gem_018_x1]]换强者，不虚构T16金币链。；普通传奇已有梦遗收益；先凑发动机和正确特效。",
+    "manual": {
+      "enUS": "Use only the documented swap from Bane of the Stricken to Bane of the Powerful; do not invent a T16 gold chain. Regular Legendaries already receive the Legacy of Dreams benefit; assemble the build engine and correct powers first."
+    }
+  },
+  "app.921ab039638a6d31": {
+    "source": "低层 GR 速刷 · 高成长阶段",
+    "template": "低层 GR [[Site/speed-farming]] · 高成长阶段",
+    "manual": {
+      "enUS": "Lower-tier Greater Rift speed farming · Advanced progression stage"
+    }
+  },
+  "app.2f864370551f273c": {
+    "source": "只采用资料明确写出的受罚者换强者，不虚构T16金币链。；远古率、卡德山和词缀质量提高后，再按实战瓶颈优化。",
+    "template": "只采用资料明确写出的[[Items/Unique_Gem_018_x1]]换强者，不虚构T16金币链。；远古率、卡德山和词缀质量提高后，再按实战瓶颈优化。",
+    "manual": {
+      "enUS": "Use only the documented swap from Bane of the Stricken to Bane of the Powerful; do not invent a T16 gold chain. After improving Ancient coverage, augments, and affix quality, optimize around observed bottlenecks."
+    }
   },
   "app.390741e464feee68": {
     "source": "伊纳瑞斯的恩泽套装部件。提供六件套骨甲旋风乘区。",

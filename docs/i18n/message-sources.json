@@ -22,6 +22,7 @@
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/page.tsx",
@@ -41,6 +42,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/site-catalog.ts",
@@ -109,6 +111,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -130,6 +133,7 @@
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
@@ -158,6 +162,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -172,6 +177,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -202,6 +208,7 @@
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/necromancer-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
     "app/page.tsx",
@@ -229,6 +236,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -370,6 +378,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -396,6 +405,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -454,6 +464,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -586,6 +597,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -723,6 +735,7 @@
     "app/data/barbarian-builds.ts",
     "app/data/crusader-builds.ts",
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
@@ -735,6 +748,7 @@
   "app.fa7f5d4a85f55648": [
     "app/data/barbarian-builds.ts",
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
@@ -1034,6 +1048,7 @@
   "app.c374ec29a951c8f9": [
     "app/data/barbarian-builds.ts",
     "app/data/class-build-factory.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
@@ -1418,6 +1433,7 @@
     "app/data/barbarian-builds.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -1855,6 +1871,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -1950,6 +1967,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -1964,6 +1982,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
@@ -2025,6 +2044,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
@@ -2095,6 +2115,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
     "evaluated data factories"
@@ -2109,6 +2130,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
     "evaluated data factories"
@@ -2122,6 +2144,7 @@
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
@@ -2783,6 +2806,7 @@
     "app/data/barbarian-builds.ts",
     "app/data/crusader-builds.ts",
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -5368,6 +5392,7 @@
     "app/data/class-build-factory.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "evaluated data factories",
@@ -6061,6 +6086,7 @@
   "app.d789646eda8f0379": [
     "app/data/build-guides.ts",
     "app/data/class-build-factory.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
@@ -6140,6 +6166,7 @@
     "app/data/crusader-builds.ts",
     "app/data/demon-hunter-builds.ts",
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
@@ -6306,6 +6333,7 @@
   "app.445905122e87b990": [
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
@@ -6320,6 +6348,7 @@
   "app.af351f2b09936190": [
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/zuni-darts-reviewed.ts",
     "evaluated data factories",
     "app/i18n/manual.json"
@@ -6327,6 +6356,7 @@
   "app.0bf0432eac557859": [
     "app/data/class-build-factory.ts",
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/zuni-darts-reviewed.ts",
     "evaluated data factories",
     "app/i18n/manual.json"
@@ -6812,6 +6842,7 @@
   ],
   "app.c8f774858ea9a026": [
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/necromancer-builds.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
@@ -9268,6 +9299,7 @@
   ],
   "app.00116039d841e4de": [
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/page.tsx",
     "evaluated data factories"
   ],
@@ -13595,6 +13627,7 @@
   ],
   "app.d26d8b732a9fd894": [
     "app/data/crusader-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/zuni-darts-reviewed.ts",
     "evaluated data factories",
     "app/i18n/manual.json"
@@ -14428,6 +14461,7 @@
   "app.ac09a1077a2764f5": [
     "app/data/demon-hunter-builds.ts",
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/site-catalog.ts",
     "evaluated data factories"
   ],
@@ -16236,6 +16270,7 @@
   ],
   "app.4b7350929a00d761": [
     "app/data/demon-hunter-builds.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/monk-builds.ts",
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
@@ -16683,7 +16718,6 @@
   ],
   "app.a67a47a5e48b7ff6": [
     "app/data/demon-hunter-builds.ts",
-    "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.9eabfd6cae9dcd87": [
@@ -16791,6 +16825,7 @@
   ],
   "app.20209bc51e74f640": [
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "app/data/witch-doctor-builds.ts",
     "app/data/wizard-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
@@ -16843,6 +16878,7 @@
   ],
   "app.e9073c5038adbde4": [
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "evaluated data factories"
   ],
   "app.b008a757d9c7fecd": [
@@ -16908,14 +16944,17 @@
   ],
   "app.6d113528c68a8aeb": [
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "evaluated data factories"
   ],
   "app.cf2d8d4ad85afd18": [
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "evaluated data factories"
   ],
   "app.9b949a5c73ff8c60": [
     "app/data/followers.ts",
+    "app/data/lod-nova-reviewed.ts",
     "evaluated data factories"
   ],
   "app.eaf086f666cfdd93": [
@@ -16929,6 +16968,1032 @@
   "app.cda6e4547c5e87f2": [
     "app/data/followers.ts",
     "evaluated data factories"
+  ],
+  "app.961ee1b0399228f3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f75e44df542be7ea": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.91059f25732316d1": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.87a26e0af06427d7": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c9929dd332c8f387": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9b4360c0d911de40": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d836526fde708f55": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ac76f4a71d7d3a17": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a596597c46b39fb3": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.9dccf3081246725a": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.898aa937f431cd1d": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.434ac5c1b5f52b08": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d83fc68e281b113b": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1c927166e5dccbf6": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.afddee5851a5623c": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.9c0cdb251148a4a4": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.8b1310609bf56846": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.393609fa29306336": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d1b82e53b8aa48b0": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories"
+  ],
+  "app.2074744435278da4": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.531791260f46a479": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.ec001d397aef1b5f": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.fedb04d347366703": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories"
+  ],
+  "app.9d1d8d35b05a4a99": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.70a3f8e95966e87d": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/i18n/manual.json"
+  ],
+  "app.29008b5fdf605de6": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.9ea49bc5cc4452e5": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b01c37294c038bf7": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3c9b889416ad1c6c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d8e1b7298702c9f4": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cb082740319b4247": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4cf761bb0e57a2e1": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fdc3dfe4d0e15603": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b8241093edfdc0b3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cd2b1c6f78ba663e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fd19752fde7f699b": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c6ef60461dbbf62e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e3a6a3458cad3f32": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f8761b6c7d998d9e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e6e929b02694610e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.89ebb2c53130c5ad": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.383b40493a29f289": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.86956fe6410deff1": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c7f78b1d0f0a63d9": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.c4537a2245804d85": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.cbd048335968b35b": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.d1baa3b517d2b14a": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.c356f9d273952725": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.b6910eec2ff951eb": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.2d92afc27f612216": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.23b1bf30877b02aa": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f804c538f41177e8": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f579090823f08ebc": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.26a038dcd7572e42": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5743cdef6eb2c9e6": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ff6aedaf4d1c5628": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cedc41c3d7573efa": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d770f7657fc68a7b": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8564a4739b07b5d9": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2cdf61664fd50589": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6b4d029d348bf3d0": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ee44bfdab9daec56": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.2700702f3b10bbc4": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.60427cf3cb036bb3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0e47c578f5f3ce2b": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/zuni-darts-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f2faca5f90f17d5f": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3c252441f105b1f5": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8df649a79f87e7c0": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.50949f8b372b43de": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e17beb303609dbb1": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2384453b2275bb0c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.aca49587acf894b5": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e56d537fa3b480fd": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.55d01a7a4c74dde4": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fdbcece02c3131b6": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dc45a86ec5da1155": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5afd7bd9e10f5a49": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.778bb3779a93d928": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.df944ec205123f70": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.fd63c6e5a4560c1e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7e42c7b947bb182d": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.cd078be62e69ac5e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0bab9cefb3086159": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e8b46d8b10999d6f": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6099c9782baac091": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5a0d47438ef5faed": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.18e1673bc04688c7": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e0acf45386b6cb29": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.755802ce06f9e12d": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b940187c055c73ad": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.40c0170b7f1ba292": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.26841cee4c89c56c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.65b138c40b8d08b9": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.381a86836763c84f": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.71ba94524a98b5bb": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d06704bbb3c32d91": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e1602ac9e6a5ac3f": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories"
+  ],
+  "app.f0925a6d805010a3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.96883fe1c35e4dfa": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.bc5db693d8216f1c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.523edd7240067f37": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4072783f0165eca7": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.36c92069d4c8a9a1": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1db03980071f2379": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ca1093b804541716": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f110ad09562b87dc": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.658d5a3f7ad5bda3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.af74c5dedfcb0641": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6d3a7fb766177d3b": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1ec817dc3eb4ad1d": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6fde34e7d92d102d": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2187ed1c307b93e3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.31531df2e8d5be17": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0afb2aed05c6dc8e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c499b500a76ca9aa": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.deef9a2b59749d73": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a4dae9fce5ef710c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ebb12f3b545631b5": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0e22795967712c86": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e2f1d4481affd4c2": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f66d5340116b95ee": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7e3ab04f37dfcd41": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dc879e1b11805928": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e55ccb4dafa8b485": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.35459c44544a8151": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.742e191cd077ca5c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.53c27c0e869babb3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f57297d8025d0085": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4cacea4f2973d28c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.386439d910632ab1": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e1b67bd182edf1a6": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c047911bfdef2f65": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c71ec719f1c90383": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c15ecfc30cc579bc": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.32b5c28e2c7745d0": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5443c301764ec7a8": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0b1c4e0e276d1ce3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2b88ae1657a151ce": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4fc62906e527175d": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2750aff256daf473": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.83899569bfe30f89": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f26e3750e021b42a": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.62cfea85387dd414": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5814b2c3f7d32eb4": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f0ee772a346dfa6": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c69122c90548a5b5": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.021bc7473a5272c5": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.b13f5624fae4f930": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0b79bfcd70dde9c5": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.9bdf525b96b64d64": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2389bc70501e8c81": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.041f2aa41e7ad206": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.a70bbb72c475db5f": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8b3a69165a376aa2": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.4a786f8ad82436d2": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.318b938a782fd010": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ecd30c08b809ffcc": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.ad7c898684936641": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.8be46cc702dbc5c1": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.8108876f308e88d4": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e3b908813b104acc": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.05e2fd10440fc156": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.93dda4e9fdec8379": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.43c836683e6c6510": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1f1b7a9786931fa2": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e123b6f0d956f5d3": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.93481884fda30006": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6f836bda90ca6b4a": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c89c4af0eff9fedd": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.c944fd14d5e7e500": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.aaa466bee67adaa2": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.55aa8772170f27d4": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f9f0103ec689edc8": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5d5b72f5b550bf2b": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.e9c06f5c0313a50c": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.3e5b9dce971f7da6": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5d10fe24315efe64": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7a52d49aa7ee9a38": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.dca56bdcc9b0bb3a": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.1d62c3d6f22cecd9": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.45217141b66b9aa7": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f60bc152041ae5b7": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f01bba1fe0fa9e3e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.3766e7448015bf60": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5e1d7ef9f76aa55c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2a80a5e6f8a68fec": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.6306d5db0bf75393": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.33ae2309d4274322": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.da7cbf3b97000351": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.951ca2842bb1980d": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.b99068994581af6e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.26eadc79d605f680": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.e8f252a4b250aafb": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.88d9b734232a849a": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.73a6b414e65aed58": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.7cf98189da60ff57": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5d0301933bd9d667": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0ddabd23a244fc91": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.f8cb044b9b9a564a": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.0b750ce26be8ac8e": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.d16c247a04e1ea5c": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.5365b91ec3d58fbd": [
+    "app/data/lod-nova-reviewed.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.17f657720e599693": [
+    "app/data/lod-nova-reviewed.ts",
+    "app/i18n/manual.json"
   ],
   "app.805a4871d8fde5c8": [
     "app/data/monk-builds.ts",
@@ -19925,11 +20990,6 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.29008b5fdf605de6": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
   "app.44bc0b01b07f0c49": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -19984,11 +21044,6 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.531791260f46a479": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
   "app.2ff15ae123ed62b8": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -20005,11 +21060,6 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.e9c06f5c0313a50c": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
   "app.09a9148eab7072a4": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -20017,11 +21067,6 @@
   "app.eeef3f04068ca8ad": [
     "app/data/necromancer-builds.ts",
     "app/data/zuni-darts-reviewed.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.a596597c46b39fb3": [
-    "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
   ],
@@ -20042,38 +21087,16 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.8364c92ccbb5f55d": [
+  "app.8f28b480f96889a9": [
     "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/i18n/manual.json"
   ],
-  "app.9dccf3081246725a": [
+  "app.4c680452d6828669": [
     "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.898aa937f431cd1d": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.5ce894f155bdcb96": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/i18n/manual.json"
   ],
   "app.adc37b2a9341b759": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.afddee5851a5623c": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.9c0cdb251148a4a4": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.afa95c0e6d14a5e0": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.d9135fb36ef0922d": [
     "app/data/necromancer-builds.ts",
@@ -20172,42 +21195,6 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.8a9d081f0dbb82f1": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.c2ee40650895cdc7": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.4e6342d1ce4c8f9d": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.23900a1e0d2af59d": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.d8261b3dfa6886a8": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.26eec7d6a062cacc": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.4c5ea11c1253048b": [
-    "app/data/necromancer-builds.ts",
-    "app/data/witch-doctor-builds.ts",
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.4bd0a3243b83bcd5": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
   "app.85e44bbd67c89351": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -20289,6 +21276,19 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.c2ee40650895cdc7": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.4e6342d1ce4c8f9d": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.23900a1e0d2af59d": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
   "app.ea043316fd8846d3": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -20296,6 +21296,17 @@
   "app.3f794766dad23a13": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
+  ],
+  "app.4c5ea11c1253048b": [
+    "app/data/necromancer-builds.ts",
+    "app/data/witch-doctor-builds.ts",
+    "app/data/wizard-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.4bd0a3243b83bcd5": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.6d370edb933f73ff": [
     "app/data/necromancer-builds.ts",
@@ -20807,12 +21818,11 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.5d5b72f5b550bf2b": [
+  "app.d8261b3dfa6886a8": [
     "app/data/necromancer-builds.ts",
-    "app/page.tsx",
     "evaluated data factories"
   ],
-  "app.c7f78b1d0f0a63d9": [
+  "app.26eec7d6a062cacc": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
@@ -20828,11 +21838,6 @@
     "evaluated data factories",
     "public/d3/library/skills.json"
   ],
-  "app.c4537a2245804d85": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
   "app.f63dcc1fff82fd91": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -20841,11 +21846,6 @@
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "components/build/BuildTableView.tsx",
-    "evaluated data factories"
-  ],
-  "app.cbd048335968b35b": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
     "evaluated data factories"
   ],
   "app.55b05b7c97955328": [
@@ -20865,26 +21865,11 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.951ca2842bb1980d": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.d1baa3b517d2b14a": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
   "app.b8ad588ec61125f0": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.34dd51fd4277cc9d": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.c356f9d273952725": [
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
     "evaluated data factories"
@@ -21064,413 +22049,6 @@
   "app.38708933005f176b": [
     "app/data/necromancer-builds.ts"
   ],
-  "app.d31cf076d726a028": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.19756340537b2d39": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.2069f7d8f10b23c6": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.135480b0cac322e1": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.60acee27f467a4d6": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.0d8a9f915ec4a2d0": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.457bd8f03020bbe2": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.960209530c60e302": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.be4ff6ea12260cc0": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.18b0418813b5d138": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.c43b6d560ed06937": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.c02c92edab04e3ee": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.d324184c26636e5f": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.03d70809decb39f5": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b8b1d70102b6d9b8": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b5fb36e1200c4c31": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.ce0729cacd9d70bb": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.c92fdd9b3e5ab595": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.f949138a4542f6d7": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.8e4b5b64a6044471": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.052ae04f48c7d840": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.937aaa92f8ba9054": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.41e4692306718c5a": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.1f8046bb8fa113e0": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.50d8f8f31f82a609": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.6c294073efa0098d": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.71d42787cb2e4795": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.43e14b34111cc2bb": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.a68400c8463c6d2b": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.a0c10f2ef0abd759": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b6910eec2ff951eb": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.ba591be280390649": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.6be1786cf74f24d3": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.9aa8d6a648f4430c": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.fa93434e154bc8c7": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.65db8fe4b073fd4f": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.18120b01c8219617": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.fcac0f9353ec1e67": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.e8a1dfd25d4699ae": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.f427bb4329ee60be": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.7ba7759f9e78cfeb": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.935b463fae80d045": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx"
-  ],
-  "app.fa24c9f9498a6151": [
-    "app/data/necromancer-builds.ts"
-  ],
-  "app.7d3b3ffd93984249": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.cc4ae8c0f52b1224": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.2a5cb20ecdda0452": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.6b9cfb5d7dcb03bd": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.ee44bfdab9daec56": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.efe73da52538867e": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.8bcffdcc6952fbb8": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.5a52a8a42ccfb287": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.c0e2746ce479cfe4": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.05cf9516efc15e56": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.22e66e6bcccc472e": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.a75362c4101b248e": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.19d4809441bef1ef": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.354bfd34983d0af3": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.c8b60342c46cf305": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.ce5063d20c734071": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.06d8eb80b9721611": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.a4104dd2374d4e22": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.36111307928221f6": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.9ad552979628d639": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.68e9caeac66ea6ae": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.ac4b19ff8b6be0ec": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.2ec5d6e1cfa8342f": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.140a15ba526a4aad": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.7758ffc7f4b10f8f": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.d7a6ec5446c2d74d": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.21b2f8c0c34a52cf": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.ae0976886cded61d": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.277d2b2c39702c4d": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b89ae683ec64f2a5": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.fcd2d82acfc47b5a": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.b62e4b64f69da466": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.6a2acdfdcc725fd0": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.a64344eb20c05978": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.638c3ce14c12eeff": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.e7a6066f18586417": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.0ab3c4cdb038deec": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.e0774d9672f0bd1e": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.54ba4fb5a28c7f3e": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.8f657f05230c6f48": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.77225fa2c38a14da": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.ad1fac8aae42011f": [
-    "app/data/necromancer-builds.ts",
-    "app/page.tsx",
-    "evaluated data factories"
-  ],
-  "app.931127181deb4faa": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.01d7e1e614e23cd5": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.f695e8fc81490099": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.8206d501c318aaa0": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.15b310880fd44551": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.67a5c39816f44ab6": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.2e02df2727d17665": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.ca18eea83eac83ac": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.e78e24a8243819ab": [
-    "app/data/necromancer-builds.ts",
-    "app/data/wizard-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.84a65a9e69b9502d": [
-    "app/data/necromancer-builds.ts",
-    "app/data/witch-doctor-builds.ts",
-    "app/data/zuni-darts-reviewed.ts",
-    "evaluated data factories"
-  ],
-  "app.806ad0ee32600527": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.a79f75bebb7ae90c": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.14d8e223c7c96a2b": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.f7fb5f76e5f02314": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
   "app.14b98112dc9c2149": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -21534,6 +22112,9 @@
   "app.8269320498bf1312": [
     "app/data/necromancer-builds.ts"
   ],
+  "app.f949138a4542f6d7": [
+    "app/data/necromancer-builds.ts"
+  ],
   "app.8d967171cbc3ab9a": [
     "app/data/necromancer-builds.ts"
   ],
@@ -21555,8 +22136,22 @@
   "app.614e6d3fda16fdad": [
     "app/data/necromancer-builds.ts"
   ],
+  "app.71d42787cb2e4795": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.43e14b34111cc2bb": [
+    "app/data/necromancer-builds.ts"
+  ],
   "app.ffe45f543619d39d": [
     "app/data/necromancer-builds.ts"
+  ],
+  "app.a0c10f2ef0abd759": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.ba591be280390649": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
   ],
   "app.83ee7eb55464dfe3": [
     "app/data/necromancer-builds.ts",
@@ -21566,18 +22161,47 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.fa93434e154bc8c7": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.65db8fe4b073fd4f": [
+    "app/data/necromancer-builds.ts"
+  ],
   "app.f56f72da2f365026": [
     "app/data/necromancer-builds.ts"
+  ],
+  "app.fcac0f9353ec1e67": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
   ],
   "app.0ab8816e87028470": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
+  ],
+  "app.f427bb4329ee60be": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.7ba7759f9e78cfeb": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.935b463fae80d045": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx"
+  ],
+  "app.fa24c9f9498a6151": [
+    "app/data/necromancer-builds.ts"
   ],
   "app.414f281db66f9d69": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.878344fbb58572bb": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.2a5cb20ecdda0452": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
@@ -21589,8 +22213,22 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.8bcffdcc6952fbb8": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.5a52a8a42ccfb287": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
   "app.668f8473cd967433": [
     "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.05cf9516efc15e56": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
     "evaluated data factories"
   ],
   "app.dc2079d711ae7cc2": [
@@ -21601,12 +22239,31 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.19d4809441bef1ef": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.354bfd34983d0af3": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.c8b60342c46cf305": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
   "app.55ba58a2f783958c": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.2fbccf9666846fd9": [
     "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.a4104dd2374d4e22": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
     "evaluated data factories"
   ],
   "app.c2458d341408d41c": [
@@ -21621,6 +22278,24 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.ac4b19ff8b6be0ec": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.2ec5d6e1cfa8342f": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.140a15ba526a4aad": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.7758ffc7f4b10f8f": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
   "app.18a0ba3ca5cd3e27": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -21629,12 +22304,30 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.ae0976886cded61d": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
+  "app.277d2b2c39702c4d": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
   "app.cd2f947dadc84f50": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.fcd2d82acfc47b5a": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.f99bec00a5973558": [
     "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.6a2acdfdcc725fd0": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
     "evaluated data factories"
   ],
   "app.385d68bc96f1088c": [
@@ -21649,6 +22342,11 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.0ab3c4cdb038deec": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
   "app.ff843fbfd1b65b2a": [
     "app/data/necromancer-builds.ts",
     "app/page.tsx",
@@ -21656,6 +22354,11 @@
   ],
   "app.cdd037a4d0268048": [
     "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.8f657f05230c6f48": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
     "evaluated data factories"
   ],
   "app.65b1fb9d22329468": [
@@ -21666,12 +22369,47 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.806ad0ee32600527": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.67a5c39816f44ab6": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.a79f75bebb7ae90c": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.14d8e223c7c96a2b": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
   "app.8e237f15bb2e725c": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.2e02df2727d17665": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.5e606c472ed2250f": [
     "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.01d7e1e614e23cd5": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.e78e24a8243819ab": [
+    "app/data/necromancer-builds.ts",
+    "app/data/wizard-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.84a65a9e69b9502d": [
+    "app/data/necromancer-builds.ts",
+    "app/data/witch-doctor-builds.ts",
+    "app/data/zuni-darts-reviewed.ts",
     "evaluated data factories"
   ],
   "app.e3ef2abfa8f6423e": [
@@ -21933,7 +22671,16 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.ad1fac8aae42011f": [
+    "app/data/necromancer-builds.ts",
+    "app/page.tsx",
+    "evaluated data factories"
+  ],
   "app.bdc6b1665edfa11a": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.f695e8fc81490099": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
@@ -22143,6 +22890,10 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
+  "app.638c3ce14c12eeff": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
   "app.99bf898607344eac": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -22168,6 +22919,10 @@
     "evaluated data factories"
   ],
   "app.0e3f1d1ac8df5538": [
+    "app/data/necromancer-builds.ts",
+    "evaluated data factories"
+  ],
+  "app.931127181deb4faa": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
@@ -22592,79 +23347,60 @@
   "app.c0cb314a3bcc3711": [
     "app/data/necromancer-builds.ts",
     "app/data/site-catalog.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.330c875bdbcf38d1": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+  "app.5dca9c060fc3036e": [
+    "app/data/necromancer-builds.ts"
   ],
-  "app.c3b16f1057b9c3d2": [
+  "app.f5509961ac7e3fff": [
     "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.21e5bbba6f651afd": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/i18n/manual.json"
   ],
   "app.d8d907f3607da032": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.a8b9b39ebd038636": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.73262f978ec35456": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.a96d02ad0bb418b5": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.55439e62edc4c25b": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.76d6889225ef6e08": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.9159d3dd3f0003ef": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.6a3efc78b32fe2af": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.3ade08d40cdccc4c": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.64ac086efc2a6291": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.e205a5237ef1c697": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.7948a23e31f160f4": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.d4887c4fcfcb19c2": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.fb2abdb64ea2841a": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.e252a78e79d57608": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.ce00eaa51f548de1": [
     "app/data/necromancer-builds.ts",
@@ -22672,44 +23408,34 @@
     "evaluated data factories"
   ],
   "app.3bbd7da003cbbf1f": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.b9886850e26d0feb": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.cdf577b2093fe6b4": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.ee0a79fb50f54123": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.f84efa52a31385fc": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.503fe41bfcc98b67": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.41fe54d9735d3cf6": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.7ece986f92138af5": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.ace625ad57f814ed": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.99793b9eeb061093": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.ab8cc422cadbf5f7": [
     "app/data/necromancer-builds.ts",
@@ -22717,16 +23443,59 @@
     "evaluated data factories"
   ],
   "app.827425fedb259838": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
   ],
   "app.bb5df551eb22f37b": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.1e4826a9e37c0d4f": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.d31cf076d726a028": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.19756340537b2d39": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.2069f7d8f10b23c6": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.135480b0cac322e1": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.60acee27f467a4d6": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.0d8a9f915ec4a2d0": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.457bd8f03020bbe2": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.960209530c60e302": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.be4ff6ea12260cc0": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.18b0418813b5d138": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.c43b6d560ed06937": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.c02c92edab04e3ee": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.d324184c26636e5f": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.03d70809decb39f5": [
+    "app/data/necromancer-builds.ts"
+  ],
+  "app.b8b1d70102b6d9b8": [
+    "app/data/necromancer-builds.ts"
   ],
   "app.7130441ee51ae0dd": [
     "app/data/necromancer-builds.ts",
@@ -22845,10 +23614,6 @@
     "evaluated data factories"
   ],
   "app.df42bbf97cfdd331": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
-  "app.e8f252a4b250aafb": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
@@ -23325,10 +24090,6 @@
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
-  "app.8be46cc702dbc5c1": [
-    "app/data/necromancer-builds.ts",
-    "evaluated data factories"
-  ],
   "app.e7d5967b6480e676": [
     "app/data/necromancer-builds.ts",
     "evaluated data factories"
@@ -23694,6 +24455,10 @@
   "app.762dc4ac38ffb18b": [
     "app/data/necromancer-builds.ts",
     "app/data/site-catalog.ts",
+    "evaluated data factories"
+  ],
+  "app.330c875bdbcf38d1": [
+    "app/data/necromancer-builds.ts",
     "evaluated data factories"
   ],
   "app.2075a4c79478edad": [
@@ -24274,9 +25039,15 @@
     "app/data/site-catalog.ts",
     "evaluated data factories"
   ],
-  "app.34a46ac821d2f244": [
+  "app.0220dcfb4c7b75d4": [
     "app/data/site-catalog.ts",
-    "evaluated data factories"
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.63be6157742a1d77": [
+    "app/data/site-catalog.ts",
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.45f69fbd46c3b1d0": [
     "app/data/site-catalog.ts",
@@ -30781,11 +31552,6 @@
     "evaluated data factories",
     "app/i18n/manual.json"
   ],
-  "app.0e47c578f5f3ce2b": [
-    "app/data/zuni-darts-reviewed.ts",
-    "evaluated data factories",
-    "app/i18n/manual.json"
-  ],
   "app.a0a7dc2e6ffa1fb1": [
     "app/data/zuni-darts-reviewed.ts",
     "evaluated data factories",
@@ -32919,16 +33685,37 @@
     "app/page.tsx",
     "app/i18n/manual.json"
   ],
+  "app.7d3b3ffd93984249": [
+    "app/page.tsx"
+  ],
+  "app.cc4ae8c0f52b1224": [
+    "app/page.tsx"
+  ],
   "app.05a5c13315d6051e": [
     "app/page.tsx"
   ],
   "app.e0ffd4034083d47a": [
     "app/page.tsx"
   ],
+  "app.efe73da52538867e": [
+    "app/page.tsx"
+  ],
   "app.107c89da82bcde5e": [
     "app/page.tsx"
   ],
+  "app.c0e2746ce479cfe4": [
+    "app/page.tsx"
+  ],
+  "app.22e66e6bcccc472e": [
+    "app/page.tsx"
+  ],
+  "app.a75362c4101b248e": [
+    "app/page.tsx"
+  ],
   "app.9ab2ecc3a5be5252": [
+    "app/page.tsx"
+  ],
+  "app.ce5063d20c734071": [
     "app/page.tsx"
   ],
   "app.a50371f04151bb64": [
@@ -32940,10 +33727,19 @@
   "app.95fa094e939d846a": [
     "app/page.tsx"
   ],
+  "app.68e9caeac66ea6ae": [
+    "app/page.tsx"
+  ],
   "app.3cace647c6e5959d": [
     "app/page.tsx"
   ],
   "app.006c9c3a8088dae7": [
+    "app/page.tsx"
+  ],
+  "app.d7a6ec5446c2d74d": [
+    "app/page.tsx"
+  ],
+  "app.21b2f8c0c34a52cf": [
     "app/page.tsx"
   ],
   "app.56dbb004d437a169": [
@@ -32961,7 +33757,13 @@
   "app.4b676e9874fbb0a0": [
     "app/page.tsx"
   ],
+  "app.b89ae683ec64f2a5": [
+    "app/page.tsx"
+  ],
   "app.a5219e37f62b2afd": [
+    "app/page.tsx"
+  ],
+  "app.b62e4b64f69da466": [
     "app/page.tsx"
   ],
   "app.e08f2f95e349eff1": [
@@ -34846,20 +35648,37 @@
   "app.7893954dd6ea156f": [
     "evaluated data factories"
   ],
-  "app.cb9bb2fcd0d8f6c8": [
-    "evaluated data factories"
+  "app.149870f4b883d18a": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.e97a880a4932867c": [
-    "evaluated data factories"
+  "app.edecb3b49b03c3d6": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.a8630a6e73581852": [
-    "evaluated data factories"
+  "app.3375196f1620653e": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.3186144b0ac214ff": [
-    "evaluated data factories"
+  "app.53ad2ed2d8418e1a": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
-  "app.61ba36c789034b64": [
-    "evaluated data factories"
+  "app.6234e46bc02d66c1": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2ec5e1e38d992108": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.921ab039638a6d31": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
+  ],
+  "app.2f864370551f273c": [
+    "evaluated data factories",
+    "app/i18n/manual.json"
   ],
   "app.390741e464feee68": [
     "evaluated data factories"
