@@ -2,6 +2,7 @@ import { completeBuildGuide, validateReviewedBuildGuide, type BuildChoicePolicy,
 import { CURRENT_SEASON } from "./season-config";
 import { D3_ITEM_ROOT, D3_SKILL_ROOT } from "./assets";
 import { reviewLodNovaGuide } from "./lod-nova-reviewed";
+import { reviewRathmaAotdGuide } from "./rathma-aotd-reviewed";
 
 export type NecromancerGuide = BuildGuide;
 
@@ -585,127 +586,6 @@ const LOD_CORPSE_CHOICES: BuildChoicePolicy[] = [
   { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女固定提供冷却与攻速；速刷随从戴贪婪之戒扩大拾取，冲层戴团结与不死圣物。" },
 ];
 
-const RATHMA_AOTD_SOURCES = {
-  overview: "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
-  gear: "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-bis-gear-gems-paragon-points",
-  maxroll: "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide",
-  cn: "https://d3.17173.com/content/2026-07-29/20260729000116654.shtml",
-};
-
-const RATHMA_PUSH_ROTATION = [
-  { title: "复生满编", action: "进入秘境后尽快复生足够仆从。", reason: "拉斯玛六件按永久仆从数量放大亡者大军。" },
-  { title: "统御锁定", action: "每遇到新精英先命令骷髅攻击。", reason: "启动杰瑟斯和希雷娜羁绊。" },
-  { title: "虹吸标记", action: "短暂虹吸核心目标。", reason: "葬镰让目标承受额外伤害。" },
-  { title: "骨甲强控", action: "元素窗前骨甲眩晕怪群。", reason: "克里斯宾进入强控档，并维持蚀牙诅咒。" },
-  { title: "释放大军", action: "在物理周期与神目圈重叠时放亡者大军。", reason: "所有装备、套装、控制和元素乘区在这一击汇合。" },
-];
-
-const RATHMA_SPEED_ROTATION = [
-  { title: "复生仆从", action: "尽快召满亡者复生与骷髅。", reason: "仆从数量与冷却引擎在速刷仍成立。" },
-  { title: "统御精英", action: "遇到精英先命令骷髅锁定。", reason: "杰瑟斯与希雷娜增伤在速刷仍有效。" },
-  { title: "大军清屏", action: "精英出现即放亡者大军。", reason: "不等待完整元素周期，击杀即转场。" },
-  { title: "拾取金币", action: "沿路拾取金币保持金织带与贪婪。", reason: "T16金币链提供护甲与拾取范围。" },
-  { title: "击杀转场", action: "利用寅剑或梅斧冷却立即转场。", reason: "击杀刷新冷却，下一段跑图无空档。" },
-];
-
-const RATHMA_CONFIGURATION_BASE: BuildConfiguration = {
-  gear: {
-    head: "rathma-head", shoulders: "rathma-shoulders", chest: "rathma-chest", gloves: "rathma-gloves",
-    bracers: "clena", belt: "crimson-belt", pants: "crimson-pants", boots: "rathma-boots",
-    amulet: "squirts", ring1: "krysbin", ring2: "coe", weapon: "jesseth-scythe", offhand: "jesseth-shield",
-  },
-  skills: [
-    { id: "siphon-blood", rune: "力量转移" }, { id: "command-skeletons", rune: "狂乱" }, { id: "bone-armor", rune: "白骨脱臼" },
-    { id: "army-of-the-dead", rune: "死亡之谷" }, { id: "blood-rush", rune: "强韧" }, { id: "revive", rune: "私人军队" },
-  ],
-  passives: ["rigor-mortis", "final-service", "rathmas-shield", "grisly-tribute"],
-  powers: { weapon: "funerary-pick", armor: "fates-vow", jewelry: "royal-grandeur", season: "corroded-fang" },
-  legendaryGems: { control: "bane-of-the-trapped", channeling: "gogok", boss: "zei" },
-  normalGems: { head: ["flawless-royal-diamond"], armor: Array(5).fill("flawless-royal-topaz"), weapon: ["flawless-royal-emerald"] },
-  follower: { id: "enchantress", items: ["不死圣物", "团结"], skills: ["冷却增强", "充能"] },
-  statPriorities: { global: ["冷却缩减（亡者大军循环）", "物理元素伤", "范围伤害", "骷髅攻速断点"], survival: ["生命%", "护甲", "全元素抗性"] },
-  rotation: RATHMA_PUSH_ROTATION,
-};
-
-const RATHMA_SCENARIOS: BuildScenario[] = [
-  { id: "push-low", label: "低巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "low", applicability: "supported",
-    reason: "冲层第4槽用塔格奥蚀牙靠诅咒增伤，宝石用困者/勾玉/贼神；低巅峰可先穿满六件拉斯玛或配守护者过渡。",
-    sourceRefs: [RATHMA_AOTD_SOURCES.overview, RATHMA_AOTD_SOURCES.maxroll], reviewedAt: "2026-08-17" },
-  { id: "push-high", label: "高巅峰大秘境冲层", content: "greater-rift-push", paragonBand: "high", applicability: "supported",
-    reason: "高巅峰由巅峰承担主属性后，词缀转向冷却达标、范围伤与骷髅攻速断点，5拉斯玛＋2克里森经华戒完整激活。",
-    patch: { statPriorities: { global: ["冷却缩减达标（亡者大军无缝）", "范围伤害≥120%", "物理元素伤", "骷髅攻速断点"], survival: ["生命%", "护甲", "全元素抗性"], endgame: ["词缀洗体能换范围伤与CDR", "卡德山全打智力"] } },
-    sourceRefs: [RATHMA_AOTD_SOURCES.overview, RATHMA_AOTD_SOURCES.gear], reviewedAt: "2026-08-17" },
-  { id: "speed-low", label: "低巅峰 T16 速刷", content: "nephalem-rift", paragonBand: "low", applicability: "supported",
-    reason: "T16速刷把腰带换金织带、护腕换复仇者、戒指换贪婪组成金币链；第4槽换寅剑或梅斧压缩亡者大军空窗，宝石用困者/勾玉/囤宝者。",
-    patch: {
-      gear: { belt: "goldwrap", bracers: "nemesis-bracers", ring2: "avarice-band" },
-      powers: { season: "ingeom" },
-      legendaryGems: { boss: "boon-of-the-hoarder" },
-      follower: { id: "enchantress", items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
-      statPriorities: { global: ["25%移速上限", "冷却缩减", "物理元素伤", "范围伤害"], survival: ["金币链覆盖", "生命%"] },
-      rotation: RATHMA_SPEED_ROTATION,
-    },
-    sourceRefs: [RATHMA_AOTD_SOURCES.maxroll], reviewedAt: "2026-08-17" },
-  { id: "speed-high", label: "高巅峰 T16 极速", content: "nephalem-rift", paragonBand: "high", applicability: "supported",
-    reason: "高巅峰T16伤害溢出后，第4槽换斯图亚特胫甲补移速，词缀转向移速与拾取范围。",
-    patch: {
-      gear: { belt: "goldwrap", bracers: "nemesis-bracers", ring2: "avarice-band" },
-      powers: { season: "steuarts-greaves" },
-      legendaryGems: { boss: "boon-of-the-hoarder" },
-      follower: { id: "enchantress", items: ["贪婪之戒", "不死圣物"], skills: ["冷却增强", "充能"] },
-      statPriorities: { global: ["25%移速上限", "拾取范围", "冷却缩减", "物理元素伤"], survival: ["金币链覆盖", "护甲由金织带接管"], endgame: ["词缀优先移速与拾取"] },
-      rotation: RATHMA_SPEED_ROTATION,
-    },
-    sourceRefs: [RATHMA_AOTD_SOURCES.maxroll], reviewedAt: "2026-08-17" },
-];
-
-const RATHMA_PARAGON: ParagonGuide = {
-  pre800: {
-    core: [
-      { stat: "移动速度", target: "装备+巅峰合计25%", reason: "先补到上限。" },
-      { stat: "智力", target: "其余点数", reason: "同时提高伤害和全抗。" },
-      { stat: "体能", target: "按需补到生命检查点", reason: "冲层被秒时先补容错。" },
-      { stat: "精魄上限", target: "适量投入", reason: "喂养葬镰与虹吸循环。" },
-    ],
-    offense: [
-      { stat: "冷却缩减", target: "优先点满", reason: "亡者大军循环是第一属性。" },
-      { stat: "攻击速度", target: "随后点满", reason: "骷髅攻速断点决定冷却引擎效率。" },
-      { stat: "暴击伤害", target: "第三点满", reason: "与暴击几率共同放大亡者大军。" },
-      { stat: "暴击几率", target: "最后点满", reason: "优先级低于冷却与攻速。" },
-    ],
-    defense: [
-      { stat: "护甲", target: "优先点满", reason: "智力职业更缺护甲。" },
-      { stat: "生命%", target: "随后点满", reason: "放大有效生命。" },
-      { stat: "全元素抗性", target: "第三点满", reason: "补齐元素坚韧。" },
-      { stat: "每秒生命恢复", target: "最后点满", reason: "仆从吸血已提供主要恢复。" },
-    ],
-    utility: [
-      { stat: "范围伤害", target: "优先点满", reason: "亡者大军覆盖怪群受益于范围伤。" },
-      { stat: "击中恢复生命", target: "随后点满", reason: "仆从命中提供稳定恢复。" },
-      { stat: "能量消耗降低", target: "第三点满", reason: "配合克里森资源减耗。" },
-      { stat: "金币拾取范围", target: "最后点满", reason: "服务T16速刷。" },
-    ],
-  },
-  post800: [
-    { priority: "先补体能", when: "生命低于目标或频繁猝死", reason: "把生命池补到能稳定承受当前层数。" },
-    { priority: "其余全部智力", when: "生命与减伤稳定", reason: "智力继续提高伤害与全抗。" },
-  ],
-  checkpoints: [
-    { label: "冷却缩减", target: "亡者大军无缝", action: "未达标时优先保留装备冷却词缀。" },
-    { label: "生命池", target: "约80万–100万", action: "不足时从巅峰智力挪到体能。" },
-    { label: "范围伤害", target: "冲层≥120%", action: "高巅峰从肩手戒指补足。" },
-  ],
-};
-
-const RATHMA_CHOICES: BuildChoicePolicy[] = [
-  { key: "rathma-crimson", targetType: "gear", targetId: "rathma-head", label: "拉斯玛六件＋克里森两件", status: "locked", reason: "华戒让拉斯玛五件激活六件倍率、克里森两件把冷却转成伤害；仆从是亡者大军冷却引擎。" },
-  { key: "pet-engine", targetType: "skill", targetId: "command-skeletons", label: "仆从冷却引擎", status: "locked", reason: "骷髅与亡者复生通过拉斯玛两件减冷却，打得越快亡者大军回得越快。" },
-  { key: "season-power", targetType: "power", targetId: "corroded-fang", label: "第39赛季第四槽", status: "conditional", reason: "冲层用塔格奥蚀牙靠诅咒增伤；速刷用寅剑或梅斧压缩空窗，高巅峰可换斯图亚特补移速。", alternatives: [{ id: "ingeom", label: "寅剑", when: "T16速刷", gain: "击杀精英后缩短冷却", cost: "失去蚀牙诅咒增伤", scenarios: ["speed-low"] }, { id: "steuarts-greaves", label: "斯图亚特的胫甲", when: "高巅峰T16速刷", gain: "鲜血穿行后移速", cost: "失去蚀牙诅咒增伤", scenarios: ["speed-high"] }] },
-  { key: "second-ring", targetType: "gear", targetId: "coe", label: "第二枚戒指", status: "conditional", reason: "冲层需要元素爆发窗，速刷需要金币拾取。", alternatives: [{ id: "avarice-band", label: "贪婪之戒", when: "T16速刷金币链", gain: "拾取范围扩大", cost: "失去全能法戒元素窗口", scenarios: ["speed-low", "speed-high"] }] },
-  { key: "belt-slot", targetType: "gear", targetId: "crimson-belt", label: "腰带槽", status: "conditional", reason: "冲层用克里森腰带组成5+2；速刷换金织带组成金币链。", alternatives: [{ id: "goldwrap", label: "金织带", when: "T16速刷", gain: "金币护甲近乎无限", cost: "失去克里森冷却转伤害", scenarios: ["speed-low", "speed-high"] }] },
-  { key: "follower", targetType: "follower", targetId: "enchantress", label: "随从选择", status: "flexible", reason: "魔女固定提供冷却与攻速；速刷随从戴贪婪之戒扩大拾取，冲层戴团结与不死圣物。" },
-];
-
 const MASQUERADE_SPEAR_SOURCES = {
   overview: "https://www.icy-veins.com/d3/necromancer-bone-spear-build-with-masquerade",
   gear: "https://www.icy-veins.com/d3/masquerade-bone-spear-necromancer-bis-gear-gems-paragon-points",
@@ -891,7 +771,7 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
     variantCompleteness: "complete",
   },
 
-  "rathma-aotd": {
+  "rathma-aotd": reviewRathmaAotdGuide({
     id: "rathma-aotd", name: "拉斯玛亡者大军", set: "拉斯玛之骨 + 克里森船长", core: "仆从攻击降冷却 → 亡者大军连续轰炸",
     summary: "永久仆从不是主伤害，而是亡者大军的冷却引擎；统御骷髅锁定精英后，杰瑟斯、羁绊和套装倍率一起进入爆发。",
     difficulty: "高 · 冷却、宠物目标与元素窗", follower: "魔女", followerReason: "先知协调提供冷却，集中心智帮助骷髅达到攻速断点，正好服务亡者大军循环。",
@@ -940,14 +820,7 @@ export const NECROMANCER_BUILDS: Record<string, NecromancerGuide> = {
       { title: "释放大军", action: "在物理周期与神目圈重叠时放亡者大军。", reason: "所有装备、套装、控制和元素乘区在这一击汇合。" },
     ],
     source: "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
-    configurationBase: RATHMA_CONFIGURATION_BASE,
-    defaultScenarioId: "push-low",
-    scenarios: RATHMA_SCENARIOS,
-    paragonGuide: RATHMA_PARAGON,
-    choicePolicies: RATHMA_CHOICES,
-    reviewStatus: "fully-reviewed",
-    variantCompleteness: "complete",
-  },
+  }),
 
   "masquerade-spear": {
     id: "masquerade-spear", name: "狂欢节骨矛", set: "燃烧狂欢节舞会服 + 克里森船长", core: "永久双分复制骨矛 → 直线穿透叠加",

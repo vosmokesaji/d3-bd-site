@@ -24028,11 +24028,11 @@
   },
   "app.2e62a26d08f638a2": {
     "source": "冲层用梅塞施密特压缩亡者领域长冷却；速刷保持并依赖寅剑，蚀牙需带衰老的变体。",
-    "template": "[[Site/push]]用梅塞施密特压缩[[Powers/P6_Necro_LandOfTheDead_name]]长冷却；[[Site/speed-farming]]保持并依赖[[Items/Unique_Sword_1H_113_x1]]，蚀牙需带衰老的变体。"
+    "template": "[[Site/push]]用梅塞施密特压缩[[Powers/P6_Necro_LandOfTheDead_name]]长冷却；[[Site/speed-farming]]保持并依赖[[Items/Unique_Sword_1H_113_x1]]，蚀牙需带[[Powers/P6_Necro_Decrepify_name]]的变体。"
   },
   "app.f5b2ec5778194cac": {
     "source": "带衰老的贪变体冲层",
-    "template": "带衰老的贪变体[[Site/push]]"
+    "template": "带[[Powers/P6_Necro_Decrepify_name]]的贪变体[[Site/push]]"
   },
   "app.2498313c47e6b305": {
     "source": "受诅咒目标承受额外伤害",
@@ -24040,7 +24040,7 @@
   },
   "app.6431e3640cab6634": {
     "source": "需要技能栏换成衰老",
-    "template": "需要技能栏换成衰老"
+    "template": "需要技能栏换成[[Powers/P6_Necro_Decrepify_name]]"
   },
   "app.ad1fac8aae42011f": {
     "source": "第二枚戒指",
@@ -24306,239 +24306,6 @@
     "source": "冲层需要元素爆发窗，速刷需要金币拾取。",
     "template": "[[Site/push]]需要元素爆发窗，[[Site/speed-farming]]需要金币拾取。"
   },
-  "app.2fe8b0567b83601f": {
-    "source": "复生满编",
-    "template": "复生满编"
-  },
-  "app.7bea155b83d36507": {
-    "source": "进入秘境后尽快复生足够仆从。",
-    "template": "进入秘境后尽快复生足够仆从。"
-  },
-  "app.3559a27bbde72794": {
-    "source": "拉斯玛六件按永久仆从数量放大亡者大军。",
-    "template": "拉斯玛六件按永久仆从数量放大[[Powers/P6_Necro_SkeleBomb_name]]。"
-  },
-  "app.a15c3ad61f4fcab3": {
-    "source": "每遇到新精英先命令骷髅攻击。",
-    "template": "每遇到新精英先命令骷髅攻击。"
-  },
-  "app.a0d9daf05d77e538": {
-    "source": "启动杰瑟斯和希雷娜羁绊。",
-    "template": "启动杰瑟斯和希雷娜羁绊。"
-  },
-  "app.b0d8e0713173aaf0": {
-    "source": "虹吸标记",
-    "template": "虹吸标记"
-  },
-  "app.6813648a9510ed7a": {
-    "source": "短暂虹吸核心目标。",
-    "template": "短暂虹吸核心目标。"
-  },
-  "app.20ce9d91d2a4a8bd": {
-    "source": "葬镰让目标承受额外伤害。",
-    "template": "[[Items/P74_Unique_Scythe1H_01]]让目标承受额外伤害。"
-  },
-  "app.8862f6ed341f44c7": {
-    "source": "骨甲强控",
-    "template": "[[Powers/P6_Necro_BoneArmor_name]][[Site/crowd-control]]"
-  },
-  "app.348194ce63c63851": {
-    "source": "元素窗前骨甲眩晕怪群。",
-    "template": "元素窗前[[Powers/P6_Necro_BoneArmor_name]]眩晕怪群。"
-  },
-  "app.92d779175e0613c2": {
-    "source": "克里斯宾进入强控档，并维持蚀牙诅咒。",
-    "template": "[[Items/P6_Unique_Ring_03]]进入[[Site/crowd-control]]档，并维持蚀牙诅咒。"
-  },
-  "app.d0c49df5e8b33602": {
-    "source": "释放大军",
-    "template": "释放大军"
-  },
-  "app.6138c3382a01c6da": {
-    "source": "在物理周期与神目圈重叠时放亡者大军。",
-    "template": "在物理周期与神目圈重叠时放[[Powers/P6_Necro_SkeleBomb_name]]。"
-  },
-  "app.09299f2f32d2830d": {
-    "source": "所有装备、套装、控制和元素乘区在这一击汇合。",
-    "template": "所有装备、套装、控制和元素[[Site/multiplier]]在这一击汇合。"
-  },
-  "app.45b7a0738c972826": {
-    "source": "复生仆从",
-    "template": "复生仆从"
-  },
-  "app.36b23a769735ebcf": {
-    "source": "尽快召满亡者复生与骷髅。",
-    "template": "尽快召满[[Powers/P6_Necro_Revive_name]]与骷髅。"
-  },
-  "app.3607f7c263f422a9": {
-    "source": "仆从数量与冷却引擎在速刷仍成立。",
-    "template": "仆从数量与冷却引擎在[[Site/speed-farming]]仍成立。"
-  },
-  "app.a8c0c73ace99475d": {
-    "source": "统御精英",
-    "template": "统御精英"
-  },
-  "app.afd241d4b7b0c721": {
-    "source": "遇到精英先命令骷髅锁定。",
-    "template": "遇到精英先命令骷髅锁定。"
-  },
-  "app.0db4e1acb43b32fc": {
-    "source": "杰瑟斯与希雷娜增伤在速刷仍有效。",
-    "template": "杰瑟斯与希雷娜[[Site/damage-boost]]在[[Site/speed-farming]]仍有效。"
-  },
-  "app.8a7d9a785a1bd9ed": {
-    "source": "大军清屏",
-    "template": "大军清屏"
-  },
-  "app.623bdc66f34c174c": {
-    "source": "精英出现即放亡者大军。",
-    "template": "精英出现即放[[Powers/P6_Necro_SkeleBomb_name]]。"
-  },
-  "app.eb8f79bbc33813de": {
-    "source": "不等待完整元素周期，击杀即转场。",
-    "template": "不等待完整元素周期，击杀即转场。"
-  },
-  "app.30c0476929b647ad": {
-    "source": "利用寅剑或梅斧冷却立即转场。",
-    "template": "利用[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]冷却立即转场。"
-  },
-  "app.30eb4b4a42a75aab": {
-    "source": "击杀刷新冷却，下一段跑图无空档。",
-    "template": "击杀刷新冷却，下一段跑图无空档。"
-  },
-  "app.1bc79e60b59e0b49": {
-    "source": "死亡之谷",
-    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_SkeleBomb]]"
-  },
-  "app.9924171cb949a191": {
-    "source": "私人军队",
-    "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_Revive]]"
-  },
-  "app.8ebdcd20690be8db": {
-    "source": "冷却缩减（亡者大军循环）",
-    "template": "[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]]（[[Powers/P6_Necro_SkeleBomb_name]]循环）"
-  },
-  "app.dc4b05566638c326": {
-    "source": "骷髅攻速断点",
-    "template": "骷髅攻速断点"
-  },
-  "app.7004c05491dfc8db": {
-    "source": "冲层第4槽用塔格奥蚀牙靠诅咒增伤，宝石用困者/勾玉/贼神；低巅峰可先穿满六件拉斯玛或配守护者过渡。",
-    "template": "[[Site/push]]第4槽用[[ItemSets/P6_Necro_Set_2]]蚀牙靠诅咒[[Site/damage-boost]]，宝石用[[Items/Unique_Gem_002_x1]]/勾玉/贼神；[[Site/low-paragon]]可先穿满六件拉斯玛或配[[Powers/Templar_CheatDeath_Passive_name]]过渡。"
-  },
-  "app.fa0d4bbe3c5f2fc8": {
-    "source": "高巅峰由巅峰承担主属性后，词缀转向冷却达标、范围伤与骷髅攻速断点，5拉斯玛＋2克里森经华戒完整激活。",
-    "template": "[[Site/high-paragon]]由[[Site/paragon]]承担主属性后，词缀转向冷却达标、范围伤与骷髅攻速断点，5拉斯玛＋2克里森经华戒完整激活。"
-  },
-  "app.30fb6596cda37cb2": {
-    "source": "冷却缩减达标（亡者大军无缝）",
-    "template": "[[SkillsUI/ParagonBonusLabel_Power_Cooldown_Reduction_Percent]]达标（[[Powers/P6_Necro_SkeleBomb_name]]无缝）"
-  },
-  "app.c7c05ffadd498819": {
-    "source": "词缀洗体能换范围伤与CDR",
-    "template": "词缀洗[[SkillsUI/ParagonBonusLabel_Vitality]]换范围伤与CDR"
-  },
-  "app.649a7d7e6572e443": {
-    "source": "卡德山全打智力",
-    "template": "卡德山全打[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]"
-  },
-  "app.659e3ab40f1b8728": {
-    "source": "T16速刷把腰带换金织带、护腕换复仇者、戒指换贪婪组成金币链；第4槽换寅剑或梅斧压缩亡者大军空窗，宝石用困者/勾玉/囤宝者。",
-    "template": "T16[[Site/speed-farming]]把腰带换[[Items/Unique_Belt_010_x1]]、护腕换[[Items/Unique_Bracer_106_x1]]、戒指换贪婪组成金币链；第4槽换[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]压缩[[Powers/P6_Necro_SkeleBomb_name]]空窗，宝石用[[Items/Unique_Gem_002_x1]]/勾玉/[[Items/Unique_Gem_014_x1]]。",
-    "manual": {
-      "zhCN": "T16速刷把腰带换[[Items/Unique_Belt_010_x1]]、护腕换[[Items/Unique_Bracer_106_x1]]、戒指换[[Items/Unique_Ring_108_x1]]组成金币链；第4槽换[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]压缩[[Powers/P6_Necro_SkeleBomb_name]]空窗，宝石用[[Items/Unique_Gem_002_x1]]/[[Items/Unique_Gem_008_x1]]/[[Items/Unique_Gem_014_x1]]。",
-      "zhTW": "T16速刷將腰帶換成[[Items/Unique_Belt_010_x1]]、護腕換成[[Items/Unique_Bracer_106_x1]]、戒指換成[[Items/Unique_Ring_108_x1]]組成金幣鏈；第4槽改用[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]縮短[[Powers/P6_Necro_SkeleBomb_name]]空窗，寶石使用[[Items/Unique_Gem_002_x1]]/[[Items/Unique_Gem_008_x1]]/[[Items/Unique_Gem_014_x1]]。",
-      "enUS": "For T16 speed farming, equip [[Items/Unique_Belt_010_x1]], [[Items/Unique_Bracer_106_x1]] and [[Items/Unique_Ring_108_x1]] for the gold setup. Use [[Items/Unique_Sword_1H_113_x1]] or [[Items/P66_Unique_Axe_2H_011]] in slot 4 to reduce [[Powers/P6_Necro_SkeleBomb_name]] downtime, with [[Items/Unique_Gem_002_x1]] / [[Items/Unique_Gem_008_x1]] / [[Items/Unique_Gem_014_x1]] as gems."
-    }
-  },
-  "app.f00d8a907a46b7d4": {
-    "source": "高巅峰T16伤害溢出后，第4槽换斯图亚特胫甲补移速，词缀转向移速与拾取范围。",
-    "template": "[[Site/high-paragon]]T16伤害溢出后，第4槽换斯图亚特胫甲补移速，词缀转向移速与拾取范围。"
-  },
-  "app.cb520685f74d053e": {
-    "source": "冲层被秒时先补容错。",
-    "template": "[[Site/push]]被秒时先补容错。"
-  },
-  "app.ca6552bdff46cc89": {
-    "source": "喂养葬镰与虹吸循环。",
-    "template": "喂养[[Items/P74_Unique_Scythe1H_01]]与虹吸循环。"
-  },
-  "app.aa401addb0052af7": {
-    "source": "亡者大军循环是第一属性。",
-    "template": "[[Powers/P6_Necro_SkeleBomb_name]]循环是第一属性。"
-  },
-  "app.60ceacbb64db88be": {
-    "source": "骷髅攻速断点决定冷却引擎效率。",
-    "template": "骷髅攻速断点决定冷却引擎效率。"
-  },
-  "app.6dc250413dd55d70": {
-    "source": "与暴击几率共同放大亡者大军。",
-    "template": "与[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]共同放大[[Powers/P6_Necro_SkeleBomb_name]]。"
-  },
-  "app.34c76ba9cc5251c3": {
-    "source": "优先级低于冷却与攻速。",
-    "template": "优先级低于冷却与攻速。"
-  },
-  "app.f80c1cf63df07275": {
-    "source": "仆从吸血已提供主要恢复。",
-    "template": "仆从吸血已提供主要恢复。"
-  },
-  "app.48bddc4bf159c915": {
-    "source": "亡者大军覆盖怪群受益于范围伤。",
-    "template": "[[Powers/P6_Necro_SkeleBomb_name]]覆盖怪群受益于范围伤。"
-  },
-  "app.fa1277711dda9b01": {
-    "source": "仆从命中提供稳定恢复。",
-    "template": "仆从命中提供稳定恢复。"
-  },
-  "app.9ae9cc4559b45935": {
-    "source": "亡者大军无缝",
-    "template": "[[Powers/P6_Necro_SkeleBomb_name]]无缝"
-  },
-  "app.3484abdff4cdfde1": {
-    "source": "约80万–100万",
-    "template": "约[[Number/80/wan]]–[[Number/100/wan]]"
-  },
-  "app.67a1ceef531e4a04": {
-    "source": "拉斯玛六件＋克里森两件",
-    "template": "拉斯玛六件＋克里森两件"
-  },
-  "app.fd3ff2e3f3914185": {
-    "source": "华戒让拉斯玛五件激活六件倍率、克里森两件把冷却转成伤害；仆从是亡者大军冷却引擎。",
-    "template": "华戒让拉斯玛五件激活六件倍率、克里森两件把冷却转成伤害；仆从是[[Powers/P6_Necro_SkeleBomb_name]]冷却引擎。"
-  },
-  "app.674f415e216c3c6d": {
-    "source": "仆从冷却引擎",
-    "template": "仆从冷却引擎"
-  },
-  "app.de35cb951b482f0c": {
-    "source": "骷髅与亡者复生通过拉斯玛两件减冷却，打得越快亡者大军回得越快。",
-    "template": "骷髅与[[Powers/P6_Necro_Revive_name]]通过拉斯玛两件减冷却，打得越快[[Powers/P6_Necro_SkeleBomb_name]]回得越快。"
-  },
-  "app.0a576921147da8a2": {
-    "source": "冲层用塔格奥蚀牙靠诅咒增伤；速刷用寅剑或梅斧压缩空窗，高巅峰可换斯图亚特补移速。",
-    "template": "[[Site/push]]用[[ItemSets/P6_Necro_Set_2]]蚀牙靠诅咒[[Site/damage-boost]]；[[Site/speed-farming]]用[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]压缩空窗，[[Site/high-paragon]]可换斯图亚特补移速。"
-  },
-  "app.e1957050c98ab78e": {
-    "source": "失去蚀牙诅咒增伤",
-    "template": "失去蚀牙诅咒[[Site/damage-boost]]"
-  },
-  "app.92ddb9f46f9cd5b4": {
-    "source": "高巅峰T16速刷",
-    "template": "[[Site/high-paragon]]T16[[Site/speed-farming]]"
-  },
-  "app.0c8862e458172206": {
-    "source": "T16速刷金币链",
-    "template": "T16[[Site/speed-farming]]金币链"
-  },
-  "app.35221ecc15e24378": {
-    "source": "冲层用克里森腰带组成5+2；速刷换金织带组成金币链。",
-    "template": "[[Site/push]]用克里森腰带组成5+2；[[Site/speed-farming]]换[[Items/Unique_Belt_010_x1]]组成金币链。"
-  },
-  "app.8930b2aba2b0e4b9": {
-    "source": "失去克里森冷却转伤害",
-    "template": "失去克里森冷却转伤害"
-  },
   "app.fcc6ec3f73e68fd0": {
     "source": "永久双分",
     "template": "永久双分"
@@ -24570,6 +24337,10 @@
   "app.16dfdd7eee427b01": {
     "source": "枯萎骨髓按穿透目标数增伤。",
     "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_BoneSpear]]按穿透目标数[[Site/damage-boost]]。"
+  },
+  "app.8862f6ed341f44c7": {
+    "source": "骨甲强控",
+    "template": "[[Powers/P6_Necro_BoneArmor_name]][[Site/crowd-control]]"
   },
   "app.07fdda08ccbe4f0c": {
     "source": "毒素周期前白骨脱臼。",
@@ -24742,6 +24513,14 @@
   "app.bb9c4d3a0208bac9": {
     "source": "冲层需要元素爆发窗，速刷需要金币拾取或恐惧移速。",
     "template": "[[Site/push]]需要元素爆发窗，[[Site/speed-farming]]需要金币拾取或恐惧移速。"
+  },
+  "app.0c8862e458172206": {
+    "source": "T16速刷金币链",
+    "template": "T16[[Site/speed-farming]]金币链"
+  },
+  "app.92ddb9f46f9cd5b4": {
+    "source": "高巅峰T16速刷",
+    "template": "[[Site/high-paragon]]T16[[Site/speed-farming]]"
   },
   "app.e43dd115a70afb80": {
     "source": "恐惧后大幅移速",
@@ -25129,6 +24908,10 @@
     "source": "亡者大军",
     "template": "[[Powers/P6_Necro_SkeleBomb_name]]"
   },
+  "app.1bc79e60b59e0b49": {
+    "source": "死亡之谷",
+    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_SkeleBomb]]"
+  },
   "app.cf74d1ef2be04bb1": {
     "source": "主伤害按钮；命中范围还能把怪拉向中心。",
     "template": "主伤害按钮；命中范围还能把怪拉向中心。"
@@ -25140,6 +24923,10 @@
   "app.9d2593b48f176b3f": {
     "source": "亡者复生",
     "template": "[[Powers/P6_Necro_Revive_name]]"
+  },
+  "app.9924171cb949a191": {
+    "source": "私人军队",
+    "template": "[[AttributeDescriptions/NameRune_C#P6_Necro_Revive]]"
   },
   "app.875ad9173233b175": {
     "source": "补足永久仆从数量，并按数量提供减伤。",
@@ -25219,7 +25006,7 @@
   },
   "app.52f18a830ae67ebf": {
     "source": "第39赛季第4槽冲层主选，靠衰老或随从保持诅咒。",
-    "template": "第39赛季第4槽[[Site/push]]主选，靠衰老或随从保持诅咒。"
+    "template": "第39赛季第4槽[[Site/push]]主选，靠[[Powers/P6_Necro_Decrepify_name]]或随从保持诅咒。"
   },
   "app.070e969fff2a611e": {
     "source": "组队高CDR速刷缩短亡者大军空窗。",
@@ -25292,6 +25079,10 @@
   "app.5e6ad867f302bb22": {
     "source": "不等完整元素周期，精英出现即统御骷髅+亡者大军",
     "template": "不等完整元素周期，精英出现即[[Powers/P6_Necro_CommandSkeletons_name]]+[[Powers/P6_Necro_SkeleBomb_name]]"
+  },
+  "app.674f415e216c3c6d": {
+    "source": "仆从冷却引擎",
+    "template": "仆从冷却引擎"
   },
   "app.67c7e81378f19815": {
     "source": "补足永久仆从",
@@ -25373,9 +25164,57 @@
     "source": "冷却词缀既缩短主技能，又通过克里森三件直接变成伤害。",
     "template": "冷却词缀既缩短主技能，又通过克里森三件直接变成伤害。"
   },
+  "app.2fe8b0567b83601f": {
+    "source": "复生满编",
+    "template": "复生满编"
+  },
+  "app.7bea155b83d36507": {
+    "source": "进入秘境后尽快复生足够仆从。",
+    "template": "进入秘境后尽快复生足够仆从。"
+  },
+  "app.3559a27bbde72794": {
+    "source": "拉斯玛六件按永久仆从数量放大亡者大军。",
+    "template": "拉斯玛六件按永久仆从数量放大[[Powers/P6_Necro_SkeleBomb_name]]。"
+  },
+  "app.a15c3ad61f4fcab3": {
+    "source": "每遇到新精英先命令骷髅攻击。",
+    "template": "每遇到新精英先命令骷髅攻击。"
+  },
+  "app.a0d9daf05d77e538": {
+    "source": "启动杰瑟斯和希雷娜羁绊。",
+    "template": "启动杰瑟斯和希雷娜羁绊。"
+  },
+  "app.b0d8e0713173aaf0": {
+    "source": "虹吸标记",
+    "template": "虹吸标记"
+  },
+  "app.6813648a9510ed7a": {
+    "source": "短暂虹吸核心目标。",
+    "template": "短暂虹吸核心目标。"
+  },
+  "app.20ce9d91d2a4a8bd": {
+    "source": "葬镰让目标承受额外伤害。",
+    "template": "[[Items/P74_Unique_Scythe1H_01]]让目标承受额外伤害。"
+  },
+  "app.348194ce63c63851": {
+    "source": "元素窗前骨甲眩晕怪群。",
+    "template": "元素窗前[[Powers/P6_Necro_BoneArmor_name]]眩晕怪群。"
+  },
   "app.072f23d2b7510008": {
     "source": "克里斯宾进入强控档，并启动轮回镰刀。",
     "template": "[[Items/P6_Unique_Ring_03]]进入[[Site/crowd-control]]档，并启动[[Items/P61_Unique_Scythe1H_03]]。"
+  },
+  "app.d0c49df5e8b33602": {
+    "source": "释放大军",
+    "template": "释放大军"
+  },
+  "app.6138c3382a01c6da": {
+    "source": "在物理周期与神目圈重叠时放亡者大军。",
+    "template": "在物理周期与神目圈重叠时放[[Powers/P6_Necro_SkeleBomb_name]]。"
+  },
+  "app.09299f2f32d2830d": {
+    "source": "所有装备、套装、控制和元素乘区在这一击汇合。",
+    "template": "所有装备、套装、控制和元素[[Site/multiplier]]在这一击汇合。"
   },
   "app.ea223713ea18a584": {
     "source": "狂欢节骨矛",
@@ -26139,6 +25978,1028 @@
     "source": "{0}配置校验失败：{1}",
     "template": "{0}配置校验失败：{1}"
   },
+  "app.e64c8420e1f2293e": {
+    "source": "页面把构筑标为单人GR冲层、GR速刷和小秘境速刷；三种用途都有独立说明。",
+    "template": "页面把构筑标为[[Site/solo]]GR[[Site/push]]、GR[[Site/speed-farming]]和[[General/LootRunPortal]][[Site/speed-farming]]；三种用途都有独立说明。"
+  },
+  "app.e3d7b9511e707581": {
+    "source": "主方案使用鲜血虹吸、统御骷髅、骨甲、亡者大军、鲜血穿行和亡者复生；其拉斯玛二件文字仍写0.25秒，与官方0.50秒冲突。",
+    "template": "主方案使用[[Powers/P6_Necro_SiphonBlood_name]]、[[Powers/P6_Necro_CommandSkeletons_name]]、[[Powers/P6_Necro_BoneArmor_name]]、[[Powers/P6_Necro_SkeleBomb_name]]、[[Powers/P6_Necro_BloodRush_name]]和[[Powers/P6_Necro_Revive_name]]；其拉斯玛二件文字仍写0.25秒，与官方0.50秒冲突。"
+  },
+  "app.bfed8c0ed57b9d28": {
+    "source": "给出5拉斯玛+2克里森、杰瑟斯、词缀、宝石、巅峰与魔女；S39第四槽误荐只增幅次要技能的轮回镰刀。",
+    "template": "给出5拉斯玛+2克里森、杰瑟斯、词缀、宝石、[[Site/paragon]]与[[Pets/HirelingEnchantress]]；S39第四槽误荐只增幅次要技能的[[Items/P61_Unique_Scythe1H_03]]。"
+  },
+  "app.1deea8f29f48ae55": {
+    "source": "明确支持GR速刷，主体配装与技能接近主方案，但同样包含无效的S39轮回镰刀建议。",
+    "template": "明确支持GR[[Site/speed-farming]]，主体配装与技能接近主方案，但同样包含无效的S39[[Items/P61_Unique_Scythe1H_03]]建议。"
+  },
+  "app.b14edc1d20a344b6": {
+    "source": "单人T16保留5+2并穿布里格斯，使用脆弱光环、亡魂风暴、梅塞施密特、命运誓约、华戒和斯图亚特；贪婪与复仇者由随从发散。",
+    "template": "[[Site/solo]]T16保留5+2并穿[[Items/P6_Unique_Ring_02]]，使用[[AttributeDescriptions/NameRune_E#P6_Necro_Frailty]]、[[AttributeDescriptions/NameRune_E#P6_Necro_SkeleBomb]]、梅塞施密特、[[Items/P61_Necro_Unique_Helm_22]]、华戒和斯图亚特；贪婪与[[Items/Unique_Bracer_106_x1]]由随从发散。"
+  },
+  "app.07ec527289623470": {
+    "source": "完整冲层表使用衰老配塔格奥蚀牙，六技能、四被动、四魔方槽和三颗宝石互相满足触发条件。",
+    "template": "完整[[Site/push]]表使用[[Powers/P6_Necro_Decrepify_name]]配[[ItemSets/P6_Necro_Set_2]]蚀牙，六技能、四被动、四魔方槽和三颗宝石互相满足触发条件。"
+  },
+  "app.3497362b5f499ae1": {
+    "source": "GR速刷保留5+2与杰瑟斯，改鲜血奔行并以精魂魄身和莱莲娜形成最大精魂增伤包。",
+    "template": "GR[[Site/speed-farming]]保留5+2与杰瑟斯，改[[Powers/P6_Necro_BloodRush_name]]并以[[Powers/P6_Necro_Passive_MaxEssence_name]]和莱莲娜形成[[HeroDetails/MaxEssence]][[Site/damage-boost]]包。"
+  },
+  "app.0f95dba031723c0c": {
+    "source": "T16变体穿布里格斯，使用脆弱、亡魂风暴、梅斧、命运誓约、华戒和斯图亚特，并换强者与囤宝者。",
+    "template": "T16变体穿[[Items/P6_Unique_Ring_02]]，使用[[Powers/P6_Necro_Frailty_name]]、[[AttributeDescriptions/NameRune_E#P6_Necro_SkeleBomb]]、[[Items/P66_Unique_Axe_2H_011]]、[[Items/P61_Necro_Unique_Helm_22]]、华戒和斯图亚特，并换强者与[[Items/Unique_Gem_014_x1]]。"
+  },
+  "app.ad567c0610ffa356": {
+    "source": "确认第39赛季开放不受物品类型限制的第四魔方槽。",
+    "template": "确认第39赛季开放不受物品类型限制的第四魔方槽。"
+  },
+  "app.48ae3a89a03d0ca0": {
+    "source": "官方套装页：永久仆从每次造成伤害使亡者大军冷却缩短0.50秒；六件按永久仆从数量增幅亡者大军。",
+    "template": "官方套装页：永久仆从每次造成伤害使[[Powers/P6_Necro_SkeleBomb_name]]冷却缩短0.50秒；六件按永久仆从数量增幅[[Powers/P6_Necro_SkeleBomb_name]]。"
+  },
+  "app.4001081d368e8837": {
+    "source": "官方套装页确认命令骷髅攻击目标时，所有仆从伤害提高400%。",
+    "template": "官方套装页确认命令骷髅攻击目标时，所有仆从伤害提高400%。"
+  },
+  "app.80892d93f5558483": {
+    "source": "官方物品页确认鲜血虹吸扩散目标承伤，单体加倍，力量转移增益会作用于全部技能。",
+    "template": "官方物品页确认[[Powers/P6_Necro_SiphonBlood_name]]扩散目标承伤，单体加倍，[[AttributeDescriptions/NameRune_D#P6_Necro_SiphonBlood]]增益会作用于全部技能。"
+  },
+  "app.276c508b246ec662": {
+    "source": "官方物品页确认额外增伤只作用于受诅咒目标，因此必须有可靠诅咒来源。",
+    "template": "官方物品页确认额外[[Site/damage-boost]]只作用于受诅咒目标，因此必须有可靠诅咒来源。"
+  },
+  "app.88e161c2cf2a37be": {
+    "source": "官方物品页将轮回镰刀限定为骨甲期间提高次要技能伤害；亡者大军不属于次要技能。",
+    "template": "官方物品页将[[Items/P61_Unique_Scythe1H_03]]限定为[[Powers/P6_Necro_BoneArmor_name]]期间提高次要技能伤害；[[Powers/P6_Necro_SkeleBomb_name]]不属于次要技能。"
+  },
+  "app.2dc1a358d554dc9f": {
+    "source": "伤害% / 范围伤害",
+    "template": "伤害% / [[SkillsUI/ParagonBonusLabel_Splash_Damage_Effect_Percent]]"
+  },
+  "app.28fedd71abb96584": {
+    "source": "最大精魂 / 资源消耗降低",
+    "template": "[[HeroDetails/MaxEssence]] / [[SkillsUI/ParagonBonusLabel_Resource_Cost_Reduction_Percent_All]]"
+  },
+  "app.058ddd514fb19dcd": {
+    "source": "拉斯玛亡者大军缺少装备定义：{0}",
+    "template": "拉斯玛[[Powers/P6_Necro_SkeleBomb_name]]缺少装备定义：{0}"
+  },
+  "app.eb38797ce4673907": {
+    "source": "布里格斯之怒",
+    "template": "[[Items/P6_Unique_Ring_02]]"
+  },
+  "app.e3ff1d4a029517fc": {
+    "source": "对未受诅咒敌人施加诅咒时，将目标拉到一起。",
+    "template": "对未受诅咒敌人施加诅咒时，将目标拉到一起。"
+  },
+  "app.2fa6f46ab6d05580": {
+    "source": "只用于T16单人速刷变体",
+    "template": "只用于T16[[Site/solo]][[Site/speed-farming]]变体"
+  },
+  "app.d4011ede78655d0a": {
+    "source": "这是T16聚怪位，不要把随从发散的贪婪之戒误写成角色穿戴。",
+    "template": "这是T16聚怪位，不要把随从发散的[[Items/Unique_Ring_108_x1]]误写成角色穿戴。"
+  },
+  "app.e1afe05b4e9a354d": {
+    "source": "纯净精魂",
+    "template": "[[AttributeDescriptions/NameRune_B#P6_Necro_SiphonBlood]]"
+  },
+  "app.afb46b980864dfd3": {
+    "source": "冲层与GR速刷用来回精魂并触发葬镰；d3guides当前表选择纯净精魂。",
+    "template": "[[Site/push]]与GR[[Site/speed-farming]]用来回精魂并触发[[Items/P74_Unique_Scythe1H_01]]；d3guides当前表选择[[AttributeDescriptions/NameRune_B#P6_Necro_SiphonBlood]]。"
+  },
+  "app.ac2aeb1a33947770": {
+    "source": "号令骸骨",
+    "template": "[[Powers/P6_Necro_CommandSkeletons_name]]"
+  },
+  "app.7434011b60f09a7d": {
+    "source": "杀戮命令",
+    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_CommandSkeletons]]"
+  },
+  "app.16b6e75df8a76601": {
+    "source": "指定精英并启动杰瑟斯两件；骷髅攻击也是拉斯玛冷却引擎。",
+    "template": "指定精英并启动杰瑟斯两件；骷髅攻击也是拉斯玛冷却引擎。"
+  },
+  "app.551715be572fa24b": {
+    "source": "限制免疫",
+    "template": "[[AttributeDescriptions/NameRune_B#P6_Necro_BoneArmor]]"
+  },
+  "app.b3207dfd3a522f40": {
+    "source": "维持骨甲减伤并在冲层方案中提供短暂免控窗口。",
+    "template": "维持[[Powers/P6_Necro_BoneArmor_name]][[Site/damage-reduction]]并在[[Site/push]]方案中提供短暂免控窗口。"
+  },
+  "app.7e106acf5a3d210a": {
+    "source": "死寒大军",
+    "template": "[[AttributeDescriptions/NameRune_B#P6_Necro_SkeleBomb]]"
+  },
+  "app.0c9a4fe0efe0f013": {
+    "source": "唯一主伤害技能；T16改亡魂风暴边跑边清怪。",
+    "template": "唯一主伤害技能；T16改[[AttributeDescriptions/NameRune_E#P6_Necro_SkeleBomb]]边跑边清怪。"
+  },
+  "app.e83ab24cf7f4ce99": {
+    "source": "衰老",
+    "template": "[[Powers/P6_Necro_Decrepify_name]]"
+  },
+  "app.a8b4c15ce81ffd77": {
+    "source": "相时而动",
+    "template": "[[AttributeDescriptions/NameRune_B#P6_Necro_Decrepify]]"
+  },
+  "app.6d4aa14ffa703619": {
+    "source": "冲层主动覆盖诅咒，确保塔格奥蚀牙不是空威能，并提供移动速度。",
+    "template": "[[Site/push]]主动覆盖诅咒，确保[[ItemSets/P6_Necro_Set_2]]蚀牙不是空威能，并提供移动速度。"
+  },
+  "app.0fdacc4b71e7d2b8": {
+    "source": "亡魂复生",
+    "template": "[[Powers/P6_Necro_Revive_name]]"
+  },
+  "app.9c03dcdd94d468cb": {
+    "source": "炼狱",
+    "template": "[[AttributeDescriptions/NameRune_A#P6_Necro_Revive]]"
+  },
+  "app.e82aa8cd55e5a96b": {
+    "source": "维持永久复生仆从，补足套装六件倍率和冷却触发数量。",
+    "template": "维持永久复生仆从，补足套装六件倍率和冷却触发数量。"
+  },
+  "app.1b6b1cecd326d5f8": {
+    "source": "鲜血奔行",
+    "template": "[[Powers/P6_Necro_BloodRush_name]]"
+  },
+  "app.f072060fb7d96c9d": {
+    "source": "鲜血禁闭",
+    "template": "[[AttributeDescriptions/NameRune_B#P6_Necro_BloodRush]]"
+  },
+  "app.d15e2ebfc194a646": {
+    "source": "GR速刷与T16的位移技能；T16同时触发斯图亚特移速。",
+    "template": "GR[[Site/speed-farming]]与T16的位移技能；T16同时触发斯图亚特移速。"
+  },
+  "app.e95f6d8cb6cac68f": {
+    "source": "早夭",
+    "template": "早夭"
+  },
+  "app.b6de299df2b7b924": {
+    "source": "T16替代衰老，负责处决并触发布里格斯聚怪。",
+    "template": "T16替代[[Powers/P6_Necro_Decrepify_name]]，负责处决并触发[[Items/P6_Unique_Ring_02]]聚怪。"
+  },
+  "app.8e7ada14b2545fc6": {
+    "source": "施放亡者大军后短暂免疫伤害，保护爆发动作。",
+    "template": "施放[[Powers/P6_Necro_SkeleBomb_name]]后短暂免疫伤害，保护爆发动作。"
+  },
+  "app.a925a24c3e9f4fb2": {
+    "source": "消耗仆从抵挡一次致命伤，为偏脆的构筑增加容错。",
+    "template": "消耗仆从抵挡一次致命伤，为偏脆的构筑增加容错。"
+  },
+  "app.07b1aef9d8b8ac4e": {
+    "source": "弱点加深",
+    "template": "[[Powers/P6_Necro_Passive_CurseDamageBonus_name]]"
+  },
+  "app.735c09fdf3185e4e": {
+    "source": "冲层按受诅咒敌人数量提高伤害，与主动衰老配套。",
+    "template": "[[Site/push]]按受诅咒敌人数量提高伤害，与主动[[Powers/P6_Necro_Decrepify_name]]配套。"
+  },
+  "app.e4180a644d94aab3": {
+    "source": "恐怖贡品",
+    "template": "[[Powers/P6_Necro_Passive_GrislyTribute_name]]"
+  },
+  "app.90501cbf7e95a47d": {
+    "source": "仆从命中时恢复生命，帮助维持生存。",
+    "template": "仆从命中时恢复生命，帮助维持生存。"
+  },
+  "app.11f64cdc587ec6ce": {
+    "source": "精魂魄身",
+    "template": "[[Powers/P6_Necro_Passive_MaxEssence_name]]"
+  },
+  "app.c4466eb24ce8efc8": {
+    "source": "GR速刷提高最大精魂，与莱莲娜的影魂钩形成完整增伤条件。",
+    "template": "GR[[Site/speed-farming]]提高[[HeroDetails/MaxEssence]]，与[[Items/P6_Unique_Scythe2H_03]]形成完整[[Site/damage-boost]]条件。"
+  },
+  "app.efbe6d435131c167": {
+    "source": "死僵灾疫",
+    "template": "[[Powers/P6_Necro_Passive_RigorMortis_name]]"
+  },
+  "app.07a69cb70dc3d28d": {
+    "source": "GR速刷保留减速与控制覆盖。",
+    "template": "GR[[Site/speed-farming]]保留减速与控制覆盖。"
+  },
+  "app.b6083ce22399381e": {
+    "source": "死神收割",
+    "template": "[[Powers/P6_Necro_Passive_ScytheRegenPerKill_name]]"
+  },
+  "app.5e5e47568c92611a": {
+    "source": "T16击杀回复生命与精魂，服务连续转场。",
+    "template": "T16击杀回复生命与精魂，服务连续转场。"
+  },
+  "app.aae4cc5893ab47e5": {
+    "source": "鲜血之力",
+    "template": "[[Powers/P6_Necro_Passive_BloodIsPower_name]]"
+  },
+  "app.56f8b2d6ffdc67fa": {
+    "source": "T16通过生命消耗缩短技能冷却，配合快速击杀循环。",
+    "template": "T16通过生命消耗缩短技能冷却，配合快速击杀循环。"
+  },
+  "app.1e7eb16548c75a5b": {
+    "source": "按最大精魂提高伤害。",
+    "template": "按[[HeroDetails/MaxEssence]]提高伤害。"
+  },
+  "app.6d1640a5da98a35f": {
+    "source": "只在GR速刷的最大精魂技能与被动组合中使用，不单独塞进其他场景。",
+    "template": "只在GR[[Site/speed-farming]]的[[HeroDetails/MaxEssence]]技能与被动组合中使用，不单独塞进其他场景。"
+  },
+  "app.1decdf7fe4a0f6d3": {
+    "source": "进图先用亡魂复生补足永久仆从，并等待骷髅到齐。",
+    "template": "进图先用[[Powers/P6_Necro_Revive_name]]补足永久仆从，并等待骷髅到齐。"
+  },
+  "app.21122fbe207ad680": {
+    "source": "拉斯玛六件按永久仆从数放大亡者大军，仆从命中还会缩短冷却。",
+    "template": "拉斯玛六件按永久仆从数放大[[Powers/P6_Necro_SkeleBomb_name]]，仆从命中还会缩短冷却。"
+  },
+  "app.e9247939e12d097c": {
+    "source": "衰老铺怪",
+    "template": "[[Powers/P6_Necro_Decrepify_name]]铺怪"
+  },
+  "app.e91bba6e6253f3f5": {
+    "source": "向准备作战的怪群施放衰老。",
+    "template": "向准备作战的怪群施放[[Powers/P6_Necro_Decrepify_name]]。"
+  },
+  "app.a96b8cac66b4ce5b": {
+    "source": "塔格奥蚀牙只增伤受诅咒目标；没有这一步第四槽等于没有工作。",
+    "template": "[[ItemSets/P6_Necro_Set_2]]蚀牙只[[Site/damage-boost]]受诅咒目标；没有这一步第四槽等于没有工作。"
+  },
+  "app.2c62afe2b4904e4d": {
+    "source": "号令精英",
+    "template": "号令精英"
+  },
+  "app.2d84490170831f4b": {
+    "source": "每个新精英先命令骷髅锁定。",
+    "template": "每个新精英先命令骷髅锁定。"
+  },
+  "app.04f9456307c321a2": {
+    "source": "号令骸骨触发杰瑟斯两件增伤，骷髅持续攻击同时刷新大军。",
+    "template": "[[Powers/P6_Necro_CommandSkeletons_name]]触发杰瑟斯两件[[Site/damage-boost]]，骷髅持续攻击同时刷新大军。"
+  },
+  "app.5013d2e73847ac21": {
+    "source": "虹吸核心",
+    "template": "虹吸核心"
+  },
+  "app.0b18ab93673ed20d": {
+    "source": "对核心目标短暂引导鲜血虹吸。",
+    "template": "对核心目标短暂引导[[Powers/P6_Necro_SiphonBlood_name]]。"
+  },
+  "app.24c50c0c50f26a2a": {
+    "source": "葬镰让虹吸目标承受更多伤害，单体时收益加倍。",
+    "template": "[[Items/P74_Unique_Scythe1H_01]]让虹吸目标承受更多伤害，单体时收益加倍。"
+  },
+  "app.c9d1dd30094ac050": {
+    "source": "安全下大军",
+    "template": "安全下大军"
+  },
+  "app.41df60c63f019aca": {
+    "source": "利用骨甲免控和拉斯玛之盾保护爆发，向密集怪群释放死寒大军。",
+    "template": "利用[[Powers/P6_Necro_BoneArmor_name]]免控和[[Powers/P6_Necro_Passive_RathmasShield_name]]保护爆发，向密集怪群释放[[AttributeDescriptions/NameRune_B#P6_Necro_SkeleBomb]]。"
+  },
+  "app.6f139e9c123a37f4": {
+    "source": "当前所选完整方案不依赖项目旧版不存在的骨甲眩晕或物理元素窗叙述。",
+    "template": "当前所选完整方案不依赖项目旧版不存在的[[Powers/P6_Necro_BoneArmor_name]]眩晕或物理元素窗叙述。"
+  },
+  "app.59813ad71e5aed56": {
+    "source": "开局先补足永久复生仆从。",
+    "template": "开局先补足永久复生仆从。"
+  },
+  "app.83935e7f580af583": {
+    "source": "速刷仍依赖仆从数量和命中次数刷新亡者大军。",
+    "template": "[[Site/speed-farming]]仍依赖仆从数量和命中次数刷新[[Powers/P6_Necro_SkeleBomb_name]]。"
+  },
+  "app.d2971521c1949ae3": {
+    "source": "看到精英先命令骷髅攻击。",
+    "template": "看到精英先命令骷髅攻击。"
+  },
+  "app.657abc97792c8c6f": {
+    "source": "保持杰瑟斯增伤，并让骷髅持续压缩冷却。",
+    "template": "保持杰瑟斯[[Site/damage-boost]]，并让骷髅持续压缩冷却。"
+  },
+  "app.bf26500d84ee3a55": {
+    "source": "虹吸回魂",
+    "template": "虹吸回魂"
+  },
+  "app.c6f1a9639e23b77b": {
+    "source": "对耐久目标短暂虹吸，其余时间保持移动。",
+    "template": "对耐久目标短暂虹吸，其余时间保持移动。"
+  },
+  "app.4c72541a669e54de": {
+    "source": "葬镰负责目标承伤与精魂，莱莲娜按最大精魂提供场景增伤。",
+    "template": "[[Items/P74_Unique_Scythe1H_01]]负责目标承伤与精魂，莱莲娜按[[HeroDetails/MaxEssence]]提供场景[[Site/damage-boost]]。"
+  },
+  "app.bce5543ef202ea3f": {
+    "source": "大军清场",
+    "template": "大军清场"
+  },
+  "app.0f252a7f33b7621d": {
+    "source": "亡者大军可用就对密集怪群释放，不等待项目旧版虚构的固定高巅峰切线。",
+    "template": "[[Powers/P6_Necro_SkeleBomb_name]]可用就对密集怪群释放，不等待项目旧版虚构的固定[[Site/high-paragon]]切线。"
+  },
+  "app.e537488b4e8cbb37": {
+    "source": "GR速刷目标是稳定周转，而不是复制冲层元素等待。",
+    "template": "GR[[Site/speed-farming]]目标是稳定周转，而不是复制[[Site/push]]元素等待。"
+  },
+  "app.f4684b52a2203c3a": {
+    "source": "鲜血转场",
+    "template": "鲜血转场"
+  },
+  "app.c2d7c764a58f6394": {
+    "source": "用鲜血奔行越过空地并寻找下一组精英。",
+    "template": "用[[Powers/P6_Necro_BloodRush_name]]越过空地并寻找下一组精英。"
+  },
+  "app.5bf5117055e177a6": {
+    "source": "该场景有明确位移技能，但没有金币、金织带或贪婪链。",
+    "template": "该场景有明确位移技能，但没有金币、[[Items/Unique_Belt_010_x1]]或贪婪链。"
+  },
+  "app.cbd1b3bcaae17a6e": {
+    "source": "开局先召齐永久仆从。",
+    "template": "开局先召齐永久仆从。"
+  },
+  "app.a3019a4d2bc8f85c": {
+    "source": "即使怪物较脆，仆从仍决定套装倍率和大军刷新。",
+    "template": "即使怪物较脆，仆从仍决定套装倍率和大军刷新。"
+  },
+  "app.26f5ea3fc49a8d6f": {
+    "source": "脆弱聚怪",
+    "template": "[[Powers/P6_Necro_Frailty_name]]聚怪"
+  },
+  "app.e22549a8b1dc2266": {
+    "source": "用脆弱给沿路怪群上诅咒，让布里格斯将它们拉拢。",
+    "template": "用[[Powers/P6_Necro_Frailty_name]]给沿路怪群上诅咒，让[[Items/P6_Unique_Ring_02]]将它们拉拢。"
+  },
+  "app.188e042ce6d97de7": {
+    "source": "这是角色穿戴的聚怪链；贪婪之戒与复仇者护腕应由单人随从发散。",
+    "template": "这是角色穿戴的聚怪链；[[Items/Unique_Ring_108_x1]]与[[Items/Unique_Bracer_106_x1]]应由[[Site/solo]]随从发散。"
+  },
+  "app.e73e19319cea78ac": {
+    "source": "亡魂风暴",
+    "template": "[[AttributeDescriptions/NameRune_E#P6_Necro_SkeleBomb]]"
+  },
+  "app.a339ae033e4bc957": {
+    "source": "进入怪群后释放亡魂风暴，继续向下一组移动。",
+    "template": "进入怪群后释放[[AttributeDescriptions/NameRune_E#P6_Necro_SkeleBomb]]，继续向下一组移动。"
+  },
+  "app.d7d98f63f77da3ca": {
+    "source": "T16使用跟随角色的符文，不采用冲层死寒大军。",
+    "template": "T16使用跟随角色的符文，不采用[[Site/push]][[AttributeDescriptions/NameRune_B#P6_Necro_SkeleBomb]]。"
+  },
+  "app.f9598f08c0060b60": {
+    "source": "击杀刷新",
+    "template": "击杀刷新"
+  },
+  "app.d108e97823476f4c": {
+    "source": "保持连续击杀，让梅塞施密特缩短亡者大军剩余冷却。",
+    "template": "保持连续击杀，让梅塞施密特缩短[[Powers/P6_Necro_SkeleBomb_name]]剩余冷却。"
+  },
+  "app.0edb702c8abed142": {
+    "source": "普通怪密度足够时，击杀重置比虹吸预热更适合小秘境。",
+    "template": "普通怪密度足够时，击杀重置比虹吸预热更适合[[General/LootRunPortal]]。"
+  },
+  "app.cd64c0d3b36d5804": {
+    "source": "用鲜血奔行触发斯图亚特移速。",
+    "template": "用[[Powers/P6_Necro_BloodRush_name]]触发斯图亚特移速。"
+  },
+  "app.f3cfd63058940b76": {
+    "source": "这套T16机动链不要求角色拆掉克里森套装去穿金织带。",
+    "template": "这套T16机动链不要求角色拆掉克里森套装去穿[[Items/Unique_Belt_010_x1]]。"
+  },
+  "app.223a13c1a8398f6d": {
+    "source": "集中心智",
+    "template": "[[Powers/Enchantress_FocusedMind_name]]"
+  },
+  "app.7c717fe56228e23e": {
+    "source": "能量护盾",
+    "template": "能量护盾"
+  },
+  "app.3f8acca0585d7743": {
+    "source": "号令骸骨约1.6 APS断点",
+    "template": "[[Powers/P6_Necro_CommandSkeletons_name]]约1.6 APS断点"
+  },
+  "app.e86e25a4b99209b2": {
+    "source": "武器与一枚戒指的攻击速度",
+    "template": "武器与一枚戒指的[[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]"
+  },
+  "app.b166d0e902805ee1": {
+    "source": "副手资源消耗降低",
+    "template": "副手[[SkillsUI/ParagonBonusLabel_Resource_Cost_Reduction_Percent_All]]"
+  },
+  "app.ef3abf3f165d0422": {
+    "source": "至少一条击中回复生命",
+    "template": "至少一条击中回复生命"
+  },
+  "app.2e4d053bd191f07b": {
+    "source": "单人 GR 冲层",
+    "template": "[[Site/solo]] GR [[Site/push]]"
+  },
+  "app.2a884fd66cb0eb14": {
+    "source": "Icy与d3guides都支持GR冲层；当前采用d3guides这套字段内部自洽的衰老+塔格奥蚀牙配置，避免Icy第四槽轮回镰刀不增幅亡者大军的问题。",
+    "template": "Icy与d3guides都支持GR[[Site/push]]；当前采用d3guides这套字段内部自洽的[[Powers/P6_Necro_Decrepify_name]]+[[ItemSets/P6_Necro_Set_2]]蚀牙配置，避免Icy第四槽[[Items/P61_Unique_Scythe1H_03]]不增幅[[Powers/P6_Necro_SkeleBomb_name]]的问题。"
+  },
+  "app.f9f849cdef410c7c": {
+    "source": "基础配置就是当前选定的完整单人GR冲层方案。",
+    "template": "基础配置就是当前选定的完整[[Site/solo]]GR[[Site/push]]方案。"
+  },
+  "app.bb892a92cefaa576": {
+    "source": "GR 速刷",
+    "template": "GR [[Site/speed-farming]]",
+    "manual": {
+      "enUS": "Greater Rift speed farming"
+    }
+  },
+  "app.319c760cc88cc123": {
+    "source": "两个来源都明确支持GR速刷；当前采用d3guides完整的鲜血奔行+精魂魄身+莱莲娜组合，不沿用Icy无效的轮回镰刀第四槽。",
+    "template": "两个来源都明确支持GR[[Site/speed-farming]]；当前采用d3guides完整的[[Powers/P6_Necro_BloodRush_name]]+[[Powers/P6_Necro_Passive_MaxEssence_name]]+莱莲娜组合，不沿用Icy无效的[[Items/P61_Unique_Scythe1H_03]]第四槽。"
+  },
+  "app.c004c2fdd86e2553": {
+    "source": "鲜血奔行转场",
+    "template": "[[Powers/P6_Necro_BloodRush_name]]转场"
+  },
+  "app.f7827ba8fef98f3f": {
+    "source": "号令骸骨攻击速度",
+    "template": "[[Powers/P6_Necro_CommandSkeletons_name]][[SkillsUI/ParagonBonusLabel_Attacks_Per_Second_Bonus]]"
+  },
+  "app.89648aa5b6386fa2": {
+    "source": "T16 小秘境速刷",
+    "template": "T16 [[General/LootRunPortal]][[Site/speed-farming]]"
+  },
+  "app.b4e583ccd18e6f95": {
+    "source": "Icy与d3guides的T16核心包一致：布里格斯、脆弱、亡魂风暴、梅塞施密特、斯图亚特、强者与囤宝者。保留5+2；角色不穿项目旧版的金织带、复仇者和贪婪之戒。",
+    "template": "Icy与d3guides的T16核心包一致：[[Items/P6_Unique_Ring_02]]、[[Powers/P6_Necro_Frailty_name]]、[[AttributeDescriptions/NameRune_E#P6_Necro_SkeleBomb]]、梅塞施密特、斯图亚特、强者与[[Items/Unique_Gem_014_x1]]。保留5+2；角色不穿项目旧版的[[Items/Unique_Belt_010_x1]]、[[Items/Unique_Bracer_106_x1]]和[[Items/Unique_Ring_108_x1]]。"
+  },
+  "app.7e6484fc2d5ebaad": {
+    "source": "血骨相连",
+    "template": "[[AttributeDescriptions/NameRune_D#P6_Necro_BoneArmor]]"
+  },
+  "app.e3213b961bf8de68": {
+    "source": "鲜血奔行触发斯图亚特",
+    "template": "[[Powers/P6_Necro_BloodRush_name]]触发斯图亚特"
+  },
+  "app.2bc9842ccf4a6bf5": {
+    "source": "连续击杀刷新亡者大军",
+    "template": "连续击杀刷新[[Powers/P6_Necro_SkeleBomb_name]]"
+  },
+  "app.c031f11fb78acad5": {
+    "source": "达到角色基础上限后停止投入。",
+    "template": "达到角色基础上限后停止投入。"
+  },
+  "app.73ee93d3cf8a8911": {
+    "source": "提高伤害和全元素抗性。",
+    "template": "提高伤害和全元素抗性。"
+  },
+  "app.a92b916d2ecd58dd": {
+    "source": "按实际生存补",
+    "template": "按实际生存补"
+  },
+  "app.90d766ce575cbecf": {
+    "source": "Icy允许在偏脆时投入体能，不给固定巅峰线。",
+    "template": "Icy允许在偏脆时投入[[SkillsUI/ParagonBonusLabel_Vitality]]，不给固定[[Site/paragon]]线。"
+  },
+  "app.f2c4434c0fa2ba61": {
+    "source": "Icy主方案认为通常不需要；只有GR速刷莱莲娜组合才主动追求。",
+    "template": "Icy主方案认为通常不需要；只有GR[[Site/speed-farming]]莱莲娜组合才主动追求。"
+  },
+  "app.73a895610b7017b2": {
+    "source": "亡者大军是主伤害技能。",
+    "template": "[[Powers/P6_Necro_SkeleBomb_name]]是主伤害技能。"
+  },
+  "app.04ca88875dbade72": {
+    "source": "帮助号令骸骨达到冷却触发断点。",
+    "template": "帮助[[Powers/P6_Necro_CommandSkeletons_name]]达到冷却触发断点。"
+  },
+  "app.9320519024c49e91": {
+    "source": "Icy当前巅峰表将其排在暴击几率之前。",
+    "template": "Icy当前[[Site/paragon]]表将其排在[[SkillsUI/ParagonBonusLabel_Crit_Percent_Bonus_Capped]]之前。"
+  },
+  "app.31e9110b733a5c79": {
+    "source": "仍是输出属性，但优先级低于冷却与攻速。",
+    "template": "仍是输出属性，但优先级低于冷却与攻速。"
+  },
+  "app.65b6f1890c9a6044": {
+    "source": "智力本身已提供全抗。",
+    "template": "[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]本身已提供全抗。"
+  },
+  "app.c356ef37dd516922": {
+    "source": "作为持续恢复补充。",
+    "template": "作为持续恢复补充。"
+  },
+  "app.b442346680e95cf7": {
+    "source": "亡者大军打密集怪群时受益。",
+    "template": "[[Powers/P6_Necro_SkeleBomb_name]]打密集怪群时受益。"
+  },
+  "app.ea693e164c077dc5": {
+    "source": "偏脆构筑需要稳定恢复。",
+    "template": "偏脆构筑需要稳定恢复。"
+  },
+  "app.d3ae29ded9b60a55": {
+    "source": "同时提高克里森减伤收益。",
+    "template": "同时提高克里森[[Site/damage-reduction]]收益。"
+  },
+  "app.112f2748d2dcfb87": {
+    "source": "主要是便利属性，不决定场景资格。",
+    "template": "主要是便利属性，不决定场景资格。"
+  },
+  "app.7ae51e5fa220b12f": {
+    "source": "当前层数能稳定存活并完整释放亡者大军",
+    "template": "当前层数能稳定存活并完整释放[[Powers/P6_Necro_SkeleBomb_name]]"
+  },
+  "app.e0105600ced921cc": {
+    "source": "常见伤害会在爆发前击杀角色",
+    "template": "常见伤害会在爆发前击杀角色"
+  },
+  "app.987fb3ada48d0539": {
+    "source": "只补到能稳定执行循环，再回到智力。",
+    "template": "只补到能稳定执行循环，再回到[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]。"
+  },
+  "app.9ad4b961e8c051ea": {
+    "source": "装备功能词缀",
+    "template": "装备功能词缀"
+  },
+  "app.08f681a52696e67d": {
+    "source": "已有正确装备与生存基础",
+    "template": "已有正确装备与生存基础"
+  },
+  "app.c410978d4ff14cda": {
+    "source": "冷却、范围伤与攻速按实战瓶颈优化，不由2000巅峰自动触发换装。",
+    "template": "冷却、范围伤与攻速按实战瓶颈优化，不由2000[[Site/paragon]]自动触发换装。"
+  },
+  "app.2bb9a00fe05c2cf6": {
+    "source": "永久仆从",
+    "template": "永久仆从"
+  },
+  "app.225a7c04f9cf6114": {
+    "source": "骷髅与复生仆从满编",
+    "template": "骷髅与复生仆从满编"
+  },
+  "app.60f9e9c86fb6f7c0": {
+    "source": "死亡、换层或开局后先重建，再判断构筑伤害。",
+    "template": "死亡、换层或开局后先重建，再判断构筑伤害。"
+  },
+  "app.87b5d2ec3e88ceb9": {
+    "source": "号令骸骨攻速",
+    "template": "[[Powers/P6_Necro_CommandSkeletons_name]]攻速"
+  },
+  "app.bdc66bc9dde6425a": {
+    "source": "约1.6 APS",
+    "template": "约1.6 APS"
+  },
+  "app.91b2ffd326cb64fc": {
+    "source": "先保杰瑟斯骨镰自带攻速，并在一枚戒指补攻速；不要无依据全身堆攻速。",
+    "template": "先保[[Items/P6_Unique_Scythe1H_04]]自带攻速，并在一枚戒指补攻速；不要无依据全身堆攻速。"
+  },
+  "app.aae65f2221c723fe": {
+    "source": "诅咒覆盖",
+    "template": "诅咒覆盖"
+  },
+  "app.c9f13417b77e064f": {
+    "source": "塔格奥蚀牙场景中的伤害目标已被衰老",
+    "template": "[[ItemSets/P6_Necro_Set_2]]蚀牙场景中的伤害目标已被[[Powers/P6_Necro_Decrepify_name]]"
+  },
+  "app.4ae1500194eb93cc": {
+    "source": "没有诅咒时先补衰老；不要把随从偶发诅咒当稳定触发。",
+    "template": "没有诅咒时先补[[Powers/P6_Necro_Decrepify_name]]；不要把随从偶发诅咒当稳定触发。"
+  },
+  "app.d54d934880bb43fd": {
+    "source": "T16转场",
+    "template": "T16转场"
+  },
+  "app.6a8529ada4687528": {
+    "source": "击杀能连续刷新大军",
+    "template": "击杀能连续刷新大军"
+  },
+  "app.a226f276caad37ac": {
+    "source": "若普通怪仍打不动，先回GR配置或降低难度，不要靠高巅峰标签硬切。",
+    "template": "若普通怪仍打不动，先回GR配置或降低难度，不要靠[[Site/high-paragon]]标签硬切。"
+  },
+  "app.c2707287575642d1": {
+    "source": "5拉斯玛 + 2克里森 + 华戒",
+    "template": "5拉斯玛 + 2克里森 + 华戒"
+  },
+  "app.22c85c06fe0a1726": {
+    "source": "三种场景都保留这套装备骨架；没有来源支持项目旧版因高低巅峰拆掉克里森。",
+    "template": "三种场景都保留这套装备骨架；没有来源支持项目旧版因高[[Site/low-paragon]]拆掉克里森。"
+  },
+  "app.4f4732f24770e902": {
+    "source": "永久仆从发动机",
+    "template": "永久仆从发动机"
+  },
+  "app.25177508e4ebade9": {
+    "source": "拉斯玛二件按永久仆从命中缩短亡者大军冷却，六件按永久仆从数量提高其伤害；仆从不是可省略的装饰。",
+    "template": "拉斯玛二件按永久仆从命中缩短[[Powers/P6_Necro_SkeleBomb_name]]冷却，六件按永久仆从数量提高其伤害；仆从不是可省略的装饰。"
+  },
+  "app.d378875101e0db88": {
+    "source": "号令骸骨 + 杰瑟斯两件",
+    "template": "[[Powers/P6_Necro_CommandSkeletons_name]] + 杰瑟斯两件"
+  },
+  "app.56d1a63abcfd4925": {
+    "source": "每组精英先号令骸骨，以获得杰瑟斯增伤并让骷髅持续攻击。",
+    "template": "每组精英先[[Powers/P6_Necro_CommandSkeletons_name]]，以获得杰瑟斯[[Site/damage-boost]]并让骷髅持续攻击。"
+  },
+  "app.ef0ba5315fa2390a": {
+    "source": "冲层第四槽：塔格奥蚀牙",
+    "template": "[[Site/push]]第四槽：[[ItemSets/P6_Necro_Set_2]]蚀牙"
+  },
+  "app.6caf1138163e7249": {
+    "source": "只有与主动衰老同场时才有效；旧项目保留蚀牙却没有诅咒技能，是明确的配置断链。",
+    "template": "只有与主动[[Powers/P6_Necro_Decrepify_name]]同场时才有效；旧项目保留蚀牙却没有诅咒技能，是明确的配置断链。"
+  },
+  "app.1efe8794a5ed4c08": {
+    "source": "GR速刷第四槽",
+    "template": "GR[[Site/speed-farming]]第四槽"
+  },
+  "app.3c8819ee19902861": {
+    "source": "GR速刷不带诅咒，改用莱莲娜并同时带精魂魄身；这是完整组合，不是单件替换。",
+    "template": "GR[[Site/speed-farming]]不带诅咒，改用莱莲娜并同时带[[Powers/P6_Necro_Passive_MaxEssence_name]]；这是完整组合，不是单件替换。"
+  },
+  "app.67e629c6123eb137": {
+    "source": "选择GR速刷场景，并使用精魂魄身提高最大精魂",
+    "template": "选择GR[[Site/speed-farming]]场景，并使用[[Powers/P6_Necro_Passive_MaxEssence_name]]提高[[HeroDetails/MaxEssence]]"
+  },
+  "app.1c81831a67ada115": {
+    "source": "把最大精魂转为通用增伤",
+    "template": "把[[HeroDetails/MaxEssence]]转为通用[[Site/damage-boost]]"
+  },
+  "app.7e45c756039fb10e": {
+    "source": "失去塔格奥蚀牙，且不再具备冲层衰老覆盖",
+    "template": "失去[[ItemSets/P6_Necro_Set_2]]蚀牙，且不再具备[[Site/push]][[Powers/P6_Necro_Decrepify_name]]覆盖"
+  },
+  "app.3c9f4b603097ccf2": {
+    "source": "T16击杀与移速包",
+    "template": "T16击杀与移速包"
+  },
+  "app.853198a1c6055791": {
+    "source": "T16同时更换布里格斯、技能、被动、武器槽、第四槽和两颗宝石；不能只换金织带或一颗宝石。",
+    "template": "T16同时更换[[Items/P6_Unique_Ring_02]]、技能、被动、武器槽、第四槽和两颗宝石；不能只换[[Items/Unique_Belt_010_x1]]或一颗宝石。"
+  },
+  "app.3772c03c79f78877": {
+    "source": "梅塞施密特 + 斯图亚特",
+    "template": "梅塞施密特 + 斯图亚特"
+  },
+  "app.cf577c8659f7017e": {
+    "source": "T16小秘境怪物能被连续击杀",
+    "template": "T16[[General/LootRunPortal]]怪物能被连续击杀"
+  },
+  "app.359f5176e5ee7122": {
+    "source": "击杀刷新亡者大军并提高转场速度",
+    "template": "击杀刷新[[Powers/P6_Necro_SkeleBomb_name]]并提高转场速度"
+  },
+  "app.3e83b31899098868": {
+    "source": "失去虹吸葬镰与GR最大精魂乘区",
+    "template": "失去虹吸[[Items/P74_Unique_Scythe1H_01]]与GR[[HeroDetails/MaxEssence]][[Site/multiplier]]"
+  },
+  "app.5a359305a4f40726": {
+    "source": "T16第二戒指",
+    "template": "T16第二戒指"
+  },
+  "app.c8a4802e1e79f1e8": {
+    "source": "角色用布里格斯聚怪；贪婪之戒和复仇者护腕由单人随从发散，不拆角色的5+2套装。",
+    "template": "角色用[[Items/P6_Unique_Ring_02]]聚怪；[[Items/Unique_Ring_108_x1]]和[[Items/Unique_Bracer_106_x1]]由[[Site/solo]]随从发散，不拆角色的5+2套装。"
+  },
+  "app.c0384f4368e4fab4": {
+    "source": "T16小秘境使用脆弱快速聚怪",
+    "template": "T16[[General/LootRunPortal]]使用[[Powers/P6_Necro_Frailty_name]]快速聚怪"
+  },
+  "app.a2dd9150ee0866f7": {
+    "source": "给脆弱增加自动聚怪",
+    "template": "给[[Powers/P6_Necro_Frailty_name]]增加自动聚怪"
+  },
+  "app.cbe8aea18b4c03b9": {
+    "source": "失去全能法戒元素周期",
+    "template": "失去[[Items/P2_Unique_Ring_04]]元素周期"
+  },
+  "app.4c02949c3a6d6adc": {
+    "source": "推进第三颗宝石",
+    "template": "推进第三颗宝石"
+  },
+  "app.01142abdc15b63c1": {
+    "source": "当前完整方案采用转煞秘石提高容错；Icy使用迅捷勾玉+贼神，并把转煞列为防御替代。两套宝石不要拆开假装已交叉一致。",
+    "template": "当前完整方案采用[[Items/Unique_Gem_016_x1_PTR]]提高容错；Icy使用[[Items/Unique_Gem_008_x1]]+贼神，并把转煞列为防御替代。两套宝石不要拆开假装已交叉一致。"
+  },
+  "app.6c91fd68fbf949fb": {
+    "source": "单人魔女",
+    "template": "[[Site/solo]][[Pets/HirelingEnchantress]]"
+  },
+  "app.788fd3d5f69e2280": {
+    "source": "Icy明确推荐魔女的冷却、攻速和减伤；T16的贪婪与复仇者通过发散工作，Switch表现仍待实机验证。",
+    "template": "Icy明确推荐[[Pets/HirelingEnchantress]]的冷却、攻速和[[Site/damage-reduction]]；T16的贪婪与[[Items/Unique_Bracer_106_x1]]通过发散工作，Switch表现仍待实机验证。"
+  },
+  "app.8562a159bbfe628e": {
+    "source": "只开放三种已证实场景",
+    "template": "只开放三种已证实场景"
+  },
+  "app.af0b4aac3a0e7ace": {
+    "source": "当前证据支持GR冲层、GR速刷和T16小秘境；没有把蓝门或悬赏单独验证为适配场景，因此不创建按钮。",
+    "template": "当前证据支持GR[[Site/push]]、GR[[Site/speed-farming]]和T16[[General/LootRunPortal]]；没有把蓝门或悬赏单独验证为适配场景，因此不创建按钮。"
+  },
+  "app.345eaec11cffcfe8": {
+    "source": "拉斯玛亡者大军有独立的GR冲层、GR速刷和T16小秘境方案。",
+    "template": "拉斯玛[[Powers/P6_Necro_SkeleBomb_name]]有独立的GR[[Site/push]]、GR[[Site/speed-farming]]和T16[[General/LootRunPortal]]方案。"
+  },
+  "app.ec84bb1b6f8b9185": {
+    "source": "本轮不把T16小秘境自动外推为蓝门或悬赏方案。",
+    "template": "本轮不把T16[[General/LootRunPortal]]自动外推为蓝门或悬赏方案。"
+  },
+  "app.5dd43de7e7f85a18": {
+    "source": "两个来源只明确列GR与Nephalem Rift；缺少蓝门和悬赏逐项配置证据。",
+    "template": "两个来源只明确列GR与Nephalem Rift；缺少蓝门和悬赏逐项配置证据。"
+  },
+  "app.9e05c6f6ea2ac738": {
+    "source": "永久仆从命中缩短亡者大军冷却，六件按永久仆从数量提高亡者大军伤害。",
+    "template": "永久仆从命中缩短[[Powers/P6_Necro_SkeleBomb_name]]冷却，六件按永久仆从数量提高[[Powers/P6_Necro_SkeleBomb_name]]伤害。"
+  },
+  "app.b9cf2c2a3d92874a": {
+    "source": "Icy技能正文仍写每次0.25秒，官方与d3guides当前写0.50秒；数值以官方为准。",
+    "template": "Icy技能正文仍写每次0.25秒，官方与d3guides当前写0.50秒；数值以官方为准。"
+  },
+  "app.e1b96d0c22858b06": {
+    "source": "三种场景都使用杰瑟斯两件，并通过号令骸骨启动增伤。",
+    "template": "三种场景都使用杰瑟斯两件，并通过[[Powers/P6_Necro_CommandSkeletons_name]]启动[[Site/damage-boost]]。"
+  },
+  "app.6d58d66aa00864b9": {
+    "source": "5拉斯玛、2克里森、希雷娜、斯奎特、克里斯宾、全能和杰瑟斯是GR基础装备。",
+    "template": "5拉斯玛、2克里森、希雷娜、斯奎特、[[Items/P6_Unique_Ring_03]]、全能和杰瑟斯是GR基础装备。"
+  },
+  "app.d4e5beaf8506786f": {
+    "source": "冲层采用d3guides的纯净精魂、杀戮命令、限制免疫、死寒大军、相时而动和炼狱。",
+    "template": "[[Site/push]]采用d3guides的[[AttributeDescriptions/NameRune_B#P6_Necro_SiphonBlood]]、[[AttributeDescriptions/NameRune_D#P6_Necro_CommandSkeletons]]、[[AttributeDescriptions/NameRune_B#P6_Necro_BoneArmor]]、[[AttributeDescriptions/NameRune_B#P6_Necro_SkeleBomb]]、[[AttributeDescriptions/NameRune_B#P6_Necro_Decrepify]]和炼狱。"
+  },
+  "app.3c3cc70e6c540bba": {
+    "source": "Icy采用力量转移、狂怒者、白骨脱臼、死亡之谷、鲜血奔行和亡魂护体；当前选择字段闭环更完整的d3guides方案，不混拼。",
+    "template": "Icy采用[[AttributeDescriptions/NameRune_D#P6_Necro_SiphonBlood]]、狂怒者、[[AttributeDescriptions/NameRune_C#P6_Necro_BoneArmor]]、[[AttributeDescriptions/NameRune_D#P6_Necro_SkeleBomb]]、[[Powers/P6_Necro_BloodRush_name]]和[[AttributeDescriptions/NameRune_C#P6_Necro_Revive]]；当前选择字段闭环更完整的d3guides方案，不混拼。"
+  },
+  "app.afa00fc046cb2a22": {
+    "source": "冲层采用拉斯玛之盾、绝命效忠、弱点加深和恐怖贡品。",
+    "template": "[[Site/push]]采用[[Powers/P6_Necro_Passive_RathmasShield_name]]、[[Powers/P6_Necro_Passive_CheatDeath_name]]、[[Powers/P6_Necro_Passive_CurseDamageBonus_name]]和[[Powers/P6_Necro_Passive_GrislyTribute_name]]。"
+  },
+  "app.ee9d7413ec3e5c02": {
+    "source": "两站只对绝命效忠、拉斯玛之盾和恐怖贡品一致；第四被动不同。",
+    "template": "两站只对[[Powers/P6_Necro_Passive_CheatDeath_name]]、[[Powers/P6_Necro_Passive_RathmasShield_name]]和[[Powers/P6_Necro_Passive_GrislyTribute_name]]一致；第四被动不同。"
+  },
+  "app.2f331bdeeba06ae2": {
+    "source": "葬镰、命运誓约、华戒与塔格奥蚀牙组成冲层四槽，且蚀牙由主动衰老触发。",
+    "template": "[[Items/P74_Unique_Scythe1H_01]]、[[Items/P61_Necro_Unique_Helm_22]]、华戒与[[ItemSets/P6_Necro_Set_2]]蚀牙组成[[Site/push]]四槽，且蚀牙由主动[[Powers/P6_Necro_Decrepify_name]]触发。"
+  },
+  "app.9f920ee1e3aa09f6": {
+    "source": "Icy的S39轮回镰刀建议不适用于亡者大军，因此未采纳。",
+    "template": "Icy的S39[[Items/P61_Unique_Scythe1H_03]]建议不适用于[[Powers/P6_Necro_SkeleBomb_name]]，因此未采纳。"
+  },
+  "app.2c15fc880d0e1204": {
+    "source": "Icy称它是亡者大军额外乘区；官方物品说明只增幅次要技能，而亡者大军属于复生技能。",
+    "template": "Icy称它是[[Powers/P6_Necro_SkeleBomb_name]]额外[[Site/multiplier]]；官方物品说明只增幅次要技能，而[[Powers/P6_Necro_SkeleBomb_name]]属于复生技能。"
+  },
+  "app.1f77a730c4e397d5": {
+    "source": "GR速刷采用鲜血奔行、精魂魄身与莱莲娜的完整最大精魂变体。",
+    "template": "GR[[Site/speed-farming]]采用[[Powers/P6_Necro_BloodRush_name]]、[[Powers/P6_Necro_Passive_MaxEssence_name]]与莱莲娜的完整[[HeroDetails/MaxEssence]]变体。"
+  },
+  "app.9b25b618d91f9337": {
+    "source": "两站都支持该用途，但Icy保留主技能栏并误用轮回镰刀；当前精确配置来自d3guides。",
+    "template": "两站都支持该用途，但Icy保留主技能栏并误用[[Items/P61_Unique_Scythe1H_03]]；当前精确配置来自d3guides。"
+  },
+  "app.1b78ff0f334e7e9c": {
+    "source": "T16采用布里格斯、脆弱、亡魂风暴、梅塞施密特、斯图亚特、强者和囤宝者。",
+    "template": "T16采用[[Items/P6_Unique_Ring_02]]、[[Powers/P6_Necro_Frailty_name]]、[[AttributeDescriptions/NameRune_E#P6_Necro_SkeleBomb]]、梅塞施密特、斯图亚特、强者和[[Items/Unique_Gem_014_x1]]。"
+  },
+  "app.e9e1b0652908df49": {
+    "source": "个别符文和被动仍有差异；所列核心场景包在两站一致。",
+    "template": "个别符文和被动仍有差异；所列核心场景包在两站一致。"
+  },
+  "app.8417e350cca28f14": {
+    "source": "单人T16角色保留5+2并只把全能换成布里格斯；贪婪与复仇者由随从发散。",
+    "template": "[[Site/solo]]T16角色保留5+2并只把全能换成[[Items/P6_Unique_Ring_02]]；贪婪与[[Items/Unique_Bracer_106_x1]]由随从发散。"
+  },
+  "app.a7ca24a4f807259b": {
+    "source": "推进宝石采用贼神、困者和转煞；Icy的勾玉+贼神方案记录为另一完整选择。",
+    "template": "推进宝石采用贼神、[[Items/Unique_Gem_002_x1]]和转煞；Icy的勾玉+贼神方案记录为另一完整选择。"
+  },
+  "app.7a9b4b319c4a3e12": {
+    "source": "两站只对困者与贼神一致；d3guides选转煞，Icy选勾玉并把转煞列为替代。",
+    "template": "两站只对[[Items/Unique_Gem_002_x1]]与贼神一致；d3guides选转煞，Icy选勾玉并把转煞列为替代。"
+  },
+  "app.0c0c5026d9edfdc4": {
+    "source": "三种场景都使用头部白、护甲黄、武器绿。",
+    "template": "三种场景都使用头部白、护甲黄、武器绿。"
+  },
+  "app.aa66230e456023c6": {
+    "source": "核心先移速再智力并按需体能；进攻先冷却与攻速，防御先护甲，功能先范围伤与击回。",
+    "template": "核心先移速再[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]并按需[[SkillsUI/ParagonBonusLabel_Vitality]]；进攻先冷却与攻速，防御先护甲，功能先范围伤与击回。"
+  },
+  "app.8f569271757c2bec": {
+    "source": "没有证据支持2000巅峰自动换装备、宝石或场景；三种配置按用途切换。",
+    "template": "没有证据支持2000[[Site/paragon]]自动换装备、宝石或场景；三种配置按用途切换。"
+  },
+  "app.e43450f3d9bb06d7": {
+    "source": "来源按内容、断点与生存描述选择，没有提供项目旧版2000巅峰分界。",
+    "template": "来源按内容、断点与生存描述选择，没有提供项目旧版2000[[Site/paragon]]分界。"
+  },
+  "app.a81813c7843811e7": {
+    "source": "单人GR使用魔女提供冷却、攻速和减伤；T16由随从发散复仇者与贪婪。",
+    "template": "[[Site/solo]]GR使用[[Pets/HirelingEnchantress]]提供冷却、攻速和[[Site/damage-reduction]]；T16由随从发散[[Items/Unique_Bracer_106_x1]]与贪婪。"
+  },
+  "app.6b03689315b5a0ef": {
+    "source": "Nintendo Switch的号令骸骨选目标、亡者大军落点、鲜血奔行和随从发散尚未实测。",
+    "template": "Nintendo Switch的[[Powers/P6_Necro_CommandSkeletons_name]]选目标、[[Powers/P6_Necro_SkeleBomb_name]]落点、[[Powers/P6_Necro_BloodRush_name]]和随从发散尚未实测。"
+  },
+  "app.77e59ac820144643": {
+    "source": "精确构筑来源都是PC页面；官方物品机制跨平台不等于主机操控已经验证。",
+    "template": "精确构筑来源都是PC页面；官方物品机制跨平台不等于主机操控已经验证。"
+  },
+  "app.fa379f6269305ee8": {
+    "source": "永久仆从命中降冷却 → 号令骸骨启动杰瑟斯 → 亡者大军",
+    "template": "永久仆从命中降冷却 → [[Powers/P6_Necro_CommandSkeletons_name]]启动杰瑟斯 → [[Powers/P6_Necro_SkeleBomb_name]]"
+  },
+  "app.5fef65d920103fb8": {
+    "source": "这套确实同时支持GR冲层、GR速刷和T16，但三个场景使用各自闭环配置；不存在‘高巅峰自动换宝石、装备照抄’的依据。",
+    "template": "这套确实同时支持GR[[Site/push]]、GR[[Site/speed-farming]]和T16，但三个场景使用各自闭环配置；不存在‘[[Site/high-paragon]]自动换宝石、装备照抄’的依据。"
+  },
+  "app.77c22c24d9e17921": {
+    "source": "中高 · 仆从满编、目标号令与冷却循环",
+    "template": "中高 · 仆从满编、目标号令与冷却循环"
+  },
+  "app.306c11c200e64a8d": {
+    "source": "单人GR用冷却、攻速和减伤服务亡者大军循环；T16再由随从发散复仇者护腕与贪婪之戒。",
+    "template": "[[Site/solo]]GR用冷却、攻速和[[Site/damage-reduction]]服务[[Powers/P6_Necro_SkeleBomb_name]]循环；T16再由随从发散[[Items/Unique_Bracer_106_x1]]与[[Items/Unique_Ring_108_x1]]。"
+  },
+  "app.9347b30723041172": {
+    "source": "主动衰老保证塔格奥蚀牙生效，按完整冷却循环释放亡者大军。",
+    "template": "主动[[Powers/P6_Necro_Decrepify_name]]保证[[ItemSets/P6_Necro_Set_2]]蚀牙生效，按完整冷却循环释放[[Powers/P6_Necro_SkeleBomb_name]]。"
+  },
+  "app.2a2dc152adb0a970": {
+    "source": "衰老 + 塔格奥蚀牙",
+    "template": "[[Powers/P6_Necro_Decrepify_name]] + [[ItemSets/P6_Necro_Set_2]]蚀牙"
+  },
+  "app.2603080eb2e96cee": {
+    "source": "贼神、困者、转煞",
+    "template": "贼神、[[Items/Unique_Gem_002_x1]]、转煞"
+  },
+  "app.b71a4a8bc89f3f64": {
+    "source": "GR速刷 / T16",
+    "template": "GR[[Site/speed-farming]] / T16"
+  },
+  "app.532c9d9be5b8b1f9": {
+    "source": "两种速刷不是同一套：GR走最大精魂，T16走击杀冷却和移速。",
+    "template": "两种[[Site/speed-farming]]不是同一套：GR走[[HeroDetails/MaxEssence]]，T16走击杀冷却和移速。"
+  },
+  "app.22f8135b753d644b": {
+    "source": "GR：鲜血奔行 + 精魂魄身 + 莱莲娜",
+    "template": "GR：[[Powers/P6_Necro_BloodRush_name]] + [[Powers/P6_Necro_Passive_MaxEssence_name]] + 莱莲娜"
+  },
+  "app.fa537b91078f35fe": {
+    "source": "T16：布里格斯 + 梅斧 + 斯图亚特",
+    "template": "T16：[[Items/P6_Unique_Ring_02]] + [[Items/P66_Unique_Axe_2H_011]] + 斯图亚特"
+  },
+  "app.825ce025dfb2c066": {
+    "source": "没有角色穿戴金织带、复仇者或贪婪",
+    "template": "没有角色穿戴[[Items/Unique_Belt_010_x1]]、[[Items/Unique_Bracer_106_x1]]或贪婪"
+  },
+  "app.4f4ca9f53d05fbfc": {
+    "source": "装备未成型",
+    "template": "装备未成型"
+  },
+  "app.42a7367d0f9466bb": {
+    "source": "优先集齐5+2、杰瑟斯、希雷娜和命运誓约，不按巅峰复制另一套装备。",
+    "template": "优先集齐5+2、杰瑟斯、希雷娜和[[Items/P61_Necro_Unique_Helm_22]]，不按[[Site/paragon]]复制另一套装备。"
+  },
+  "app.edc3a84fed627431": {
+    "source": "先保关键威能和套装完整",
+    "template": "先保关键威能和套装完整"
+  },
+  "app.64bbb91750aa0faf": {
+    "source": "骷髅与复生仆从必须满编",
+    "template": "骷髅与复生仆从必须满编"
+  },
+  "app.9f8ff40f215e2418": {
+    "source": "生存不足时用巅峰体能修正",
+    "template": "生存不足时用[[Site/paragon]][[SkillsUI/ParagonBonusLabel_Vitality]]修正"
+  },
+  "app.2e71d17e011b7c3e": {
+    "source": "装备优化阶段",
+    "template": "装备优化阶段"
+  },
+  "app.76a4a8726e695a1f": {
+    "source": "冷却、号令骸骨攻速和范围伤按实战瓶颈优化，没有2000巅峰硬线。",
+    "template": "冷却、[[Powers/P6_Necro_CommandSkeletons_name]]攻速和范围伤按实战瓶颈优化，没有2000[[Site/paragon]]硬线。"
+  },
+  "app.aef1afe563342932": {
+    "source": "号令骸骨约1.6 APS",
+    "template": "[[Powers/P6_Necro_CommandSkeletons_name]]约1.6 APS"
+  },
+  "app.900c76d2842efffd": {
+    "source": "冷却优先于盲目堆范围伤",
+    "template": "冷却优先于盲目堆范围伤"
+  },
+  "app.1215544c1818989f": {
+    "source": "增广继续使用智力",
+    "template": "增广继续使用[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]"
+  },
+  "app.bf8672dae23e01a1": {
+    "source": "拉斯玛冷却与倍率",
+    "template": "拉斯玛冷却与倍率"
+  },
+  "app.93d8d2283271e029": {
+    "source": "永久仆从既是亡者大军冷却引擎，也是六件伤害倍率计数器；开局必须先满编。",
+    "template": "永久仆从既是[[Powers/P6_Necro_SkeleBomb_name]]冷却引擎，也是六件伤害倍率计数器；开局必须先满编。"
+  },
+  "app.5464cfb44de18640": {
+    "source": "骷髅持续命中",
+    "template": "骷髅持续命中"
+  },
+  "app.7c6853f5c40faaf8": {
+    "source": "每次命中缩短0.50秒",
+    "template": "每次命中缩短0.50秒"
+  },
+  "app.a0bcfe365f845d15": {
+    "source": "六件按仆从数放大",
+    "template": "六件按仆从数放大"
+  },
+  "app.7b3095350e7703f0": {
+    "source": "冲层诅咒闭环",
+    "template": "[[Site/push]]诅咒闭环"
+  },
+  "app.a92710dbdf2cd72d": {
+    "source": "塔格奥蚀牙只对受诅咒目标生效，所以冲层技能栏必须有稳定衰老；旧版无诅咒技能的配置不能成立。",
+    "template": "[[ItemSets/P6_Necro_Set_2]]蚀牙只对受诅咒目标生效，所以[[Site/push]]技能栏必须有稳定[[Powers/P6_Necro_Decrepify_name]]；旧版无诅咒技能的配置不能成立。"
+  },
+  "app.3b7f76a2dec889cc": {
+    "source": "主动覆盖目标",
+    "template": "主动覆盖目标"
+  },
+  "app.09dac7127a8fbfa5": {
+    "source": "塔格奥蚀牙",
+    "template": "[[ItemSets/P6_Necro_Set_2]]蚀牙"
+  },
+  "app.d471c3aae6d99487": {
+    "source": "只增伤受诅咒敌人",
+    "template": "只[[Site/damage-boost]]受诅咒敌人"
+  },
+  "app.9c5092372540f6c2": {
+    "source": "启动杰瑟斯",
+    "template": "启动杰瑟斯"
+  },
+  "app.c45cda2a6a63ae4e": {
+    "source": "结算完整增伤",
+    "template": "结算完整[[Site/damage-boost]]"
+  },
+  "app.d813d34594c3d1bf": {
+    "source": "T16完整切换包",
+    "template": "T16完整切换包"
+  },
+  "app.3e16824326cd9572": {
+    "source": "小秘境需要同时更换技能、被动、戒指、两条威能和两颗宝石；高巅峰并不能把冲层方案自动变成速刷方案。",
+    "template": "[[General/LootRunPortal]]需要同时更换技能、被动、戒指、两条威能和两颗宝石；[[Site/high-paragon]]并不能把[[Site/push]]方案自动变成[[Site/speed-farming]]方案。"
+  },
+  "app.54aacdb8de17a909": {
+    "source": "布里格斯聚怪",
+    "template": "[[Items/P6_Unique_Ring_02]]聚怪"
+  },
+  "app.3d8257216faa03c7": {
+    "source": "击杀缩冷却",
+    "template": "击杀缩冷却"
+  },
+  "app.e49362fb8fac47ae": {
+    "source": "斯图亚特",
+    "template": "斯图亚特",
+    "manual": {
+      "enUS": "Steuart's Greaves"
+    }
+  },
+  "app.0b7b8b3e1513ade5": {
+    "source": "鲜血奔行后移速",
+    "template": "[[Powers/P6_Necro_BloodRush_name]]后移速"
+  },
+  "app.3040a6e6d3669022": {
+    "source": "移动清怪",
+    "template": "移动清怪"
+  },
+  "app.9191a6d352b6644a": {
+    "source": "GR速刷",
+    "template": "GR[[Site/speed-farming]]"
+  },
+  "app.5b158dde302616e7": {
+    "source": "采用衰老+塔格奥蚀牙的完整冲层闭环；不使用Icy当前无效的轮回镰刀第四槽。",
+    "template": "采用[[Powers/P6_Necro_Decrepify_name]]+[[ItemSets/P6_Necro_Set_2]]蚀牙的完整[[Site/push]]闭环；不使用Icy当前无效的[[Items/P61_Unique_Scythe1H_03]]第四槽。"
+  },
+  "app.c02e8f361aaeb89b": {
+    "source": "GR速刷与T16是两套不同配置；前者走最大精魂，后者走击杀冷却、聚怪和移速。",
+    "template": "GR[[Site/speed-farming]]与T16是两套不同配置；前者走[[HeroDetails/MaxEssence]]，后者走击杀冷却、聚怪和移速。"
+  },
+  "app.6e002bb70b62dc9e": {
+    "source": "先凑5拉斯玛+2克里森、杰瑟斯和核心威能；不用固定巅峰线换装。",
+    "template": "先凑5拉斯玛+2克里森、杰瑟斯和核心威能；不用固定[[Site/paragon]]线换装。"
+  },
+  "app.6acfde455c7a4373": {
+    "source": "按冷却、约1.6 APS、范围伤和生存实测优化；高巅峰不会自动改变场景装备。",
+    "template": "按冷却、约1.6 APS、范围伤和生存实测优化；[[Site/high-paragon]]不会自动改变场景装备。"
+  },
+  "app.f497fbab955eb01d": {
+    "source": "已按S39/2.7.8逐字段校对：删除高/低巅峰四份复制，修复塔格奥蚀牙没有诅咒技能的断链，移除角色误穿金织带/复仇者/贪婪的T16拼装，并落地三套真实用途配置。Icy的轮回镰刀第四槽与0.25秒旧数值均被官方资料否定；Maxroll正文受robots限制未计入证据，Nintendo Switch仍待实机。",
+    "template": "已按S39/2.7.8逐字段校对：删除高/[[Site/low-paragon]]四份复制，修复[[ItemSets/P6_Necro_Set_2]]蚀牙没有诅咒技能的断链，移除角色误穿[[Items/Unique_Belt_010_x1]]/[[Items/Unique_Bracer_106_x1]]/贪婪的T16拼装，并落地三套真实用途配置。Icy的[[Items/P61_Unique_Scythe1H_03]]第四槽与0.25秒旧数值均被官方资料否定；Maxroll正文受robots限制未计入证据，Nintendo Switch仍待实机。"
+  },
+  "app.eeb720a8258eee33": {
+    "source": "拉斯玛亡者大军配置校验失败：{0}",
+    "template": "拉斯玛[[Powers/P6_Necro_SkeleBomb_name]]配置校验失败：{0}"
+  },
   "app.1d31a8c07547bc0f": {
     "source": "第39赛季",
     "template": "第39赛季"
@@ -26509,9 +27370,9 @@
     "source": "贴身利用骨甲旋风易伤，再由虹吸触发新星。",
     "template": "贴身利用[[Powers/P6_Necro_BoneArmor_name]]旋风易伤，再由虹吸触发新星。"
   },
-  "app.d5beba1368d1558d": {
-    "source": "宠物攻击压缩亡者大军冷却，在控制窗口集中释放。",
-    "template": "宠物攻击压缩[[Powers/P6_Necro_SkeleBomb_name]]冷却，在控制窗口集中释放。"
+  "app.53a86ffbc4aa5994": {
+    "source": "三种场景各有完整配置：GR冲层、GR速刷与T16小秘境。",
+    "template": "三种场景各有完整配置：GR[[Site/push]]、GR[[Site/speed-farming]]与T16[[General/LootRunPortal]]。"
   },
   "app.c18ec7ee2fbbcf9f": {
     "source": "血魂双分复制骨矛，直线穿透在密集怪群中收益最高。",
@@ -28520,10 +29381,6 @@
   "app.84af870438b2192d": {
     "source": "击杀怪群",
     "template": "击杀怪群"
-  },
-  "app.3d8257216faa03c7": {
-    "source": "击杀缩冷却",
-    "template": "击杀缩冷却"
   },
   "app.b672bd88cb89621e": {
     "source": "击杀加速",
@@ -34413,10 +35270,6 @@
     "source": "戒指池很大，不建议前期血岩强赌",
     "template": "戒指池很大，不建议前期血岩强赌"
   },
-  "app.eb38797ce4673907": {
-    "source": "布里格斯之怒",
-    "template": "[[Items/P6_Unique_Ring_02]]"
-  },
   "app.1b7ab68713aa3c5b": {
     "source": "速刷时，虚弱诅咒会把敌人拖到身边，直接塞进血潮利刃的25码范围。",
     "template": "[[Site/speed-farming]]时，虚弱诅咒会把敌人拖到身边，直接塞进[[Items/P65_Unique_Scythe2H_02]]的[[Number/25/yard]]范围。"
@@ -35054,13 +35907,6 @@
       "enUS": "Cross empty areas and dangerous terrain"
     }
   },
-  "app.e49362fb8fac47ae": {
-    "source": "斯图亚特",
-    "template": "斯图亚特",
-    "manual": {
-      "enUS": "Steuart's Greaves"
-    }
-  },
   "app.4b10b01bcd65bb7c": {
     "source": "位移后获得10秒移速",
     "template": "位移后获得10秒移速",
@@ -35512,6 +36358,10 @@
     "source": "无瑕皇家绿宝石：敏捷",
     "template": "[[Items/x1_Emerald_10]]：[[SkillsUI/ParagonBonusLabel_DexterityMonk]]"
   },
+  "app.5af0dc1ad9274a86": {
+    "source": "转煞秘石",
+    "template": "[[Items/Unique_Gem_016_x1_PTR]]"
+  },
   "app.745fac39996689a3": {
     "source": "无瑕皇家白宝石：冷却/全抗",
     "template": "无瑕皇家白宝石：冷却/全抗"
@@ -35945,13 +36795,6 @@
     "template": "满足生存条件后再移除装备[[SkillsUI/ParagonBonusLabel_IntelligenceWizard]]",
     "manual": {
       "enUS": "Remove item Intelligence only after meeting the survival requirement"
-    }
-  },
-  "app.bb892a92cefaa576": {
-    "source": "GR 速刷",
-    "template": "GR [[Site/speed-farming]]",
-    "manual": {
-      "enUS": "Greater Rift speed farming"
     }
   },
   "app.9474d6986fac1d05": {
@@ -39125,33 +39968,37 @@
     "source": "拉斯玛之骨套装部件。无需亡者大军技能伤，优先坚韧。",
     "template": "[[ItemSets/P6_Necro_Set_1]]套装部件。无需[[Powers/P6_Necro_SkeleBomb_name]]技能伤，优先坚韧。"
   },
-  "app.0d06e1fa4237698a": {
-    "source": "围绕亡者大军核心联动打完整爆发窗",
-    "template": "围绕[[Powers/P6_Necro_SkeleBomb_name]]核心联动打完整爆发窗"
+  "app.707629586aa1c671": {
+    "source": "单人 GR 冲层 · 装备未成型",
+    "template": "[[Site/solo]] GR [[Site/push]] · 装备未成型"
   },
-  "app.3f287d1408538481": {
-    "source": "保留元素周期、受罚者和所有独立乘区。；先用第39赛季赠送的完整拉斯玛六件。",
-    "template": "保留元素周期、[[Items/Unique_Gem_018_x1]]和所有独立[[Site/multiplier]]。；先用第39赛季赠送的完整拉斯玛六件。"
+  "app.a0861e86db912b3f": {
+    "source": "主动衰老保证塔格奥蚀牙生效，按完整冷却循环释放亡者大军。；优先集齐5+2、杰瑟斯、希雷娜和命运誓约，不按巅峰复制另一套装备。",
+    "template": "主动[[Powers/P6_Necro_Decrepify_name]]保证[[ItemSets/P6_Necro_Set_2]]蚀牙生效，按完整冷却循环释放[[Powers/P6_Necro_SkeleBomb_name]]。；优先集齐5+2、杰瑟斯、希雷娜和[[Items/P61_Necro_Unique_Helm_22]]，不按[[Site/paragon]]复制另一套装备。"
   },
-  "app.e397e8fd2df78d14": {
-    "source": "保留元素周期、受罚者和所有独立乘区。；转5件拉斯玛+2件克里森。",
-    "template": "保留元素周期、[[Items/Unique_Gem_018_x1]]和所有独立[[Site/multiplier]]。；转5件拉斯玛+2件克里森。"
+  "app.a414cab6efeddca4": {
+    "source": "单人 GR 冲层 · 装备优化阶段",
+    "template": "[[Site/solo]] GR [[Site/push]] · 装备优化阶段"
   },
-  "app.ecadb3bec94fa355": {
-    "source": "速刷大秘境 · 低巅峰 < 2000",
-    "template": "[[Site/speed-farming]][[NephalemRift/TieredRift]] · [[Site/low-paragon]] < 2000"
+  "app.afcecade64890526": {
+    "source": "主动衰老保证塔格奥蚀牙生效，按完整冷却循环释放亡者大军。；冷却、号令骸骨攻速和范围伤按实战瓶颈优化，没有2000巅峰硬线。",
+    "template": "主动[[Powers/P6_Necro_Decrepify_name]]保证[[ItemSets/P6_Necro_Set_2]]蚀牙生效，按完整冷却循环释放[[Powers/P6_Necro_SkeleBomb_name]]。；冷却、[[Powers/P6_Necro_CommandSkeletons_name]]攻速和范围伤按实战瓶颈优化，没有2000[[Site/paragon]]硬线。"
   },
-  "app.cf0b037c61488dd2": {
-    "source": "伤害溢出后以连续亡者大军和位移为目标。；先用第39赛季赠送的完整拉斯玛六件。",
-    "template": "伤害溢出后以连续[[Powers/P6_Necro_SkeleBomb_name]]和位移为目标。；先用第39赛季赠送的完整拉斯玛六件。"
+  "app.154a230e5ce60f3d": {
+    "source": "GR速刷 / T16 · 装备未成型",
+    "template": "GR[[Site/speed-farming]] / T16 · 装备未成型"
   },
-  "app.f064da2fdb9cbe33": {
-    "source": "速刷大秘境 · 高巅峰 2000+",
-    "template": "[[Site/speed-farming]][[NephalemRift/TieredRift]] · [[Site/high-paragon]] 2000+"
+  "app.2cd7fc2d20b71e1a": {
+    "source": "两种速刷不是同一套：GR走最大精魂，T16走击杀冷却和移速。；优先集齐5+2、杰瑟斯、希雷娜和命运誓约，不按巅峰复制另一套装备。",
+    "template": "两种[[Site/speed-farming]]不是同一套：GR走[[HeroDetails/MaxEssence]]，T16走击杀冷却和移速。；优先集齐5+2、杰瑟斯、希雷娜和[[Items/P61_Necro_Unique_Helm_22]]，不按[[Site/paragon]]复制另一套装备。"
   },
-  "app.eb69f9e1ddadc79f": {
-    "source": "伤害溢出后以连续亡者大军和位移为目标。；转5件拉斯玛+2件克里森。",
-    "template": "伤害溢出后以连续[[Powers/P6_Necro_SkeleBomb_name]]和位移为目标。；转5件拉斯玛+2件克里森。"
+  "app.0ed3890a83866e26": {
+    "source": "GR速刷 / T16 · 装备优化阶段",
+    "template": "GR[[Site/speed-farming]] / T16 · 装备优化阶段"
+  },
+  "app.c191c4cb84d6480e": {
+    "source": "两种速刷不是同一套：GR走最大精魂，T16走击杀冷却和移速。；冷却、号令骸骨攻速和范围伤按实战瓶颈优化，没有2000巅峰硬线。",
+    "template": "两种[[Site/speed-farming]]不是同一套：GR走[[HeroDetails/MaxEssence]]，T16走击杀冷却和移速。；冷却、[[Powers/P6_Necro_CommandSkeletons_name]]攻速和范围伤按实战瓶颈优化，没有2000[[Site/paragon]]硬线。"
   },
   "app.9c98f091b3731a9f": {
     "source": "燃烧狂欢节舞会服套装部件。头部必须保留骨矛技能伤。",
@@ -58992,10 +59839,6 @@
     "source": "戰地癒傷",
     "template": "[[AttributeDescriptions/NameRune_D#DemonHunter_Preparation]]"
   },
-  "app.223a13c1a8398f6d": {
-    "source": "集中心智",
-    "template": "[[Powers/Enchantress_FocusedMind_name]]"
-  },
   "app.0a8bf180cad2fb2d": {
     "source": "未雨綢繆",
     "template": "[[AttributeDescriptions/NameRune_E#DemonHunter_Preparation]]"
@@ -60031,10 +60874,6 @@
   "app.f659c4a58dd82557": {
     "source": "血之獻祭",
     "template": "[[AttributeDescriptions/NameRune_B#P6_Necro_Revive]]"
-  },
-  "app.e83ab24cf7f4ce99": {
-    "source": "衰老",
-    "template": "[[Powers/P6_Necro_Decrepify_name]]"
   },
   "app.0e460e28f38ddd7d": {
     "source": "暈眩之咒",
@@ -61704,6 +62543,15 @@
     "template": "全职业全部 BD · ZIP",
     "manual": {
       "enUS": "All class builds · ZIP"
+    }
+  },
+  "app.659e3ab40f1b8728": {
+    "source": "T16速刷把腰带换金织带、护腕换复仇者、戒指换贪婪组成金币链；第4槽换寅剑或梅斧压缩亡者大军空窗，宝石用困者/勾玉/囤宝者。",
+    "template": "T16[[Site/speed-farming]]把腰带换[[Items/Unique_Belt_010_x1]]、护腕换[[Items/Unique_Bracer_106_x1]]、戒指换贪婪组成金币链；第4槽换[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]压缩[[Powers/P6_Necro_SkeleBomb_name]]空窗，宝石用[[Items/Unique_Gem_002_x1]]/勾玉/[[Items/Unique_Gem_014_x1]]。",
+    "manual": {
+      "zhCN": "T16速刷把腰带换[[Items/Unique_Belt_010_x1]]、护腕换[[Items/Unique_Bracer_106_x1]]、戒指换[[Items/Unique_Ring_108_x1]]组成金币链；第4槽换[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]压缩[[Powers/P6_Necro_SkeleBomb_name]]空窗，宝石用[[Items/Unique_Gem_002_x1]]/[[Items/Unique_Gem_008_x1]]/[[Items/Unique_Gem_014_x1]]。",
+      "zhTW": "T16速刷將腰帶換成[[Items/Unique_Belt_010_x1]]、護腕換成[[Items/Unique_Bracer_106_x1]]、戒指換成[[Items/Unique_Ring_108_x1]]組成金幣鏈；第4槽改用[[Items/Unique_Sword_1H_113_x1]]或[[Items/P66_Unique_Axe_2H_011]]縮短[[Powers/P6_Necro_SkeleBomb_name]]空窗，寶石使用[[Items/Unique_Gem_002_x1]]/[[Items/Unique_Gem_008_x1]]/[[Items/Unique_Gem_014_x1]]。",
+      "enUS": "For T16 speed farming, equip [[Items/Unique_Belt_010_x1]], [[Items/Unique_Bracer_106_x1]] and [[Items/Unique_Ring_108_x1]] for the gold setup. Use [[Items/Unique_Sword_1H_113_x1]] or [[Items/P66_Unique_Axe_2H_011]] in slot 4 to reduce [[Powers/P6_Necro_SkeleBomb_name]] downtime, with [[Items/Unique_Gem_002_x1]] / [[Items/Unique_Gem_008_x1]] / [[Items/Unique_Gem_014_x1]] as gems."
     }
   },
   "app.304c31bd718618ce": {

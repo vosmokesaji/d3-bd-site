@@ -1,47 +1,49 @@
 {
-  "generatedAt": "2026-09-13T13:22:09.964Z",
+  "generatedAt": "2026-09-14T00:41:37.503Z",
   "season": "S39 / 2.7.8",
   "total": 51,
   "fullyReviewed": 21,
   "schemaValid": 51,
   "semanticValid": 51,
-  "evidenceValid": 33,
+  "evidenceValid": 34,
   "publishable": 0,
   "genericPlaceholders": 21,
   "batchDerived": 7,
-  "structuredSources": 28,
-  "evidenceClaims": 53,
-  "crossCheckedClaims": 20,
-  "unresolvedClaims": 33,
+  "structuredSources": 42,
+  "evidenceClaims": 71,
+  "crossCheckedClaims": 29,
+  "unresolvedClaims": 42,
   "evidenceStatuses": {
     "cross-checked": 1,
-    "source-checked": 11,
-    "unverified": 39
+    "source-checked": 12,
+    "unverified": 38
   },
   "applicability": {
-    "supported": 79,
+    "supported": 78,
     "unverified": 113,
     "viable": 6
   },
   "content": {
     "bounty": 1,
     "cosmetic-farm": 2,
-    "greater-rift-push": 94,
-    "greater-rift-speed": 28,
-    "nephalem-rift": 70,
-    "nephalem-rift-t16": 3
+    "greater-rift-push": 93,
+    "greater-rift-speed": 29,
+    "nephalem-rift": 68,
+    "nephalem-rift-t16": 4
   },
   "sourceDomains": {
     "606soft.com": 2,
     "9game.cn": 2,
     "bbs.d.163.com": 4,
     "bbs.nga.cn": 2,
-    "d3guides.de": 9,
+    "d3guides.de": 12,
     "diablofans.com": 2,
-    "icy-veins.com": 253,
+    "icy-veins.com": 257,
     "m.3dmgame.com": 1,
-    "maxroll.gg": 23,
-    "ol.3dmgame.com": 1
+    "maxroll.gg": 20,
+    "news.blizzard.com": 2,
+    "ol.3dmgame.com": 1,
+    "us.diablo3.blizzard.com": 3
   },
   "builds": [
     {
@@ -2367,66 +2369,62 @@
       "id": "rathma-aotd",
       "name": "拉斯玛亡者大军",
       "reviewStatus": "fully-reviewed",
-      "evidenceStatus": "unverified",
-      "platformStatus": "pc-derived",
+      "evidenceStatus": "source-checked",
+      "platformStatus": "platform-risk",
       "dataProvenance": "hand-authored",
       "variantCompleteness": "complete",
-      "scenarioCount": 4,
+      "scenarioCount": 3,
       "paragon": true,
-      "choicePolicyCount": 6,
-      "structuredSourceCount": 0,
-      "evidenceClaimCount": 0,
-      "crossCheckedClaimCount": 0,
-      "unresolvedClaimCount": 0,
+      "choicePolicyCount": 10,
+      "structuredSourceCount": 14,
+      "evidenceClaimCount": 18,
+      "crossCheckedClaimCount": 9,
+      "unresolvedClaimCount": 9,
       "validationErrors": [],
       "semanticErrors": [],
-      "evidenceErrors": [
-        "缺少证据状态",
-        "缺少平台状态"
-      ],
+      "evidenceErrors": [],
       "publishBlockers": [
-        "evidence:缺少证据状态",
-        "evidence:缺少平台状态",
-        "evidence:STATUS_UNVERIFIED"
+        "evidence:STATUS_SOURCE-CHECKED"
       ],
       "publishable": false,
       "scenarios": [
         {
-          "id": "push-low",
+          "id": "gr-push",
           "applicability": "supported",
           "content": "greater-rift-push",
           "diffCount": 0,
           "sourceRefs": [
             "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
-            "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide"
+            "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-skills-and-runes",
+            "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-bis-gear-gems-paragon-points",
+            "https://www.d3guides.de/en/build/necromancer-bones-of-rathma-army-of-the-dead",
+            "https://us.diablo3.blizzard.com/en-us/item/rathmas-ossified-sabatons-P6_Necro_Set_1_Boots",
+            "https://us.diablo3.blizzard.com/en-us/item/tragouls-corroded-fang-P6_Unique_Scythe1H_02"
           ]
         },
         {
-          "id": "push-high",
+          "id": "gr-speed",
           "applicability": "supported",
-          "content": "greater-rift-push",
-          "diffCount": 2,
+          "content": "greater-rift-speed",
+          "diffCount": 10,
           "sourceRefs": [
             "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
-            "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-bis-gear-gems-paragon-points"
+            "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-greater-rift-speed-farming-build",
+            "https://www.d3guides.de/en/build/necromancer-bones-of-rathma-army-of-the-dead?v=speed",
+            "https://us.diablo3.blizzard.com/en-us/item/funerary-pick-P74_Unique_Scythe1H_01",
+            "https://news.blizzard.com/en-gb/article/24287549/season-39-shades-of-the-nephalem-now-live"
           ]
         },
         {
-          "id": "speed-low",
+          "id": "t16-rift",
           "applicability": "supported",
-          "content": "nephalem-rift",
-          "diffCount": 13,
+          "content": "nephalem-rift-t16",
+          "diffCount": 20,
           "sourceRefs": [
-            "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide"
-          ]
-        },
-        {
-          "id": "speed-high",
-          "applicability": "supported",
-          "content": "nephalem-rift",
-          "diffCount": 14,
-          "sourceRefs": [
-            "https://maxroll.gg/d3/guides/rathma-army-of-the-dead-necromancer-guide"
+            "https://www.icy-veins.com/d3/necromancer-rathma-army-of-the-dead-build",
+            "https://www.icy-veins.com/d3/rathma-army-of-the-dead-necromancer-nephalem-rift-speed-farming-build",
+            "https://www.d3guides.de/en/build/necromancer-bones-of-rathma-army-of-the-dead?v=t16",
+            "https://news.blizzard.com/en-gb/article/24287549/season-39-shades-of-the-nephalem-now-live"
           ]
         }
       ]

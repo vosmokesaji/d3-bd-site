@@ -19,6 +19,7 @@
 | --- | --- | ---: | ---: | ---: | --- |
 | [塔格奥死亡新星](./tragoul-nova.md) | `source-checked / pc-derived` | 3 | 6 | 10 | 技能/T16 冲突、Maxroll 正文未读取、Switch 未实测 |
 | [梦遗死亡新星](./lod-nova.md) | `source-checked / platform-risk` | 2 | 7 | 15 | Icy 内部旧段落、第二来源整套冲突、Maxroll 正文未读取、Switch 未实测 |
+| [拉斯玛亡者大军](./rathma-aotd.md) | `source-checked / platform-risk` | 3 | 14 | 18 | 精确符文/宝石分歧、Icy 内部错误、Maxroll 正文未读取、Switch 未实测 |
 | [梦遗轰击](./lod-bombardment.md) | `source-checked / platform-risk` | 3 | 6 | 14 | 技能/装备/宝石冲突、Maxroll 正文未读取、Switch 未实测 |
 
 ## 每套档案必填项

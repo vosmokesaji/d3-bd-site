@@ -8,22 +8,22 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.equal(report.total, 51);
   assert.equal(report.schemaValid, 51);
   assert.equal(report.semanticValid, 51);
-  assert.equal(report.evidenceValid, 33);
+  assert.equal(report.evidenceValid, 34);
   assert.equal(report.genericPlaceholders, 21);
   assert.equal(report.batchDerived, 7);
   assert.equal(report.publishable, 0);
-  assert.equal(report.evidenceStatuses.unverified, 39);
-  assert.equal(report.evidenceStatuses["source-checked"], 11);
+  assert.equal(report.evidenceStatuses.unverified, 38);
+  assert.equal(report.evidenceStatuses["source-checked"], 12);
   assert.equal(report.evidenceStatuses["cross-checked"], 1);
   assert.equal(report.applicability.unverified, 113);
-  assert.equal(report.applicability.supported, 79);
+  assert.equal(report.applicability.supported, 78);
   assert.equal(report.applicability.viable, 6);
-  assert.equal(report.content["nephalem-rift-t16"], 3);
+  assert.equal(report.content["nephalem-rift-t16"], 4);
   assert.equal(report.content.bounty, 1);
-  assert.equal(report.structuredSources, 28);
-  assert.equal(report.evidenceClaims, 53);
-  assert.equal(report.crossCheckedClaims, 20);
-  assert.equal(report.unresolvedClaims, 33);
+  assert.equal(report.structuredSources, 42);
+  assert.equal(report.evidenceClaims, 71);
+  assert.equal(report.crossCheckedClaims, 29);
+  assert.equal(report.unresolvedClaims, 42);
   assert.equal(report.sourceDomains["icy-veins.com"] > 0, true);
   assert.equal(report.builds.every((build) => build.publishBlockers.length > 0), true);
 
@@ -44,6 +44,16 @@ test("BD audit separates structural validity from publishable evidence", () => {
   assert.deepEqual(lodNova.scenarios.map((scenario) => scenario.id), ["gr-progression", "gr-speed"]);
   assert.deepEqual(lodNova.scenarios.map((scenario) => scenario.applicability), ["viable", "viable"]);
   assert.deepEqual(lodNova.scenarios.filter((scenario) => scenario.content === "nephalem-rift-t16"), []);
+
+  const rathma = report.builds.find((build) => build.id === "rathma-aotd");
+  assert.equal(rathma.scenarioCount, 3);
+  assert.equal(rathma.structuredSourceCount, 14);
+  assert.equal(rathma.evidenceClaimCount, 18);
+  assert.deepEqual(rathma.validationErrors, []);
+  assert.deepEqual(rathma.semanticErrors, []);
+  assert.deepEqual(rathma.evidenceErrors, []);
+  assert.deepEqual(rathma.scenarios.map((scenario) => scenario.id), ["gr-push", "gr-speed", "t16-rift"]);
+  assert.deepEqual(rathma.scenarios.map((scenario) => scenario.applicability), ["supported", "supported", "supported"]);
 
   const bombardment = report.builds.find((build) => build.id === "lod-bombardment");
   assert.equal(bombardment.scenarioCount, 3);

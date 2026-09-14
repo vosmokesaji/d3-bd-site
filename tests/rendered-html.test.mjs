@@ -519,24 +519,33 @@ test("renders the reviewed lod-corpse-explosion scenarios as real poison-chain l
 });
 
 test("renders the reviewed rathma-aotd scenarios as real pet-engine loadouts", async () => {
-  const [html, necData] = await Promise.all([
+  const [html, necData, reviewedData] = await Promise.all([
     render("/builds/rathma-aotd").then((response) => response.text()),
     readFile(new URL("../app/data/necromancer-builds.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/data/rathma-aotd-reviewed.ts", import.meta.url), "utf8"),
   ]);
 
-  assert.match(html, /低巅峰大秘境冲层/);
+  assert.match(html, /单人 GR 冲层/);
   assertShowsEvidenceStatus(html);
   assert.match(html, /巅峰加点/);
   assert.match(html, /固定与替换/);
   assert.doesNotMatch(html, /配置差异待实装/);
-  for (const scenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
-    assert.match(necData, new RegExp(`id: "${scenario}"`));
+  for (const scenario of ["gr-push", "gr-speed", "t16-rift"]) {
+    assert.match(reviewedData, new RegExp(`id: "${scenario}"`));
   }
-  for (const runtimeChoice of ["RATHMA_CONFIGURATION_BASE", "corroded-fang", "ingeom", "steuarts-greaves", "avarice-band", "goldwrap", "nemesis-bracers", "boon-of-the-hoarder"]) {
-    assert.match(necData, new RegExp(runtimeChoice));
+  for (const removedScenario of ["push-low", "push-high", "speed-low", "speed-high"]) {
+    assert.doesNotMatch(reviewedData, new RegExp(`id: "${removedScenario}"`));
   }
-  assert.doesNotMatch(necData, /轮回镰刀.*亡者大军/);
-  assert.match(necData, /validateReviewedBuildGuide/);
+  for (const runtimeChoice of ["CONFIGURATION_BASE", "corroded-fang", "reilena", "messerschmidt", "steuarts-greaves", "briggs", "boon-of-the-hoarder", "esoteric-alteration"]) {
+    assert.match(reviewedData, new RegExp(runtimeChoice));
+  }
+  for (const removedShortcut of ["gear: { belt: \"goldwrap\"", "ring2: \"avarice-band\"", "bracers: \"nemesis-bracers\"", "season: \"ingeom\""]) {
+    assert.doesNotMatch(reviewedData, new RegExp(removedShortcut));
+  }
+  assert.match(reviewedData, /Icy的S39轮回镰刀建议不适用于亡者大军/);
+  assert.match(reviewedData, /paragonBand: "any"/);
+  assert.match(reviewedData, /validateBuildEvidence/);
+  assert.match(necData, /reviewRathmaAotdGuide/);
 });
 
 test("renders the reviewed masquerade-spear scenarios as real three-line spear loadouts", async () => {

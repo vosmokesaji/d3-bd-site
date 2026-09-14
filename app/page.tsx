@@ -1254,6 +1254,7 @@ const CONFIGURATION_LEGENDARY_GEMS: Record<string, { name: string; image: string
   simplicity: { name: "至简之力", image: "/d3/library/items/simplicitys-strength-unique_gem_013_x1.png" },
   enforcer: { name: "侍从宝石", image: "/d3/library/items/enforcer-unique_gem_010_x1.png" },
   gogok: { name: "迅捷勾玉", image: "/d3/library/items/gogok-of-swiftness-unique_gem_008_x1.png" },
+  "esoteric-alteration": { name: "转煞秘石", image: "/d3/library/items/esoteric-alteration-unique_gem_016_x1.png" },
   "wreath-of-lightning": { name: "闪电华冠", image: "/d3/library/items/wreath-of-lightning-unique_gem_004_x1.png" },
   zei: { name: "贼神的复仇之石", image: "/d3/library/items/zeis-stone-of-vengeance-unique_gem_012_x1.png" },
 };
